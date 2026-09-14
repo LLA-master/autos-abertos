@@ -274,3 +274,28 @@ html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
 .ww-h{margin:26px 0 4px}.ww-h+p{margin-top:0}
 .primer h3{margin-top:26px}.primer dl{margin:8px 0}.primer dt{font-weight:600;margin-top:10px}.primer dd{margin:2px 0 0 0;color:var(--ink2)}
 .primer .tiles{margin:8px 0 18px}
+
+/* processos: cartões e rastro em linguagem natural */
+.proc-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:16px 0}
+.proc-card{text-align:left;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer;color:inherit;font:inherit;transition:.15s}
+.proc-card:hover{border-color:var(--pink);box-shadow:0 0 16px color-mix(in srgb,var(--pink) 28%,transparent)}
+.pc-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.pc-h .pid{font-family:var(--mono,ui-monospace,monospace);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.pc-t{font-family:var(--serif,Newsreader,Georgia,serif);font-size:19px;font-weight:600}
+.pc-o{font-size:13.5px;color:var(--ink2);margin:8px 0 10px;line-height:1.45}
+.pc-m{font-size:12px;color:var(--muted);margin:0}
+.pp-num{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 18px;font-size:13px;color:var(--muted)}
+.pp-num b{font-size:18px;color:var(--ink);font-variant-numeric:tabular-nums;margin-right:4px}
+#procPage p{line-height:1.6;max-width:68ch}
+.pp-serie{border-left:2px solid var(--hl);padding-left:12px}
+.pp-marcos{margin:6px 0 20px;padding-left:18px}.pp-marcos li{margin:5px 0;line-height:1.5;max-width:68ch}
+.rt-wrap{border-left:1px solid var(--line);padding-left:16px;margin:10px 0 14px}
+.rt-wrap.curto{max-height:420px;overflow:hidden;position:relative}
+.rt-wrap.curto::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,var(--bg))}
+.rt-mes{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-weight:600}
+.rt-l{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:baseline;padding:3px 0;font-size:14px;line-height:1.45}
+.rt-d{font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;font-size:12.5px}
+.rt-l.forte .rt-t{font-weight:600;color:var(--ink)}
+.rt-l.forte .rt-d{color:var(--hl)}
+.rt-m{font-size:11.5px;color:var(--muted);white-space:nowrap}
+@media (max-width:640px){.proc-cards{grid-template-columns:1fr}.rt-l{grid-template-columns:22px 1fr;gap:8px}.rt-m{grid-column:2;white-space:normal}}

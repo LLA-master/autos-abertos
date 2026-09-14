@@ -149,6 +149,7 @@
   <div class="graph-wrap">
     <div id="sigma" class="sigma" role="img" aria-label="Relationship graph"></div>
     <div id="pathHint" class="path-hint" hidden></div>
+    <div id="focusHint" class="path-hint" hidden></div>
     <aside id="commLegend" class="comm-legend" hidden></aside>
     <aside id="panel" class="panel" hidden></aside>
     <div class="legend"><span id="legSize">Size = no. of filings</span><span id="legEdge">Thickness = filings in common</span><span>Click = panel · double-click = focus · Esc = clear</span></div>
@@ -404,13 +405,15 @@
 </section>
 
 <section id="v-processos" class="view" hidden>
-  <div class="wk-head"><div><h2>Fifteen proceedings, one case</h2><p class="lead small">INQ is an inquiry (<em>inquérito</em>), PET a petition (<em>petição</em>, an ancillary or precautionary proceeding) and RCL a constitutional complaint (<em>reclamação</em>). All are handled at the Supreme Court by the same reporting justice and cite one another. Sort by the column you care about and open a row to see its composition and characters. Terms are explained in the <a href="#primer" data-nav="primer">primer</a>.</p></div>
-  <div class="chips"><button class="chip on" data-sort="pages">by pages</button><button class="chip" data-sort="pdfs">by filings</button><button class="chip" data-sort="processo">by number</button></div></div>
-  <div class="proc-table-wrap"><table class="proc-table" id="procTable"><thead><tr><th>proceeding</th><th>type</th><th class="n">filings</th><th class="n">pages</th><th style="width:26%">volume</th><th>composition</th><th>who appears most</th><th></th></tr></thead><tbody></tbody></table></div>
-  <div class="proc-legend" id="procLegend"></div>
-  <h3 style="margin-top:26px">Who cites whom</h3>
-  <p class="muted">Each cell is the number of filings in the row's proceeding that cite the column's proceeding. The darker, the more citations. Hover for the value.</p>
-  <div class="xref-wrap"><table class="xref-matrix" id="xrefMatrix"></table></div>
+  <div id="procList">
+    <div class="wk-head"><div><h2>Fifteen proceedings, one investigation</h2><p class="lead small">The case is not a single proceeding. It is police inquiries (INQ), petitions (PET) and one constitutional complaint (RCL), all before the same rapporteur at Brazil's Supreme Court, citing one another constantly. Each began for a reason, decided something, and left a paper trail. Below, in the order they reached the court, what each one is and what happened inside it.</p></div>
+    <div class="chips" id="procOrder"><button class="chip on" data-ord="crono">in the order they reached the court</button><button class="chip" data-ord="pages">by size</button></div></div>
+    <div id="procCards" class="proc-cards"></div>
+    <h3 style="margin-top:30px">Who cites whom</h3>
+    <p class="muted">Each cell is the number of filings in the row's proceeding that cite the column's proceeding. Darker means more citations. Hover for the value.</p>
+    <div class="xref-wrap"><table class="xref-matrix" id="xrefMatrix"></table></div>
+  </div>
+  <article id="procPage" class="wk-page" hidden></article>
 </section>
 
 <section id="v-tempo" class="view" hidden>

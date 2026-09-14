@@ -145,6 +145,7 @@
   <div class="graph-wrap">
     <div id="sigma" class="sigma" role="img" aria-label="Grafo de relações"></div>
     <div id="pathHint" class="path-hint" hidden></div>
+    <div id="focusHint" class="path-hint" hidden></div>
     <aside id="commLegend" class="comm-legend" hidden></aside>
     <aside id="panel" class="panel" hidden></aside>
     <div class="legend"><span id="legSize">Tamanho = nº de peças</span><span id="legEdge">Espessura = peças em comum</span><span>Clique = ficha · 2 cliques = foco · Esc = limpar</span></div>
@@ -183,13 +184,15 @@
 </section>
 
 <section id="v-processos" class="view" hidden>
-  <div class="wk-head"><div><h2>Quinze processos, um caso</h2><p class="lead small">INQ é inquérito, PET é petição (procedimento cautelar ou incidental) e RCL é reclamação. Todos tramitam no STF sob o mesmo relator e se citam mutuamente. Ordene pela coluna que interessar e abra uma linha para ver a composição e os personagens.</p></div>
-  <div class="chips"><button class="chip on" data-sort="pages">por páginas</button><button class="chip" data-sort="pdfs">por peças</button><button class="chip" data-sort="processo">por número</button></div></div>
-  <div class="proc-table-wrap"><table class="proc-table" id="procTable"><thead><tr><th>processo</th><th>tipo</th><th class="n">peças</th><th class="n">páginas</th><th style="width:26%">volume</th><th>composição</th><th>quem mais aparece</th><th></th></tr></thead><tbody></tbody></table></div>
-  <div class="proc-legend" id="procLegend"></div>
-  <h3 style="margin-top:26px">Quem cita quem</h3>
-  <p class="muted">Cada célula é o número de peças do processo da linha que citam o processo da coluna. Quanto mais escuro, mais citações. Passe o mouse para o valor.</p>
-  <div class="xref-wrap"><table class="xref-matrix" id="xrefMatrix"></table></div>
+  <div id="procList">
+    <div class="wk-head"><div><h2>Quinze processos, uma investigação</h2><p class="lead small">O caso não é um processo só. São inquéritos (INQ), petições (PET) e uma reclamação (RCL) que correm no Supremo sob o mesmo relator e se citam o tempo todo. Cada um começou por um motivo, decidiu alguma coisa e deixou um rastro de papel. Abaixo, na ordem em que chegaram ao Supremo, o que cada um é e o que aconteceu dentro dele.</p></div>
+    <div class="chips" id="procOrder"><button class="chip on" data-ord="crono">na ordem em que chegaram ao Supremo</button><button class="chip" data-ord="pages">por tamanho</button></div></div>
+    <div id="procCards" class="proc-cards"></div>
+    <h3 style="margin-top:30px">Quem cita quem</h3>
+    <p class="muted">Cada célula é o número de peças do processo da linha que citam o processo da coluna. Quanto mais escuro, mais citações. Passe o mouse para o valor.</p>
+    <div class="xref-wrap"><table class="xref-matrix" id="xrefMatrix"></table></div>
+  </div>
+  <article id="procPage" class="wk-page" hidden></article>
 </section>
 
 <section id="v-tempo" class="view" hidden>

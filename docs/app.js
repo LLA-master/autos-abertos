@@ -86,7 +86,7 @@ function reducers(){
       if(pathSet){ if(!pathSet.nodes.has(id)){r.color=dim;r.label="";} else {r.zIndex=2;r.highlighted=true;r.forceLabel=true;} return r;}
       if(neigh){ if(!neigh.has(id)){r.color=dim;r.label="";} else {r.zIndex=2;r.forceLabel=true;} }
       if(F.labelsAll) r.forceLabel=true;
-      if(selected===id){r.highlighted=true;r.zIndex=3;} return r;},
+      if(selected===id){r.highlighted=true;r.zIndex=3;r.size=a.size*1.35;r.forceLabel=true;} return r;},
     edgeReducer(e,a){const r={...a}; const [s,d]=graph.extremities(e); if(!visible(s)||!visible(d)||!edgeOK(e,a)){r.hidden=true;return r;}
       if(F.wMode==="especifico") r.size=.3+Math.log2(Math.max(1,a.l))*.3;
       r.color=edgeBase(s,d,a,baseE);
@@ -139,7 +139,7 @@ function mountGraph(wrap,into){
   } else { renderer.setSetting("labelColor",{color:css("--label")}); setTimeout(()=>renderer.refresh(),0); }
   refresh();
 }
-let lastSig="", spreadTimer=null;
+let lastSig="", spreadTimer=null, spreadPending=false, afterSpread=null, autoFocus=false;
 function visibleIds(){ return graph.nodes().filter(visible); }
 function spread(){ if(live) return; const ids=visibleIds(); if(ids.length<2) return; const sub=new graphology.Graph(); ids.forEach(id=>{const a=graph.getNodeAttributes(id); sub.addNode(id,{x:a.x,y:a.y,size:a.size});});
   const xs=ids.map(id=>graph.getNodeAttribute(id,"x")), ys=ids.map(id=>graph.getNodeAttribute(id,"y")); const ext=Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys))||1000;
@@ -149,10 +149,18 @@ function spread(){ if(live) return; const ids=visibleIds(); if(ids.length<2) ret
 function fitVisible(anim=true){ const ids=visibleIds(); if(!ids.length||!renderer) return; const xs=ids.map(id=>graph.getNodeAttribute(id,"x")), ys=ids.map(id=>graph.getNodeAttribute(id,"y")); const mx=Math.min(...xs),Mx=Math.max(...xs),my=Math.min(...ys),My=Math.max(...ys); const px=(Mx-mx||1)*.08, py=(My-my||1)*.08;
   renderer.setCustomBBox({x:[mx-px,Mx+px],y:[my-py,My+py]}); anim?renderer.getCamera().animatedReset({duration:450}):renderer.getCamera().setState({x:.5,y:.5,ratio:1,angle:0}); }
 function refresh(){ if(!renderer) return; recompute(); const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer);
-  const ids=visibleIds(); const sig=ids.length+":"+ids.slice(0,40).join(",")+":"+F.sizeBy+F.wMode+F.minL+F.minW+(F.period||""); if(sig!==lastSig){ lastSig=sig; computeDyn(); applySizes(); clearTimeout(spreadTimer); spreadTimer=setTimeout(()=>{ spread(); renderer.refresh(); if(!selected) fitVisible(); },60); }
+  const ids=visibleIds(); const sig=ids.length+":"+ids.slice(0,40).join(",")+":"+F.sizeBy+F.wMode+F.minL+F.minW+(F.period||""); if(sig!==lastSig){ lastSig=sig; computeDyn(); applySizes(); clearTimeout(spreadTimer); spreadPending=true; spreadTimer=setTimeout(()=>{ spreadPending=false; spread(); renderer.refresh(); if(!selected) fitVisible(); if(afterSpread){ const f=afterSpread; afterSpread=null; f(); } },60); } else if(afterSpread&&!spreadPending){ const f=afterSpread; afterSpread=null; f(); }
   renderer.refresh(); renderLegend(); }
-function focus(id,ratio=.22){ if(!renderer||!graph.hasNode(id)) return; const p=renderer.getNodeDisplayData(id); if(p) renderer.getCamera().animate({x:p.x,y:p.y,ratio},{duration:600}); }
-function select(id){ selected=id; refresh(); renderPanel(id); if(id) focus(id, F.focus?.3:.22); }
+/* centraliza o nó na área que sobra à esquerda da ficha, não atrás dela */
+function focus(id,ratio=.22){ if(!renderer||!graph.hasNode(id)) return; const p=renderer.getNodeDisplayData(id); if(!p) return;
+  const cw=renderer.getContainer().offsetWidth||1, pn=$("#panel"); const pw=(pn&&!pn.hidden&&innerWidth>860)?pn.offsetWidth:0;
+  renderer.getCamera().animate({x:p.x+(pw/2/cw)*ratio,y:p.y,ratio},{duration:600}); }
+function select(id){ if(!id&&autoFocus){ autoFocus=false; F.focus=false; $("#focusMode").checked=false; } selected=id; refresh(); renderPanel(id); focusHint(); if(id){ const go=()=>focus(id, F.focus?.3:.22); if(spreadPending) afterSpread=go; else requestAnimationFrame(go); } }
+/* busca: recorta o grafo ao nó e às ligações diretas; um aviso permite voltar ao grafo inteiro */
+function searchFocus(id){ if(!F.focus){ F.focus=true; F.depth=1; $("#focusMode").checked=true; $("#focusDepth").value="1"; autoFocus=true; } lastSig=""; select(id);
+  const enquadra=()=>fitVisible();  // mostra a vizinhança inteira, não um zoom no nó
+  if(spreadPending) afterSpread=enquadra; else setTimeout(enquadra,80); }
+function focusHint(){ const h=$("#focusHint"); if(!h) return; if(F.focus&&selected){ h.hidden=false; h.innerHTML=`Mostrando só <b>${esc(byId.get(selected).label)}</b> e as ligações diretas. <button class="lnk" id="focusAll">ver o grafo inteiro</button>`; $("#focusAll").onclick=()=>{ autoFocus=false; F.focus=false; $("#focusMode").checked=false; lastSig=""; select(null); setTimeout(()=>fitVisible(),140); }; } else h.hidden=true; }
 function ensureVisible(id){ const n=byId.get(id); if(visible(id)) return; if(F.comm!==null&&n.c!==F.comm) F.comm=null; if(F.period&&!hasActiveEdge(id)){ F.period=null; $("#tlFilter").checked=false; } if(topSet&&!topSet.has(id)){ F.topN=0; $("#topN").value="0"; } F.roles.add(roleOf(n)); if(n.docs<F.minDocs){F.minDocs=Math.max(2,n.docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;} if(F.proc&&!n.pe.some(([p])=>p===F.proc)){F.proc="";$("#procSel").value="";} syncChips(); }
 function openNode(id){ location.hash="grafo"; setTimeout(()=>{ ensureVisible(id); select(id); },60); }
 function spark(tl){const ks=Object.keys(tl).sort(); if(ks.length<2) return ""; const vals=ks.map(k=>tl[k]); const mx=Math.max(...vals); const W=320,H=46; const pts=ks.map((k,i)=>`${(i/(ks.length-1))*W},${H-2-(tl[k]/mx)*(H-6)}`).join(" ");
@@ -186,7 +194,7 @@ $("#minW").oninput=e=>{F.minW=+e.target.value;$("#minWOut").textContent=F.minW;r
 $("#topN").onchange=e=>{F.topN=+e.target.value;refresh();};
 $("#labelsAll").onchange=e=>{F.labelsAll=e.target.checked;refresh();};
 $("#collapseLeaves").onchange=e=>{F.collapse=e.target.checked;refresh();};
-$("#focusMode").onchange=e=>{F.focus=e.target.checked;refresh(); if(F.focus&&selected) focus(selected,.3);};
+$("#focusMode").onchange=e=>{F.focus=e.target.checked;autoFocus=false;lastSig="";refresh();focusHint(); if(F.focus&&selected) focus(selected,.3);};
 $("#focusDepth").onchange=e=>{F.depth=+e.target.value;refresh();};
 function hideNode(id){ hiddenSet.add(id); if(selected===id) selected=null; renderPanel(null); $("#hiddenCount").textContent=hiddenSet.size; $("#restoreHidden").hidden=false; refresh(); }
 $("#restoreHidden").onclick=()=>{ hiddenSet.clear(); $("#restoreHidden").hidden=true; refresh(); };
@@ -201,7 +209,7 @@ function attachSearch(input,list,onPick){ let hl=-1;
   input.onkeydown=e=>{const li=$$("li",list); if(e.key==="ArrowDown"){hl=Math.min(hl+1,li.length-1);} else if(e.key==="ArrowUp"){hl=Math.max(hl-1,0);} else if(e.key==="Enter"){e.preventDefault(); if(li[Math.max(hl,0)]) li[Math.max(hl,0)].click(); else {const ex=G.nodes.find(n=>n.label.toLowerCase()===input.value.trim().toLowerCase()); if(ex) onPick(ex.id);} return;} else if(e.key==="Escape"){list.hidden=true;return;} else return; li.forEach((l,i)=>l.classList.toggle("hl",i===hl));};
   document.addEventListener("click",e=>{if(!e.target.closest(".search")) list.hidden=true;});
 }
-attachSearch($("#search"),$("#sugg"),id=>{ ensureVisible(id); if(pathMode) pathClick(id); else select(id); });
+attachSearch($("#search"),$("#sugg"),id=>{ ensureVisible(id); if(pathMode) pathClick(id); else searchFocus(id); });
 /* caminho */
 function setPathMode(on,preA,kind){ pathMode=on; pickKind=kind||"path"; pathA=preA||null; pathSet=null; if(on){ selected=null; renderPanel(null); } const h=$("#pathHint"); h.hidden=!on; const what=pickKind==="common"?"Em comum: ":"Caminho: "; h.textContent=on?what+(pathA?`A = ${byId.get(pathA).label}. Agora clique (ou busque) o nó B.`:"clique (ou busque) o nó A."):""; $("#pathBtn").classList.toggle("primary",on&&pickKind==="path"); $("#commonBtn").classList.toggle("primary",on&&pickKind==="common"); refresh(); }
 $("#pathBtn").onclick=()=>setPathMode(!(pathMode&&pickKind==="path"),null,"path");
@@ -277,22 +285,152 @@ function drawMM(){ const svg=$("#mm"); const br=branchesFor(); const W=svg.clien
 const TIPO_COLORS=["#35D8F0","#FF4FA3","#B08CFF","#FFD37A","#4FE3A6","#FF9A5C","#FF6B86","#7FB2FF","#C3F73A","#9DB4FF"];
 const tipoOrder=Object.entries(PROCS.reduce((m,p)=>{Object.entries(p.tipos).forEach(([t,n])=>m[t]=(m[t]||0)+n);return m;},{})).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
 const tipoColor=t=>{const i=tipoOrder.indexOf(t); return i>=0&&i<TIPO_COLORS.length?TIPO_COLORS[i]:"var(--pseudo)";};
-$("#procLegend").innerHTML=tipoOrder.slice(0,TIPO_COLORS.length).map(t=>`<span><i style="background:${tipoColor(t)}"></i>${tipo(t)}</span>`).join("")+`<span><i style="background:var(--pseudo)"></i>outros</span>`;
-const PS={sort:"pages",open:null};
+/* a legenda de tipos de peça vive agora na linha do tempo */
+const PS={sort:"crono"};
 const kind=p=>p.startsWith("INQ")?"inquérito":p.startsWith("RCL")?"reclamação":"petição";
-function renderProcs(){ const rows=[...PROCS].sort((a,b)=>PS.sort==="processo"?a.processo.localeCompare(b.processo):b[PS.sort]-a[PS.sort]); const mx=Math.max(...PROCS.map(p=>p[PS.sort==="pdfs"?"pdfs":"pages"]));
-  const tb=$("#procTable tbody"); tb.innerHTML=rows.map(p=>{const tipos=Object.entries(p.tipos).sort((a,b)=>b[1]-a[1]); const tot=tipos.reduce((s,x)=>s+x[1],0)||1; const top=p.top.slice(0,3);
-    const det=PS.open===p.processo?`<tr class="detail"><td colspan="8"><div class="pd"><div><h4>Composição por tipo de peça</h4><div class="bars">${tipos.slice(0,8).map(([t,n])=>`<div class="bar"><span>${tipo(t)}</span><i style="width:${(n/tipos[0][1])*100}%;background:${tipoColor(t)}"></i><span>${n}</span></div>`).join("")}</div></div>
-      <div><h4>Quem mais aparece</h4><div class="tops">${p.top.map(([l,r,n])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):r})"><i></i>${l} <span class="muted">${n}</span></button>`;}).join("")}</div></div>
-      <div><h4>Abrir</h4><div class="acts"><button class="btn small" data-graph="${p.processo}">Só este processo no grafo</button><button class="btn small" data-mmp="${p.processo}">Mapa mental</button><button class="btn ghost small" data-tl="${p.processo}">Linha do tempo</button></div><p class="muted" style="margin-top:8px">Cita: ${(xg[p.processo]||[]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([d,n])=>`${d} (${n})`).join(", ")||"—"}</p></div></div></td></tr>`:"";
-    return `<tr class="row ${PS.open===p.processo?"open":""}" data-p="${p.processo}"><td class="pid">${p.processo}</td><td><span class="tt">${kind(p.processo)}</span></td><td class="n">${fmt(p.pdfs)}</td><td class="n">${fmt(p.pages)}</td><td><div class="vbar" style="width:${(p[PS.sort==="pdfs"?"pdfs":"pages"]/mx)*100}%"></div></td><td><div class="comp" title="${tipos.slice(0,5).map(([t,n])=>`${tipo(t)}: ${n}`).join(" · ")}">${tipos.map(([t,n])=>`<i style="width:${(n/tot)*100}%;background:${tipoColor(t)}"></i>`).join("")}</div></td><td><div class="tops">${top.map(([l,r,n])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):r})"><i></i>${l}</button>`;}).join("")}</div></td><td class="muted">${PS.open===p.processo?"▲":"▼"}</td></tr>${det}`;}).join("");
-  $$("tr.row",tb).forEach(tr=>tr.onclick=e=>{ if(e.target.closest("button")) return; PS.open=PS.open===tr.dataset.p?null:tr.dataset.p; renderProcs(); });
-  $$("[data-open]",tb).forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
-  $$("[data-mmp]",tb).forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
-  $$("[data-graph]",tb).forEach(b=>b.onclick=()=>{ location.hash="grafo"; setTimeout(()=>{F.proc=b.dataset.graph;$("#procSel").value=b.dataset.graph;F.topN=0;$("#topN").value="0";refresh();renderer&&renderer.getCamera().animatedReset({duration:400});},60); });
-  $$("[data-tl]",tb).forEach(b=>b.onclick=()=>{ location.hash="tempo"; setTimeout(()=>{$("#tlProc").value=b.dataset.tl;drawTL();},60); });
+/* ---------- processos: a história de cada um, e o rastro em linguagem natural ---------- */
+let RASTRO=null, RESUMOS=null;
+async function loadPR(){ if(!RASTRO){ [RASTRO,RESUMOS]=await Promise.all([load("rastro.json"),load("resumos.json")]); } }
+/* os rótulos vêm do índice do STF, sem acento; devolvemos os acentos das palavras frequentes */
+const ACC={Oficio:"Ofício",OFICIO:"OFÍCIO",Informacoes:"Informações",Servicos:"Serviços",Participacoes:"Participações",Titulos:"Títulos",Mobiliarios:"Mobiliários",Credito:"Crédito",Comissao:"Comissão",Agencia:"Agência",Aviacao:"Aviação",Policia:"Polícia",Uniao:"União",Judiciaria:"Judiciária",Secao:"Seção",Confederacao:"Confederação",Instituicao:"Instituição",Instituicoes:"Instituições",Balcao:"Balcão",Brasilia:"Brasília",Certidao:"Certidão",Intimacao:"Intimação",Decisao:"Decisão",Determinacao:"Determinação",Diligencias:"Diligências",Comunicacao:"Comunicação",Peticao:"Petição",Eletronico:"Eletrônico",Eletronica:"Eletrônica",Juizo:"Juízo",Publico:"Público",Ministerio:"Ministério",Ceara:"Ceará",Penitenciario:"Penitenciário",Transito:"Trânsito",Gerencia:"Gerência",Analise:"Análise",Prevencao:"Prevenção",Distribuicao:"Distribuição",Originarios:"Originários",Execucao:"Execução",Imoveis:"Imóveis",Sao:"São",Inclusao:"Inclusão",Restricao:"Restrição",Veicular:"Veicular",Valores:"Valores",Federacao:"Federação",Digitais:"Digitais",Inteligencia:"Inteligência",Financeira:"Financeira",Controle:"Controle",Atividades:"Atividades",Conselho:"Conselho",Receita:"Receita",Senado:"Senado",Vara:"Vara",Regiao:"Região",Nacional:"Nacional",Cooperativa:"Cooperativa",Cooperativas:"Cooperativas",Empresarial:"Empresarial",Unipessoal:"Unipessoal",Corretora:"Corretora",Distribuidora:"Distribuidora",Pagamentos:"Pagamentos",Retificacao:"Retificação",Autuacao:"Autuação",Manifestacao:"Manifestação",Remessa:"Remessa",Situacao:"Situação",Resposta:"Resposta",Comprovante:"Comprovante",Mandado:"Mandado",Relator:"Relator"};
+const acentua=s=>s.replace(/[A-Za-zÀ-ÿ]+/g,w=>ACC[w]||w);
+/* "Oficio n. 114 - CVM" → "a CVM": quem respondeu, sem o número do expediente */
+function orgDe(st){
+  let s=st.replace(/^.*?\s-\s/,"").replace(/^(OFICIO|Oficio|Of\.)\s*(N\.|n\.|nº)?\s*/,"").replace(/^(Informacoes|Informações)\s+(d[aoe]s?\s+)?/i,"").replace(/^(Resposta|Comprovante)\b.*$/i,"").trim();
+  s=s.replace(/^d[aoe]s?\s+/i,"").replace(/\s*\(.*\)$/,"").trim();
+  s=s.replace(/^[^A-Za-zÀ-ÿ]+/,"").trim();
+  if((s.match(/[A-Za-zÀ-ÿ]/g)||[]).length<3) return "";
+  return acentua(s);
 }
-$$("#v-processos [data-sort]").forEach(c=>c.onclick=()=>{ $$("#v-processos [data-sort]").forEach(x=>x.classList.toggle("on",x===c)); PS.sort=c.dataset.sort; renderProcs(); });
+const MES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+const dataLonga=d=>{const[y,m,x]=d.split("-");return `${+x} de ${MES[+m-1]} de ${y}`;};
+const mesDe=d=>{const[y,m]=d.split("-");return `${MES[+m-1]} de ${y}`;};
+/* cada peça vira uma frase; peças iguais e seguidas no mesmo dia viram uma linha só */
+function frase(e){
+  const st=e.st||"", t=e.t, a=e.a;
+  const has=r=>new RegExp(r,"i").test(st);
+  if(t==="Peticao inicial") return a==="pf"?["a Polícia Federal apresenta a representação","representações da Polícia Federal"]
+    :a==="pgr"?["a Procuradoria-Geral da República apresenta manifestação","manifestações da Procuradoria"]
+    :a==="def"?["uma defesa apresenta petição inicial","petições iniciais de defesas"]
+    :a==="bcb"?["o Banco Central apresenta informações","informações do Banco Central"]:["petição inicial","petições iniciais"];
+  if(t==="Decisao monocratica") return has("Liminar")?["o relator aprecia um pedido liminar","decisões liminares"]
+    :has("Final")?["o relator profere decisão final","decisões finais"]:["o relator decide","decisões do relator"];
+  if(t==="Despacho") return ["o relator despacha","despachos do relator"];
+  if(t==="Vista a PGR") return ["os autos vão à Procuradoria-Geral da República","remessas à Procuradoria"];
+  if(t==="Manifestacao da PGR"||t==="Manifestacao") return ["a Procuradoria-Geral da República se manifesta","manifestações da Procuradoria"];
+  if(t==="Peticao") {
+    if(a==="pf") return ["a Polícia Federal peticiona","petições da Polícia Federal"];
+    if(a==="pgr") return ["a Procuradoria-Geral da República se manifesta","manifestações da Procuradoria"];
+    if(a==="bcb") return ["o Banco Central responde","respostas do Banco Central"];
+    if(a==="resp"){ const o=orgDe(st); return [o?`${o} responde ao ofício`:"um ofício é respondido","respostas a ofícios"]; }
+    if(a==="def") return ["uma defesa peticiona","petições de defesas"];
+    return [st?`junta-se aos autos: ${acentua(st).toLowerCase()}`:"petição juntada aos autos","petições juntadas"];
+  }
+  if(t==="Comunicacao assinada"){
+    if(has("Determinacao de diligencias")) return ["ofício do relator determinando diligências","ofícios do relator determinando diligências"];
+    if(has("Busca e Apreensao")) return ["mandado de busca e apreensão expedido","mandados de busca e apreensão expedidos"];
+    if(has("Prisao")) return ["mandado de prisão expedido","mandados de prisão expedidos"];
+    if(has("intimacao|Intimacao")) return ["mandado de intimação expedido","mandados de intimação expedidos"];
+    if(has("Comunica|Comunicacao de despacho")) return ["ofício comunicando a decisão","ofícios comunicando a decisão"];
+    if(has("CERTIDAO|Certidao")) return ["certidão nos autos","certidões nos autos"];
+    return ["comunicação assinada pelo relator","comunicações assinadas pelo relator"];
+  }
+  if(t==="Certidao"||t==="Certidao de retificacao de autuacao"||t==="Certidao de Intimacao"||t==="Certidao de transito em julgado"){
+    if(has("distribuicao")) return ["o processo é distribuído ao relator","certidões de distribuição"];
+    if(has("ausencia de manifestacao")) return ["a secretaria certifica que o prazo passou sem manifestação","certidões de prazo vencido"];
+    if(has("retificacao")) return ["a autuação é retificada","retificações de autuação"];
+    if(has("transito")) return ["a decisão transita em julgado","certidões de trânsito em julgado"];
+    return ["a secretaria certifica um ato","certidões da secretaria"];
+  }
+  if(t==="Certidao de julgamento") return ["certidão de julgamento do colegiado","certidões de julgamento"];
+  if(t==="Intimacao"||t==="Mandado de intimacao") return ["intimação expedida","intimações expedidas"];
+  if(t==="Mandado") return ["mandado expedido","mandados expedidos"];
+  if(t==="Busca e apreensao") return ["auto de busca e apreensão juntado","autos de busca e apreensão"];
+  if(t==="Prisao preventiva") return ["peça de prisão preventiva juntada","peças de prisão preventiva"];
+  if(t==="Sequestro") return ["peça de sequestro de bens juntada","peças de sequestro de bens"];
+  if(t==="Restituicao de coisas apreendidas") return ["pedido de restituição de coisas apreendidas","pedidos de restituição"];
+  if(t==="Termo de disponibilizacao de autos") return ["os autos são disponibilizados à autoridade policial","termos de disponibilização dos autos"];
+  if(t==="Malote Digital") return ["comunicação de outro juízo","comunicações de outros juízos"];
+  if(t==="Inquerito") return ["peça do inquérito juntada","peças do inquérito"];
+  if(t==="Informacao") return ["informação juntada aos autos","informações juntadas"];
+  if(t==="Pedido de reconsideracao") return ["pedido de reconsideração","pedidos de reconsideração"];
+  if(t==="Peticao de apresentacao de defesa") return ["apresentação de defesa","apresentações de defesa"];
+  if(t==="Pedido de ingresso como interessado") return ["pedido de ingresso como interessado","pedidos de ingresso"];
+  if(t==="Peticao de juntada de documentos") return ["pedido de juntada de documentos","pedidos de juntada"];
+  if(t.indexOf("acordao")>=0||t==="Acordao") return ["acórdão publicado","acórdãos publicados"];
+  return [tipo(t).toLowerCase()+" juntado",tipo(t).toLowerCase()];
+}
+const PESO={"Decisao monocratica":3,"Peticao inicial":3,"Acordao":3,"Despacho":1,"Vista a PGR":1};
+function rastroHTML(proc,marcos){
+  const r=(RASTRO[proc]||[]).filter(e=>e.d).slice().sort((a,b)=>a.d.localeCompare(b.d)||a.s-b.s);
+  const mset=new Set(marcos.map(m=>m[0]));
+  const linhas=[]; let i=0;
+  while(i<r.length){
+    const [sg,pl]=frase(r[i]); let j=i, pags=0, seqs=[];
+    while(j<r.length && r[j].d===r[i].d && frase(r[j])[0]===sg){ pags+=r[j].p; seqs.push(r[j].s); j++; }
+    const n=j-i, peso=PESO[r[i].t]||0;
+    const txt=n>1?`${n} ${pl}`:sg;
+    const pg=pags>=3?`${fmt(pags)} pág.`:"";
+    const sq=seqs.length>1?`seq ${seqs[0]}–${seqs[seqs.length-1]}`:`seq ${seqs[0]}`;
+    linhas.push({d:r[i].d,txt,meta:[pg,sq].filter(Boolean).join(" · "),peso:peso+(mset.has(r[i].d)?2:0)});
+    i=j;
+  }
+  let mes="", out="";
+  linhas.forEach((l,k)=>{
+    const m=mesDe(l.d); if(m!==mes){ mes=m; out+=`<h5 class="rt-mes">${m}</h5>`; }
+    out+=`<div class="rt-l${l.peso>=3?" forte":""}" data-k="${k}"><span class="rt-d">${+l.d.split("-")[2]}</span><span class="rt-t">${l.txt}</span><span class="rt-m">${l.meta}</span></div>`;
+  });
+  return {html:out,n:linhas.length};
+}
+function procCard(p){
+  const R=RESUMOS[p.processo]||{t:"",o:"",r:[],m:[]};
+  const per=periodo(p.processo);
+  return `<button class="proc-card" data-p="${esc(p.processo)}"><div class="pc-h"><span class="pid">${p.processo}</span><span class="pc-t">${esc(R.t)}</span></div>
+    <p class="pc-o">${esc(R.o)}</p><p class="pc-m">${per} · ${fmt(p.pdfs)} peças · ${fmt(p.pages)} páginas</p></button>`;
+}
+function periodo(proc){ const r=(RASTRO[proc]||[]).filter(e=>e.d); if(!r.length) return ""; const ini=primeiraData(proc), fim=r.map(e=>e.d).sort().pop(); return `${mesDe(ini)} — ${mesDe(fim)}`; }
+/* o começo do processo é a data da primeira peça dele (menor seq), não a data mais antiga citada num anexo */
+function primeiraData(proc){ const r=(RASTRO[proc]||[]).filter(e=>e.d).slice().sort((a,b)=>a.s-b.s); return r.length?r[0].d:"9999"; }
+async function renderProcs(){
+  await loadPR();
+  const rows=[...PROCS].sort((a,b)=>PS.sort==="pages"?b.pages-a.pages:primeiraData(a.processo).localeCompare(primeiraData(b.processo)));
+  $("#procCards").innerHTML=rows.map(procCard).join("");
+  $$("#procCards .proc-card").forEach(b=>b.onclick=()=>openProc(b.dataset.p));
+}
+function openProc(proc){
+  const p=PROCS.find(x=>x.processo===proc), R=RESUMOS[proc]; if(!p||!R) return;
+  const P=$("#procPage"), L=$("#procList");
+  const {html,n}=rastroHTML(proc,R.m);
+  const marcos=R.m.map(([d,t])=>`<li><b>${dataLonga(d)}</b> — ${esc(t)}</li>`).join("");
+  const tops=p.top.slice(0,8).map(([l,rl,c])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):rl})"><i></i>${esc(l)} <span class="muted">${c}</span></button>`;}).join("");
+  const serie=R.s?`<p class="pp-serie">Há uma série de crônicas sobre este processo. <button class="btn small" data-cr="${esc(R.s)}">Ler a série</button></p>`:"";
+  const cita=(xg[proc]||[]).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([d,c])=>`<button class="lnk" data-goproc="${esc(d)}">${d}</button> <span class="muted">(${c})</span>`).join(", ")||"—";
+  P.innerHTML=`<button class="btn ghost small back" id="ppBack">← todos os processos</button>
+    <p class="eyebrow">${proc} · ${esc(R.t)}</p><h2>${esc(R.o)}</h2>
+    <div class="pp-num"><span>${periodo(proc)}</span><span><b>${fmt(p.pdfs)}</b> peças</span><span><b>${fmt(p.pages)}</b> páginas</span><span><b>${n}</b> movimentos</span></div>
+    ${R.r.map(x=>`<p>${esc(x)}</p>`).join("")}
+    ${serie}
+    <h3>Os momentos que importam</h3><ul class="pp-marcos">${marcos}</ul>
+    <h3>O rastro, dia a dia</h3>
+    <p class="muted small">Cada linha é uma peça dos autos, descrita pelo que ela é. O <em>seq</em> é o número da peça no processo e o começo do nome do arquivo no pacote público do STF. Peças iguais no mesmo dia aparecem juntas.</p>
+    <div class="rt-wrap" id="ppRastro">${html}</div>
+    ${n>14?'<button class="btn ghost small" id="ppMais">mostrar o rastro inteiro</button>':""}
+    <h3>Quem mais aparece</h3><div class="tops">${tops}</div>
+    <p class="muted small" style="margin-top:6px">Contagem de peças narrativas em que o nome aparece. Aparecer muito não diz o que a pessoa fez.</p>
+    <h3>Este processo cita</h3><p>${cita}</p>
+    <div class="acts"><button class="btn small" data-graph="${esc(proc)}">Ver só este processo no grafo</button><button class="btn small" data-mmp="${esc(proc)}">Mapa mental</button><button class="btn ghost small" data-tl="${esc(proc)}">Linha do tempo</button></div>`;
+  L.hidden=true; P.hidden=false; scrollTo({top:0,behavior:"instant"});
+  const wrap=$("#ppRastro"); if(n>14) wrap.classList.add("curto");
+  const mais=$("#ppMais"); if(mais) mais.onclick=()=>{wrap.classList.remove("curto");mais.remove();};
+  $("#ppBack").onclick=()=>{P.hidden=true;L.hidden=false;};
+  $$("[data-open]",P).forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
+  $$("[data-goproc]",P).forEach(b=>b.onclick=()=>openProc(b.dataset.goproc));
+  $$("[data-cr]",P).forEach(b=>b.onclick=()=>{location.hash="cronicas?p="+b.dataset.cr;});
+  $$("[data-mmp]",P).forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
+  $$("[data-graph]",P).forEach(b=>b.onclick=()=>{ location.hash="grafo"; setTimeout(()=>{F.proc=b.dataset.graph;$("#procSel").value=b.dataset.graph;F.topN=0;$("#topN").value="0";lastSig="";refresh();setTimeout(()=>fitVisible(),200);},60); });
+  $$("[data-tl]",P).forEach(b=>b.onclick=()=>{ location.hash="tempo"; setTimeout(()=>{$("#tlProc").value=b.dataset.tl;drawTL();},60); });
+}
+$$("#procOrder .chip").forEach(c=>c.onclick=()=>{ $$("#procOrder .chip").forEach(x=>x.classList.toggle("on",x===c)); PS.sort=c.dataset.ord==="pages"?"pages":"crono"; renderProcs(); });
 const xg={}; XREF.forEach(({s,d,n})=>{(xg[s]=xg[s]||[]).push([d,n]);});
 (function xrefMatrix(){ const ps=META.corpus.processos; const M={}; XREF.forEach(({s,d,n})=>{M[s+"|"+d]=n;}); const mx=Math.max(1,...XREF.map(x=>x.n));
   $("#xrefMatrix").innerHTML=`<tr><th></th>${ps.map(p=>`<th class="rot">${p}</th>`).join("")}</tr>`+ps.map(r=>`<tr><th>${r}</th>${ps.map(c=>{ if(r===c) return `<td class="self">·</td>`; const n=M[r+"|"+c]||0; const a=n?0.12+0.88*Math.sqrt(n/mx):0; return `<td title="${r} cita ${c}: ${n} peças" style="background:color-mix(in srgb,var(--pink) ${Math.round(a*100)}%,var(--bg2));color:${a>.5?"#fff":"var(--ink)"}">${n||""}</td>`;}).join("")}</tr>`).join("");
