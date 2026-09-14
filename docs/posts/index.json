@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 14:38 UTC",
+ "gerado_em": "2026-09-13 14:56 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -36,6 +36,91 @@
    "numero": 2
   },
   {
+   "slug": "inq-5026-01-doze-bilhoes-e-duas-associacoes",
+   "title": "Doze bilhões e duas associações",
+   "subtitle": "Um ofício do Banco Central em março de 2025, uma resposta que apontava associações de servidores da Bahia como origem de R$ 6,7 bilhões em crédito, e uma empresa de prateleira renomeada dois dias antes de assinar o contrato. Onde a Operação Compliance Zero começou.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.026",
+    "Banco Central",
+    "BRB"
+   ],
+   "minutes": 9,
+   "words": 1848,
+   "serie": "INQ 5.026, a origem",
+   "capitulo": 1,
+   "excerpt": "Antes de virar operação, o caso Banco Master foi um ofício. Em 17 de março de 2025, o Departamento de Supervisão Bancária do Banco Central, o Desup, mandou ao Master o Ofício 7062/2025 pedindo informações sobre carteiras de crédito negociadas com o BRB, o banco público do Distrit",
+   "numero": 3
+  },
+  {
+   "slug": "inq-5026-02-o-lado-do-brb",
+   "title": "O lado do BRB",
+   "subtitle": "Um banco público que comprou carteiras equivalentes a 30% dos próprios ativos, furou o índice de Basileia, aceitou devolução em parcelas contra o contrato e, segundo a polícia, queria mesmo era emprestar. O que os autos dizem sobre o comprador.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.026",
+    "BRB",
+    "supervisão"
+   ],
+   "minutes": 9,
+   "words": 1770,
+   "serie": "INQ 5.026, a origem",
+   "capitulo": 2,
+   "excerpt": "Toda fraude precisa de duas pontas, e a narrativa pública do caso Banco Master tem a mania de olhar só para uma. O Inquérito 5.026, no entanto, foi instaurado, nas palavras do próprio juiz, \"para apurar supostos crimes contra o Sistema Financeiro Nacional praticados no contexto d",
+   "numero": 4
+  },
+  {
+   "slug": "inq-5026-03-dezoito-de-novembro",
+   "title": "Dezoito de novembro",
+   "subtitle": "Cinco prisões preventivas, duas temporárias, um presidente de banco afastado, uma ordem para o Banco Central intervir no BRB e, no mesmo dia, a liquidação do Master. Depois, um voo para Dubai que virou argumento, um tribunal que disse não e, dez dias depois, disse sim.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.026",
+    "prisão preventiva",
+    "TRF1"
+   ],
+   "minutes": 9,
+   "words": 1820,
+   "serie": "INQ 5.026, a origem",
+   "capitulo": 3,
+   "excerpt": "A decisão que prendeu os diretores do Banco Master tem 26 páginas, foi assinada às 15h29 de 17 de novembro de 2025 pelo juiz federal substituto Ricardo Augusto Soares Leite, da 10ª Vara Federal Criminal de Brasília, e foi cumprida na manhã seguinte. Ela é, ao lado da decisão de m",
+   "numero": 5
+  },
+  {
+   "slug": "inq-5026-04-o-parlamentar-na-gaveta",
+   "title": "O parlamentar na gaveta",
+   "subtitle": "Um documento apreendido na casa de um investigado, uma reclamação ao Supremo, um juiz de plantão que suspendeu tudo numa noite de dezembro, um procurador que chamou aquilo de tumulto, e o inquérito que subiu mesmo assim.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.026",
+    "competência",
+    "Reclamação 88.121"
+   ],
+   "minutes": 8,
+   "words": 1622,
+   "serie": "INQ 5.026, a origem",
+   "capitulo": 4,
+   "excerpt": "O Inquérito 5.026 não subiu ao Supremo porque alguém provou que havia um parlamentar envolvido. Subiu porque alguém disse que talvez houvesse. A diferença é toda a história deste capítulo, e ela está documentada num despacho de três páginas, escrito às 19h21 de uma quarta-feira, ",
+   "numero": 6
+  },
+  {
+   "slug": "inq-5026-05-o-inquerito-vira-balcao",
+   "title": "O inquérito vira balcão",
+   "subtitle": "Com o novo relator, a partir de fevereiro de 2026, o Inquérito 5.026 passa a receber de tudo: convites do Senado, salvo-condutos para a CPMI, um ex-presidente do Banco Central que não queria ir, deputados pedindo para incluir outros deputados, e o Banco Central avisando de um segundo conglomerado. O que o relator fez com cada coisa.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.026",
+    "CPMI",
+    "André Mendonça"
+   ],
+   "minutes": 10,
+   "words": 2010,
+   "serie": "INQ 5.026, a origem",
+   "capitulo": 5,
+   "excerpt": "Há um momento em que um inquérito deixa de ser uma investigação e passa a ser um endereço: todo mundo que tem algo a dizer, ou a pedir, escreve para lá. O Inquérito 5.026 chegou a esse ponto em fevereiro de 2026, quando trocou de relator. Este capítulo, o último da série, inventa",
+   "numero": 7
+  },
+  {
    "slug": "pet-15198-01-de-sao-paulo-a-brasilia",
    "title": "De São Paulo a Brasília",
    "subtitle": "Um inquérito nascido de um PDF anônimo, um pedido de bloqueio de R$ 5,7 bilhões, um juiz que pede explicações e um ministro que puxa tudo para o Supremo. Como a segunda fase da operação mudou de endereço.",
@@ -50,7 +135,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 1,
    "excerpt": "A Petição 15.198 começa com uma folha. Uma só. Em 22 de dezembro de 2025, o Procurador-Geral da República, Paulo Gonet, pede ao ministro Dias Toffoli \"a autuação de procedimento autônomo, em apartado, com classificação de sigilo no grau máximo previsto (nível 4)\", distribuído \"po",
-   "numero": 3
+   "numero": 8
   },
   {
    "slug": "pet-15198-02-a-maquina-de-fundos",
@@ -67,7 +152,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 2,
    "excerpt": "Todo esquema financeiro descrito num processo tem um desenho. O desta petição cabe numa frase da Polícia Federal, transcrita pelo Ministério Público e reproduzida pelo ministro: o Banco Master \"direcionou uma parte considerável dos recursos captados junto ao mercado, por meio da ",
-   "numero": 4
+   "numero": 9
   },
   {
    "slug": "pet-15198-03-a-madrugada-de-14-de-janeiro",
@@ -84,7 +169,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 3,
    "excerpt": "Operações policiais têm duas versões: a do dia seguinte, com fotos de malotes, e a dos autos, com horários. A dos autos é melhor. Na Petição 15.198, a deflagração da segunda fase da Operação Compliance Zero, em 14 de janeiro de 2026, deixou um rastro de três decisões e um despach",
-   "numero": 5
+   "numero": 10
   },
   {
    "slug": "pet-15198-04-o-novo-relator-e-os-cem-aparelhos",
@@ -102,7 +187,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 4,
    "excerpt": "Há um despacho na Petição 15.198 que tem quatro páginas, das quais três estão em branco. Na quarta, uma linha: \"À Coordenadoria de Processamento Inicial da Secretaria Judiciária, para as providências de redistribuição.\" Assina o presidente do Tribunal, Edson Fachin, em 13 de feve",
-   "numero": 6
+   "numero": 11
   },
   {
    "slug": "pet-15198-05-os-carros",
@@ -119,7 +204,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 5,
    "excerpt": "Depois de junho de 2026, a Petição 15.198 virou o que o relator quis que ela fosse: a gaveta das medidas cautelares. E medida cautelar, na prática, é gente pedindo coisas de volta. Entre fevereiro e agosto, seis pedidos de restituição chegaram e seis foram negados, com o mesmo te",
-   "numero": 7
+   "numero": 12
   },
   {
    "slug": "pet-15556-01-setenta-e-duas-horas",
@@ -136,7 +221,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 1,
    "excerpt": "Um processo do Supremo chamado \"Petição\" não é uma carta. É uma gaveta. Nela se guardam pedidos que precisam de um juiz antes de virarem outra coisa: um inquérito, uma denúncia, nada. A Petição 15.556 é a gaveta em que a Polícia Federal, em 27 de fevereiro de 2026, depositou 164 ",
-   "numero": 8
+   "numero": 13
   },
   {
    "slug": "pet-15556-02-a-turma",
@@ -153,7 +238,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 2,
    "excerpt": "Toda organização tem um departamento de que não se fala nas reuniões de resultado. Segundo a decisão de 3 de março, o do grupo investigado se chamava \"A Turma\", e a descrição que o ministro faz dela é a parte do documento que mais se afasta do mundo dos bancos e mais se aproxima ",
-   "numero": 9
+   "numero": 14
   },
   {
    "slug": "pet-15556-03-o-supervisor-que-revisava-o-oficio",
@@ -170,7 +255,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 3,
    "excerpt": "O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conver",
-   "numero": 10
+   "numero": 15
   },
   {
    "slug": "pet-15556-04-o-que-o-ministro-decidiu-e-como",
@@ -187,7 +272,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 4,
    "excerpt": "Prender alguém antes de julgar é a coisa mais violenta que um Estado de direito faz de forma rotineira. Por isso a lei cerca o ato de exigências, e por isso a parte técnica de uma decisão como a de 3 de março merece ser lida por quem não é advogado: é ali que se vê se o juiz pulo",
-   "numero": 11
+   "numero": 16
   },
   {
    "slug": "pet-15556-05-depois-do-decreto",
@@ -204,7 +289,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 5,
    "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
-   "numero": 12
+   "numero": 17
   }
  ]
 }
