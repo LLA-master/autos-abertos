@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 15:08 UTC",
+ "gerado_em": "2026-09-13 15:19 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -121,6 +121,57 @@
    "numero": 7
   },
   {
+   "slug": "inq-5035-01-projeto-dv",
+   "title": "Projeto DV",
+   "subtitle": "Um vereador gaúcho publicou um vídeo dizendo que lhe ofereceram dinheiro para atacar o Banco Central. Doze dias depois, a Polícia Federal tinha um levantamento de 22 perfis, uma portaria e um nome de código tirado de um contrato de confidencialidade. Como nasceu o menor inquérito do acervo.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.035",
+    "influenciadores",
+    "Banco Central"
+   ],
+   "minutes": 9,
+   "words": 1748,
+   "serie": "INQ 5.035, o projeto",
+   "capitulo": 1,
+   "excerpt": "O Inquérito 5.035 é o menor dos quinze processos deste acervo: 85 peças e 321 páginas, uma única decisão de mérito do relator, três despachos. É também o único que não trata de dinheiro, carteira, fundo ou banco, e sim de opinião. Ele investiga se alguém pagou, ou tentou pagar, i",
+   "numero": 8
+  },
+  {
+   "slug": "inq-5035-02-duas-testemunhas",
+   "title": "Duas testemunhas",
+   "subtitle": "Um vereador que assinou o contrato de confidencialidade para saber do que se tratava, e uma jornalista que desligou antes de saber. Os dois depoimentos de 12 de fevereiro de 2026, as atas notariais, a multa de oitocentos mil reais que o contrato escreve por extenso como duzentos, e o que ninguém conseguiu provar.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.035",
+    "depoimentos",
+    "UNLTD"
+   ],
+   "minutes": 8,
+   "words": 1657,
+   "serie": "INQ 5.035, o projeto",
+   "capitulo": 2,
+   "excerpt": "Tudo o que o Inquérito 5.035 produziu de prova própria, até agosto de 2026, está em dois depoimentos tomados no mesmo dia, 12 de fevereiro de 2026, por videoconferência, pelo delegado Ramon Santos Morais, e em duas atas notariais que as testemunhas levaram consigo. Este capítulo ",
+   "numero": 9
+  },
+  {
+   "slug": "inq-5035-03-quem-pediu-para-entrar",
+   "title": "Quem pediu para entrar",
+   "subtitle": "O dono da agência que pediu acesso ao inquérito antes de o inquérito existir, o jornalista intimado num e-mail antigo, um atestado de 45 dias, um senador que diz ter sido alvo de busca, e uma fila de advogados num processo em que, desde maio, a polícia não juntou mais nada.",
+   "date": "2026-09-13",
+   "tags": [
+    "INQ 5.035",
+    "habilitações",
+    "oitivas"
+   ],
+   "minutes": 9,
+   "words": 1749,
+   "serie": "INQ 5.035, o projeto",
+   "capitulo": 3,
+   "excerpt": "Dos 85 documentos do Inquérito 5.035, 26 são petições, 16 são procurações e 23 são recibos de protocolo. É um processo em que os advogados escrevem mais que a polícia e o juiz somados. Este último capítulo é sobre eles: quem pediu para entrar, quando, e o que isso diz sobre o alc",
+   "numero": 10
+  },
+  {
    "slug": "pet-15198-01-de-sao-paulo-a-brasilia",
    "title": "De São Paulo a Brasília",
    "subtitle": "Um inquérito nascido de um PDF anônimo, um pedido de bloqueio de R$ 5,7 bilhões, um juiz que pede explicações e um ministro que puxa tudo para o Supremo. Como a segunda fase da operação mudou de endereço.",
@@ -135,7 +186,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 1,
    "excerpt": "A Petição 15.198 começa com uma folha. Uma só. Em 22 de dezembro de 2025, o Procurador-Geral da República, Paulo Gonet, pede ao ministro Dias Toffoli \"a autuação de procedimento autônomo, em apartado, com classificação de sigilo no grau máximo previsto (nível 4)\", distribuído \"po",
-   "numero": 8
+   "numero": 11
   },
   {
    "slug": "pet-15198-02-a-maquina-de-fundos",
@@ -152,7 +203,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 2,
    "excerpt": "Todo esquema financeiro descrito num processo tem um desenho. O desta petição cabe numa frase da Polícia Federal, transcrita pelo Ministério Público e reproduzida pelo ministro: o Banco Master \"direcionou uma parte considerável dos recursos captados junto ao mercado, por meio da ",
-   "numero": 9
+   "numero": 12
   },
   {
    "slug": "pet-15198-03-a-madrugada-de-14-de-janeiro",
@@ -169,7 +220,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 3,
    "excerpt": "Operações policiais têm duas versões: a do dia seguinte, com fotos de malotes, e a dos autos, com horários. A dos autos é melhor. Na Petição 15.198, a deflagração da segunda fase da Operação Compliance Zero, em 14 de janeiro de 2026, deixou um rastro de três decisões e um despach",
-   "numero": 10
+   "numero": 13
   },
   {
    "slug": "pet-15198-04-o-novo-relator-e-os-cem-aparelhos",
@@ -187,7 +238,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 4,
    "excerpt": "Há um despacho na Petição 15.198 que tem quatro páginas, das quais três estão em branco. Na quarta, uma linha: \"À Coordenadoria de Processamento Inicial da Secretaria Judiciária, para as providências de redistribuição.\" Assina o presidente do Tribunal, Edson Fachin, em 13 de feve",
-   "numero": 11
+   "numero": 14
   },
   {
    "slug": "pet-15198-05-os-carros",
@@ -204,7 +255,7 @@
    "serie": "Pet 15.198, a segunda fase",
    "capitulo": 5,
    "excerpt": "Depois de junho de 2026, a Petição 15.198 virou o que o relator quis que ela fosse: a gaveta das medidas cautelares. E medida cautelar, na prática, é gente pedindo coisas de volta. Entre fevereiro e agosto, seis pedidos de restituição chegaram e seis foram negados, com o mesmo te",
-   "numero": 12
+   "numero": 15
   },
   {
    "slug": "pet-15556-01-setenta-e-duas-horas",
@@ -221,7 +272,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 1,
    "excerpt": "Um processo do Supremo chamado \"Petição\" não é uma carta. É uma gaveta. Nela se guardam pedidos que precisam de um juiz antes de virarem outra coisa: um inquérito, uma denúncia, nada. A Petição 15.556 é a gaveta em que a Polícia Federal, em 27 de fevereiro de 2026, depositou 164 ",
-   "numero": 13
+   "numero": 16
   },
   {
    "slug": "pet-15556-02-a-turma",
@@ -238,7 +289,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 2,
    "excerpt": "Toda organização tem um departamento de que não se fala nas reuniões de resultado. Segundo a decisão de 3 de março, o do grupo investigado se chamava \"A Turma\", e a descrição que o ministro faz dela é a parte do documento que mais se afasta do mundo dos bancos e mais se aproxima ",
-   "numero": 14
+   "numero": 17
   },
   {
    "slug": "pet-15556-03-o-supervisor-que-revisava-o-oficio",
@@ -255,7 +306,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 3,
    "excerpt": "O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conver",
-   "numero": 15
+   "numero": 18
   },
   {
    "slug": "pet-15556-04-o-que-o-ministro-decidiu-e-como",
@@ -272,7 +323,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 4,
    "excerpt": "Prender alguém antes de julgar é a coisa mais violenta que um Estado de direito faz de forma rotineira. Por isso a lei cerca o ato de exigências, e por isso a parte técnica de uma decisão como a de 3 de março merece ser lida por quem não é advogado: é ali que se vê se o juiz pulo",
-   "numero": 16
+   "numero": 19
   },
   {
    "slug": "pet-15556-05-depois-do-decreto",
@@ -289,7 +340,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 5,
    "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
-   "numero": 17
+   "numero": 20
   },
   {
    "slug": "rcl-88121-01-a-pasta",
@@ -306,7 +357,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 1,
    "excerpt": "A Reclamação 88.121 é o menor dos quinze processos do acervo em número de páginas de decisão e o maior em consequência. Foi ela que tirou a Operação Compliance Zero da 10ª Vara Federal de Brasília e a pôs nas mãos de um único ministro do Supremo. Tudo começou com uma pasta. Esta ",
-   "numero": 18
+   "numero": 21
   },
   {
    "slug": "rcl-88121-02-nove-de-dezembro",
@@ -323,7 +374,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 2,
    "excerpt": "Entre 9 e 15 de dezembro de 2025, o ministro Dias Toffoli assinou três decisões na Reclamação 88.121, e as três têm em comum uma característica que este site prefere apontar a julgar: cada uma vai um passo além do que o precedente citado autorizava. Este capítulo é sobre esse pas",
-   "numero": 19
+   "numero": 22
   },
   {
    "slug": "rcl-88121-03-vinte-e-dois-de-dezembro",
@@ -340,7 +391,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 3,
    "excerpt": "Toda avocação tem uma tentação: a de crescer. Se o Supremo é competente para \"toda matéria, inclusive conexa\", a pergunta seguinte é o que é conexo, e quem decide. Em dezembro de 2025, essa pergunta foi feita em São Paulo, respondida por um juiz federal substituto, e a resposta f",
-   "numero": 20
+   "numero": 23
   },
   {
    "slug": "rcl-88121-04-trinta-e-nove-bilhoes",
@@ -358,7 +409,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 4,
    "excerpt": "A liminar de 9 de dezembro mandou o Banco Central entregar ao Supremo \"a documentação e os elementos informativos relativos aos procedimentos administrativos em curso\". Em 22 de dezembro de 2025, o mesmo dia da decisão final, a Procuradoria do Banco Central juntou à reclamação a ",
-   "numero": 21
+   "numero": 24
   },
   {
    "slug": "rcl-88121-05-o-arquivo-que-nao-fecha",
@@ -375,7 +426,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 5,
    "excerpt": "Um processo arquivado é, em teoria, um processo morto. A Reclamação 88.121 foi arquivada em 10 de fevereiro de 2026 e, até 19 de agosto do mesmo ano, recebeu mais de cem peças. Este último capítulo é o inventário do que chegou a um endereço que oficialmente já não existia, e do q",
-   "numero": 22
+   "numero": 25
   }
  ]
 }
