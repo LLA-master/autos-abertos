@@ -59,7 +59,7 @@
     <article class="card"><h3>Tour</h3><p>Oito passos curtos, cada um com o grafo já configurado para mostrar uma coisa. Você aprende a ler o caso olhando, sem manual.</p></article>
     <article class="card"><h3>Grafo e mapa mental</h3><p>O grafo mostra a rede inteira. O mapa mental parte de um nome e abre seus vínculos por categoria, ramo a ramo, como um caderno de apuração.</p></article>
     <article class="card"><h3>Análise de rede</h3><p>Quem faz ponte entre núcleos, quem aparece quando, quais pares são fortes e específicos, quem é citado em decisões. Tudo calculado sobre o recorte que você escolher.</p></article>
-    <article class="card"><h3>Crônicas</h3><p>Textos curtos para quem prefere ler a filtrar: o acervo contado com humor e sem juízo de valor, cada fato apontando para a página de origem. Separados da base, assinados como opinião.</p></article>
+    <article class="card"><h3>Crônicas</h3><p>Textos curtos para quem prefere ler a filtrar: o acervo contado com humor e sem juízo de valor, cada fato apontando para a página de origem. Separados da base, assinados como opinião. Todas com edição integral em inglês.</p></article>
     <article class="card"><h3>Fonte sempre à vista</h3><p>Cada nó lista as peças em que aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
   </div>
   <p class="note"><b>Versão 0.2.</b> Extração, papéis e relações são automáticos e estão em revisão; os dados podem mudar. Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
@@ -208,7 +208,7 @@
 
 <section id="v-cronicas" class="view" hidden>
   <div id="crList">
-    <div class="cr-head"><p class="eyebrow">Crônicas · leitura, não filtro</p><h2>O caso contado a quem não vai ler 189 mil páginas</h2><p class="lead small">Textos de opinião do autor do projeto, escritos sobre os mesmos dados públicos do site. Tom leve, fatos conferíveis: cada número aponta para o acervo, e cada nome para a ficha. Não são notícia, não são laudo e não afirmam culpa de ninguém.</p></div>
+    <div class="cr-head"><p class="eyebrow">Crônicas · leitura, não filtro</p><h2>O caso contado a quem não vai ler 189 mil páginas</h2><p class="lead small">Textos de opinião do autor do projeto, escritos sobre os mesmos dados públicos do site. Tom leve, fatos conferíveis: cada número aponta para o acervo, e cada nome para a ficha. Não são notícia, não são laudo e não afirmam culpa de ninguém. Todas as crônicas têm edição integral em inglês na versão EN do site.</p></div>
     <div id="crCards"></div>
     <p class="note">Assine pelo <a href="feed.xml">feed RSS</a>. Erros de fato: abra uma issue no repositório; a regra é corrigir rápido e deixar registrado.</p>
   </div>
@@ -239,7 +239,7 @@
     <h3>Como conferir</h3>
     <p>Cada citação indica processo, sequencial da peça e página. Baixe o pacote do STF pelo link da nota, abra a pasta do processo e o arquivo cujo nome começa pelo sequencial.</p>
     <h3>Crônicas</h3>
-    <p>A seção Crônicas é editorial: textos de opinião do autor do projeto, escritos em cima dos mesmos dados públicos e sanitizados. Ficam em <code>docs/posts/</code>, em Markdown, com data e fontes. A base (grafo, fichas, análise) não depende deles e não muda por causa deles. Quando uma crônica cita um número, o número vem de <code>docs/data/</code>; quando cita uma peça, indica processo, seq e página.</p>
+    <p>A seção Crônicas é editorial: textos de opinião do autor do projeto, escritos em cima dos mesmos dados públicos e sanitizados. Ficam em <code>docs/posts/</code>, em Markdown, com data e fontes; a edição em inglês de cada uma fica em <code>docs/posts/en/</code>. A base (grafo, fichas, análise) não depende deles e não muda por causa deles. Quando uma crônica cita um número, o número vem de <code>docs/data/</code>; quando cita uma peça, indica processo, seq e página.</p>
     <h3>Licenças e código</h3>
     <p>Código MIT, dados derivados CC BY 4.0. Repositório: <a href="https://github.com/LLA-master/autos-abertos" target="_blank" rel="noopener">github.com/LLA-master/autos-abertos</a>. Projeto pessoal, sem afiliação com o STF ou com partes dos processos.</p>
     <p class="muted" id="buildInfo"></p>
@@ -275,6 +275,7 @@
     <h3>4. Crônicas</h3>
     <ul>
       <li>A seção Crônicas é <strong>editorial</strong>: textos de opinião do autor do projeto, escritos sobre as mesmas peças públicas. Têm tom literário; não têm apuração externa.</li>
+      <li>Todas as crônicas são traduzidas integralmente para o inglês. A edição em inglês é tradução do original em português, que é o texto de referência; termos jurídicos sem equivalente exato aparecem com o termo em português ao lado.</li>
       <li>Cada afirmação de fato traz o autor da afirmação nos autos e termina com a indicação de processo, número sequencial da peça e página. Quando o texto opina, está opinando; quando descreve, descreve o que está escrito na peça.</li>
       <li>As crônicas seguem a mesma política de nomes da base: não nomeiam quem a base pseudonimiza, nem pessoas que a própria decisão preserva (jornalistas, empregados, familiares incidentais).</li>
       <li>Erros de fato em crônicas são corrigidos no texto, com nota de correção visível e registro no histórico do repositório.</li>
