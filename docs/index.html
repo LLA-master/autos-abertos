@@ -21,6 +21,7 @@
     <a href="#tour" data-nav="tour">Tour</a>
     <a href="#grafo" data-nav="grafo">Grafo</a>
     <a href="#mapa" data-nav="mapa">Mapa mental</a>
+    <a href="#personagens" data-nav="personagens">Personagens</a>
     <a href="#processos" data-nav="processos">Processos</a>
     <a href="#tempo" data-nav="tempo">Linha do tempo</a>
     <a href="#metodo" data-nav="metodo">Método</a>
@@ -83,15 +84,22 @@
     </div>
     <label class="ctl">Processo <select id="procSel"><option value="">todos</option></select></label>
     <label class="ctl">Mín. peças <input id="minDocs" type="range" min="2" max="40" value="4"><output id="minDocsOut">4</output></label>
+    <label class="ctl">Peso mín. <input id="minW" type="range" min="1" max="15" value="2"><output id="minWOut">2</output></label>
+    <label class="ctl">Top <select id="topN"><option value="0">todos</option><option value="60">60</option><option value="120" selected>120</option><option value="250">250</option></select></label>
     <label class="ctl"><input type="checkbox" id="commColor"> cores por núcleo</label>
+    <label class="ctl"><input type="checkbox" id="labelsAll"> todos os rótulos</label>
+    <label class="ctl"><input type="checkbox" id="collapseLeaves"> colapsar folhas</label>
+    <label class="ctl" title="Mostra só a vizinhança do nó selecionado"><input type="checkbox" id="focusMode"> foco <select id="focusDepth"><option value="1">1 salto</option><option value="2">2 saltos</option></select></label>
     <button class="btn small" id="pathBtn">Caminho A → B</button>
-    <button class="btn ghost small" id="resetView">Recentrar</button>
+    <div class="zoom"><button class="btn small" id="zoomIn" title="Aproximar">+</button><button class="btn small" id="zoomOut" title="Afastar">−</button><button class="btn ghost small" id="resetView">Ajustar</button></div>
+    <button class="btn ghost small" id="restoreHidden" hidden>Restaurar ocultos (<span id="hiddenCount">0</span>)</button>
+    <label class="ctl switch"><input type="checkbox" id="mmToggle"> modo mapa mental</label>
   </div>
   <div class="graph-wrap">
     <div id="sigma" class="sigma" role="img" aria-label="Grafo de relações"></div>
     <div id="pathHint" class="path-hint" hidden></div>
     <aside id="panel" class="panel" hidden></aside>
-    <div class="legend"><span>Tamanho = nº de peças</span><span>Espessura = peças em comum</span><span>Clique = ficha · passe o mouse = vizinhos</span></div>
+    <div class="legend"><span>Tamanho = nº de peças</span><span>Espessura = peças em comum</span><span>Clique = ficha · duplo clique = foco · Esc = limpar</span></div>
   </div>
 </section>
 
@@ -103,6 +111,14 @@
     <div class="crumbs" id="mmCrumbs"></div>
   </div>
   <div class="mm-wrap"><svg id="mm" role="img" aria-label="Mapa mental"></svg><div class="mm-help">Clique num ramo para recentrar · arraste para mover · roda do mouse para zoom · clique no centro para abrir a ficha no grafo</div></div>
+</section>
+
+<section id="v-personagens" class="view" hidden>
+  <div class="wk-head"><div><h2>Personagens</h2><p class="lead small">Fichas automáticas de quem tem presença relevante nos autos: ao menos 8 peças narrativas ou 4 processos. Coocorrência na mesma página não prova relação; cada ficha diz onde conferir.</p></div>
+  <div class="search"><input id="wkSearch" type="search" placeholder="Filtrar personagens…" aria-label="Filtrar"></div></div>
+  <div class="chips" id="wkChips"><button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button><button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button><button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button><button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button></div>
+  <div id="wkGrid" class="wk-grid"></div>
+  <article id="wkPage" class="wk-page" hidden></article>
 </section>
 
 <section id="v-processos" class="view" hidden>

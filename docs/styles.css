@@ -108,3 +108,19 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 .foot{text-align:center;color:var(--muted);font-size:13px;padding:30px 20px 40px}
 @media (max-width:900px){.trail{grid-template-columns:1fr}.rail{position:static}.panel{left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:55%}.graph-wrap,.mm-wrap{height:70vh}.sun{display:none}.palms{width:200px}}
 @media (max-width:640px){.top{gap:10px;padding:10px 12px}.brand{white-space:nowrap;font-size:16px}.top nav{overflow-x:auto;scrollbar-width:none;flex:1}.top nav a{white-space:nowrap}.pill{white-space:nowrap}.step-head{flex-wrap:wrap}h1{font-size:38px}main{padding:14px}}
+
+.zoom{display:inline-flex;gap:4px}.switch input{accent-color:var(--cyan)}
+.toolbar .ctl output{min-width:1.6em;text-align:right}
+.mm-in-graph .graph-wrap{display:none}
+
+[hidden]{display:none!important}
+
+.wk-head{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}.wk-head .search{flex:0 1 320px}
+.wk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:14px 0}
+.wk-card{background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer;position:relative;overflow:hidden;transition:.15s}
+.wk-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--c)}.wk-card:hover{border-color:var(--c);box-shadow:0 0 16px color-mix(in srgb,var(--c) 35%,transparent)}
+.wk-card h3{font-size:16px;margin:4px 0}.wk-card .m{font-size:12px;color:var(--muted)}.wk-card p{font-size:13px;color:var(--ink2);margin:8px 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.wk-page{background:color-mix(in srgb,var(--bg2) 88%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:20px 26px;max-width:960px}
+.wk-page h2{margin-top:0}.wk-page .acts{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.wk-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:800px){.wk-cols{grid-template-columns:1fr}}
+.wk-page table{width:100%;border-collapse:collapse;font-size:13px}.wk-page td,.wk-page th{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left}.wk-page th{color:var(--muted)}
+.wk-page .neigh button{font-size:13px}

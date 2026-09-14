@@ -1,0 +1,138 @@
+# Personagens
+Fichas geradas automaticamente a partir dos dados públicos sanitizados (2026-09-12 19:53 UTC). Critério: presença em ao menos 8 peças narrativas ou 4 processos. Coocorrência na mesma página não prova relação.
+
+## Pessoas
+- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 141 peças, 15 processos
+- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 73 peças, 13 processos
+- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 52 peças, 10 processos
+- [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 46 peças, 9 processos
+- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 22 peças, 8 processos
+- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 20 peças, 8 processos
+- [Marilson Roseno](marilson-roseno.md) — 19 peças, 8 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 19 peças, 8 processos
+- [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 17 peças, 8 processos
+- [Luis Felipe Woyceichoski](luis-felipe-woyceichoski.md) — 13 peças, 8 processos
+- [Leandro Garcia](leandro-garcia.md) — 10 peças, 8 processos
+- [Belline Santana](belline-santana.md) — 44 peças, 7 processos
+- [Leonardo Augusto Furtado Palhares](leonardo-augusto-furtado-palhares.md) — 35 peças, 7 processos
+- [Luiz Antonio Bull](luiz-antonio-bull.md) — 23 peças, 7 processos
+- [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 34 peças, 6 processos
+- [João Carlos Falbo Mansur](joao-carlos-falbo-mansur.md) — 15 peças, 6 processos
+- [Marco Antonio Chies Martins](marco-antonio-chies-martins.md) — 6 peças, 6 processos
+- [Bruno Salles Pereira Ribeiro](bruno-salles-pereira-ribeiro.md) — 6 peças, 6 processos
+- [Cristiane Souza Costa](cristiane-souza-costa.md) — 6 peças, 6 processos
+- [Sebastião Monteiro Júnior](sebastiao-monteiro-junior.md) — 35 peças, 5 processos
+- [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 32 peças, 5 processos
+- [David Henrique Alves](david-henrique-alves.md) — 30 peças, 5 processos
+- [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 30 peças, 5 processos
+- [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 27 peças, 5 processos
+- [Katherine Venancio Teles](katherine-venancio-teles.md) — 18 peças, 5 processos
+- [Erlene Nonato Lacerda](erlene-nonato-lacerda.md) — 16 peças, 5 processos
+- [Fernando Alves Vieira](fernando-alves-vieira.md) — 22 peças, 4 processos
+- [Antonio Augusto Conte](antonio-augusto-conte.md) — 15 peças, 4 processos
+- [Odel Mikael Jean Antun](odel-mikael-jean-antun.md) — 14 peças, 4 processos
+- [Angelo Antonio Ribeiro Silva](angelo-antonio-ribeiro-silva.md) — 12 peças, 4 processos
+- [Lucas Eduardo Ialamov Pinto](lucas-eduardo-ialamov-pinto.md) — 4 peças, 4 processos
+- [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 24 peças, 3 processos
+- [Thiago Assumpção Henriques](thiago-assumpcao-henriques.md) — 15 peças, 3 processos
+- [Natalia Bueno Ribeiro Vorcaro](natalia-bueno-ribeiro-vorcaro.md) — 9 peças, 3 processos
+- [Vicente Conte Neto](vicente-conte-neto.md) — 14 peças, 2 processos
+- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 14 peças, 2 processos
+- [Joyce Roysen](joyce-roysen.md) — 13 peças, 2 processos
+- [Ricardo Balciunas](ricardo-balciunas.md) — 12 peças, 2 processos
+- [Francisco Felippe Lebrao Agosti](francisco-felippe-lebrao-agosti.md) — 12 peças, 2 processos
+- [Antonio Carlos Freixo Junior](antonio-carlos-freixo-junior.md) — 11 peças, 2 processos
+- [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 11 peças, 2 processos
+- [Alberto Felix](alberto-felix.md) — 9 peças, 2 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 8 peças, 2 processos
+- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 11 peças, 1 processos
+- [Ascendino Madureira Garcia](ascendino-madureira-garcia.md) — 8 peças, 1 processos
+
+## Empresas
+- [Banco Master](banco-master.md) — 48 peças, 9 processos
+- [Banco Brb](banco-brb.md) — 13 peças, 8 processos
+- [Super Empreendimentos](super-empreendimentos.md) — 24 peças, 5 processos
+- [Ribeiro Gestão Empresarial](ribeiro-gestao-empresarial.md) — 11 peças, 5 processos
+- [Banco Santander](banco-santander.md) — 14 peças, 4 processos
+- [Itaú Unibanco](itau-unibanco.md) — 12 peças, 4 processos
+- [Viking Participacoes](viking-participacoes.md) — 10 peças, 4 processos
+- [Master Holding Financeira](master-holding-financeira.md) — 7 peças, 4 processos
+- [Nova Farma Drogaria](nova-farma-drogaria.md) — 6 peças, 4 processos
+- [Drogaria Saúde Vida](drogaria-saude-vida.md) — 6 peças, 4 processos
+- [Reag Growth](reag-growth.md) — 5 peças, 4 processos
+- [Titan Cayman](titan-cayman.md) — 4 peças, 4 processos
+- [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 20 peças, 3 processos
+- [Clínica Mais Médicos](clinica-mais-medicos.md) — 12 peças, 3 processos
+- [Cartos Scd](cartos-scd.md) — 11 peças, 3 processos
+- [Milo Investimentos](milo-investimentos.md) — 11 peças, 3 processos
+- [Banco Safra](banco-safra.md) — 10 peças, 3 processos
+- [Sefer Investimentos](sefer-investimentos.md) — 9 peças, 3 processos
+- [Varajo Consultoria](varajo-consultoria.md) — 9 peças, 3 processos
+- [Brazil Realty Fii](brazil-realty-fii.md) — 9 peças, 3 processos
+- [Banco Bradesco](banco-bradesco.md) — 8 peças, 3 processos
+- [Banco Máxima](banco-maxima.md) — 9 peças, 2 processos
+- [Mgi Spe](mgi-spe.md) — 9 peças, 2 processos
+- [Terra Firme Construcoes](terra-firme-construcoes.md) — 8 peças, 2 processos
+
+## Autoridades
+- [André Mendonça](andre-mendonca.md) — 252 peças, 15 processos
+- [Nathália Ribeiro Leite Silva](nathalia-ribeiro-leite-silva.md) — 10 peças, 7 processos
+- [Cristiano Cozer](cristiano-cozer.md) — 16 peças, 6 processos
+- [Gilmar Mendes](gilmar-mendes.md) — 11 peças, 6 processos
+- [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 9 peças, 6 processos
+- [Paula Verônica von Czekus](paula-veronica-von-czekus.md) — 9 peças, 6 processos
+- [Dias Toffoli](dias-toffoli.md) — 88 peças, 5 processos
+- [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 17 peças, 5 processos
+- [Janaina Pereira Lima Palazzo](janaina-pereira-lima-palazzo.md) — 26 peças, 4 processos
+- [Andrei Augusto Passos Rodrigues](andrei-augusto-passos-rodrigues.md) — 9 peças, 4 processos
+- [Verônica Snoeck Salles](veronica-snoeck-salles.md) — 9 peças, 3 processos
+- [Cármen Lúcia](carmen-lucia.md) — 8 peças, 3 processos
+- [Cpmi do Inss](cpmi-do-inss.md) — 15 peças, 2 processos
+- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 10 peças, 1 processos
+
+## Advogados
+- [Roberto Podval](roberto-podval.md) — 24 peças, 8 processos
+- [Sergio Rodrigues Leonardo](sergio-rodrigues-leonardo.md) — 27 peças, 7 processos
+- [Marcelo Leonardo](marcelo-leonardo.md) — 10 peças, 7 processos
+- [Millena Oliveira Galdiano Faleiros](millena-oliveira-galdiano-faleiros.md) — 8 peças, 7 processos
+- [Carolina Luján Rodrigues Leonardo](carolina-lujan-rodrigues-leonardo.md) — 7 peças, 7 processos
+- [Rodrigo Nascimento Dall](rodrigo-nascimento-dall.md) — 7 peças, 7 processos
+- [Leonardo Palazzi](leonardo-palazzi.md) — 6 peças, 6 processos
+- [Sérgio Quintão](sergio-quintao.md) — 11 peças, 5 processos
+- [Marciley Fernandes Fonseca](marciley-fernandes-fonseca.md) — 6 peças, 5 processos
+- [Maria Letícia Nascimento Gontijo](maria-leticia-nascimento-gontijo.md) — 5 peças, 5 processos
+- [Walfrido Jorge Warde Junior](walfrido-jorge-warde-junior.md) — 7 peças, 4 processos
+- [Luís Henrique César Prata](luis-henrique-cesar-prata.md) — 4 peças, 4 processos
+- [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 13 peças, 2 processos
+- [Laura Bruno Araujo Lopes](laura-bruno-araujo-lopes.md) — 13 peças, 2 processos
+- [Luiza Pessanha Restiffe](luiza-pessanha-restiffe.md) — 13 peças, 2 processos
+- [Daniel Romeiro](daniel-romeiro.md) — 12 peças, 2 processos
+- [Julia Silva Minchillo](julia-silva-minchillo.md) — 11 peças, 2 processos
+- [Laura Aith Balthazar](laura-aith-balthazar.md) — 10 peças, 2 processos
+- [Carolina Borba Ambrozino](carolina-borba-ambrozino.md) — 12 peças, 1 processos
+- [Ricardo Nacarini](ricardo-nacarini.md) — 11 peças, 1 processos
+- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 11 peças, 1 processos
+- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 11 peças, 1 processos
+- [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 11 peças, 1 processos
+- [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 11 peças, 1 processos
+- [Pedro Ivo Rodrigues Velloso Cordeiro](pedro-ivo-rodrigues-velloso-cordeiro.md) — 11 peças, 1 processos
+- [Alexandre Daiuto Leao Noal](alexandre-daiuto-leao-noal.md) — 11 peças, 1 processos
+- [Sylas Kok Ribeiro](sylas-kok-ribeiro.md) — 11 peças, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 11 peças, 1 processos
+- [Caio Mousinho Hita](caio-mousinho-hita.md) — 11 peças, 1 processos
+- [Ananda Lima Cabral](ananda-lima-cabral.md) — 11 peças, 1 processos
+- [Mauricio Baptista Lins](mauricio-baptista-lins.md) — 11 peças, 1 processos
+- [Maria Elizabeth Queijo](maria-elizabeth-queijo.md) — 11 peças, 1 processos
+- [Aline Alves Abrantes](aline-alves-abrantes.md) — 11 peças, 1 processos
+- [Eduardo Medaljon Zynger](eduardo-medaljon-zynger.md) — 11 peças, 1 processos
+- [Thiago Wender Silva Ferreira](thiago-wender-silva-ferreira.md) — 10 peças, 1 processos
+- [Eduardo Biasoli Jorge Elias](eduardo-biasoli-jorge-elias.md) — 10 peças, 1 processos
+- [Julia Akamine Hiray](julia-akamine-hiray.md) — 10 peças, 1 processos
+- [Laura Baggio Scheid Pedrosa](laura-baggio-scheid-pedrosa.md) — 10 peças, 1 processos
+- [Rafaela Pereira](rafaela-pereira.md) — 9 peças, 1 processos
+- [Santiago Andre Schunck](santiago-andre-schunck.md) — 9 peças, 1 processos
+- [Nelson Wilians Fratoni Rodrigues](nelson-wilians-fratoni-rodrigues.md) — 9 peças, 1 processos
+- [Carolina Maia Francisco](carolina-maia-francisco.md) — 8 peças, 1 processos
+- [Felipe Monteiro Feliciano](felipe-monteiro-feliciano.md) — 8 peças, 1 processos
+- [Thaina Fernandes Guero](thaina-fernandes-guero.md) — 8 peças, 1 processos
+- [Luiz Fernando Carneiro Canuto](luiz-fernando-carneiro-canuto.md) — 8 peças, 1 processos
