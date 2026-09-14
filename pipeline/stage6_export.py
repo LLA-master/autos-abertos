@@ -18,7 +18,7 @@ for t in ["docs","pages","mentions","graph_nodes","graph_edges","graph_aliases"]
 c.execute(f"CREATE TABLE nodes AS SELECT * FROM graph_nodes WHERE docs>=2 AND NOT regexp_matches(entity,'\\b(SHIS|SQS|SQN|RUA|AVENIDA|AV|ALAMEDA|TRAVESSA|PRAÇA|RODOVIA|ESTRADA|QUADRA|LOTE|BLOCO|CONJUNTO|APTO|ANDAR|SALA|EDIFÍCIO|CONDOMÍNIO|BAIRRO|JARDIM|VILA|CEP)\\b')")
 # mencoes canonicas em pecas narrativas
 c.execute(f"""CREATE TABLE cm AS SELECT a.canon entity, m.doc_id, m.page, d.processo, d.seq, d.tipo
-  FROM mentions m JOIN graph_aliases a ON a.value=trim(regexp_replace(m.value,'\\s+(LTDA|EIRELI|ME|EPP|S\\.?A\\.?|S/A|DTVM|CCTVM|CIA|LTD|LLC|INC)\\.?$',''))
+  FROM mentions m JOIN graph_aliases a ON a.value=regexp_replace(regexp_replace(upper(trim(regexp_replace(m.value,'\\s+(LTDA|EIRELI|ME|EPP|S\\.?A\\.?|S/A|DTVM|CCTVM|CIA|LTD|LLC|INC)\\.?$',''))),'^BCO ','BANCO '),'^NOVO BCO ','NOVO BANCO ')
   JOIN docs d ON d.id=m.doc_id WHERE m.kind='caps_name' AND d.tipo IN {NARR} AND a.canon IN (SELECT entity FROM nodes)""")
 c.execute(f"CREATE TABLE injud AS SELECT DISTINCT entity FROM cm WHERE tipo IN {JUD}")
 # overrides manuais de visibilidade
@@ -36,7 +36,10 @@ for e,papel,docs,procs,ment,injud in rows:
     elif injud: v=True; why="nomeada em decisão/despacho/petição inicial"
     elif procs>=2 and docs>=3: v=True; why="recorrente (>=2 processos, >=3 peças)"
     else: v=False; why="pessoa incidental"
-    vis[e]=v; label[e]=e.title() if v else pseudo(e); reason[e]=why
+    vis[e]=v; reason[e]=why
+    def nice(t):
+        w=t.title().split(); return " ".join(x.lower() if i>0 and x.lower() in ("de","da","do","das","dos","e","di","del","von","van") else x for i,x in enumerate(w))
+    label[e]=nice(e) if v else pseudo(e)
 # processos por entidade
 pe={e:[] for e in vis}
 for e,p,n in c.sql("SELECT entity, processo, count(DISTINCT doc_id) FROM cm GROUP BY 1,2 ORDER BY 3 DESC").fetchall(): pe[e].append([p,n])

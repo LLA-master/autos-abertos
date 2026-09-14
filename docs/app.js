@@ -4,27 +4,36 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const fmt=n=>Number(n).toLocaleString("pt-BR");
 const ROLE_LABEL={pessoa:"pessoa",empresa:"empresa",autoridade:"autoridade",advogado:"advogado",pseudo:"pseudonimizado"};
+const ROLE_PL={pessoa:"Pessoas",empresa:"Empresas",autoridade:"Autoridades",advogado:"Advogados",pseudo:"Pseudonimizados"};
+const TIPO={"Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Despacho":"Despacho","Busca e apreensao":"Busca e apreensão","Prisao preventiva":"Prisão preventiva","Inquerito":"Inquérito","Sequestro":"Sequestro","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Mandado":"Mandado","Restituicao de coisas apreendidas":"Restituição de coisas apreendidas","Certidao de julgamento":"Certidão de julgamento","Documentos comprobatorios":"Documentos comprobatórios","Documento comprobatorio":"Documento comprobatório","Recibo de peticao eletronica":"Recibo de petição eletrônica","Comunicacao assinada":"Comunicação assinada","Procuracao":"Procuração","Intimacao":"Intimação","Certidao":"Certidão","Mandado de intimacao":"Mandado de intimação","Documentos de identificacao":"Documentos de identificação","Malote Digital":"Malote digital","Termo de disponibilizacao de autos":"Termo de disponibilização","Aviso de recebimento":"Aviso de recebimento"};
+const tipo=t=>TIPO[t]||t;
 const STF="https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/";
+const COMM=["#FF2E97","#19E3FF","#FFD166","#B983FF","#FF8C42","#3DF2A0","#FF5C7A","#7FDBFF","#F7A8B8","#C3F73A","#FFB4E6","#8AFFC1","#FF9D5C","#9DB4FF","#E2B4FF","#5CE1FF"];
 
 /* ---------- tema ---------- */
 const root=document.documentElement;
 try{const t=localStorage.getItem("bmdb.theme"); if(t) root.dataset.theme=t;}catch(e){}
-$("#themeBtn").onclick=()=>{const cur=root.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");const nx=cur==="dark"?"light":"dark";root.dataset.theme=nx;try{localStorage.setItem("bmdb.theme",nx)}catch(e){};if(renderer){applyColors();renderer.refresh();}};
+const isDark=()=>root.dataset.theme!=="light";
+function themeBtn(){$("#themeBtn").textContent=isDark()?"☀":"☾";}
+themeBtn();
+$("#themeBtn").onclick=()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("bmdb.theme",root.dataset.theme)}catch(e){};themeBtn();if(renderer){applyColors();renderer.setSetting("labelColor",{color:css("--ink")});renderer.refresh();} if(mm.mode) drawMM();};
 
 /* ---------- dados ---------- */
 const load=async f=>(await fetch("data/"+f)).json();
 const [G,ENT,PROCS,XREF,TL,CNPJS,META]=await Promise.all(["graph.json","entities.json","processos.json","crossrefs.json","timeline.json","cnpjs.json","meta.json"].map(load));
 const byId=new Map(G.nodes.map(n=>[n.id,n]));
+const byLabel=new Map(G.nodes.map(n=>[n.label,n]));
 const roleOf=n=>n.vis?n.papel:"pseudo";
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","trilhas","grafo","processos","tempo","metodo"];
+const views=["inicio","tour","grafo","mapa","processos","tempo","metodo"];
 function show(v){ if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
   $$("[data-nav]").forEach(a=>a.classList.toggle("active",a.dataset.nav===v));
   if(v==="grafo") mountGraph($(".graph-wrap"),$("#v-grafo"));
-  if(v==="trilhas") renderStep();
+  if(v==="tour") renderStep();
+  if(v==="mapa"){ if(!mm.mode){mm.mode="caso";} drawMM(); }
   window.scrollTo({top:0});
 }
 addEventListener("hashchange",()=>show(location.hash.slice(1)));
@@ -37,78 +46,81 @@ $("#buildInfo").textContent=`Dados gerados em ${META.gerado_em}. Pacote de orige
 /* ---------- grafo ---------- */
 const graph=new graphology.Graph({type:"undirected"});
 G.nodes.forEach(n=>graph.addNode(n.id,{x:n.x,y:n.y,size:3+Math.log2(n.docs+1)*2.1,label:n.label,color:"#999",n}));
-G.edges.forEach(e=>{const s=G.nodes[e.s].id,d=G.nodes[e.d].id; if(!graph.hasEdge(s,d)) graph.addEdge(s,d,{w:e.w,p:e.p,size:.6+Math.log2(e.w)*.9});});
-function applyColors(){graph.forEachNode((id,a)=>graph.setNodeAttribute(id,"color",colorOf(a.n)));}
+G.edges.forEach(e=>{const s=G.nodes[e.s].id,d=G.nodes[e.d].id; if(!graph.hasEdge(s,d)) graph.addEdge(s,d,{w:e.w,p:e.p,size:.5+Math.log2(e.w)*.8});});
+let commColor=false;
+function applyColors(){graph.forEachNode((id,a)=>graph.setNodeAttribute(id,"color",commColor&&a.n.c>=0?COMM[a.n.c%COMM.length]:colorOf(a.n)));}
 applyColors();
-/* layout: ForceAtlas2 no navegador (a partir das posições pré-calculadas), com cache local por versão dos dados */
 (function layout(){ const key="bmdb.layout."+META.gerado_em; let cached=null; try{cached=JSON.parse(localStorage.getItem(key)||"null")}catch(e){}
   if(cached&&Object.keys(cached).length===graph.order){ graph.forEachNode(id=>{const p=cached[id]; if(p){graph.setNodeAttribute(id,"x",p[0]);graph.setNodeAttribute(id,"y",p[1]);}}); return; }
-  const FA=graphologyLibrary.layoutForceAtlas2; const settings=FA.inferSettings(graph); Object.assign(settings,{gravity:1.2,scalingRatio:8,strongGravityMode:false,barnesHutOptimize:true,adjustSizes:false,linLogMode:true,edgeWeightInfluence:.6,slowDown:2});
-  FA.assign(graph,{iterations:500,settings,getEdgeWeight:"w"});
-  graphologyLibrary.layoutNoverlap.assign(graph,{maxIterations:120,settings:{margin:2,ratio:1.2,expansion:1.1}});
+  const FA=graphologyLibrary.layoutForceAtlas2; const settings=FA.inferSettings(graph); Object.assign(settings,{gravity:.9,scalingRatio:14,strongGravityMode:false,barnesHutOptimize:true,adjustSizes:false,linLogMode:true,edgeWeightInfluence:.6,slowDown:2});
+  FA.assign(graph,{iterations:600,settings,getEdgeWeight:"w"});
+  graphologyLibrary.layoutNoverlap.assign(graph,{maxIterations:150,settings:{margin:3,ratio:1.3,expansion:1.15}});
   const out={}; graph.forEachNode((id,a)=>out[id]=[+a.x.toFixed(2),+a.y.toFixed(2)]); try{localStorage.setItem(key,JSON.stringify(out))}catch(e){}
 })();
-const F={roles:new Set(["pessoa","empresa","autoridade"]),proc:"",minDocs:3};
-let renderer=null, hovered=null, selected=null, pathMode=false, pathA=null, pathSet=null, pinned=null; // pinned: conjunto de nós fixos (trilhas)
-function visible(id){const n=byId.get(id); if(pinned) return pinned.has(id); if(!F.roles.has(roleOf(n))) return false; if(n.docs<F.minDocs) return false; if(F.proc && !n.pe.some(([p])=>p===F.proc)) return false; return true;}
+const F={roles:new Set(["pessoa","empresa","autoridade"]),proc:"",minDocs:4};
+let renderer=null, hovered=null, selected=null, pathMode=false, pathA=null, pathSet=null;
+function visible(id){const n=byId.get(id); if(!F.roles.has(roleOf(n))) return false; if(n.docs<F.minDocs) return false; if(F.proc && !n.pe.some(([p])=>p===F.proc)) return false; return true;}
 function reducers(){
-  const neigh=hovered?new Set([hovered,...graph.neighbors(hovered)]):null;
-  const dark=(root.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))==="dark";
+  const focusId=hovered||selected; const neigh=focusId?new Set([focusId,...graph.neighbors(focusId)]):null;
+  const dim=isDark()?"#2A1C45":"#EDE3F0", dimE=isDark()?"rgba(255,255,255,0.04)":"rgba(80,40,90,0.06)", baseE=isDark()?"rgba(255,255,255,0.11)":"rgba(80,40,90,0.16)";
   return {
     nodeReducer(id,a){const r={...a}; if(!visible(id)){r.hidden=true;return r;}
-      if(pathSet){ if(!pathSet.nodes.has(id)){r.color=dark?"#2A3040":"#E9E5DC";r.label="";} else {r.zIndex=2;r.highlighted=true;} return r;}
-      if(neigh){ if(!neigh.has(id)){r.color=dark?"#2A3040":"#E9E5DC";r.label="";} else {r.zIndex=2;r.forceLabel=true;} }
+      if(pathSet){ if(!pathSet.nodes.has(id)){r.color=dim;r.label="";} else {r.zIndex=2;r.highlighted=true;r.forceLabel=true;} return r;}
+      if(neigh){ if(!neigh.has(id)){r.color=dim;r.label="";} else {r.zIndex=2;r.forceLabel=true;} }
       if(selected===id){r.highlighted=true;r.zIndex=3;} return r;},
     edgeReducer(e,a){const r={...a}; const [s,d]=graph.extremities(e); if(!visible(s)||!visible(d)){r.hidden=true;return r;}
-      if(pathSet){ if(pathSet.edges.has(e)){r.color=css("--accent2");r.size=a.size*1.8;r.zIndex=2;} else r.color=dark?"#222835":"#EFECE4"; return r;}
-      if(neigh){ if(s===hovered||d===hovered){r.color=css("--accent");r.zIndex=1;} else r.color=dark?"#222835":"#EFECE4"; } return r;}
+      r.color=baseE;
+      if(pathSet){ if(pathSet.edges.has(e)){r.color=css("--pink");r.size=a.size*2;r.zIndex=2;} else r.color=dimE; return r;}
+      if(neigh){ if(s===focusId||d===focusId){r.color=css("--cyan");r.size=a.size*1.4;r.zIndex=1;} else r.color=dimE; } return r;}
   };
 }
-function mountGraph(wrap,into){ // reparenta o container do grafo entre a vista "grafo" e o passo da trilha
+function mountGraph(wrap,into){
   if(wrap.parentElement!==into) into.appendChild(wrap);
   if(!renderer){
-    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:9,labelFont:"Inter",labelSize:13,labelColor:{color:css("--ink")},defaultEdgeColor:"#DDD8CC",zIndex:true,...reducers()});
+    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"500",labelColor:{color:css("--ink")},zIndex:true,...reducers()});
     renderer.on("enterNode",({node})=>{hovered=node;renderer.refresh();});
     renderer.on("leaveNode",()=>{hovered=null;renderer.refresh();});
     renderer.on("clickNode",({node})=>{ if(pathMode){ pathClick(node); return;} select(node); });
     renderer.on("clickStage",()=>{ if(!pathMode){ select(null);} });
   } else { renderer.setSetting("labelColor",{color:css("--ink")}); setTimeout(()=>renderer.refresh(),0); }
-  const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer);
+  refresh();
 }
 function refresh(){ if(!renderer) return; const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer); renderer.refresh(); }
 function focus(id,ratio=.22){ if(!renderer||!graph.hasNode(id)) return; const p=renderer.getNodeDisplayData(id); if(p) renderer.getCamera().animate({x:p.x,y:p.y,ratio},{duration:600}); }
 function select(id){ selected=id; refresh(); renderPanel(id); if(id) focus(id); }
-function openNode(id){ location.hash="grafo"; setTimeout(()=>{ if(!visible(id)){ F.minDocs=2; $("#minDocs").value=2; $("#minDocsOut").textContent=2; F.roles.add(roleOf(byId.get(id))); syncChips(); } select(id); },60); }
-/* painel */
+function ensureVisible(id){ const n=byId.get(id); if(visible(id)) return; F.roles.add(roleOf(n)); if(n.docs<F.minDocs){F.minDocs=Math.max(2,n.docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;} if(F.proc&&!n.pe.some(([p])=>p===F.proc)){F.proc="";$("#procSel").value="";} syncChips(); }
+function openNode(id){ location.hash="grafo"; setTimeout(()=>{ ensureVisible(id); select(id); },60); }
 function spark(tl){const ks=Object.keys(tl).sort(); if(ks.length<2) return ""; const vals=ks.map(k=>tl[k]); const mx=Math.max(...vals); const W=320,H=46; const pts=ks.map((k,i)=>`${(i/(ks.length-1))*W},${H-2-(tl[k]/mx)*(H-6)}`).join(" ");
-  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><polyline fill="none" stroke="${css("--accent")}" stroke-width="1.5" points="${pts}"/></svg><div class="muted" style="display:flex;justify-content:space-between;font-size:11px"><span>${ks[0]}</span><span>datas citadas junto ao nome</span><span>${ks[ks.length-1]}</span></div>`;}
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><polyline fill="none" stroke="${css("--cyan")}" stroke-width="1.5" points="${pts}"/></svg><div class="muted" style="display:flex;justify-content:space-between;font-size:11px"><span>${ks[0]}</span><span>datas citadas junto ao nome</span><span>${ks[ks.length-1]}</span></div>`;}
 function renderPanel(id){ const P=$("#panel"); if(!id){P.hidden=true;return;} const n=byId.get(id), e=ENT[id]||{cit:[],tl:{}};
   const neigh=graph.neighbors(id).map(m=>[m,graph.getEdgeAttribute(graph.edge(id,m),"w")]).sort((a,b)=>b[1]-a[1]).slice(0,14);
   const mxp=Math.max(1,...n.pe.map(x=>x[1]));
   P.innerHTML=`<button class="close" aria-label="Fechar">×</button><h3>${n.label}</h3><span class="badge" style="--c:var(--${roleOf(n)})">${ROLE_LABEL[roleOf(n)]}</span>${n.vis?"":' <span class="muted">nome omitido por política</span>'}
   <div class="kv"><div><b>${fmt(n.docs)}</b><span>peças</span></div><div><b>${n.procs}</b><span>processos</span></div><div><b>${fmt(n.mentions)}</b><span>menções</span></div></div>
+  <div class="acts"><button class="btn small" data-mm="${id}">Ver no mapa mental</button></div>
   <h4>Presença por processo</h4><div class="bars">${n.pe.slice(0,8).map(([p,c])=>`<div class="bar"><span>${p}</span><i style="width:${(c/mxp)*100}%"></i><span>${c}</span></div>`).join("")}</div>
-  <h4>Aparece junto de</h4><div class="neigh">${neigh.map(([m,w])=>`<button data-go="${m}"><i style="--c:var(--${roleOf(byId.get(m))})"></i>${byId.get(m).label}<span class="muted">${w}</span></button>`).join("")}</div>
+  <h4>Aparece junto de</h4><div class="neigh">${neigh.map(([m,w])=>`<button data-go="${m}" style="--c:var(--${roleOf(byId.get(m))})"><i></i>${byId.get(m).label}<span class="muted">${w}</span></button>`).join("")}</div>
   ${spark(e.tl||{})}
-  <h4>Onde conferir</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th></tr>${(e.cit||[]).slice(0,12).map(([p,s,t,pg,c])=>`<tr><td>${p}</td><td>${String(s).padStart(5,"0")}</td><td>${t}</td><td>${pg}</td></tr>`).join("")}</table>
+  <h4>Onde conferir</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th></tr>${(e.cit||[]).slice(0,12).map(([p,s,t,pg,c])=>`<tr><td>${p}</td><td>${String(s).padStart(5,"0")}</td><td>${tipo(t)}</td><td>${pg}</td></tr>`).join("")}</table>
   <p class="src">"seq" é o número que inicia o nome do arquivo na pasta do processo dentro do <a href="${STF}" target="_blank" rel="noopener">pacote público do STF</a>. Coocorrência na mesma página não prova relação; é um ponto de partida para leitura.</p>`;
-  P.hidden=false; $(".close",P).onclick=()=>select(null); $$("[data-go]",P).forEach(b=>b.onclick=()=>{const t=b.dataset.go; if(!visible(t)){F.roles.add(roleOf(byId.get(t)));F.minDocs=Math.min(F.minDocs,byId.get(t).docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;syncChips();} select(t);});
+  P.hidden=false; $(".close",P).onclick=()=>select(null); $$("[data-go]",P).forEach(b=>b.onclick=()=>{ensureVisible(b.dataset.go); select(b.dataset.go);}); $("[data-mm]",P).onclick=()=>{ mmCenter(id); location.hash="mapa"; };
 }
-/* controles */
 function syncChips(){$$("#roleChips .chip").forEach(c=>c.classList.toggle("on",F.roles.has(c.dataset.role)));}
 $$("#roleChips .chip").forEach(c=>c.onclick=()=>{const r=c.dataset.role; F.roles.has(r)?F.roles.delete(r):F.roles.add(r); syncChips(); refresh();});
 const procSel=$("#procSel"); META.corpus.processos.forEach(p=>procSel.insertAdjacentHTML("beforeend",`<option>${p}</option>`)); procSel.onchange=()=>{F.proc=procSel.value;refresh();};
 $("#minDocs").oninput=e=>{F.minDocs=+e.target.value;$("#minDocsOut").textContent=F.minDocs;refresh();};
+$("#commColor").onchange=e=>{commColor=e.target.checked;applyColors();refresh();};
 $("#resetView").onclick=()=>{renderer&&renderer.getCamera().animatedReset({duration:500}); pathSet=null; refresh();};
-/* busca */
-const S=$("#search"), SU=$("#sugg"); let hl=-1;
-function suggest(q){ q=q.trim().toLowerCase(); if(!q){SU.hidden=true;return;} const m=G.nodes.filter(n=>n.label.toLowerCase().includes(q)).sort((a,b)=>b.docs-a.docs).slice(0,9);
-  SU.innerHTML=m.map(n=>`<li data-id="${n.id}"><i class="badge" style="--c:var(--${roleOf(n)});padding:0;width:8px;height:8px;border-radius:50%"></i>${n.label}<span class="muted">${n.docs} peças</span></li>`).join(""); SU.hidden=!m.length; hl=-1;
-  $$("li",SU).forEach(li=>li.onclick=()=>{pick(li.dataset.id)}); }
-function pick(id){SU.hidden=true;S.value=byId.get(id).label; if(!visible(id)){F.roles.add(roleOf(byId.get(id)));F.minDocs=Math.min(F.minDocs,byId.get(id).docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;syncChips();} if(pathMode) pathClick(id); else select(id);}
-S.oninput=()=>suggest(S.value); S.onkeydown=e=>{const li=$$("li",SU); if(e.key==="ArrowDown"){hl=Math.min(hl+1,li.length-1);} else if(e.key==="ArrowUp"){hl=Math.max(hl-1,0);} else if(e.key==="Enter"){ if(li[hl]) li[hl].click(); else if(li[0]) li[0].click(); return;} else if(e.key==="Escape"){SU.hidden=true;return;} else return; li.forEach((l,i)=>l.classList.toggle("hl",i===hl));};
-S.addEventListener("keypress",e=>{ if(e.key==="Enter"){ e.preventDefault(); const li=$$("li",SU); if(li[Math.max(hl,0)]) { li[Math.max(hl,0)].click(); return; } const ex=G.nodes.find(n=>n.label.toLowerCase()===S.value.trim().toLowerCase()); if(ex) pick(ex.id); else suggest(S.value); } });
-document.addEventListener("click",e=>{if(!e.target.closest(".search")) SU.hidden=true;});
+/* busca genérica com sugestões */
+function attachSearch(input,list,onPick){ let hl=-1;
+  const suggest=q=>{ q=q.trim().toLowerCase(); if(!q){list.hidden=true;return;} const m=G.nodes.filter(n=>n.vis&&n.label.toLowerCase().includes(q)).sort((a,b)=>b.docs-a.docs).slice(0,9);
+    list.innerHTML=m.map(n=>`<li data-id="${n.id}"><i class="badge" style="--c:var(--${roleOf(n)});padding:0;width:8px;height:8px;border-radius:50%"></i>${n.label}<span class="muted">${n.docs} peças</span></li>`).join(""); list.hidden=!m.length; hl=-1;
+    $$("li",list).forEach(li=>li.onclick=()=>{list.hidden=true;input.value=byId.get(li.dataset.id).label;onPick(li.dataset.id);}); };
+  input.oninput=()=>suggest(input.value);
+  input.onkeydown=e=>{const li=$$("li",list); if(e.key==="ArrowDown"){hl=Math.min(hl+1,li.length-1);} else if(e.key==="ArrowUp"){hl=Math.max(hl-1,0);} else if(e.key==="Enter"){e.preventDefault(); if(li[Math.max(hl,0)]) li[Math.max(hl,0)].click(); else {const ex=G.nodes.find(n=>n.label.toLowerCase()===input.value.trim().toLowerCase()); if(ex) onPick(ex.id);} return;} else if(e.key==="Escape"){list.hidden=true;return;} else return; li.forEach((l,i)=>l.classList.toggle("hl",i===hl));};
+  document.addEventListener("click",e=>{if(!e.target.closest(".search")) list.hidden=true;});
+}
+attachSearch($("#search"),$("#sugg"),id=>{ ensureVisible(id); if(pathMode) pathClick(id); else select(id); });
 /* caminho */
 function setPathMode(on,preA){ pathMode=on; pathA=preA||null; pathSet=null; if(on){ selected=null; renderPanel(null); } const h=$("#pathHint"); h.hidden=!on; h.textContent=on?(pathA?`A = ${byId.get(pathA).label}. Agora clique (ou busque) o nó B.`:"Clique (ou busque) o nó A."):""; $("#pathBtn").classList.toggle("primary",on); refresh(); }
 $("#pathBtn").onclick=()=>setPathMode(!pathMode);
@@ -117,16 +129,61 @@ function pathClick(id){ if(!pathA){pathA=id;$("#pathHint").textContent=`A = ${by
   if(!path){$("#pathHint").textContent="Sem caminho entre os dois no grafo.";pathA=null;return;}
   const edges=new Set(); for(let i=0;i<path.length-1;i++) edges.add(graph.edge(path[i],path[i+1]));
   pathSet={nodes:new Set(path),edges}; $("#pathHint").innerHTML=`Caminho em ${path.length-1} passo(s): ${path.map(p=>byId.get(p).label).join(" → ")} <button class="btn small" id="pathClear" style="margin-left:8px">limpar</button>`;
-  $("#pathClear").onclick=()=>setPathMode(false); pathA=null; refresh(); if(window._onPath) window._onPath(path); }
+  $("#pathClear").onclick=()=>setPathMode(false); pathA=null; refresh(); }
+
+/* ---------- mapa mental (SVG radial, sem biblioteca) ---------- */
+const mm={mode:null,center:null,proc:null,crumbs:[],n:8,vb:null,pan:null};
+$("#mmMode").onchange=e=>{mm.mode=e.target.value; if(mm.mode==="entidade"&&!mm.center) mm.center=G.nodes.filter(n=>n.vis&&n.papel==="pessoa").sort((a,b)=>b.wdeg-a.wdeg)[0].id; if(mm.mode==="processo"&&!mm.proc) mm.proc="PET 15556"; drawMM();};
+$("#mmN").oninput=e=>{mm.n=+e.target.value;$("#mmNOut").textContent=mm.n;drawMM();};
+attachSearch($("#mmSearch"),$("#mmSugg"),id=>mmCenter(id));
+function mmCenter(id){ mm.mode="entidade"; $("#mmMode").value="entidade"; if(mm.center&&mm.center!==id){mm.crumbs.push({t:"entidade",id:mm.center}); mm.crumbs=mm.crumbs.slice(-8);} mm.center=id; drawMM(); }
+function mmProc(p){ mm.mode="processo"; $("#mmMode").value="processo"; if(mm.proc&&mm.proc!==p) mm.crumbs.push({t:"processo",id:mm.proc}); mm.proc=p; drawMM(); }
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function branchesFor(){ // devolve [{label,color,items:[{id,label,w,size,papel}]}]
+  const roles=["pessoa","empresa","autoridade","advogado"];
+  if(mm.mode==="caso"){ const ps=[...PROCS].sort((a,b)=>b.pages-a.pages); return [{label:"Processos",color:css("--cyan"),items:ps.map(p=>({id:"proc:"+p.processo,label:p.processo,w:p.pdfs,sub:`${fmt(p.pages)} pág.`,size:6+Math.log2(p.pages+1)*1.3,color:css("--cyan")}))}]; }
+  if(mm.mode==="processo"){ const p=mm.proc; return roles.map(r=>{const items=G.nodes.filter(n=>n.vis&&n.papel===r).map(n=>{const pe=n.pe.find(x=>x[0]===p); return pe?{id:n.id,label:n.label,w:pe[1],sub:`${pe[1]} peças`,size:5+Math.log2(pe[1]+1)*1.6,color:css("--"+r)}:null;}).filter(Boolean).sort((a,b)=>b.w-a.w).slice(0,mm.n); return {label:ROLE_PL[r],color:css("--"+r),items};}).filter(b=>b.items.length); }
+  const c=mm.center; return roles.map(r=>{const items=graph.neighbors(c).map(m=>{const n=byId.get(m); if(!n.vis||n.papel!==r) return null; const w=graph.getEdgeAttribute(graph.edge(c,m),"w"); return {id:m,label:n.label,w,sub:`${w} peças em comum`,size:5+Math.log2(w+1)*1.8,color:css("--"+r)};}).filter(Boolean).sort((a,b)=>b.w-a.w).slice(0,mm.n); return {label:ROLE_PL[r],color:css("--"+r),items};}).filter(b=>b.items.length);
+}
+function drawMM(){ const svg=$("#mm"); const br=branchesFor(); const W=svg.clientWidth||1000,H=svg.clientHeight||600; if(!mm.vb) mm.vb=[-W/2,-H/2,W,H]; svg.setAttribute("viewBox",mm.vb.join(" "));
+  const centerLabel=mm.mode==="caso"?"Operação Compliance Zero":mm.mode==="processo"?mm.proc:byId.get(mm.center).label;
+  const centerColor=mm.mode==="caso"?css("--pink"):mm.mode==="processo"?css("--cyan"):css("--"+roleOf(byId.get(mm.center)));
+  const total=br.reduce((s,b)=>s+b.items.length,0)||1; let ang=-Math.PI/2; const R1=140, R2=Math.min(W,H)*(mm.mode==='caso'?.38:.40)+30; let out=[];
+  const path=(x1,y1,x2,y2)=>`M${x1},${y1} Q${(x1+x2)/2*1.08},${(y1+y2)/2*1.08} ${x2},${y2}`;
+  $("#mmMode").value=mm.mode; const direct=mm.mode==="caso";
+  br.forEach(b=>{ const span=2*Math.PI*(b.items.length/total); const mid=ang+span/2; const gx=direct?0:Math.cos(mid)*R1, gy=direct?0:Math.sin(mid)*R1;
+    if(!direct) out.push(`<path class="mm-link" d="${path(0,0,gx,gy)}" stroke-width="3" style="stroke:${b.color};stroke-opacity:.6"/>`);
+    b.items.forEach((it,i)=>{ const a=ang+span*((i+.5)/b.items.length); const x=Math.cos(a)*R2, y=Math.sin(a)*R2; const cls=it.w>=10?"w3":it.w>=4?"w2":"";
+      out.push(`<path class="mm-link ${cls}" d="${path(gx,gy,x,y)}" stroke-width="${1+Math.min(4,Math.log2(it.w+1))}"${direct?` style="stroke:${it.color};stroke-opacity:.45"`:""}/>`);
+      const anchor=Math.cos(a)>=0?"start":"end", dx=Math.cos(a)>=0?10:-10;
+      out.push(`<g class="mm-node leaf" data-id="${esc(it.id)}" transform="translate(${x},${y})"><circle r="${it.size}" fill="${it.color}"/><text x="${dx}" y="4" text-anchor="${anchor}">${esc(it.label)}</text><text x="${dx}" y="18" text-anchor="${anchor}" style="font-size:10px;fill:var(--muted)">${esc(it.sub)}</text></g>`); });
+    if(!direct) out.push(`<g class="mm-node group" transform="translate(${gx},${gy})"><circle r="16" fill="${b.color}" fill-opacity=".18" stroke="${b.color}"/><text y="-22" text-anchor="middle" style="fill:${b.color}">${b.label} · ${b.items.length}</text></g>`);
+    ang+=span; });
+  if(mm.mode==="processo"&&br.length<4){ const faltam=["pessoa","empresa","autoridade","advogado"].filter(r=>!br.some(b=>b.label===ROLE_PL[r])).map(r=>ROLE_PL[r].toLowerCase()); out.push(`<text y="${R2+40}" text-anchor="middle" style="font-size:11px;fill:var(--muted)">sem ${faltam.join(", ")} nas peças narrativas deste processo</text>`); }
+  out.push(`<g class="mm-node center" data-center="1"><circle r="34" fill="${centerColor}"/><text y="-44" text-anchor="middle">${esc(centerLabel)}</text></g>`);
+  svg.innerHTML=`<g id="mmRoot">${out.join("")}</g>`;
+  $$(".leaf",svg).forEach(g=>g.onclick=()=>{const id=g.dataset.id; if(id.startsWith("proc:")) mmProc(id.slice(5)); else mmCenter(id);});
+  $("[data-center]",svg).onclick=()=>{ if(mm.mode==="entidade") openNode(mm.center); else if(mm.mode==="processo"){ location.hash="grafo"; setTimeout(()=>{F.proc=mm.proc;$("#procSel").value=mm.proc;refresh();},60);} };
+  $("#mmCrumbs").innerHTML=(mm.crumbs.length?`<span>anteriores:</span> `:"")+mm.crumbs.slice().reverse().map((c,i)=>`<button data-i="${mm.crumbs.length-1-i}">${c.t==="processo"?c.id:byId.get(c.id).label}</button>`).join("");
+  $$("#mmCrumbs button").forEach(b=>b.onclick=()=>{const c=mm.crumbs[+b.dataset.i]; mm.crumbs=mm.crumbs.slice(0,+b.dataset.i); if(c.t==="processo"){mm.mode="processo";mm.proc=c.id;} else {mm.mode="entidade";mm.center=c.id;} $("#mmMode").value=mm.mode; drawMM();});
+}
+(function mmPanZoom(){ const svg=$("#mm"); let drag=null;
+  svg.addEventListener("wheel",e=>{e.preventDefault(); const k=e.deltaY>0?1.1:0.9; const [x,y,w,h]=mm.vb; const r=svg.getBoundingClientRect(); const px=x+(e.clientX-r.left)/r.width*w, py=y+(e.clientY-r.top)/r.height*h; mm.vb=[px-(px-x)*k,py-(py-y)*k,w*k,h*k]; svg.setAttribute("viewBox",mm.vb.join(" "));},{passive:false});
+  svg.addEventListener("mousedown",e=>{drag={x:e.clientX,y:e.clientY,vb:[...mm.vb]};});
+  addEventListener("mousemove",e=>{ if(!drag) return; const r=svg.getBoundingClientRect(); const sx=drag.vb[2]/r.width, sy=drag.vb[3]/r.height; mm.vb=[drag.vb[0]-(e.clientX-drag.x)*sx,drag.vb[1]-(e.clientY-drag.y)*sy,drag.vb[2],drag.vb[3]]; svg.setAttribute("viewBox",mm.vb.join(" "));});
+  addEventListener("mouseup",()=>{drag=null;}); addEventListener("resize",()=>{ if(mm.mode&&!$("#v-mapa").hidden){ mm.vb=null; drawMM(); } });
+})();
 
 /* ---------- processos ---------- */
-const TIPO_COLORS=["#0E7C86","#E4572E","#4B4E9E","#E0A100","#1E8E5A","#8A93A6","#B56576","#6D597A"];
+const TIPO_COLORS=["#19E3FF","#FF2E97","#B983FF","#FFD166","#3DF2A0","#FF8C42","#FF5C7A","#7FDBFF"];
 $("#procGrid").innerHTML=PROCS.map(p=>{const tipos=Object.entries(p.tipos).sort((a,b)=>b[1]-a[1]); const tot=tipos.reduce((s,x)=>s+x[1],0)||1;
   return `<article class="proc"><h3>${p.processo}</h3><div class="m">${fmt(p.pdfs)} peças · ${fmt(p.pages)} páginas</div>
-  <div class="tipos" title="${tipos.slice(0,6).map(([t,n])=>`${t}: ${n}`).join(" · ")}">${tipos.slice(0,8).map(([t,n],i)=>`<i style="width:${(n/tot)*100}%;background:${TIPO_COLORS[i%8]}"></i>`).join("")}</div>
-  <div class="m">${tipos.slice(0,3).map(([t,n])=>`${t} (${n})`).join(" · ")}</div>
-  <div class="top" style="margin-top:8px">${p.top.slice(0,6).map(([l,r,n])=>{const id=[...byId.values()].find(x=>x.label===l)?.id; return `<button data-open="${id||""}"><i style="--c:var(--${id?roleOf(byId.get(id)):r})"></i>${l}<small>${n}</small></button>`;}).join("")}</div></article>`;}).join("");
+  <div class="tipos" title="${tipos.slice(0,6).map(([t,n])=>`${tipo(t)}: ${n}`).join(" · ")}">${tipos.slice(0,8).map(([t,n],i)=>`<i style="width:${(n/tot)*100}%;background:${TIPO_COLORS[i%8]}"></i>`).join("")}</div>
+  <div class="m">${tipos.slice(0,3).map(([t,n])=>`${tipo(t)} (${n})`).join(" · ")}</div>
+  <div class="top" style="margin-top:8px">${p.top.slice(0,6).map(([l,r,n])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):r})"><i></i>${l}<small>${n}</small></button>`;}).join("")}</div>
+  <div class="acts" style="margin-top:8px"><button class="btn small" data-mmp="${p.processo}">mapa mental</button></div></article>`;}).join("");
 $$("#procGrid [data-open]").forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
+$$("#procGrid [data-mmp]").forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
 const xg={}; XREF.forEach(({s,d,n})=>{(xg[s]=xg[s]||[]).push([d,n]);});
 $("#xref").innerHTML=Object.keys(xg).sort().map(s=>`<div><b>${s}</b> cita: ${xg[s].sort((a,b)=>b[1]-a[1]).slice(0,5).map(([d,n])=>`${d} <span class="muted">(${n})</span>`).join(", ")}</div>`).join("");
 
@@ -136,62 +193,51 @@ function months(){const out=[]; for(let y=2015;y<=2026;y++) for(let m=1;m<=12;m+
 function drawTL(){ const ms=months(), proc=tlProc.value, log=$("#tlLog").checked;
   const val=ms.map(k=>{const d=TL[k]||{}; return proc?(d[proc]||0):Object.values(d).reduce((a,b)=>a+b,0);});
   const tr=v=>log?Math.log10(v+1):v; const mx=Math.max(1,...val.map(tr)); const W=1400,H=320,pad=30,bw=(W-pad*2)/ms.length;
-  $("#tlChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}">${ms.map((k,i)=>{const h=(tr(val[i])/mx)*(H-60); const isJan=k.endsWith("-01"); return `<rect x="${pad+i*bw+1}" y="${H-40-h}" width="${bw-2}" height="${h}" fill="${css("--accent")}" data-k="${k}"></rect>${isJan?`<text x="${pad+i*bw}" y="${H-22}" font-size="11" fill="${css("--muted")}">${k.slice(0,4)}</text>`:""}`;}).join("")}</svg>`;
+  $("#tlChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}"><defs><linearGradient id="tlg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${css("--pink")}"/><stop offset="1" stop-color="${css("--cyan")}"/></linearGradient></defs>${ms.map((k,i)=>{const h=(tr(val[i])/mx)*(H-60); const isJan=k.endsWith("-01"); return `<rect x="${pad+i*bw+1}" y="${H-40-h}" width="${bw-2}" height="${h}" fill="url(#tlg)" data-k="${k}"></rect>${isJan?`<text x="${pad+i*bw}" y="${H-22}" font-size="11" fill="${css("--muted")}">${k.slice(0,4)}</text>`:""}`;}).join("")}</svg>`;
   $$("#tlChart rect").forEach(r=>r.onmouseenter=()=>{const k=r.dataset.k, d=TL[k]||{}; const top=Object.entries(d).sort((a,b)=>b[1]-a[1]).slice(0,5); $("#tlDetail").innerHTML=`<b>${k}</b> · ${fmt(val[ms.indexOf(k)])} datas citadas${top.length?" · "+top.map(([p,n])=>`${p} (${fmt(n)})`).join(", "):""}`;});
 }
 tlProc.onchange=drawTL; $("#tlLog").onchange=drawTL; drawTL();
 
-/* ---------- trilhas (mecânica tipo Brilliant: um passo, uma interação, uma pergunta, feedback) ---------- */
+/* ---------- tour guiado (sem quiz): cada passo configura o grafo e diz o que olhar ---------- */
 const topBy=(pred,key="wdeg")=>G.nodes.filter(pred).sort((a,b)=>b[key]-a[key]);
 const centerPessoa=topBy(n=>n.vis&&n.papel==="pessoa")[0];
 const topEmpresa=topBy(n=>n.papel==="empresa")[0];
-function strongestNeighbor(id,role){return graph.neighbors(id).map(m=>[m,graph.getEdgeAttribute(graph.edge(id,m),"w")]).filter(([m])=>byId.get(m).papel===role).sort((a,b)=>b[1]-a[1]);}
 const biggestProc=[...PROCS].sort((a,b)=>b.pages-a.pages)[0];
 const empresas5=G.nodes.filter(n=>n.papel==="empresa"&&n.procs>=5).length;
 const secondCluster=topBy(n=>n.vis&&n.papel==="pessoa"&&n.c!==centerPessoa.c)[0];
-const shuffle=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+const strongest=(id,role)=>graph.neighbors(id).map(m=>[m,graph.getEdgeAttribute(graph.edge(id,m),"w")]).filter(([m])=>byId.get(m).papel===role).sort((a,b)=>b[1]-a[1])[0];
 const STEPS=[
  {t:"O acervo em 30 segundos",b:`Em 10 de setembro de 2026 o relator, ministro <strong>André Mendonça</strong>, retirou o sigilo da Petição 15.556 e de quatorze procedimentos ligados à <strong>Operação Compliance Zero</strong>, a pedido da presidência do STF. No dia seguinte o Tribunal publicou tudo: <strong>${fmt(META.corpus.pdfs)} peças</strong>, <strong>${fmt(META.corpus.paginas)} páginas</strong>. Ninguém lê isso na íntegra. Este site extrai do texto quem aparece, em que papel e ao lado de quem, e devolve cada afirmação à sua página de origem.`,
-  quiz:{q:"Qual destas frases descreve corretamente este site?",opts:["Ele hospeda os PDFs do STF para download","Cada relação mostrada aponta para processo, peça e página nos autos","Ele lista todas as pessoas citadas nos autos, com CPF"],a:1,fb:["Não. Os documentos ficam no STF; aqui só há dados derivados.","Exato. A fonte é sempre verificável, e nada substitui a leitura da peça.","Não. Dados pessoais não entram, e pessoas incidentais são pseudonimizadas."]}},
- {t:"Quinze processos, um caso",b:`O material não é um processo só. São inquéritos (INQ), petições (PET) e uma reclamação (RCL) que se citam mutuamente. Os volumes são muito desiguais: a <strong>${biggestProc.processo}</strong> sozinha tem ${fmt(biggestProc.pages)} páginas, quase tudo mídia de DVD com autos de processos federais anexados como prova. Abaixo, os processos ordenados por páginas. Passe o mouse na barra colorida para ver a composição por tipo de peça.`,
-  widget:"procs",quiz:{q:"Qual processo concentra mais páginas?",opts:()=>shuffle([biggestProc.processo,...[...PROCS].sort((a,b)=>b.pages-a.pages).slice(1,4).map(p=>p.processo)]),a:o=>o.indexOf(biggestProc.processo),fb:o=>o.map(x=>x===biggestProc.processo?"Isso. E é quase todo prova documental anexada, não narrativa.":"Não. Confira o número de páginas nos cartões.")}},
- {t:"Quem é quem: quatro papéis",b:`Cada nó do grafo recebe um papel inferido do próprio texto. <strong>Empresa</strong>: termo societário no nome. <strong>Autoridade</strong>: cargo no contexto, ou assinatura em todas as páginas de uma peça longa. <strong>Advogado</strong>: remetente do recibo de petição eletrônica, ou inscrição profissional junto ao nome. <strong>Pessoa</strong>: o resto. Por padrão os advogados ficam ocultos, porque assinam juntos as mesmas petições e formam blocos densos que só dizem "trabalham no mesmo escritório".`,
-  widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=4;F.proc="";pinned=null;syncChips();refresh();renderer&&renderer.getCamera().animatedReset({duration:400});},
-  quiz:{q:"Como um advogado é identificado pelo pipeline?",opts:["Pelo sobrenome, comparado com uma lista de escritórios","Pelo recibo de petição eletrônica ou pela inscrição profissional junto ao nome","Por aparecer em muitas peças"],a:1,fb:["Não. Nenhuma lista externa é usada.","Certo. São dois sinais estruturais que os próprios autos fornecem.","Não. Volume não diz papel: investigados também aparecem muito."]}},
- {t:"O centro do grafo",b:`O nó com mais conexões ponderadas entre as pessoas é <strong>${centerPessoa.label}</strong>. Ele aparece em ${centerPessoa.procs} dos 15 processos e em ${fmt(centerPessoa.docs)} peças narrativas. Passe o mouse sobre ele para ver a vizinhança acesa. A espessura de cada linha é o número de peças em que os dois nomes dividem uma página.`,
-  widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=3;pinned=null;syncChips();select(centerPessoa.id);},
-  quiz:{q:`Qual EMPRESA divide mais peças com ${centerPessoa.label}?`,opts:()=>{const s=strongestNeighbor(centerPessoa.id,"empresa");const right=s[0][0];const others=shuffle(G.nodes.filter(n=>n.papel==="empresa"&&n.id!==right).slice(0,30)).slice(0,3).map(n=>n.id);return shuffle([right,...others]).map(id=>byId.get(id).label);},
-   a:o=>o.indexOf(byId.get(strongestNeighbor(centerPessoa.id,"empresa")[0][0]).label),fb:o=>o.map(x=>`Veja no painel do nó a lista "Aparece junto de", ordenada por peças em comum.`)}},
+  tip:"O que este site é: um índice de relações com fonte. O que não é: cópia dos documentos, lista de CPFs, ou conclusão sobre culpa de quem quer que seja.",widget:"caso"},
+ {t:"Quinze processos, um caso",b:`O material não é um processo só. São inquéritos (INQ), petições (PET) e uma reclamação (RCL) que se citam mutuamente. Os volumes são muito desiguais: a <strong>${biggestProc.processo}</strong> sozinha tem ${fmt(biggestProc.pages)} páginas, quase tudo mídia de DVD com autos de processos federais anexados como prova. No mapa abaixo, o tamanho do círculo é o número de páginas. Clique num processo para ver quem domina cada um.`,
+  tip:"Volume não é importância. A peça decisiva de um caso pode ter cinco páginas.",widget:"caso"},
+ {t:"Quem é quem: quatro papéis",b:`Cada nó recebe um papel inferido do próprio texto. <strong>Empresa</strong>: termo societário no nome. <strong>Autoridade</strong>: cargo no contexto, ou assinatura em todas as páginas de uma peça longa. <strong>Advogado</strong>: remetente do recibo de petição eletrônica, ou inscrição profissional junto ao nome. <strong>Pessoa</strong>: o resto. Advogados ficam ocultos por padrão: assinam juntos as mesmas petições e formam blocos densos que só dizem "trabalham no mesmo escritório".`,
+  tip:"Ligue o filtro Advogados na barra do grafo para ver o bloco denso aparecer. Depois desligue.",widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=4;F.proc="";syncChips();select(null);refresh();renderer&&renderer.getCamera().animatedReset({duration:400});}},
+ {t:"O centro do grafo",b:`O nó com mais conexões ponderadas entre as pessoas é <strong>${centerPessoa.label}</strong>: ${centerPessoa.procs} dos 15 processos, ${fmt(centerPessoa.docs)} peças narrativas. A ficha ao lado lista com quem ele mais divide páginas. A empresa mais próxima é <strong>${byId.get(strongest(centerPessoa.id,"empresa")[0]).label}</strong>, com ${strongest(centerPessoa.id,"empresa")[1]} peças em comum.`,
+  tip:"Passe o mouse sobre qualquer nó para acender só a vizinhança dele. Clique para trocar a ficha.",widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=3;syncChips();select(centerPessoa.id);}},
  {t:"Siga as empresas",b:`Filtrar só empresas revela a espinha dorsal societária do caso: bancos, gestoras, holdings e veículos de investimento que se repetem entre processos diferentes. Uma empresa presente em muitos processos é um fio condutor. Ao todo, <strong>${empresas5}</strong> empresas aparecem em cinco ou mais processos.`,
-  widget:"graph",setup(){F.roles=new Set(["empresa"]);F.minDocs=3;pinned=null;syncChips();select(null);refresh();renderer&&renderer.getCamera().animatedReset({duration:400});},
-  quiz:{q:"Quantas empresas aparecem em 5 ou mais processos?",opts:()=>shuffle([empresas5,Math.max(1,empresas5-4),empresas5+6,empresas5*2+3]).map(String),a:o=>o.indexOf(String(empresas5)),fb:o=>o.map(()=>"O número está no texto acima; a lição é que recorrência entre processos é sinal, volume dentro de um processo não.")}},
- {t:"Caminho entre dois nomes",b:`A pergunta clássica de apuração: <em>o que liga A a B?</em> O grafo responde com o caminho mais curto. Ative o modo caminho, clique em <strong>${centerPessoa.label}</strong> e depois em <strong>${secondCluster.label}</strong>, que está em outro núcleo do grafo. Os nós intermediários são as pontes que valem uma leitura.`,
-  widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=2;pinned=null;syncChips();select(null);setPathMode(true,centerPessoa.id);focus(secondCluster.id,.35);},
-  quiz:{q:`Quantos passos tem o caminho mais curto entre ${centerPessoa.label} e ${secondCluster.label}?`,opts:()=>{const p=graphologyLibrary.shortestPath.bidirectional(graph,centerPessoa.id,secondCluster.id);const k=p?p.length-1:0;return shuffle([k,k+1,k+2,Math.max(0,k-1)].filter((v,i,a)=>a.indexOf(v)===i)).map(String);},
-   a:o=>{const p=graphologyLibrary.shortestPath.bidirectional(graph,centerPessoa.id,secondCluster.id);return o.indexOf(String(p?p.length-1:0));},fb:o=>o.map(()=>"Trace o caminho no grafo e conte as setas.")}},
- {t:"Ler a fonte",b:`Nada aqui é conclusão. Cada nó tem uma tabela "Onde conferir" com <strong>processo, seq e página</strong>. O <em>seq</em> é o número sequencial da peça no processo, e é também o início do nome do arquivo na pasta correspondente do pacote público do STF. Abra o painel de <strong>${topEmpresa.label}</strong> e veja.`,
-  widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=3;pinned=null;syncChips();setPathMode(false);select(topEmpresa.id);},
-  quiz:{q:'Uma citação diz "PET 15556 · seq 00480 · Decisao monocratica · pág. 2". O que isso significa?',opts:["Página 2 do documento nº 480 da pasta da Pet 15.556, que é uma decisão monocrática","O 480º parágrafo da decisão","Um link para o site do STF com o texto"],a:0,fb:["Exato. É assim que você chega ao PDF certo no pacote.","Não. O seq identifica o arquivo, não um parágrafo.","Não. O site não hospeda nem linka texto integral; ele diz onde está."]}},
- {t:"Agora é com você",b:`Você já sabe ler o grafo, filtrar por papel, traçar caminhos e conferir a fonte. Sugestões de perguntas para começar: quem são as pontes entre os núcleos? Que empresa aparece em processos que não se citam? Quais autoridades assinam peças em mais de um processo? Se encontrar erro de identificação ou de papel, abra uma issue no repositório: a política é corrigir rápido.`,
-  widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=3;pinned=null;syncChips();setPathMode(false);select(null);refresh();renderer&&renderer.getCamera().animatedReset({duration:400});},done:true}
+  tip:"Recorrência entre processos é sinal. Volume dentro de um único processo, quase sempre, é só um anexo grande.",widget:"graph",setup(){F.roles=new Set(["empresa"]);F.minDocs=3;syncChips();select(null);refresh();renderer&&renderer.getCamera().animatedReset({duration:400});}},
+ {t:"Caminho entre dois nomes",b:`A pergunta clássica de apuração: <em>o que liga A a B?</em> O grafo responde com o caminho mais curto. O modo caminho já está armado com <strong>${centerPessoa.label}</strong> como A. Clique em <strong>${secondCluster.label}</strong>, que está em outro núcleo, para ver as pontes.`,
+  tip:"Os nós intermediários de um caminho são os que valem uma leitura de peça.",widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=2;syncChips();select(null);setPathMode(true,centerPessoa.id);focus(secondCluster.id,.35);}},
+ {t:"O mapa mental",b:`Quando o grafo inteiro é demais, o mapa mental parte de um nome e abre os vínculos dele por categoria, ramo a ramo. Abaixo, <strong>${topEmpresa.label}</strong> no centro. Clique em qualquer ramo para recentrar nele e seguir o fio; os anteriores ficam como trilha de migalhas.`,
+  tip:"Use o mapa para uma apuração linear: de quem para quem. Use o grafo para ver o desenho de conjunto.",widget:"mm",setup(){mm.mode="entidade";mm.center=topEmpresa.id;mm.crumbs=[];}},
+ {t:"Ler a fonte, e agora é com você",b:`Nada aqui é conclusão. Cada ficha tem uma tabela "Onde conferir" com <strong>processo, seq e página</strong>. O <em>seq</em> é o número sequencial da peça no processo, e é o início do nome do arquivo na pasta correspondente do pacote público do STF. Sugestões para começar: quem são as pontes entre núcleos? Que empresa aparece em processos que não se citam? Quais autoridades assinam peças em mais de um processo?`,
+  tip:"Encontrou erro de identificação ou de papel? Abra uma issue no repositório. A política é corrigir rápido.",widget:"graph",setup(){F.roles=new Set(["pessoa","empresa","autoridade"]);F.minDocs=3;syncChips();setPathMode(false);select(topEmpresa.id);},done:true}
 ];
-let T={cur:0,done:[]}; try{T={...T,...JSON.parse(localStorage.getItem("bmdb.trail")||"{}")}}catch(e){}
-function saveT(){try{localStorage.setItem("bmdb.trail",JSON.stringify(T))}catch(e){}}
+let T={cur:0,done:[]}; try{T={...T,...JSON.parse(localStorage.getItem("bmdb.tour")||"{}")}}catch(e){}
+function saveT(){try{localStorage.setItem("bmdb.tour",JSON.stringify(T))}catch(e){}}
 function renderRail(){$("#railSteps").innerHTML=STEPS.map((s,i)=>`<li class="${i===T.cur?"cur":""} ${T.done.includes(i)?"done":""}" data-i="${i}"><span class="n">${T.done.includes(i)?"✓":i+1}</span>${s.t}</li>`).join(""); $$("#railSteps li").forEach(li=>li.onclick=()=>{T.cur=+li.dataset.i;saveT();renderStep();});}
-function renderStep(){ const i=T.cur, s=STEPS[i]; renderRail(); $("#stepNum").textContent=`Passo ${i+1} de ${STEPS.length}`; $("#stepTitle").textContent=s.t; $("#stepBody").innerHTML=s.b;
-  const W=$("#stepWidget"); { const gw=$(".graph-wrap"); if(gw && W.contains(gw)) $("#v-grafo").appendChild(gw); } W.innerHTML="";
-  if(s.widget==="graph"){ const wrap=$(".graph-wrap"); const holder=document.createElement("div"); holder.className="mini"; W.appendChild(holder); mountGraph(wrap,holder); setTimeout(()=>{renderer.refresh(); s.setup&&s.setup();},80); }
-  else { if($(".graph-wrap").parentElement!==$("#v-grafo")) mountGraph($(".graph-wrap"),$("#v-grafo")); if(s.widget==="procs") W.innerHTML=`<div class="proc-grid">${[...PROCS].sort((a,b)=>b.pages-a.pages).slice(0,8).map(p=>{const tipos=Object.entries(p.tipos).sort((a,b)=>b[1]-a[1]);const tot=tipos.reduce((x,y)=>x+y[1],0)||1;return `<article class="proc"><h3>${p.processo}</h3><div class="m">${fmt(p.pdfs)} peças · ${fmt(p.pages)} páginas</div><div class="tipos" title="${tipos.slice(0,6).map(([t,n])=>`${t}: ${n}`).join(" · ")}">${tipos.slice(0,8).map(([t,n],k)=>`<i style="width:${(n/tot)*100}%;background:${TIPO_COLORS[k%8]}"></i>`).join("")}</div></article>`;}).join("")}</div>`; }
-  const Q=$("#stepQuiz"); Q.innerHTML="";
-  if(s.quiz){ const opts=typeof s.quiz.opts==="function"?s.quiz.opts():s.quiz.opts; const ans=typeof s.quiz.a==="function"?s.quiz.a(opts):s.quiz.a; const fbs=typeof s.quiz.fb==="function"?s.quiz.fb(opts):s.quiz.fb;
-    Q.innerHTML=`<h4>${s.quiz.q}</h4><div class="opts">${opts.map((o,k)=>`<button data-k="${k}">${o}</button>`).join("")}</div><div class="fb"></div>`;
-    $$("button",Q).forEach(b=>b.onclick=()=>{const k=+b.dataset.k; $$("button",Q).forEach(x=>x.classList.remove("right","wrong")); b.classList.add(k===ans?"right":"wrong"); const f=$(".fb",Q); f.textContent=fbs[k]; f.className="fb "+(k===ans?"ok":"no"); if(k===ans&&!T.done.includes(i)){T.done.push(i);saveT();renderRail();}});
-  } else if(s.done){ Q.innerHTML=`<h4>Trilha concluída</h4><p>${T.done.length} de ${STEPS.length-1} perguntas acertadas. <a href="#grafo" data-nav="grafo">Abrir o grafo completo →</a></p>`; $("[data-nav]",Q).onclick=e=>{e.preventDefault();location.hash="grafo";}; }
+function parkGraph(){ const gw=$(".graph-wrap"); if(gw&&gw.parentElement!==$("#v-grafo")) $("#v-grafo").appendChild(gw); const mw=$(".mm-wrap"); if(mw&&mw.parentElement!==$("#v-mapa")) $("#v-mapa").appendChild(mw); }
+function renderStep(){ const i=T.cur, s=STEPS[i]; if(!T.done.includes(i)){T.done.push(i);saveT();} renderRail(); $("#stepNum").textContent=`Passo ${i+1} de ${STEPS.length}`; $("#stepTitle").textContent=s.t; $("#stepBody").innerHTML=s.b; $("#stepTip").textContent=s.tip||"";
+  const W=$("#stepWidget"); parkGraph(); W.innerHTML="";
+  if(s.widget==="graph"){ const holder=document.createElement("div"); holder.className="mini"; W.appendChild(holder); mountGraph($(".graph-wrap"),holder); setTimeout(()=>{renderer.refresh(); s.setup&&s.setup();},80); }
+  else if(s.widget==="mm"||s.widget==="caso"){ const holder=document.createElement("div"); holder.className="mini"; W.appendChild(holder); holder.appendChild($(".mm-wrap")); if(s.widget==="caso"){mm.mode="caso";} else s.setup&&s.setup(); mm.vb=null; setTimeout(drawMM,50); }
   $("#prevStep").disabled=i===0; $("#nextStep").textContent=i===STEPS.length-1?"Ir para o grafo →":"Próximo →";
 }
 $("#prevStep").onclick=()=>{T.cur=Math.max(0,T.cur-1);saveT();renderStep();};
 $("#nextStep").onclick=()=>{ if(T.cur===STEPS.length-1){location.hash="grafo";return;} T.cur++; saveT(); renderStep(); };
 $("#resetTrail").onclick=()=>{T={cur:0,done:[]};saveT();renderStep();};
+addEventListener("hashchange",()=>{ if(location.hash.slice(1)!=="tour") parkGraph(); });
 
 /* ---------- go ---------- */
 show(location.hash.slice(1)||"inicio");
