@@ -29,6 +29,7 @@
     <a href="#tempo" data-nav="tempo">Tempo</a>
     <a href="#cronicas" data-nav="cronicas">Crônicas</a>
     <a href="#metodo" data-nav="metodo">Método</a>
+    <a href="#avisos" data-nav="avisos">Avisos</a>
   </nav>
   <span class="ver" title="Versão 0.2: métricas de rede, análise e filtros temporais; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.2 · dados em revisão</span>
   <button class="theme" id="themeBtn" aria-label="Alternar noite e dia" title="Noite / dia">☀</button>
@@ -243,7 +244,74 @@
   </div>
 </section>
 </main>
-<footer class="foot">autos-abertos · dados derivados de atos públicos do STF · <a href="#metodo" data-nav="metodo">método e limites</a></footer>
+<section id="v-avisos" class="view" hidden>
+  <h2>Avisos, limites e direitos</h2>
+  <p class="lead small">Tudo o que este site pede que você saiba antes de usar o que ele mostra, reunido num lugar só. Os mesmos avisos aparecem espalhados pelas outras seções; aqui estão inteiros.</p>
+  <div class="prose avisos">
+    <h3>1. O que este site é</h3>
+    <ul>
+      <li>Um projeto pessoal e independente de cidadania. <strong>Não é afiliado</strong> ao Supremo Tribunal Federal, à Polícia Federal, ao Ministério Público, ao Banco Central, a qualquer parte, investigado, advogado ou veículo de imprensa envolvido nos processos.</li>
+      <li>Um índice navegável de <strong>documentos públicos</strong>: os autos que o STF tornou públicos em 11 de setembro de 2026 (Petição 15.556 e quatorze procedimentos conexos). A fonte primária é a <a href="https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/" target="_blank" rel="noopener">nota à imprensa do STF</a> e o pacote que ela linka. O site não hospeda os documentos.</li>
+      <li>Um trabalho <strong>em revisão</strong> (versão 0.2). Extração de nomes, papéis e relações é automática e pode conter erros. Tudo pode mudar entre versões; o histórico de mudanças é público no repositório.</li>
+    </ul>
+    <h3>2. O que este site não é</h3>
+    <ul>
+      <li><strong>Não é prova</strong> de nada. Aparecer no grafo, numa ficha ou numa crônica não significa envolvimento em crime. Coocorrência na mesma página de uma peça processual é um sinal de leitura, não uma relação comprovada.</li>
+      <li><strong>Não é conclusão</strong> sobre culpa. Todas as pessoas mencionadas têm direito à presunção de inocência (Constituição, art. 5º, LVII). As decisões cautelares aqui descritas são tomadas em cognição sumária, antes de qualquer julgamento, e as defesas, em regra, ainda não foram ouvidas nas peças resumidas.</li>
+      <li><strong>Não é notícia</strong> nem reportagem. Nenhuma informação foi apurada fora dos autos. O que os autos dizem é atribuído a quem disse (polícia, Ministério Público, juiz, defesa).</li>
+      <li><strong>Não é aconselhamento</strong> jurídico, financeiro ou de investimento. Não use este site para decidir sobre contratos, investimentos, contratações ou reputações.</li>
+      <li><strong>Não é base completa.</strong> Só o texto das peças foi usado; os 49 vídeos do pacote ficaram fora. Peças anexas (extratos, tabelas, procurações, documentos de identificação) não alimentam o grafo.</li>
+    </ul>
+    <h3>3. Nomes, dados pessoais e sanitização</h3>
+    <ul>
+      <li>Entram com nome: empresas e entidades; autoridades no exercício da função; advogados atuando nos autos; pessoas nomeadas em decisão, despacho ou petição inicial; pessoas recorrentes em dois ou mais processos e três ou mais peças. A regra completa está na <a href="https://github.com/LLA-master/autos-abertos/blob/main/POLITICA_DE_SANITIZACAO.md" target="_blank" rel="noopener">política de sanitização</a>.</li>
+      <li>As demais pessoas físicas aparecem como código estável ("Pessoa A1B2C3"), gerado com um sal que não está no repositório.</li>
+      <li><strong>Nunca são publicados</strong>: CPF, RG, número de inscrição profissional, endereço, telefone, e-mail, conta bancária, chave Pix, nomes de arquivo, trechos de texto integral, qualquer conteúdo das peças classificadas como documentos de identificação, valores monetários extraídos automaticamente de extratos.</li>
+      <li>O único ponto de saída de dados para o site é um script de exportação que <strong>falha</strong> se detectar padrões proibidos. O relatório dessa verificação fica fora do repositório.</li>
+      <li>Homônimos podem ter sido fundidos; variantes de grafia podem ter sido separadas; o OCR (1,8% das páginas) troca letras. Se você identificar um erro, veja o item 6.</li>
+    </ul>
+    <h3>4. Crônicas</h3>
+    <ul>
+      <li>A seção Crônicas é <strong>editorial</strong>: textos de opinião do autor do projeto, escritos sobre as mesmas peças públicas. Têm tom literário; não têm apuração externa.</li>
+      <li>Cada afirmação de fato traz o autor da afirmação nos autos e termina com a indicação de processo, número sequencial da peça e página. Quando o texto opina, está opinando; quando descreve, descreve o que está escrito na peça.</li>
+      <li>As crônicas seguem a mesma política de nomes da base: não nomeiam quem a base pseudonimiza, nem pessoas que a própria decisão preserva (jornalistas, empregados, familiares incidentais).</li>
+      <li>Erros de fato em crônicas são corrigidos no texto, com nota de correção visível e registro no histórico do repositório.</li>
+    </ul>
+    <h3>5. Métricas e análise</h3>
+    <ul>
+      <li>Pontes (intermediação), influência (PageRank), agrupamento, núcleos (Louvain) e especificidade (lift) são medidas <strong>matemáticas sobre coocorrência de nomes em páginas</strong>. Descrevem a estrutura do texto dos autos, não a realidade dos fatos. Um nome com muitas "pontes" é um nome que aparece em páginas de grupos diferentes; só isso.</li>
+      <li>As datas da linha do tempo são datas citadas nas peças, não datas de acontecimentos.</li>
+      <li>Definições e limites: seção <a href="#metodo" data-nav="metodo">Método</a> e <a href="https://github.com/LLA-master/autos-abertos/blob/main/METODOLOGIA.md" target="_blank" rel="noopener">METODOLOGIA.md</a>.</li>
+    </ul>
+    <h3>6. Se você aparece aqui</h3>
+    <ul>
+      <li>Você pode pedir <strong>revisão</strong> de identificação (homônimo, erro de nome), de papel (pessoa, empresa, autoridade, advogado), de visibilidade (menção incidental que deveria ser pseudonimizada) ou de qualquer afirmação em crônica.</li>
+      <li>Canal: abra uma <a href="https://github.com/LLA-master/autos-abertos/issues" target="_blank" rel="noopener">issue no repositório</a>. Não é preciso se identificar além do necessário para indicar o erro; não envie documentos pessoais. O compromisso é responder e, havendo erro, corrigir com registro público da correção.</li>
+      <li>O site trata apenas dados extraídos de atos públicos, com finalidade informativa e de interesse público, e mantém a minimização acima. Pedidos relacionados a dados pessoais são recebidos pelo mesmo canal.</li>
+    </ul>
+    <h3>7. Privacidade de quem usa o site</h3>
+    <ul>
+      <li>O site é estático, hospedado no GitHub Pages. <strong>Não há contas, formulários, cookies próprios, analytics ou rastreamento.</strong> Nenhum dado seu é enviado ao autor do projeto.</li>
+      <li>O navegador guarda localmente, e só nele, preferências de uso: tema claro/escuro, passo do tour, posição calculada do grafo. Limpar os dados do site apaga tudo.</li>
+      <li>Ao carregar a página, o navegador busca fontes no Google Fonts e bibliotecas de código no jsDelivr, além dos arquivos do GitHub Pages. Esses serviços recebem, como qualquer servidor, o endereço IP de quem acessa, e têm políticas próprias.</li>
+    </ul>
+    <h3>8. Licenças e reprodução</h3>
+    <ul>
+      <li>Código: MIT. Dados derivados em <code>docs/data/</code>: Creative Commons BY 4.0 (cite "autos-abertos" e a versão). Crônicas: texto do autor, reprodução permitida com atribuição e link, sem alteração de sentido.</li>
+      <li>Os documentos originais são atos públicos do STF e seguem as regras de uso do Tribunal. Cite-os pela fonte, não por este site.</li>
+      <li>Quem reproduzir dados ou textos daqui assume os mesmos limites: nada aqui autoriza afirmar culpa de ninguém.</li>
+    </ul>
+    <h3>9. Segurança e integridade</h3>
+    <ul>
+      <li>O repositório público contém só código, dados sanitizados e textos. Acervo bruto, texto integral, manifestos, sais de pseudonimização e arquivos de curadoria ficam fora, por regra do <code>.gitignore</code> e do gate de exportação.</li>
+      <li>O repositório tem verificação automática de segredos e proteção contra reescrita de histórico. Vulnerabilidades ou vazamentos: reporte pela <a href="https://github.com/LLA-master/autos-abertos/security" target="_blank" rel="noopener">aba de segurança do repositório</a> ou por issue, sem publicar o dado exposto.</li>
+      <li>Versão dos dados e data de geração: rodapé da seção Método.</li>
+    </ul>
+    <p class="muted">Última revisão destes avisos: 13 de setembro de 2026.</p>
+  </div>
+</section>
+
+<footer class="foot">autos-abertos · dados derivados de atos públicos do STF · <a href="#metodo" data-nav="metodo">método</a> · <a href="#avisos" data-nav="avisos">avisos e direitos</a></footer>
 <script src="app.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 """Estágio 7: wiki de personagens a partir dos dados PÚBLICOS já sanitizados (docs/data/*.json).
 Gera docs/data/wiki.json (consumido pelo site) e wiki/*.md (navegável no GitHub). Nunca lê o acervo bruto."""
 import json, os, re, unicodedata, time
-OUT=os.environ.get("BMDB_OUT","./autos-abertos/docs/data"); REPO=os.path.dirname(os.path.dirname(OUT)); WIKI=f"{REPO}/wiki"
+OUT=os.environ.get("BMDB_OUT",os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"docs","data")); REPO=os.path.dirname(os.path.dirname(OUT)); WIKI=f"{REPO}/wiki"
 os.makedirs(WIKI,exist_ok=True)
 G=json.load(open(f"{OUT}/graph.json")); ENT=json.load(open(f"{OUT}/entities.json")); PROCS={p["processo"]:p for p in json.load(open(f"{OUT}/processos.json"))}; META=json.load(open(f"{OUT}/meta.json"))
 TIPO={"Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Busca e apreensao":"Busca e apreensão","Prisao preventiva":"Prisão preventiva","Inquerito":"Inquérito","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Restituicao de coisas apreendidas":"Restituição de coisas apreendidas","Certidao de julgamento":"Certidão de julgamento"}

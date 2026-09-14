@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 14:23 UTC",
+ "gerado_em": "2026-09-13 14:38 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -36,6 +36,92 @@
    "numero": 2
   },
   {
+   "slug": "pet-15198-01-de-sao-paulo-a-brasilia",
+   "title": "De São Paulo a Brasília",
+   "subtitle": "Um inquérito nascido de um PDF anônimo, um pedido de bloqueio de R$ 5,7 bilhões, um juiz que pede explicações e um ministro que puxa tudo para o Supremo. Como a segunda fase da operação mudou de endereço.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.198",
+    "competência",
+    "origem"
+   ],
+   "minutes": 8,
+   "words": 1551,
+   "serie": "Pet 15.198, a segunda fase",
+   "capitulo": 1,
+   "excerpt": "A Petição 15.198 começa com uma folha. Uma só. Em 22 de dezembro de 2025, o Procurador-Geral da República, Paulo Gonet, pede ao ministro Dias Toffoli \"a autuação de procedimento autônomo, em apartado, com classificação de sigilo no grau máximo previsto (nível 4)\", distribuído \"po",
+   "numero": 3
+  },
+  {
+   "slug": "pet-15198-02-a-maquina-de-fundos",
+   "title": "A máquina de fundos",
+   "subtitle": "Uma clínica com receita de R$ 54 mil que emitiu R$ 361 milhões em notas. Um banco que era cotista único dos fundos que compravam os papéis. O que a polícia e o Ministério Público dizem ter encontrado, nas palavras deles.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.198",
+    "FIDC",
+    "mercado de capitais"
+   ],
+   "minutes": 9,
+   "words": 1740,
+   "serie": "Pet 15.198, a segunda fase",
+   "capitulo": 2,
+   "excerpt": "Todo esquema financeiro descrito num processo tem um desenho. O desta petição cabe numa frase da Polícia Federal, transcrita pelo Ministério Público e reproduzida pelo ministro: o Banco Master \"direcionou uma parte considerável dos recursos captados junto ao mercado, por meio da ",
+   "numero": 4
+  },
+  {
+   "slug": "pet-15198-03-a-madrugada-de-14-de-janeiro",
+   "title": "A madrugada de 14 de janeiro",
+   "subtitle": "Um voo para Dubai às 00h50, outro para Curitiba às 7h30, um ministro furioso com a Polícia Federal e uma prisão temporária que durou até as sete da manhã. A segunda fase, hora a hora.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.198",
+    "busca e apreensão",
+    "Polícia Federal"
+   ],
+   "minutes": 8,
+   "words": 1603,
+   "serie": "Pet 15.198, a segunda fase",
+   "capitulo": 3,
+   "excerpt": "Operações policiais têm duas versões: a do dia seguinte, com fotos de malotes, e a dos autos, com horários. A dos autos é melhor. Na Petição 15.198, a deflagração da segunda fase da Operação Compliance Zero, em 14 de janeiro de 2026, deixou um rastro de três decisões e um despach",
+   "numero": 5
+  },
+  {
+   "slug": "pet-15198-04-o-novo-relator-e-os-cem-aparelhos",
+   "title": "O novo relator e os cem aparelhos",
+   "subtitle": "Em fevereiro a petição muda de mãos. O novo relator escreve sobre compartimentação citando a si mesmo em espanhol, devolve a perícia à Polícia Federal, dá salvo-condutos para a CPMI e, em junho, separa a investigação da gaveta.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.198",
+    "perícia",
+    "sigilo",
+    "CPMI"
+   ],
+   "minutes": 7,
+   "words": 1499,
+   "serie": "Pet 15.198, a segunda fase",
+   "capitulo": 4,
+   "excerpt": "Há um despacho na Petição 15.198 que tem quatro páginas, das quais três estão em branco. Na quarta, uma linha: \"À Coordenadoria de Processamento Inicial da Secretaria Judiciária, para as providências de redistribuição.\" Assina o presidente do Tribunal, Edson Fachin, em 13 de feve",
+   "numero": 6
+  },
+  {
+   "slug": "pet-15198-05-os-carros",
+   "title": "Os carros",
+   "subtitle": "Um Aston Martin, um Bentley, dois Porsches financiados, treze armas registradas e R$ 184.750 em espécie. O que os investigados pediram de volta, o que o Estado respondeu e por que a resposta é sempre a mesma.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.198",
+    "restituição de bens",
+    "sequestro"
+   ],
+   "minutes": 8,
+   "words": 1666,
+   "serie": "Pet 15.198, a segunda fase",
+   "capitulo": 5,
+   "excerpt": "Depois de junho de 2026, a Petição 15.198 virou o que o relator quis que ela fosse: a gaveta das medidas cautelares. E medida cautelar, na prática, é gente pedindo coisas de volta. Entre fevereiro e agosto, seis pedidos de restituição chegaram e seis foram negados, com o mesmo te",
+   "numero": 7
+  },
+  {
    "slug": "pet-15556-01-setenta-e-duas-horas",
    "title": "Setenta e duas horas",
    "subtitle": "Como um pedido de 164 páginas da Polícia Federal virou, em cinco dias, uma decisão de 48. O que ela é, o que ela não é, e por que o Ministério Público pediu mais tempo e não ganhou.",
@@ -50,7 +136,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 1,
    "excerpt": "Um processo do Supremo chamado \"Petição\" não é uma carta. É uma gaveta. Nela se guardam pedidos que precisam de um juiz antes de virarem outra coisa: um inquérito, uma denúncia, nada. A Petição 15.556 é a gaveta em que a Polícia Federal, em 27 de fevereiro de 2026, depositou 164 ",
-   "numero": 3
+   "numero": 8
   },
   {
    "slug": "pet-15556-02-a-turma",
@@ -67,7 +153,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 2,
    "excerpt": "Toda organização tem um departamento de que não se fala nas reuniões de resultado. Segundo a decisão de 3 de março, o do grupo investigado se chamava \"A Turma\", e a descrição que o ministro faz dela é a parte do documento que mais se afasta do mundo dos bancos e mais se aproxima ",
-   "numero": 4
+   "numero": 9
   },
   {
    "slug": "pet-15556-03-o-supervisor-que-revisava-o-oficio",
@@ -84,7 +170,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 3,
    "excerpt": "O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conver",
-   "numero": 5
+   "numero": 10
   },
   {
    "slug": "pet-15556-04-o-que-o-ministro-decidiu-e-como",
@@ -101,7 +187,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 4,
    "excerpt": "Prender alguém antes de julgar é a coisa mais violenta que um Estado de direito faz de forma rotineira. Por isso a lei cerca o ato de exigências, e por isso a parte técnica de uma decisão como a de 3 de março merece ser lida por quem não é advogado: é ali que se vê se o juiz pulo",
-   "numero": 6
+   "numero": 11
   },
   {
    "slug": "pet-15556-05-depois-do-decreto",
@@ -118,7 +204,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 5,
    "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
-   "numero": 7
+   "numero": 12
   }
  ]
 }

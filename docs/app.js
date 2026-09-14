@@ -27,7 +27,7 @@ const roleOf=n=>n.vis?n.papel:"pseudo";
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","metodo"];
+const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","metodo","avisos"];
 let pendingQS=null;
 function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQS=v.slice(i+1); v=v.slice(0,i); if(v!=="cronicas") history.replaceState(null,"","#"+v); } if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
@@ -498,7 +498,7 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
       P.innerHTML=`<button class="btn ghost small back" id="crBack">← todas as crônicas</button><p class="eyebrow">${eyebrow}</p><h1>${esc(post.title)}</h1><p class="sub">${esc(post.subtitle||"")}</p>
         <div class="meta">${(post.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}<span class="muted">Opinião do autor do projeto. Números e citações apontam para os dados públicos e para o acervo do STF.</span></div>
         <div class="cr-body">${html}</div>
-        <div class="cr-foot"><b>Isto é uma crônica.</b> Texto de opinião, separado da base de dados. O que é fato traz a fonte; o que é leitura é do autor. Coocorrência na mesma página não prova relação, e ninguém aqui é culpado de nada por aparecer num grafo. Erros de fato: abra uma issue no repositório.
+        <div class="cr-foot"><b>Isto é uma crônica.</b> Texto de opinião, separado da base de dados. O que é fato traz a fonte; o que é leitura é do autor. Coocorrência na mesma página não prova relação, e ninguém aqui é culpado de nada por aparecer num grafo. Erros de fato: abra uma issue no repositório. Todos os avisos: <a href="#avisos" data-nav="avisos">Avisos e direitos</a>.
         <div class="acts"><a class="btn small" href="#grafo" data-nav="grafo">Abrir o grafo</a><a class="btn small" href="#personagens" data-nav="personagens">Personagens</a><button class="btn ghost small" id="crShare">copiar link</button></div>
         <div class="cr-nav">${prev?`<a href="#cronicas?p=${prev.slug}"><span>${inS?"capítulo anterior":"anterior"}</span>${esc(prev.title)}</a>`:"<span></span>"}${next?`<a class="next" href="#cronicas?p=${next.slug}"><span>${inS?"próximo capítulo":"próxima"}</span>${esc(next.title)}</a>`:""}</div></div>`;
       $("#crBack").onclick=()=>{ location.hash="cronicas"; }; $$("[data-nav]",P).forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
@@ -507,7 +507,7 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
       document.title=`${post.title} — crônicas do autos-abertos`; window.scrollTo({top:0}); return; } }
   document.title="autos-abertos — crônicas"; P.hidden=true; L.hidden=false;
   const card=x=>`<a class="cr-card" href="#cronicas?p=${x.slug}"><span class="n">${x.serie?`CAPÍTULO ${x.capitulo}`:`CRÔNICA ${String(x.numero).padStart(2,"0")}`} · ${dateBR(x.date)}</span><h3>${esc(x.title)}</h3><p class="sub">${esc(x.subtitle||"")}</p><div class="m"><b>${x.minutes} min</b> · ${(x.tags||[]).join(" · ")}</div></a>`;
-  const series=[...new Set(posts.filter(x=>x.serie).map(x=>x.serie))]; const solo=posts.filter(x=>!x.serie);
+  const series=[...new Set(posts.filter(x=>x.serie).map(x=>x.serie))].sort((a,b)=>Math.min(...posts.filter(x=>x.serie===a).map(x=>x.numero))-Math.min(...posts.filter(x=>x.serie===b).map(x=>x.numero))); const solo=posts.filter(x=>!x.serie);
   $("#crCards").innerHTML=series.map(sname=>{const xs=posts.filter(x=>x.serie===sname).sort((a,b)=>a.capitulo-b.capitulo); return `<div class="cr-serie"><h3 class="cr-serie-t">${esc(sname)}</h3><p class="muted">${xs.length} capítulos · ${xs.reduce((s,x)=>s+x.minutes,0)} min no total. Cada capítulo cobre uma parte da decisão, na ordem em que ela mesma se organiza.</p><div class="cr-cards">${xs.map(card).join("")}</div></div>`;}).join("")+(solo.length?`<div class="cr-serie"><h3 class="cr-serie-t">Avulsas</h3><div class="cr-cards">${solo.map(card).join("")}</div></div>`:"")||`<p class="muted">Ainda sem crônicas.</p>`; }
 /* ---------- go ---------- */
 show(location.hash.slice(1)||"inicio");
