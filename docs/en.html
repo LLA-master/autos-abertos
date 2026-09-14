@@ -463,6 +463,8 @@
     </ul>
     <h3>How to check</h3>
     <p>Every citation gives the proceeding, the filing's sequence number and the page. Download the STF package from the link in the press note, open the proceeding's folder and the file whose name begins with that sequence number.</p>
+    <h3>Verbatim passages</h3>
+    <p>Each proceeding page carries verbatim passages from the court's own acts, kept in the original Portuguese. None is typed by hand: the curation file points to a proceeding, a filing, a page and an anchor phrase, and the pipeline cuts the text straight from the document, failing if the anchor is not there. We quote only filings signed by an authority, meaning rulings, orders, panel decisions and opinions of the Prosecutor General. Federal Police filings, defence petitions and investigative annexes are left out: that is where private messages and third-party data live.</p>
     <h3>Chronicles</h3>
     <p>The Chronicles section is editorial: opinion pieces by the project's author, written on top of the same public, sanitized data. They live in <code>docs/posts/</code>, in Markdown, with date and sources; the English edition of each one lives in <code>docs/posts/en/</code>. The database (graph, profiles, analysis) does not depend on them and does not change because of them. When a chronicle cites a number, the number comes from <code>docs/data/</code>; when it cites a filing, it gives proceeding, seq and page.</p>
     <h3>English edition</h3>

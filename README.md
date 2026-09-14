@@ -11,6 +11,7 @@ Base de dados aberta e navegável sobre o acervo que o Supremo Tribunal Federal 
 - `docs/data/` — os dados derivados e sanitizados que o site consome (JSON). É a **única** coisa que sai do acervo.
 - `pipeline/` — os scripts que produzem esses dados a partir do acervo bruto (que não está neste repositório e não deve estar).
   `stage8_rastro.py` monta o rastro documental de cada processo (`docs/data/rastro.json`) e publica os resumos escritos à mão em `pipeline/resumos.py` (`docs/data/resumos.json`), ambos pelo mesmo gate de sanitização do estágio 6.
+  `stage9_excertos.py` recorta os excertos dos atos do juízo a partir da curadoria em `pipeline/excertos.py`, verificando cada trecho-âncora no texto da peça.
 - `tools/baixar_acervo_stf.py` — baixa, valida e extrai o pacote público do STF a partir da nota à imprensa (com a história do 429 do SharePoint documentada).
 - `POLITICA_DE_SANITIZACAO.md` — o que entra, o que não entra, e por quê.
 - `METODOLOGIA.md` — como o texto foi extraído, como as entidades e relações foram inferidas, e os limites disso.

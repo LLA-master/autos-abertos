@@ -289,8 +289,17 @@ const tipoColor=t=>{const i=tipoOrder.indexOf(t); return i>=0&&i<TIPO_COLORS.len
 const PS={sort:"crono"};
 const kind=p=>p.startsWith("INQ")?"inquérito":p.startsWith("RCL")?"reclamação":"petição";
 /* ---------- processos: a história de cada um, e o rastro em linguagem natural ---------- */
-let RASTRO=null, RESUMOS=null;
-async function loadPR(){ if(!RASTRO){ [RASTRO,RESUMOS]=await Promise.all([load("rastro.json"),load("resumos.json")]); } }
+let RASTRO=null, RESUMOS=null, EXC=null;
+async function loadPR(){ if(!RASTRO){ [RASTRO,RESUMOS,EXC]=await Promise.all([load("rastro.json"),load("resumos.json"),load("excertos.json")]); } }
+/* excertos: o texto do ato do juízo, recortado pelo pipeline a partir da peça, nunca digitado */
+function excId(proc,x){ return "exc-"+proc.replace(/\s+/g,"")+"-"+x.s+"-"+x.p; }
+function excCard(proc,x){ const dt=x.d?dataLonga(x.d):""; const ents=(x.ents||[]).map(l=>byLabel.get(l)).filter(Boolean)
+    .map(n=>`<button class="lnk" data-open="${esc(n.id)}" style="--c:var(--${roleOf(n)})"><i></i>${esc(n.label)}</button>`).join(" ");
+  return `<figure class="exc" id="${excId(proc,x)}"><figcaption><b>${esc(x.t)}</b><span class="exc-src">${proc} · seq ${String(x.s).padStart(5,"0")} · p. ${x.p}${dt?" · "+dt:""}</span></figcaption>
+    <blockquote>${esc(x.x)}</blockquote>
+    ${x.c?`<p class="exc-ctx">${esc(x.c)}</p>`:""}${ents?`<p class="exc-ents">${ents}</p>`:""}</figure>`; }
+function excDe(proc){ return (EXC&&EXC[proc])||[]; }
+function excDaEntidade(label){ const out=[]; if(!EXC) return out; for(const p in EXC) EXC[p].forEach(x=>{ if((x.ents||[]).includes(label)) out.push([p,x]); }); return out; }
 /* os rótulos vêm do índice do STF, sem acento; devolvemos os acentos das palavras frequentes */
 const ACC={Oficio:"Ofício",OFICIO:"OFÍCIO",Informacoes:"Informações",Servicos:"Serviços",Participacoes:"Participações",Titulos:"Títulos",Mobiliarios:"Mobiliários",Credito:"Crédito",Comissao:"Comissão",Agencia:"Agência",Aviacao:"Aviação",Policia:"Polícia",Uniao:"União",Judiciaria:"Judiciária",Secao:"Seção",Confederacao:"Confederação",Instituicao:"Instituição",Instituicoes:"Instituições",Balcao:"Balcão",Brasilia:"Brasília",Certidao:"Certidão",Intimacao:"Intimação",Decisao:"Decisão",Determinacao:"Determinação",Diligencias:"Diligências",Comunicacao:"Comunicação",Peticao:"Petição",Eletronico:"Eletrônico",Eletronica:"Eletrônica",Juizo:"Juízo",Publico:"Público",Ministerio:"Ministério",Ceara:"Ceará",Penitenciario:"Penitenciário",Transito:"Trânsito",Gerencia:"Gerência",Analise:"Análise",Prevencao:"Prevenção",Distribuicao:"Distribuição",Originarios:"Originários",Execucao:"Execução",Imoveis:"Imóveis",Sao:"São",Inclusao:"Inclusão",Restricao:"Restrição",Veicular:"Veicular",Valores:"Valores",Federacao:"Federação",Digitais:"Digitais",Inteligencia:"Inteligência",Financeira:"Financeira",Controle:"Controle",Atividades:"Atividades",Conselho:"Conselho",Receita:"Receita",Senado:"Senado",Vara:"Vara",Regiao:"Região",Nacional:"Nacional",Cooperativa:"Cooperativa",Cooperativas:"Cooperativas",Empresarial:"Empresarial",Unipessoal:"Unipessoal",Corretora:"Corretora",Distribuidora:"Distribuidora",Pagamentos:"Pagamentos",Retificacao:"Retificação",Autuacao:"Autuação",Manifestacao:"Manifestação",Remessa:"Remessa",Situacao:"Situação",Resposta:"Resposta",Comprovante:"Comprovante",Mandado:"Mandado",Relator:"Relator"};
 const acentua=s=>s.replace(/[A-Za-zÀ-ÿ]+/g,w=>ACC[w]||w);
@@ -362,6 +371,7 @@ function frase(e){
 }
 const PESO={"Decisao monocratica":3,"Peticao inicial":3,"Acordao":3,"Despacho":1,"Vista a PGR":1};
 function rastroHTML(proc,marcos){
+  const comExc=new Map(); excDe(proc).forEach(x=>{ if(!comExc.has(x.s)) comExc.set(x.s,excId(proc,x)); });
   const r=(RASTRO[proc]||[]).filter(e=>e.d).slice().sort((a,b)=>a.d.localeCompare(b.d)||a.s-b.s);
   const mset=new Set(marcos.map(m=>m[0]));
   const linhas=[]; let i=0;
@@ -372,13 +382,14 @@ function rastroHTML(proc,marcos){
     const txt=n>1?`${n} ${pl}`:sg;
     const pg=pags>=3?`${fmt(pags)} pág.`:"";
     const sq=seqs.length>1?`seq ${seqs[0]}–${seqs[seqs.length-1]}`:`seq ${seqs[0]}`;
-    linhas.push({d:r[i].d,txt,meta:[pg,sq].filter(Boolean).join(" · "),peso:peso+(mset.has(r[i].d)?2:0)});
+    const alvo=seqs.map(x=>comExc.get(x)).find(Boolean);
+    linhas.push({d:r[i].d,txt,meta:[pg,sq].filter(Boolean).join(" · "),peso:peso+(mset.has(r[i].d)?2:0),exc:alvo||""});
     i=j;
   }
   let mes="", out="";
   linhas.forEach((l,k)=>{
     const m=mesDe(l.d); if(m!==mes){ mes=m; out+=`<h5 class="rt-mes">${m}</h5>`; }
-    out+=`<div class="rt-l${l.peso>=3?" forte":""}" data-k="${k}"><span class="rt-d">${+l.d.split("-")[2]}</span><span class="rt-t">${l.txt}</span><span class="rt-m">${l.meta}</span></div>`;
+    out+=`<div class="rt-l${l.peso>=3?" forte":""}" data-k="${k}"><span class="rt-d">${+l.d.split("-")[2]}</span><span class="rt-t">${l.txt}${l.exc?` <button class="rt-x" data-exc="${l.exc}">ler um trecho</button>`:""}</span><span class="rt-m">${l.meta}</span></div>`;
   });
   return {html:out,n:linhas.length};
 }
@@ -386,7 +397,7 @@ function procCard(p){
   const R=RESUMOS[p.processo]||{t:"",o:"",r:[],m:[]};
   const per=periodo(p.processo);
   return `<button class="proc-card" data-p="${esc(p.processo)}"><div class="pc-h"><span class="pid">${p.processo}</span><span class="pc-t">${esc(R.t)}</span></div>
-    <p class="pc-o">${esc(R.o)}</p><p class="pc-m">${per} · ${fmt(p.pdfs)} peças · ${fmt(p.pages)} páginas</p></button>`;
+    <p class="pc-o">${esc(R.o)}</p><p class="pc-m">${per} · ${fmt(p.pdfs)} peças · ${fmt(p.pages)} páginas${excDe(p.processo).length?` · <b>${excDe(p.processo).length} excertos</b>`:""}</p></button>`;
 }
 function periodo(proc){ const r=(RASTRO[proc]||[]).filter(e=>e.d); if(!r.length) return ""; const ini=primeiraData(proc), fim=r.map(e=>e.d).sort().pop(); return `${mesDe(ini)} — ${mesDe(fim)}`; }
 /* o começo do processo é a data da primeira peça dele (menor seq), não a data mais antiga citada num anexo */
@@ -400,7 +411,7 @@ async function renderProcs(){
 function openProc(proc){
   const p=PROCS.find(x=>x.processo===proc), R=RESUMOS[proc]; if(!p||!R) return;
   const P=$("#procPage"), L=$("#procList");
-  const {html,n}=rastroHTML(proc,R.m);
+  const {html,n}=rastroHTML(proc,R.m); const xs=excDe(proc);
   const marcos=R.m.map(([d,t])=>`<li><b>${dataLonga(d)}</b> — ${esc(t)}</li>`).join("");
   const tops=p.top.slice(0,8).map(([l,rl,c])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):rl})"><i></i>${esc(l)} <span class="muted">${c}</span></button>`;}).join("");
   const serie=R.s?`<p class="pp-serie">Há uma série de crônicas sobre este processo. <button class="btn small" data-cr="${esc(R.s)}">Ler a série</button></p>`:"";
@@ -411,6 +422,7 @@ function openProc(proc){
     ${R.r.map(x=>`<p>${esc(x)}</p>`).join("")}
     ${serie}
     <h3>Os momentos que importam</h3><ul class="pp-marcos">${marcos}</ul>
+    ${xs.length?`<h3>Nas palavras da decisão</h3><p class="muted small">Trechos literais dos atos assinados pelo relator e pela Procuradoria, recortados do próprio documento. Não citamos representação da polícia nem petição de defesa.</p><div class="excs">${xs.map(x=>excCard(proc,x)).join("")}</div>`:""}
     <h3>O rastro, dia a dia</h3>
     <p class="muted small">Cada linha é uma peça dos autos, descrita pelo que ela é. O <em>seq</em> é o número da peça no processo e o começo do nome do arquivo no pacote público do STF. Peças iguais no mesmo dia aparecem juntas.</p>
     <div class="rt-wrap" id="ppRastro">${html}</div>
@@ -425,6 +437,7 @@ function openProc(proc){
   $("#ppBack").onclick=()=>{P.hidden=true;L.hidden=false;};
   $$("[data-open]",P).forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
   $$("[data-goproc]",P).forEach(b=>b.onclick=()=>openProc(b.dataset.goproc));
+  $$("[data-exc]",P).forEach(b=>b.onclick=()=>{ const el=$("#"+b.dataset.exc); if(!el) return; el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("pisca"); setTimeout(()=>el.classList.remove("pisca"),1600); });
   $$("[data-cr]",P).forEach(b=>b.onclick=()=>{location.hash="cronicas?p="+b.dataset.cr;});
   $$("[data-mmp]",P).forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
   $$("[data-graph]",P).forEach(b=>b.onclick=()=>{ location.hash="grafo"; setTimeout(()=>{F.proc=b.dataset.graph;$("#procSel").value=b.dataset.graph;F.topN=0;$("#topN").value="0";lastSig="";refresh();setTimeout(()=>fitVisible(),200);},60); });
@@ -516,7 +529,7 @@ const wkBy=new Map(WIKI.pages.map(p=>[p.id,p]));
 $$("#wkChips .chip").forEach(c=>c.onclick=()=>{const r=c.dataset.role; WK.roles.has(r)?WK.roles.delete(r):WK.roles.add(r); c.classList.toggle("on",WK.roles.has(r)); renderWiki();});
 $("#wkSearch").oninput=e=>{WK.q=e.target.value.trim().toLowerCase();renderWiki();};
 function openWiki(id){ WK.open=id; location.hash="personagens"; setTimeout(renderWiki,30); }
-function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage");
+async function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage"); await loadPR();
   if(WK.open&&wkBy.has(WK.open)){ const p=wkBy.get(WK.open); grid.hidden=true; pg.hidden=false;
     const roleBlock=(r,t)=>p.byrole[r]?`<h4>${t}</h4><div class="neigh">${p.byrole[r].map(x=>`<button data-wk="${x.id}" style="--c:var(--${byId.get(x.id)?roleOf(byId.get(x.id)):r})"><i></i>${x.label}<span class="muted">${x.w}</span></button>`).join("")}</div>`:"";
     pg.innerHTML=`<button class="btn ghost small" id="wkBack">← todos os personagens</button><h2 style="margin-top:12px">${p.label}</h2><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span>
@@ -527,8 +540,9 @@ function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage");
       ${roleBlock("pessoa","Aparece junto de · pessoas")}${roleBlock("empresa","Empresas")}${roleBlock("autoridade","Autoridades")}${roleBlock("advogado","Advogados")}</div>
       <div><h4>Tipos de peça</h4><ul>${p.tipos.map(([t,c])=>`<li>${tipo(t)} <span class="muted">(${c})</span></li>`).join("")}</ul>
       <h4>Onde conferir</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th></tr>${p.cit.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(c)}</td><td>${d}</td></tr>`).join("")}</table></div></div>
+      ${(()=>{const xs=excDaEntidade(p.label); return xs.length?`<h4 style="margin-top:20px">Citado nas decisões</h4><p class="muted small">Trechos literais de atos do juízo em que este nome aparece. Ser citado numa decisão não conclui nada.</p><div class="excs">${xs.map(([pr,x])=>excCard(pr,x)).join("")}</div>`:"";})()}
       <p class="muted" style="margin-top:12px">Ficha automática a partir dos dados públicos sanitizados. Coocorrência na mesma página não prova relação. Erros de identificação: abra uma issue.</p>`;
-    $("#wkBack").onclick=()=>{WK.open=null;renderWiki();}; $$("[data-wk]",pg).forEach(b=>b.onclick=()=>openWiki(b.dataset.wk)); $("[data-open]",pg).onclick=()=>openNode(p.id); $("[data-mmc]",pg).onclick=()=>{mmCenter(p.id);location.hash="mapa";};
+    $("#wkBack").onclick=()=>{WK.open=null;renderWiki();}; $$("[data-wk]",pg).forEach(b=>b.onclick=()=>openWiki(b.dataset.wk)); $$("[data-open]",pg).forEach(b=>b.onclick=()=>openNode(b.dataset.open||p.id)); $("[data-mmc]",pg).onclick=()=>{mmCenter(p.id);location.hash="mapa";};
     window.scrollTo({top:0}); return; }
   pg.hidden=true; grid.hidden=false;
   const xs=WIKI.pages.filter(p=>WK.roles.has(p.papel)&&(!WK.q||p.label.toLowerCase().includes(WK.q)));
@@ -625,6 +639,7 @@ function blkEmp(){ const xs=G.nodes.filter(n=>n.papel==="empresa"&&(!RD.proc||n.
 /* ---------- crônicas (posts em Markdown, índice em posts/index.json) ---------- */
 let CR=null; async function loadCR(){ if(!CR){ try{ CR=(await (await fetch("posts/index.json")).json()).posts; }catch(e){ CR=[]; } } return CR; }
 const dateBR=d=>{ const [y,m,dd]=d.split("-"); return `${dd} de ${["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"][+m-1]} de ${y}`; };
+const procDoSlug=slug=>{ const m=/^(pet|inq|rcl)-(\d+)-/.exec(slug); return m?`${m[1].toUpperCase()} ${m[2]}`:null; };
 function stripFM(md){ if(md.startsWith("---")){ const j=md.indexOf("\n---",3); if(j>0) return md.slice(j+4); } return md; }
 async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSearchParams(qs||""); const slug=p.get("p"); const L=$("#crList"), P=$("#crPost");
   if(slug){ const i=posts.findIndex(x=>x.slug===slug); if(i>=0){ const post=posts[i]; L.hidden=true; P.hidden=false; P.innerHTML=`<p class="muted">Carregando…</p>`;
@@ -637,9 +652,11 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
         <div class="meta">${(post.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}<span class="muted">Opinião do autor do projeto. Números e citações apontam para os dados públicos e para o acervo do STF.</span></div>
         <div class="cr-body">${html}</div>
         <div class="cr-foot"><b>Isto é uma crônica.</b> Texto de opinião, separado da base de dados. O que é fato traz a fonte; o que é leitura é do autor. Coocorrência na mesma página não prova relação, e ninguém aqui é culpado de nada por aparecer num grafo. Erros de fato: abra uma issue no repositório. Todos os avisos: <a href="#avisos" data-nav="avisos">Avisos e direitos</a>.
+        ${(()=>{const pr=procDoSlug(post.slug); return pr?`<p class="cr-proc">Esta crônica é sobre o processo <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Abrir a página do processo</button></p>`:"";})()}
         <div class="acts"><a class="btn small" href="#grafo" data-nav="grafo">Abrir o grafo</a><a class="btn small" href="#personagens" data-nav="personagens">Personagens</a><button class="btn ghost small" id="crShare">copiar link</button></div>
         <div class="cr-nav">${prev?`<a href="#cronicas?p=${prev.slug}"><span>${inS?"capítulo anterior":"anterior"}</span>${esc(prev.title)}</a>`:"<span></span>"}${next?`<a class="next" href="#cronicas?p=${next.slug}"><span>${inS?"próximo capítulo":"próxima"}</span>${esc(next.title)}</a>`:""}</div></div>`;
-      $("#crBack").onclick=()=>{ location.hash="cronicas"; }; $$("[data-nav]",P).forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
+      $("#crBack").onclick=()=>{ location.hash="cronicas"; };
+      $$("[data-goproc2]",P).forEach(b=>b.onclick=()=>{ const pr=b.dataset.goproc2; location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(pr); },80); }); $$("[data-nav]",P).forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
       $("#crShare").onclick=async()=>{ const url=location.origin+location.pathname+`#cronicas?p=${post.slug}`; try{ await navigator.clipboard.writeText(url); $("#crShare").textContent="copiado ✓"; }catch(e){ prompt("Copie o link:",url); } setTimeout(()=>$("#crShare").textContent="copiar link",1500); };
       $$(".cr-body a[href^='#']",P).forEach(a=>a.addEventListener("click",e=>{ e.preventDefault(); location.hash=a.getAttribute("href").slice(1); }));
       document.title=`${post.title} — crônicas do autos-abertos`; window.scrollTo({top:0}); return; } }

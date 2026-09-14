@@ -24,5 +24,10 @@
 - Somas monetárias foram descartadas: extratos concatenam dígitos e produzem valores absurdos.
 - Datas citadas por mês descrevem sobre que período as peças falam, não quando os fatos ocorreram.
 
+## Rastro documental e excertos
+O rastro de cada processo (`stage8_rastro.py`) descreve cada peça pelo que ela é, com data, número e páginas. A data sai do texto da própria peça, com preferência para a assinatura na última página; na falta dela, dos metadados do PDF. Datas fora da janela que vai de junho de 2025 a 11 de setembro de 2026, quando o STF publicou o acervo, são descartadas: em geral são datas citadas dentro do texto, não a data da peça.
+
+Os excertos (`stage9_excertos.py`) são trechos literais recortados do texto da peça pelo próprio pipeline. A curadoria em `pipeline/excertos.py` aponta processo, número da peça, página e um trecho-âncora; se a âncora não estiver naquela página, ou estiver mais de uma vez, o build falha. Nenhum excerto é digitado, o que elimina erro de transcrição e citação inventada. Só podem ser citados atos assinados por autoridade: decisão, despacho, acórdão e manifestação da Procuradoria-Geral da República. Representação policial, petição de defesa e anexo de investigação ficam de fora, porque é neles que está transcrição de conversa privada e dado de terceiro. O limite é de 600 caracteres por excerto e vale o mesmo gate de padrões proibidos da exportação.
+
 ## Reprodutibilidade
-Com o pacote do STF e as ferramentas listadas no README, os seis estágios reproduzem `docs/data/` de ponta a ponta. O layout do grafo é calculado no navegador (ForceAtlas2) e pode variar levemente entre execuções.
+Com o pacote do STF e as ferramentas listadas no README, os estágios reproduzem `docs/data/` de ponta a ponta. O layout do grafo é calculado no navegador (ForceAtlas2) e pode variar levemente entre execuções.

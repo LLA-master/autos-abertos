@@ -299,3 +299,21 @@ html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
 .rt-l.forte .rt-d{color:var(--hl)}
 .rt-m{font-size:11.5px;color:var(--muted);white-space:nowrap}
 @media (max-width:640px){.proc-cards{grid-template-columns:1fr}.rt-l{grid-template-columns:22px 1fr;gap:8px}.rt-m{grid-column:2;white-space:normal}}
+
+/* excertos: trecho literal do ato do juízo */
+.excs{display:grid;gap:14px;margin:12px 0 22px}
+.exc{margin:0;background:color-mix(in srgb,var(--bg2) 80%,transparent);border:1px solid var(--line);border-left:3px solid var(--hl);border-radius:0 var(--r) var(--r) 0;padding:14px 18px}
+.exc figcaption{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px}
+.exc figcaption b{font-size:14.5px}
+.exc-src{font-family:var(--mono,ui-monospace,monospace);font-size:11px;color:var(--muted);white-space:nowrap}
+.exc blockquote{margin:0;font-family:var(--serif,Newsreader,Georgia,serif);font-size:17px;line-height:1.55;color:var(--ink);quotes:"\201C" "\201D"}
+.exc blockquote::before{content:open-quote;color:var(--hl);margin-right:2px}
+.exc blockquote::after{content:close-quote;color:var(--hl);margin-left:2px}
+.exc-ctx{font-size:13px;color:var(--ink2);margin:10px 0 0;line-height:1.5}
+.exc-ents{margin:8px 0 0;display:flex;gap:6px;flex-wrap:wrap}
+@media (max-width:640px){.exc blockquote{font-size:16px}.exc-src{white-space:normal}}
+.rt-x{font:inherit;font-size:11.5px;color:var(--hl);background:none;border:0;border-bottom:1px dotted var(--hl);padding:0 0 1px;margin-left:8px;cursor:pointer}
+.rt-x:hover{color:var(--ink);border-color:var(--ink)}
+.exc.pisca{animation:piscaExc 1.6s ease}
+@keyframes piscaExc{0%,100%{box-shadow:none}25%,60%{box-shadow:0 0 0 3px color-mix(in srgb,var(--hl) 45%,transparent)}}
+.cr-proc{margin:18px 0 0;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:color-mix(in srgb,var(--bg2) 70%,transparent);font-size:14px}

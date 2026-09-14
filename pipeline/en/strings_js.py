@@ -6,6 +6,17 @@ Se um trecho não for encontrado, o build falha: é o sinal de que app.js mudou
 e a tradução precisa de revisão."""
 
 JS = [
+ # --- excertos (v0.4) ---
+ ('Esta crônica é sobre o processo <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Abrir a página do processo</button>',
+  'This chronicle is about proceeding <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Open the proceeding page</button>'),
+ ('>ler um trecho</button>', '>read a passage</button>'),
+ ('load("rastro.json"),load("resumos.json"),load("excertos.json")', 'load("rastro.json"),load("resumos_en.json"),load("excertos.json")'),
+ ('<h3>Nas palavras da decisão</h3><p class="muted small">Trechos literais dos atos assinados pelo relator e pela Procuradoria, recortados do próprio documento. Não citamos representação da polícia nem petição de defesa.</p>',
+  '<h3>In the ruling\'s own words</h3><p class="muted small">Verbatim passages from acts signed by the rapporteur and by the Prosecutor General, cut from the document itself and kept in the original Portuguese. We do not quote police filings or defence petitions.</p>'),
+ ('<h4 style="margin-top:20px">Citado nas decisões</h4><p class="muted small">Trechos literais de atos do juízo em que este nome aparece. Ser citado numa decisão não conclui nada.</p>',
+  '<h4 style="margin-top:20px">Named in the rulings</h4><p class="muted small">Verbatim passages, in the original Portuguese, from court acts where this name appears. Being named in a ruling settles nothing.</p>'),
+ ('` · <b>${excDe(p.processo).length} excertos</b>`', '` · <b>${excDe(p.processo).length} passages</b>`'),
+
  # --- processos: resumo em linguagem natural e rastro documental (v0.3) ---
  ('const MES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];',
   'const MES=["January","February","March","April","May","June","July","August","September","October","November","December"];'),
@@ -94,7 +105,6 @@ JS = [
  ('>← todos os processos<', '>← all proceedings<'),
  ('Mostrando só <b>${esc(byId.get(selected).label)}</b> e as ligações diretas. <button class="lnk" id="focusAll">ver o grafo inteiro</button>',
   'Showing only <b>${esc(byId.get(selected).label)}</b> and its direct links. <button class="lnk" id="focusAll">see the whole graph</button>'),
- ('load("rastro.json"),load("resumos.json")', 'load("rastro.json"),load("resumos_en.json")'),
 
  ('toLocaleString("pt-BR")', 'toLocaleString("en-US")'),
  ('{pessoa:"pessoa",empresa:"empresa",autoridade:"autoridade",advogado:"advogado",pseudo:"pseudonimizado"}',
