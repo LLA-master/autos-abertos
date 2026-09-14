@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>autos-abertos — quinze processos do Supremo, em linguagem de gente</title>
+<meta name="description" content="Leitura guiada de um processo público: decisões na íntegra, quem aparece com quem, o que cada peça decidiu e onde conferir. Texto integral dos atos do juízo, sem dado pessoal.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/graphology-library@0.8.0/dist/graphology-library.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sigma@3.0.1/dist/sigma.min.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<header class="top">
+  <a class="brand" href="#inicio" data-nav="inicio"><span class="dot"></span>autos-abertos</a>
+  <nav aria-label="Seções">
+    <a href="#trilhas" data-nav="trilhas">Trilhas</a>
+    <a href="#grafo" data-nav="grafo">Grafo</a>
+    <a href="#processos" data-nav="processos">Processos</a>
+    <a href="#tempo" data-nav="tempo">Linha do tempo</a>
+    <a href="#metodo" data-nav="metodo">Método</a>
+  </nav>
+  <button class="theme" id="themeBtn" aria-label="Alternar tema">◐</button>
+</header>
+
+<main id="main">
+<!-- INÍCIO -->
+<section id="v-inicio" class="view">
+  <div class="hero">
+    <p class="eyebrow">Acervo público do STF · Pet 15.556 e conexos · Operação Compliance Zero</p>
+    <h1>O caso Banco Master, <em>navegável</em>.</h1>
+    <p class="lead">Em 11 de setembro de 2026 o Supremo tornou públicos 189 mil páginas de autos. Este site transforma esse volume em um mapa de quem aparece com quem, em que peça e em que momento, com cada relação apontando para a fonte.</p>
+    <div class="cta">
+      <a class="btn primary" href="#trilhas" data-nav="trilhas">Começar pela trilha guiada</a>
+      <a class="btn" href="#grafo" data-nav="grafo">Abrir o grafo</a>
+      <a class="btn ghost" href="#metodo" data-nav="metodo">Como isto foi feito</a>
+    </div>
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <div class="cards3">
+    <article class="card"><h3>Trilhas</h3><p>Sequências curtas de passos com uma interação e uma pergunta cada. Você aprende a ler o caso fazendo, não lendo um manual.</p></article>
+    <article class="card"><h3>Grafo</h3><p>Pessoas, empresas, autoridades e advogados ligados quando aparecem na mesma página de uma peça narrativa. Busque, filtre, trace caminhos.</p></article>
+    <article class="card"><h3>Fonte sempre à vista</h3><p>Cada nó lista as peças em que aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
+  </div>
+  <p class="note">Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
+</section>
+
+<!-- TRILHAS -->
+<section id="v-trilhas" class="view" hidden>
+  <div class="trail">
+    <aside class="rail">
+      <h2>Trilha: ler o caso</h2>
+      <p class="muted">8 passos · ~10 min</p>
+      <ol id="railSteps"></ol>
+      <button class="btn ghost small" id="resetTrail">Recomeçar</button>
+    </aside>
+    <div class="stage">
+      <div class="step-head"><span class="pill" id="stepNum"></span><h2 id="stepTitle"></h2></div>
+      <div id="stepBody" class="step-body"></div>
+      <div id="stepWidget" class="step-widget"></div>
+      <div id="stepQuiz" class="quiz"></div>
+      <div class="step-nav"><button class="btn" id="prevStep">← Anterior</button><button class="btn primary" id="nextStep">Próximo →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAFO -->
+<section id="v-grafo" class="view" hidden>
+  <div class="toolbar">
+    <div class="search"><input id="search" type="search" placeholder="Buscar pessoa, empresa, autoridade…" autocomplete="off" aria-label="Buscar"><ul id="sugg" class="sugg" hidden></ul></div>
+    <div class="chips" id="roleChips">
+      <button class="chip on" data-role="pessoa"><i style="--c:var(--pessoa)"></i>Pessoas</button>
+      <button class="chip on" data-role="empresa"><i style="--c:var(--empresa)"></i>Empresas</button>
+      <button class="chip on" data-role="autoridade"><i style="--c:var(--autoridade)"></i>Autoridades</button>
+      <button class="chip" data-role="advogado"><i style="--c:var(--advogado)"></i>Advogados</button>
+      <button class="chip" data-role="pseudo"><i style="--c:var(--pseudo)"></i>Pseudonimizados</button>
+    </div>
+    <label class="ctl">Processo <select id="procSel"><option value="">todos</option></select></label>
+    <label class="ctl">Mín. peças <input id="minDocs" type="range" min="2" max="40" value="3"><output id="minDocsOut">3</output></label>
+    <button class="btn small" id="pathBtn">Caminho A → B</button>
+    <button class="btn ghost small" id="resetView">Recentrar</button>
+  </div>
+  <div class="graph-wrap">
+    <div id="sigma" class="sigma" role="img" aria-label="Grafo de relações"></div>
+    <div id="pathHint" class="path-hint" hidden></div>
+    <aside id="panel" class="panel" hidden></aside>
+    <div class="legend"><span>Tamanho = nº de peças em que aparece</span><span>Espessura = peças em comum</span></div>
+  </div>
+</section>
+
+<!-- PROCESSOS -->
+<section id="v-processos" class="view" hidden>
+  <h2>Quinze processos, um caso</h2>
+  <p class="lead small">Cada procedimento tem seu próprio volume e composição. Clique num nome para abri-lo no grafo.</p>
+  <div id="procGrid" class="proc-grid"></div>
+  <h3>Quem cita quem</h3>
+  <p class="muted">Referências explícitas de um processo a outro nas peças (contagem de documentos).</p>
+  <div id="xref" class="xref"></div>
+</section>
+
+<!-- TEMPO -->
+<section id="v-tempo" class="view" hidden>
+  <h2>Linha do tempo</h2>
+  <p class="lead small">Datas citadas nas peças narrativas (petições, decisões, representações), por mês. Um pico é um período sobre o qual os autos falam muito, não necessariamente quando algo aconteceu.</p>
+  <div class="tl-ctl"><label>Processo <select id="tlProc"><option value="">todos</option></select></label><label><input type="checkbox" id="tlLog"> escala log</label></div>
+  <div id="tlChart" class="tl-chart"></div>
+  <div id="tlDetail" class="tl-detail muted">Passe o mouse sobre um mês.</div>
+</section>
+
+<!-- MÉTODO -->
+<section id="v-metodo" class="view" hidden>
+  <h2>Como isto foi feito</h2>
+  <div class="prose">
+    <h3>Fonte</h3>
+    <p>O STF publicou os autos em 11/09/2026 (<a href="https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/" target="_blank" rel="noopener">nota à imprensa</a>). O pacote tem 4.258 PDFs e 49 vídeos. Só o texto foi usado. O pacote e os documentos não estão neste site.</p>
+    <h3>Pipeline</h3>
+    <ol>
+      <li><strong>Manifesto e texto.</strong> Hash SHA-256 e metadados de cada arquivo; extração de texto por página. Páginas sem camada de texto (1,8%) passaram por OCR em português.</li>
+      <li><strong>Extração estruturada.</strong> Expressões regulares para números de processo, CNPJ, datas, referências a outros processos e nomes em caixa alta, que é como peças jurídicas grafam partes.</li>
+      <li><strong>Papéis.</strong> Empresa (sufixo ou termo societário), autoridade (cargo no contexto, ou assinatura em todas as páginas de uma peça longa), advogado (remetente do recibo de petição eletrônica, ou inscrição profissional junto ao nome), pessoa (o resto).</li>
+      <li><strong>Relações.</strong> Duas entidades se ligam quando aparecem na mesma página de uma peça narrativa. Anexos como extratos, tabelas, procurações e documentos de identificação ficam fora, porque produzem relações espúrias em massa. O peso é o número de peças distintas em comum.</li>
+      <li><strong>Sanitização.</strong> Ver a <a href="https://github.com/LLA-master/autos-abertos/blob/main/POLITICA_DE_SANITIZACAO.md" target="_blank" rel="noopener">política</a>. Resumo: entidades públicas e pessoas nomeadas em atos judiciais entram com nome; pessoas incidentais viram pseudônimo; dados pessoais não entram.</li>
+    </ol>
+    <h3>Limites, sem rodeios</h3>
+    <ul>
+      <li>Coocorrência na mesma página <strong>não é relação comprovada</strong>. É um convite a ler a peça.</li>
+      <li>Homônimos existem e podem ter sido fundidos. Variantes de grafia do mesmo nome foram unidas por regra simples (mesmo primeiro e último nome).</li>
+      <li>O OCR erra; nomes cortados ou com letras trocadas podem aparecer.</li>
+      <li>Valores em dinheiro não foram publicados: a extração automática de extratos é inconfiável.</li>
+    </ul>
+    <h3>Como conferir</h3>
+    <p>Cada citação indica processo, sequencial da peça e página. Baixe o pacote do STF pelo link da nota, abra a pasta do processo e o arquivo cujo nome começa pelo sequencial.</p>
+    <h3>Licenças e código</h3>
+    <p>Código MIT, dados derivados CC BY 4.0. Repositório: <a href="https://github.com/LLA-master/autos-abertos" target="_blank" rel="noopener">github.com/LLA-master/autos-abertos</a>. Projeto pessoal, sem afiliação com o STF ou com partes dos processos.</p>
+    <p class="muted" id="buildInfo"></p>
+  </div>
+</section>
+</main>
+<footer class="foot">autos-abertos · dados derivados de atos públicos do STF · <a href="#metodo" data-nav="metodo">método e limites</a></footer>
+<script src="app.js"></script>
+</body>
+</html>

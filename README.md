@@ -1,0 +1,40 @@
+# autos-abertos
+
+Base de dados aberta e navegável sobre o acervo que o Supremo Tribunal Federal tornou público em 11 de setembro de 2026: os autos da Petição 15.556 e de quatorze procedimentos conexos da chamada **Operação Compliance Zero** (Banco Master). São 4.258 documentos e 189 mil páginas, processados para que jornalistas, pesquisadores e curiosos possam explorar quem aparece com quem, em que peça e em que momento.
+
+**Site:** `docs/` (GitHub Pages). **Fonte primária:** [nota à imprensa do STF](https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/).
+
+## O que há aqui
+
+- `docs/` — o site estático: trilhas guiadas, grafo de relações, fichas por entidade, processos e linha do tempo.
+- `docs/data/` — os dados derivados e sanitizados que o site consome (JSON). É a **única** coisa que sai do acervo.
+- `pipeline/` — os scripts que produzem esses dados a partir do acervo bruto (que não está neste repositório e não deve estar).
+- `POLITICA_DE_SANITIZACAO.md` — o que entra, o que não entra, e por quê.
+- `METODOLOGIA.md` — como o texto foi extraído, como as entidades e relações foram inferidas, e os limites disso.
+
+## O que não há aqui, de propósito
+
+Nenhum PDF, nenhum texto integral, nenhum CPF, número de inscrição profissional, endereço, telefone, conta bancária ou nome de arquivo. Pessoas que aparecem incidentalmente nos autos (terceiros, testemunhas, titulares de contas) são pseudonimizadas. Ver a política.
+
+## Como conferir uma informação
+
+Cada relação no grafo aponta para peças específicas (processo, número sequencial e página). Os autos completos estão no pacote público do STF linkado na nota à imprensa. O site não hospeda os documentos.
+
+## Reproduzir
+
+```bash
+export BMDB_RAW=/caminho/para/arquivos   # PDFs extraídos do pacote do STF
+export BMDB_WORK=/caminho/para/work      # área de trabalho local
+python3 -m venv $BMDB_WORK/.venv && $BMDB_WORK/.venv/bin/pip install -r pipeline/requirements.txt
+for s in 1 2 3 4 5 6; do $BMDB_WORK/.venv/bin/python pipeline/stage${s}_*.py; done
+```
+
+Requer `poppler` (pdftotext/pdfinfo), `tesseract` com o pacote `por` e `ocrmypdf`.
+
+## Licenças
+
+Código: MIT (`LICENSE`). Dados derivados em `docs/data/`: CC BY 4.0 (`DATA_LICENSE`). Os documentos originais são atos públicos do STF.
+
+## Projeto pessoal
+
+Este é um projeto independente de cidadania. Não é afiliado ao STF, à Polícia Federal, ao Ministério Público ou a qualquer parte dos processos.

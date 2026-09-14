@@ -1,0 +1,17 @@
+# AppleDouble do exFAT/macOS
+._*
+.DS_Store
+# nunca versionar acervo, texto, OCR, manifestos, salts, venv
+work/
+arquivos/
+*.pdf
+*.7z
+*.parquet
+*.jsonl
+manifest*
+salt*
+.venv/
+__pycache__/
+gate_review*.csv
+visibility_override.csv
+roles_override.csv
