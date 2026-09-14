@@ -148,7 +148,7 @@ function branchesFor(){ // devolve [{label,color,items:[{id,label,w,size,papel}]
 function drawMM(){ const svg=$("#mm"); const br=branchesFor(); const W=svg.clientWidth||1000,H=svg.clientHeight||600; if(!mm.vb) mm.vb=[-W/2,-H/2,W,H]; svg.setAttribute("viewBox",mm.vb.join(" "));
   const centerLabel=mm.mode==="caso"?"Operação Compliance Zero":mm.mode==="processo"?mm.proc:byId.get(mm.center).label;
   const centerColor=mm.mode==="caso"?css("--pink"):mm.mode==="processo"?css("--cyan"):css("--"+roleOf(byId.get(mm.center)));
-  const total=br.reduce((s,b)=>s+b.items.length,0)||1; let ang=-Math.PI/2; const R1=140, R2=Math.min(W,H)*(mm.mode==='caso'?.38:.40)+30; let out=[];
+  const total=br.reduce((s,b)=>s+b.items.length,0)||1; let ang=-Math.PI/2; const R1=Math.min(140,H*.28), R2=Math.min(W*.34,H*(mm.mode==='caso'?.38:.40))+20; let out=[];
   const path=(x1,y1,x2,y2)=>`M${x1},${y1} Q${(x1+x2)/2*1.08},${(y1+y2)/2*1.08} ${x2},${y2}`;
   $("#mmMode").value=mm.mode; const direct=mm.mode==="caso";
   br.forEach(b=>{ const span=2*Math.PI*(b.items.length/total); const mid=ang+span/2; const gx=direct?0:Math.cos(mid)*R1, gy=direct?0:Math.sin(mid)*R1;
