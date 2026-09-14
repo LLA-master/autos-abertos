@@ -7,6 +7,7 @@
   docs/data/wiki.json                              → docs/data/wiki_en.json
   pipeline/en/whoswho.html + primer.html (Who's who, Brazil primer) inseridos em en.html
   pipeline/en/posts_en.json  (títulos e subtítulos das crônicas em inglês → window.POSTS_EN)
+  docs/posts/en/<slug>.md    (corpo das crônicas em inglês; app.en.js busca aqui e cai no original se faltar)
 
 Tradução por substituição de trechos exatos: se um trecho da tabela não for
 encontrado no original (ou for encontrado mais de uma vez sem "all"), o build
@@ -99,6 +100,9 @@ def main():
     posts = json.load(open(DOCS/"posts"/"index.json", encoding="utf-8"))["posts"]
     faltam = [x["slug"] for x in posts if x["slug"] not in pen] + [x["serie"] for x in posts if x.get("serie") and x["serie"] not in pen["_series"]]
     if faltam: print("aviso: crônicas/séries sem título em inglês (ficam em português):", sorted(set(faltam)))
+    sem_corpo = [x["slug"] for x in posts if not (DOCS/"posts"/"en"/(x["slug"]+".md")).exists()]
+    if sem_corpo: print(f"aviso: {len(sem_corpo)} crônicas sem edição em inglês em docs/posts/en/ (o app cai no original):", sem_corpo)
+    else: print(f"crônicas: {len(posts)} com edição em inglês em docs/posts/en/")
     chron = '<script>window.POSTS_EN=' + json.dumps(pen, ensure_ascii=False) + '</script>' 
     assert html.count('<section id="v-rede"') == 1 and html.count('<div id="crCards"></div>') == 1
     html = html.replace('<section id="v-rede"', secs.rstrip()+"\n\n"+'<section id="v-rede"', 1)
