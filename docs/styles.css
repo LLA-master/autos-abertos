@@ -9,13 +9,13 @@
   --r:16px;--shadow:0 12px 40px rgba(0,0,0,.45);
   --font:"Outfit","Inter",system-ui,sans-serif;--display:"Contrail One","Righteous","Outfit",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
   --grid:rgba(255,79,163,.10);--hero-op:1;
-  --edge:rgba(255,255,255,.10);--edge-dim:rgba(255,255,255,.035);--node-dim:#2A3048;--label:#FFFFFF;--label-bg:rgba(15,18,32,.82);--label-dim:#8A92A8;--hl:#FFE45C;
+  --edge:rgba(255,255,255,.075);--edge-dim:rgba(255,255,255,.03);--node-dim:#2A3048;--label:#FFFFFF;--label-bg:rgba(15,18,32,.82);--label-dim:#8A92A8;--hl:#FFE45C;
 }
 :root[data-theme="light"]{--bg:#F6F5FB;--bg2:#FFFFFF;--bg3:#EEF0F7;--ink:#171A2B;--ink2:#3B4160;--muted:#6C7390;--line:#DDE1EC;
   --pink:#D6187A;--cyan:#0A8FA8;--orange:#E2611E;--gold:#B8860B;--violet:#6A46C8;--ok:#1E9E6A;--bad:#D23B57;
   --pessoa:#D6187A;--empresa:#0A8FA8;--autoridade:#6A46C8;--advogado:#B8860B;--pseudo:#C9CDDA;
   --glow:none;--glow2:none;--shadow:0 12px 40px rgba(30,30,60,.10);--grid:rgba(214,24,122,.08);--hero-op:.55;
-  --edge:rgba(40,45,80,.22);--edge-dim:rgba(40,45,80,.06);--node-dim:#E4E7F0;--label:#12142A;--label-bg:rgba(255,255,255,.88);--label-dim:#6C7390;--hl:#D99A00}
+  --edge:rgba(40,45,80,.16);--edge-dim:rgba(40,45,80,.05);--node-dim:#E4E7F0;--label:#12142A;--label-bg:rgba(255,255,255,.88);--label-dim:#6C7390;--hl:#D99A00}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 var(--font);
   background-image:radial-gradient(900px 500px at 85% -10%,color-mix(in srgb,var(--pink) 14%,transparent),transparent 60%),radial-gradient(700px 420px at 0% 0%,color-mix(in srgb,var(--cyan) 9%,transparent),transparent 60%);background-attachment:fixed}
@@ -75,7 +75,7 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 .chips{display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:99px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);opacity:.35}.chip.on{color:var(--ink);border-color:var(--c,var(--ink2));background:color-mix(in srgb,var(--c,transparent) 12%,var(--bg))}.chip.on i{opacity:1}
 .ctl{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--ink2)}.ctl select,.ctl input[type=range]{font:inherit;accent-color:var(--pink)}.ctl select{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 6px}
-.graph-wrap{position:relative;height:calc(100vh - 230px);min-height:520px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--bg2)}
+.graph-wrap{position:relative;height:calc(100vh - 230px);min-height:520px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--bg2);background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1px,transparent 1px);background-size:22px 22px}
 .sigma{position:absolute;inset:0}
 .legend{position:absolute;left:12px;bottom:10px;display:flex;gap:14px;font-size:12px;color:var(--muted);background:color-mix(in srgb,var(--bg2) 85%,transparent);padding:5px 10px;border-radius:99px}
 .path-hint{position:absolute;left:12px;top:12px;background:var(--hl);color:#12142A;padding:8px 14px;border-radius:99px;font-weight:600;z-index:5;box-shadow:var(--glow)}
@@ -147,3 +147,6 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 .xref-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--bg2);padding:10px}
 .xref-matrix{border-collapse:collapse;font-family:var(--mono);font-size:11px}.xref-matrix th{color:var(--muted);font-weight:500;padding:4px 6px;white-space:nowrap}.xref-matrix th.rot{writing-mode:vertical-rl;transform:rotate(180deg);height:80px;text-align:left}
 .xref-matrix td{width:34px;height:28px;text-align:center;border:1px solid var(--bg2);color:var(--ink);border-radius:4px}.xref-matrix td.self{background:var(--bg3);color:var(--muted)}
+
+.tip{position:fixed;z-index:60;pointer-events:none;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:12.5px;line-height:1.4;box-shadow:var(--shadow);max-width:320px}
+.tip .badge{vertical-align:middle}.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--bg3);color:var(--ink2);margin:2px}

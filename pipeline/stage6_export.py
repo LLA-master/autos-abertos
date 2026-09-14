@@ -102,7 +102,16 @@ meta={"gerado_em":time.strftime("%Y-%m-%d %H:%M UTC",time.gmtime()),"fonte":{"no
       "grafo":{"nos":len(nodes),"arestas":len(edges),"visiveis":sum(1 for n in nodes if n["vis"]),"pseudonimizados":sum(1 for n in nodes if not n["vis"]),"comunidades":len(comms)},
       "sanitizacao":"empresas, autoridades e advogados nomeados; pessoas nomeadas apenas se citadas em decisão/despacho/petição inicial ou recorrentes em >=2 processos e >=3 peças; demais pseudonimizadas (código estável). Sem CPF, inscrição profissional, endereços, nomes de arquivo ou texto integral."}
 def dump(name,obj): json.dump(obj,open(f"{OUT}/{name}","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
-dump("graph.json",{"nodes":nodes,"edges":edges}); dump("entities.json",entities); dump("processos.json",procs_out)
+dump("graph.json",{"nodes":nodes,"edges":edges});
+# natureza das ligações: peças (processo, seq, tipo, página) em que os dois nomes dividem página, por aresta exportada
+c.execute("CREATE TABLE ex_edges (a VARCHAR, b VARCHAR, s INT, d INT)")
+c.executemany("INSERT INTO ex_edges VALUES (?,?,?,?)",[(s_,d_,nid[s_],nid[d_]) for s_,d_,_ in G.edges(data=True)])
+det={}
+for s_,d_,tipo_,n_ in c.sql("""SELECT e.s, e.d, x.tipo, count(DISTINCT x.doc_id) FROM ex_edges e JOIN cm x ON x.entity=e.a JOIN cm y ON y.entity=e.b AND y.doc_id=x.doc_id AND y.page=x.page GROUP BY 1,2,3""").fetchall():
+    det.setdefault(f"{s_}|{d_}",{"tipos":{},"cit":[]})["tipos"][tipo_]=int(n_)
+for s_,d_,p_,seq_,tipo_,pg_,n_ in c.sql("""SELECT s,d,processo,seq,tipo,page,n FROM (SELECT e.s, e.d, x.processo, x.seq, x.tipo, min(x.page) page, count(*) n, row_number() OVER (PARTITION BY e.s,e.d ORDER BY count(*) DESC, x.processo, x.seq) rn FROM ex_edges e JOIN cm x ON x.entity=e.a JOIN cm y ON y.entity=e.b AND y.doc_id=x.doc_id AND y.page=x.page GROUP BY e.s,e.d,x.processo,x.seq,x.tipo) WHERE rn<=8""").fetchall():
+    det.setdefault(f"{s_}|{d_}",{"tipos":{},"cit":[]})["cit"].append([p_,int(seq_),tipo_,int(pg_),int(n_)])
+dump("edges_detail.json",det); dump("entities.json",entities); dump("processos.json",procs_out)
 dump("crossrefs.json",[{"s":a,"d":b,"n":int(n)} for a,b,n in xr]); dump("timeline.json",tl_out); dump("cnpjs.json",cnpjs); dump("meta.json",meta)
 # GATE: varredura de padrões proibidos na saída
 bad=[]

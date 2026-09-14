@@ -46,16 +46,16 @@ $("#buildInfo").textContent=`Dados gerados em ${META.gerado_em}. Pacote de orige
 
 /* ---------- grafo ---------- */
 const graph=new graphology.Graph({type:"undirected"});
-G.nodes.forEach(n=>graph.addNode(n.id,{x:n.x,y:n.y,size:3+Math.log2(n.docs+1)*2.1,label:n.label,color:"#999",n}));
-G.edges.forEach(e=>{const s=G.nodes[e.s].id,d=G.nodes[e.d].id; if(!graph.hasEdge(s,d)) graph.addEdge(s,d,{w:e.w,p:e.p,size:.5+Math.log2(e.w)*.8});});
+G.nodes.forEach(n=>graph.addNode(n.id,{x:n.x,y:n.y,size:2.5+Math.log2(n.docs+1)*1.7,label:n.label,color:"#999",n}));
+G.edges.forEach(e=>{const s=G.nodes[e.s].id,d=G.nodes[e.d].id; if(!graph.hasEdge(s,d)) graph.addEdge(s,d,{w:e.w,p:e.p,size:.35+Math.log2(e.w)*.55});});
 let commColor=false;
 function applyColors(){graph.forEachNode((id,a)=>graph.setNodeAttribute(id,"color",commColor&&a.n.c>=0?COMM[a.n.c%COMM.length]:colorOf(a.n)));}
 applyColors();
-(function layout(){ const key="bmdb.layout2."+META.gerado_em; let cached=null; try{cached=JSON.parse(localStorage.getItem(key)||"null")}catch(e){}
+(function layout(){ const key="bmdb.layout3."+META.gerado_em; let cached=null; try{cached=JSON.parse(localStorage.getItem(key)||"null")}catch(e){}
   if(cached&&Object.keys(cached).length===graph.order){ graph.forEachNode(id=>{const p=cached[id]; if(p){graph.setNodeAttribute(id,"x",p[0]);graph.setNodeAttribute(id,"y",p[1]);}}); return; }
-  const FA=graphologyLibrary.layoutForceAtlas2; const settings=FA.inferSettings(graph); Object.assign(settings,{gravity:.7,scalingRatio:22,strongGravityMode:false,barnesHutOptimize:true,adjustSizes:false,linLogMode:true,edgeWeightInfluence:.6,slowDown:2});
-  FA.assign(graph,{iterations:600,settings,getEdgeWeight:"w"});
-  graphologyLibrary.layoutNoverlap.assign(graph,{maxIterations:150,settings:{margin:3,ratio:1.3,expansion:1.15}});
+  const FA=graphologyLibrary.layoutForceAtlas2; const settings=FA.inferSettings(graph); Object.assign(settings,{gravity:.25,scalingRatio:60,strongGravityMode:false,barnesHutOptimize:true,adjustSizes:true,linLogMode:true,edgeWeightInfluence:.5,slowDown:2});
+  FA.assign(graph,{iterations:800,settings,getEdgeWeight:"w"});
+  graphologyLibrary.layoutNoverlap.assign(graph,{maxIterations:300,settings:{margin:14,ratio:1.6,expansion:1.3}});
   const out={}; graph.forEachNode((id,a)=>out[id]=[+a.x.toFixed(2),+a.y.toFixed(2)]); try{localStorage.setItem(key,JSON.stringify(out))}catch(e){}
 })();
 const F={roles:new Set(["pessoa","empresa","autoridade"]),proc:"",minDocs:4,minW:2,topN:120,collapse:false,focus:false,depth:1,labelsAll:false};
@@ -90,10 +90,30 @@ function drawHover(ctx,data,settings){ const size=settings.labelSize, font=setti
   ctx.fillStyle=css("--bg2"); ctx.strokeStyle=css("--hl"); ctx.lineWidth=1.5; ctx.beginPath(); ctx.roundRect(x,y-h/2,w,h,7); ctx.fill(); ctx.stroke();
   ctx.beginPath(); ctx.arc(data.x,data.y,data.size+3,0,Math.PI*2); ctx.strokeStyle=css("--hl"); ctx.lineWidth=3; ctx.stroke();
   ctx.fillStyle=css("--label"); ctx.fillText(label,x+pad,y+(size+1)*.36); }
+let ED=null; async function loadED(){ if(!ED){ ED={}; try{ ED=await load("edges_detail.json"); }catch(e){} } return ED; }
+const edgeKey=(a,b)=>{const i=byId.get(a).i,j=byId.get(b).i; return ED&&(ED[`${i}|${j}`]||ED[`${j}|${i}`])||null;};
+const tipoSummary=d=>d?Object.entries(d.tipos).sort((a,b)=>b[1]-a[1]).map(([t,n])=>`${tipo(t)} (${n})`).join(" · "):"";
+const tip=document.createElement("div"); tip.className="tip"; tip.hidden=true; document.body.appendChild(tip);
+function showTip(html,x,y){ tip.innerHTML=html; tip.hidden=false; const r=tip.getBoundingClientRect(); tip.style.left=Math.min(innerWidth-r.width-12,x+14)+"px"; tip.style.top=Math.max(8,y-r.height-12)+"px"; }
+function hideTip(){ tip.hidden=true; }
+function renderEdgePanel(a,b){ const P=$("#panel"); const d=edgeKey(a,b)||{tipos:{},cit:[]}; const w=graph.getEdgeAttribute(graph.edge(a,b),"w"), pr=graph.getEdgeAttribute(graph.edge(a,b),"p");
+  P.innerHTML=`<button class="close" aria-label="Fechar">×</button><h3 style="font-size:17px">${byId.get(a).label} <span class="muted">↔</span> ${byId.get(b).label}</h3>
+  <p class="muted" style="margin:4px 0 10px">Natureza da ligação: os dois nomes aparecem <b>na mesma página</b> de ${w} peça(s) narrativa(s), em ${pr} processo(s). Isso é coocorrência documental, não prova de relação; a lista abaixo diz onde ler.</p>
+  <div class="kv"><div><b>${w}</b><span>peças em comum</span></div><div><b>${pr}</b><span>processos</span></div><div><b>${Object.keys(d.tipos).length}</b><span>tipos de peça</span></div></div>
+  <h4>Por tipo de peça</h4><div>${Object.entries(d.tipos).sort((x,y)=>y[1]-x[1]).map(([t,n])=>`<span class="tag">${tipo(t)} · ${n}</span>`).join("")||"<span class='muted'>sem detalhe</span>"}</div>
+  <h4>Onde conferir (páginas em que ambos aparecem)</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th><th>×</th></tr>${d.cit.map(([pp,sq,t,pg,n])=>`<tr><td>${pp}</td><td>${String(sq).padStart(5,"0")}</td><td>${tipo(t)}</td><td>${pg}</td><td>${n}</td></tr>`).join("")}</table>
+  <div class="acts" style="margin-top:10px"><button class="btn small" data-go="${a}">${byId.get(a).label}</button><button class="btn small" data-go="${b}">${byId.get(b).label}</button></div>`;
+  P.hidden=false; $(".close",P).onclick=()=>{P.hidden=true;}; $$("[data-go]",P).forEach(x=>x.onclick=()=>{ensureVisible(x.dataset.go);select(x.dataset.go);}); }
 function mountGraph(wrap,into){
   if(wrap.parentElement!==into) into.appendChild(wrap);
-  if(!renderer){
-    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"600",labelColor:{color:css("--label")},defaultDrawNodeLabel:drawLabel,defaultDrawNodeHover:drawHover,zIndex:true,...reducers()});
+  if(!renderer){ loadED();
+    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"600",labelColor:{color:css("--label")},defaultDrawNodeLabel:drawLabel,defaultDrawNodeHover:drawHover,zIndex:true,enableEdgeEvents:true,enableEdgeHoverEvents:true,...reducers()});
+    let hoverEdge=null;
+    renderer.on("enterEdge",({edge,event})=>{ hoverEdge=edge; const [a,b]=graph.extremities(edge); const d=edgeKey(a,b); const w=graph.getEdgeAttribute(edge,"w"), pr=graph.getEdgeAttribute(edge,"p"); showTip(`<b>${byId.get(a).label}</b> ↔ <b>${byId.get(b).label}</b><br><span class="muted">${w} peça(s) em ${pr} processo(s)</span>${d?"<br>"+tipoSummary(d):""}<br><span class="muted">clique para ver onde</span>`,event.original.clientX,event.original.clientY); });
+    renderer.on("leaveEdge",()=>{ hoverEdge=null; hideTip(); });
+    renderer.on("clickEdge",({edge})=>{ const [a,b]=graph.extremities(edge); hideTip(); selected=null; refresh(); renderEdgePanel(a,b); });
+    renderer.on("enterNode",({node,event})=>{ const n=byId.get(node); showTip(`<b>${n.label}</b> <span class="badge" style="--c:var(--${roleOf(n)});font-size:9px">${ROLE_LABEL[roleOf(n)]}</span><br><span class="muted">${n.docs} peças · ${n.procs} processos · ${graph.degree(node)} ligações</span>`,event.original.clientX,event.original.clientY); });
+    renderer.on("leaveNode",()=>hideTip());
     renderer.on("enterNode",({node})=>{hovered=node;renderer.refresh();});
     renderer.on("leaveNode",()=>{hovered=null;renderer.refresh();});
     let downAt=null; renderer.on("downNode",({event})=>{ downAt=[event.x,event.y]; });
@@ -105,7 +125,18 @@ function mountGraph(wrap,into){
   } else { renderer.setSetting("labelColor",{color:css("--label")}); setTimeout(()=>renderer.refresh(),0); }
   refresh();
 }
-function refresh(){ if(!renderer) return; recompute(); const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer); renderer.refresh(); }
+let lastSig="", spreadTimer=null;
+function visibleIds(){ return graph.nodes().filter(visible); }
+function spread(){ if(live) return; const ids=visibleIds(); if(ids.length<2) return; const sub=new graphology.Graph(); ids.forEach(id=>{const a=graph.getNodeAttributes(id); sub.addNode(id,{x:a.x,y:a.y,size:a.size});});
+  const xs=ids.map(id=>graph.getNodeAttribute(id,"x")), ys=ids.map(id=>graph.getNodeAttribute(id,"y")); const ext=Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys))||1000;
+  const margin=Math.max(6,(ext/Math.sqrt(ids.length))*(spacing/100));   // margem relativa ao tamanho do quadro: espaço = % da célula média
+  graphologyLibrary.layoutNoverlap.assign(sub,{maxIterations:400,settings:{margin,ratio:1.3,expansion:1.2,gridSize:40}});
+  sub.forEachNode((id,a)=>{graph.setNodeAttribute(id,"x",a.x);graph.setNodeAttribute(id,"y",a.y);}); }
+function fitVisible(anim=true){ const ids=visibleIds(); if(!ids.length||!renderer) return; const xs=ids.map(id=>graph.getNodeAttribute(id,"x")), ys=ids.map(id=>graph.getNodeAttribute(id,"y")); const mx=Math.min(...xs),Mx=Math.max(...xs),my=Math.min(...ys),My=Math.max(...ys); const px=(Mx-mx||1)*.08, py=(My-my||1)*.08;
+  renderer.setCustomBBox({x:[mx-px,Mx+px],y:[my-py,My+py]}); anim?renderer.getCamera().animatedReset({duration:450}):renderer.getCamera().setState({x:.5,y:.5,ratio:1,angle:0}); }
+function refresh(){ if(!renderer) return; recompute(); const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer);
+  const ids=visibleIds(); const sig=ids.length+":"+ids.slice(0,40).join(","); if(sig!==lastSig){ lastSig=sig; clearTimeout(spreadTimer); spreadTimer=setTimeout(()=>{ spread(); renderer.refresh(); if(!selected) fitVisible(); },60); }
+  renderer.refresh(); }
 function focus(id,ratio=.22){ if(!renderer||!graph.hasNode(id)) return; const p=renderer.getNodeDisplayData(id); if(p) renderer.getCamera().animate({x:p.x,y:p.y,ratio},{duration:600}); }
 function select(id){ selected=id; refresh(); renderPanel(id); if(id) focus(id, F.focus?.3:.22); }
 function ensureVisible(id){ const n=byId.get(id); if(visible(id)) return; F.roles.add(roleOf(n)); if(n.docs<F.minDocs){F.minDocs=Math.max(2,n.docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;} if(F.proc&&!n.pe.some(([p])=>p===F.proc)){F.proc="";$("#procSel").value="";} syncChips(); }
@@ -130,7 +161,7 @@ $$("#roleChips .chip").forEach(c=>c.onclick=()=>{const r=c.dataset.role; F.roles
 const procSel=$("#procSel"); META.corpus.processos.forEach(p=>procSel.insertAdjacentHTML("beforeend",`<option>${p}</option>`)); procSel.onchange=()=>{F.proc=procSel.value;refresh();};
 $("#minDocs").oninput=e=>{F.minDocs=+e.target.value;$("#minDocsOut").textContent=F.minDocs;refresh();};
 $("#commColor").onchange=e=>{commColor=e.target.checked;applyColors();refresh();};
-$("#resetView").onclick=()=>{renderer&&renderer.getCamera().animatedReset({duration:500}); pathSet=null; refresh();};
+$("#resetView").onclick=()=>{ pathSet=null; lastSig=""; refresh(); setTimeout(()=>fitVisible(),120); };
 $("#zoomIn").onclick=()=>renderer&&renderer.getCamera().animatedZoom({duration:250}); $("#zoomOut").onclick=()=>renderer&&renderer.getCamera().animatedUnzoom({duration:250});
 $("#minW").oninput=e=>{F.minW=+e.target.value;$("#minWOut").textContent=F.minW;refresh();};
 $("#topN").onchange=e=>{F.topN=+e.target.value;refresh();};
@@ -156,12 +187,12 @@ attachSearch($("#search"),$("#sugg"),id=>{ ensureVisible(id); if(pathMode) pathC
 function setPathMode(on,preA){ pathMode=on; pathA=preA||null; pathSet=null; if(on){ selected=null; renderPanel(null); } const h=$("#pathHint"); h.hidden=!on; h.textContent=on?(pathA?`A = ${byId.get(pathA).label}. Agora clique (ou busque) o nó B.`:"Clique (ou busque) o nó A."):""; $("#pathBtn").classList.toggle("primary",on); refresh(); }
 $("#pathBtn").onclick=()=>setPathMode(!pathMode);
 /* nós vivos: física contínua (ForceAtlas2 em worker) + arrastar */
-let live=null, dragging=null, spacing=22;
-function fa2Settings(){ const FA=graphologyLibrary.layoutForceAtlas2; const st=FA.inferSettings(graph); return Object.assign(st,{gravity:Math.max(.2,1.4-spacing/50),scalingRatio:spacing,barnesHutOptimize:true,linLogMode:true,edgeWeightInfluence:.6,slowDown:3,adjustSizes:true}); }
+let live=null, dragging=null, spacing=60;
+function fa2Settings(){ const FA=graphologyLibrary.layoutForceAtlas2; const st=FA.inferSettings(graph); return Object.assign(st,{gravity:Math.max(.08,.9-spacing/100),scalingRatio:spacing,barnesHutOptimize:true,linLogMode:true,edgeWeightInfluence:.5,slowDown:3,adjustSizes:true}); }
 function startLive(){ if(live) return; const W=graphologyLibrary.FA2Layout||(graphologyLibrary.layoutForceAtlas2&&graphologyLibrary.layoutForceAtlas2.FA2Layout); if(!W){ alert("Layout ao vivo indisponível nesta build."); return; } live=new W(graph,{settings:fa2Settings(),getEdgeWeight:"w"}); live.start(); }
 function stopLive(){ if(!live) return; live.kill(); live=null; }
 $("#liveLayout").onchange=e=>{ e.target.checked?startLive():stopLive(); };
-$("#spacing").oninput=e=>{ spacing=+e.target.value; $("#spacingOut").textContent=spacing; if(live){ stopLive(); startLive(); } };
+$("#spacing").oninput=e=>{ spacing=+e.target.value; $("#spacingOut").textContent=spacing; if(live){ stopLive(); startLive(); } else { lastSig=""; refresh(); } };
 function bindDrag(){ if(!renderer) return;
   renderer.on("downNode",({node})=>{ dragging=node; graph.setNodeAttribute(node,"highlighted",true); renderer.getCamera().disable(); });
   renderer.getMouseCaptor().on("mousemovebody",e=>{ if(!dragging) return; const pos=renderer.viewportToGraph(e); graph.setNodeAttribute(dragging,"x",pos.x); graph.setNodeAttribute(dragging,"y",pos.y); e.preventSigmaDefault(); e.original.preventDefault(); e.original.stopPropagation(); });
@@ -206,7 +237,10 @@ function drawMM(){ const svg=$("#mm"); const br=branchesFor(); const W=svg.clien
   if(mm.mode==="processo"&&br.length<4){ const faltam=["pessoa","empresa","autoridade","advogado"].filter(r=>!br.some(b=>b.label===ROLE_PL[r])).map(r=>ROLE_PL[r].toLowerCase()); out.push(`<text y="${R2+40}" text-anchor="middle" style="font-size:11px;fill:var(--muted)">sem ${faltam.join(", ")} nas peças narrativas deste processo</text>`); }
   out.push(`<g class="mm-node center" data-center="1"><circle r="34" fill="${centerColor}"/><text y="-44" text-anchor="middle">${esc(centerLabel)}</text></g>`);
   svg.innerHTML=`<g id="mmRoot">${out.join("")}</g>`;
-  $$(".leaf",svg).forEach(g=>g.onclick=()=>{const id=g.dataset.id; if(id.startsWith("proc:")) mmProc(id.slice(5)); else mmCenter(id);});
+  $$(".leaf",svg).forEach(g=>{ g.onclick=()=>{const id=g.dataset.id; if(id.startsWith("proc:")) mmProc(id.slice(5)); else mmCenter(id);};
+    g.onmousemove=e=>{ const id=g.dataset.id; if(mm.mode==="entidade"&&!id.startsWith("proc:")){ const d=edgeKey(mm.center,id); const e_=graph.edge(mm.center,id); const w=e_?graph.getEdgeAttribute(e_,"w"):0; showTip(`<b>${byId.get(id).label}</b><br><span class="muted">${w} peça(s) em comum com ${byId.get(mm.center).label}</span>${d?"<br>"+tipoSummary(d):""}<br><span class="muted">clique para recentrar</span>`,e.clientX,e.clientY);} else if(mm.mode==="processo"&&!id.startsWith("proc:")){ const n=byId.get(id); const pe=n.pe.find(x=>x[0]===mm.proc); showTip(`<b>${n.label}</b><br><span class="muted">${pe?pe[1]:0} peça(s) em ${mm.proc} · ${n.docs} no total</span>`,e.clientX,e.clientY);} else { const pr=PROCS.find(x=>"proc:"+x.processo===id); if(pr) showTip(`<b>${pr.processo}</b><br><span class="muted">${fmt(pr.pdfs)} peças · ${fmt(pr.pages)} páginas</span>`,e.clientX,e.clientY);} };
+    g.onmouseleave=hideTip; });
+  loadED();
   $("[data-center]",svg).onclick=()=>{ if(mm.mode==="entidade") openNode(mm.center); else if(mm.mode==="processo"){ location.hash="grafo"; setTimeout(()=>{F.proc=mm.proc;$("#procSel").value=mm.proc;refresh();},60);} };
   $("#mmCrumbs").innerHTML=(mm.crumbs.length?`<span>anteriores:</span> `:"")+mm.crumbs.slice().reverse().map((c,i)=>`<button data-i="${mm.crumbs.length-1-i}">${c.t==="processo"?c.id:byId.get(c.id).label}</button>`).join("");
   $$("#mmCrumbs button").forEach(b=>b.onclick=()=>{const c=mm.crumbs[+b.dataset.i]; mm.crumbs=mm.crumbs.slice(0,+b.dataset.i); if(c.t==="processo"){mm.mode="processo";mm.proc=c.id;} else {mm.mode="entidade";mm.center=c.id;} $("#mmMode").value=mm.mode; drawMM();});
@@ -321,6 +355,7 @@ function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage");
   grid.innerHTML=xs.map(p=>`<div class="wk-card" data-wk="${p.id}" style="--c:var(--${p.papel})"><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span><h3>${p.label}</h3><div class="m">${p.docs} peças · ${p.procs} processos${p.peak?` · pico ${p.peak}`:""}</div><p>${p.resumo}</p></div>`).join("")||`<p class="muted">Nada com esse filtro.</p>`;
   $$("[data-wk]",grid).forEach(c=>c.onclick=()=>openWiki(c.dataset.wk));
 }
+window.bmdb={fitVisible,spread,refresh,graph,get renderer(){return renderer;}};
 /* ---------- go ---------- */
 show(location.hash.slice(1)||"inicio");
 })();
