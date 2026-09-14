@@ -4,7 +4,8 @@
   "Pet 15.198, a segunda fase": "Pet 15.198: the second phase",
   "Pet 15.556, a decisão": "Pet 15.556: the ruling",
   "RCL 88.121, a mudança de endereço": "RCL 88.121: the change of address",
-  "INQ 5.035, o projeto": "INQ 5.035: the project"
+  "INQ 5.035, o projeto": "INQ 5.035: the project",
+  "Pet 15.478, a quebra": "Pet 15.478: the disclosure order"
  },
  "cento-e-oitenta-e-nove-mil-paginas": {
   "t": "One hundred and eighty-nine thousand pages",
@@ -105,5 +106,17 @@
  "inq-5035-03-quem-pediu-para-entrar": {
   "t": "Who asked to be let in",
   "s": "The agency owner who asked for access to the inquiry before the inquiry existed, the journalist served notice at an old e-mail address, a 45-day medical certificate, a senator who says he was the target of a search, and a queue of lawyers in a case to which, since May, the police have added nothing."
+ },
+ "pet-15478-01-o-que-os-celulares-disseram": {
+  "t": "What the phones said",
+  "s": "In February 2026 the Federal Police took to the Supreme Court the first excerpts from the phones seized in November. A director with a chill down his spine, a bank owner asking to correct a statement, a treasurer who finds it hard to register a lien, and a BRB director's notebook. The representation that opened Petition 15.478."
+ },
+ "pet-15478-02-treze-nomes": {
+  "t": "Thirteen names",
+  "s": "Nine people, four companies, two years of accounts and tax returns. The list the police asked for, the crime attributed to each, the prosecutors' opinion that agreed in three weeks and the ruling that took three more months to say yes."
+ },
+ "pet-15478-03-o-que-os-bancos-devolveram": {
+  "t": "What the banks sent back",
+  "s": "Seventy-eight institutions notified by the Central Bank, files with thousands of rows transmitted through a system called Simba, a company the tax authority says has been closed since 2018, and the realisation that the data that matter are not in the record, and never will be."
  }
 }

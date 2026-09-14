@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Crônicas: lê docs/posts/*.md (front matter: title, subtitle, date, tags) e escreve docs/posts/index.json e docs/feed.xml.
-Não lê o acervo; só os textos publicados. Ordena por data decrescente. Minutos de leitura = palavras / 200."""
-import os, re, json, html, time
+Não lê o acervo; só os textos publicados. Ordena por data decrescente. Minutos de leitura = palavras / 200.
+Ao final, gera SEMPRE a edição em inglês (pipeline/build_en.py): en.html, app.en.js, wiki_en.json.
+Se o original mudou sem tradução, o build en falha e este script devolve o mesmo erro. --sem-en pula essa etapa."""
+import os, re, json, html, time, sys, subprocess
 REPO=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); POSTS=f"{REPO}/docs/posts"; SITE="https://lla-master.github.io/autos-abertos/"
 def fm(md):
     meta={}; body=md
@@ -30,3 +32,7 @@ open(f"{REPO}/docs/feed.xml","w",encoding="utf-8").write(f"""<?xml version="1.0"
 {items}</channel></rss>
 """)
 print(f"{len(posts)} crônicas -> index.json, feed.xml")
+# Edição em inglês: sempre junto com a portuguesa, para as duas nunca divergirem.
+if "--sem-en" not in sys.argv:
+    r=subprocess.run([sys.executable,f"{REPO}/pipeline/build_en.py"])
+    if r.returncode: sys.exit(r.returncode)

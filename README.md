@@ -28,7 +28,7 @@ export BMDB_RAW=/caminho/para/arquivos   # PDFs extraídos do pacote do STF
 export BMDB_WORK=/caminho/para/work      # área de trabalho local
 python3 -m venv $BMDB_WORK/.venv && $BMDB_WORK/.venv/bin/pip install -r pipeline/requirements.txt
 for s in 1 2 3 4 5 6 7; do $BMDB_WORK/.venv/bin/python pipeline/stage${s}_*.py; done
-python3 pipeline/build_posts.py   # crônicas: índice e feed
+python3 pipeline/build_posts.py   # crônicas: índice e feed, e em seguida a edição em inglês (build_en.py)
 ```
 
 Requer `poppler` (pdftotext/pdfinfo), `tesseract` com o pacote `por` e `ocrmypdf`.
@@ -39,11 +39,13 @@ Além das contagens (peças, processos, menções), o estágio 6 exporta métric
 
 ## Edição em inglês
 
-`docs/en.html` (com `docs/app.en.js` e `docs/data/wiki_en.json`) é gerada por `pipeline/build_en.py` a partir dos originais em português, por substituição de trechos exatos declarados em `pipeline/en/strings_html.py` e `pipeline/en/strings_js.py`. Se o original mudar sem tradução correspondente, o build falha de propósito. As seções exclusivas da edição em inglês (who's who e primer sobre o Brasil) ficam em `pipeline/en/whoswho.html` e `pipeline/en/primer.html`; títulos e subtítulos das crônicas em inglês, em `pipeline/en/posts_en.json` (os textos das crônicas continuam só em português). Depois de editar `index.html`, `app.js`, crônicas ou o `wiki.json`, rode:
+`docs/en.html` (com `docs/app.en.js` e `docs/data/wiki_en.json`) é gerada por `pipeline/build_en.py` a partir dos originais em português, por substituição de trechos exatos declarados em `pipeline/en/strings_html.py` e `pipeline/en/strings_js.py`. Se o original mudar sem tradução correspondente, o build falha de propósito. As seções exclusivas da edição em inglês (who's who e primer sobre o Brasil) ficam em `pipeline/en/whoswho.html` e `pipeline/en/primer.html`; títulos e subtítulos das crônicas em inglês, em `pipeline/en/posts_en.json` (os textos das crônicas continuam só em português). A edição em inglês é gerada **sempre** ao final de `pipeline/build_posts.py`, para que as duas versões nunca divergam (use `--sem-en` para pular). Depois de editar `index.html`, `app.js`, crônicas ou o `wiki.json`, rode:
 
 ```bash
-python3 pipeline/build_en.py
+python3 pipeline/build_posts.py   # PT-BR e EN
 ```
+
+`python3 pipeline/build_en.py` continua funcionando sozinho (`--check` só valida, sem escrever).
 
 ## Licenças
 
