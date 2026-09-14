@@ -29,6 +29,11 @@ O rastro de cada processo (`stage8_rastro.py`) descreve cada peça pelo que ela 
 
 Os excertos (`stage9_excertos.py`) são trechos literais recortados do texto da peça pelo próprio pipeline. A curadoria em `pipeline/excertos.py` aponta processo, número da peça, página e um trecho-âncora; se a âncora não estiver naquela página, ou estiver mais de uma vez, o build falha. Nenhum excerto é digitado, o que elimina erro de transcrição e citação inventada. Só podem ser citados atos assinados por autoridade: decisão, despacho, acórdão e manifestação da Procuradoria-Geral da República. Representação policial, petição de defesa e anexo de investigação ficam de fora, porque é neles que está transcrição de conversa privada e dado de terceiro. O limite é de 600 caracteres por excerto e vale o mesmo gate de padrões proibidos da exportação.
 
+## Decisões na íntegra
+`stage11_decisoes.py` publica o texto completo dos atos do juízo: 206 peças, 1.169 páginas, 1,7 milhão de caracteres. Duas camadas de proteção, e o build falha se qualquer uma não fechar. A primeira é automática e cobre identificadores: CPF, RG, passaporte, CNH, título de eleitor, telefone, e-mail, CEP, endereço com número, conta e agência bancária, inscrição de advogado com número e data de nascimento viram etiqueta entre colchetes. O CNPJ fica, por ser registro de empresa. A segunda é curadoria: `pipeline/protegidos.py` lista vítimas, testemunhas e familiares que as crônicas já se recusavam a nomear, e troca cada nome pela descrição do papel.
+
+Duas armadilhas encontradas ao montar isso, ambas resolvidas: um padrão de endereço IP casava com valores em reais de dez dígitos, destruindo as cifras do caso; e CPFs partidos pela quebra de página escapavam quando o mascaramento era feito página a página, o que exigiu passar a mascarar a peça inteira de uma vez.
+
 ## Busca
 Duas buscas, com alcances diferentes. A do site (`stage10_busca.py`) indexa apenas o que já é público: excertos, crônicas, fichas e resumos, 263 documentos. O que vai ao navegador é um índice invertido com a frequência de cada palavra por documento, não o texto; o ranqueamento é BM25, roda localmente e nada é enviado a servidor algum.
 

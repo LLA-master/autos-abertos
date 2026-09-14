@@ -6,11 +6,22 @@ Se um trecho não for encontrado, o build falha: é o sinal de que app.js mudou
 e a tradução precisa de revisão."""
 
 JS = [
+ # --- leitor das decisões (v0.6) ---
+ ('const BS_LABEL={excerto:"trecho",pagina:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo"};',
+  'const BS_LABEL={excerto:"passage",pagina:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding"};'),
+ ('>ler a peça</button>', '>read the filing</button>'),
+ ('>ler a peça inteira, na página ${x.p}</button>', '>read the whole filing, at page ${x.p}</button>'),
+ ('<button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← anterior</button>',
+  '<button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← previous</button>'),
+ ('<span>página <b>${i}</b> de ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">próxima →</button>',
+  '<span>page <b>${i}</b> of ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">next →</button>'),
+ ('>← voltar ao processo</button>', '>← back to the proceeding</button>'),
+ ('Texto integral da peça, como está nos autos públicos do STF. Nomes de vítimas, testemunhas e familiares, CPF, endereço, telefone, e-mail e dados de conta foram substituídos por etiquetas entre colchetes. Nada mais foi alterado.',
+  'Full text of the filing, as it stands in the Supreme Court\'s public case file, in the original Portuguese. Names of victims, witnesses and family members, along with tax IDs, addresses, phone numbers, e-mails and account details, were replaced by labels in square brackets. Nothing else was changed.'),
+
  # --- busca do site (v0.5) ---
  ('BS=await load("busca.json")', 'BS=await load("busca_en.json")'),
  ('$("#bsInfo").textContent="carregando o índice…"', '$("#bsInfo").textContent="loading the index…"'),
- ('const BS_LABEL={excerto:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo"};',
-  'const BS_LABEL={excerto:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding"};'),
  ('`${total} resultado${total>1?"s":""}${bsTipo?" em "+BS_LABEL[bsTipo]+"s":""}. Os mais próximos primeiro.`:"Nada com esses termos. Tente outra palavra, ou procure pelo nome como aparece nos autos."',
   '`${total} result${total>1?"s":""}${bsTipo?" in "+BS_LABEL[bsTipo]+"s":""}. Closest first.`:"Nothing for those words. Try another term, or the name as it appears in the case file."'),
 
@@ -123,8 +134,8 @@ JS = [
   'const TIPO={"Decisao monocratica":"Single-justice ruling","Peticao":"Petition","Peticao inicial":"Initial petition","Despacho":"Procedural order","Busca e apreensao":"Search and seizure","Prisao preventiva":"Pre-trial detention","Inquerito":"Inquiry","Sequestro":"Asset freeze","Manifestacao":"Submission","Manifestacao da PGR":"Prosecutor General\'s submission","Outras pecas":"Other filings","Vista a PGR":"Referral to the Prosecutor General","Mandado":"Warrant","Restituicao de coisas apreendidas":"Return of seized property","Certidao de julgamento":"Certificate of judgment","Documentos comprobatorios":"Supporting documents","Documento comprobatorio":"Supporting document","Recibo de peticao eletronica":"E-filing receipt","Comunicacao assinada":"Signed communication","Procuracao":"Power of attorney","Intimacao":"Notice","Certidao":"Certificate","Mandado de intimacao":"Writ of notice","Documentos de identificacao":"Identity documents","Malote Digital":"Digital courier","Termo de disponibilizacao de autos":"Record-release note","Aviso de recebimento":"Return receipt"};'),
  ('"graph.json","entities.json","processos.json","crossrefs.json","timeline.json","cnpjs.json","meta.json","wiki.json"',
   '"graph.json","entities.json","processos.json","crossrefs.json","timeline.json","cnpjs.json","meta.json","wiki_en.json"'),
- ('const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","busca","metodo","avisos"];',
-  'const views=["inicio","tour","grafo","mapa","personagens","whoswho","primer","rede","processos","tempo","cronicas","busca","metodo","avisos"];'),
+ ('const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","busca","decisao","metodo","avisos"];',
+  'const views=["inicio","tour","grafo","mapa","personagens","whoswho","primer","rede","processos","tempo","cronicas","busca","decisao","metodo","avisos"];'),
  ('"Menos filtros ▴":"Filtros ▾"', '"Fewer filters ▴":"Filters ▾"'),
  ('open?"Ajustes ▴":"Ajustes ▾"', 'open?"Settings ▴":"Settings ▾"'),
  ('[[META.corpus.paginas,"páginas"],[META.corpus.pdfs,"peças (PDF)"],[META.corpus.processos.length,"processos"],[META.grafo.nos,"nós no grafo"],[META.grafo.arestas,"relações"],[META.grafo.pseudonimizados,"pessoas pseudonimizadas"],[META.grafo.docs_narrativos||0,"peças narrativas lidas para o grafo"]]',

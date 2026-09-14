@@ -27,7 +27,7 @@ const roleOf=n=>n.vis?n.papel:"pseudo";
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","busca","metodo","avisos"];
+const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","busca","decisao","metodo","avisos"];
 let pendingQS=null;
 function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQS=v.slice(i+1); v=v.slice(0,i); if(v!=="cronicas") history.replaceState(null,"","#"+v); } if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
@@ -37,6 +37,7 @@ function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQ
   if(v==="mapa"){ if(!mm.mode){mm.mode="caso";} drawMM(); }
   if(v==="personagens") renderWiki();
   if(v==="busca") iniciaBusca();
+  if(v==="decisao"&&!pendingQS&&DEC.atual) renderDecisao();
   if(v==="rede") renderRede();
   if(v==="cronicas"){ renderCronicas(pendingQS); pendingQS=null; }
   window.scrollTo({top:0});
@@ -291,14 +292,16 @@ const PS={sort:"crono"};
 const kind=p=>p.startsWith("INQ")?"inquérito":p.startsWith("RCL")?"reclamação":"petição";
 /* ---------- processos: a história de cada um, e o rastro em linguagem natural ---------- */
 let RASTRO=null, RESUMOS=null, EXC=null;
-async function loadPR(){ if(!RASTRO){ [RASTRO,RESUMOS,EXC]=await Promise.all([load("rastro.json"),load("resumos.json"),load("excertos.json")]); } }
+async function loadPR(){ if(!RASTRO){ [RASTRO,RESUMOS,EXC]=await Promise.all([load("rastro.json"),load("resumos.json"),load("excertos.json")]); await loadDecIdx(); } }
 /* excertos: o texto do ato do juízo, recortado pelo pipeline a partir da peça, nunca digitado */
 function excId(proc,x){ return "exc-"+proc.replace(/\s+/g,"")+"-"+x.s+"-"+x.p; }
 function excCard(proc,x){ const dt=x.d?dataLonga(x.d):""; const ents=(x.ents||[]).map(l=>byLabel.get(l)).filter(Boolean)
     .map(n=>`<button class="lnk" data-open="${esc(n.id)}" style="--c:var(--${roleOf(n)})"><i></i>${esc(n.label)}</button>`).join(" ");
   return `<figure class="exc" id="${excId(proc,x)}"><figcaption><b>${esc(x.t)}</b><span class="exc-src">${proc} · seq ${String(x.s).padStart(5,"0")} · p. ${x.p}${dt?" · "+dt:""}</span></figcaption>
     <blockquote>${esc(x.x)}</blockquote>
-    ${x.c?`<p class="exc-ctx">${esc(x.c)}</p>`:""}${ents?`<p class="exc-ents">${ents}</p>`:""}</figure>`; }
+    ${x.c?`<p class="exc-ctx">${esc(x.c)}</p>`:""}
+    <p class="exc-ler"><button class="lnk" data-dec-abrir="${decSlug(proc,x.s)}" data-dec-pag="${x.p}">ler a peça inteira, na página ${x.p}</button></p>
+    ${ents?`<p class="exc-ents">${ents}</p>`:""}</figure>`; }
 function excDe(proc){ return (EXC&&EXC[proc])||[]; }
 function excDaEntidade(label){ const out=[]; if(!EXC) return out; for(const p in EXC) EXC[p].forEach(x=>{ if((x.ents||[]).includes(label)) out.push([p,x]); }); return out; }
 /* os rótulos vêm do índice do STF, sem acento; devolvemos os acentos das palavras frequentes */
@@ -372,6 +375,7 @@ function frase(e){
 }
 const PESO={"Decisao monocratica":3,"Peticao inicial":3,"Acordao":3,"Despacho":1,"Vista a PGR":1};
 function rastroHTML(proc,marcos){
+  const comDec=new Set((DECIDX||[]).filter(x=>x.proc===proc).map(x=>x.s));
   const comExc=new Map(); excDe(proc).forEach(x=>{ if(!comExc.has(x.s)) comExc.set(x.s,excId(proc,x)); });
   const r=(RASTRO[proc]||[]).filter(e=>e.d).slice().sort((a,b)=>a.d.localeCompare(b.d)||a.s-b.s);
   const mset=new Set(marcos.map(m=>m[0]));
@@ -384,13 +388,14 @@ function rastroHTML(proc,marcos){
     const pg=pags>=3?`${fmt(pags)} pág.`:"";
     const sq=seqs.length>1?`seq ${seqs[0]}–${seqs[seqs.length-1]}`:`seq ${seqs[0]}`;
     const alvo=seqs.map(x=>comExc.get(x)).find(Boolean);
-    linhas.push({d:r[i].d,txt,meta:[pg,sq].filter(Boolean).join(" · "),peso:peso+(mset.has(r[i].d)?2:0),exc:alvo||""});
+    const dec=seqs.find(x=>comDec.has(x));
+    linhas.push({d:r[i].d,txt,meta:[pg,sq].filter(Boolean).join(" · "),peso:peso+(mset.has(r[i].d)?2:0),exc:alvo||"",dec:dec!==undefined?decSlug(proc,dec):""});
     i=j;
   }
   let mes="", out="";
   linhas.forEach((l,k)=>{
     const m=mesDe(l.d); if(m!==mes){ mes=m; out+=`<h5 class="rt-mes">${m}</h5>`; }
-    out+=`<div class="rt-l${l.peso>=3?" forte":""}" data-k="${k}"><span class="rt-d">${+l.d.split("-")[2]}</span><span class="rt-t">${l.txt}${l.exc?` <button class="rt-x" data-exc="${l.exc}">ler um trecho</button>`:""}</span><span class="rt-m">${l.meta}</span></div>`;
+    out+=`<div class="rt-l${l.peso>=3?" forte":""}" data-k="${k}"><span class="rt-d">${+l.d.split("-")[2]}</span><span class="rt-t">${l.txt}${l.exc?` <button class="rt-x" data-exc="${l.exc}">ler um trecho</button>`:""}${l.dec?` <button class="rt-x" data-dec-abrir="${l.dec}">ler a peça</button>`:""}</span><span class="rt-m">${l.meta}</span></div>`;
   });
   return {html:out,n:linhas.length};
 }
@@ -438,6 +443,7 @@ function openProc(proc){
   $("#ppBack").onclick=()=>{P.hidden=true;L.hidden=false;};
   $$("[data-open]",P).forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
   $$("[data-goproc]",P).forEach(b=>b.onclick=()=>openProc(b.dataset.goproc));
+  $$("[data-dec-abrir]",P).forEach(b=>b.onclick=()=>abreDecisao(b.dataset.decAbrir,b.dataset.decPag||1));
   $$("[data-exc]",P).forEach(b=>b.onclick=()=>{ const el=$("#"+b.dataset.exc); if(!el) return; el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("pisca"); setTimeout(()=>el.classList.remove("pisca"),1600); });
   $$("[data-cr]",P).forEach(b=>b.onclick=()=>{location.hash="cronicas?p="+b.dataset.cr;});
   $$("[data-mmp]",P).forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
@@ -666,6 +672,36 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
   const series=[...new Set(posts.filter(x=>x.serie).map(x=>x.serie))].sort((a,b)=>Math.min(...posts.filter(x=>x.serie===a).map(x=>x.numero))-Math.min(...posts.filter(x=>x.serie===b).map(x=>x.numero))); const solo=posts.filter(x=>!x.serie);
   $("#crCards").innerHTML=series.map(sname=>{const xs=posts.filter(x=>x.serie===sname).sort((a,b)=>a.capitulo-b.capitulo); return `<div class="cr-serie"><h3 class="cr-serie-t">${esc(sname)}</h3><p class="muted">${xs.length} capítulos · ${xs.reduce((s,x)=>s+x.minutes,0)} min no total. Cada capítulo cobre uma parte da decisão, na ordem em que ela mesma se organiza.</p><div class="cr-cards">${xs.map(card).join("")}</div></div>`;}).join("")+(solo.length?`<div class="cr-serie"><h3 class="cr-serie-t">Avulsas</h3><div class="cr-cards">${solo.map(card).join("")}</div></div>`:"")||`<p class="muted">Ainda sem crônicas.</p>`; }
 
+
+/* ---------- leitor das decisões: o texto integral do ato, com o dado pessoal mascarado ---------- */
+let DECIDX=null; const DEC={atual:null,pag:1};
+async function loadDecIdx(){ if(!DECIDX){ try{ DECIDX=await load("decisoes.json"); }catch(e){ DECIDX=[]; } } return DECIDX; }
+const decSlug=(proc,seq)=>`${proc.replace(/\s+/g,"")}-${String(seq).padStart(5,"0")}`;
+async function temDecisao(proc,seq){ await loadDecIdx(); const f=decSlug(proc,seq); return DECIDX.some(x=>x.f===f); }
+async function abreDecisao(slug,pag){
+  await loadDecIdx();
+  const meta=DECIDX.find(x=>x.f===slug); if(!meta) return;
+  let doc; try{ doc=await load(`decisoes/${slug}.json`); }catch(e){ return; }
+  DEC.atual={meta,doc}; DEC.pag=Math.min(Math.max(1,+pag||1),doc.pags.length);
+  location.hash="decisao"; setTimeout(renderDecisao,20);
+}
+function renderDecisao(){
+  if(!DEC.atual) return; const {meta,doc}=DEC.atual, P=$("#dcPage");
+  const total=doc.pags.length, i=DEC.pag;
+  const nav=total>1?`<div class="dc-nav"><button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← anterior</button>
+    <span>página <b>${i}</b> de ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">próxima →</button></div>`:"";
+  const corpo=doc.pags[i-1].split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join("");
+  P.innerHTML=`<button class="btn ghost small back" id="dcBack">← voltar ao processo</button>
+    <p class="eyebrow">${esc(doc.proc)} · seq ${String(doc.seq).padStart(5,"0")} · ${tipo(doc.tipo)}${doc.d?" · "+dataLonga(doc.d):""}</p>
+    <h2>${esc(tipo(doc.tipo))}${doc.sub&&doc.sub!==doc.tipo?`: ${esc(acentua(doc.sub))}`:""}</h2>
+    <p class="muted small">Texto integral da peça, como está nos autos públicos do STF. Nomes de vítimas, testemunhas e familiares, CPF, endereço, telefone, e-mail e dados de conta foram substituídos por etiquetas entre colchetes. Nada mais foi alterado.</p>
+    ${nav}<div class="dc-txt">${corpo}</div>${nav}`;
+  $("#dcBack").onclick=()=>{ location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(doc.proc); },60); };
+  $$("[data-dc]",P).forEach(b=>b.onclick=()=>{ DEC.pag=+b.dataset.dc; renderDecisao(); scrollTo({top:0,behavior:"instant"}); });
+  document.title=`${doc.proc} seq ${doc.seq} — autos-abertos`;
+  scrollTo({top:0,behavior:"instant"});
+}
+
 /* ---------- busca do site: BM25 sobre o índice invertido do estágio 10 ---------- */
 let BS=null, bsTipo="", bsTimer=null;
 const bsNorm=s=>(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
@@ -689,7 +725,7 @@ function bm25(termos,orig){
   notas.forEach((v,i)=>{ const c=(cobre.get(i)||new Set()).size; notas.set(i, v*Math.pow((c||0.4)/nq,2)); });
   return notas;
 }
-const BS_LABEL={excerto:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo"};
+const BS_LABEL={excerto:"trecho",pagina:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo"};
 function rodaBusca(){
   const bruto=$("#bsQ").value.trim(); const O=$("#bsOut");
   if(!bruto){ O.innerHTML=""; $("#bsInfo").textContent=""; return; }
@@ -718,6 +754,7 @@ function abreResultado(h){
   if(vista==="processos"){ location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(p.get("p")); const x=p.get("x"); if(x){ const el=$("#exc-"+p.get("p").replace(/\s+/g,"")+"-"+x.replace("-","-")); if(el){ el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("pisca"); setTimeout(()=>el.classList.remove("pisca"),1600); } } },80); return; }
   if(vista==="personagens"){ openWiki(p.get("p")); return; }
   if(vista==="cronicas"){ location.hash="cronicas?p="+p.get("p"); return; }
+  if(vista==="decisao"){ abreDecisao(p.get("d"),p.get("p")); return; }
   location.hash=vista;
 }
 /* barra "/" abre a busca de qualquer lugar */

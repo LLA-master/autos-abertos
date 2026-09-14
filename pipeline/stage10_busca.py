@@ -18,7 +18,10 @@ import os, re, sys, json, math, unicodedata, collections, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 OUT = pathlib.Path(os.environ.get("BMDB_OUT", DOCS / "data"))
-FORB = [(r"\d{3}\.\d{3}\.\d{3}-\d{2}", "CPF"), (r"\bOAB\b", "OAB"), (r"\bCEP\b", "CEP")]
+# o que não pode aparecer no que o leitor vê. A palavra "CEP" pode: é a etiqueta que substitui o número.
+FORB = [(r"\d{3}\.\d{3}\.\d{3}-\d{2}", "CPF"), (r"\b\d{2}\.?\d{3}-\d{3}\b", "CEP"),
+        (r"OAB[/\s]*[A-Z]{0,2}\s*n?[º°.:]?\s*\d", "inscrição de advogado"),
+        (r"[\w.\-]+@[\w\-]+\.\w{2,}", "e-mail")]
 STOP = set("""a o as os um uma uns umas de do da dos das em no na nos nas por para com sem sob sobre
 ao aos à às e ou mas que se seu sua seus suas este esta estes estas esse essa isso aquele aquela
 ele ela eles elas lhe lhes me te nos vos eu tu nós vós é foi ser são era eram será seria tem têm
@@ -64,6 +67,18 @@ def coletar(en):
     for p in wiki["pages"]:
         saida.append(("personagem", f"personagens?p={p['id']}", p["label"], p.get("resumo", ""),
                       " ".join([p["label"], p.get("resumo", "")] + [x["label"] for r in p.get("byrole", {}).values() for x in r])))
+    # páginas das decisões publicadas na íntegra
+    dec = json.load(open(OUT / "decisoes.json", encoding="utf-8")) if (OUT / "decisoes.json").exists() else []
+    for m in dec:
+        doc = json.load(open(OUT / "decisoes" / f"{m['f']}.json", encoding="utf-8"))
+        for i, pag in enumerate(doc["pags"], 1):
+            texto = re.sub(r"\s+", " ", pag).strip()
+            if len(texto) < 120: continue
+            saida.append(("pagina", f"decisao?d={m['f']}&p={i}",
+                          f"{doc['proc']} · seq {str(doc['seq']).zfill(5)} · p. {i}",
+                          corta(re.sub(r"^.{0,40}?(DECIS[ÃA]O|DESPACHO)[:\s]*", "", texto), 190),
+                          " ".join([doc["proc"], doc["tipo"], texto])))
+
     idx = json.load(open(DOCS / "posts" / "index.json", encoding="utf-8"))["posts"]
     pen = json.load(open(ROOT / "pipeline" / "en" / "posts_en.json", encoding="utf-8")) if en else {}
     for post in idx:

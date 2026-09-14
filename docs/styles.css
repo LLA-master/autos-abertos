@@ -329,3 +329,10 @@ html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
 .bs-s{grid-column:2;font-size:13px;color:var(--ink2);line-height:1.45}
 .bs-r mark{background:color-mix(in srgb,var(--hl) 40%,transparent);color:inherit;border-radius:2px;padding:0 1px}
 @media (max-width:640px){.bs-r{grid-template-columns:1fr}.bs-s,.bs-r b{grid-column:1}}
+
+/* leitor das decisões */
+#dcPage{max-width:820px}
+.dc-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0;font-size:13px;color:var(--muted)}
+.dc-txt{font-family:var(--serif,Newsreader,Georgia,serif);font-size:16.5px;line-height:1.72}
+.dc-txt p{margin:0 0 14px;white-space:pre-line;max-width:70ch}
+.exc-ler{margin:10px 0 0;font-size:12.5px}
