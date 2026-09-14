@@ -29,6 +29,7 @@
     <a href="#processos" data-nav="processos">Processos</a>
     <a href="#tempo" data-nav="tempo">Tempo</a>
     <a href="#cronicas" data-nav="cronicas">Crônicas</a>
+    <a href="#busca" data-nav="busca">Buscar</a>
     <a href="#metodo" data-nav="metodo">Método</a>
     <a href="#avisos" data-nav="avisos">Avisos</a>
   </nav>
@@ -218,6 +219,15 @@
   <article id="crPost" class="cr-post" hidden></article>
 </section>
 
+<section id="v-busca" class="view" hidden>
+  <h2>Buscar no site</h2>
+  <p class="lead small">Procura ao mesmo tempo nos trechos das decisões, nas crônicas, nas fichas dos personagens e nos resumos dos processos. A busca roda no seu navegador: nada do que você digita sai daqui. O texto integral dos autos não está publicado e, por isso, não é procurável aqui; para isso o caminho é o pacote do STF.</p>
+  <div class="search bs-box"><input id="bsQ" type="search" placeholder="palavra, nome, número, expressão…" autocomplete="off" aria-label="Buscar no site"></div>
+  <div class="chips" id="bsChips"><button class="chip on" data-bt="">tudo</button><button class="chip" data-bt="excerto">decisões</button><button class="chip" data-bt="cronica">crônicas</button><button class="chip" data-bt="personagem">personagens</button><button class="chip" data-bt="processo">processos</button></div>
+  <p class="muted small" id="bsInfo"></p>
+  <div id="bsOut" class="bs-out"></div>
+</section>
+
 <section id="v-metodo" class="view" hidden>
   <h2>Como isto foi feito</h2>
   <div class="prose">
@@ -243,6 +253,8 @@
     <p>Cada citação indica processo, sequencial da peça e página. Baixe o pacote do STF pelo link da nota, abra a pasta do processo e o arquivo cujo nome começa pelo sequencial.</p>
     <h3>Excertos</h3>
     <p>As páginas de processo trazem trechos literais dos atos do juízo. Nenhum é digitado: a curadoria aponta processo, peça, página e um trecho-âncora, e o pipeline recorta o texto do próprio documento, falhando se a âncora não estiver lá. Só citamos peça assinada por autoridade, ou seja, decisão, despacho, acórdão e manifestação da Procuradoria-Geral da República. Representação da Polícia Federal, petição de defesa e anexo de investigação ficam de fora: é neles que está transcrição de conversa privada e dado de terceiro.</p>
+    <h3>Busca</h3>
+    <p>A busca do site cobre só o que está publicado: os trechos das decisões, as crônicas, as fichas e os resumos. O navegador recebe um índice invertido, que guarda quais palavras aparecem em cada documento, e faz o ranqueamento localmente, sem servidor e sem registrar o que você digitou. O texto integral dos autos não está aqui e não é procurável por este site. Quem quiser procurar no acervo inteiro precisa baixar o pacote do STF.</p>
     <h3>Crônicas</h3>
     <p>A seção Crônicas é editorial: textos de opinião do autor do projeto, escritos em cima dos mesmos dados públicos e sanitizados. Ficam em <code>docs/posts/</code>, em Markdown, com data e fontes; a edição em inglês de cada uma fica em <code>docs/posts/en/</code>. A base (grafo, fichas, análise) não depende deles e não muda por causa deles. Quando uma crônica cita um número, o número vem de <code>docs/data/</code>; quando cita uma peça, indica processo, seq e página.</p>
     <h3>Licenças e código</h3>

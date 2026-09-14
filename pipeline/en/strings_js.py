@@ -6,6 +6,14 @@ Se um trecho não for encontrado, o build falha: é o sinal de que app.js mudou
 e a tradução precisa de revisão."""
 
 JS = [
+ # --- busca do site (v0.5) ---
+ ('BS=await load("busca.json")', 'BS=await load("busca_en.json")'),
+ ('$("#bsInfo").textContent="carregando o índice…"', '$("#bsInfo").textContent="loading the index…"'),
+ ('const BS_LABEL={excerto:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo"};',
+  'const BS_LABEL={excerto:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding"};'),
+ ('`${total} resultado${total>1?"s":""}${bsTipo?" em "+BS_LABEL[bsTipo]+"s":""}. Os mais próximos primeiro.`:"Nada com esses termos. Tente outra palavra, ou procure pelo nome como aparece nos autos."',
+  '`${total} result${total>1?"s":""}${bsTipo?" in "+BS_LABEL[bsTipo]+"s":""}. Closest first.`:"Nothing for those words. Try another term, or the name as it appears in the case file."'),
+
  # --- excertos (v0.4) ---
  ('Esta crônica é sobre o processo <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Abrir a página do processo</button>',
   'This chronicle is about proceeding <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Open the proceeding page</button>'),
@@ -115,8 +123,8 @@ JS = [
   'const TIPO={"Decisao monocratica":"Single-justice ruling","Peticao":"Petition","Peticao inicial":"Initial petition","Despacho":"Procedural order","Busca e apreensao":"Search and seizure","Prisao preventiva":"Pre-trial detention","Inquerito":"Inquiry","Sequestro":"Asset freeze","Manifestacao":"Submission","Manifestacao da PGR":"Prosecutor General\'s submission","Outras pecas":"Other filings","Vista a PGR":"Referral to the Prosecutor General","Mandado":"Warrant","Restituicao de coisas apreendidas":"Return of seized property","Certidao de julgamento":"Certificate of judgment","Documentos comprobatorios":"Supporting documents","Documento comprobatorio":"Supporting document","Recibo de peticao eletronica":"E-filing receipt","Comunicacao assinada":"Signed communication","Procuracao":"Power of attorney","Intimacao":"Notice","Certidao":"Certificate","Mandado de intimacao":"Writ of notice","Documentos de identificacao":"Identity documents","Malote Digital":"Digital courier","Termo de disponibilizacao de autos":"Record-release note","Aviso de recebimento":"Return receipt"};'),
  ('"graph.json","entities.json","processos.json","crossrefs.json","timeline.json","cnpjs.json","meta.json","wiki.json"',
   '"graph.json","entities.json","processos.json","crossrefs.json","timeline.json","cnpjs.json","meta.json","wiki_en.json"'),
- ('const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","metodo","avisos"];',
-  'const views=["inicio","tour","grafo","mapa","personagens","whoswho","primer","rede","processos","tempo","cronicas","metodo","avisos"];'),
+ ('const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","busca","metodo","avisos"];',
+  'const views=["inicio","tour","grafo","mapa","personagens","whoswho","primer","rede","processos","tempo","cronicas","busca","metodo","avisos"];'),
  ('"Menos filtros ▴":"Filtros ▾"', '"Fewer filters ▴":"Filters ▾"'),
  ('open?"Ajustes ▴":"Ajustes ▾"', 'open?"Settings ▴":"Settings ▾"'),
  ('[[META.corpus.paginas,"páginas"],[META.corpus.pdfs,"peças (PDF)"],[META.corpus.processos.length,"processos"],[META.grafo.nos,"nós no grafo"],[META.grafo.arestas,"relações"],[META.grafo.pseudonimizados,"pessoas pseudonimizadas"],[META.grafo.docs_narrativos||0,"peças narrativas lidas para o grafo"]]',

@@ -29,5 +29,12 @@ O rastro de cada processo (`stage8_rastro.py`) descreve cada peça pelo que ela 
 
 Os excertos (`stage9_excertos.py`) são trechos literais recortados do texto da peça pelo próprio pipeline. A curadoria em `pipeline/excertos.py` aponta processo, número da peça, página e um trecho-âncora; se a âncora não estiver naquela página, ou estiver mais de uma vez, o build falha. Nenhum excerto é digitado, o que elimina erro de transcrição e citação inventada. Só podem ser citados atos assinados por autoridade: decisão, despacho, acórdão e manifestação da Procuradoria-Geral da República. Representação policial, petição de defesa e anexo de investigação ficam de fora, porque é neles que está transcrição de conversa privada e dado de terceiro. O limite é de 600 caracteres por excerto e vale o mesmo gate de padrões proibidos da exportação.
 
+## Busca
+Duas buscas, com alcances diferentes. A do site (`stage10_busca.py`) indexa apenas o que já é público: excertos, crônicas, fichas e resumos, 263 documentos. O que vai ao navegador é um índice invertido com a frequência de cada palavra por documento, não o texto; o ranqueamento é BM25, roda localmente e nada é enviado a servidor algum.
+
+A busca do acervo (`busca.py`) é local e nunca publicada. Indexa as 188.665 páginas com texto, 344 milhões de caracteres, com a extensão FTS do DuckDB, e responde em cerca de um segundo com processo, peça, página e o trecho ao redor da ocorrência. O banco resultante fica na área de trabalho local, que está no `.gitignore`, porque contém o texto integral do acervo. É a ferramenta de leitura de quem produz o site, não um serviço para o leitor.
+
+A busca é lexical nos dois casos: encontra as palavras escritas, com radical e sem acento, e não encontra paráfrase. Numa prova simples, "conveniência da instrução criminal" acha o fundamento da prisão preventiva em primeiro lugar, enquanto "o juiz pode prender para proteger a investigação" não acha. Uma camada de embeddings resolveria esse caso e custaria algumas horas de processamento e cerca de um gigabyte; por ora, não se justifica.
+
 ## Reprodutibilidade
 Com o pacote do STF e as ferramentas listadas no README, os estágios reproduzem `docs/data/` de ponta a ponta. O layout do grafo é calculado no navegador (ForceAtlas2) e pode variar levemente entre execuções.

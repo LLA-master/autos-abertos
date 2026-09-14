@@ -12,6 +12,8 @@ manifest*
 salt*
 .venv/
 __pycache__/
+busca.duckdb
+*.duckdb
 gate_review*.csv
 visibility_override.csv
 roles_override.csv

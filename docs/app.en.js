@@ -27,7 +27,7 @@ const roleOf=n=>n.vis?n.papel:"pseudo";
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","tour","grafo","mapa","personagens","whoswho","primer","rede","processos","tempo","cronicas","metodo","avisos"];
+const views=["inicio","tour","grafo","mapa","personagens","whoswho","primer","rede","processos","tempo","cronicas","busca","metodo","avisos"];
 let pendingQS=null;
 function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQS=v.slice(i+1); v=v.slice(0,i); if(v!=="cronicas") history.replaceState(null,"","#"+v); } if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
@@ -36,6 +36,7 @@ function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQ
   if(v==="tour") renderStep();
   if(v==="mapa"){ if(!mm.mode){mm.mode="caso";} drawMM(); }
   if(v==="personagens") renderWiki();
+  if(v==="busca") iniciaBusca();
   if(v==="rede") renderRede();
   if(v==="cronicas"){ renderCronicas(pendingQS); pendingQS=null; }
   window.scrollTo({top:0});
@@ -665,6 +666,64 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
   const card=x=>`<a class="cr-card" href="#cronicas?p=${x.slug}"><span class="n">${x.serie?`CHAPTER ${x.capitulo}`:`CHRONICLE ${String(x.numero).padStart(2,"0")}`} · ${dateBR(x.date)}</span><h3>${esc(EN_T(x))}</h3><p class="sub">${esc(EN_S(x))}</p><div class="m"><b>${x.minutes} min</b> · ${(x.tags||[]).join(" · ")}</div></a>`;
   const series=[...new Set(posts.filter(x=>x.serie).map(x=>x.serie))].sort((a,b)=>Math.min(...posts.filter(x=>x.serie===a).map(x=>x.numero))-Math.min(...posts.filter(x=>x.serie===b).map(x=>x.numero))); const solo=posts.filter(x=>!x.serie);
   $("#crCards").innerHTML=series.map(sname=>{const xs=posts.filter(x=>x.serie===sname).sort((a,b)=>a.capitulo-b.capitulo); return `<div class="cr-serie"><h3 class="cr-serie-t">${esc(EN_SERIE(sname))}</h3><p class="muted">${xs.length} chapters · ${xs.reduce((s,x)=>s+x.minutes,0)} min in total. Each chapter covers one part of the record, in the order the record itself follows.</p><div class="cr-cards">${xs.map(card).join("")}</div></div>`;}).join("")+(solo.length?`<div class="cr-serie"><h3 class="cr-serie-t">Standalone</h3><div class="cr-cards">${solo.map(card).join("")}</div></div>`:"")||`<p class="muted">No chronicles yet.</p>`; }
+
+/* ---------- busca do site: BM25 sobre o índice invertido do estágio 10 ---------- */
+let BS=null, bsTipo="", bsTimer=null;
+const bsNorm=s=>(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+const bsTokens=s=>(bsNorm(s).match(/[a-z0-9][a-z0-9\-']{2,}/g)||[]);
+async function iniciaBusca(){
+  if(!BS){ $("#bsInfo").textContent="loading the index…"; BS=await load("busca_en.json"); $("#bsInfo").textContent=""; }
+  const q=$("#bsQ"); if(!q.dataset.on){ q.dataset.on="1"; q.oninput=()=>{ clearTimeout(bsTimer); bsTimer=setTimeout(rodaBusca,120); }; q.onkeydown=e=>{ if(e.key==="Enter") rodaBusca(); };
+    $$("#bsChips .chip").forEach(c=>c.onclick=()=>{ $$("#bsChips .chip").forEach(x=>x.classList.toggle("on",x===c)); bsTipo=c.dataset.bt; rodaBusca(); }); }
+  q.focus(); if(q.value.trim()) rodaBusca();
+}
+function bm25(termos,orig){
+  const N=BS.docs.length, k1=1.5, b=0.75, notas=new Map(), cobre=new Map();
+  termos.forEach(t=>{
+    const post=BS.idx[t]; if(!post) return;
+    const idf=Math.log(1+(N-post.length+0.5)/(post.length+0.5));
+    post.forEach(([i,f])=>{ const dl=BS.len[i]||1; const s=idf*(f*(k1+1))/(f+k1*(1-b+b*dl/BS.avg)); notas.set(i,(notas.get(i)||0)+s);
+      if(orig.has(t)) cobre.set(i,(cobre.get(i)||new Set()).add(t)); });
+  });
+  /* quem tem todas as palavras da pergunta vem na frente de quem tem só uma */
+  const nq=orig.size||1;
+  notas.forEach((v,i)=>{ const c=(cobre.get(i)||new Set()).size; notas.set(i, v*Math.pow((c||0.4)/nq,2)); });
+  return notas;
+}
+const BS_LABEL={excerto:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding"};
+function rodaBusca(){
+  const bruto=$("#bsQ").value.trim(); const O=$("#bsOut");
+  if(!bruto){ O.innerHTML=""; $("#bsInfo").textContent=""; return; }
+  const termos=bsTokens(bruto);
+  /* prefixo: quem digita "vorcar" ainda não terminou de escrever "vorcaro" */
+  const ult=termos[termos.length-1];
+  const expandidos=[...termos];
+  if(ult&&ult.length>=3&&!BS.idx[ult]) for(const t in BS.idx){ if(t.startsWith(ult)){ expandidos.push(t); if(expandidos.length>termos.length+12) break; } }
+  const notas=bm25(expandidos,new Set(termos));
+  /* o nome do documento vale mais do que uma menção no meio do texto */
+  notas.forEach((v,i)=>{ const t=bsNorm(BS.docs[i].n); let boost=1;
+    termos.forEach(x=>{ if(t.includes(x)) boost+=2.5; });
+    if(bsNorm(BS.docs[i].n)===bsNorm(bruto)) boost+=4;
+    notas.set(i,v*boost); });
+  let res=[...notas.entries()].map(([i,n])=>({d:BS.docs[i],n})).filter(x=>!bsTipo||x.d.t===bsTipo).sort((a,b)=>b.n-a.n);
+  const total=res.length; res=res.slice(0,40);
+  $("#bsInfo").textContent=total?`${total} result${total>1?"s":""}${bsTipo?" in "+BS_LABEL[bsTipo]+"s":""}. Closest first.`:"Nothing for those words. Try another term, or the name as it appears in the case file.";
+  const marca=s=>{ let h=esc(s); termos.forEach(t=>{ if(t.length<3) return; const re=new RegExp("("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","ig");
+      h=h.replace(new RegExp(`(?![^<]*>)${re.source}`,"ig"),"<mark>$1</mark>"); }); return h; };
+  O.innerHTML=res.map(({d})=>`<button class="bs-r" data-h="${esc(d.h)}"><span class="bs-t">${BS_LABEL[d.t]||d.t}</span><b>${marca(d.n)}</b><span class="bs-s">${marca(d.s||"")}</span></button>`).join("");
+  $$(".bs-r",O).forEach(b=>b.onclick=()=>abreResultado(b.dataset.h));
+}
+/* cada resultado leva ao lugar certo: processo, crônica, personagem */
+function abreResultado(h){
+  const [vista,qs]=h.split("?"); const p=new URLSearchParams(qs||"");
+  if(vista==="processos"){ location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(p.get("p")); const x=p.get("x"); if(x){ const el=$("#exc-"+p.get("p").replace(/\s+/g,"")+"-"+x.replace("-","-")); if(el){ el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("pisca"); setTimeout(()=>el.classList.remove("pisca"),1600); } } },80); return; }
+  if(vista==="personagens"){ openWiki(p.get("p")); return; }
+  if(vista==="cronicas"){ location.hash="cronicas?p="+p.get("p"); return; }
+  location.hash=vista;
+}
+/* barra "/" abre a busca de qualquer lugar */
+addEventListener("keydown",e=>{ if(e.key==="/"&&!/input|textarea/i.test(e.target.tagName)){ e.preventDefault(); location.hash="busca"; } });
+
 /* ---------- go ---------- */
 show(location.hash.slice(1)||"inicio");
 })();

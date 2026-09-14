@@ -317,3 +317,15 @@ html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
 .exc.pisca{animation:piscaExc 1.6s ease}
 @keyframes piscaExc{0%,100%{box-shadow:none}25%,60%{box-shadow:0 0 0 3px color-mix(in srgb,var(--hl) 45%,transparent)}}
 .cr-proc{margin:18px 0 0;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:color-mix(in srgb,var(--bg2) 70%,transparent);font-size:14px}
+
+/* busca do site */
+.bs-box{max-width:620px;margin:14px 0 10px}
+.bs-box input{width:100%;font-size:16px;padding:12px 16px}
+.bs-out{display:grid;gap:8px;margin-top:14px;max-width:820px}
+.bs-r{display:grid;grid-template-columns:96px 1fr;gap:4px 14px;align-items:baseline;text-align:left;background:color-mix(in srgb,var(--bg2) 75%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:11px 14px;cursor:pointer;color:inherit;font:inherit}
+.bs-r:hover{border-color:var(--pink)}
+.bs-t{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.bs-r b{font-size:15px;line-height:1.35}
+.bs-s{grid-column:2;font-size:13px;color:var(--ink2);line-height:1.45}
+.bs-r mark{background:color-mix(in srgb,var(--hl) 40%,transparent);color:inherit;border-radius:2px;padding:0 1px}
+@media (max-width:640px){.bs-r{grid-template-columns:1fr}.bs-s,.bs-r b{grid-column:1}}
