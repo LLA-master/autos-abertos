@@ -16,7 +16,7 @@ try{const t=localStorage.getItem("bmdb.theme"); if(t) root.dataset.theme=t;}catc
 const isDark=()=>root.dataset.theme!=="light";
 function themeBtn(){$("#themeBtn").textContent=isDark()?"☀":"☾";}
 themeBtn();
-$("#themeBtn").onclick=()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("bmdb.theme",root.dataset.theme)}catch(e){};themeBtn();if(renderer){applyColors();renderer.setSetting("labelColor",{color:css("--ink")});renderer.refresh();} if(mm.mode) drawMM();};
+$("#themeBtn").onclick=()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("bmdb.theme",root.dataset.theme)}catch(e){};themeBtn();if(renderer){applyColors();renderer.setSetting("labelColor",{color:css("--label")});renderer.refresh();} if(mm.mode) drawMM();};
 
 /* ---------- dados ---------- */
 const load=async f=>(await fetch("data/"+f)).json();
@@ -67,7 +67,7 @@ function recompute(){ topSet=F.topN?new Set(G.nodes.slice().sort((a,b)=>b.docs-a
   if(F.focus&&selected){ const set=new Set([selected]); let frontier=[selected]; for(let k=0;k<F.depth;k++){ const nx=[]; frontier.forEach(u=>graph.neighbors(u).forEach(v=>{ if(!set.has(v)&&graph.getEdgeAttribute(graph.edge(u,v),"w")>=F.minW){set.add(v);nx.push(v);} })); frontier=nx; } focusSet=set; } else focusSet=null; }
 function reducers(){
   const focusId=hovered||selected; const neigh=focusId?new Set([focusId,...graph.neighbors(focusId)]):null;
-  const dim=isDark()?"#2A1C45":"#EDE3F0", dimE=isDark()?"rgba(255,255,255,0.04)":"rgba(80,40,90,0.06)", baseE=isDark()?"rgba(255,255,255,0.11)":"rgba(80,40,90,0.16)";
+  const dim=css("--node-dim"), dimE=css("--edge-dim"), baseE=css("--edge");
   return {
     nodeReducer(id,a){const r={...a}; if(!visible(id)){r.hidden=true;return r;}
       if(pathSet){ if(!pathSet.nodes.has(id)){r.color=dim;r.label="";} else {r.zIndex=2;r.highlighted=true;r.forceLabel=true;} return r;}
@@ -83,14 +83,16 @@ function reducers(){
 function mountGraph(wrap,into){
   if(wrap.parentElement!==into) into.appendChild(wrap);
   if(!renderer){
-    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"500",labelColor:{color:css("--ink")},zIndex:true,...reducers()});
+    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"500",labelColor:{color:css("--label")},zIndex:true,...reducers()});
     renderer.on("enterNode",({node})=>{hovered=node;renderer.refresh();});
     renderer.on("leaveNode",()=>{hovered=null;renderer.refresh();});
-    renderer.on("clickNode",({node})=>{ if(pathMode){ pathClick(node); return;} select(node); });
+    let downAt=null; renderer.on("downNode",({event})=>{ downAt=[event.x,event.y]; });
+    renderer.on("clickNode",({node,event})=>{ if(downAt&&Math.hypot(event.x-downAt[0],event.y-downAt[1])>6){ downAt=null; return; } downAt=null; if(pathMode){ pathClick(node); return;} select(node); });
     renderer.on("clickStage",()=>{ if(!pathMode){ select(null);} });
     renderer.on("doubleClickNode",({node,event})=>{ event.preventSigmaDefault(); F.focus=true; $("#focusMode").checked=true; select(node); });
     addEventListener("keydown",e=>{ if(e.key==="Escape"){ if(pathMode) setPathMode(false); else select(null); } });
-  } else { renderer.setSetting("labelColor",{color:css("--ink")}); setTimeout(()=>renderer.refresh(),0); }
+    bindDrag();
+  } else { renderer.setSetting("labelColor",{color:css("--label")}); setTimeout(()=>renderer.refresh(),0); }
   refresh();
 }
 function refresh(){ if(!renderer) return; recompute(); const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer); renderer.refresh(); }
@@ -143,6 +145,19 @@ attachSearch($("#search"),$("#sugg"),id=>{ ensureVisible(id); if(pathMode) pathC
 /* caminho */
 function setPathMode(on,preA){ pathMode=on; pathA=preA||null; pathSet=null; if(on){ selected=null; renderPanel(null); } const h=$("#pathHint"); h.hidden=!on; h.textContent=on?(pathA?`A = ${byId.get(pathA).label}. Agora clique (ou busque) o nó B.`:"Clique (ou busque) o nó A."):""; $("#pathBtn").classList.toggle("primary",on); refresh(); }
 $("#pathBtn").onclick=()=>setPathMode(!pathMode);
+/* nós vivos: física contínua (ForceAtlas2 em worker) + arrastar */
+let live=null, dragging=null, spacing=22;
+function fa2Settings(){ const FA=graphologyLibrary.layoutForceAtlas2; const st=FA.inferSettings(graph); return Object.assign(st,{gravity:Math.max(.2,1.4-spacing/50),scalingRatio:spacing,barnesHutOptimize:true,linLogMode:true,edgeWeightInfluence:.6,slowDown:3,adjustSizes:true}); }
+function startLive(){ if(live) return; const W=graphologyLibrary.FA2Layout||(graphologyLibrary.layoutForceAtlas2&&graphologyLibrary.layoutForceAtlas2.FA2Layout); if(!W){ alert("Layout ao vivo indisponível nesta build."); return; } live=new W(graph,{settings:fa2Settings(),getEdgeWeight:"w"}); live.start(); }
+function stopLive(){ if(!live) return; live.kill(); live=null; }
+$("#liveLayout").onchange=e=>{ e.target.checked?startLive():stopLive(); };
+$("#spacing").oninput=e=>{ spacing=+e.target.value; $("#spacingOut").textContent=spacing; if(live){ stopLive(); startLive(); } };
+function bindDrag(){ if(!renderer) return;
+  renderer.on("downNode",({node})=>{ dragging=node; graph.setNodeAttribute(node,"highlighted",true); renderer.getCamera().disable(); });
+  renderer.getMouseCaptor().on("mousemovebody",e=>{ if(!dragging) return; const pos=renderer.viewportToGraph(e); graph.setNodeAttribute(dragging,"x",pos.x); graph.setNodeAttribute(dragging,"y",pos.y); e.preventSigmaDefault(); e.original.preventDefault(); e.original.stopPropagation(); });
+  const up=()=>{ if(!dragging) return; graph.removeNodeAttribute(dragging,"highlighted"); dragging=null; renderer.getCamera().enable(); };
+  renderer.getMouseCaptor().on("mouseup",up); renderer.getMouseCaptor().on("mouseleave",up); }
+addEventListener("hashchange",()=>{ if(location.hash.slice(1)!=="grafo"&&location.hash.slice(1)!=="tour"&&live){ stopLive(); $("#liveLayout").checked=false; } });
 function pathClick(id){ if(!pathA){pathA=id;$("#pathHint").textContent=`A = ${byId.get(id).label}. Agora clique (ou busque) o nó B.`;return;}
   const path=graphologyLibrary.shortestPath.bidirectional(graph,pathA,id);
   if(!path){$("#pathHint").textContent="Sem caminho entre os dois no grafo.";pathA=null;return;}
@@ -193,18 +208,31 @@ function drawMM(){ const svg=$("#mm"); const br=branchesFor(); const W=svg.clien
   addEventListener("mouseup",()=>{drag=null;}); addEventListener("resize",()=>{ if(mm.mode&&!$("#v-mapa").hidden){ mm.vb=null; drawMM(); } });
 })();
 
-/* ---------- processos ---------- */
-const TIPO_COLORS=["#19E3FF","#FF2E97","#B983FF","#FFD166","#3DF2A0","#FF8C42","#FF5C7A","#7FDBFF"];
-$("#procGrid").innerHTML=PROCS.map(p=>{const tipos=Object.entries(p.tipos).sort((a,b)=>b[1]-a[1]); const tot=tipos.reduce((s,x)=>s+x[1],0)||1;
-  return `<article class="proc"><h3>${p.processo}</h3><div class="m">${fmt(p.pdfs)} peças · ${fmt(p.pages)} páginas</div>
-  <div class="tipos" title="${tipos.slice(0,6).map(([t,n])=>`${tipo(t)}: ${n}`).join(" · ")}">${tipos.slice(0,8).map(([t,n],i)=>`<i style="width:${(n/tot)*100}%;background:${TIPO_COLORS[i%8]}"></i>`).join("")}</div>
-  <div class="m">${tipos.slice(0,3).map(([t,n])=>`${tipo(t)} (${n})`).join(" · ")}</div>
-  <div class="top" style="margin-top:8px">${p.top.slice(0,6).map(([l,r,n])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):r})"><i></i>${l}<small>${n}</small></button>`;}).join("")}</div>
-  <div class="acts" style="margin-top:8px"><button class="btn small" data-mmp="${p.processo}">mapa mental</button></div></article>`;}).join("");
-$$("#procGrid [data-open]").forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
-$$("#procGrid [data-mmp]").forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
+/* ---------- processos (v2: tabela ordenável, detalhe, matriz de citações) ---------- */
+const TIPO_COLORS=["#35D8F0","#FF4FA3","#B08CFF","#FFD37A","#4FE3A6","#FF9A5C","#FF6B86","#7FB2FF","#C3F73A","#9DB4FF"];
+const tipoOrder=Object.entries(PROCS.reduce((m,p)=>{Object.entries(p.tipos).forEach(([t,n])=>m[t]=(m[t]||0)+n);return m;},{})).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
+const tipoColor=t=>{const i=tipoOrder.indexOf(t); return i>=0&&i<TIPO_COLORS.length?TIPO_COLORS[i]:"var(--pseudo)";};
+$("#procLegend").innerHTML=tipoOrder.slice(0,TIPO_COLORS.length).map(t=>`<span><i style="background:${tipoColor(t)}"></i>${tipo(t)}</span>`).join("")+`<span><i style="background:var(--pseudo)"></i>outros</span>`;
+const PS={sort:"pages",open:null};
+const kind=p=>p.startsWith("INQ")?"inquérito":p.startsWith("RCL")?"reclamação":"petição";
+function renderProcs(){ const rows=[...PROCS].sort((a,b)=>PS.sort==="processo"?a.processo.localeCompare(b.processo):b[PS.sort]-a[PS.sort]); const mx=Math.max(...PROCS.map(p=>p[PS.sort==="pdfs"?"pdfs":"pages"]));
+  const tb=$("#procTable tbody"); tb.innerHTML=rows.map(p=>{const tipos=Object.entries(p.tipos).sort((a,b)=>b[1]-a[1]); const tot=tipos.reduce((s,x)=>s+x[1],0)||1; const top=p.top.slice(0,3);
+    const det=PS.open===p.processo?`<tr class="detail"><td colspan="8"><div class="pd"><div><h4>Composição por tipo de peça</h4><div class="bars">${tipos.slice(0,8).map(([t,n])=>`<div class="bar"><span>${tipo(t)}</span><i style="width:${(n/tipos[0][1])*100}%;background:${tipoColor(t)}"></i><span>${n}</span></div>`).join("")}</div></div>
+      <div><h4>Quem mais aparece</h4><div class="tops">${p.top.map(([l,r,n])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):r})"><i></i>${l} <span class="muted">${n}</span></button>`;}).join("")}</div></div>
+      <div><h4>Abrir</h4><div class="acts"><button class="btn small" data-graph="${p.processo}">Só este processo no grafo</button><button class="btn small" data-mmp="${p.processo}">Mapa mental</button><button class="btn ghost small" data-tl="${p.processo}">Linha do tempo</button></div><p class="muted" style="margin-top:8px">Cita: ${(xg[p.processo]||[]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([d,n])=>`${d} (${n})`).join(", ")||"—"}</p></div></div></td></tr>`:"";
+    return `<tr class="row ${PS.open===p.processo?"open":""}" data-p="${p.processo}"><td class="pid">${p.processo}</td><td><span class="tt">${kind(p.processo)}</span></td><td class="n">${fmt(p.pdfs)}</td><td class="n">${fmt(p.pages)}</td><td><div class="vbar" style="width:${(p[PS.sort==="pdfs"?"pdfs":"pages"]/mx)*100}%"></div></td><td><div class="comp" title="${tipos.slice(0,5).map(([t,n])=>`${tipo(t)}: ${n}`).join(" · ")}">${tipos.map(([t,n])=>`<i style="width:${(n/tot)*100}%;background:${tipoColor(t)}"></i>`).join("")}</div></td><td><div class="tops">${top.map(([l,r,n])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):r})"><i></i>${l}</button>`;}).join("")}</div></td><td class="muted">${PS.open===p.processo?"▲":"▼"}</td></tr>${det}`;}).join("");
+  $$("tr.row",tb).forEach(tr=>tr.onclick=e=>{ if(e.target.closest("button")) return; PS.open=PS.open===tr.dataset.p?null:tr.dataset.p; renderProcs(); });
+  $$("[data-open]",tb).forEach(b=>b.onclick=()=>{ if(b.dataset.open) openNode(b.dataset.open); });
+  $$("[data-mmp]",tb).forEach(b=>b.onclick=()=>{ mmProc(b.dataset.mmp); location.hash="mapa"; });
+  $$("[data-graph]",tb).forEach(b=>b.onclick=()=>{ location.hash="grafo"; setTimeout(()=>{F.proc=b.dataset.graph;$("#procSel").value=b.dataset.graph;F.topN=0;$("#topN").value="0";refresh();renderer&&renderer.getCamera().animatedReset({duration:400});},60); });
+  $$("[data-tl]",tb).forEach(b=>b.onclick=()=>{ location.hash="tempo"; setTimeout(()=>{$("#tlProc").value=b.dataset.tl;drawTL();},60); });
+}
+$$("#v-processos [data-sort]").forEach(c=>c.onclick=()=>{ $$("#v-processos [data-sort]").forEach(x=>x.classList.toggle("on",x===c)); PS.sort=c.dataset.sort; renderProcs(); });
 const xg={}; XREF.forEach(({s,d,n})=>{(xg[s]=xg[s]||[]).push([d,n]);});
-$("#xref").innerHTML=Object.keys(xg).sort().map(s=>`<div><b>${s}</b> cita: ${xg[s].sort((a,b)=>b[1]-a[1]).slice(0,5).map(([d,n])=>`${d} <span class="muted">(${n})</span>`).join(", ")}</div>`).join("");
+(function xrefMatrix(){ const ps=META.corpus.processos; const M={}; XREF.forEach(({s,d,n})=>{M[s+"|"+d]=n;}); const mx=Math.max(1,...XREF.map(x=>x.n));
+  $("#xrefMatrix").innerHTML=`<tr><th></th>${ps.map(p=>`<th class="rot">${p}</th>`).join("")}</tr>`+ps.map(r=>`<tr><th>${r}</th>${ps.map(c=>{ if(r===c) return `<td class="self">·</td>`; const n=M[r+"|"+c]||0; const a=n?0.12+0.88*Math.sqrt(n/mx):0; return `<td title="${r} cita ${c}: ${n} peças" style="background:color-mix(in srgb,var(--pink) ${Math.round(a*100)}%,var(--bg2));color:${a>.5?"#fff":"var(--ink)"}">${n||""}</td>`;}).join("")}</tr>`).join("");
+})();
+renderProcs();
 
 /* ---------- linha do tempo ---------- */
 const tlProc=$("#tlProc"); META.corpus.processos.forEach(p=>tlProc.insertAdjacentHTML("beforeend",`<option>${p}</option>`));

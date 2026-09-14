@@ -90,6 +90,8 @@
     <label class="ctl"><input type="checkbox" id="labelsAll"> todos os rótulos</label>
     <label class="ctl"><input type="checkbox" id="collapseLeaves"> colapsar folhas</label>
     <label class="ctl" title="Mostra só a vizinhança do nó selecionado"><input type="checkbox" id="focusMode"> foco <select id="focusDepth"><option value="1">1 salto</option><option value="2">2 saltos</option></select></label>
+    <label class="ctl switch" title="Física ao vivo: os nós se acomodam e você pode arrastá-los"><input type="checkbox" id="liveLayout"> nós vivos</label>
+    <label class="ctl">Espaço <input id="spacing" type="range" min="4" max="60" value="22"><output id="spacingOut">22</output></label>
     <button class="btn small" id="pathBtn">Caminho A → B</button>
     <div class="zoom"><button class="btn small" id="zoomIn" title="Aproximar">+</button><button class="btn small" id="zoomOut" title="Afastar">−</button><button class="btn ghost small" id="resetView">Ajustar</button></div>
     <button class="btn ghost small" id="restoreHidden" hidden>Restaurar ocultos (<span id="hiddenCount">0</span>)</button>
@@ -99,7 +101,7 @@
     <div id="sigma" class="sigma" role="img" aria-label="Grafo de relações"></div>
     <div id="pathHint" class="path-hint" hidden></div>
     <aside id="panel" class="panel" hidden></aside>
-    <div class="legend"><span>Tamanho = nº de peças</span><span>Espessura = peças em comum</span><span>Clique = ficha · duplo clique = foco · Esc = limpar</span></div>
+    <div class="legend"><span>Tamanho = nº de peças</span><span>Espessura = peças em comum</span><span>Clique = ficha · duplo clique = foco · arraste = mover · Esc = limpar</span></div>
   </div>
 </section>
 
@@ -122,12 +124,13 @@
 </section>
 
 <section id="v-processos" class="view" hidden>
-  <h2>Quinze processos, um caso</h2>
-  <p class="lead small">Cada procedimento tem seu próprio volume e composição. Clique num nome para abri-lo no grafo.</p>
-  <div id="procGrid" class="proc-grid"></div>
-  <h3>Quem cita quem</h3>
-  <p class="muted">Referências explícitas de um processo a outro nas peças (contagem de documentos).</p>
-  <div id="xref" class="xref"></div>
+  <div class="wk-head"><div><h2>Quinze processos, um caso</h2><p class="lead small">INQ é inquérito, PET é petição (procedimento cautelar ou incidental) e RCL é reclamação. Todos tramitam no STF sob o mesmo relator e se citam mutuamente. Ordene pela coluna que interessar e abra uma linha para ver a composição e os personagens.</p></div>
+  <div class="chips"><button class="chip on" data-sort="pages">por páginas</button><button class="chip" data-sort="pdfs">por peças</button><button class="chip" data-sort="processo">por número</button></div></div>
+  <div class="proc-table-wrap"><table class="proc-table" id="procTable"><thead><tr><th>processo</th><th>tipo</th><th class="n">peças</th><th class="n">páginas</th><th style="width:26%">volume</th><th>composição</th><th>quem mais aparece</th><th></th></tr></thead><tbody></tbody></table></div>
+  <div class="proc-legend" id="procLegend"></div>
+  <h3 style="margin-top:26px">Quem cita quem</h3>
+  <p class="muted">Cada célula é o número de peças do processo da linha que citam o processo da coluna. Quanto mais escuro, mais citações. Passe o mouse para o valor.</p>
+  <div class="xref-wrap"><table class="xref-matrix" id="xrefMatrix"></table></div>
 </section>
 
 <section id="v-tempo" class="view" hidden>
