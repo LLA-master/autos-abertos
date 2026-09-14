@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 16:04 UTC",
+ "gerado_em": "2026-09-13 16:24 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -309,6 +309,115 @@
    "numero": 18
   },
   {
+   "slug": "pet-15504-01-a-denuncia-anonima",
+   "title": "A denúncia anônima",
+   "subtitle": "Na tarde de 7 de janeiro de 2026, alguém contou ao presidente do Banco Central, sem se identificar, que dois chefes da supervisão bancária tinham recebido dinheiro do dono do Master. Às 17h30 o diretor de Fiscalização já ouvia o primeiro. Em dois dias o caso estava na Polícia Federal; em sete semanas, no Supremo.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.504",
+    "Banco Central",
+    "Desup",
+    "corrupção"
+   ],
+   "minutes": 10,
+   "words": 1976,
+   "serie": "Pet 15.504, os fiscais",
+   "capitulo": 1,
+   "excerpt": "Há processos que nascem de um relatório de mil páginas. A Petição 15.504 nasceu de uma conversa que ninguém sabe ao certo como foi. O que os autos registram é que, em 7 de janeiro de 2026, o presidente do Banco Central, Gabriel Galípolo, recebeu \"denúncia verbal apresentada por i",
+   "numero": 19
+  },
+  {
+   "slug": "pet-15504-02-prioridade-absoluta",
+   "title": "Prioridade absoluta",
+   "subtitle": "Cento e trinta e uma páginas sobre um iPhone. O que a Polícia Federal diz ter encontrado nas conversas do banqueiro com os dois supervisores: minutas revisadas pelo próprio destinatário, dicas para a reunião com o presidente do Banco Central, um filtro de monitoramento que 'caiu', um grupo de três chamado Master e uma reunião na véspera da liquidação.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.504",
+    "celular",
+    "Desup",
+    "FGC"
+   ],
+   "minutes": 10,
+   "words": 1958,
+   "serie": "Pet 15.504, os fiscais",
+   "capitulo": 2,
+   "excerpt": "A peça central da Petição 15.504 não é uma decisão nem um depoimento. É uma Informação de Polícia Judiciária de Material, a IPJ-M 144738439.2026, assinada em 18 de fevereiro por cinco agentes federais, sobre o conteúdo de um iPhone 17 Pro apreendido com Daniel Vorcaro quando ele ",
+   "numero": 20
+  },
+  {
+   "slug": "pet-15504-03-carta-convite",
+   "title": "Carta-convite",
+   "subtitle": "Um projeto de inserção de jovens assinado por um advogado, uma primeira parcela que 'tem que ser paga hoje', uma empresa que não pode mais ser usada, um sítio vendido por R$ 4,8 milhões no contrato de gaveta e R$ 3 milhões na escritura, um guia na Disney e duas reservas em Paris. O trajeto do dinheiro, segundo a polícia.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.504",
+    "lavagem",
+    "Varajo",
+    "Pipe"
+   ],
+   "minutes": 9,
+   "words": 1866,
+   "serie": "Pet 15.504, os fiscais",
+   "capitulo": 3,
+   "excerpt": "Corrupção, no Código Penal, é receber vantagem \"em razão\" do cargo. O verbo pede um trajeto: de onde saiu, por onde passou, onde chegou. A Informação de Polícia Judiciária da Petição 15.504 dedica metade das suas páginas a esse trajeto, e é a parte mais concreta do processo, porq",
+   "numero": 21
+  },
+  {
+   "slug": "pet-15504-04-quatro-mil-laudas",
+   "title": "Quatro mil laudas em cinco dias",
+   "subtitle": "O inquérito policial, de maio a setembro de 2026: doze apensos herdados de uma busca, uma mansão vazia com pista de boliche, dois investigados que não aparecem na primeira intimação, um delegado que explica por que o concierge é testemunha, um HD de R$ 589 comprado pela defesa, dois depoimentos que vazam e um presídio sem internet.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.504",
+    "inquérito policial",
+    "Súmula Vinculante 14",
+    "sigilo"
+   ],
+   "minutes": 10,
+   "words": 1987,
+   "serie": "Pet 15.504, os fiscais",
+   "capitulo": 4,
+   "excerpt": "O inquérito 2026.0053200 foi aberto em 14 de maio de 2026 e, em setembro, ainda não tinha relatório final. O que a Petição 15.504 guarda dele são os autos principais, 379 folhas até 1º de setembro, e catorze apensos. Este capítulo é a crônica desse andamento.",
+   "numero": 22
+  },
+  {
+   "slug": "pet-15504-05-nao-confiavamos-em-ninguem",
+   "title": "Não confiávamos em ninguém",
+   "subtitle": "O diretor de Fiscalização, o gerente que escreveu 31 ofícios ao Master, o advogado que assinou a carta-convite e o operador de viagens. Quatro depoimentos de quem viu de fora, com o que cada um sustenta, o que cada um admite e o que 'olhando para trás' cada um passou a achar.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.504",
+    "depoimentos",
+    "Banco Central",
+    "BRB"
+   ],
+   "minutes": 10,
+   "words": 1991,
+   "serie": "Pet 15.504, os fiscais",
+   "capitulo": 5,
+   "excerpt": "A polícia resume os depoimentos \"para consulta textual\", em despachos que reproduzem a fala em terceira pessoa. O leitor não ouve a voz; lê a síntese do escrivão. Com essa ressalva, este capítulo reúne o que disseram as quatro pessoas ouvidas que não estão no grupo de WhatsApp: o",
+   "numero": 23
+  },
+  {
+   "slug": "pet-15504-06-chegar-do-outro-lado",
+   "title": "Chegar do outro lado",
+   "subtitle": "Os três do grupo de WhatsApp, cada um por horas, diante do delegado. O adjunto que diz ter recebido ordem para 'jogar parado' e preparou 23 votos de liquidação. O chefe que consultou o corregedor sem dizer o valor nem o nome. O banqueiro que responde 'diretamente, não' e chama os dois de anjos. Três versões que cabem nas mesmas mensagens.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.504",
+    "depoimentos",
+    "Belline Santana",
+    "Paulo Sérgio Neves de Souza",
+    "Daniel Vorcaro"
+   ],
+   "minutes": 10,
+   "words": 1995,
+   "serie": "Pet 15.504, os fiscais",
+   "capitulo": 6,
+   "excerpt": "Nos processos anteriores desta série, os investigados quase não falam: ficam em silêncio ou peticionam por advogado. Na Petição 15.504, os três do grupo falaram, e por horas. Paulo Sérgio Neves de Souza em 10 de julho de 2026, Belline Santana em 25 de agosto, Daniel Vorcaro em 28",
+   "numero": 24
+  },
+  {
    "slug": "pet-15556-01-setenta-e-duas-horas",
    "title": "Setenta e duas horas",
    "subtitle": "Como um pedido de 164 páginas da Polícia Federal virou, em cinco dias, uma decisão de 48. O que ela é, o que ela não é, e por que o Ministério Público pediu mais tempo e não ganhou.",
@@ -323,7 +432,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 1,
    "excerpt": "Um processo do Supremo chamado \"Petição\" não é uma carta. É uma gaveta. Nela se guardam pedidos que precisam de um juiz antes de virarem outra coisa: um inquérito, uma denúncia, nada. A Petição 15.556 é a gaveta em que a Polícia Federal, em 27 de fevereiro de 2026, depositou 164 ",
-   "numero": 19
+   "numero": 25
   },
   {
    "slug": "pet-15556-02-a-turma",
@@ -340,7 +449,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 2,
    "excerpt": "Toda organização tem um departamento de que não se fala nas reuniões de resultado. Segundo a decisão de 3 de março, o do grupo investigado se chamava \"A Turma\", e a descrição que o ministro faz dela é a parte do documento que mais se afasta do mundo dos bancos e mais se aproxima ",
-   "numero": 20
+   "numero": 26
   },
   {
    "slug": "pet-15556-03-o-supervisor-que-revisava-o-oficio",
@@ -357,7 +466,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 3,
    "excerpt": "O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conver",
-   "numero": 21
+   "numero": 27
   },
   {
    "slug": "pet-15556-04-o-que-o-ministro-decidiu-e-como",
@@ -374,7 +483,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 4,
    "excerpt": "Prender alguém antes de julgar é a coisa mais violenta que um Estado de direito faz de forma rotineira. Por isso a lei cerca o ato de exigências, e por isso a parte técnica de uma decisão como a de 3 de março merece ser lida por quem não é advogado: é ali que se vê se o juiz pulo",
-   "numero": 22
+   "numero": 28
   },
   {
    "slug": "pet-15556-05-depois-do-decreto",
@@ -391,7 +500,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 5,
    "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
-   "numero": 23
+   "numero": 29
   },
   {
    "slug": "rcl-88121-01-a-pasta",
@@ -408,7 +517,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 1,
    "excerpt": "A Reclamação 88.121 é o menor dos quinze processos do acervo em número de páginas de decisão e o maior em consequência. Foi ela que tirou a Operação Compliance Zero da 10ª Vara Federal de Brasília e a pôs nas mãos de um único ministro do Supremo. Tudo começou com uma pasta. Esta ",
-   "numero": 24
+   "numero": 30
   },
   {
    "slug": "rcl-88121-02-nove-de-dezembro",
@@ -425,7 +534,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 2,
    "excerpt": "Entre 9 e 15 de dezembro de 2025, o ministro Dias Toffoli assinou três decisões na Reclamação 88.121, e as três têm em comum uma característica que este site prefere apontar a julgar: cada uma vai um passo além do que o precedente citado autorizava. Este capítulo é sobre esse pas",
-   "numero": 25
+   "numero": 31
   },
   {
    "slug": "rcl-88121-03-vinte-e-dois-de-dezembro",
@@ -442,7 +551,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 3,
    "excerpt": "Toda avocação tem uma tentação: a de crescer. Se o Supremo é competente para \"toda matéria, inclusive conexa\", a pergunta seguinte é o que é conexo, e quem decide. Em dezembro de 2025, essa pergunta foi feita em São Paulo, respondida por um juiz federal substituto, e a resposta f",
-   "numero": 26
+   "numero": 32
   },
   {
    "slug": "rcl-88121-04-trinta-e-nove-bilhoes",
@@ -460,7 +569,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 4,
    "excerpt": "A liminar de 9 de dezembro mandou o Banco Central entregar ao Supremo \"a documentação e os elementos informativos relativos aos procedimentos administrativos em curso\". Em 22 de dezembro de 2025, o mesmo dia da decisão final, a Procuradoria do Banco Central juntou à reclamação a ",
-   "numero": 27
+   "numero": 33
   },
   {
    "slug": "rcl-88121-05-o-arquivo-que-nao-fecha",
@@ -477,7 +586,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 5,
    "excerpt": "Um processo arquivado é, em teoria, um processo morto. A Reclamação 88.121 foi arquivada em 10 de fevereiro de 2026 e, até 19 de agosto do mesmo ano, recebeu mais de cem peças. Este último capítulo é o inventário do que chegou a um endereço que oficialmente já não existia, e do q",
-   "numero": 28
+   "numero": 34
   }
  ]
 }

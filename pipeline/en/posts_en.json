@@ -5,7 +5,8 @@
   "Pet 15.556, a decisão": "Pet 15.556: the ruling",
   "RCL 88.121, a mudança de endereço": "RCL 88.121: the change of address",
   "INQ 5.035, o projeto": "INQ 5.035: the project",
-  "Pet 15.478, a quebra": "Pet 15.478: the disclosure order"
+  "Pet 15.478, a quebra": "Pet 15.478: the disclosure order",
+  "Pet 15.504, os fiscais": "Pet 15.504: the supervisors"
  },
  "cento-e-oitenta-e-nove-mil-paginas": {
   "t": "One hundred and eighty-nine thousand pages",
@@ -118,5 +119,29 @@
  "pet-15478-03-o-que-os-bancos-devolveram": {
   "t": "What the banks sent back",
   "s": "Seventy-eight institutions notified by the Central Bank, files with thousands of rows transmitted through a system called Simba, a company the tax authority says has been closed since 2018, and the realisation that the data that matter are not in the record, and never will be."
+ },
+ "pet-15504-01-a-denuncia-anonima": {
+  "t": "The anonymous tip",
+  "s": "On the afternoon of 7 January 2026 someone told the Central Bank's president, without giving a name, that two heads of bank supervision had taken money from Master's owner. By 5:30 pm the director of supervision was already hearing the first of them. Within two days the case was with the Federal Police; within seven weeks, at the Supreme Court."
+ },
+ "pet-15504-02-prioridade-absoluta": {
+  "t": "Absolute priority",
+  "s": "One hundred and thirty-one pages about an iPhone. What the Federal Police say they found in the banker's conversations with the two supervisors: drafts reviewed by their own addressee, tips for a meeting with the Central Bank's president, a monitoring filter that 'went off', a three-person group called Master and a meeting on the eve of the liquidation."
+ },
+ "pet-15504-03-carta-convite": {
+  "t": "The letter of invitation",
+  "s": "A youth-inclusion project signed by a lawyer, a first instalment that 'has to be paid today', a company that can no longer be used, a farm sold for R$ 4.8 million in the side agreement and R$ 3 million in the deed, a guide at Disney and two reservations in Paris. The money trail, according to the police."
+ },
+ "pet-15504-04-quatro-mil-laudas": {
+  "t": "Four thousand pages in five days",
+  "s": "The police inquiry from May to September 2026: twelve annexes inherited from a search, an empty mansion with a bowling alley, two suspects who do not show up for the first summons, an officer who explains why the concierge is a witness, a R$ 589 hard drive bought by the defence, two statements that leak and a prison without internet."
+ },
+ "pet-15504-05-nao-confiavamos-em-ninguem": {
+  "t": "We trusted no one",
+  "s": "The director of supervision, the manager who wrote 31 letters to Master, the lawyer who signed the letter of invitation and the travel fixer. Four statements from people who watched from outside, with what each maintains, what each admits and what, 'looking back', each has come to think."
+ },
+ "pet-15504-06-chegar-do-outro-lado": {
+  "t": "Getting to the other side",
+  "s": "The three members of the WhatsApp group, each for hours, before the officer. The deputy who says he was told to 'sit still' and drafted 23 liquidation votes. The head who consulted the ombudsman without giving the amount or the name. The banker who answers 'directly, no' and calls the two of them angels. Three versions that fit the same messages."
  }
 }
