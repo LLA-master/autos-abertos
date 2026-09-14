@@ -38,6 +38,7 @@ function show(v){ if(!views.includes(v)) v="inicio";
   window.scrollTo({top:0});
 }
 addEventListener("hashchange",()=>show(location.hash.slice(1)));
+$$(".tb-toggle").forEach(b=>b.onclick=()=>{const t=b.closest(".toolbar"); t.classList.toggle("open"); b.textContent=t.classList.contains("open")?"Menos filtros ▴":"Filtros ▾";});
 $$("[data-nav]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
 
 /* ---------- início ---------- */
@@ -280,7 +281,7 @@ renderProcs();
 
 /* ---------- linha do tempo ---------- */
 const tlProc=$("#tlProc"); META.corpus.processos.forEach(p=>tlProc.insertAdjacentHTML("beforeend",`<option>${p}</option>`));
-function months(){const out=[]; for(let y=2015;y<=2026;y++) for(let m=1;m<=12;m++){const k=`${y}-${String(m).padStart(2,"0")}`; if(k>"2026-09") break; out.push(k);} return out;}
+function months(){const out=[]; const y0=innerWidth<640?2023:2015; for(let y=y0;y<=2026;y++) for(let m=1;m<=12;m++){const k=`${y}-${String(m).padStart(2,"0")}`; if(k>"2026-09") break; out.push(k);} return out;}
 function drawTL(){ const ms=months(), proc=tlProc.value, log=$("#tlLog").checked;
   const val=ms.map(k=>{const d=TL[k]||{}; return proc?(d[proc]||0):Object.values(d).reduce((a,b)=>a+b,0);});
   const tr=v=>log?Math.log10(v+1):v; const mx=Math.max(1,...val.map(tr)); const W=1400,H=320,pad=30,bw=(W-pad*2)/ms.length;

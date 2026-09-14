@@ -150,3 +150,12 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 
 .tip{position:fixed;z-index:60;pointer-events:none;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:12.5px;line-height:1.4;box-shadow:var(--shadow);max-width:320px}
 .tip .badge{vertical-align:middle}.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--bg3);color:var(--ink2);margin:2px}
+
+/* mobile: gráficos e tabelas */
+@media (max-width:640px){.tl-chart svg{min-width:720px;height:240px}.kv{grid-template-columns:1fr 1fr 1fr;gap:6px}.kv b{font-size:15px}.tiles{grid-template-columns:1fr 1fr}.wk-grid{grid-template-columns:1fr}.proc-table{font-size:12px;min-width:760px}.mm-node text{font-size:11px}.graph-wrap{height:66vh;min-height:420px}.toolbar{gap:6px;padding:8px}.toolbar .ctl{font-size:12px}.legend{display:none}.panel{max-height:60%}.hero{padding:28px 0 12px}.gridfloor{height:40px}.cards3{grid-template-columns:1fr}}
+
+.ver{font-family:var(--mono);font-size:11px;color:#12142A;background:var(--gold);padding:3px 9px;border-radius:99px;white-space:nowrap}
+@media (max-width:640px){.ver{display:none}}
+
+.tb-toggle{display:none}
+@media (max-width:640px){.tb-toggle{display:inline-flex}.toolbar:not(.open)>*:not(.search):not(.tb-toggle){display:none}.toolbar .search{flex:1 1 60%}}
