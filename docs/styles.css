@@ -261,3 +261,16 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 .cr-serie{margin:6px 0 26px}.cr-serie-t{font-size:22px;text-transform:uppercase;margin:0 0 2px;color:var(--cyan)}
 #crCards{display:block}
 .avisos h3{margin-top:22px;color:var(--cyan)}.avisos li{margin:7px 0}.avisos ul{padding-left:20px}
+/* alternador de idioma (PT/EN) no cabeçalho */
+.lang{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink2);border:1px solid var(--line);padding:3px 8px;border-radius:99px;text-decoration:none;white-space:nowrap}.lang:hover{border-color:var(--cyan);color:var(--cyan)}
+html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
+/* edição em inglês: who's who e primer */
+.ww-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:14px 0 26px}
+.ww-card{background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px 12px;position:relative;overflow:hidden}
+.ww-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--c,var(--line))}
+.ww-card h3{font-size:17px;margin:4px 0 2px}.ww-card .m{font-size:12px;color:var(--muted);margin-bottom:8px}
+.ww-card p{font-size:13.5px;line-height:1.5;color:var(--ink2);margin:6px 0}.ww-card .src{font-size:11px;color:var(--muted);margin-top:8px}
+.ww-card .acts{margin-top:8px}
+.ww-h{margin:26px 0 4px}.ww-h+p{margin-top:0}
+.primer h3{margin-top:26px}.primer dl{margin:8px 0}.primer dt{font-weight:600;margin-top:10px}.primer dd{margin:2px 0 0 0;color:var(--ink2)}
+.primer .tiles{margin:8px 0 18px}

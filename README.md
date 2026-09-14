@@ -37,6 +37,14 @@ Requer `poppler` (pdftotext/pdfinfo), `tesseract` com o pacote `por` e `ocrmypdf
 
 Além das contagens (peças, processos, menções), o estágio 6 exporta métricas de rede por nó: intermediação ("pontes"), PageRank ("influência"), coeficiente de agrupamento, parcela das ligações que sai do núcleo e número de atos judiciais (decisão, despacho, petição inicial) em que o nome aparece; por ligação, a especificidade (lift) e as datas citadas por trimestre. O navegador recalcula pontes e influência sobre o recorte visível. Definições e limites em `METODOLOGIA.md` e na seção Método do site.
 
+## Edição em inglês
+
+`docs/en.html` (com `docs/app.en.js` e `docs/data/wiki_en.json`) é gerada por `pipeline/build_en.py` a partir dos originais em português, por substituição de trechos exatos declarados em `pipeline/en/strings_html.py` e `pipeline/en/strings_js.py`. Se o original mudar sem tradução correspondente, o build falha de propósito. As seções exclusivas da edição em inglês (who's who e primer sobre o Brasil) ficam em `pipeline/en/whoswho.html` e `pipeline/en/primer.html`; títulos e subtítulos das crônicas em inglês, em `pipeline/en/posts_en.json` (os textos das crônicas continuam só em português). Depois de editar `index.html`, `app.js`, crônicas ou o `wiki.json`, rode:
+
+```bash
+python3 pipeline/build_en.py
+```
+
 ## Licenças
 
 Código: MIT (`LICENSE`). Dados derivados em `docs/data/`: CC BY 4.0 (`DATA_LICENSE`). Os documentos originais são atos públicos do STF.
