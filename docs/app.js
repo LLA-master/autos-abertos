@@ -489,7 +489,7 @@ const dateBR=d=>{ const [y,m,dd]=d.split("-"); return `${dd} de ${["janeiro","fe
 function stripFM(md){ if(md.startsWith("---")){ const j=md.indexOf("\n---",3); if(j>0) return md.slice(j+4); } return md; }
 async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSearchParams(qs||""); const slug=p.get("p"); const L=$("#crList"), P=$("#crPost");
   if(slug){ const i=posts.findIndex(x=>x.slug===slug); if(i>=0){ const post=posts[i]; L.hidden=true; P.hidden=false; P.innerHTML=`<p class="muted">Carregando…</p>`;
-      let md=""; try{ md=stripFM(await (await fetch(`posts/${post.slug}.md`)).text()); }catch(e){ md="*Não foi possível carregar o texto.*"; }
+      let md=""; try{ const r=await fetch(`posts/${post.slug}.md`); if(!r.ok) throw new Error(r.status); md=stripFM(await r.text()); }catch(e){ md="*Não foi possível carregar o texto desta crônica.* Tente recarregar a página; se persistir, abra uma issue no repositório."; }
       const html=(window.marked?marked.parse(md):md.replace(/\n\n/g,"<br><br>"));
       const prev=posts[i+1], next=posts[i-1];
       P.innerHTML=`<button class="btn ghost small back" id="crBack">← todas as crônicas</button><p class="eyebrow">Crônica ${String(post.numero||posts.length-i).padStart(2,"0")} · ${dateBR(post.date)} · ${post.minutes} min de leitura</p><h1>${esc(post.title)}</h1><p class="sub">${esc(post.subtitle||"")}</p>
