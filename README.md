@@ -10,6 +10,7 @@ Base de dados aberta e navegável sobre o acervo que o Supremo Tribunal Federal 
 - `docs/posts/` — as crônicas, em Markdown com cabeçalho (título, subtítulo, data, tags). `pipeline/build_posts.py` gera `docs/posts/index.json` e `docs/feed.xml`. São textos de opinião do autor, separados da base.
 - `docs/data/` — os dados derivados e sanitizados que o site consome (JSON). É a **única** coisa que sai do acervo.
 - `pipeline/` — os scripts que produzem esses dados a partir do acervo bruto (que não está neste repositório e não deve estar).
+- `tools/baixar_acervo_stf.py` — baixa, valida e extrai o pacote público do STF a partir da nota à imprensa (com a história do 429 do SharePoint documentada).
 - `POLITICA_DE_SANITIZACAO.md` — o que entra, o que não entra, e por quê.
 - `METODOLOGIA.md` — como o texto foi extraído, como as entidades e relações foram inferidas, e os limites disso.
 
