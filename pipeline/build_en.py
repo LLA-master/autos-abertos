@@ -55,6 +55,25 @@ def wiki_en(w):
         out["pages"].append(q)
     return out
 
+def google_buttons(html):
+    """Cards do who's who com data-google="Nome A|Nome B" ganham botões de busca no Google
+    (um por nome). A query é o nome entre aspas mais "Banco Master", para desambiguar homônimos."""
+    from urllib.parse import quote
+    def btn(name):
+        q = '"Banco Master"' if "Banco Master" in name else f'"{name}" "Banco Master"'
+        label = "Search on Google"
+        return (f'<a class="btn ghost small" href="https://www.google.com/search?q={quote(q)}" target="_blank" '
+                f'rel="noopener" title="Web search for {name}; results are not part of the record">{label}</a>')
+    def card(m):
+        art = m.group(0); names = m.group(1).split("|")
+        btns = " ".join(btn(n) if len(names) == 1 else btn(n).replace(">Search on Google<", f">Google: {n}<") for n in names)
+        if '<div class="acts">' in art:
+            return art.replace('</div></article>', " " + btns + '</div></article>', 1) if art.rstrip().endswith('</div></article>') else art.replace('</article>', f'<div class="acts">{btns}</div></article>', 1)
+        return art.replace('</article>', f'\n      <div class="acts">{btns}</div></article>', 1)
+    out, n = re.subn(r'<article class="ww-card" data-google="([^"]+)"[\s\S]*?</article>', card, html)
+    print(f"who's who: {n} cards com busca no Google")
+    return out
+
 def main():
     js_only = "--js-only" in sys.argv
     check = "--check" in sys.argv
@@ -66,6 +85,7 @@ def main():
     from strings_html import HTML
     html = apply((DOCS/"index.html").read_text(encoding="utf-8"), HTML, "index.html")
     secs = "\n\n".join((ROOT/"pipeline"/"en"/f).read_text(encoding="utf-8") for f in ("whoswho.html","primer.html"))
+    secs = google_buttons(secs)
     # {{sel:Rótulo}} → id do nó (link "abrir no grafo"); falha se o rótulo não existir na base
     w = json.load(open(DOCS/"data"/"wiki.json", encoding="utf-8"))
     g = json.load(open(DOCS/"data"/"graph.json", encoding="utf-8"))
