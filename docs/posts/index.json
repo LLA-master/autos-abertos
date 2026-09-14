@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 15:19 UTC",
+ "gerado_em": "2026-09-13 15:38 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -258,6 +258,57 @@
    "numero": 15
   },
   {
+   "slug": "pet-15478-01-o-que-os-celulares-disseram",
+   "title": "O que os celulares disseram",
+   "subtitle": "Em fevereiro de 2026, a Polícia Federal levou ao Supremo os primeiros trechos das extrações dos telefones apreendidos em novembro. Um diretor com frio na espinha, um dono de banco pedindo para corrigir um extrato, um tesoureiro que acha difícil averbar, e o caderno de uma diretora do BRB. A representação que abriu a Petição 15.478.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.478",
+    "sigilo bancário",
+    "extrações"
+   ],
+   "minutes": 10,
+   "words": 1993,
+   "serie": "Pet 15.478, a quebra",
+   "capitulo": 1,
+   "excerpt": "A Petição 15.478 é um pedido de quebra de sigilo bancário e fiscal: 36 peças e 633 páginas, das quais 82 são a representação da Polícia Federal e o resto, quase tudo, anexos e respostas de bancos. É um processo instrumental, que não decide culpa, mas a representação que o abre é ",
+   "numero": 16
+  },
+  {
+   "slug": "pet-15478-02-treze-nomes",
+   "title": "Treze nomes",
+   "subtitle": "Nove pessoas, quatro empresas, dois anos de contas e declarações. A lista que a polícia pediu, o crime que atribuiu a cada um, o parecer que concordou em três semanas e a decisão que levou mais três meses para dizer sim.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.478",
+    "PGR",
+    "decisão"
+   ],
+   "minutes": 9,
+   "words": 1799,
+   "serie": "Pet 15.478, a quebra",
+   "capitulo": 2,
+   "excerpt": "Uma quebra de sigilo é um pedido com lista. Este capítulo é sobre a lista da Petição 15.478, sobre o que a polícia diz que cada nome fez e sobre o caminho que o pedido percorreu entre fevereiro e junho de 2026. É o capítulo mais jurídico da série e o site tentou mantê-lo legível ",
+   "numero": 17
+  },
+  {
+   "slug": "pet-15478-03-o-que-os-bancos-devolveram",
+   "title": "O que os bancos devolveram",
+   "subtitle": "Setenta e oito instituições oficiadas pelo Banco Central, arquivos com milhares de linhas transmitidos por um sistema chamado Simba, uma empresa que a Receita diz estar baixada desde 2018, e a constatação de que os dados que importam não estão nos autos, e nunca estarão.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.478",
+    "Simba",
+    "Receita Federal"
+   ],
+   "minutes": 8,
+   "words": 1615,
+   "serie": "Pet 15.478, a quebra",
+   "capitulo": 3,
+   "excerpt": "Depois da decisão de 22 de junho de 2026, a Petição 15.478 passa a receber respostas. São elas o restante do processo, e são, para quem espera revelações, uma decepção instrutiva: os autos públicos registram que os dados foram enviados, quantas linhas têm, e para onde foram. O co",
+   "numero": 18
+  },
+  {
    "slug": "pet-15556-01-setenta-e-duas-horas",
    "title": "Setenta e duas horas",
    "subtitle": "Como um pedido de 164 páginas da Polícia Federal virou, em cinco dias, uma decisão de 48. O que ela é, o que ela não é, e por que o Ministério Público pediu mais tempo e não ganhou.",
@@ -272,7 +323,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 1,
    "excerpt": "Um processo do Supremo chamado \"Petição\" não é uma carta. É uma gaveta. Nela se guardam pedidos que precisam de um juiz antes de virarem outra coisa: um inquérito, uma denúncia, nada. A Petição 15.556 é a gaveta em que a Polícia Federal, em 27 de fevereiro de 2026, depositou 164 ",
-   "numero": 16
+   "numero": 19
   },
   {
    "slug": "pet-15556-02-a-turma",
@@ -289,7 +340,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 2,
    "excerpt": "Toda organização tem um departamento de que não se fala nas reuniões de resultado. Segundo a decisão de 3 de março, o do grupo investigado se chamava \"A Turma\", e a descrição que o ministro faz dela é a parte do documento que mais se afasta do mundo dos bancos e mais se aproxima ",
-   "numero": 17
+   "numero": 20
   },
   {
    "slug": "pet-15556-03-o-supervisor-que-revisava-o-oficio",
@@ -306,7 +357,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 3,
    "excerpt": "O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conver",
-   "numero": 18
+   "numero": 21
   },
   {
    "slug": "pet-15556-04-o-que-o-ministro-decidiu-e-como",
@@ -323,7 +374,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 4,
    "excerpt": "Prender alguém antes de julgar é a coisa mais violenta que um Estado de direito faz de forma rotineira. Por isso a lei cerca o ato de exigências, e por isso a parte técnica de uma decisão como a de 3 de março merece ser lida por quem não é advogado: é ali que se vê se o juiz pulo",
-   "numero": 19
+   "numero": 22
   },
   {
    "slug": "pet-15556-05-depois-do-decreto",
@@ -340,7 +391,7 @@
    "serie": "Pet 15.556, a decisão",
    "capitulo": 5,
    "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
-   "numero": 20
+   "numero": 23
   },
   {
    "slug": "rcl-88121-01-a-pasta",
@@ -357,7 +408,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 1,
    "excerpt": "A Reclamação 88.121 é o menor dos quinze processos do acervo em número de páginas de decisão e o maior em consequência. Foi ela que tirou a Operação Compliance Zero da 10ª Vara Federal de Brasília e a pôs nas mãos de um único ministro do Supremo. Tudo começou com uma pasta. Esta ",
-   "numero": 21
+   "numero": 24
   },
   {
    "slug": "rcl-88121-02-nove-de-dezembro",
@@ -374,7 +425,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 2,
    "excerpt": "Entre 9 e 15 de dezembro de 2025, o ministro Dias Toffoli assinou três decisões na Reclamação 88.121, e as três têm em comum uma característica que este site prefere apontar a julgar: cada uma vai um passo além do que o precedente citado autorizava. Este capítulo é sobre esse pas",
-   "numero": 22
+   "numero": 25
   },
   {
    "slug": "rcl-88121-03-vinte-e-dois-de-dezembro",
@@ -391,7 +442,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 3,
    "excerpt": "Toda avocação tem uma tentação: a de crescer. Se o Supremo é competente para \"toda matéria, inclusive conexa\", a pergunta seguinte é o que é conexo, e quem decide. Em dezembro de 2025, essa pergunta foi feita em São Paulo, respondida por um juiz federal substituto, e a resposta f",
-   "numero": 23
+   "numero": 26
   },
   {
    "slug": "rcl-88121-04-trinta-e-nove-bilhoes",
@@ -409,7 +460,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 4,
    "excerpt": "A liminar de 9 de dezembro mandou o Banco Central entregar ao Supremo \"a documentação e os elementos informativos relativos aos procedimentos administrativos em curso\". Em 22 de dezembro de 2025, o mesmo dia da decisão final, a Procuradoria do Banco Central juntou à reclamação a ",
-   "numero": 24
+   "numero": 27
   },
   {
    "slug": "rcl-88121-05-o-arquivo-que-nao-fecha",
@@ -426,7 +477,7 @@
    "serie": "RCL 88.121, a mudança de endereço",
    "capitulo": 5,
    "excerpt": "Um processo arquivado é, em teoria, um processo morto. A Reclamação 88.121 foi arquivada em 10 de fevereiro de 2026 e, até 19 de agosto do mesmo ano, recebeu mais de cem peças. Este último capítulo é o inventário do que chegou a um endereço que oficialmente já não existia, e do q",
-   "numero": 25
+   "numero": 28
   }
  ]
 }
