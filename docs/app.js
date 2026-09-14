@@ -80,10 +80,19 @@ function reducers(){
       if(neigh){ if(s===focusId||d===focusId){r.color=css("--cyan");r.size=a.size*1.4;r.zIndex=1;} else r.color=dimE; } return r;}
   };
 }
+/* rótulo com pastilha de fundo: legível sobre nós densos, nos dois temas */
+function drawLabel(ctx,data,settings){ if(!data.label) return; const size=settings.labelSize, font=settings.labelFont; ctx.font=`600 ${size}px ${font}`;
+  const pad=5, w=ctx.measureText(data.label).width+pad*2, x=data.x+data.size+3, y=data.y; const h=size+6;
+  ctx.fillStyle=css("--label-bg"); ctx.beginPath(); ctx.roundRect(x,y-h/2,w,h,5); ctx.fill();
+  ctx.fillStyle=data.highlighted?css("--pink"):css("--label"); ctx.fillText(data.label,x+pad,y+size*.36); }
+function drawHover(ctx,data,settings){ const size=settings.labelSize, font=settings.labelFont; ctx.font=`700 ${size+1}px ${font}`; const label=data.label||""; const pad=7, w=ctx.measureText(label).width+pad*2, h=size+12; const x=data.x+data.size+3, y=data.y;
+  ctx.fillStyle=css("--bg2"); ctx.strokeStyle=data.color||css("--line"); ctx.lineWidth=1.5; ctx.beginPath(); ctx.roundRect(x,y-h/2,w,h,7); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.arc(data.x,data.y,data.size+2,0,Math.PI*2); ctx.strokeStyle=data.color; ctx.lineWidth=2; ctx.stroke();
+  ctx.fillStyle=css("--label"); ctx.fillText(label,x+pad,y+(size+1)*.36); }
 function mountGraph(wrap,into){
   if(wrap.parentElement!==into) into.appendChild(wrap);
   if(!renderer){
-    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"500",labelColor:{color:css("--label")},zIndex:true,...reducers()});
+    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"600",labelColor:{color:css("--label")},defaultDrawNodeLabel:drawLabel,defaultDrawNodeHover:drawHover,zIndex:true,...reducers()});
     renderer.on("enterNode",({node})=>{hovered=node;renderer.refresh();});
     renderer.on("leaveNode",()=>{hovered=null;renderer.refresh();});
     let downAt=null; renderer.on("downNode",({event})=>{ downAt=[event.x,event.y]; });

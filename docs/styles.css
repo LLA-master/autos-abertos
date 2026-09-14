@@ -9,13 +9,13 @@
   --r:16px;--shadow:0 12px 40px rgba(0,0,0,.45);
   --font:"Outfit","Inter",system-ui,sans-serif;--display:"Contrail One","Righteous","Outfit",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
   --grid:rgba(255,79,163,.10);--hero-op:1;
-  --edge:rgba(255,255,255,.10);--edge-dim:rgba(255,255,255,.035);--node-dim:#2A3048;--label:#F2F4F8;
+  --edge:rgba(255,255,255,.10);--edge-dim:rgba(255,255,255,.035);--node-dim:#2A3048;--label:#FFFFFF;--label-bg:rgba(15,18,32,.82);--label-dim:#8A92A8;
 }
 :root[data-theme="light"]{--bg:#F6F5FB;--bg2:#FFFFFF;--bg3:#EEF0F7;--ink:#171A2B;--ink2:#3B4160;--muted:#6C7390;--line:#DDE1EC;
   --pink:#D6187A;--cyan:#0A8FA8;--orange:#E2611E;--gold:#B8860B;--violet:#6A46C8;--ok:#1E9E6A;--bad:#D23B57;
   --pessoa:#D6187A;--empresa:#0A8FA8;--autoridade:#6A46C8;--advogado:#B8860B;--pseudo:#C9CDDA;
   --glow:none;--glow2:none;--shadow:0 12px 40px rgba(30,30,60,.10);--grid:rgba(214,24,122,.08);--hero-op:.55;
-  --edge:rgba(40,45,80,.22);--edge-dim:rgba(40,45,80,.06);--node-dim:#E4E7F0;--label:#171A2B}
+  --edge:rgba(40,45,80,.22);--edge-dim:rgba(40,45,80,.06);--node-dim:#E4E7F0;--label:#12142A;--label-bg:rgba(255,255,255,.88);--label-dim:#6C7390}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 var(--font);
   background-image:radial-gradient(900px 500px at 85% -10%,color-mix(in srgb,var(--pink) 14%,transparent),transparent 60%),radial-gradient(700px 420px at 0% 0%,color-mix(in srgb,var(--cyan) 9%,transparent),transparent 60%);background-attachment:fixed}
