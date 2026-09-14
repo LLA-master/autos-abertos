@@ -258,3 +258,5 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 .cr-foot .acts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .cr-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.cr-nav a{display:block;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink);background:color-mix(in srgb,var(--bg2) 85%,transparent)}.cr-nav a span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.cr-nav a.next{text-align:right}
 @media (max-width:640px){.cr-body{font-size:18px}.cr-nav{grid-template-columns:1fr}.cr-card h3{font-size:21px}}
+.cr-serie{margin:6px 0 26px}.cr-serie-t{font-size:22px;text-transform:uppercase;margin:0 0 2px;color:var(--cyan)}
+#crCards{display:block}

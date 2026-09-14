@@ -17,10 +17,12 @@ for f in sorted(os.listdir(POSTS)):
     if not f.endswith(".md") or f.startswith("._"): continue
     meta,body=fm(open(f"{POSTS}/{f}",encoding="utf-8").read())
     words=len(re.findall(r"\w+",body)); para=next((p for p in body.split("\n\n") if p.strip() and not p.startswith("#") and not p.startswith("<")),"")
-    posts.append({"slug":f[:-3],"title":meta.get("title",f[:-3]),"subtitle":meta.get("subtitle",""),"date":meta.get("date","2026-01-01"),"tags":meta.get("tags",[]),"minutes":max(1,round(words/200)),"words":words,"excerpt":re.sub(r"[*_`>#]","",para)[:280]})
-posts.sort(key=lambda p:(p["date"],p["slug"]))
+    posts.append({"slug":f[:-3],"title":meta.get("title",f[:-3]),"subtitle":meta.get("subtitle",""),"date":meta.get("date","2026-01-01"),"tags":meta.get("tags",[]),"minutes":max(1,round(words/200)),"words":words,"serie":meta.get("serie",""),"capitulo":int(meta.get("capitulo",0) or 0),"excerpt":re.sub(r"[*_`>#]","",para)[:280]})
+posts.sort(key=lambda p:(p["date"],p["serie"],p["capitulo"],p["slug"]))
 for i,p in enumerate(posts): p["numero"]=i+1
-posts.sort(key=lambda p:p["date"],reverse=True)  # estável: mesma data mantém a ordem de numeração
+# ordem de exibição: mais recente primeiro; dentro de uma série, capítulos em ordem
+posts.sort(key=lambda p:(-int(p["date"].replace("-","")),p["serie"],p["capitulo"],p["numero"]))
+for p in posts: print(f'  {p["numero"]:02d} {p["date"]} {p["words"]:5d} palavras  {(p["serie"]+" · cap. "+str(p["capitulo"])+" · ") if p["serie"] else ""}{p["title"]}')
 json.dump({"gerado_em":time.strftime("%Y-%m-%d %H:%M UTC",time.gmtime()),"posts":posts},open(f"{POSTS}/index.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
 items="".join(f"""  <item><title>{html.escape(p['title'])}</title><link>{SITE}#cronicas?p={p['slug']}</link><guid isPermaLink="false">bmdb-{p['slug']}</guid><pubDate>{time.strftime('%a, %d %b %Y 12:00:00 GMT',time.strptime(p['date'],'%Y-%m-%d'))}</pubDate><description>{html.escape(p['subtitle'] or p['excerpt'])}</description></item>\n""" for p in posts)
 open(f"{REPO}/docs/feed.xml","w",encoding="utf-8").write(f"""<?xml version="1.0" encoding="UTF-8"?>

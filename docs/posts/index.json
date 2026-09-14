@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 14:09 UTC",
+ "gerado_em": "2026-09-13 14:23 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -13,6 +13,8 @@
    ],
    "minutes": 4,
    "words": 825,
+   "serie": "",
+   "capitulo": 0,
    "excerpt": "Toda grande investigação brasileira nasce duas vezes: quando acontece e quando vira papel. A segunda é maior. No dia 11 de setembro de 2026, o Supremo Tribunal Federal publicou os autos da Petição 15.556 e de mais quatorze procedimentos da Operação Compliance Zero, o caso do Banc",
    "numero": 1
   },
@@ -28,8 +30,95 @@
    ],
    "minutes": 4,
    "words": 799,
+   "serie": "",
+   "capitulo": 0,
    "excerpt": "Há uma tentação em todo grafo, e é a mesma da fofoca: ver duas pessoas juntas e supor o resto. O grafo deste site tem 716 nomes e 4.980 ligações, e nenhuma delas prova coisa alguma. Vale dizer isso na primeira linha, porque a segunda já vai ser mais interessante.",
    "numero": 2
+  },
+  {
+   "slug": "pet-15556-01-setenta-e-duas-horas",
+   "title": "Setenta e duas horas",
+   "subtitle": "Como um pedido de 164 páginas da Polícia Federal virou, em cinco dias, uma decisão de 48. O que ela é, o que ela não é, e por que o Ministério Público pediu mais tempo e não ganhou.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.556",
+    "decisão",
+    "método"
+   ],
+   "minutes": 9,
+   "words": 1838,
+   "serie": "Pet 15.556, a decisão",
+   "capitulo": 1,
+   "excerpt": "Um processo do Supremo chamado \"Petição\" não é uma carta. É uma gaveta. Nela se guardam pedidos que precisam de um juiz antes de virarem outra coisa: um inquérito, uma denúncia, nada. A Petição 15.556 é a gaveta em que a Polícia Federal, em 27 de fevereiro de 2026, depositou 164 ",
+   "numero": 3
+  },
+  {
+   "slug": "pet-15556-02-a-turma",
+   "title": "A Turma",
+   "subtitle": "Um milhão por mês, dividido entre seis. O que a decisão diz sobre o núcleo de vigilância e intimidação, nas palavras das mensagens que a polícia transcreveu.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.556",
+    "A Turma",
+    "intimidação"
+   ],
+   "minutes": 8,
+   "words": 1641,
+   "serie": "Pet 15.556, a decisão",
+   "capitulo": 2,
+   "excerpt": "Toda organização tem um departamento de que não se fala nas reuniões de resultado. Segundo a decisão de 3 de março, o do grupo investigado se chamava \"A Turma\", e a descrição que o ministro faz dela é a parte do documento que mais se afasta do mundo dos bancos e mais se aproxima ",
+   "numero": 4
+  },
+  {
+   "slug": "pet-15556-03-o-supervisor-que-revisava-o-oficio",
+   "title": "O supervisor que revisava o ofício",
+   "subtitle": "Dois chefes do departamento do Banco Central que fiscalizava o Master, um grupo de mensagens, uma consultoria para 'inserção de jovens no mercado financeiro' e a frase 'hoje tem que pagar a primeira do Belline'.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.556",
+    "Banco Central",
+    "corrupção"
+   ],
+   "minutes": 9,
+   "words": 1739,
+   "serie": "Pet 15.556, a decisão",
+   "capitulo": 3,
+   "excerpt": "O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conver",
+   "numero": 5
+  },
+  {
+   "slug": "pet-15556-04-o-que-o-ministro-decidiu-e-como",
+   "title": "O que o ministro decidiu, e como",
+   "subtitle": "A lei exige três coisas para prender antes de julgar. A decisão diz que encontrou as três, explica por quê, e depois gasta sete páginas ensinando a prender direito.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.556",
+    "prisão preventiva",
+    "garantias"
+   ],
+   "minutes": 8,
+   "words": 1616,
+   "serie": "Pet 15.556, a decisão",
+   "capitulo": 4,
+   "excerpt": "Prender alguém antes de julgar é a coisa mais violenta que um Estado de direito faz de forma rotineira. Por isso a lei cerca o ato de exigências, e por isso a parte técnica de uma decisão como a de 3 de março merece ser lida por quem não é advogado: é ali que se vê se o juiz pulo",
+   "numero": 6
+  },
+  {
+   "slug": "pet-15556-05-depois-do-decreto",
+   "title": "Depois do decreto",
+   "subtitle": "Do dia 4 de março ao dia 24 de julho de 2026, nos mesmos autos: uma transferência para a penitenciária federal, uma morte, quatro salvo-condutos, um pai que discute dois bilhões e a CVM querendo ouvir o preso.",
+   "date": "2026-09-13",
+   "tags": [
+    "Pet 15.556",
+    "cronologia",
+    "CPMI"
+   ],
+   "minutes": 10,
+   "words": 1973,
+   "serie": "Pet 15.556, a decisão",
+   "capitulo": 5,
+   "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
+   "numero": 7
   }
  ]
 }
