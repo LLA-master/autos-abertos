@@ -76,18 +76,19 @@ function reducers(){
       if(selected===id){r.highlighted=true;r.zIndex=3;} return r;},
     edgeReducer(e,a){const r={...a}; const [s,d]=graph.extremities(e); if(!visible(s)||!visible(d)||a.w<F.minW){r.hidden=true;return r;}
       r.color=baseE;
-      if(pathSet){ if(pathSet.edges.has(e)){r.color=css("--pink");r.size=a.size*2;r.zIndex=2;} else r.color=dimE; return r;}
-      if(neigh){ if(s===focusId||d===focusId){r.color=css("--cyan");r.size=a.size*1.4;r.zIndex=1;} else r.color=dimE; } return r;}
+      if(pathSet){ if(pathSet.edges.has(e)){r.color=css("--hl");r.size=a.size*2.2;r.zIndex=2;} else r.color=dimE; return r;}
+      if(neigh){ if(s===focusId||d===focusId){r.color=css("--hl");r.size=a.size*1.6;r.zIndex=1;} else r.color=dimE; } return r;}
   };
 }
 /* rótulo com pastilha de fundo: legível sobre nós densos, nos dois temas */
 function drawLabel(ctx,data,settings){ if(!data.label) return; const size=settings.labelSize, font=settings.labelFont; ctx.font=`600 ${size}px ${font}`;
   const pad=5, w=ctx.measureText(data.label).width+pad*2, x=data.x+data.size+3, y=data.y; const h=size+6;
   ctx.fillStyle=css("--label-bg"); ctx.beginPath(); ctx.roundRect(x,y-h/2,w,h,5); ctx.fill();
-  ctx.fillStyle=data.highlighted?css("--pink"):css("--label"); ctx.fillText(data.label,x+pad,y+size*.36); }
+  ctx.fillStyle=data.highlighted?css("--hl"):css("--label"); ctx.fillText(data.label,x+pad,y+size*.36);
+  if(data.highlighted){ ctx.beginPath(); ctx.arc(data.x,data.y,data.size+3,0,Math.PI*2); ctx.strokeStyle=css("--hl"); ctx.lineWidth=3; ctx.stroke(); } }
 function drawHover(ctx,data,settings){ const size=settings.labelSize, font=settings.labelFont; ctx.font=`700 ${size+1}px ${font}`; const label=data.label||""; const pad=7, w=ctx.measureText(label).width+pad*2, h=size+12; const x=data.x+data.size+3, y=data.y;
-  ctx.fillStyle=css("--bg2"); ctx.strokeStyle=data.color||css("--line"); ctx.lineWidth=1.5; ctx.beginPath(); ctx.roundRect(x,y-h/2,w,h,7); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.arc(data.x,data.y,data.size+2,0,Math.PI*2); ctx.strokeStyle=data.color; ctx.lineWidth=2; ctx.stroke();
+  ctx.fillStyle=css("--bg2"); ctx.strokeStyle=css("--hl"); ctx.lineWidth=1.5; ctx.beginPath(); ctx.roundRect(x,y-h/2,w,h,7); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.arc(data.x,data.y,data.size+3,0,Math.PI*2); ctx.strokeStyle=css("--hl"); ctx.lineWidth=3; ctx.stroke();
   ctx.fillStyle=css("--label"); ctx.fillText(label,x+pad,y+(size+1)*.36); }
 function mountGraph(wrap,into){
   if(wrap.parentElement!==into) into.appendChild(wrap);
