@@ -12,6 +12,8 @@ manifest*
 salt*
 .venv/
 __pycache__/
+# lista de termos proibidos: local, nunca publicada
+.githooks/padroes.local
 busca.duckdb
 *.duckdb
 gate_review*.csv

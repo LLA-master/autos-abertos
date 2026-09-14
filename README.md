@@ -26,6 +26,15 @@ Nenhum PDF, nenhum texto integral, nenhum CPF, número de inscrição profission
 
 Cada relação no grafo aponta para peças específicas (processo, número sequencial e página). Os autos completos estão no pacote público do STF linkado na nota à imprensa. O site não hospeda os documentos.
 
+## Anonimato do projeto
+
+Este repositório é mantido sob pseudônimo, e há razões para isso. Quem contribuir, por favor
+não inclua em issues, commits ou arquivos: nomes de pessoas reais ligadas ao projeto, caminhos
+de máquina, endereços de e-mail ou qualquer coisa que identifique quem escreve. O gancho em
+`.githooks/pre-commit` bloqueia parte disso automaticamente; instale-o com
+`git config core.hooksPath .githooks`, e use `./commitar.sh` para que a data do commit seja
+gravada em UTC, sem revelar fuso horário.
+
 ## Reproduzir
 
 ```bash

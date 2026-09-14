@@ -1,0 +1,31 @@
+#!/bin/sh
+# Barreira local: nada que identifique o autor ou a máquina entra no repositório.
+# Instale uma vez com:  git config core.hooksPath .githooks   (o commitar.sh já faz isso)
+#
+# Os padrões genéricos ficam aqui. Os específicos (nomes de contas antigas, de pessoas, de
+# empresas, de volumes) ficam em .githooks/padroes.local, que NÃO é versionado: publicar a
+# lista do que se quer esconder é uma forma de revelar exatamente isso.
+
+generico='/Volumes/|/Users/|/home/[a-z]|[a-zA-Z0-9._%+-]+@(gmail|hotmail|outlook|yahoo|icloud|proton|live|uol|terra|bol)\.|ssh-(rsa|ed25519)|BEGIN (RSA|OPENSSH|PGP) PRIVATE'
+local_f=".githooks/padroes.local"
+[ -f "$local_f" ] && extra=$(grep -v '^[[:space:]]*#' "$local_f" | grep -v '^[[:space:]]*$' | paste -sd'|' -)
+padroes="$generico"
+[ -n "$extra" ] && padroes="$generico|$extra"
+
+sujo=$(git diff --cached --name-only --diff-filter=ACM | grep -v '^\.githooks/' | while read -r f; do
+  [ -f "$f" ] || continue
+  git show ":$f" 2>/dev/null | grep -InE "$padroes" | sed "s|^|$f:|"
+done)
+if [ -n "$sujo" ]; then
+  echo "commit bloqueado: conteúdo que identifica autor ou máquina" >&2
+  echo "$sujo" | head -20 >&2
+  echo "corrija, ou use 'git commit --no-verify' se souber o que está fazendo" >&2
+  exit 1
+fi
+
+if [ "$(date +%z)" != "+0000" ]; then
+  echo "aviso: o fuso da máquina ($(date +%z)) entraria no commit." >&2
+  echo "use ./commitar.sh, que grava tudo em UTC." >&2
+  exit 1
+fi
+exit 0
