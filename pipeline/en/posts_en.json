@@ -6,7 +6,8 @@
   "RCL 88.121, a mudança de endereço": "RCL 88.121: the change of address",
   "INQ 5.035, o projeto": "INQ 5.035: the project",
   "Pet 15.478, a quebra": "Pet 15.478: the disclosure order",
-  "Pet 15.504, os fiscais": "Pet 15.504: the supervisors"
+  "Pet 15.504, os fiscais": "Pet 15.504: the supervisors",
+  "Pet 15.562, a terceira fase": "Pet 15.562: the third phase"
  },
  "cento-e-oitenta-e-nove-mil-paginas": {
   "t": "One hundred and eighty-nine thousand pages",
@@ -143,5 +144,29 @@
  "pet-15504-06-chegar-do-outro-lado": {
   "t": "Getting to the other side",
   "s": "The three members of the WhatsApp group, each for hours, before the officer. The deputy who says he was told to 'hold off' and drafted 23 liquidation votes. The head who consulted the internal-affairs office without giving the amount or the name. The banker who answers 'directly, no' and calls the two of them angels. Three versions that fit the same messages."
+ },
+ "pet-15562-01-cento-e-cinquenta-e-nove-paginas": {
+  "t": "One hundred and fifty-nine pages",
+  "s": "The request of 1 March 2026, signed by four police chiefs, that asked the Supreme Court for the third phase of Operation Compliance Zero. What the Federal Police say they found in the banker's phone: four fronts, an 'armed wing', an estimated R$ 52 billion loss to the deposit-guarantee fund and fourteen addresses, one of them belonging to someone who is not a suspect."
+ },
+ "pet-15562-02-a-turma": {
+  "t": "A Turma, the crew",
+  "s": "A drone over the house in Nova Lima, a voice note asking for clearance at gate B and the visitor log that identified the retired Federal Police officer. Searches in the prosecutors' system with the user's name whited out, a screenshot of the police case system, an Interpol printout that Interpol does not recognise. And the bill: R$ 1 million a month for the 'Sicário', R$ 400,000 a month to be split six ways."
+ },
+ "pet-15562-03-dar-um-sacode": {
+  "t": "Give him a shake",
+  "s": "The boat captain who recorded his employer, the chef who threatened to talk, the housekeeper who 'has to be ground down', the journalist who 'clocks in at 7' and the DJ in Miami who picked on the wrong man's son. The conversations the police say show how the banker dealt with people who displeased him, and what the police admit they cannot say actually happened."
+ },
+ "pet-15562-04-dezessete-de-novembro": {
+  "t": "Seventeenth of November",
+  "s": "A note on the phone with the names of the police chiefs at a closed meeting, another asking whether someone is close to the judge, an 'important' message from the lawyer at 7:28 am, a commissioned article at 7:41, a video call forced on the Central Bank at 1 pm and a jet at Guarulhos that night. How the police reconstruct the eve of the operation, and how the same meeting served to free the banker."
+ },
+ "pet-15562-05-vinte-e-quatro-horas": {
+  "t": "Twenty-four hours",
+  "s": "Monday's order giving the Prosecutor General's Office one day, Tuesday's reply at 4:01 pm saying it could not be done, Tuesday night's ruling recording that the deadline had 'lapsed' at 3:18 pm, nineteen warrants, two targets who slept at another address and, on Friday, six pages from the Prosecutor General on what a deadline is, how many pages each petition had and a 'funeral event'."
+ },
+ "pet-15562-06-as-caixas-lacradas": {
+  "t": "The sealed boxes",
+  "s": "A service door broken down in Nova Lima, a Rolex, a R$ 190,000 necklace, three sheets with the acronyms of Federal Police directorates, two phones and two laptops handed over with their passwords. Then six months of petitions: the lawyer who cannot read the file, the supervisor who needs his laptop to answer the tax authority, the department head who gets a copy if he buys a sealed hard drive with the receipt."
  }
 }
