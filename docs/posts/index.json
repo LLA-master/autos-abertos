@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-13 14:56 UTC",
+ "gerado_em": "2026-09-13 15:08 UTC",
  "posts": [
   {
    "slug": "cento-e-oitenta-e-nove-mil-paginas",
@@ -97,7 +97,7 @@
     "Reclamação 88.121"
    ],
    "minutes": 8,
-   "words": 1622,
+   "words": 1667,
    "serie": "INQ 5.026, a origem",
    "capitulo": 4,
    "excerpt": "O Inquérito 5.026 não subiu ao Supremo porque alguém provou que havia um parlamentar envolvido. Subiu porque alguém disse que talvez houvesse. A diferença é toda a história deste capítulo, e ela está documentada num despacho de três páginas, escrito às 19h21 de uma quarta-feira, ",
@@ -290,6 +290,92 @@
    "capitulo": 5,
    "excerpt": "Uma decisão de prisão não encerra uma petição; inaugura-a. Depois do dia 3 de março de 2026, a Petição 15.556 recebeu mais quinze decisões e dezesseis despachos do relator, cada um pequeno, cada um resolvendo um problema que a decisão grande criou. Lidos em sequência, contam a vi",
    "numero": 17
+  },
+  {
+   "slug": "rcl-88121-01-a-pasta",
+   "title": "A pasta",
+   "subtitle": "Numa busca na casa de um banqueiro, a Polícia Federal recolheu uma pasta com o nome de um deputado. No termo de apreensão, o nome sumiu. A defesa levou o detalhe ao Supremo e, com ele, o caso inteiro. O primeiro despacho do relator foi sobre o valor da causa.",
+   "date": "2026-09-13",
+   "tags": [
+    "RCL 88.121",
+    "competência",
+    "foro"
+   ],
+   "minutes": 8,
+   "words": 1629,
+   "serie": "RCL 88.121, a mudança de endereço",
+   "capitulo": 1,
+   "excerpt": "A Reclamação 88.121 é o menor dos quinze processos do acervo em número de páginas de decisão e o maior em consequência. Foi ela que tirou a Operação Compliance Zero da 10ª Vara Federal de Brasília e a pôs nas mãos de um único ministro do Supremo. Tudo começou com uma pasta. Esta ",
+   "numero": 18
+  },
+  {
+   "slug": "rcl-88121-02-nove-de-dezembro",
+   "title": "Nove de dezembro",
+   "subtitle": "A liminar que suspendeu a investigação em Brasília para todos os investigados, e não só quanto ao deputado; a ordem para que o Banco Central não cumprisse decisão de mais ninguém; e a semana em que a CPMI do INSS, uma rede social e um banco que foi revistado por engano bateram na mesma porta.",
+   "date": "2026-09-13",
+   "tags": [
+    "RCL 88.121",
+    "liminar",
+    "CPMI do INSS"
+   ],
+   "minutes": 8,
+   "words": 1648,
+   "serie": "RCL 88.121, a mudança de endereço",
+   "capitulo": 2,
+   "excerpt": "Entre 9 e 15 de dezembro de 2025, o ministro Dias Toffoli assinou três decisões na Reclamação 88.121, e as três têm em comum uma característica que este site prefere apontar a julgar: cada uma vai um passo além do que o precedente citado autorizava. Este capítulo é sobre esse pas",
+   "numero": 19
+  },
+  {
+   "slug": "rcl-88121-03-vinte-e-dois-de-dezembro",
+   "title": "Vinte e dois de dezembro",
+   "subtitle": "Um juiz de São Paulo que se recusou a mandar a Operação Quasar para o Supremo, um parecer da PGR que concordou com a cautela mas defendeu a primeira instância, e a decisão final: o Supremo fica com o caso porque, entre todos os citados, há indícios contra uma única pessoa com foro.",
+   "date": "2026-09-13",
+   "tags": [
+    "RCL 88.121",
+    "Operação Quasar",
+    "PGR"
+   ],
+   "minutes": 8,
+   "words": 1700,
+   "serie": "RCL 88.121, a mudança de endereço",
+   "capitulo": 3,
+   "excerpt": "Toda avocação tem uma tentação: a de crescer. Se o Supremo é competente para \"toda matéria, inclusive conexa\", a pergunta seguinte é o que é conexo, e quem decide. Em dezembro de 2025, essa pergunta foi feita em São Paulo, respondida por um juiz federal substituto, e a resposta f",
+   "numero": 20
+  },
+  {
+   "slug": "rcl-88121-04-trinta-e-nove-bilhoes",
+   "title": "Trinta e nove bilhões",
+   "subtitle": "O Banco Central respondeu à ordem do Supremo com um relatório de sete páginas e 58 anexos. Nele está a conta que a imprensa nunca fechou: quanto o BRB comprou do Master, quanto devolveu, o que recebeu em troca, e o que o próprio supervisor mandou provisionar.",
+   "date": "2026-09-13",
+   "tags": [
+    "RCL 88.121",
+    "Banco Central",
+    "BRB",
+    "Verificação Especial"
+   ],
+   "minutes": 9,
+   "words": 1781,
+   "serie": "RCL 88.121, a mudança de endereço",
+   "capitulo": 4,
+   "excerpt": "A liminar de 9 de dezembro mandou o Banco Central entregar ao Supremo \"a documentação e os elementos informativos relativos aos procedimentos administrativos em curso\". Em 22 de dezembro de 2025, o mesmo dia da decisão final, a Procuradoria do Banco Central juntou à reclamação a ",
+   "numero": 21
+  },
+  {
+   "slug": "rcl-88121-05-o-arquivo-que-nao-fecha",
+   "title": "O arquivo que não fecha",
+   "subtitle": "A reclamação transitou em julgado em fevereiro de 2026 e foi arquivada. Depois disso, recebeu um vazamento do Banco Central ao TCU, uma carta do presidente da CPMI do INSS, um novo relator, e uma sequência de pedidos bilionários do BRB, do Distrito Federal e de um advogado de outra operação.",
+   "date": "2026-09-13",
+   "tags": [
+    "RCL 88.121",
+    "BRB",
+    "colaboração premiada"
+   ],
+   "minutes": 9,
+   "words": 1780,
+   "serie": "RCL 88.121, a mudança de endereço",
+   "capitulo": 5,
+   "excerpt": "Um processo arquivado é, em teoria, um processo morto. A Reclamação 88.121 foi arquivada em 10 de fevereiro de 2026 e, até 19 de agosto do mesmo ano, recebeu mais de cem peças. Este último capítulo é o inventário do que chegou a um endereço que oficialmente já não existia, e do q",
+   "numero": 22
   }
  ]
 }
