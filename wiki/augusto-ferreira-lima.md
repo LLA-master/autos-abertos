@@ -1,15 +1,15 @@
 # Augusto Ferreira Lima
 **Pessoa** · 34 peças narrativas · 6 processos · 724 menções
 
-Augusto Ferreira Lima aparece em 34 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5026 (25), PET 15478 (3), RCL 88121 (3), PET 15563 (1), PET 15562 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Luiz Antonio Bull e, entre empresas, com Banco Master.
+Augusto Ferreira Lima aparece em 34 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5026 (25), RCL 88121 (3), PET 15478 (3), PET 15562 (1), PET 15556 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Luiz Antonio Bull e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - INQ 5026: 25 peças
-- PET 15478: 3 peças
 - RCL 88121: 3 peças
-- PET 15563: 1 peças
+- PET 15478: 3 peças
 - PET 15562: 1 peças
 - PET 15556: 1 peças
+- PET 15563: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Luiz Antonio Bull](luiz-antonio-bull.md) — 13 peças em comum, 5 processos

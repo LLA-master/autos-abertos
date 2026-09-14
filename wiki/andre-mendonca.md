@@ -10,13 +10,13 @@ André Mendonça aparece em 252 peças narrativas de 15 dos 15 processos, com ma
 - PET 15198: 27 peças
 - PET 15562: 22 peças
 - PET 15563: 11 peças
-- PET 15504: 9 peças
 - PET 15976: 9 peças
+- PET 15504: 9 peças
 - PET 16662: 8 peças
 - PET 16019: 6 peças
 - PET 15693: 5 peças
-- INQ 5035: 4 peças
 - PET 15478: 4 peças
+- INQ 5035: 4 peças
 - PET 15977: 2 peças
 - RCL 88121: 2 peças
 

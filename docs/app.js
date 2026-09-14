@@ -16,7 +16,7 @@ try{const t=localStorage.getItem("bmdb.theme"); if(t) root.dataset.theme=t;}catc
 const isDark=()=>root.dataset.theme!=="light";
 function themeBtn(){$("#themeBtn").textContent=isDark()?"☀":"☾";}
 themeBtn();
-$("#themeBtn").onclick=()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("bmdb.theme",root.dataset.theme)}catch(e){};themeBtn();if(renderer){applyColors();renderer.setSetting("labelColor",{color:css("--label")});renderer.refresh();} if(mm.mode) drawMM();};
+$("#themeBtn").onclick=()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("bmdb.theme",root.dataset.theme)}catch(e){};themeBtn();if(renderer){applyColors();renderer.setSetting("labelColor",{color:css("--label")});renderer.refresh();} if(mm.mode) drawMM(); if(!$("#v-rede").hidden) renderRede(); drawTL();};
 
 /* ---------- dados ---------- */
 const load=async f=>(await fetch("data/"+f)).json();
@@ -27,28 +27,34 @@ const roleOf=n=>n.vis?n.papel:"pseudo";
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","tour","grafo","mapa","personagens","processos","tempo","metodo"];
-function show(v){ if(!views.includes(v)) v="inicio";
+const views=["inicio","tour","grafo","mapa","personagens","rede","processos","tempo","cronicas","metodo"];
+let pendingQS=null;
+function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQS=v.slice(i+1); v=v.slice(0,i); if(v!=="cronicas") history.replaceState(null,"","#"+v); } if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
   $$("[data-nav]").forEach(a=>a.classList.toggle("active",a.dataset.nav===v));
-  if(v==="grafo") mountGraph($(".graph-wrap"),$("#v-grafo"));
+  if(v==="grafo"){ mountGraph($(".graph-wrap"),$("#v-grafo")); if(pendingQS){ const q=pendingQS; pendingQS=null; setTimeout(()=>applyQS(q),80); } }
   if(v==="tour") renderStep();
   if(v==="mapa"){ if(!mm.mode){mm.mode="caso";} drawMM(); }
   if(v==="personagens") renderWiki();
+  if(v==="rede") renderRede();
+  if(v==="cronicas"){ renderCronicas(pendingQS); pendingQS=null; }
   window.scrollTo({top:0});
 }
 addEventListener("hashchange",()=>show(location.hash.slice(1)));
 $$(".tb-toggle").forEach(b=>b.onclick=()=>{const t=b.closest(".toolbar"); t.classList.toggle("open"); b.textContent=t.classList.contains("open")?"Menos filtros ▴":"Filtros ▾";});
+function drawer(open){ const d=$("#tbDrawer"); d.hidden=!open; $("#tbMore").setAttribute("aria-expanded",String(open)); $("#tbMore").textContent=open?"Ajustes ▴":"Ajustes ▾"; document.body.classList.toggle("drawer-open",open); }
+$("#tbMore").onclick=()=>drawer($("#tbDrawer").hidden); $("#tbClose").onclick=()=>drawer(false);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!$("#tbDrawer").hidden) drawer(false); });
 $$("[data-nav]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
 
 /* ---------- início ---------- */
-$("#tiles").innerHTML=[[META.corpus.paginas,"páginas"],[META.corpus.pdfs,"peças (PDF)"],[META.corpus.processos.length,"processos"],[META.grafo.nos,"nós no grafo"],[META.grafo.arestas,"relações"],[META.grafo.pseudonimizados,"pessoas pseudonimizadas"]].map(([b,s])=>`<div class="tile"><b>${fmt(b)}</b><span>${s}</span></div>`).join("");
+$("#tiles").innerHTML=[[META.corpus.paginas,"páginas"],[META.corpus.pdfs,"peças (PDF)"],[META.corpus.processos.length,"processos"],[META.grafo.nos,"nós no grafo"],[META.grafo.arestas,"relações"],[META.grafo.pseudonimizados,"pessoas pseudonimizadas"],[META.grafo.docs_narrativos||0,"peças narrativas lidas para o grafo"]].map(([b,s])=>`<div class="tile"><b>${fmt(b)}</b><span>${s}</span></div>`).join("");
 $("#buildInfo").textContent=`Dados gerados em ${META.gerado_em}. Pacote de origem: ${META.fonte.pacote}, ${fmt(META.fonte.bytes)} bytes, modificado em ${META.fonte.last_modified}.`;
 
 /* ---------- grafo ---------- */
 const graph=new graphology.Graph({type:"undirected"});
 G.nodes.forEach(n=>graph.addNode(n.id,{x:n.x,y:n.y,size:2.5+Math.log2(n.docs+1)*1.7,label:n.label,color:"#999",n}));
-G.edges.forEach(e=>{const s=G.nodes[e.s].id,d=G.nodes[e.d].id; if(!graph.hasEdge(s,d)) graph.addEdge(s,d,{w:e.w,p:e.p,size:.35+Math.log2(e.w)*.55});});
+G.edges.forEach(e=>{const s=G.nodes[e.s].id,d=G.nodes[e.d].id; if(!graph.hasEdge(s,d)) graph.addEdge(s,d,{w:e.w,p:e.p,l:e.l||1,dist:1/e.w,size:.35+Math.log2(e.w)*.55});});
 let commColor=false;
 function applyColors(){graph.forEachNode((id,a)=>graph.setNodeAttribute(id,"color",commColor&&a.n.c>=0?COMM[a.n.c%COMM.length]:colorOf(a.n)));}
 applyColors();
@@ -59,13 +65,19 @@ applyColors();
   graphologyLibrary.layoutNoverlap.assign(graph,{maxIterations:300,settings:{margin:14,ratio:1.6,expansion:1.3}});
   const out={}; graph.forEachNode((id,a)=>out[id]=[+a.x.toFixed(2),+a.y.toFixed(2)]); try{localStorage.setItem(key,JSON.stringify(out))}catch(e){}
 })();
-const F={roles:new Set(["pessoa","empresa","autoridade"]),proc:"",minDocs:4,minW:2,topN:120,collapse:false,focus:false,depth:1,labelsAll:false};
+const F={roles:new Set(["pessoa","empresa","autoridade"]),proc:"",minDocs:4,minW:2,topN:120,collapse:false,focus:false,depth:1,labelsAll:false,wMode:"bruto",minL:5,sizeBy:"docs",edgeColor:"discretas",comm:null,period:null};
+let ETL=null; const dyn={bt:null,pr:null};
+const qOf=m=>m.slice(0,4)+"T"+Math.ceil(+m.slice(5,7)/3);
+function periodOK(e){ if(!F.period||!ETL) return true; const [a,b]=graph.extremities(e); const i=byId.get(a).i,j=byId.get(b).i; const t=ETL[`${i}|${j}`]||ETL[`${j}|${i}`]; if(!t) return false; let n=0; for(const q in t){ if(q>=F.period[0]&&q<=F.period[1]) n+=t[q]; } return n>=2; }
+function edgeOK(e,a){ a=a||graph.getEdgeAttributes(e); return a.w>=F.minW&&(F.wMode!=="especifico"||a.l>=F.minL)&&periodOK(e); }
+function hasActiveEdge(id){ for(const e of graph.edges(id)){ if(edgeOK(e)){ const [s,d]=graph.extremities(e); if(baseVisible(s===id?d:s)) return true; } } return false; }
+function edgeBase(s,d,a,baseE){ if(F.edgeColor==="nucleo"){ const cs=byId.get(s).c, cd=byId.get(d).c; if(cs===cd&&cs>=0) return COMM[cs%COMM.length]+(isDark()?"66":"88"); return baseE; } if(F.edgeColor==="procs"){ return a.p>=3?css("--pink")+"88":a.p===2?css("--cyan")+"77":baseE; } return baseE; }
 const hiddenSet=new Set(); let topSet=null, focusSet=null;
-let renderer=null, hovered=null, selected=null, pathMode=false, pathA=null, pathSet=null;
-function baseVisible(id){const n=byId.get(id); if(hiddenSet.has(id)) return false; if(!F.roles.has(roleOf(n))) return false; if(n.docs<F.minDocs) return false; if(F.proc && !n.pe.some(([p])=>p===F.proc)) return false; if(topSet&&!topSet.has(id)) return false; return true;}
-function visible(id){ if(!baseVisible(id)) return false; if(focusSet&&!focusSet.has(id)) return false; if(F.collapse){ let d=0; for(const m of graph.neighbors(id)){ if(baseVisible(m)&&(!focusSet||focusSet.has(m))&&graph.getEdgeAttribute(graph.edge(id,m),"w")>=F.minW){ d++; if(d>1) break; } } if(d<=1 && id!==selected) return false; } return true;}
+let renderer=null, hovered=null, selected=null, pathMode=false, pathA=null, pathSet=null, pickKind="path";
+function baseVisible(id){const n=byId.get(id); if(hiddenSet.has(id)) return false; if(F.comm!==null&&n.c!==F.comm) return false; if(!F.roles.has(roleOf(n))) return false; if(n.docs<F.minDocs) return false; if(F.proc && !n.pe.some(([p])=>p===F.proc)) return false; if(topSet&&!topSet.has(id)) return false; return true;}
+function visible(id){ if(!baseVisible(id)) return false; if(focusSet&&!focusSet.has(id)) return false; if(F.period&&ETL&&id!==selected&&!hasActiveEdge(id)) return false; if(F.collapse){ let d=0; for(const m of graph.neighbors(id)){ if(baseVisible(m)&&(!focusSet||focusSet.has(m))&&edgeOK(graph.edge(id,m))){ d++; if(d>1) break; } } if(d<=1 && id!==selected) return false; } return true;}
 function recompute(){ topSet=F.topN?new Set(G.nodes.slice().sort((a,b)=>b.docs-a.docs).slice(0,F.topN).map(n=>n.id)):null;
-  if(F.focus&&selected){ const set=new Set([selected]); let frontier=[selected]; for(let k=0;k<F.depth;k++){ const nx=[]; frontier.forEach(u=>graph.neighbors(u).forEach(v=>{ if(!set.has(v)&&graph.getEdgeAttribute(graph.edge(u,v),"w")>=F.minW){set.add(v);nx.push(v);} })); frontier=nx; } focusSet=set; } else focusSet=null; }
+  if(F.focus&&selected){ const set=new Set([selected]); let frontier=[selected]; for(let k=0;k<F.depth;k++){ const nx=[]; frontier.forEach(u=>graph.neighbors(u).forEach(v=>{ if(!set.has(v)&&edgeOK(graph.edge(u,v))){set.add(v);nx.push(v);} })); frontier=nx; } focusSet=set; } else focusSet=null; }
 function reducers(){
   const focusId=hovered||selected; const neigh=focusId?new Set([focusId,...graph.neighbors(focusId)]):null;
   const dim=css("--node-dim"), dimE=css("--edge-dim"), baseE=css("--edge");
@@ -75,8 +87,9 @@ function reducers(){
       if(neigh){ if(!neigh.has(id)){r.color=dim;r.label="";} else {r.zIndex=2;r.forceLabel=true;} }
       if(F.labelsAll) r.forceLabel=true;
       if(selected===id){r.highlighted=true;r.zIndex=3;} return r;},
-    edgeReducer(e,a){const r={...a}; const [s,d]=graph.extremities(e); if(!visible(s)||!visible(d)||a.w<F.minW){r.hidden=true;return r;}
-      r.color=baseE;
+    edgeReducer(e,a){const r={...a}; const [s,d]=graph.extremities(e); if(!visible(s)||!visible(d)||!edgeOK(e,a)){r.hidden=true;return r;}
+      if(F.wMode==="especifico") r.size=.3+Math.log2(Math.max(1,a.l))*.3;
+      r.color=edgeBase(s,d,a,baseE);
       if(pathSet){ if(pathSet.edges.has(e)){r.color=css("--hl");r.size=a.size*2.2;r.zIndex=2;} else r.color=dimE; return r;}
       if(neigh){ if(s===focusId||d===focusId){r.color=css("--hl");r.size=a.size*1.6;r.zIndex=1;} else r.color=dimE; } return r;}
   };
@@ -108,7 +121,7 @@ function renderEdgePanel(a,b){ const P=$("#panel"); const d=edgeKey(a,b)||{tipos
 function mountGraph(wrap,into){
   if(wrap.parentElement!==into) into.appendChild(wrap);
   if(!renderer){ loadED();
-    renderer=new Sigma(graph,$("#sigma"),{renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"600",labelColor:{color:css("--label")},defaultDrawNodeLabel:drawLabel,defaultDrawNodeHover:drawHover,zIndex:true,enableEdgeEvents:true,enableEdgeHoverEvents:true,...reducers()});
+    renderer=new Sigma(graph,$("#sigma"),{allowInvalidContainer:true,renderEdgeLabels:false,labelRenderedSizeThreshold:10,labelDensity:.08,labelGridCellSize:70,labelFont:"Outfit, Inter, sans-serif",labelSize:13,labelWeight:"600",labelColor:{color:css("--label")},defaultDrawNodeLabel:drawLabel,defaultDrawNodeHover:drawHover,zIndex:true,enableEdgeEvents:true,enableEdgeHoverEvents:true,...reducers()});
     let hoverEdge=null;
     renderer.on("enterEdge",({edge,event})=>{ hoverEdge=edge; const [a,b]=graph.extremities(edge); const d=edgeKey(a,b); const w=graph.getEdgeAttribute(edge,"w"), pr=graph.getEdgeAttribute(edge,"p"); showTip(`<b>${byId.get(a).label}</b> ↔ <b>${byId.get(b).label}</b><br><span class="muted">${w} peça(s) em ${pr} processo(s)</span>${d?"<br>"+tipoSummary(d):""}<br><span class="muted">clique para ver onde</span>`,event.original.clientX,event.original.clientY); });
     renderer.on("leaveEdge",()=>{ hoverEdge=null; hideTip(); });
@@ -136,22 +149,27 @@ function spread(){ if(live) return; const ids=visibleIds(); if(ids.length<2) ret
 function fitVisible(anim=true){ const ids=visibleIds(); if(!ids.length||!renderer) return; const xs=ids.map(id=>graph.getNodeAttribute(id,"x")), ys=ids.map(id=>graph.getNodeAttribute(id,"y")); const mx=Math.min(...xs),Mx=Math.max(...xs),my=Math.min(...ys),My=Math.max(...ys); const px=(Mx-mx||1)*.08, py=(My-my||1)*.08;
   renderer.setCustomBBox({x:[mx-px,Mx+px],y:[my-py,My+py]}); anim?renderer.getCamera().animatedReset({duration:450}):renderer.getCamera().setState({x:.5,y:.5,ratio:1,angle:0}); }
 function refresh(){ if(!renderer) return; recompute(); const {nodeReducer,edgeReducer}=reducers(); renderer.setSetting("nodeReducer",nodeReducer); renderer.setSetting("edgeReducer",edgeReducer);
-  const ids=visibleIds(); const sig=ids.length+":"+ids.slice(0,40).join(","); if(sig!==lastSig){ lastSig=sig; clearTimeout(spreadTimer); spreadTimer=setTimeout(()=>{ spread(); renderer.refresh(); if(!selected) fitVisible(); },60); }
-  renderer.refresh(); }
+  const ids=visibleIds(); const sig=ids.length+":"+ids.slice(0,40).join(",")+":"+F.sizeBy+F.wMode+F.minL+F.minW+(F.period||""); if(sig!==lastSig){ lastSig=sig; computeDyn(); applySizes(); clearTimeout(spreadTimer); spreadTimer=setTimeout(()=>{ spread(); renderer.refresh(); if(!selected) fitVisible(); },60); }
+  renderer.refresh(); renderLegend(); }
 function focus(id,ratio=.22){ if(!renderer||!graph.hasNode(id)) return; const p=renderer.getNodeDisplayData(id); if(p) renderer.getCamera().animate({x:p.x,y:p.y,ratio},{duration:600}); }
 function select(id){ selected=id; refresh(); renderPanel(id); if(id) focus(id, F.focus?.3:.22); }
-function ensureVisible(id){ const n=byId.get(id); if(visible(id)) return; F.roles.add(roleOf(n)); if(n.docs<F.minDocs){F.minDocs=Math.max(2,n.docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;} if(F.proc&&!n.pe.some(([p])=>p===F.proc)){F.proc="";$("#procSel").value="";} syncChips(); }
+function ensureVisible(id){ const n=byId.get(id); if(visible(id)) return; if(F.comm!==null&&n.c!==F.comm) F.comm=null; if(F.period&&!hasActiveEdge(id)){ F.period=null; $("#tlFilter").checked=false; } if(topSet&&!topSet.has(id)){ F.topN=0; $("#topN").value="0"; } F.roles.add(roleOf(n)); if(n.docs<F.minDocs){F.minDocs=Math.max(2,n.docs);$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;} if(F.proc&&!n.pe.some(([p])=>p===F.proc)){F.proc="";$("#procSel").value="";} syncChips(); }
 function openNode(id){ location.hash="grafo"; setTimeout(()=>{ ensureVisible(id); select(id); },60); }
 function spark(tl){const ks=Object.keys(tl).sort(); if(ks.length<2) return ""; const vals=ks.map(k=>tl[k]); const mx=Math.max(...vals); const W=320,H=46; const pts=ks.map((k,i)=>`${(i/(ks.length-1))*W},${H-2-(tl[k]/mx)*(H-6)}`).join(" ");
   return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><polyline fill="none" stroke="${css("--cyan")}" stroke-width="1.5" points="${pts}"/></svg><div class="muted" style="display:flex;justify-content:space-between;font-size:11px"><span>${ks[0]}</span><span>datas citadas junto ao nome</span><span>${ks[ks.length-1]}</span></div>`;}
 function renderPanel(id){ const P=$("#panel"); if(!id){P.hidden=true;return;} const n=byId.get(id), e=ENT[id]||{cit:[],tl:{}};
   const neigh=graph.neighbors(id).map(m=>[m,graph.getEdgeAttribute(graph.edge(id,m),"w")]).sort((a,b)=>b[1]-a[1]).slice(0,14);
+  const spec=graph.neighbors(id).map(m=>{const a=graph.getEdgeAttributes(graph.edge(id,m)); return [m,a.w,a.l];}).filter(x=>x[1]>=3).sort((a,b)=>sc(b[1],b[2])-sc(a[1],a[2])).slice(0,8);
   const mxp=Math.max(1,...n.pe.map(x=>x[1]));
   P.innerHTML=`<button class="close" aria-label="Fechar">×</button><h3>${n.label}</h3><span class="badge" style="--c:var(--${roleOf(n)})">${ROLE_LABEL[roleOf(n)]}</span>${n.vis?"":' <span class="muted">nome omitido por política</span>'}
   <div class="kv"><div><b>${fmt(n.docs)}</b><span>peças</span></div><div><b>${n.procs}</b><span>processos</span></div><div><b>${fmt(n.mentions)}</b><span>menções</span></div></div>
+  <div class="kv m" title="Métricas do grafo completo. Pontes: intermediação (×1000). Influência: PageRank (×1000). Agrupamento: quanto os vizinhos se ligam entre si. Fora do núcleo: parcela das ligações que sai da comunidade."><div><b>${n.bt??0}</b><span>pontes</span></div><div><b>${n.pr??0}</b><span>influência</span></div><div><b>${n.cc??0}</b><span>agrupam.</span></div><div><b>${Math.round((n.br||0)*100)}%</b><span>fora do núcleo</span></div><div><b>${n.jud||0}</b><span>em decisões</span></div></div>
+  <div class="period">${n.m0?`Datas citadas junto ao nome: ${n.m0} a ${n.m1}`:""}${n.c>=0?`${n.m0?" · ":""}núcleo <b style="color:${COMM[n.c%COMM.length]}">${esc(commName(n.c))}</b>`:""}</div>
   <div class="acts">${wkBy.has(id)?`<button class="btn small" data-wiki="${id}">Ficha</button>`:""}<button class="btn small" data-mm="${id}">Mapa mental</button><button class="btn small" data-focus="${id}">Só a vizinhança</button><button class="btn ghost small" data-hide="${id}">Ocultar nó</button></div>
   <h4>Presença por processo</h4><div class="bars">${n.pe.slice(0,8).map(([p,c])=>`<div class="bar"><span>${p}</span><i style="width:${(c/mxp)*100}%"></i><span>${c}</span></div>`).join("")}</div>
   <h4>Aparece junto de</h4><div class="neigh">${neigh.map(([m,w])=>`<button data-go="${m}" style="--c:var(--${roleOf(byId.get(m))})"><i></i>${byId.get(m).label}<span class="muted">${w}</span></button>`).join("")}</div>
+  <h4 title="Vizinhos com ao menos 3 peças em comum, ordenados por peças em comum × log da especificidade (lift)">Ligações mais específicas</h4><div class="neigh">${spec.map(([m,w,l])=>`<button data-go="${m}" style="--c:var(--${roleOf(byId.get(m))})" title="${w} peças em comum · ${l}× o esperado"><i></i>${byId.get(m).label}<span class="l">${l>=10?Math.round(l):l}×</span></button>`).join("")||"<span class='muted'>nenhuma com 3+ peças em comum</span>"}</div>
+  ${tpBars(e.tp)}
   ${spark(e.tl||{})}
   <h4>Onde conferir</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th></tr>${(e.cit||[]).slice(0,12).map(([p,s,t,pg,c])=>`<tr><td>${p}</td><td>${String(s).padStart(5,"0")}</td><td>${tipo(t)}</td><td>${pg}</td></tr>`).join("")}</table>
   <p class="src">"seq" é o número que inicia o nome do arquivo na pasta do processo dentro do <a href="${STF}" target="_blank" rel="noopener">pacote público do STF</a>. Coocorrência na mesma página não prova relação; é um ponto de partida para leitura.</p>`;
@@ -185,8 +203,9 @@ function attachSearch(input,list,onPick){ let hl=-1;
 }
 attachSearch($("#search"),$("#sugg"),id=>{ ensureVisible(id); if(pathMode) pathClick(id); else select(id); });
 /* caminho */
-function setPathMode(on,preA){ pathMode=on; pathA=preA||null; pathSet=null; if(on){ selected=null; renderPanel(null); } const h=$("#pathHint"); h.hidden=!on; h.textContent=on?(pathA?`A = ${byId.get(pathA).label}. Agora clique (ou busque) o nó B.`:"Clique (ou busque) o nó A."):""; $("#pathBtn").classList.toggle("primary",on); refresh(); }
-$("#pathBtn").onclick=()=>setPathMode(!pathMode);
+function setPathMode(on,preA,kind){ pathMode=on; pickKind=kind||"path"; pathA=preA||null; pathSet=null; if(on){ selected=null; renderPanel(null); } const h=$("#pathHint"); h.hidden=!on; const what=pickKind==="common"?"Em comum: ":"Caminho: "; h.textContent=on?what+(pathA?`A = ${byId.get(pathA).label}. Agora clique (ou busque) o nó B.`:"clique (ou busque) o nó A."):""; $("#pathBtn").classList.toggle("primary",on&&pickKind==="path"); $("#commonBtn").classList.toggle("primary",on&&pickKind==="common"); refresh(); }
+$("#pathBtn").onclick=()=>setPathMode(!(pathMode&&pickKind==="path"),null,"path");
+$("#commonBtn").onclick=()=>setPathMode(!(pathMode&&pickKind==="common"),null,"common");
 /* nós vivos: física contínua (ForceAtlas2 em worker) + arrastar */
 let live=null, dragging=null, spacing=60;
 function fa2Settings(){ const FA=graphologyLibrary.layoutForceAtlas2; const st=FA.inferSettings(graph); return Object.assign(st,{gravity:Math.max(.08,.9-spacing/100),scalingRatio:spacing,barnesHutOptimize:true,linLogMode:true,edgeWeightInfluence:.5,slowDown:3,adjustSizes:true}); }
@@ -200,7 +219,8 @@ function bindDrag(){ if(!renderer) return;
   const up=()=>{ if(!dragging) return; graph.removeNodeAttribute(dragging,"highlighted"); dragging=null; renderer.getCamera().enable(); };
   renderer.getMouseCaptor().on("mouseup",up); renderer.getMouseCaptor().on("mouseleave",up); }
 addEventListener("hashchange",()=>{ if(location.hash.slice(1)!=="grafo"&&location.hash.slice(1)!=="tour"&&live){ stopLive(); $("#liveLayout").checked=false; } });
-function pathClick(id){ if(!pathA){pathA=id;$("#pathHint").textContent=`A = ${byId.get(id).label}. Agora clique (ou busque) o nó B.`;return;}
+function pathClick(id){ if(!pathA){pathA=id;$("#pathHint").textContent=(pickKind==="common"?"Em comum: ":"Caminho: ")+`A = ${byId.get(id).label}. Agora clique (ou busque) o nó B.`;return;}
+  if(pickKind==="common"){ commonClick(id); return; }
   const path=graphologyLibrary.shortestPath.bidirectional(graph,pathA,id);
   if(!path){$("#pathHint").textContent="Sem caminho entre os dois no grafo.";pathA=null;return;}
   const edges=new Set(); for(let i=0;i<path.length-1;i++) edges.add(graph.edge(path[i],path[i+1]));
@@ -282,13 +302,34 @@ renderProcs();
 /* ---------- linha do tempo ---------- */
 const tlProc=$("#tlProc"); META.corpus.processos.forEach(p=>tlProc.insertAdjacentHTML("beforeend",`<option>${p}</option>`));
 function months(){const out=[]; const y0=innerWidth<640?2023:2015; for(let y=y0;y<=2026;y++) for(let m=1;m<=12;m++){const k=`${y}-${String(m).padStart(2,"0")}`; if(k>"2026-09") break; out.push(k);} return out;}
-function drawTL(){ const ms=months(), proc=tlProc.value, log=$("#tlLog").checked;
+const PCOL={}; META.corpus.processos.forEach((p,i)=>PCOL[p]=COMM[i%COMM.length]);
+$("#tlLegend").innerHTML=META.corpus.processos.map(p=>`<span><i style="background:${PCOL[p]}"></i>${p}</span>`).join("");
+let tlSel=null;
+function drawTL(){ const ms=months(), proc=tlProc.value, log=$("#tlLog").checked, stack=$("#tlStack").checked&&!proc;
   const val=ms.map(k=>{const d=TL[k]||{}; return proc?(d[proc]||0):Object.values(d).reduce((a,b)=>a+b,0);});
-  const tr=v=>log?Math.log10(v+1):v; const mx=Math.max(1,...val.map(tr)); const W=1400,H=320,pad=30,bw=(W-pad*2)/ms.length;
-  $("#tlChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}"><defs><linearGradient id="tlg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${css("--pink")}"/><stop offset="1" stop-color="${css("--cyan")}"/></linearGradient></defs>${ms.map((k,i)=>{const h=(tr(val[i])/mx)*(H-60); const isJan=k.endsWith("-01"); return `<rect x="${pad+i*bw+1}" y="${H-40-h}" width="${bw-2}" height="${h}" fill="url(#tlg)" data-k="${k}"></rect>${isJan?`<text x="${pad+i*bw}" y="${H-22}" font-size="11" fill="${css("--muted")}">${k.slice(0,4)}</text>`:""}`;}).join("")}</svg>`;
-  $$("#tlChart rect").forEach(r=>r.onmouseenter=()=>{const k=r.dataset.k, d=TL[k]||{}; const top=Object.entries(d).sort((a,b)=>b[1]-a[1]).slice(0,5); $("#tlDetail").innerHTML=`<b>${k}</b> · ${fmt(val[ms.indexOf(k)])} datas citadas${top.length?" · "+top.map(([p,n])=>`${p} (${fmt(n)})`).join(", "):""}`;});
+  const tr=v=>log?Math.log10(v+1):v; const mx=Math.max(1,...val.map(tr)); const W=1400,H=320,pad=30,bw=(W-pad*2)/ms.length; const ps=META.corpus.processos;
+  const inS=k=>!!tlSel&&k>=tlSel[0]&&k<=tlSel[1]; const cls=k=>tlSel?(inS(k)?"sel":"out"):"";
+  const bars=ms.map((k,i)=>{ const x=pad+i*bw+1, w=bw-2;
+    if(stack){ const d=TL[k]||{}; const tot=val[i]||1; const h=(tr(val[i])/mx)*(H-60); let y=H-40; const parts=ps.map(p=>[p,d[p]||0]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]); return `<g class="${cls(k)}" data-k="${k}">${parts.map(([p,v])=>{const hh=h*(v/tot); y-=hh; return `<rect x="${x}" y="${y}" width="${w}" height="${hh}" fill="${PCOL[p]}"></rect>`;}).join("")}</g>`; }
+    const h=(tr(val[i])/mx)*(H-60); return `<rect class="${cls(k)}" x="${x}" y="${H-40-h}" width="${w}" height="${h}" fill="url(#tlg)" data-k="${k}"></rect>`; });
+  $("#tlChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="touch-action:none"><defs><linearGradient id="tlg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${css("--pink")}"/><stop offset="1" stop-color="${css("--cyan")}"/></linearGradient></defs>${bars.join("")}${ms.map((k,i)=>k.endsWith("-01")?`<text x="${pad+i*bw}" y="${H-22}" font-size="11" fill="${css("--muted")}">${k.slice(0,4)}</text>`:"").join("")}</svg>`;
+  const svg=$("#tlChart svg"); let down=null; const kAt=e=>{const t=e.target.closest("[data-k]"); return t?t.dataset.k:null;};
+  function paintSel(){ $$("[data-k]",svg).forEach(el=>{ const k=el.dataset.k; el.classList.toggle("sel",inS(k)); el.classList.toggle("out",!!tlSel&&!inS(k)); }); }
+  function brushInfo(){ const B=$("#tlBrush"); if(!tlSel){B.hidden=true;return;} const [a,b]=tlSel; let tot=0; const pp={}; ms.filter(k=>k>=a&&k<=b).forEach(k=>{const d=TL[k]||{}; Object.entries(d).forEach(([p,v])=>{ if(!proc||p===proc){ tot+=v; pp[p]=(pp[p]||0)+v; } });}); const top=Object.entries(pp).sort((x,y)=>y[1]-x[1]).slice(0,4);
+    B.innerHTML=`<b>${a} a ${b}</b> · ${fmt(tot)} datas citadas · ${top.map(([p,n])=>`<span style="color:${PCOL[p]}">${p}</span> (${fmt(n)})`).join(", ")} <button class="btn small" id="tlToGraph">ver ligações deste período no grafo</button> <button class="btn ghost small" id="tlClear">limpar</button>`; B.hidden=false;
+    $("#tlToGraph").onclick=()=>{ const q0=qOf(a), q1=qOf(b); location.hash="grafo"; setTimeout(async()=>{ $("#tlFilter").checked=true; $("#q0").value=q0; $("#q1").value=q1; if(proc){F.proc=proc;$("#procSel").value=proc;} await syncPeriod(); setTimeout(()=>fitVisible(),250); },80); };
+    $("#tlClear").onclick=()=>{ tlSel=null; paintSel(); brushInfo(); }; }
+  svg.onpointerdown=e=>{ const k=kAt(e); if(!k) return; down=k; tlSel=[k,k]; paintSel(); e.preventDefault(); };
+  svg.onpointermove=e=>{ const k=kAt(e); if(down&&k){ tlSel=down<k?[down,k]:[k,down]; paintSel(); } if(k){ const d=TL[k]||{}; const top=Object.entries(d).sort((a,b)=>b[1]-a[1]).slice(0,5); $("#tlDetail").innerHTML=`<b>${k}</b> · ${fmt(val[ms.indexOf(k)])} datas citadas${top.length?" · "+top.map(([p,n])=>`<span style="color:${PCOL[p]}">${p}</span> (${fmt(n)})`).join(", "):""}`; } };
+  svg.onpointerup=svg.onpointerleave=()=>{ if(!down) return; down=null; if(tlSel&&tlSel[0]===tlSel[1]) tlSel=null; paintSel(); brushInfo(); };
+  paintSel(); brushInfo(); drawSmall(ms);
 }
-tlProc.onchange=drawTL; $("#tlLog").onchange=drawTL; drawTL();
+const TLE={ids:[]};
+attachSearch($("#tlEnt"),$("#tlEntSugg"),id=>{ if(!TLE.ids.includes(id)&&TLE.ids.length<5) TLE.ids.push(id); $("#tlEnt").value=""; drawTL(); });
+function drawSmall(ms){ $("#tlEntChips").innerHTML=TLE.ids.map(id=>`<button class="chip on x" data-rm="${esc(id)}" style="--c:var(--${roleOf(byId.get(id))})"><i></i>${esc(byId.get(id).label)}</button>`).join(""); $$("[data-rm]",$("#tlEntChips")).forEach(b=>b.onclick=()=>{TLE.ids=TLE.ids.filter(x=>x!==b.dataset.rm);drawTL();});
+  const S=$("#tlSmall"); if(!TLE.ids.length){ S.innerHTML=`<p class="muted">Adicione até cinco personagens para comparar.</p>`; return; }
+  const W=1400,H=54; S.innerHTML=TLE.ids.map(id=>{ const n=byId.get(id); const tl=(ENT[id]||{}).tl||{}; const v=ms.map(k=>tl[k]||0); const mx=Math.max(1,...v); const pk=ms[v.indexOf(mx)]; const pts=v.map((x,i)=>`${(i/(ms.length-1))*W},${H-2-(x/mx)*(H-6)}`); return `<div class="sm"><div class="nm" style="--c:var(--${roleOf(n)})"><i></i><span>${esc(n.label)}</span></div><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="M0,${H} L${pts.join(" L")} L${W},${H} Z" fill="${colorOf(n)}" fill-opacity=".22"/><polyline fill="none" stroke="${colorOf(n)}" stroke-width="1.5" points="${pts.join(" ")}"/></svg><div class="pk">pico ${pk}<br>${fmt(mx)} datas</div></div>`; }).join(""); }
+tlProc.onchange=drawTL; $("#tlLog").onchange=drawTL; $("#tlStack").onchange=drawTL; drawTL();
 
 /* ---------- tour guiado (sem quiz): cada passo configura o grafo e diz o que olhar ---------- */
 const topBy=(pred,key="wdeg")=>G.nodes.filter(pred).sort((a,b)=>b[key]-a[key]);
@@ -356,7 +397,113 @@ function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage");
   grid.innerHTML=xs.map(p=>`<div class="wk-card" data-wk="${p.id}" style="--c:var(--${p.papel})"><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span><h3>${p.label}</h3><div class="m">${p.docs} peças · ${p.procs} processos${p.peak?` · pico ${p.peak}`:""}</div><p>${p.resumo}</p></div>`).join("")||`<p class="muted">Nada com esse filtro.</p>`;
   $$("[data-wk]",grid).forEach(c=>c.onclick=()=>openWiki(c.dataset.wk));
 }
-window.bmdb={fitVisible,spread,refresh,graph,get renderer(){return renderer;}};
+window.bmdb={fitVisible,spread,refresh,graph,F,renderRede,drawTL,get renderer(){return renderer;}};
+/* ---------- v0.2: métricas dinâmicas, tamanhos, núcleos, período, em comum, exportação, link ---------- */
+const sc=(w,l)=>w*Math.log2(Math.max(1,l));
+function commName(c){ const xs=G.nodes.filter(n=>n.c===c&&n.vis).sort((a,b)=>b.wdeg-a.wdeg); const short=l=>l.length<=18?l:l.split(" ").slice(0,2).join(" "); return xs.length?xs.slice(0,2).map(n=>short(n.label)).join(" · "):"só pseudonimizados"; }
+const tpBars=tp=>{ const xs=Object.entries(tp||{}).sort((a,b)=>b[1]-a[1]).slice(0,6); if(!xs.length) return ""; const mx=xs[0][1]; return `<h4>Tipos de peça</h4><div class="bars">${xs.map(([t,n])=>`<div class="bar"><span title="${esc(tipo(t))}">${esc(tipo(t))}</span><i style="width:${n/mx*100}%"></i><span>${n}</span></div>`).join("")}</div>`; };
+function metricsLib(){ const M=graphologyLibrary.metrics&&graphologyLibrary.metrics.centrality; if(!M) return null; return {bt:M.betweenness||M.betweennessCentrality,pr:M.pagerank}; }
+function subgraphOf(ids,minW,useOK){ const set=new Set(ids); const sub=new graphology.Graph({type:"undirected"}); ids.forEach(id=>sub.addNode(id)); graph.forEachEdge((e,a,s,d)=>{ if(set.has(s)&&set.has(d)&&(useOK?edgeOK(e,a):a.w>=minW)) sub.addEdge(s,d,{w:a.w,dist:a.dist,l:a.l,p:a.p}); }); return sub; }
+function metricOf(id){ const n=byId.get(id); switch(F.sizeBy){ case "deg": return graph.degree(id); case "bt": return dyn.bt?(dyn.bt[id]||0):n.bt; case "pr": return dyn.pr?(dyn.pr[id]||0):n.pr; case "jud": return n.jud||0; default: return n.docs; } }
+function computeDyn(){ dyn.bt=null; dyn.pr=null; if(F.sizeBy!=="bt"&&F.sizeBy!=="pr") return; const ids=visibleIds(); if(ids.length<3) return; const L=metricsLib(); if(!L) return; try{ const sub=subgraphOf(ids,F.minW,true); if(F.sizeBy==="bt") dyn.bt=L.bt(sub,{getEdgeWeight:"dist",normalized:true}); else dyn.pr=L.pr(sub,{getEdgeWeight:"w"}); }catch(e){ console.warn("métricas",e); } }
+function applySizes(){ if(F.sizeBy==="docs"){ graph.forEachNode((id,a)=>graph.setNodeAttribute(id,"size",2.5+Math.log2(a.n.docs+1)*1.7)); return; } const ids=visibleIds(); let mx=0; const v={}; ids.forEach(id=>{ v[id]=metricOf(id); if(v[id]>mx) mx=v[id]; }); mx=mx||1; graph.forEachNode(id=>graph.setNodeAttribute(id,"size",id in v?3+13*Math.sqrt(v[id]/mx):3)); }
+let legendOn=false;
+function renderLegend(){ const L=$("#commLegend"); if(!L) return; if(!legendOn){L.hidden=true;return;} const keep=F.comm; F.comm=null; const cnt={}; visibleIds().forEach(id=>{const c=byId.get(id).c; cnt[c]=(cnt[c]||0)+1;}); F.comm=keep; const rows=Object.entries(cnt).map(([c,n])=>[+c,n]).sort((a,b)=>b[1]-a[1]);
+  L.innerHTML=`<button class="close" aria-label="Fechar">×</button><h4>Núcleos no recorte · ${rows.length}</h4>`+rows.map(([c,n])=>`<button class="${F.comm===c?"on":""}" data-c="${c}" style="--c:${c>=0?COMM[c%COMM.length]:"var(--pseudo)"}"><i></i><span>${esc(commName(c))}</span><b>${n}</b></button>`).join("")+(F.comm!==null?`<button data-c="all" style="--c:transparent"><span class="muted">mostrar todos os núcleos</span></button>`:"");
+  L.hidden=false; $(".close",L).onclick=()=>{legendOn=false;renderLegend();}; $$("[data-c]",L).forEach(b=>b.onclick=()=>{ const c=b.dataset.c; F.comm=(c==="all"||F.comm===+c)?null:+c; lastSig=""; refresh(); setTimeout(()=>fitVisible(),150); }); }
+$("#commBtn").onclick=()=>{ legendOn=!legendOn; if(legendOn&&!commColor){ commColor=true; $("#commColor").checked=true; applyColors(); } renderLegend(); };
+async function loadETL(){ if(!ETL){ try{ ETL=await load("edges_tl.json"); }catch(e){ ETL={}; } } return ETL; }
+(function(){ const qs=[]; for(let y=2015;y<=2026;y++) for(let t=1;t<=4;t++){ qs.push(`${y}T${t}`); } const o=q=>`<option>${q}</option>`; $("#q0").innerHTML=qs.map(o).join(""); $("#q1").innerHTML=qs.map(o).join(""); $("#q0").value="2025T1"; $("#q1").value="2025T4"; })();
+async function syncPeriod(){ if($("#tlFilter").checked){ await loadETL(); let a=$("#q0").value,b=$("#q1").value; if(a>b){[a,b]=[b,a]; $("#q0").value=a; $("#q1").value=b;} F.period=[a,b]; } else F.period=null; lastSig=""; refresh(); }
+$("#tlFilter").onchange=syncPeriod; $("#q0").onchange=syncPeriod; $("#q1").onchange=syncPeriod;
+$("#wMode").onchange=e=>{F.wMode=e.target.value; $("#minLWrap").hidden=F.wMode!=="especifico"; $("#legEdge").textContent=F.wMode==="especifico"?"Espessura = especificidade (lift)":"Espessura = peças em comum"; lastSig=""; refresh();};
+$("#minL").oninput=e=>{F.minL=+e.target.value;$("#minLOut").textContent=F.minL;lastSig="";refresh();};
+$("#sizeBy").onchange=e=>{F.sizeBy=e.target.value; $("#legSize").textContent="Tamanho = "+({docs:"nº de peças",deg:"nº de ligações",bt:"pontes (no recorte)",pr:"influência (no recorte)",jud:"citações em decisões"})[F.sizeBy]; lastSig=""; refresh();};
+$("#edgeColor").onchange=e=>{F.edgeColor=e.target.value; refresh();};
+function commonClick(b){ const a=pathA; if(a===b){ $("#pathHint").textContent="Escolha dois nós diferentes."; return; }
+  const nb=new Set(graph.neighbors(b).filter(m=>edgeOK(graph.edge(b,m)))); const com=graph.neighbors(a).filter(m=>nb.has(m)&&edgeOK(graph.edge(a,m))&&baseVisible(m));
+  const edges=new Set(); com.forEach(m=>{edges.add(graph.edge(a,m));edges.add(graph.edge(b,m));}); if(graph.hasEdge(a,b)) edges.add(graph.edge(a,b));
+  pathSet={nodes:new Set([a,b,...com]),edges}; pathA=null; refresh();
+  const rows=com.map(m=>[m,graph.getEdgeAttribute(graph.edge(a,m),"w"),graph.getEdgeAttribute(graph.edge(b,m),"w")]).sort((x,y)=>Math.min(y[1],y[2])-Math.min(x[1],x[2]));
+  $("#pathHint").innerHTML=`${esc(byId.get(a).label)} ∩ ${esc(byId.get(b).label)}: ${com.length} em comum <button class="btn small" id="pathClear" style="margin-left:8px">limpar</button>`; $("#pathClear").onclick=()=>setPathMode(false);
+  const P=$("#panel"); P.innerHTML=`<button class="close" aria-label="Fechar">×</button><h3 style="font-size:17px">${esc(byId.get(a).label)} <span class="muted">∩</span> ${esc(byId.get(b).label)}</h3><p class="muted" style="margin:4px 0 10px">Nomes que dividem página com <b>ambos</b>, respeitando os filtros atuais. Ordenados pela menor das duas ligações. Um nome aqui é um candidato a ponte entre os dois; a leitura das peças decide.</p>
+  <table><tr><th>nome</th><th>com A</th><th>com B</th></tr>${rows.map(([m,wa,wb])=>`<tr><td><button class="lnk" data-go="${esc(m)}" style="--c:var(--${roleOf(byId.get(m))})"><i></i>${esc(byId.get(m).label)}</button></td><td>${wa}</td><td>${wb}</td></tr>`).join("")||"<tr><td colspan=3 class='muted'>nenhum vizinho em comum com os filtros atuais</td></tr>"}</table>`;
+  P.hidden=false; $(".close",P).onclick=()=>{P.hidden=true;}; $$("[data-go]",P).forEach(x=>x.onclick=()=>{ setPathMode(false); ensureVisible(x.dataset.go); select(x.dataset.go); }); }
+/* exportação */
+function dl(name,content,type){ const a=document.createElement("a"); a.href=type?URL.createObjectURL(new Blob([content],{type})):content; a.download=name; document.body.appendChild(a); a.click(); a.remove(); }
+const csvq=v=>`"${String(v??"").replace(/"/g,'""')}"`; const csv=rows=>"﻿"+rows.map(r=>r.map(csvq).join(";")).join("\n");
+$("#dlNodes").onclick=()=>{ const rows=[["nome","papel","nucleo","pecas","processos","mencoes","ligacoes_visiveis","pontes_x1000","influencia_x1000","agrupamento","fora_do_nucleo","em_decisoes","primeiro_mes","ultimo_mes"]]; visibleIds().forEach(id=>{const n=byId.get(id); rows.push([n.label,roleOf(n),n.c,n.docs,n.procs,n.mentions,graph.neighbors(id).filter(m=>visible(m)&&edgeOK(graph.edge(id,m))).length,n.bt,n.pr,n.cc,n.br,n.jud,n.m0||"",n.m1||""]);}); dl("autos-abertos_nos.csv",csv(rows),"text/csv;charset=utf-8"); };
+$("#dlEdges").onclick=()=>{ const rows=[["a","b","pecas_em_comum","processos","especificidade_lift"]]; graph.forEachEdge((e,a,s,d)=>{ if(visible(s)&&visible(d)&&edgeOK(e,a)) rows.push([byId.get(s).label,byId.get(d).label,a.w,a.p,a.l]); }); dl("autos-abertos_ligacoes.csv",csv(rows),"text/csv;charset=utf-8"); };
+$("#dlPng").onclick=()=>{ if(!renderer) return; renderer.refresh(); const cs=renderer.getCanvases(); const first=Object.values(cs)[0]; const W=first.width,H=first.height; const out=document.createElement("canvas"); out.width=W; out.height=H; const ctx=out.getContext("2d"); ctx.fillStyle=css("--bg2"); ctx.fillRect(0,0,W,H); ["edges","edgeLabels","nodes","labels","hovers","hoverNodes"].forEach(k=>{ if(cs[k]) ctx.drawImage(cs[k],0,0); }); const dpr=W/first.clientWidth||1; ctx.fillStyle=css("--muted"); ctx.font=`${12*dpr}px sans-serif`; ctx.fillText("autos-abertos · dados derivados de atos públicos do STF · coocorrência na mesma página não prova relação",12*dpr,H-12*dpr); dl("autos-abertos_grafo.png",out.toDataURL("image/png")); };
+/* link permanente da vista */
+function stateQS(){ const p=new URLSearchParams(); if(selected) p.set("sel",selected); p.set("r",[...F.roles].join(",")); if(F.proc) p.set("p",F.proc); p.set("d",F.minDocs); p.set("w",F.minW); p.set("t",F.topN); if(F.focus) p.set("f",F.depth); if(F.wMode!=="bruto"){p.set("m",F.wMode);p.set("l",F.minL);} if(F.sizeBy!=="docs") p.set("s",F.sizeBy); if(F.edgeColor!=="discretas") p.set("e",F.edgeColor); if(commColor) p.set("c","1"); if(F.comm!==null) p.set("k",F.comm); if(F.period) p.set("q",F.period.join("-")); if(F.collapse) p.set("cl","1"); return p.toString(); }
+async function applyQS(qs){ const p=new URLSearchParams(qs); if(p.get("r")) F.roles=new Set(p.get("r").split(",").filter(Boolean)); F.proc=p.get("p")||""; $("#procSel").value=F.proc; if(p.get("d")){F.minDocs=+p.get("d");$("#minDocs").value=F.minDocs;$("#minDocsOut").textContent=F.minDocs;} if(p.get("w")){F.minW=+p.get("w");$("#minW").value=F.minW;$("#minWOut").textContent=F.minW;} if(p.get("t")!==null){F.topN=+p.get("t");$("#topN").value=String(F.topN);} F.focus=!!p.get("f"); $("#focusMode").checked=F.focus; if(p.get("f")){F.depth=+p.get("f");$("#focusDepth").value=String(F.depth);} F.wMode=p.get("m")||"bruto"; $("#wMode").value=F.wMode; $("#minLWrap").hidden=F.wMode!=="especifico"; if(p.get("l")){F.minL=+p.get("l");$("#minL").value=F.minL;$("#minLOut").textContent=F.minL;} F.sizeBy=p.get("s")||"docs"; $("#sizeBy").value=F.sizeBy; F.edgeColor=p.get("e")||"discretas"; $("#edgeColor").value=F.edgeColor; commColor=!!p.get("c"); $("#commColor").checked=commColor; applyColors(); F.comm=p.get("k")!==null?+p.get("k"):null; legendOn=F.comm!==null||!!p.get("lg"); F.collapse=!!p.get("cl"); $("#collapseLeaves").checked=F.collapse;
+  if(p.get("q")){ const [a,b]=p.get("q").split("-"); $("#tlFilter").checked=true; $("#q0").value=a; $("#q1").value=b; await loadETL(); F.period=[a,b]; } else { $("#tlFilter").checked=false; F.period=null; }
+  syncChips(); lastSig=""; refresh(); const sel=p.get("sel"); if(sel&&byId.has(sel)){ ensureVisible(sel); select(sel); } else setTimeout(()=>fitVisible(),200); }
+const PRESETS={geral:"r=pessoa,empresa,autoridade&d=4&w=2&t=120",nucleos:"r=pessoa,empresa,autoridade&d=4&w=2&t=120&c=1&e=nucleo&lg=1",pontes:"r=pessoa,empresa,autoridade&d=3&w=3&t=120&s=bt&m=especifico&l=4&c=1&e=nucleo",empresas:"r=empresa&d=3&w=2&t=0&s=deg",decisoes:"r=pessoa,empresa&d=3&w=2&t=80&s=jud",y2025:"r=pessoa,empresa,autoridade&d=3&w=2&t=120&q=2025T1-2025T4&c=1"};
+$$("#presets [data-preset]").forEach(b=>b.onclick=()=>{ $$("#presets .chip").forEach(x=>x.classList.toggle("on",x===b)); drawer(false); setPathMode(false); select(null); applyQS(PRESETS[b.dataset.preset]); });
+$("#copyLink").onclick=async()=>{ const url=location.origin+location.pathname+"#grafo?"+stateQS(); try{ await navigator.clipboard.writeText(url); $("#copyLink").textContent="copiado ✓"; }catch(e){ prompt("Copie o link:",url); } setTimeout(()=>$("#copyLink").textContent="copiar link",1500); };
+
+/* ---------- análise de rede ---------- */
+const RD={roles:new Set(["pessoa","empresa","autoridade"]),named:true,minW:2,proc:"",year:2023};
+$$("#rdChips .chip").forEach(c=>c.onclick=()=>{const r=c.dataset.role; RD.roles.has(r)?RD.roles.delete(r):RD.roles.add(r); c.classList.toggle("on",RD.roles.has(r)); renderRede();});
+$("#rdNamed").onchange=e=>{RD.named=e.target.checked;renderRede();}; $("#rdMinW").oninput=e=>{RD.minW=+e.target.value;$("#rdMinWOut").textContent=RD.minW;renderRede();};
+META.corpus.processos.forEach(p=>$("#rdProc").insertAdjacentHTML("beforeend",`<option>${p}</option>`)); $("#rdProc").onchange=e=>{RD.proc=e.target.value;renderRede();}; $("#rdYear").onchange=e=>{RD.year=+e.target.value;renderRede();};
+const svgEl=(w,h,inner)=>`<svg class="ch" viewBox="0 0 ${w} ${h}">${inner}</svg>`;
+const quarters=y0=>{const out=[]; for(let y=y0;y<=2026;y++) for(let t=1;t<=4;t++){const q=`${y}T${t}`; if(q>"2026T3") break; out.push(q);} return out;};
+const cut=(s,n)=>s.length>n?s.slice(0,n-1)+"…":s;
+function rdPool(){ return G.nodes.filter(n=>RD.roles.has(n.papel)&&(!RD.named||n.vis)&&(!RD.proc||n.pe.some(([p])=>p===RD.proc))); }
+function rdMetrics(sub){ const L=metricsLib(); let bt={},pr={}; if(L&&sub.order>2){ try{ bt=L.bt(sub,{getEdgeWeight:"dist",normalized:true}); pr=L.pr(sub,{getEdgeWeight:"w"}); }catch(e){ console.warn("métricas",e); } } return {bt,pr}; }
+function renderRede(){ const pool=rdPool(); const sub=subgraphOf(pool.map(n=>n.id),RD.minW,false); const {bt,pr}=rdMetrics(sub); const n=sub.order, m=sub.size; const degs=pool.map(x=>sub.degree(x.id)).sort((a,b)=>a-b); const med=degs.length?degs[Math.floor(degs.length/2)]:0; const dens=n>1?m/(n*(n-1)/2):0;
+  const comms={}; pool.forEach(x=>{(comms[x.c]=comms[x.c]||[]).push(x);}); const nComm=Object.values(comms).filter(v=>v.length>=3).length;
+  $("#rdTiles").innerHTML=[[fmt(n),"nós no recorte"],[fmt(m),"ligações"],[nComm,"núcleos com 3+ nós"],[(dens*100).toFixed(1)+"%","densidade"],[med,"mediana de ligações"],[fmt(META.grafo.docs_narrativos||0),"peças narrativas"]].map(([b,s])=>`<div class="tile"><b>${b}</b><span>${s}</span></div>`).join("");
+  if(!pool.length){ $("#rdBlocks").innerHTML=`<p class="muted">Nenhum nó com esses filtros.</p>`; return; }
+  $("#rdBlocks").innerHTML=[blkScatter(pool,bt,pr),blkRank(pool,bt,pr),blkComms(pool,comms),blkPairs(sub),blkJud(pool),blkEmp(),blkWhen(pool),blkProcs(pool)].join(""); bindRede(); }
+function bindRede(){ const R=$("#rdBlocks"); $$("[data-open]",R).forEach(b=>b.onclick=()=>openNode(b.dataset.open)); $$("[data-edge]",R).forEach(b=>b.onclick=()=>openEdge(...b.dataset.edge.split("|"))); $$("[data-comm]",R).forEach(b=>b.onclick=()=>openComm(+b.dataset.comm)); R.onmousemove=e=>{const t=e.target.closest("[data-tip]"); if(t) showTip(t.dataset.tip,e.clientX,e.clientY); else hideTip();}; R.onmouseleave=hideTip; }
+function openEdge(a,b){ location.hash="grafo"; setTimeout(()=>{ ensureVisible(a); ensureVisible(b); selected=null; refresh(); renderEdgePanel(a,b); focus(a,.3); },80); }
+function openComm(c){ location.hash="grafo"; setTimeout(()=>{ F.comm=c; commColor=true; $("#commColor").checked=true; applyColors(); legendOn=true; F.topN=0; $("#topN").value="0"; lastSig=""; refresh(); setTimeout(()=>fitVisible(),250); },80); }
+const lnk=(n,extra="")=>`<button class="lnk" data-open="${esc(n.id)}" style="--c:var(--${roleOf(n)})"><i></i>${esc(n.label)}</button>${extra}`;
+function blkScatter(pool,bt,pr){ const W=560,H=340,L=46,B=34,T=14,R=14; const mxX=Math.max(2,...pool.map(n=>n.docs)); const mxY=Math.max(1e-6,...pool.map(n=>bt[n.id]||0)); const X=v=>L+Math.log2(v+1)/Math.log2(mxX+1)*(W-L-R); const Y=v=>T+(1-Math.sqrt(v/mxY))*(H-T-B);
+  const pts=pool.slice().sort((a,b)=>(bt[b.id]||0)-(bt[a.id]||0)); const lab=new Set(pts.slice(0,10).map(n=>n.id)); const ticks=[1,3,10,30,100,250].filter(v=>v<=mxX);
+  return `<div class="rd wide"><h3>Volume × ponte</h3><p class="sub">Horizontal: peças narrativas em que o nome aparece (escala log). Vertical: intermediação no recorte (raiz quadrada). Quem está no alto com pouco volume liga partes do grafo que de outro modo não se tocariam. Tamanho do ponto: influência (PageRank).</p>
+  ${svgEl(W,H,`<g stroke="${css("--line")}">${ticks.map(v=>`<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H-B}"/>`).join("")}<line x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}"/></g><g fill="${css("--muted")}" font-size="10">${ticks.map(v=>`<text x="${X(v)}" y="${H-B+14}" text-anchor="middle">${v}</text>`).join("")}<text x="${W-R}" y="${H-B+28}" text-anchor="end">peças (log) →</text><text transform="rotate(-90)" x="${-T}" y="12" text-anchor="end">pontes →</text></g>${pts.slice().reverse().map(n=>{const x=X(n.docs),y=Y(bt[n.id]||0); const r=3+Math.sqrt((pr[n.id]||0)*500); return `<g class="row" data-open="${esc(n.id)}" data-tip="${esc(`<b>${n.label}</b><br><span class=muted>${n.docs} peças · pontes ${((bt[n.id]||0)*1000).toFixed(1)} · influência ${((pr[n.id]||0)*1000).toFixed(1)}</span>`)}"><circle cx="${x}" cy="${y}" r="${r}" fill="${colorOf(n)}" fill-opacity=".75" stroke="${css("--bg2")}"/>${lab.has(n.id)?`<text x="${x>W*.72?x-r-3:x+r+3}" y="${y+3.5}" text-anchor="${x>W*.72?"end":"start"}" font-size="10.5" fill="${css("--ink")}" style="paint-order:stroke;stroke:${css("--bg2")};stroke-width:3">${esc(cut(n.label,26))}</text>`:""}</g>`;}).join("")}`)}</div>`; }
+function blkRank(pool,bt,pr){ const li=(xs,f)=>`<ol>${xs.map(n=>`<li>${lnk(n)} <span class="muted">${f(n)}</span></li>`).join("")}</ol>`; const byBt=pool.slice().sort((a,b)=>(bt[b.id]||0)-(bt[a.id]||0)).slice(0,10); const byPr=pool.slice().sort((a,b)=>(pr[b.id]||0)-(pr[a.id]||0)).slice(0,10); const bySpan=pool.slice().sort((a,b)=>b.procs-a.procs||b.docs-a.docs).slice(0,10);
+  return `<div class="rd"><h3>Rankings do recorte</h3><p class="sub">Pontes e influência recalculadas só com os nós e ligações filtrados acima; mudam quando você muda o recorte.</p><div class="three"><div><h4>Pontes</h4>${li(byBt,n=>((bt[n.id]||0)*1000).toFixed(1))}</div><div><h4>Influência</h4>${li(byPr,n=>((pr[n.id]||0)*1000).toFixed(1))}</div><div><h4>Em mais processos</h4>${li(bySpan,n=>`${n.procs} proc. · ${n.docs} peças`)}</div></div></div>`; }
+function blkComms(pool,comms){ const rows=Object.entries(comms).map(([c,xs])=>[+c,xs]).filter(([c,xs])=>xs.length>=3).sort((a,b)=>b[1].length-a[1].length).slice(0,12); const roles=["pessoa","empresa","autoridade","advogado"];
+  return `<div class="rd wide"><h3>Núcleos</h3><p class="sub">Comunidades (Louvain) do grafo completo, vistas pelo recorte. Nome = os dois nós mais ligados do núcleo. "Sai do núcleo" = quem tem a maior parcela de ligações para fora, isto é, a ponte típica.</p><div class="wrap"><table><tr><th>núcleo</th><th class="n">nós</th><th>composição</th><th>processos onde pesa</th><th>sai do núcleo</th><th></th></tr>${rows.map(([c,xs])=>{ const tot=xs.length; const comp=roles.map(r=>[r,xs.filter(x=>x.papel===r).length]).filter(x=>x[1]); const pe={}; xs.forEach(x=>x.pe.forEach(([p,k])=>pe[p]=(pe[p]||0)+k)); const tp=Object.entries(pe).sort((a,b)=>b[1]-a[1]).slice(0,3); const br=xs.slice().sort((a,b)=>(b.br||0)*b.wdeg-(a.br||0)*a.wdeg)[0];
+    return `<tr><td><span class="swatch" style="background:${COMM[c%COMM.length]}"></span><b>${esc(commName(c))}</b></td><td class="n">${tot}</td><td><div class="comp" title="${comp.map(([r,k])=>`${ROLE_PL[r]}: ${k}`).join(" · ")}">${comp.map(([r,k])=>`<i style="width:${k/tot*100}%;background:var(--${r})"></i>`).join("")}</div></td><td class="muted">${tp.map(([p,k])=>`${p} (${k})`).join(", ")}</td><td>${br&&br.br?lnk(br,` <span class="muted">${Math.round(br.br*100)}%</span>`):"—"}</td><td><button class="btn ghost small" data-comm="${c}">ver no grafo</button></td></tr>`;}).join("")}</table></div></div>`; }
+function blkPairs(sub){ const rows=[]; sub.forEachEdge((e,a,s,d)=>{ if(a.w>=Math.max(3,RD.minW)) rows.push([s,d,a.w,a.p,a.l,sc(a.w,a.l)]); }); rows.sort((x,y)=>y[5]-x[5]); const top=rows.slice(0,20);
+  return `<div class="rd"><h3>Pares fortes e específicos</h3><p class="sub">Ordenados por peças em comum × log da especificidade. Um par sobe quando divide muitas páginas <em>e</em> quando essa coincidência é rara em relação ao volume de cada um. Clique para ver as peças em que os dois aparecem.</p><div class="wrap"><table><tr><th>par</th><th class="n">peças</th><th class="n">proc.</th><th class="n" title="lift: observado / esperado">espec.</th></tr>${top.map(([s,d,w,p,l])=>`<tr><td><button class="lnk" data-edge="${esc(s)}|${esc(d)}"><i style="background:${colorOf(byId.get(s))}"></i>${esc(byId.get(s).label)} <span class="muted">↔</span> <i style="background:${colorOf(byId.get(d))}"></i>${esc(byId.get(d).label)}</button></td><td class="n">${w}</td><td class="n">${p}</td><td class="n">${l>=10?Math.round(l):l}×</td></tr>`).join("")||"<tr><td colspan=4 class=muted>nenhum par com esse filtro</td></tr>"}</table></div></div>`; }
+function blkWhen(pool){ const qs=quarters(RD.year); const top=pool.slice().sort((a,b)=>b.docs-a.docs).slice(0,30); const rows=top.map(n=>{ const tl=(ENT[n.id]||{}).tl||{}; const q={}; let tot=0; Object.entries(tl).forEach(([m,v])=>{ const k=qOf(m); q[k]=(q[k]||0)+v; tot+=v; }); const mx=Math.max(1,...qs.map(k=>q[k]||0)); return {n,q,tot,mx}; });
+  return `<div class="rd wide"><h3>Quem aparece quando</h3><p class="sub">Datas citadas nas páginas em que cada nome aparece, por trimestre, desde ${RD.year}. Cada linha é normalizada pelo próprio pico: compare o formato, não a altura entre linhas. Um trimestre escuro é um período sobre o qual as peças que citam o nome falam muito, não necessariamente quando algo aconteceu.</p><div class="wrap"><table class="hm"><tr><th></th>${qs.map(k=>`<th class="rot">${k}</th>`).join("")}<th>datas</th></tr>${rows.map(({n,q,tot,mx})=>`<tr><th class="lab" data-open="${esc(n.id)}" title="${esc(n.label)}">${esc(cut(n.label,28))}</th>${qs.map(k=>{const v=q[k]||0; const a=v?0.12+0.88*Math.sqrt(v/mx):0; return `<td data-tip="${esc(`<b>${n.label}</b> · ${k}<br><span class=muted>${fmt(v)} datas (${tot?Math.round(v/tot*100):0}% do total do nome)</span>`)}" style="background:color-mix(in srgb,${colorOf(n)} ${Math.round(a*100)}%,var(--bg3))"></td>`;}).join("")}<td class="n muted" style="width:auto;background:transparent">${fmt(tot)}</td></tr>`).join("")}</table></div></div>`; }
+function blkProcs(pool){ const ps=META.corpus.processos; const top=pool.slice().sort((a,b)=>b.procs-a.procs||b.docs-a.docs).slice(0,30); const mx=Math.max(1,...top.flatMap(n=>n.pe.map(x=>x[1])));
+  return `<div class="rd wide"><h3>Presença por processo</h3><p class="sub">Peças narrativas de cada processo em que o nome aparece. Linhas ordenadas por número de processos: quem atravessa o caso inteiro fica no alto; quem está num único processo costuma ser assunto de um anexo.</p><div class="wrap"><table class="hm"><tr><th></th>${ps.map(p=>`<th class="rot">${p}</th>`).join("")}<th>proc.</th></tr>${top.map(n=>{const pe=Object.fromEntries(n.pe); return `<tr><th class="lab" data-open="${esc(n.id)}" title="${esc(n.label)}">${esc(cut(n.label,28))}</th>${ps.map(p=>{const v=pe[p]||0; const a=v?0.15+0.85*Math.sqrt(v/mx):0; return `<td data-tip="${esc(`<b>${n.label}</b> · ${p}<br><span class=muted>${v} peças narrativas</span>`)}" style="background:color-mix(in srgb,${colorOf(n)} ${Math.round(a*100)}%,var(--bg3))"></td>`;}).join("")}<td class="n muted" style="width:auto;background:transparent">${n.procs}</td></tr>`;}).join("")}</table></div></div>`; }
+function blkJud(pool){ const xs=pool.filter(n=>n.papel!=="autoridade"&&(n.jud||0)>0).sort((a,b)=>b.jud-a.jud||b.docs-a.docs).slice(0,18); const head=`<h3>Citados em atos judiciais</h3><p class="sub">Peças em que o nome aparece: à esquerda, decisões, despachos e petições iniciais (atos do juízo ou da acusação); à direita, as demais peças narrativas. Autoridades ficam fora, porque assinam. Ser citado numa decisão não conclui nada; diz que o juízo tratou do nome.</p>`; if(!xs.length) return `<div class="rd">${head}<p class="muted">Ninguém no recorte.</p></div>`; const W=560,rowH=20,L=190,H=xs.length*rowH+30; const mx=Math.max(1,...xs.map(n=>Math.max(n.jud,n.docs-n.jud))); const half=(W-L-10)/2, cx=L+half;
+  return `<div class="rd">${head}${svgEl(W,H,`<g font-size="10" fill="${css("--muted")}"><text x="${cx-4}" y="12" text-anchor="end">← em decisões e iniciais</text><text x="${cx+4}" y="12">outras peças →</text></g>${xs.map((n,i)=>{const y=22+i*rowH; const a=n.jud/mx*half, b=(n.docs-n.jud)/mx*half; return `<g class="row" data-open="${esc(n.id)}" data-tip="${esc(`<b>${n.label}</b><br><span class=muted>${n.jud} em decisões/iniciais · ${n.docs-n.jud} noutras peças</span>`)}"><text x="${L-6}" y="${y+13}" font-size="11" text-anchor="end" fill="${css("--ink")}">${esc(cut(n.label,26))}</text><rect x="${cx-a}" y="${y+3}" width="${a}" height="${rowH-7}" rx="3" fill="${css("--pink")}"/><rect x="${cx+1}" y="${y+3}" width="${b}" height="${rowH-7}" rx="3" fill="${css("--cyan")}" fill-opacity=".7"/><text x="${cx-a-4}" y="${y+13}" font-size="10" text-anchor="end" fill="${css("--muted")}">${n.jud}</text></g>`;}).join("")}`)}</div>`; }
+function blkEmp(){ const xs=G.nodes.filter(n=>n.papel==="empresa"&&(!RD.proc||n.pe.some(([p])=>p===RD.proc))).sort((a,b)=>b.procs-a.procs||b.docs-a.docs).slice(0,15); const W=560,rowH=20,L=200,H=xs.length*rowH+12; const mx=Math.max(1,...xs.map(n=>n.procs));
+  return `<div class="rd"><h3>Empresas recorrentes</h3><p class="sub">Empresas por número de processos em que aparecem em peças narrativas. Recorrência entre processos é sinal de fio condutor; volume dentro de um só processo costuma ser anexo.</p>${svgEl(W,H,xs.map((n,i)=>{const y=6+i*rowH; const w=n.procs/mx*(W-L-120); return `<g class="row" data-open="${esc(n.id)}" data-tip="${esc(`<b>${n.label}</b><br><span class=muted>${n.procs} processos · ${n.docs} peças</span>`)}"><text x="${L-6}" y="${y+13}" font-size="11" text-anchor="end" fill="${css("--ink")}">${esc(cut(n.label,28))}</text><rect x="${L}" y="${y+3}" width="${w}" height="${rowH-7}" rx="3" fill="${css("--empresa")}" fill-opacity=".8"/><text x="${L+w+5}" y="${y+13}" font-size="10" fill="${css("--muted")}">${n.procs} proc. · ${n.docs} peças</text></g>`;}).join(""))}</div>`; }
+
+/* ---------- crônicas (posts em Markdown, índice em posts/index.json) ---------- */
+let CR=null; async function loadCR(){ if(!CR){ try{ CR=(await (await fetch("posts/index.json")).json()).posts; }catch(e){ CR=[]; } } return CR; }
+const dateBR=d=>{ const [y,m,dd]=d.split("-"); return `${dd} de ${["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"][+m-1]} de ${y}`; };
+function stripFM(md){ if(md.startsWith("---")){ const j=md.indexOf("\n---",3); if(j>0) return md.slice(j+4); } return md; }
+async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSearchParams(qs||""); const slug=p.get("p"); const L=$("#crList"), P=$("#crPost");
+  if(slug){ const i=posts.findIndex(x=>x.slug===slug); if(i>=0){ const post=posts[i]; L.hidden=true; P.hidden=false; P.innerHTML=`<p class="muted">Carregando…</p>`;
+      let md=""; try{ md=stripFM(await (await fetch(`posts/${post.slug}.md`)).text()); }catch(e){ md="*Não foi possível carregar o texto.*"; }
+      const html=(window.marked?marked.parse(md):md.replace(/\n\n/g,"<br><br>"));
+      const prev=posts[i+1], next=posts[i-1];
+      P.innerHTML=`<button class="btn ghost small back" id="crBack">← todas as crônicas</button><p class="eyebrow">Crônica ${String(post.numero||posts.length-i).padStart(2,"0")} · ${dateBR(post.date)} · ${post.minutes} min de leitura</p><h1>${esc(post.title)}</h1><p class="sub">${esc(post.subtitle||"")}</p>
+        <div class="meta">${(post.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}<span class="muted">Opinião do autor do projeto. Números e citações apontam para os dados públicos e para o acervo do STF.</span></div>
+        <div class="cr-body">${html}</div>
+        <div class="cr-foot"><b>Isto é uma crônica.</b> Texto de opinião, separado da base de dados. O que é fato traz a fonte; o que é leitura é do autor. Coocorrência na mesma página não prova relação, e ninguém aqui é culpado de nada por aparecer num grafo. Erros de fato: abra uma issue no repositório.
+        <div class="acts"><a class="btn small" href="#grafo" data-nav="grafo">Abrir o grafo</a><a class="btn small" href="#personagens" data-nav="personagens">Personagens</a><button class="btn ghost small" id="crShare">copiar link</button></div>
+        <div class="cr-nav">${prev?`<a href="#cronicas?p=${prev.slug}"><span>anterior</span>${esc(prev.title)}</a>`:"<span></span>"}${next?`<a class="next" href="#cronicas?p=${next.slug}"><span>próxima</span>${esc(next.title)}</a>`:""}</div></div>`;
+      $("#crBack").onclick=()=>{ location.hash="cronicas"; }; $$("[data-nav]",P).forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
+      $("#crShare").onclick=async()=>{ const url=location.origin+location.pathname+`#cronicas?p=${post.slug}`; try{ await navigator.clipboard.writeText(url); $("#crShare").textContent="copiado ✓"; }catch(e){ prompt("Copie o link:",url); } setTimeout(()=>$("#crShare").textContent="copiar link",1500); };
+      $$(".cr-body a[href^='#']",P).forEach(a=>a.addEventListener("click",e=>{ e.preventDefault(); location.hash=a.getAttribute("href").slice(1); }));
+      document.title=`${post.title} — crônicas do autos-abertos`; window.scrollTo({top:0}); return; } }
+  document.title="autos-abertos — crônicas"; P.hidden=true; L.hidden=false;
+  $("#crCards").innerHTML=posts.map((x,i)=>`<a class="cr-card" href="#cronicas?p=${x.slug}"><span class="n">CRÔNICA ${String(x.numero||posts.length-i).padStart(2,"0")} · ${dateBR(x.date)}</span><h3>${esc(x.title)}</h3><p class="sub">${esc(x.subtitle||"")}</p><div class="m"><b>${x.minutes} min</b> · ${(x.tags||[]).join(" · ")}</div></a>`).join("")||`<p class="muted">Ainda sem crônicas.</p>`; }
 /* ---------- go ---------- */
 show(location.hash.slice(1)||"inicio");
 })();

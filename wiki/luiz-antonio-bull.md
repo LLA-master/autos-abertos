@@ -1,16 +1,16 @@
 # Luiz Antonio Bull
 **Pessoa** · 23 peças narrativas · 7 processos · 364 menções
 
-Luiz Antonio Bull aparece em 23 peças narrativas de 7 dos 15 processos, com maior presença em INQ 5026 (11), RCL 88121 (4), PET 15478 (3), PET 15198 (2), PET 15556 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Augusto Ferreira Lima e, entre empresas, com Banco Master.
+Luiz Antonio Bull aparece em 23 peças narrativas de 7 dos 15 processos, com maior presença em INQ 5026 (11), RCL 88121 (4), PET 15478 (3), PET 15198 (2), PET 15562 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Augusto Ferreira Lima e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - INQ 5026: 11 peças
 - RCL 88121: 4 peças
 - PET 15478: 3 peças
 - PET 15198: 2 peças
-- PET 15556: 1 peças
 - PET 15562: 1 peças
 - PET 15563: 1 peças
+- PET 15556: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 13 peças em comum, 5 processos

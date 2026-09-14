@@ -1,14 +1,14 @@
 # Katherine Venancio Teles
 **Pessoa** · 18 peças narrativas · 5 processos · 67 menções
 
-Katherine Venancio Teles aparece em 18 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (7), PET 15976 (4), PET 15693 (3), PET 16019 (2), PET 15977 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-03. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Ribeiro Gestão Empresarial.
+Katherine Venancio Teles aparece em 18 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (7), PET 15976 (4), PET 15693 (3), PET 15977 (2), PET 16019 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-03. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Ribeiro Gestão Empresarial.
 
 ## Presença por processo
 - PET 15978: 7 peças
 - PET 15976: 4 peças
 - PET 15693: 3 peças
-- PET 16019: 2 peças
 - PET 15977: 2 peças
+- PET 16019: 2 peças
 
 ## Aparece junto de — Pessoas
 - [David Henrique Alves](david-henrique-alves.md) — 14 peças em comum, 5 processos

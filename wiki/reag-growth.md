@@ -1,13 +1,13 @@
 # Reag Growth
 **Empresa** · 5 peças narrativas · 4 processos · 18 menções
 
-Reag Growth aparece em 5 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (2), PET 15563 (1), PET 15562 (1), PET 15556 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com João Carlos Falbo Mansur e, entre empresas, com Master Holding Financeira.
+Reag Growth aparece em 5 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (2), PET 15562 (1), PET 15556 (1), PET 15563 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com João Carlos Falbo Mansur e, entre empresas, com Master Holding Financeira.
 
 ## Presença por processo
 - PET 15198: 2 peças
-- PET 15563: 1 peças
 - PET 15562: 1 peças
 - PET 15556: 1 peças
+- PET 15563: 1 peças
 
 ## Aparece junto de — Pessoas
 - [João Carlos Falbo Mansur](joao-carlos-falbo-mansur.md) — 2 peças em comum, 1 processos

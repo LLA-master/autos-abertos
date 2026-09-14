@@ -1,13 +1,13 @@
 # Janaina Pereira Lima Palazzo
 **Autoridade** · 26 peças narrativas · 4 processos · 113 menções
 
-Janaina Pereira Lima Palazzo aparece em 26 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (23), PET 15198 (1), RCL 88121 (1), PET 15478 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Alberto Felix e, entre empresas, com Banco Master.
+Janaina Pereira Lima Palazzo aparece em 26 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (23), RCL 88121 (1), PET 15478 (1), PET 15198 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Alberto Felix e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - INQ 5026: 23 peças
-- PET 15198: 1 peças
 - RCL 88121: 1 peças
 - PET 15478: 1 peças
+- PET 15198: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Alberto Felix](alberto-felix.md) — 4 peças em comum, 1 processos

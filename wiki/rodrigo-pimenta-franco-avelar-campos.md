@@ -1,14 +1,14 @@
 # Rodrigo Pimenta Franco Avelar Campos
 **Pessoa** · 27 peças narrativas · 5 processos · 128 menções
 
-Rodrigo Pimenta Franco Avelar Campos aparece em 27 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (10), PET 16019 (10), PET 15976 (3), PET 15693 (2), PET 15977 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Nova Farma Drogaria.
+Rodrigo Pimenta Franco Avelar Campos aparece em 27 peças narrativas de 5 dos 15 processos, com maior presença em PET 16019 (10), PET 15978 (10), PET 15976 (3), PET 15977 (2), PET 15693 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Nova Farma Drogaria.
 
 ## Presença por processo
-- PET 15978: 10 peças
 - PET 16019: 10 peças
+- PET 15978: 10 peças
 - PET 15976: 3 peças
-- PET 15693: 2 peças
 - PET 15977: 2 peças
+- PET 15693: 2 peças
 
 ## Aparece junto de — Pessoas
 - [David Henrique Alves](david-henrique-alves.md) — 18 peças em comum, 5 processos

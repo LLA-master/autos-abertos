@@ -1,7 +1,7 @@
 # Erlene Nonato Lacerda
 **Pessoa** · 16 peças narrativas · 5 processos · 61 menções
 
-Erlene Nonato Lacerda aparece em 16 peças narrativas de 5 dos 15 processos, com maior presença em PET 16019 (8), PET 15978 (4), PET 15977 (2), PET 15693 (1), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Ribeiro Gestão Empresarial.
+Erlene Nonato Lacerda aparece em 16 peças narrativas de 5 dos 15 processos, com maior presença em PET 16019 (8), PET 15978 (4), PET 15977 (2), PET 15693 (1), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2023-10. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Ribeiro Gestão Empresarial.
 
 ## Presença por processo
 - PET 16019: 8 peças

@@ -1,11 +1,11 @@
 # Milo Investimentos
 **Empresa** · 11 peças narrativas · 3 processos · 115 menções
 
-Milo Investimentos aparece em 11 peças narrativas de 3 dos 15 processos, com maior presença em PET 15198 (5), INQ 5026 (5), PET 15556 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
+Milo Investimentos aparece em 11 peças narrativas de 3 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (5), PET 15556 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
 
 ## Presença por processo
-- PET 15198: 5 peças
 - INQ 5026: 5 peças
+- PET 15198: 5 peças
 - PET 15556: 1 peças
 
 ## Aparece junto de — Pessoas

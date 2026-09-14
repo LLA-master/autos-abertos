@@ -1,14 +1,14 @@
 # Nelson Sequeiros Rodriguez Tanure
 **Pessoa** · 22 peças narrativas · 8 processos · 173 menções
 
-Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (7), INQ 5026 (4), PET 15976 (2), PET 15978 (1), PET 15977 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Maurício Antonio Quadrado e, entre empresas, com Banco Master.
+Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (7), INQ 5026 (4), PET 15976 (2), PET 15977 (1), PET 15978 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Maurício Antonio Quadrado e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - PET 15198: 7 peças
 - INQ 5026: 4 peças
 - PET 15976: 2 peças
-- PET 15978: 1 peças
 - PET 15977: 1 peças
+- PET 15978: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 13 peças em comum, 8 processos

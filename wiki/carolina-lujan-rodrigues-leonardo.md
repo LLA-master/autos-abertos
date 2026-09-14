@@ -1,16 +1,16 @@
 # Carolina Luján Rodrigues Leonardo
 **Advogado** · 7 peças narrativas · 7 processos · 7 menções
 
-Carolina Luján Rodrigues Leonardo aparece em 7 peças narrativas de 7 dos 15 processos, com maior presença em INQ 5035 (1), PET 15504 (1), PET 15198 (1), INQ 5026 (1), PET 15556 (1). É classificado como Advogado pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-04. Divide páginas com maior frequência com Daniel Bueno Vorcaro.
+Carolina Luján Rodrigues Leonardo aparece em 7 peças narrativas de 7 dos 15 processos, com maior presença em INQ 5026 (1), PET 15562 (1), PET 15198 (1), INQ 5035 (1), PET 15556 (1). É classificado como Advogado pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-04. Divide páginas com maior frequência com Daniel Bueno Vorcaro.
 
 ## Presença por processo
-- INQ 5035: 1 peças
-- PET 15504: 1 peças
-- PET 15198: 1 peças
 - INQ 5026: 1 peças
+- PET 15562: 1 peças
+- PET 15198: 1 peças
+- INQ 5035: 1 peças
 - PET 15556: 1 peças
 - RCL 88121: 1 peças
-- PET 15562: 1 peças
+- PET 15504: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 7 processos

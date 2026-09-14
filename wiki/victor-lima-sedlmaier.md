@@ -1,14 +1,14 @@
 # Victor Lima Sedlmaier
 **Pessoa** · 32 peças narrativas · 5 processos · 178 menções
 
-Victor Lima Sedlmaier aparece em 32 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (16), PET 16019 (11), PET 15693 (3), PET 15976 (1), PET 15977 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Nova Farma Drogaria.
+Victor Lima Sedlmaier aparece em 32 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (16), PET 16019 (11), PET 15693 (3), PET 15977 (1), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Nova Farma Drogaria.
 
 ## Presença por processo
 - PET 15978: 16 peças
 - PET 16019: 11 peças
 - PET 15693: 3 peças
-- PET 15976: 1 peças
 - PET 15977: 1 peças
+- PET 15976: 1 peças
 
 ## Aparece junto de — Pessoas
 - [David Henrique Alves](david-henrique-alves.md) — 20 peças em comum, 5 processos

@@ -1,14 +1,14 @@
 # Victor Barbabella Negraes
 **Autoridade** · 17 peças narrativas · 5 processos · 21 menções
 
-Victor Barbabella Negraes aparece em 17 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (7), PET 15976 (6), PET 15693 (2), PET 16019 (1), PET 15977 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves.
+Victor Barbabella Negraes aparece em 17 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (7), PET 15976 (6), PET 15693 (2), PET 15977 (1), PET 16019 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com David Henrique Alves.
 
 ## Presença por processo
 - PET 15978: 7 peças
 - PET 15976: 6 peças
 - PET 15693: 2 peças
-- PET 16019: 1 peças
 - PET 15977: 1 peças
+- PET 16019: 1 peças
 
 ## Aparece junto de — Pessoas
 - [David Henrique Alves](david-henrique-alves.md) — 6 peças em comum, 2 processos

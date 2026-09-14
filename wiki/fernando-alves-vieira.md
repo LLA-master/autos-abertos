@@ -1,12 +1,12 @@
 # Fernando Alves Vieira
 **Pessoa** · 22 peças narrativas · 4 processos · 86 menções
 
-Fernando Alves Vieira aparece em 22 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (15), PET 15978 (3), INQ 5026 (3), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Henrique Moura Vorcaro e, entre empresas, com Banco Master.
+Fernando Alves Vieira aparece em 22 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (15), INQ 5026 (3), PET 15978 (3), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Henrique Moura Vorcaro e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - PET 15198: 15 peças
-- PET 15978: 3 peças
 - INQ 5026: 3 peças
+- PET 15978: 3 peças
 - PET 15976: 1 peças
 
 ## Aparece junto de — Pessoas

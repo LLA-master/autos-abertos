@@ -7,11 +7,13 @@
 <meta name="description" content="Leitura guiada de um processo público: decisões na íntegra, quem aparece com quem, o que cada peça decidiu e onde conferir. Texto integral dos atos do juízo, sem dado pessoal.">
 <meta name="theme-color" content="#12071F">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Righteous&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Righteous&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/graphology-library@0.8.0/dist/graphology-library.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sigma@3.0.1/dist/sigma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<link rel="alternate" type="application/rss+xml" title="Crônicas do autos-abertos" href="feed.xml">
 </head>
 <body>
 <a class="skip" href="#main">Ir para o conteúdo</a>
@@ -20,13 +22,15 @@
   <nav aria-label="Seções">
     <a href="#tour" data-nav="tour">Tour</a>
     <a href="#grafo" data-nav="grafo">Grafo</a>
-    <a href="#mapa" data-nav="mapa">Mapa mental</a>
+    <a href="#mapa" data-nav="mapa">Mapa</a>
     <a href="#personagens" data-nav="personagens">Personagens</a>
+    <a href="#rede" data-nav="rede">Análise</a>
     <a href="#processos" data-nav="processos">Processos</a>
-    <a href="#tempo" data-nav="tempo">Linha do tempo</a>
+    <a href="#tempo" data-nav="tempo">Tempo</a>
+    <a href="#cronicas" data-nav="cronicas">Crônicas</a>
     <a href="#metodo" data-nav="metodo">Método</a>
   </nav>
-  <span class="ver" title="Versão 0.1: extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.1 · dados em revisão</span>
+  <span class="ver" title="Versão 0.2: métricas de rede, análise e filtros temporais; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.2 · dados em revisão</span>
   <button class="theme" id="themeBtn" aria-label="Alternar noite e dia" title="Noite / dia">☀</button>
 </header>
 
@@ -42,6 +46,7 @@
       <a class="btn primary" href="#tour" data-nav="tour">Fazer o tour guiado</a>
       <a class="btn" href="#grafo" data-nav="grafo">Abrir o grafo</a>
       <a class="btn" href="#mapa" data-nav="mapa">Mapa mental</a>
+      <a class="btn" href="#rede" data-nav="rede">Análise de rede</a>
       <a class="btn ghost" href="#metodo" data-nav="metodo">Como isto foi feito</a>
     </div>
   </div>
@@ -50,9 +55,11 @@
   <div class="cards3">
     <article class="card"><h3>Tour</h3><p>Oito passos curtos, cada um com o grafo já configurado para mostrar uma coisa. Você aprende a ler o caso olhando, sem manual.</p></article>
     <article class="card"><h3>Grafo e mapa mental</h3><p>O grafo mostra a rede inteira. O mapa mental parte de um nome e abre seus vínculos por categoria, ramo a ramo, como um caderno de apuração.</p></article>
+    <article class="card"><h3>Análise de rede</h3><p>Quem faz ponte entre núcleos, quem aparece quando, quais pares são fortes e específicos, quem é citado em decisões. Tudo calculado sobre o recorte que você escolher.</p></article>
+    <article class="card"><h3>Crônicas</h3><p>Textos curtos para quem prefere ler a filtrar: o acervo contado com humor e sem juízo de valor, cada fato apontando para a página de origem. Separados da base, assinados como opinião.</p></article>
     <article class="card"><h3>Fonte sempre à vista</h3><p>Cada nó lista as peças em que aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
   </div>
-  <p class="note"><b>Versão 0.1.</b> Extração, papéis e relações são automáticos e estão em revisão; os dados podem mudar. Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
+  <p class="note"><b>Versão 0.2.</b> Extração, papéis e relações são automáticos e estão em revisão; os dados podem mudar. Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
 </section>
 
 <section id="v-tour" class="view" hidden>
@@ -74,40 +81,75 @@
 </section>
 
 <section id="v-grafo" class="view" hidden>
-  <div class="toolbar">
-    <div class="search"><input id="search" type="search" placeholder="Buscar pessoa, empresa, autoridade…" autocomplete="off" aria-label="Buscar"><ul id="sugg" class="sugg" hidden></ul></div><button class="btn small tb-toggle" type="button">Filtros ▾</button>
-    <div class="chips" id="roleChips">
-      <button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button>
-      <button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button>
-      <button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button>
-      <button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button>
-      <button class="chip" data-role="pseudo" style="--c:var(--pseudo)"><i></i>Pseudonimizados</button>
+  <div class="toolbar tb">
+    <div class="tb-row">
+      <div class="search"><input id="search" type="search" placeholder="Buscar pessoa, empresa, autoridade…" autocomplete="off" aria-label="Buscar"><ul id="sugg" class="sugg" hidden></ul></div>
+      <button class="btn small" id="tbMore" aria-expanded="false" aria-controls="tbDrawer">Ajustes ▾</button>
+      <div class="zoom"><button class="btn small" id="zoomIn" title="Aproximar">+</button><button class="btn small" id="zoomOut" title="Afastar">−</button><button class="btn ghost small" id="resetView">Ajustar</button></div>
     </div>
-    <label class="ctl">Processo <select id="procSel"><option value="">todos</option></select></label>
-    <label class="ctl">Mín. peças <input id="minDocs" type="range" min="2" max="40" value="4"><output id="minDocsOut">4</output></label>
-    <label class="ctl">Peso mín. <input id="minW" type="range" min="1" max="15" value="2"><output id="minWOut">2</output></label>
-    <label class="ctl">Top <select id="topN"><option value="0">todos</option><option value="60">60</option><option value="120" selected>120</option><option value="250">250</option></select></label>
-    <label class="ctl"><input type="checkbox" id="commColor"> cores por núcleo</label>
-    <label class="ctl"><input type="checkbox" id="labelsAll"> todos os rótulos</label>
-    <label class="ctl"><input type="checkbox" id="collapseLeaves"> colapsar folhas</label>
-    <label class="ctl" title="Mostra só a vizinhança do nó selecionado"><input type="checkbox" id="focusMode"> foco <select id="focusDepth"><option value="1">1 salto</option><option value="2">2 saltos</option></select></label>
-    <label class="ctl switch" title="Física ao vivo: os nós se acomodam e você pode arrastá-los"><input type="checkbox" id="liveLayout"> nós vivos</label>
-    <label class="ctl">Espaço <input id="spacing" type="range" min="4" max="120" value="60"><output id="spacingOut">60</output></label>
-    <button class="btn small" id="pathBtn">Caminho A → B</button>
-    <div class="zoom"><button class="btn small" id="zoomIn" title="Aproximar">+</button><button class="btn small" id="zoomOut" title="Afastar">−</button><button class="btn ghost small" id="resetView">Ajustar</button></div>
-    <button class="btn ghost small" id="restoreHidden" hidden>Restaurar ocultos (<span id="hiddenCount">0</span>)</button>
-    <label class="ctl switch"><input type="checkbox" id="mmToggle"> modo mapa mental</label>
+    <div class="tb-row scroll">
+      <div class="chips" id="roleChips">
+        <button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button>
+        <button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button>
+        <button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button>
+        <button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button>
+        <button class="chip" data-role="pseudo" style="--c:var(--pseudo)"><i></i>Pseudonimizados</button>
+      </div>
+      <span class="sep" aria-hidden="true"></span>
+      <div class="chips presets" id="presets" aria-label="Vistas prontas">
+        <span class="muted lbl">Vistas</span>
+        <button class="chip" data-preset="geral">Visão geral</button>
+        <button class="chip" data-preset="nucleos">Núcleos</button>
+        <button class="chip" data-preset="pontes">Pontes</button>
+        <button class="chip" data-preset="empresas">Só empresas</button>
+        <button class="chip" data-preset="decisoes">Citados em decisões</button>
+        <button class="chip" data-preset="y2025">2025</button>
+      </div>
+    </div>
+    <div class="tb-drawer" id="tbDrawer" hidden>
+      <div class="tb-drawer-head"><b>Ajustes do grafo</b><button class="btn ghost small" id="tbClose">Fechar</button></div>
+      <div class="grp"><h5>Recorte</h5>
+        <label class="ctl">Processo <select id="procSel"><option value="">todos</option></select></label>
+        <label class="ctl">Mín. peças <input id="minDocs" type="range" min="2" max="40" value="4"><output id="minDocsOut">4</output></label>
+        <label class="ctl">Top <select id="topN"><option value="0">todos</option><option value="60">60</option><option value="120" selected>120</option><option value="250">250</option></select></label>
+        <label class="ctl" title="Mostra só a vizinhança do nó selecionado"><input type="checkbox" id="focusMode"> foco <select id="focusDepth"><option value="1">1 salto</option><option value="2">2 saltos</option></select></label>
+        <label class="ctl"><input type="checkbox" id="collapseLeaves"> colapsar folhas</label>
+        <button class="btn small" id="commBtn" title="Lista os núcleos (comunidades) do recorte; clique num núcleo para isolá-lo">Listar núcleos</button>
+      </div>
+      <div class="grp"><h5>Ligações</h5>
+        <label class="ctl" title="Bruto: peças em comum. Específico: peças em comum divididas pelo esperado se os dois nomes fossem independentes (lift)">Peso <select id="wMode"><option value="bruto">bruto</option><option value="especifico">específico</option></select></label>
+        <label class="ctl">Peso mín. <input id="minW" type="range" min="1" max="15" value="2"><output id="minWOut">2</output></label>
+        <label class="ctl" id="minLWrap" hidden>Especif. mín. <input id="minL" type="range" min="1" max="60" value="5"><output id="minLOut">5</output></label>
+        <label class="ctl" title="Mostra só ligações cujas páginas citam datas no intervalo escolhido"><input type="checkbox" id="tlFilter"> período <select id="q0"></select> <span class="muted">a</span> <select id="q1"></select></label>
+      </div>
+      <div class="grp"><h5>Aparência</h5>
+        <label class="ctl" title="Define o tamanho dos nós. Pontes e influência são recalculadas sobre o recorte visível">Tamanho <select id="sizeBy"><option value="docs">peças</option><option value="deg">ligações</option><option value="bt">pontes</option><option value="pr">influência</option><option value="jud">citações em decisões</option></select></label>
+        <label class="ctl">Arestas <select id="edgeColor"><option value="discretas">discretas</option><option value="nucleo">por núcleo</option><option value="procs">por nº de processos</option></select></label>
+        <label class="ctl"><input type="checkbox" id="commColor"> cores por núcleo</label>
+        <label class="ctl"><input type="checkbox" id="labelsAll"> todos os rótulos</label>
+        <label class="ctl switch" title="Física ao vivo: os nós se acomodam e você pode arrastá-los"><input type="checkbox" id="liveLayout"> nós vivos</label>
+        <label class="ctl">Espaço <input id="spacing" type="range" min="4" max="120" value="60"><output id="spacingOut">60</output></label>
+        <label class="ctl switch"><input type="checkbox" id="mmToggle"> modo mapa mental</label>
+      </div>
+      <div class="grp"><h5>Ferramentas</h5>
+        <button class="btn small" id="pathBtn">Caminho A → B</button>
+        <button class="btn small" id="commonBtn" title="Quem aparece junto de A e também de B">Em comum A ∩ B</button>
+        <button class="btn ghost small" id="restoreHidden" hidden>Restaurar ocultos (<span id="hiddenCount">0</span>)</button>
+        <span class="ctl export"><span class="muted">Exportar</span><button class="btn ghost small" id="dlNodes" title="CSV dos nós visíveis">nós CSV</button><button class="btn ghost small" id="dlEdges" title="CSV das ligações visíveis">ligações CSV</button><button class="btn ghost small" id="dlPng" title="Imagem do grafo como está">PNG</button><button class="btn ghost small" id="copyLink" title="Copia um link que reabre esta vista com os mesmos filtros e o mesmo nó selecionado">copiar link</button></span>
+      </div>
+    </div>
   </div>
   <div class="graph-wrap">
     <div id="sigma" class="sigma" role="img" aria-label="Grafo de relações"></div>
     <div id="pathHint" class="path-hint" hidden></div>
+    <aside id="commLegend" class="comm-legend" hidden></aside>
     <aside id="panel" class="panel" hidden></aside>
-    <div class="legend"><span>Tamanho = nº de peças</span><span>Espessura = peças em comum</span><span>Clique = ficha · duplo clique = foco · arraste = mover · Esc = limpar</span></div>
+    <div class="legend"><span id="legSize">Tamanho = nº de peças</span><span id="legEdge">Espessura = peças em comum</span><span>Clique = ficha · 2 cliques = foco · Esc = limpar</span></div>
   </div>
 </section>
 
 <section id="v-mapa" class="view" hidden>
-  <div class="toolbar">
+  <div class="toolbar legacy">
     <div class="search"><input id="mmSearch" type="search" placeholder="Centrar o mapa em…" autocomplete="off" aria-label="Centrar o mapa em"><ul id="mmSugg" class="sugg" hidden></ul></div><button class="btn small tb-toggle" type="button">Filtros ▾</button>
     <label class="ctl">Modo <select id="mmMode"><option value="entidade">por entidade</option><option value="processo">por processo</option><option value="caso">visão do caso</option></select></label>
     <label class="ctl">Ramos por categoria <input id="mmN" type="range" min="4" max="14" value="8"><output id="mmNOut">8</output></label>
@@ -124,6 +166,19 @@
   <article id="wkPage" class="wk-page" hidden></article>
 </section>
 
+<section id="v-rede" class="view" hidden>
+  <div class="wk-head"><div><h2>Análise de rede</h2><p class="lead small">Métricas calculadas sobre o recorte escolhido aqui: quem faz ponte entre núcleos, quem tem influência estrutural, quem aparece quando, quais pares são ao mesmo tempo fortes e específicos. Nada disto é prova; é um mapa de onde começar a ler.</p></div></div>
+  <div class="toolbar rd-toolbar">
+    <div class="chips" id="rdChips"><button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button><button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button><button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button><button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button></div>
+    <label class="ctl"><input type="checkbox" id="rdNamed" checked> só nomeados</label>
+    <label class="ctl">Peso mín. <input id="rdMinW" type="range" min="2" max="10" value="2"><output id="rdMinWOut">2</output></label>
+    <label class="ctl">Processo <select id="rdProc"><option value="">todos</option></select></label>
+    <label class="ctl">Desde <select id="rdYear"><option>2019</option><option>2021</option><option value="2023" selected>2023</option><option>2025</option></select></label>
+  </div>
+  <div class="tiles" id="rdTiles"></div>
+  <div class="rd-grid" id="rdBlocks"></div>
+</section>
+
 <section id="v-processos" class="view" hidden>
   <div class="wk-head"><div><h2>Quinze processos, um caso</h2><p class="lead small">INQ é inquérito, PET é petição (procedimento cautelar ou incidental) e RCL é reclamação. Todos tramitam no STF sob o mesmo relator e se citam mutuamente. Ordene pela coluna que interessar e abra uma linha para ver a composição e os personagens.</p></div>
   <div class="chips"><button class="chip on" data-sort="pages">por páginas</button><button class="chip" data-sort="pdfs">por peças</button><button class="chip" data-sort="processo">por número</button></div></div>
@@ -137,9 +192,24 @@
 <section id="v-tempo" class="view" hidden>
   <h2>Linha do tempo</h2>
   <p class="lead small">Datas citadas nas peças narrativas (petições, decisões, representações), por mês. Um pico é um período sobre o qual os autos falam muito, não necessariamente quando algo aconteceu.</p>
-  <div class="tl-ctl"><label class="ctl">Processo <select id="tlProc"><option value="">todos</option></select></label><label class="ctl"><input type="checkbox" id="tlLog"> escala log</label></div>
+  <div class="tl-ctl"><label class="ctl">Processo <select id="tlProc"><option value="">todos</option></select></label><label class="ctl"><input type="checkbox" id="tlLog"> escala log</label><label class="ctl"><input type="checkbox" id="tlStack" checked> empilhar por processo</label><span class="muted">Arraste sobre os meses para selecionar um período.</span></div>
   <div id="tlChart" class="tl-chart"></div>
+  <div id="tlLegend" class="proc-legend"></div>
   <div id="tlDetail" class="tl-detail muted">Passe o mouse sobre um mês.</div>
+  <div id="tlBrush" class="tl-brush" hidden></div>
+  <h3 style="margin-top:26px">Comparar personagens</h3>
+  <p class="muted">Datas citadas nas páginas em que cada nome aparece, mês a mês. Cada linha tem a própria escala; compare o formato, não a altura.</p>
+  <div class="toolbar"><div class="search"><input id="tlEnt" type="search" placeholder="Adicionar personagem…" autocomplete="off" aria-label="Adicionar personagem"><ul id="tlEntSugg" class="sugg" hidden></ul></div><div class="chips" id="tlEntChips"></div></div>
+  <div id="tlSmall" class="tl-small"></div>
+</section>
+
+<section id="v-cronicas" class="view" hidden>
+  <div id="crList">
+    <div class="cr-head"><p class="eyebrow">Crônicas · leitura, não filtro</p><h2>O caso contado a quem não vai ler 189 mil páginas</h2><p class="lead small">Textos de opinião do autor do projeto, escritos sobre os mesmos dados públicos do site. Tom leve, fatos conferíveis: cada número aponta para o acervo, e cada nome para a ficha. Não são notícia, não são laudo e não afirmam culpa de ninguém.</p></div>
+    <div id="crCards" class="cr-cards"></div>
+    <p class="note">Assine pelo <a href="feed.xml">feed RSS</a>. Erros de fato: abra uma issue no repositório; a regra é corrigir rápido e deixar registrado.</p>
+  </div>
+  <article id="crPost" class="cr-post" hidden></article>
 </section>
 
 <section id="v-metodo" class="view" hidden>
@@ -153,6 +223,7 @@
       <li><strong>Extração estruturada.</strong> Expressões regulares para números de processo, CNPJ, datas, referências a outros processos e nomes em caixa alta, que é como peças jurídicas grafam partes.</li>
       <li><strong>Papéis.</strong> Empresa (sufixo ou termo societário), autoridade (cargo no contexto, ou assinatura em todas as páginas de uma peça longa), advogado (remetente do recibo de petição eletrônica, ou inscrição profissional junto ao nome), pessoa (o resto). Uma camada de curadoria manual corrige papéis, une variantes de grafia e descarta fragmentos que não são nomes.</li>
       <li><strong>Relações.</strong> Duas entidades se ligam quando aparecem na mesma página de uma peça narrativa. Anexos como extratos, tabelas, procurações e documentos de identificação ficam fora, porque produzem relações espúrias em massa. O peso é o número de peças distintas em comum.</li>
+      <li><strong>Métricas de rede (v0.2).</strong> <em>Pontes</em> é a centralidade de intermediação (betweenness): quantos caminhos mais curtos entre outros pares passam pelo nó, com distância igual ao inverso do peso. <em>Influência</em> é o PageRank ponderado. <em>Agrupamento</em> é o coeficiente de clustering (quanto os vizinhos do nó se ligam entre si). <em>Fora do núcleo</em> é a parcela do peso das ligações que sai da comunidade do nó (comunidades por Louvain). <em>Especificidade</em> de uma ligação é o lift: peças em comum observadas divididas pelas esperadas se os dois nomes aparecessem de forma independente; o site combina lift e volume para ordenar pares. No grafo e na análise, pontes e influência são recalculadas sobre o recorte visível, porque advogados e autoridades que assinam muitas peças distorcem o cálculo global.</li>
       <li><strong>Sanitização.</strong> Ver a <a href="https://github.com/LLA-master/autos-abertos/blob/main/POLITICA_DE_SANITIZACAO.md" target="_blank" rel="noopener">política</a>. Resumo: entidades públicas e pessoas nomeadas em atos judiciais entram com nome; pessoas incidentais viram pseudônimo; dados pessoais não entram.</li>
     </ol>
     <h3>Limites, sem rodeios</h3>
@@ -164,6 +235,8 @@
     </ul>
     <h3>Como conferir</h3>
     <p>Cada citação indica processo, sequencial da peça e página. Baixe o pacote do STF pelo link da nota, abra a pasta do processo e o arquivo cujo nome começa pelo sequencial.</p>
+    <h3>Crônicas</h3>
+    <p>A seção Crônicas é editorial: textos de opinião do autor do projeto, escritos em cima dos mesmos dados públicos e sanitizados. Ficam em <code>docs/posts/</code>, em Markdown, com data e fontes. A base (grafo, fichas, análise) não depende deles e não muda por causa deles. Quando uma crônica cita um número, o número vem de <code>docs/data/</code>; quando cita uma peça, indica processo, seq e página.</p>
     <h3>Licenças e código</h3>
     <p>Código MIT, dados derivados CC BY 4.0. Repositório: <a href="https://github.com/LLA-master/autos-abertos" target="_blank" rel="noopener">github.com/LLA-master/autos-abertos</a>. Projeto pessoal, sem afiliação com o STF ou com partes dos processos.</p>
     <p class="muted" id="buildInfo"></p>

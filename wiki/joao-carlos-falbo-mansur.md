@@ -1,15 +1,15 @@
 # João Carlos Falbo Mansur
 **Pessoa** · 15 peças narrativas · 6 processos · 35 menções
 
-João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (8), INQ 5026 (3), PET 15556 (1), RCL 88121 (1), PET 15563 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
+João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (8), INQ 5026 (3), PET 15562 (1), PET 15563 (1), PET 15556 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - PET 15198: 8 peças
 - INQ 5026: 3 peças
+- PET 15562: 1 peças
+- PET 15563: 1 peças
 - PET 15556: 1 peças
 - RCL 88121: 1 peças
-- PET 15563: 1 peças
-- PET 15562: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 11 peças em comum, 6 processos

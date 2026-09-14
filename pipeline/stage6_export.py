@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Estágio 6 — GATE DE SANITIZAÇÃO. Único ponto por onde dados saem da pista local para a pública.
+"""Estágio 6 (v0.2) — GATE DE SANITIZAÇÃO. Único ponto por onde dados saem da pista local para a pública.
 Lê corpus/*.parquet e escreve docs/data/*.json no repo autos-abertos, mais gate_report.md (local).
 Regras: empresa/autoridade/advogado visíveis; pessoa visível só se nomeada em decisão/despacho/petição inicial
 ou recorrente (>=2 processos e >=3 peças); demais pessoas viram pseudônimo estável. Nenhum CPF, OAB, endereço,
@@ -52,14 +52,27 @@ comms=nx.community.louvain_communities(G,weight="w",seed=42,resolution=1.0)
 cid={}; 
 for i,cset in enumerate(sorted(comms,key=len,reverse=True)):
     for n in cset: cid[n]=i
+# --- métricas de rede (v0.2): pontes (betweenness, distância = 1/peso), influência (PageRank), agrupamento, parcela de ligações para fora do núcleo
+for _u,_v,_d in G.edges(data=True): _d["dist"]=1.0/_d["w"]
+BT=nx.betweenness_centrality(G,weight="dist",normalized=True); PR=nx.pagerank(G,weight="w"); CC=nx.clustering(G)
+D_NARR=int(c.sql("SELECT count(DISTINCT doc_id) FROM cm").fetchone()[0])
+def bridge(e):
+    tot=sum(d["w"] for _,_,d in G.edges(e,data=True)) or 1
+    return round(sum(d["w"] for _,v,d in G.edges(e,data=True) if cid.get(v,-1)!=cid.get(e,-1))/tot,2)
+# tipos de peça por entidade (peças distintas) e quantas são atos judiciais (decisão, despacho, petição inicial)
+tp={}
+for e,t,n in c.sql("SELECT entity, tipo, count(DISTINCT doc_id) FROM cm GROUP BY 1,2").fetchall(): tp.setdefault(e,{})[t]=int(n)
+jud={e:sum(n for t,n in d.items() if t in JUD) for e,d in tp.items()}
 pos=nx.spring_layout(G,weight="w",k=0.9/ (len(G)**0.5) * 3,iterations=300,seed=42)
 xs=[p[0] for p in pos.values()]; ys=[p[1] for p in pos.values()]
 def sc(v,lo,hi): return round((v-lo)/(hi-lo+1e-9)*2000-1000,1)
 nid={e:i for i,e in enumerate(G.nodes())}
 nodes=[{"i":nid[e],"id":e if vis[e] else label[e],"label":label[e],"papel":G.nodes[e]["papel"],"docs":G.nodes[e]["docs"],"procs":G.nodes[e]["procs"],
         "mentions":G.nodes[e]["mentions"],"vis":vis[e],"c":cid.get(e,-1),"x":sc(pos[e][0],min(xs),max(xs)),"y":sc(pos[e][1],min(ys),max(ys)),
-        "deg":G.degree(e),"wdeg":int(sum(d["w"] for _,_,d in G.edges(e,data=True))),"pe":pe[e][:15]} for e in G.nodes()]
-edges=[{"s":nid[s],"d":nid[d],"w":dd["w"],"p":dd["procs"]} for s,d,dd in G.edges(data=True)]
+        "deg":G.degree(e),"wdeg":int(sum(d["w"] for _,_,d in G.edges(e,data=True))),"pe":pe[e][:15],
+        "bt":round(BT[e]*1000,2),"pr":round(PR[e]*1000,3),"cc":round(CC[e],2),"br":bridge(e),"jud":jud.get(e,0)} for e in G.nodes()]
+# l = especificidade (lift): peças em comum observadas / esperadas se os dois nomes fossem independentes
+edges=[{"s":nid[s],"d":nid[d],"w":dd["w"],"p":dd["procs"],"l":round(min(999.0,dd["w"]*D_NARR/(G.nodes[s]["docs"]*G.nodes[d]["docs"])),1)} for s,d,dd in G.edges(data=True)]
 # citações por entidade (peças narrativas), sem nome de arquivo/subtipo
 cit={}
 for e,p,seq,tipo,page,n in c.sql("""SELECT entity, processo, seq, tipo, min(page), count(*) FROM cm GROUP BY 1,2,3,4 QUALIFY row_number() OVER (PARTITION BY entity ORDER BY count(*) DESC, processo, seq)<=25""").fetchall():
@@ -68,7 +81,7 @@ for e,p,seq,tipo,page,n in c.sql("""SELECT entity, processo, seq, tipo, min(page
 etl={}
 for e,mo,n in c.sql("""SELECT cm.entity, left(m.value,7) mes, count(*) FROM cm JOIN mentions m ON m.doc_id=cm.doc_id AND m.page=cm.page AND m.kind='date'
   WHERE m.value BETWEEN '2015-01' AND '2026-12' GROUP BY 1,2""").fetchall(): etl.setdefault(e,{})[mo]=int(n)
-entities={ (e if vis[e] else label[e]): {"label":label[e],"papel":G.nodes[e]["papel"],"vis":vis[e],"cit":cit.get(e,[]),"tl":etl.get(e,{})} for e in G.nodes()}
+entities={ (e if vis[e] else label[e]): {"label":label[e],"papel":G.nodes[e]["papel"],"vis":vis[e],"cit":cit.get(e,[]),"tl":etl.get(e,{}),"tp":tp.get(e,{})} for e in G.nodes()}
 # processos
 procs_out=[]
 for p,pdfs,pages,tipos in c.sql("""SELECT processo, count(*), sum(pages), map_from_entries(list((tipo, n))) FROM (SELECT processo, tipo, count(*) n, sum(pages) pages, count(*) cnt FROM docs WHERE ext='pdf' GROUP BY 1,2) t GROUP BY 1""").fetchall():
@@ -99,7 +112,7 @@ cnpjs=[{"cnpj":a,"procs":b,"docs":cc,"nome":d.title()} for a,b,cc,d,_ in cn]
 tot=c.sql("SELECT count(*) pdfs, sum(pages) pg, sum(chars) ch FROM docs WHERE ext='pdf'").fetchone()
 meta={"gerado_em":time.strftime("%Y-%m-%d %H:%M UTC",time.gmtime()),"fonte":{"nota":"https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/","pacote":"Pet16704.7z (Azure Blob do STF)","bytes":23826852064,"last_modified":"2026-09-11T21:33:57Z"},
       "corpus":{"pdfs":int(tot[0]),"paginas":int(tot[1]),"caracteres":int(tot[2]),"processos":PROCS},
-      "grafo":{"nos":len(nodes),"arestas":len(edges),"visiveis":sum(1 for n in nodes if n["vis"]),"pseudonimizados":sum(1 for n in nodes if not n["vis"]),"comunidades":len(comms)},
+      "grafo":{"nos":len(nodes),"arestas":len(edges),"visiveis":sum(1 for n in nodes if n["vis"]),"pseudonimizados":sum(1 for n in nodes if not n["vis"]),"comunidades":len(comms),"docs_narrativos":D_NARR},
       "sanitizacao":"empresas, autoridades e advogados nomeados; pessoas nomeadas apenas se citadas em decisão/despacho/petição inicial ou recorrentes em >=2 processos e >=3 peças; demais pseudonimizadas (código estável). Sem CPF, inscrição profissional, endereços, nomes de arquivo ou texto integral."}
 def dump(name,obj): json.dump(obj,open(f"{OUT}/{name}","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
 dump("graph.json",{"nodes":nodes,"edges":edges});
@@ -111,7 +124,19 @@ for s_,d_,tipo_,n_ in c.sql("""SELECT e.s, e.d, x.tipo, count(DISTINCT x.doc_id)
     det.setdefault(f"{s_}|{d_}",{"tipos":{},"cit":[]})["tipos"][tipo_]=int(n_)
 for s_,d_,p_,seq_,tipo_,pg_,n_ in c.sql("""SELECT s,d,processo,seq,tipo,page,n FROM (SELECT e.s, e.d, x.processo, x.seq, x.tipo, min(x.page) page, count(*) n, row_number() OVER (PARTITION BY e.s,e.d ORDER BY count(*) DESC, x.processo, x.seq) rn FROM ex_edges e JOIN cm x ON x.entity=e.a JOIN cm y ON y.entity=e.b AND y.doc_id=x.doc_id AND y.page=x.page GROUP BY e.s,e.d,x.processo,x.seq,x.tipo) WHERE rn<=8""").fetchall():
     det.setdefault(f"{s_}|{d_}",{"tipos":{},"cit":[]})["cit"].append([p_,int(seq_),tipo_,int(pg_),int(n_)])
-dump("edges_detail.json",det); dump("entities.json",entities); dump("processos.json",procs_out)
+dump("edges_detail.json",det)
+# período das ligações: datas citadas nas páginas em que os dois nomes aparecem, por trimestre (para o filtro temporal do grafo)
+c.execute("CREATE TABLE cmp AS SELECT DISTINCT entity, doc_id, page FROM cm")
+etq={}
+for s_,d_,q_,n_ in c.sql("""SELECT e.s, e.d, substr(m.value,1,4)||'T'||cast((cast(substr(m.value,6,2) AS INT)+2)//3 AS VARCHAR) q, count(*) n
+  FROM ex_edges e JOIN cmp x ON x.entity=e.a JOIN cmp y ON y.entity=e.b AND y.doc_id=x.doc_id AND y.page=x.page
+  JOIN mentions m ON m.doc_id=x.doc_id AND m.page=x.page AND m.kind='date' AND m.value BETWEEN '2015-01' AND '2026-12' GROUP BY 1,2,3""").fetchall(): etq.setdefault(f"{s_}|{d_}",{})[q_]=int(n_)
+dump("edges_tl.json",etq)
+# primeiro e último mês com datas citadas junto ao nome (>=2 ocorrências; senão qualquer)
+for n_,e in zip(nodes,G.nodes()):
+    ms=sorted(k for k,v in etl.get(e,{}).items() if v>=2) or sorted(etl.get(e,{}))
+    n_["m0"]=ms[0] if ms else None; n_["m1"]=ms[-1] if ms else None
+dump("graph.json",{"nodes":nodes,"edges":edges}); dump("entities.json",entities); dump("processos.json",procs_out)
 dump("crossrefs.json",[{"s":a,"d":b,"n":int(n)} for a,b,n in xr]); dump("timeline.json",tl_out); dump("cnpjs.json",cnpjs); dump("meta.json",meta)
 # GATE: varredura de padrões proibidos na saída
 bad=[]

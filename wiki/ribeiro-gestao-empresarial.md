@@ -1,14 +1,14 @@
 # Ribeiro Gestão Empresarial
 **Empresa** · 11 peças narrativas · 5 processos · 26 menções
 
-Ribeiro Gestão Empresarial aparece em 11 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (6), PET 15693 (2), PET 15976 (1), PET 16019 (1), PET 15977 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-07. Divide páginas com maior frequência com Felipe Cancado Vorcaro.
+Ribeiro Gestão Empresarial aparece em 11 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (6), PET 15693 (2), PET 15977 (1), PET 15976 (1), PET 16019 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-07. Divide páginas com maior frequência com Felipe Cancado Vorcaro.
 
 ## Presença por processo
 - PET 15978: 6 peças
 - PET 15693: 2 peças
+- PET 15977: 1 peças
 - PET 15976: 1 peças
 - PET 16019: 1 peças
-- PET 15977: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 9 peças em comum, 4 processos

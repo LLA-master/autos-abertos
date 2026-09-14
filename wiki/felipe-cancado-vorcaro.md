@@ -1,17 +1,17 @@
 # Felipe Cancado Vorcaro
 **Pessoa** · 52 peças narrativas · 10 processos · 712 menções
 
-Felipe Cancado Vorcaro aparece em 52 peças narrativas de 10 dos 15 processos, com maior presença em PET 15198 (15), PET 15978 (15), INQ 5026 (7), PET 15693 (3), PET 15976 (3). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Ribeiro Gestão Empresarial.
+Felipe Cancado Vorcaro aparece em 52 peças narrativas de 10 dos 15 processos, com maior presença em PET 15978 (15), PET 15198 (15), INQ 5026 (7), PET 15693 (3), PET 15976 (3). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Ribeiro Gestão Empresarial.
 
 ## Presença por processo
-- PET 15198: 15 peças
 - PET 15978: 15 peças
+- PET 15198: 15 peças
 - INQ 5026: 7 peças
 - PET 15693: 3 peças
 - PET 15976: 3 peças
 - PET 15556: 3 peças
-- PET 15977: 2 peças
 - PET 16019: 2 peças
+- PET 15977: 2 peças
 - PET 15562: 1 peças
 - PET 15563: 1 peças
 

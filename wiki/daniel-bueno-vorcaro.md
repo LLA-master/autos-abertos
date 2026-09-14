@@ -11,14 +11,14 @@ Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, co
 - RCL 88121: 13 peças
 - PET 15562: 7 peças
 - PET 16662: 6 peças
-- PET 15504: 5 peças
 - INQ 5035: 5 peças
+- PET 15504: 5 peças
 - PET 15563: 4 peças
-- PET 15976: 3 peças
 - PET 15693: 3 peças
 - PET 15478: 3 peças
-- PET 15977: 2 peças
+- PET 15976: 3 peças
 - PET 16019: 2 peças
+- PET 15977: 2 peças
 
 ## Aparece junto de — Pessoas
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 33 peças em comum, 10 processos

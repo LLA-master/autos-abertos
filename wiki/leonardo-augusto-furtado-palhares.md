@@ -1,16 +1,16 @@
 # Leonardo Augusto Furtado Palhares
 **Pessoa** · 35 peças narrativas · 7 processos · 95 menções
 
-Leonardo Augusto Furtado Palhares aparece em 35 peças narrativas de 7 dos 15 processos, com maior presença em PET 15563 (18), PET 15556 (7), PET 15562 (4), INQ 5026 (3), PET 15198 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-03. Divide páginas com maior frequência com Belline Santana e, entre empresas, com Moriah Asset Empreendimentos.
+Leonardo Augusto Furtado Palhares aparece em 35 peças narrativas de 7 dos 15 processos, com maior presença em PET 15563 (18), PET 15556 (7), PET 15562 (4), INQ 5026 (3), PET 16662 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-03. Divide páginas com maior frequência com Belline Santana e, entre empresas, com Moriah Asset Empreendimentos.
 
 ## Presença por processo
 - PET 15563: 18 peças
 - PET 15556: 7 peças
 - PET 15562: 4 peças
 - INQ 5026: 3 peças
-- PET 15198: 1 peças
-- PET 15504: 1 peças
 - PET 16662: 1 peças
+- PET 15504: 1 peças
+- PET 15198: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Belline Santana](belline-santana.md) — 15 peças em comum, 3 processos

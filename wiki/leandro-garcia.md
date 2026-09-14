@@ -1,17 +1,17 @@
 # Leandro Garcia
 **Pessoa** · 10 peças narrativas · 8 processos · 26 menções
 
-Leandro Garcia aparece em 10 peças narrativas de 8 dos 15 processos, com maior presença em PET 15978 (3), PET 15562 (1), PET 15556 (1), PET 15693 (1), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2024-05. Divide páginas com maior frequência com Felipe Cancado Vorcaro.
+Leandro Garcia aparece em 10 peças narrativas de 8 dos 15 processos, com maior presença em PET 15978 (3), PET 15693 (1), PET 16019 (1), PET 15976 (1), PET 15562 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2024-05. Divide páginas com maior frequência com Felipe Cancado Vorcaro.
 
 ## Presença por processo
 - PET 15978: 3 peças
-- PET 15562: 1 peças
-- PET 15556: 1 peças
 - PET 15693: 1 peças
+- PET 16019: 1 peças
 - PET 15976: 1 peças
+- PET 15562: 1 peças
 - PET 15977: 1 peças
 - PET 15563: 1 peças
-- PET 16019: 1 peças
+- PET 15556: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 10 peças em comum, 8 processos

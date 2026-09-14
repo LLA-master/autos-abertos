@@ -1,12 +1,12 @@
 # Master Holding Financeira
 **Empresa** · 7 peças narrativas · 4 processos · 29 menções
 
-Master Holding Financeira aparece em 7 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (4), PET 15556 (1), PET 15563 (1), PET 15562 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Máxima.
+Master Holding Financeira aparece em 7 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (4), PET 15563 (1), PET 15556 (1), PET 15562 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Máxima.
 
 ## Presença por processo
 - INQ 5026: 4 peças
-- PET 15556: 1 peças
 - PET 15563: 1 peças
+- PET 15556: 1 peças
 - PET 15562: 1 peças
 
 ## Aparece junto de — Pessoas

@@ -1,15 +1,15 @@
 # Gilmar Mendes
 **Autoridade** · 11 peças narrativas · 6 processos · 19 menções
 
-Gilmar Mendes aparece em 11 peças narrativas de 6 dos 15 processos, com maior presença em PET 15556 (5), INQ 5026 (2), PET 15563 (1), PET 15198 (1), PET 15562 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-03. Divide páginas com maior frequência com Fabiano Campos Zettel.
+Gilmar Mendes aparece em 11 peças narrativas de 6 dos 15 processos, com maior presença em PET 15556 (5), INQ 5026 (2), PET 15562 (1), PET 16662 (1), PET 15563 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-03. Divide páginas com maior frequência com Fabiano Campos Zettel.
 
 ## Presença por processo
 - PET 15556: 5 peças
 - INQ 5026: 2 peças
-- PET 15563: 1 peças
-- PET 15198: 1 peças
 - PET 15562: 1 peças
 - PET 16662: 1 peças
+- PET 15563: 1 peças
+- PET 15198: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 2 peças em comum, 1 processos

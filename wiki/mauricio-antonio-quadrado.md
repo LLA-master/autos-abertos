@@ -1,17 +1,17 @@
 # Maurício Antonio Quadrado
 **Pessoa** · 17 peças narrativas · 8 processos · 56 menções
 
-Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (6), INQ 5026 (4), PET 15976 (2), PET 15562 (1), PET 15556 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Nelson Sequeiros Rodriguez Tanure e, entre empresas, com Banco Master.
+Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (6), INQ 5026 (4), PET 15976 (2), PET 15978 (1), PET 15562 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Nelson Sequeiros Rodriguez Tanure e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - PET 15198: 6 peças
 - INQ 5026: 4 peças
 - PET 15976: 2 peças
-- PET 15562: 1 peças
-- PET 15556: 1 peças
-- PET 15563: 1 peças
-- PET 15977: 1 peças
 - PET 15978: 1 peças
+- PET 15562: 1 peças
+- PET 15977: 1 peças
+- PET 15563: 1 peças
+- PET 15556: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 13 peças em comum, 8 processos

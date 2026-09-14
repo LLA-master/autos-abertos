@@ -1,5 +1,5 @@
 # Personagens
-Fichas geradas automaticamente a partir dos dados públicos sanitizados (2026-09-12 19:53 UTC). Critério: presença em ao menos 8 peças narrativas ou 4 processos. Coocorrência na mesma página não prova relação.
+Fichas geradas automaticamente a partir dos dados públicos sanitizados (2026-09-13 13:42 UTC). Critério: presença em ao menos 8 peças narrativas ou 4 processos. Coocorrência na mesma página não prova relação.
 
 ## Pessoas
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 141 peças, 15 processos

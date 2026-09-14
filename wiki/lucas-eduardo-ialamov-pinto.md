@@ -1,13 +1,13 @@
 # Lucas Eduardo Ialamov Pinto
 **Pessoa** · 4 peças narrativas · 4 processos · 4 menções
 
-Lucas Eduardo Ialamov Pinto aparece em 4 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (1), INQ 5035 (1), PET 15504 (1), PET 15198 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Marco Antonio Chies Martins.
+Lucas Eduardo Ialamov Pinto aparece em 4 peças narrativas de 4 dos 15 processos, com maior presença em PET 15504 (1), PET 15198 (1), INQ 5035 (1), INQ 5026 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Marco Antonio Chies Martins.
 
 ## Presença por processo
-- INQ 5026: 1 peças
-- INQ 5035: 1 peças
 - PET 15504: 1 peças
 - PET 15198: 1 peças
+- INQ 5035: 1 peças
+- INQ 5026: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Marco Antonio Chies Martins](marco-antonio-chies-martins.md) — 4 peças em comum, 4 processos

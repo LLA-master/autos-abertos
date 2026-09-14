@@ -1,15 +1,15 @@
 # Cristiano Cozer
 **Autoridade** · 16 peças narrativas · 6 processos · 18 menções
 
-Cristiano Cozer aparece em 16 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5026 (8), RCL 88121 (3), PET 15198 (2), PET 15556 (1), PET 15563 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-12. Divide páginas com maior frequência com Belline Santana.
+Cristiano Cozer aparece em 16 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5026 (8), RCL 88121 (3), PET 15198 (2), PET 15556 (1), PET 15562 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-12. Divide páginas com maior frequência com Belline Santana.
 
 ## Presença por processo
 - INQ 5026: 8 peças
 - RCL 88121: 3 peças
 - PET 15198: 2 peças
 - PET 15556: 1 peças
-- PET 15563: 1 peças
 - PET 15562: 1 peças
+- PET 15563: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Belline Santana](belline-santana.md) — 3 peças em comum, 3 processos

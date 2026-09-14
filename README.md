@@ -6,7 +6,8 @@ Base de dados aberta e navegável sobre o acervo que o Supremo Tribunal Federal 
 
 ## O que há aqui
 
-- `docs/` — o site estático: trilhas guiadas, grafo de relações, fichas por entidade, processos e linha do tempo.
+- `docs/` — o site estático: tour guiado, grafo de relações (com métricas de rede, vistas prontas, filtro por período, exportação e link permanente), mapa mental, fichas por entidade, análise de rede, processos, linha do tempo e crônicas.
+- `docs/posts/` — as crônicas, em Markdown com cabeçalho (título, subtítulo, data, tags). `pipeline/build_posts.py` gera `docs/posts/index.json` e `docs/feed.xml`. São textos de opinião do autor, separados da base.
 - `docs/data/` — os dados derivados e sanitizados que o site consome (JSON). É a **única** coisa que sai do acervo.
 - `pipeline/` — os scripts que produzem esses dados a partir do acervo bruto (que não está neste repositório e não deve estar).
 - `POLITICA_DE_SANITIZACAO.md` — o que entra, o que não entra, e por quê.
@@ -26,10 +27,15 @@ Cada relação no grafo aponta para peças específicas (processo, número seque
 export BMDB_RAW=/caminho/para/arquivos   # PDFs extraídos do pacote do STF
 export BMDB_WORK=/caminho/para/work      # área de trabalho local
 python3 -m venv $BMDB_WORK/.venv && $BMDB_WORK/.venv/bin/pip install -r pipeline/requirements.txt
-for s in 1 2 3 4 5 6; do $BMDB_WORK/.venv/bin/python pipeline/stage${s}_*.py; done
+for s in 1 2 3 4 5 6 7; do $BMDB_WORK/.venv/bin/python pipeline/stage${s}_*.py; done
+python3 pipeline/build_posts.py   # crônicas: índice e feed
 ```
 
 Requer `poppler` (pdftotext/pdfinfo), `tesseract` com o pacote `por` e `ocrmypdf`.
+
+## O que o site calcula (v0.2)
+
+Além das contagens (peças, processos, menções), o estágio 6 exporta métricas de rede por nó: intermediação ("pontes"), PageRank ("influência"), coeficiente de agrupamento, parcela das ligações que sai do núcleo e número de atos judiciais (decisão, despacho, petição inicial) em que o nome aparece; por ligação, a especificidade (lift) e as datas citadas por trimestre. O navegador recalcula pontes e influência sobre o recorte visível. Definições e limites em `METODOLOGIA.md` e na seção Método do site.
 
 ## Licenças
 

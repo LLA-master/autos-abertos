@@ -1,15 +1,15 @@
 # Marcelo Leonardo
 **Advogado** · 10 peças narrativas · 7 processos · 18 menções
 
-Marcelo Leonardo aparece em 10 peças narrativas de 7 dos 15 processos, com maior presença em INQ 5026 (4), PET 15556 (1), RCL 88121 (1), INQ 5035 (1), PET 15504 (1). É classificado como Advogado pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Daniel Bueno Vorcaro.
+Marcelo Leonardo aparece em 10 peças narrativas de 7 dos 15 processos, com maior presença em INQ 5026 (4), PET 15504 (1), PET 15198 (1), PET 15556 (1), RCL 88121 (1). É classificado como Advogado pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Daniel Bueno Vorcaro.
 
 ## Presença por processo
 - INQ 5026: 4 peças
+- PET 15504: 1 peças
+- PET 15198: 1 peças
 - PET 15556: 1 peças
 - RCL 88121: 1 peças
 - INQ 5035: 1 peças
-- PET 15504: 1 peças
-- PET 15198: 1 peças
 - PET 15562: 1 peças
 
 ## Aparece junto de — Pessoas

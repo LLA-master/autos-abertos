@@ -1,13 +1,13 @@
 # Nova Farma Drogaria
 **Empresa** · 6 peças narrativas · 4 processos · 6 menções
 
-Nova Farma Drogaria aparece em 6 peças narrativas de 4 dos 15 processos, com maior presença em PET 15978 (3), PET 15977 (1), PET 15976 (1), PET 16019 (1). É classificado como Empresa pelo pipeline. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Drogaria Saúde Vida.
+Nova Farma Drogaria aparece em 6 peças narrativas de 4 dos 15 processos, com maior presença em PET 15978 (3), PET 16019 (1), PET 15977 (1), PET 15976 (1). É classificado como Empresa pelo pipeline. Divide páginas com maior frequência com David Henrique Alves e, entre empresas, com Drogaria Saúde Vida.
 
 ## Presença por processo
 - PET 15978: 3 peças
+- PET 16019: 1 peças
 - PET 15977: 1 peças
 - PET 15976: 1 peças
-- PET 16019: 1 peças
 
 ## Aparece junto de — Pessoas
 - [David Henrique Alves](david-henrique-alves.md) — 6 peças em comum, 4 processos

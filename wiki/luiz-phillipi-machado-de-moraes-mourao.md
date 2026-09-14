@@ -1,18 +1,18 @@
 # Luiz Phillipi Machado de Moraes Mourão
 **Pessoa** · 19 peças narrativas · 8 processos · 45 menções
 
-Luiz Phillipi Machado de Moraes Mourão aparece em 19 peças narrativas de 8 dos 15 processos, com maior presença em PET 15978 (7), PET 15563 (4), PET 15693 (2), PET 15976 (2), PET 16019 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Moriah Asset Empreendimentos.
+Luiz Phillipi Machado de Moraes Mourão aparece em 19 peças narrativas de 8 dos 15 processos, com maior presença em PET 15978 (7), PET 15563 (4), PET 15693 (2), PET 16019 (2), PET 15976 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Moriah Asset Empreendimentos.
 
 ## Presença por processo
 - PET 15978: 7 peças
 - PET 15563: 4 peças
 - PET 15693: 2 peças
-- PET 15976: 2 peças
 - PET 16019: 2 peças
-- PET 15562: 1 peças
-- PET 15556: 1 peças
-- PET 15977: 1 peças
+- PET 15976: 2 peças
 - INQ 5026: 1 peças
+- PET 15562: 1 peças
+- PET 15977: 1 peças
+- PET 15556: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 12 peças em comum, 6 processos

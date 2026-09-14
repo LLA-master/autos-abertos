@@ -1,17 +1,17 @@
 # Banco Brb
 **Empresa** · 13 peças narrativas · 8 processos · 17 menções
 
-Banco Brb aparece em 13 peças narrativas de 8 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (2), PET 15556 (1), PET 15978 (1), PET 15563 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Felipe Cancado Vorcaro e, entre empresas, com Banco Master.
+Banco Brb aparece em 13 peças narrativas de 8 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (2), PET 15976 (1), PET 15562 (1), PET 15978 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Felipe Cancado Vorcaro e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - INQ 5026: 5 peças
 - PET 15198: 2 peças
-- PET 15556: 1 peças
-- PET 15978: 1 peças
-- PET 15563: 1 peças
-- PET 15977: 1 peças
 - PET 15976: 1 peças
 - PET 15562: 1 peças
+- PET 15978: 1 peças
+- PET 15977: 1 peças
+- PET 15563: 1 peças
+- PET 15556: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 3 peças em comum, 3 processos

@@ -1,13 +1,13 @@
 # Antonio Augusto Conte
 **Pessoa** · 15 peças narrativas · 4 processos · 69 menções
 
-Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (4), PET 15978 (1), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Henrique Moura Vorcaro e, entre empresas, com Banco Master.
+Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (4), PET 15976 (1), PET 15978 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Henrique Moura Vorcaro e, entre empresas, com Banco Master.
 
 ## Presença por processo
 - PET 15198: 9 peças
 - INQ 5026: 4 peças
-- PET 15978: 1 peças
 - PET 15976: 1 peças
+- PET 15978: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 4 processos

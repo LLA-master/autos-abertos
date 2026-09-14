@@ -9,14 +9,14 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - PET 15556: 11 peças
 - INQ 5026: 6 peças
 - PET 15976: 6 peças
-- PET 15977: 2 peças
 - PET 15693: 2 peças
-- PET 16662: 1 peças
+- PET 15977: 2 peças
+- PET 15504: 1 peças
 - PET 15563: 1 peças
 - PET 16019: 1 peças
-- PET 15562: 1 peças
-- PET 15504: 1 peças
+- PET 16662: 1 peças
 - INQ 5035: 1 peças
+- PET 15562: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 32 peças em comum, 8 processos

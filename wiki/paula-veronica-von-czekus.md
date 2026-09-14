@@ -1,15 +1,15 @@
 # Paula Verônica von Czekus
 **Autoridade** · 9 peças narrativas · 6 processos · 9 menções
 
-Paula Verônica von Czekus aparece em 9 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (4), PET 15693 (1), INQ 5026 (1), RCL 88121 (1), PET 15976 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-02. .
+Paula Verônica von Czekus aparece em 9 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (4), PET 15976 (1), INQ 5035 (1), RCL 88121 (1), INQ 5026 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-02. .
 
 ## Presença por processo
 - PET 15198: 4 peças
-- PET 15693: 1 peças
-- INQ 5026: 1 peças
-- RCL 88121: 1 peças
 - PET 15976: 1 peças
 - INQ 5035: 1 peças
+- RCL 88121: 1 peças
+- INQ 5026: 1 peças
+- PET 15693: 1 peças
 
 ## Aparece junto de — Autoridades
 - [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 9 peças em comum, 6 processos

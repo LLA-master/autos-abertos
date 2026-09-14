@@ -1,14 +1,14 @@
 # Sebastião Monteiro Júnior
 **Pessoa** · 35 peças narrativas · 5 processos · 212 menções
 
-Sebastião Monteiro Júnior aparece em 35 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (21), PET 16019 (8), PET 15693 (2), PET 15976 (2), PET 15977 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Manoel Mendes Rodrigues e, entre empresas, com Ribeiro Gestão Empresarial.
+Sebastião Monteiro Júnior aparece em 35 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (21), PET 16019 (8), PET 15976 (2), PET 15977 (2), PET 15693 (2). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Manoel Mendes Rodrigues e, entre empresas, com Ribeiro Gestão Empresarial.
 
 ## Presença por processo
 - PET 15978: 21 peças
 - PET 16019: 8 peças
-- PET 15693: 2 peças
 - PET 15976: 2 peças
 - PET 15977: 2 peças
+- PET 15693: 2 peças
 
 ## Aparece junto de — Pessoas
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 16 peças em comum, 5 processos

@@ -1,12 +1,12 @@
 # Varajo Consultoria
 **Empresa** · 9 peças narrativas · 3 processos · 15 menções
 
-Varajo Consultoria aparece em 9 peças narrativas de 3 dos 15 processos, com maior presença em PET 15563 (5), PET 15556 (2), PET 15562 (2). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-02. Divide páginas com maior frequência com Leonardo Augusto Furtado Palhares e, entre empresas, com Moriah Asset Empreendimentos.
+Varajo Consultoria aparece em 9 peças narrativas de 3 dos 15 processos, com maior presença em PET 15563 (5), PET 15562 (2), PET 15556 (2). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-02. Divide páginas com maior frequência com Leonardo Augusto Furtado Palhares e, entre empresas, com Moriah Asset Empreendimentos.
 
 ## Presença por processo
 - PET 15563: 5 peças
-- PET 15556: 2 peças
 - PET 15562: 2 peças
+- PET 15556: 2 peças
 
 ## Aparece junto de — Pessoas
 - [Leonardo Augusto Furtado Palhares](leonardo-augusto-furtado-palhares.md) — 9 peças em comum, 3 processos

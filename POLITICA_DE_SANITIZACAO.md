@@ -29,3 +29,7 @@ O único script que escreve em `docs/data/` é `pipeline/stage6_export.py`. Ele 
 ## Como pedir correção
 
 Se você aparece neste site e entende que sua menção é incidental, ou que há erro de identificação (nomes homônimos são possíveis), abra uma issue. A regra pode errar; o compromisso é corrigir rápido.
+
+## Crônicas
+
+A seção Crônicas do site é editorial: textos de opinião do autor do projeto sobre os mesmos dados públicos. Segue a mesma política: nenhum nome que a base pseudonimiza aparece numa crônica; nenhum dado pessoal; nenhuma afirmação de culpa. Quando uma crônica cita um número, o número está em `docs/data/`; quando cita uma peça, indica processo, seq e página. Erros de fato se corrigem no texto, com nota.

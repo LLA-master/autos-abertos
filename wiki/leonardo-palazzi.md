@@ -1,15 +1,15 @@
 # Leonardo Palazzi
 **Advogado** · 6 peças narrativas · 6 processos · 6 menções
 
-Leonardo Palazzi aparece em 6 peças narrativas de 6 dos 15 processos, com maior presença em PET 15556 (1), PET 15504 (1), PET 15562 (1), INQ 5026 (1), PET 15198 (1). É classificado como Advogado pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Marco Antonio Chies Martins.
+Leonardo Palazzi aparece em 6 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5035 (1), PET 15562 (1), INQ 5026 (1), PET 15556 (1), PET 15198 (1). É classificado como Advogado pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2026-05. Divide páginas com maior frequência com Marco Antonio Chies Martins.
 
 ## Presença por processo
-- PET 15556: 1 peças
-- PET 15504: 1 peças
+- INQ 5035: 1 peças
 - PET 15562: 1 peças
 - INQ 5026: 1 peças
+- PET 15556: 1 peças
 - PET 15198: 1 peças
-- INQ 5035: 1 peças
+- PET 15504: 1 peças
 
 ## Aparece junto de — Pessoas
 - [Marco Antonio Chies Martins](marco-antonio-chies-martins.md) — 6 peças em comum, 6 processos
