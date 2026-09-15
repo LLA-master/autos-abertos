@@ -44,8 +44,8 @@ HTML = [
  ('<a href="#tempo" data-nav="tempo">Tempo</a>', '<a href="#tempo" data-nav="tempo">Timeline</a>'),
  ('<a href="#cronicas" data-nav="cronicas">Crônicas</a>', '<a href="#cronicas" data-nav="cronicas">Chronicles</a>'),
  ('<a href="#metodo" data-nav="metodo">Método</a>\n    <a href="#avisos" data-nav="avisos">Avisos</a>', '<a href="#metodo" data-nav="metodo">Method</a>\n    <a href="#avisos" data-nav="avisos">Disclaimers</a>'),
- ('<a class="lang" href="en.html" hreflang="en" title="English version">EN</a>\n  <span class="ver" title="Versão 0.2: métricas de rede, análise e filtros temporais; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.2 · dados em revisão</span>',
-  '<a class="lang" href="index.html" hreflang="pt-BR" title="Versão em português">PT</a>\n  <span class="ver" title="Version 0.2: network metrics, analysis and time filters; automatic extraction and curation under review; names, roles and relations may change">v0.2 · data under review</span>'),
+ ('<a class="lang" href="en.html" hreflang="en" title="English version">EN</a>\n  <span class="ver" title="Versão 0.6: decisões na íntegra, excertos, rastro documental e busca; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.6 · dados em revisão</span>',
+  '<a class="lang" href="index.html" hreflang="pt-BR" title="Versão em português">PT</a>\n  <span class="ver" title="Version 0.6: rulings in full, excerpts, document trail and search; automatic extraction and curation under review; names, roles and relations may change">v0.6 · data under review</span>'),
  ('aria-label="Alternar noite e dia" title="Noite / dia"', 'aria-label="Toggle night and day" title="Night / day"'),
  # início
  ('<p class="eyebrow">Acervo público do STF · Pet 15.556 e conexos · Operação Compliance Zero</p>', '<p class="eyebrow">Public record of Brazil\'s Supreme Court · Pet 15.556 and related proceedings · Operation Compliance Zero</p>'),
