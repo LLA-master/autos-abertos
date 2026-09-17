@@ -18,6 +18,8 @@
 .fig{margin:1.6em 0;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 8px;overflow-x:auto}
 .fig svg{display:block;width:100%;height:auto;font-family:var(--font)}
 .fig figcaption{font-family:var(--font);font-size:13px;color:var(--muted);margin:8px 4px 4px}
+.fig .hint{display:none}
+.fig figcaption.so-hint{display:none}
 .fig .t{fill:var(--ink);font-size:13px}.fig .s{fill:var(--muted);font-size:11px}.fig .h{fill:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:.02em}
 .fig .box{fill:var(--bg3);stroke:var(--line);stroke-width:1}.fig .box.pink{stroke:var(--pink)}.fig .box.cyan{stroke:var(--cyan)}.fig .box.gold{stroke:var(--gold)}.fig .box.violet{stroke:var(--violet)}.fig .box.bad{stroke:var(--bad)}
 .fig .ln{stroke:var(--muted);stroke-width:1.4;fill:none}.fig .ln.pink{stroke:var(--pink)}.fig .ln.cyan{stroke:var(--cyan)}.fig .ln.gold{stroke:var(--gold)}.fig .ln.bad{stroke:var(--bad)}
@@ -40,6 +42,9 @@
 .toc a{border:1px solid var(--line);border-radius:99px;padding:5px 11px;text-decoration:none;color:var(--ink2);background:var(--bg2)}.toc a:hover{border-color:var(--pink);color:var(--ink)}
 .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 8px;border:1px solid var(--line);color:var(--muted);vertical-align:middle;margin-left:6px}
 .tag.p{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 50%,transparent)}.tag.i{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,transparent)}.tag.a{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 50%,transparent)}
+/* enquanto a coluna couber menos de 800 px, o desenho rola em vez de encolher:
+   a 375 px ele ficava em 37% e os rótulos menores caíam para 4 px */
+@media (max-width:840px){.fig svg{min-width:800px}.fig .hint{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin:0 0 6px}.fig figcaption.so-hint{display:block;margin-top:2px}}
 @media (max-width:640px){.two{grid-template-columns:1fr}.dz .cr-body{font-size:17.5px}.dz h2.cap{font-size:24px}}
 </style>
 </head>
@@ -149,7 +154,7 @@
 <text class="t" x="24" y="248">RAB, registro de imóveis e Receita mostram uma companhia de nome neutro, capital vindo de AFAC e sem quadro acionário.</text>
 <text class="s" x="24" y="266">Quem é dono da fração só aparece em boletim de subscrição, livro de ações, contrato de compartilhamento ou nos autos.</text>
 </svg>
-<figcaption>O ciclo, provado 24 vezes em ata. O exemplo é real: a Fraction 042 nasceu em 03.01.2023 com R$ 101, virou PS-MGG em 30.09.2024 e chegou a R$ 543,9 milhões de capital em 14.10.2025, tudo por capitalização de AFAC. Fonte: ficha JUCESP NIRE 35.300.607.643.</figcaption>
+<figcaption><span class="hint">← arraste o desenho para o lado →</span>O ciclo, provado 24 vezes em ata. O exemplo é real: a Fraction 042 nasceu em 03.01.2023 com R$ 101, virou PS-MGG em 30.09.2024 e chegou a R$ 543,9 milhões de capital em 14.10.2025, tudo por capitalização de AFAC. Fonte: ficha JUCESP NIRE 35.300.607.643.</figcaption>
 </figure>
 
 <p>A consequência não é um acidente do modelo; é o modelo. Ao fim do ciclo, o jato está registrado em nome de uma companhia cujo nome não remete a pessoa alguma, cujo capital não revela origem, porque veio de um adiantamento cujo autor não se declara, e cujos donos não constam de base pública nenhuma. Para nomear o primeiro acionista de uma SPE do grupo foi preciso pedir à Junta o inteiro teor de um boletim de subscrição de 2014.</p>
@@ -189,7 +194,7 @@
 <text class="t" x="480" y="282">27.01.2026 · certidão: "sem transmissão posterior"</text><text class="s" x="480" y="298">o imóvel segue em nome de uma empresa que já não existe com esse nome</text>
 </g>
 </svg>
-<figcaption>À esquerda, a descrição da projeção 5-B tal como consta da matrícula. À direita, a sequência de registros. Os dois particulares anteriores não são nomeados aqui: não têm relação com o caso. Fonte: certidão 26/000334 do 1º Ofício de Angra dos Reis, 27.01.2026.</figcaption>
+<figcaption><span class="hint">← arraste o desenho para o lado →</span>À esquerda, a descrição da projeção 5-B tal como consta da matrícula. À direita, a sequência de registros. Os dois particulares anteriores não são nomeados aqui: não têm relação com o caso. Fonte: certidão 26/000334 do 1º Ofício de Angra dos Reis, 27.01.2026.</figcaption>
 </figure>
 
 <p>O registro R.09 é o que interessa. Em 9 de agosto de 2022, a PrimeAviation 2 Participações S.A., sociedade anônima fechada, sede em Alphaville, comprou a projeção 5-B por R$ 2,5 milhões, "integralmente pagos". A mesma matrícula guarda um detalhe que a leitura apressada perde: a escritura anterior, de 2016, pela qual o vendedor havia adquirido o mesmo imóvel, declarava R$ 50 mil, e só foi levada a registro em maio de 2022, três meses antes da revenda por cinquenta vezes mais. Não há nada de ilegal em vender caro o que se comprou barato, e o laudêmio e o ITBI foram pagos sobre o valor cheio. Mas é o tipo de salto que um leitor de matrícula anota.</p>
@@ -225,7 +230,7 @@
 <g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">HOLDINGS "PRIMEAVIATION N"</text><text class="s" x="312" y="52">numeração usada duas vezes, 2012 e 2024 (ver abaixo)</text></g>
 <g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">OPERADORA</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo (2015): opera 9 das 12 aeronaves</text></g>
 </svg>
-<figcaption>Cada caixa lista sociedades cujo nome atual e nome de origem constam de ficha da JUCESP; o bem por trás do prefixo vem do RAB/ANAC. Os quatro números "Fraction" nunca localizados (002, 003, 005, 012) ficam fora do desenho.</figcaption>
+<figcaption><span class="hint">← arraste o desenho para o lado →</span>Cada caixa lista sociedades cujo nome atual e nome de origem constam de ficha da JUCESP; o bem por trás do prefixo vem do RAB/ANAC. Os quatro números "Fraction" nunca localizados (002, 003, 005, 012) ficam fora do desenho.</figcaption>
 </figure>
 
 <p>A tabela abaixo é a árvore posta em linha, com a data de cada batismo. Repare em três coisas. Primeira: a prática é antiga, a primeira troca é de 1º de julho de 2018. Segunda: em 22 de setembro de 2025 três companhias trocaram de nome na mesma assembleia, e o que sumiu do registro naquele dia foi uma marca, "PrimeAviation". Terceira: a numeração "PrimeAviation 1, 2, 3" foi usada duas vezes, em 2012 e de novo em 2024, sobre companhias diferentes. Quem rastreia por nome funde empresas distintas; só o NIRE separa.</p>
@@ -290,7 +295,7 @@
 </g>
 <rect class="box" x="20" y="362" width="820" height="48" rx="8" stroke-dasharray="4 4"/><text class="s" x="32" y="380">Também nomeado em ata: Maurício Antônio Quadrado, 6.674.100 ações da Real Estate Duo 001 Guarujá (penhoradas em 28.04.2025, cap. 5);</text><text class="s" x="32" y="396">Aeromatta Participações, subscritora da PP-BIO em 2014, assinada por Quadrado.</text>
 </svg>
-<figcaption>Três colunas, três donos de andar de cima. A da esquerda liga a ilha de Angra ao jato mais caro do grupo: a Domus Realty, dona da casa, é acionista da PS-MGG, dona do G700. Fontes: boletins e atas em inteiro teor, JUCESP; RAB/ANAC; INQ 5026, seq 2, p. 117.</figcaption>
+<figcaption><span class="hint">← arraste o desenho para o lado →</span>Três colunas, três donos de andar de cima. A da esquerda liga a ilha de Angra ao jato mais caro do grupo: a Domus Realty, dona da casa, é acionista da PS-MGG, dona do G700. Fontes: boletins e atas em inteiro teor, JUCESP; RAB/ANAC; INQ 5026, seq 2, p. 117.</figcaption>
 </figure>
 
 <p>Leia a coluna da esquerda de baixo para cima. O G700, avião de 500 milhões de reais, pertence à PS-MGG. A PS-MGG teve seu capital subscrito pela PrimeAviation 2, hoje Domus Realty, a mesma dona da casa da Ilha do Jorge. E a Domus teve seu capital subscrito pela Entre Investimentos, representada por Antonio Carlos Freixo Junior, a "acionista presente" das duas atas de Angra. A camada imobiliária e a camada aeronáutica não são paralelas: uma é sócia da outra. E a Entre Investimentos, como se verá no capítulo 7, está na lista de cem nomes cujo sigilo bancário o STF mandou afastar.</p>
@@ -330,6 +335,7 @@
 </g>
 <rect class="box" x="20" y="444" width="820" height="80" rx="10" stroke-dasharray="4 4"/><text class="s" x="32" y="462">Leitura: quem dirige a Banvox (Figueiredo e Quadrado) dirige a Trustee Holding; a Trustee DTVM administra</text><text class="s" x="32" y="478">os fundos que carregam as SPEs; o dinheiro captado foi, por cláusula, capitalizar o banco.</text><text class="s" x="32" y="494">Quando a emissão quebrou, foi o patrimônio guardado nas SPEs da Prime You que respondeu.</text><text class="s" x="32" y="510">Depois, uma corretora do próprio Master apareceu como credora contra o mesmo patrimônio.</text>
 </svg>
+<figcaption class="so-hint"><span class="hint">← arraste o desenho para o lado →</span></figcaption>
 </figure>
 
 <p>A ponta de 2019 é modesta e por isso mesmo eloquente. Em 23 de setembro daquele ano, a assembleia da então Fraction 011 aprovou "a contratação de operação de crédito rotativo no limite de R$ 2.850.000,00 junto ao Banco Máxima S/A", e na mesma ata rebatizou a companhia como PT-XGS, nome do Learjet que ela passava a deter. Três semanas depois, em 14 de outubro, o Banco Central autorizou a transferência do controle do Máxima a Daniel Vorcaro. O Máxima virou Master. É a relação financeira mais antiga já documentada entre o grupo e o banco, e antecede em seis anos tudo o que a imprensa cobriu. Se o crédito foi sacado e com que garantia, o registro não diz. <span class="tag p">provado</span> quanto às datas; o resto, aberto.</p>

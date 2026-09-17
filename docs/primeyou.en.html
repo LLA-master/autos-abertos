@@ -18,6 +18,8 @@
 .fig{margin:1.6em 0;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 8px;overflow-x:auto}
 .fig svg{display:block;width:100%;height:auto;font-family:var(--font)}
 .fig figcaption{font-family:var(--font);font-size:13px;color:var(--muted);margin:8px 4px 4px}
+.fig .hint{display:none}
+.fig figcaption.so-hint{display:none}
 .fig .t{fill:var(--ink);font-size:13px}.fig .s{fill:var(--muted);font-size:11px}.fig .h{fill:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:.02em}
 .fig .box{fill:var(--bg3);stroke:var(--line);stroke-width:1}.fig .box.pink{stroke:var(--pink)}.fig .box.cyan{stroke:var(--cyan)}.fig .box.gold{stroke:var(--gold)}.fig .box.violet{stroke:var(--violet)}.fig .box.bad{stroke:var(--bad)}
 .fig .ln{stroke:var(--muted);stroke-width:1.4;fill:none}.fig .ln.pink{stroke:var(--pink)}.fig .ln.cyan{stroke:var(--cyan)}.fig .ln.gold{stroke:var(--gold)}.fig .ln.bad{stroke:var(--bad)}
@@ -40,6 +42,9 @@
 .toc a{border:1px solid var(--line);border-radius:99px;padding:5px 11px;text-decoration:none;color:var(--ink2);background:var(--bg2)}.toc a:hover{border-color:var(--pink);color:var(--ink)}
 .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 8px;border:1px solid var(--line);color:var(--muted);vertical-align:middle;margin-left:6px}
 .tag.p{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 50%,transparent)}.tag.i{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,transparent)}.tag.a{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 50%,transparent)}
+/* enquanto a coluna couber menos de 800 px, o desenho rola em vez de encolher:
+   a 375 px ele ficava em 37% e os rótulos menores caíam para 4 px */
+@media (max-width:840px){.fig svg{min-width:800px}.fig .hint{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin:0 0 6px}.fig figcaption.so-hint{display:block;margin-top:2px}}
 @media (max-width:640px){.two{grid-template-columns:1fr}.dz .cr-body{font-size:17.5px}.dz h2.cap{font-size:24px}}
 </style>
 </head>
@@ -149,7 +154,7 @@
 <text class="t" x="24" y="248">Aircraft, land and tax registries show a company with a neutral name, capital arriving as an AFAC and no shareholder list.</text>
 <text class="s" x="24" y="266">Who owns the fraction appears only in a subscription form, a share ledger, a sharing contract or the court record.</text>
 </svg>
-<figcaption>The cycle, proven 24 times in minutes of meetings. The example is real: Fraction 042 was incorporated on 03.01.2023 with R$ 101, became PS-MGG on 30.09.2024 and reached R$ 543.9 million in capital on 14.10.2025, all of it by capitalising an AFAC. Source: JUCESP file, company number 35.300.607.643.</figcaption>
+<figcaption><span class="hint">← drag the diagram sideways →</span>The cycle, proven 24 times in minutes of meetings. The example is real: Fraction 042 was incorporated on 03.01.2023 with R$ 101, became PS-MGG on 30.09.2024 and reached R$ 543.9 million in capital on 14.10.2025, all of it by capitalising an AFAC. Source: JUCESP file, company number 35.300.607.643.</figcaption>
 </figure>
 
 <p>The consequence is not a side effect of the model; it is the model. At the end of the cycle the jet is registered to a company whose name points to no one, whose capital reveals no origin, because it came from an advance whose author is not named, and whose owners appear in no public database at all. To name the first shareholder of one of the group's SPEs, we had to order from the registry the full text of a share subscription form from 2014.</p>
@@ -189,7 +194,7 @@
 <text class="t" x="480" y="282">27.01.2026 · certificate: "no subsequent transfer"</text><text class="s" x="480" y="298">the property is still held by a company that no longer exists under that name</text>
 </g>
 </svg>
-<figcaption>On the left, projection 5-B as the registry entry describes it. On the right, the sequence of recorded acts. The two earlier private owners are not named here: they have no connection to the case. Source: certificate 26/000334, First Registry Office of Angra dos Reis, 27.01.2026.</figcaption>
+<figcaption><span class="hint">← drag the diagram sideways →</span>On the left, projection 5-B as the registry entry describes it. On the right, the sequence of recorded acts. The two earlier private owners are not named here: they have no connection to the case. Source: certificate 26/000334, First Registry Office of Angra dos Reis, 27.01.2026.</figcaption>
 </figure>
 
 <p>Record R.09 is the one that matters. On 9 August 2022, PrimeAviation 2 Participações S.A., a closely held corporation based in Alphaville, bought projection 5-B for R$ 2.5 million, "paid in full". The same entry holds a detail that a hurried reading misses: the earlier deed, from 2016, by which the seller had acquired the same property, stated R$ 50,000, and was only taken to the registry in May 2022, three months before the resale at fifty times that price. There is nothing unlawful about selling dear what you bought cheap, and the transfer fee and the property tax were paid on the full amount. But it is the kind of jump a reader of land registries writes down.</p>
@@ -225,7 +230,7 @@
 <g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">"PRIMEAVIATION N" HOLDINGS</text><text class="s" x="312" y="52">the numbering was used twice, 2012 and 2024 (see below)</text></g>
 <g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">AIR OPERATOR</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo (2015): operates 9 of the 12 aircraft</text></g>
 </svg>
-<figcaption>Each box lists companies whose current and original names both appear in a JUCESP file; the asset behind each registration mark comes from the Brazilian Aircraft Registry. The four "Fraction" numbers never located (002, 003, 005, 012) are left out of the drawing.</figcaption>
+<figcaption><span class="hint">← drag the diagram sideways →</span>Each box lists companies whose current and original names both appear in a JUCESP file; the asset behind each registration mark comes from the Brazilian Aircraft Registry. The four "Fraction" numbers never located (002, 003, 005, 012) are left out of the drawing.</figcaption>
 </figure>
 
 <p>The table below is the tree set out in a line, with the date of each christening. Note three things. First: the practice is old, the earliest change is dated 1 July 2018. Second: on 22 September 2025 three companies changed their names at the same meeting, and what disappeared from the registry that day was a brand, "PrimeAviation". Third: the numbering "PrimeAviation 1, 2, 3" was used twice, in 2012 and again in 2024, for different companies. Anyone tracking by name merges companies that are not the same; only the registry number tells them apart.</p>
@@ -290,7 +295,7 @@
 </g>
 <rect class="box" x="20" y="362" width="820" height="48" rx="8" stroke-dasharray="4 4"/><text class="s" x="32" y="380">Also named in minutes: Maurício Antônio Quadrado, 6,674,100 shares in Real Estate Duo 001 Guarujá (attached on 28.04.2025, ch. 5);</text><text class="s" x="32" y="396">Aeromatta Participações, subscriber of PP-BIO in 2014, signed by Quadrado.</text>
 </svg>
-<figcaption>Three columns, three owners on the floor above. The left-hand one links the island in Angra to the group's most expensive jet: Domus Realty, which owns the house, is a shareholder of PS-MGG, which owns the G700. Sources: full-text subscription forms and minutes, JUCESP; Brazilian Aircraft Registry; INQ 5026, item 2, p. 117.</figcaption>
+<figcaption><span class="hint">← drag the diagram sideways →</span>Three columns, three owners on the floor above. The left-hand one links the island in Angra to the group's most expensive jet: Domus Realty, which owns the house, is a shareholder of PS-MGG, which owns the G700. Sources: full-text subscription forms and minutes, JUCESP; Brazilian Aircraft Registry; INQ 5026, item 2, p. 117.</figcaption>
 </figure>
 
 <p>Read the left-hand column from the bottom up. The G700, a jet worth 500 million reais, belongs to PS-MGG. PS-MGG had its capital subscribed by PrimeAviation 2, today Domus Realty, the same owner of the house on Ilha do Jorge. And Domus had its capital subscribed by Entre Investimentos, represented by Antonio Carlos Freixo Junior, the "shareholder present" in both sets of Angra minutes. The property layer and the aviation layer are not parallel: one is a shareholder of the other. And Entre Investimentos, as chapter 7 shows, is on the list of one hundred names whose bank secrecy the Supreme Court ordered lifted.</p>
@@ -330,6 +335,7 @@
 </g>
 <rect class="box" x="20" y="444" width="820" height="80" rx="10" stroke-dasharray="4 4"/><text class="s" x="32" y="462">Reading: those who run Banvox (Figueiredo and Quadrado) run Trustee Holding; Trustee DTVM administers</text><text class="s" x="32" y="478">the funds that carry the SPEs; the money raised was, by contract, to capitalise the bank.</text><text class="s" x="32" y="494">When the issue defaulted, it was the wealth parked in Prime You's SPEs that answered for it.</text><text class="s" x="32" y="510">Later, a brokerage owned by Master itself turned up as a creditor against that same wealth.</text>
 </svg>
+<figcaption class="so-hint"><span class="hint">← drag the diagram sideways →</span></figcaption>
 </figure>
 
 <p>The 2019 end is modest and, for that very reason, eloquent. On 23 September that year, the shareholders' meeting of what was then Fraction 011 approved "the contracting of a revolving credit facility of up to R$ 2,850,000.00 with Banco Máxima S/A", and in the same minutes renamed the company PT-XGS, after the Learjet it was taking over. Three weeks later, on 14 October, the Central Bank authorised the transfer of control of Máxima to Daniel Vorcaro. Máxima became Master. It is the oldest documented financial relationship between the group and the bank, and it predates by six years everything the press has covered. Whether the credit was drawn, and against what security, the registry does not say. <span class="tag p">proven</span> as to the dates; the rest is open.</p>
