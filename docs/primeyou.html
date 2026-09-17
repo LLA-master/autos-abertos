@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prime You, o andar de cima — autos-abertos</title>
+<meta name="description" content="Dossiê ilustrado: como uma empresa de propriedade compartilhada guarda jatos, iates e ilhas em sociedades que trocam de nome, e onde isso encosta no caso Banco Master. Registro de comércio, registro de imóveis, registro aeronáutico e acervo público do STF, com a fonte de cada fato.">
+<meta name="theme-color" content="#12071F">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Righteous&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.dz{max-width:860px;margin:0 auto}
+.dz .cr-body{font-size:19px}
+.dz h2.cap{font-family:var(--display);font-size:30px;text-transform:uppercase;letter-spacing:.02em;margin:2.2em 0 .3em;padding-top:1.2em;border-top:1px solid var(--line)}
+.dz h2.cap small{display:block;font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.fig{margin:1.6em 0;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 8px;overflow-x:auto}
+.fig svg{display:block;width:100%;height:auto;font-family:var(--font)}
+.fig figcaption{font-family:var(--font);font-size:13px;color:var(--muted);margin:8px 4px 4px}
+.fig .t{fill:var(--ink);font-size:13px}.fig .s{fill:var(--muted);font-size:11px}.fig .h{fill:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:.02em}
+.fig .box{fill:var(--bg3);stroke:var(--line);stroke-width:1}.fig .box.pink{stroke:var(--pink)}.fig .box.cyan{stroke:var(--cyan)}.fig .box.gold{stroke:var(--gold)}.fig .box.violet{stroke:var(--violet)}.fig .box.bad{stroke:var(--bad)}
+.fig .ln{stroke:var(--muted);stroke-width:1.4;fill:none}.fig .ln.pink{stroke:var(--pink)}.fig .ln.cyan{stroke:var(--cyan)}.fig .ln.gold{stroke:var(--gold)}.fig .ln.bad{stroke:var(--bad)}
+.fig .mono{font-family:var(--mono);font-size:11px;fill:var(--cyan)}
+.dz table{font-family:var(--font);font-size:14px}
+.tl{list-style:none;padding:0;margin:1.4em 0;font-family:var(--font);border-left:2px solid var(--line);margin-left:8px}
+.tl li{position:relative;padding:4px 0 14px 22px;font-size:15px;color:var(--ink2)}
+.tl li::before{content:"";position:absolute;left:-7px;top:11px;width:12px;height:12px;border-radius:50%;background:var(--bg2);border:2px solid var(--cyan)}
+.tl li.hot::before{border-color:var(--pink);background:var(--pink);box-shadow:var(--glow)}
+.tl li b{display:block;font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:.06em}
+.tl li.hot b{color:var(--pink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.4em 0;font-family:var(--font);font-size:14.5px}
+.two .col{border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;background:color-mix(in srgb,var(--bg2) 85%,transparent)}
+.two .col h4{margin:0 0 8px;font-family:var(--display);font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+.two .col.in h4{color:var(--pink)}.two .col.out h4{color:var(--ok)}
+.two ul{margin:0;padding-left:18px}.two li{margin:4px 0;color:var(--ink2)}
+.aviso{border:1px solid color-mix(in srgb,var(--gold) 50%,transparent);background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:12px;padding:12px 16px;font-family:var(--font);font-size:14.5px;color:var(--ink2);margin:1.2em 0}
+.toc{font-family:var(--font);font-size:14px;display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 6px}
+.toc a{border:1px solid var(--line);border-radius:99px;padding:5px 11px;text-decoration:none;color:var(--ink2);background:var(--bg2)}.toc a:hover{border-color:var(--pink);color:var(--ink)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 8px;border:1px solid var(--line);color:var(--muted);vertical-align:middle;margin-left:6px}
+.tag.p{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 50%,transparent)}.tag.i{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,transparent)}.tag.a{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 50%,transparent)}
+@media (max-width:640px){.two{grid-template-columns:1fr}.dz .cr-body{font-size:17.5px}.dz h2.cap{font-size:24px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<header class="top">
+  <a class="brand" href="index.html"><span class="dot"></span><span class="txt">autos-abertos</span></a>
+  <nav aria-label="Seções">
+    <a href="index.html#grafo">Grafo</a>
+    <a href="index.html#personagens">Personagens</a>
+    <a href="index.html#processos">Processos</a>
+    <a href="index.html#cronicas">Crônicas</a>
+    <a href="primeyou.html" class="active">Dossiê Prime You</a>
+    <a href="index.html#metodo">Método</a>
+    <a href="index.html#avisos">Avisos</a>
+  </nav>
+  <span class="ver" title="Dossiê ilustrado, versão 1: fontes primárias (JUCESP, registro de imóveis, RAB/ANAC, acervo do STF) e imprensa identificada">dossiê v1 · 17.09.2026</span>
+  <button class="theme" id="themeBtn" aria-label="Alternar noite e dia" title="Noite / dia">☀</button>
+</header>
+
+<main id="main">
+<section class="view">
+  <div class="hero">
+    <div class="sun" aria-hidden="true"></div>
+    <svg class="palms" viewBox="0 0 300 160" aria-hidden="true"><g fill="var(--bg)" stroke="var(--pink)" stroke-width="1.5"><path d="M230 160 L236 60 Q238 40 250 30 Q240 45 244 60 L238 160Z"/><path d="M244 62 Q270 30 300 40 Q272 42 250 66Z"/><path d="M244 62 Q280 60 296 90 Q270 70 246 70Z"/><path d="M240 60 Q210 32 176 44 Q206 44 236 66Z"/><path d="M240 60 Q200 60 184 96 Q210 72 240 70Z"/><path d="M242 56 Q250 20 232 4 Q248 26 240 58Z"/><path d="M140 160 L144 90 Q146 76 154 70 Q147 82 149 92 L146 160Z"/><path d="M150 92 Q170 66 196 74 Q172 74 154 96Z"/><path d="M150 92 Q176 92 186 116 Q168 100 152 100Z"/><path d="M148 90 Q126 70 100 78 Q124 78 146 96Z"/><path d="M148 90 Q118 92 106 120 Q126 100 148 100Z"/></g></svg>
+    <p class="eyebrow">Dossiê ilustrado · Prime Aviation / Prime You · registro de comércio, registro de imóveis, RAB e acervo do STF</p>
+    <h1>Prime You, <em>o andar de cima</em>.</h1>
+    <p class="lead">Uma empresa de Alphaville vende frações de jatos, helicópteros, iates e ilhas. Cada bem mora numa sociedade que nasce com cem reais e um número, e que troca de nome quando o bem chega. Este dossiê mostra a máquina, os nomes que ela usou, o que ela guarda em Angra dos Reis e onde ela encosta no caso Banco Master. Cada fato aponta para o documento.</p>
+    <div class="cta">
+      <a class="btn primary" href="#maquina">Ver a máquina</a>
+      <a class="btn" href="#angra">A ilha de Angra</a>
+      <a class="btn" href="#arvore">Árvore de nomes</a>
+      <a class="btn" href="#circuito">O circuito com o banco</a>
+      <a class="btn ghost" href="#contrapeso">O que não está provado</a>
+    </div>
+  </div>
+  <div class="gridfloor" aria-hidden="true"></div>
+  <div class="tiles">
+    <div class="tile"><b>86</b><span>sociedades no núcleo, quase todas S.A. fechadas</span></div>
+    <div class="tile"><b>42</b><span>"Fraction" existentes; 28 números da série sumiram do registro</span></div>
+    <div class="tile"><b>24</b><span>trocas de nome datadas em ata, de 2018 a 2026</span></div>
+    <div class="tile"><b>12</b><span>prefixos de aeronave que são também nomes de empresa</span></div>
+    <div class="tile"><b>R$ 400 mi</b><span>em debêntures para capitalizar o Master, garantidas por quem está dentro das SPEs</span></div>
+    <div class="tile"><b>9 de 100</b><span>nomes com sigilo bancário afastado que tocam o grupo; o presidente não é um deles</span></div>
+  </div>
+  <div class="toc">
+    <a href="#frase">Em uma frase</a><a href="#maquina">1 · A máquina</a><a href="#angra">2 · Angra</a><a href="#arvore">3 · Nomes</a><a href="#cadeia">4 · Quem é dono</a><a href="#circuito">5 · O banco</a><a href="#fundos">6 · Os fundos</a><a href="#autos">7 · Nos autos</a><a href="#janela">8 · A janela</a><a href="#lado">9 · Ao lado</a><a href="#contrapeso">10 · Contrapeso</a><a href="#fontes">Fontes</a>
+  </div>
+
+<div class="dz cr-post">
+<div class="cr-body">
+
+<div class="aviso" id="frase"><b>O que este dossiê é, e o que não é.</b> É uma leitura de documentos públicos: fichas cadastrais da Junta Comercial de São Paulo, uma certidão de matrícula de Angra dos Reis, o Registro Aeronáutico Brasileiro, carteiras de fundos declaradas à CVM e as 189 mil páginas que o STF tornou públicas. Não é sentença nem acusação. Propriedade compartilhada é um negócio lícito, e sociedade por bem é o padrão do mercado de aviação executiva. O que se descreve aqui são desenhos que, em diligência, pedem explicação, e a explicação da própria empresa, dada nos autos, está no capítulo 10. Cada afirmação carrega uma etiqueta: <span class="tag p">provado</span> quando vem de documento lido, <span class="tag i">inferência</span> quando é cruzamento, <span class="tag a">alegação</span> quando é o que alguém disse.</div>
+
+<p>Em uma frase: a Prime You é a camada de titularidade dos bens de luxo de gente que prefere não aparecer como dona deles, e um dos clientes dessa camada era o controlador do Banco Master. A frase é dura, mas a primeira metade é a própria empresa quem diz, ao se apresentar à Polícia Federal: ela "lidera o mercado como a mais expressiva e diversificada operação de compartilhamento de ativos da América do Sul", com "mais de 45 Sociedades de Propósito Específico constituídas e geridas". A segunda metade também está nos autos: a Viking Participações, holding pessoal de Daniel Vorcaro, é "cotista da PS-MAS Administração de Bens Próprios S.A., uma das mais de quarenta S.P.E.s indicadas como clientes da Prime You, e proprietária de um Helicóptero". Quem escreveu isso foi o advogado da Prime You, em novembro de 2025, dias depois da primeira fase da Operação Compliance Zero.</p>
+
+<p>O resto deste dossiê é o que os registros públicos acrescentam a essas duas frases. E é bastante.</p>
+
+<h2 class="cap" id="maquina"><small>Capítulo 1</small>A máquina, em quatro tempos</h2>
+
+<p>Toda sociedade do grupo nasce igual, e a Junta Comercial guarda a certidão de nascimento de cada uma. O nome é <em>FRACTION</em> seguido de um número de três dígitos e da expressão "Administração de Bem Próprio S.A.". O capital é de cem ou cento e um reais. A companhia é fechada, o que em português quer dizer: não publica quem são os acionistas. Ela não tem bem, não tem valor e não tem nome que a ligue a ninguém. É uma casca numerada.</p>
+
+<p>Quando o bem chega, acontece uma assembleia. Numa única ata, três coisas: o dinheiro que já estava dentro da companhia como "adiantamento para futuro aumento de capital", o AFAC do jargão, vira capital; o capital salta de cento e um reais para milhões ou centenas de milhões; e a companhia troca de nome, passando a se chamar como o bem. Se é um avião, o nome novo é a matrícula pintada na fuselagem: PT-XGS, PS-MGG, PP-NYM. Se é um barco, o nome do barco: Solar, Sapphire 62. Se é uma casa, a cidade: Real Estate Duo 002 Angra dos Reis. Isso foi lido em 24 atas, com data, e a mais antiga é de 2018.</p>
+
+<figure class="fig" id="fig-maquina">
+<svg viewBox="0 0 860 300" role="img" aria-label="Fluxograma em quatro tempos: casca, dinheiro, batismo, fração">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--pink)"/></marker></defs>
+<g>
+<rect class="box cyan" x="10" y="40" width="190" height="120" rx="14"/>
+<text class="mono" x="24" y="64">TEMPO 1 · CASCA</text>
+<text class="h" x="24" y="90">FRACTION 042</text>
+<text class="t" x="24" y="112">Adm. de Bem Próprio S.A.</text>
+<text class="s" x="24" y="132">capital: R$ 101,00</text>
+<text class="s" x="24" y="148">S.A. fechada, sem acionista público</text>
+</g>
+<path class="ln" d="M200 100 L228 100" marker-end="url(#ar)"/>
+<g>
+<rect class="box gold" x="230" y="40" width="190" height="120" rx="14"/>
+<text class="mono" x="244" y="64">TEMPO 2 · DINHEIRO</text>
+<text class="h" x="244" y="90">AFAC</text>
+<text class="t" x="244" y="112">adiantamento p/ futuro</text>
+<text class="t" x="244" y="128">aumento de capital</text>
+<text class="s" x="244" y="148">fica no passivo; quem adiantou não consta</text>
+</g>
+<path class="ln pink" d="M420 100 L448 100" marker-end="url(#arp)"/>
+<g>
+<rect class="box pink" x="450" y="40" width="190" height="120" rx="14"/>
+<text class="mono" x="464" y="64">TEMPO 3 · BATISMO</text>
+<text class="h" x="464" y="90">uma só A.G.E.</text>
+<text class="t" x="464" y="112">capitaliza o AFAC e</text>
+<text class="t" x="464" y="128">troca o nome pelo do bem</text>
+<text class="s" x="464" y="148">R$ 101 → R$ 543,9 mi no mesmo ato</text>
+</g>
+<path class="ln" d="M640 100 L668 100" marker-end="url(#ar)"/>
+<g>
+<rect class="box violet" x="670" y="40" width="180" height="120" rx="14"/>
+<text class="mono" x="684" y="64">TEMPO 4 · FRAÇÃO</text>
+<text class="h" x="684" y="90">PS-MGG</text>
+<text class="t" x="684" y="112">Gulfstream G700</text>
+<text class="s" x="684" y="132">o RAB registra só a SPE;</text>
+<text class="s" x="684" y="148">as frações ficam nas ações</text>
+</g>
+<path class="ln" d="M760 160 L760 200" marker-end="url(#ar)"/>
+<rect class="box" x="10" y="200" width="840" height="80" rx="14" stroke-dasharray="4 4"/>
+<text class="h" x="24" y="226">O que qualquer registro público enxerga</text>
+<text class="t" x="24" y="248">RAB, registro de imóveis e Receita mostram uma companhia de nome neutro, capital vindo de AFAC e sem quadro acionário.</text>
+<text class="s" x="24" y="266">Quem é dono da fração só aparece em boletim de subscrição, livro de ações, contrato de compartilhamento ou nos autos.</text>
+</svg>
+<figcaption>O ciclo, provado 24 vezes em ata. O exemplo é real: a Fraction 042 nasceu em 03.01.2023 com R$ 101, virou PS-MGG em 30.09.2024 e chegou a R$ 543,9 milhões de capital em 14.10.2025, tudo por capitalização de AFAC. Fonte: ficha JUCESP NIRE 35.300.607.643.</figcaption>
+</figure>
+
+<p>A consequência não é um acidente do modelo; é o modelo. Ao fim do ciclo, o jato está registrado em nome de uma companhia cujo nome não remete a pessoa alguma, cujo capital não revela origem, porque veio de um adiantamento cujo autor não se declara, e cujos donos não constam de base pública nenhuma. Para nomear o primeiro acionista de uma SPE do grupo foi preciso pedir à Junta o inteiro teor de um boletim de subscrição de 2014.</p>
+
+<blockquote><p>Regra de leitura número um deste dossiê: quando um documento público diz "proprietária: Fraction 053", ele está dizendo a verdade e não está dizendo nada. O nome é o andar de baixo. O dono mora no andar de cima.</p></blockquote>
+
+<h2 class="cap" id="angra"><small>Capítulo 2</small>A ilha de Angra, ou o registro que ficou para trás</h2>
+
+<p>Comece pelo documento que abriu esta leitura: a certidão da matrícula 10.707-A do 1º Ofício de Angra dos Reis, emitida em 27 de janeiro de 2026. O imóvel é a "projeção geométrica nº 5-B do Condomínio Ilha do Jorge", no 2º Distrito do município: 23,5 metros de frente para o mar, 1.266 m² de uso exclusivo mais 1.018 m² de área comum, uma fração ideal de 0,6535% de uma ilha de 76 mil metros quadrados. Terreno de marinha, inscrição de ocupação na Secretaria do Patrimônio da União, laudêmio a pagar a cada transmissão. É uma casa de praia numa ilha particular.</p>
+
+<figure class="fig" id="fig-ilha">
+<svg viewBox="0 0 860 330" role="img" aria-label="Esquema da projeção 5-B da Ilha do Jorge e a cadeia de titulares">
+<rect x="10" y="10" width="420" height="310" rx="14" class="box"/>
+<text class="mono" x="24" y="34">ILHA DO JORGE · PROJEÇÃO 5-B (esquema, sem escala)</text>
+<rect x="60" y="60" width="330" height="40" fill="color-mix(in srgb,var(--cyan) 18%,transparent)" stroke="var(--cyan)" rx="4"/>
+<text class="t" x="70" y="85">Baía da Ribeira · frente para o mar · 23,50 m</text>
+<rect x="60" y="100" width="70" height="150" class="box" stroke-dasharray="3 3"/><text class="s" x="70" y="180">área 04</text><text class="s" x="70" y="196">(esquerda,</text><text class="s" x="70" y="210">52,00 m)</text>
+<rect x="130" y="100" width="190" height="150" fill="color-mix(in srgb,var(--pink) 16%,transparent)" stroke="var(--pink)" stroke-width="1.6"/>
+<text class="h" x="160" y="150">projeção 5-B</text>
+<text class="s" x="150" y="172">1.266 m² exclusivos</text>
+<text class="s" x="150" y="188">+ 1.018,21 m² comuns</text>
+<text class="s" x="150" y="204">fração ideal 0,6535%</text>
+<rect x="320" y="100" width="70" height="150" class="box" stroke-dasharray="3 3"/><text class="s" x="330" y="180">área 06</text><text class="s" x="330" y="196">(direita,</text><text class="s" x="330" y="210">57,00 m)</text>
+<rect x="60" y="250" width="330" height="26" class="box"/><text class="s" x="120" y="267">via de circulação · fundos · 21,50 m</text>
+<text class="s" x="24" y="300">Terreno de marinha (SPU). "Casa nº 4": ver o depoimento no cap. 7.</text>
+<text class="mono" x="450" y="34">CADEIA DE TITULARES NA MATRÍCULA</text>
+<g>
+<circle cx="462" cy="70" r="6" fill="var(--bg2)" stroke="var(--cyan)" stroke-width="2"/><line x1="462" y1="76" x2="462" y2="118" class="ln"/>
+<text class="t" x="480" y="66">1986 · extinção de condomínio (R.01)</text><text class="s" x="480" y="82">uma pessoa física, proprietária por 30 anos</text>
+<circle cx="462" cy="124" r="6" fill="var(--bg2)" stroke="var(--cyan)" stroke-width="2"/><line x1="462" y1="130" x2="462" y2="172" class="ln"/>
+<text class="t" x="480" y="120">2016 · escritura de compra e venda (R.06)</text><text class="s" x="480" y="136">R$ 50.000,00 · registrada só em 10.05.2022</text>
+<circle cx="462" cy="178" r="7" fill="var(--pink)" stroke="var(--pink)"/><line x1="462" y1="185" x2="462" y2="226" class="ln pink"/>
+<text class="t" x="480" y="174">09.08.2022 · compra pela PRIMEAVIATION 2 (R.09)</text><text class="s" x="480" y="190">R$ 2.500.000,00 · laudêmio R$ 70.971,96 · três meses depois</text>
+<circle cx="462" cy="232" r="6" fill="var(--bg2)" stroke="var(--gold)" stroke-width="2"/><line x1="462" y1="238" x2="462" y2="280" class="ln gold"/>
+<text class="t" x="480" y="228">22.09.2025 · a dona troca de nome: DOMUS REALTY</text><text class="s" x="480" y="244">ata na JUCESP; a matrícula não foi avisada</text>
+<circle cx="462" cy="286" r="6" fill="var(--bg2)" stroke="var(--gold)" stroke-width="2"/>
+<text class="t" x="480" y="282">27.01.2026 · certidão: "sem transmissão posterior"</text><text class="s" x="480" y="298">o imóvel segue em nome de uma empresa que já não existe com esse nome</text>
+</g>
+</svg>
+<figcaption>À esquerda, a descrição da projeção 5-B tal como consta da matrícula. À direita, a sequência de registros. Os dois particulares anteriores não são nomeados aqui: não têm relação com o caso. Fonte: certidão 26/000334 do 1º Ofício de Angra dos Reis, 27.01.2026.</figcaption>
+</figure>
+
+<p>O registro R.09 é o que interessa. Em 9 de agosto de 2022, a PrimeAviation 2 Participações S.A., sociedade anônima fechada, sede em Alphaville, comprou a projeção 5-B por R$ 2,5 milhões, "integralmente pagos". A mesma matrícula guarda um detalhe que a leitura apressada perde: a escritura anterior, de 2016, pela qual o vendedor havia adquirido o mesmo imóvel, declarava R$ 50 mil, e só foi levada a registro em maio de 2022, três meses antes da revenda por cinquenta vezes mais. Não há nada de ilegal em vender caro o que se comprou barato, e o laudêmio e o ITBI foram pagos sobre o valor cheio. Mas é o tipo de salto que um leitor de matrícula anota.</p>
+
+<p>A ata que autorizou a compra também é pública. Em 29 de julho de 2022, às dez da manhã, a assembleia da PrimeAviation 2 aprovou "por unanimidade e sem reservas" a aquisição. Mesa: Marcus Vinicius da Mata, presidente, e Artur Martins de Figueiredo, secretário. Acionista presente, e único: <b>Entre Investimentos e Participações Ltda.</b> Guarde esse nome. Ele volta no capítulo 4 e no capítulo 7.</p>
+
+<p>Seis meses depois, em 16 de janeiro de 2023, a mesma companhia, a mesma mesa e o mesmo único acionista aprovaram uma compra bem maior: os direitos de ocupação e as benfeitorias da <b>Ilha Cunhambebe Mirim</b>, também na Baía da Ribeira, 26.700 m², por <b>R$ 45 milhões em três parcelas</b>. Uma ilha inteira, pequena, comprada por uma sociedade cujo nome era um número.</p>
+
+<p>E aqui a máquina do capítulo 1 mostra o seu efeito colateral mais concreto. Em 22 de setembro de 2025, a PrimeAviation 2 trocou de nome para <b>Domus Realty Participações S.A.</b> A Junta registrou. O cartório de Angra não foi avisado, ou não foi até janeiro de 2026: a certidão ainda traz a proprietária como "PrimeAviation 2". Quem procurar no registro de imóveis por "Domus Realty" não acha a casa. Quem procurar por "PrimeAviation 2" acha a casa de uma empresa que, com esse nome, não existe mais. Para um credor, para um juiz que queira bloquear o bem, para uma CPI, isso é uma semana de trabalho a mais, e às vezes é a diferença entre achar e não achar.</p>
+
+<p>Há mais Angra no grupo. Três outras sociedades carregam a cidade no nome: <b>Real Estate Duo 002 Angra dos Reis</b> (ex-Fraction 008, rebatizada em abril de 2020), <b>Real Estate Duo 004 Angra dos Reis</b> (ex-Fraction 014, janeiro de 2021) e <b>Real Estate Solar Island 005 Angra dos Reis</b> (ex-Fraction 035, abril de 2025). Que imóveis são esses, a Junta não diz; as matrículas dirão, quando alguém as pedir. E há um depoimento, nos autos do STF, que fala de uma "casa nº 4 situada na Ilha do Jorge" atribuída a Vorcaro. A projeção 5-B confronta pela esquerda com a "área 04". São unidades vizinhas, não a mesma; o depoimento é de testemunha e não foi confirmado por documento. Fica registrado com essa etiqueta. <span class="tag a">alegação</span></p>
+
+<div class="fonte"><b>Fontes do capítulo.</b> Certidão da matrícula 10.707-A, 1º Ofício de Justiça de Angra dos Reis, pedido 26/000334, 27.01.2026 (R.01, AV.03, R.06, R.09). Atas da PrimeAviation 2 arquivadas na JUCESP: A.G.E. de 29.07.2022 (prot. 2.012.674/22-7) e A.G.E. de 16.01.2023 (prot. 0.421.513/23-8). Ficha cadastral JUCESP NIRE 35.300.438.329 (renomeação em 22.09.2025). Fichas NIRE 35.300.483.928, 35.300.485.009 e 35.300.587.570 (as três "Angra"). Depoimento: PET 15562, seq 54, p. 114.</div>
+
+<h2 class="cap" id="arvore"><small>Capítulo 3</small>A árvore de nomes</h2>
+
+<p>Trinta e duas fichas cadastrais foram lidas na Junta Comercial. Cada ficha traz o nome de constituição na primeira página e, mais adiante, a fórmula que denuncia a troca: "alteração do nome empresarial para X, conforme A.G.E. datada de". Somadas, elas montam a árvore abaixo: um tronco, a Prime You, e quatro galhos, um por classe de bem.</p>
+
+<figure class="fig" id="fig-mapa">
+<svg viewBox="0 0 860 560" role="img" aria-label="Mapa mental: Prime You ao centro, galhos por classe de ativo">
+<g class="ln" stroke="var(--line)">
+<line x1="430" y1="280" x2="150" y2="110"/><line x1="430" y1="280" x2="710" y2="110"/><line x1="430" y1="280" x2="150" y2="450"/><line x1="430" y1="280" x2="710" y2="450"/><line x1="430" y1="280" x2="430" y2="70"/><line x1="430" y1="280" x2="430" y2="500"/>
+</g>
+<g><circle cx="430" cy="280" r="58" fill="var(--bg3)" stroke="var(--pink)" stroke-width="2"/><text class="h" x="430" y="274" text-anchor="middle">PRIME YOU</text><text class="s" x="430" y="292" text-anchor="middle">ex-Prime Aviation Part.</text><text class="s" x="430" y="306" text-anchor="middle">desde 2008 · Alphaville</text></g>
+<g><rect class="box cyan" x="20" y="40" width="260" height="140" rx="12"/><text class="mono" x="32" y="60">AERONAVES · 12 SPEs</text>
+<text class="t" x="32" y="82">PP-NLR Legacy 650 (ex-F024)</text><text class="t" x="32" y="98">PS-MGG Gulfstream G700 (ex-F042)</text><text class="t" x="32" y="114">PS-FMV Gulfstream G550 (ex-F043)</text><text class="t" x="32" y="130">PT-PCT · PS-MAS · PP-NYM (EC 155)</text><text class="t" x="32" y="146">PT-XGS · PT-PVH · PR-SAD · PT-MCP</text><text class="s" x="32" y="166">PT-LAN · PP-BIO (saiu 2026) · PP-PRI (saiu 2017)</text></g>
+<g><rect class="box gold" x="580" y="40" width="260" height="140" rx="12"/><text class="mono" x="592" y="60">EMBARCAÇÕES · 3 SPEs</text>
+<text class="t" x="592" y="82">SOLAR (ex-F031) · R$ 170,1 mi</text><text class="t" x="592" y="98">SAPPHIRE 62 (ex-F030) · Azimut 62</text><text class="t" x="592" y="114">MONDE BLEU (ex-F039)</text><text class="s" x="592" y="140">Domus Realty autorizou compra de</text><text class="s" x="592" y="156">"nova embarcação" à Azimut do Brasil (2022)</text></g>
+<g><rect class="box violet" x="20" y="390" width="260" height="150" rx="12"/><text class="mono" x="32" y="410">IMÓVEIS · 6 SPEs + Domus</text>
+<text class="t" x="32" y="432">Real Estate Duo 001 Guarujá (ex-F010)</text><text class="t" x="32" y="448">Duo 002 Angra · Duo 004 Angra</text><text class="t" x="32" y="464">Solar Island 005 Angra (ex-F035)</text><text class="t" x="32" y="480">Green 003 Campos do Jordão · Duo 007 Salvador</text><text class="t" x="32" y="500">Domus Realty: Ilha do Jorge 5-B, Cunhambebe</text><text class="s" x="32" y="522">Botanique Hotel (Campos do Jordão), diretoria comum</text></g>
+<g><rect class="box" x="580" y="390" width="260" height="150" rx="12" stroke="var(--orange)"/><text class="mono" x="592" y="410">CARROS · 3 SPEs</text>
+<text class="t" x="592" y="432">Cars Duo 001 (ex-F004, 2020)</text><text class="t" x="592" y="448">Cars Duo 002 (ex-F037, 2023)</text><text class="t" x="592" y="464">Cars Duo 003 (ex-F058, 2025)</text><text class="s" x="592" y="490">A PF achou um Range Rover apreendido</text><text class="s" x="592" y="506">em nome da PrimeAviation 4 (INQ 5026)</text></g>
+<g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">HOLDINGS "PRIMEAVIATION N"</text><text class="s" x="312" y="52">numeração usada duas vezes, 2012 e 2024 (ver abaixo)</text></g>
+<g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">OPERADORA</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo (2015): opera 9 das 12 aeronaves</text></g>
+</svg>
+<figcaption>Cada caixa lista sociedades cujo nome atual e nome de origem constam de ficha da JUCESP; o bem por trás do prefixo vem do RAB/ANAC. Os quatro números "Fraction" nunca localizados (002, 003, 005, 012) ficam fora do desenho.</figcaption>
+</figure>
+
+<p>A tabela abaixo é a árvore posta em linha, com a data de cada batismo. Repare em três coisas. Primeira: a prática é antiga, a primeira troca é de 1º de julho de 2018. Segunda: em 22 de setembro de 2025 três companhias trocaram de nome na mesma assembleia, e o que sumiu do registro naquele dia foi uma marca, "PrimeAviation". Terceira: a numeração "PrimeAviation 1, 2, 3" foi usada duas vezes, em 2012 e de novo em 2024, sobre companhias diferentes. Quem rastreia por nome funde empresas distintas; só o NIRE separa.</p>
+
+<table>
+<thead><tr><th>Nasceu como</th><th>Virou</th><th>Data da A.G.E.</th><th>O bem (RAB / ficha)</th></tr></thead>
+<tbody>
+<tr><td>Fraction 007</td><td>Zhou</td><td>01.07.2018</td><td>a primeira renomeação do grupo</td></tr>
+<tr><td>Fraction 010</td><td>Real Estate Duo 001 Guarujá</td><td>30.04.2019</td><td>imóvel; ações penhoradas em 2025 (cap. 5)</td></tr>
+<tr><td>Fraction 011</td><td>PT-XGS</td><td>23.09.2019</td><td>Learjet 60; mesma ata aprova crédito no Banco Máxima (cap. 5)</td></tr>
+<tr><td>Fraction 008 · 014</td><td>Real Estate Duo 002 · 004 Angra dos Reis</td><td>23.04.2020 · 22.01.2021</td><td>imóveis em Angra</td></tr>
+<tr><td>Fraction 009</td><td>PP-NYM</td><td>20.03.2020</td><td>Eurocopter EC 155 B1</td></tr>
+<tr><td>Fraction 015</td><td>PT-PVH</td><td>11.06.2021</td><td>Phenom 300; o avião dos voos de campanha de 2022 (cap. 7)</td></tr>
+<tr><td>Fraction 027</td><td>PS-MAS</td><td>26.07.2022</td><td>EC 155 B1; a Viking é cotista, diz a Prime You</td></tr>
+<tr><td>Fraction 040</td><td>PrimeAviation 3 → Sea Ocean</td><td>18.04.2024 → 22.09.2025</td><td>segunda geração do nome</td></tr>
+<tr><td>Fraction 044</td><td>PrimeAviation 4 → DF &amp; Range</td><td>02.04.2024 → 23.03.2026</td><td>dona do carro apreendido; renomeada 3 dias após a liminar (cap. 8)</td></tr>
+<tr><td>Fraction 043</td><td>PS-FMV</td><td>11.09.2024</td><td>Gulfstream G550; saiu da SPE em 27.03.2026</td></tr>
+<tr><td>Fraction 042</td><td>PS-MGG</td><td>30.09.2024</td><td>Gulfstream G700; matrícula cancelada em 20.06.2025</td></tr>
+<tr><td>Fraction 030 · 031</td><td>Sapphire 62 · Solar</td><td>18.10.2024 · 29.11.2024</td><td>iates</td></tr>
+<tr><td>Fraction 016</td><td>PrimeAviation 1 → Avionyx</td><td>15.04.2025 → 22.09.2025</td><td>segunda geração do nome</td></tr>
+<tr><td>Fraction 035</td><td>Real Estate Solar Island 005 Angra</td><td>16.04.2025</td><td>imóvel em Angra</td></tr>
+<tr><td>Fraction 053</td><td>PT-PCT</td><td>15.10.2025</td><td>EC 155 B1; a "F53" da dação (cap. 7)</td></tr>
+<tr><td>PrimeAviation 2 (2012)</td><td>Domus Realty</td><td>22.09.2025</td><td>Ilha do Jorge, Cunhambebe; acionista da PS-MGG</td></tr>
+<tr><td>Prime Aviation Participações (2008)</td><td>Prime You Participações</td><td>—</td><td>a holding; o nome antigo segue nas carteiras da CVM até 2026</td></tr>
+</tbody></table>
+
+<div class="fonte"><b>Fontes do capítulo.</b> Fichas cadastrais completas da JUCESP, lidas em 17.09.2026, uma por NIRE: 35.300.483.910 (Zhou), 35.300.483.871 (Duo 001), 35.300.483.898 (PT-XGS), 35.300.483.928 e 35.300.485.009 (Angra), 35.300.483.880 (PP-NYM), 35.300.560.108 (PT-PVH), 35.300.568.991 (PS-MAS), 35.300.607.457 (Sea Ocean), 35.300.607.431 (DF &amp; Range), 35.300.607.449 (PS-FMV), 35.300.607.643 (PS-MGG), 35.300.571.789 e 35.300.584.864 (iates), 35.300.560.124 (Avionyx), 35.300.587.570 (Solar Island), 35.300.644.085 (PT-PCT), 35.300.438.329 (Domus). Aeronaves: consulta pública ao RAB/ANAC por prefixo, 17.09.2026.</div>
+
+<h2 class="cap" id="cadeia"><small>Capítulo 4</small>Quem é dono: a cadeia acionária, enfim nomeada</h2>
+
+<p>Sociedade fechada não publica acionista, mas publica ata de aumento de capital, e a ata diz quem subscreveu. Foi por aí. Nove documentos em inteiro teor, pedidos à Junta, respondem à pergunta que nenhuma base pública responde.</p>
+
+<figure class="fig" id="fig-cadeia">
+<svg viewBox="0 0 860 400" role="img" aria-label="Cadeia acionária: Entre Investimentos, PrimeAviation 2, PS-MGG; Prime You, PT-PCT; Viking, PS-MAS">
+<g>
+<rect class="box gold" x="20" y="20" width="250" height="60" rx="12"/><text class="h" x="32" y="44">ENTRE INVESTIMENTOS</text><text class="s" x="32" y="62">rep. Antonio Carlos Freixo Junior · boletim 14.08.2024</text>
+<path class="ln gold" d="M145 80 L145 110" marker-end="url(#ar)"/>
+<rect class="box pink" x="20" y="112" width="250" height="60" rx="12"/><text class="h" x="32" y="136">PRIMEAVIATION 2 → DOMUS REALTY</text><text class="s" x="32" y="154">Ilha do Jorge · Cunhambebe · capital R$ 144,7 mi</text>
+<path class="ln pink" d="M145 172 L145 202" marker-end="url(#arp)"/>
+<rect class="box cyan" x="20" y="204" width="250" height="60" rx="12"/><text class="h" x="32" y="228">PS-MGG (ex-Fraction 042)</text><text class="s" x="32" y="246">subscreve R$ 542,4 mi por AFAC · A.G.E. 14.10.2025</text>
+<path class="ln" d="M145 264 L145 294" marker-end="url(#ar)"/>
+<rect class="box" x="20" y="296" width="250" height="50" rx="12"/><text class="t" x="32" y="318">Gulfstream G700 · s/n 87039</text><text class="s" x="32" y="336">matrícula BR cancelada 20.06.2025</text>
+</g>
+<g>
+<rect class="box gold" x="305" y="20" width="250" height="60" rx="12"/><text class="h" x="317" y="44">PATRIMONIAL BLUE FIP</text><text class="s" x="317" y="62">adm. Trustee DTVM · ação ordinária desde 06/2019</text>
+<path class="ln gold" d="M430 80 L430 110" marker-end="url(#ar)"/>
+<rect class="box pink" x="305" y="112" width="250" height="60" rx="12"/><text class="h" x="317" y="136">PRIME AVIATION PART. → PRIME YOU</text><text class="s" x="317" y="154">"sócios: Marcus Matta e o fundo Patrimonial Blue" (autos)</text>
+<path class="ln pink" d="M430 172 L430 202" marker-end="url(#arp)"/>
+<rect class="box cyan" x="305" y="204" width="250" height="60" rx="12"/><text class="h" x="317" y="228">PT-PCT (ex-Fraction 053, "F53")</text><text class="s" x="317" y="246">subscreve R$ 30,99 mi por AFAC · A.G.E. 15.10.2025</text>
+<path class="ln" d="M430 264 L430 294" marker-end="url(#ar)"/>
+<rect class="box" x="305" y="296" width="250" height="50" rx="12"/><text class="t" x="317" y="318">Airbus EC 155 B1 · s/n 6971</text><text class="s" x="317" y="336">entrou na SPE em 25.11.2025</text>
+</g>
+<g>
+<rect class="box gold" x="590" y="20" width="250" height="60" rx="12"/><text class="h" x="602" y="44">VIKING PARTICIPAÇÕES</text><text class="s" x="602" y="62">holding de Daniel Vorcaro · Belo Horizonte</text>
+<path class="ln gold" d="M715 80 L715 202" marker-end="url(#ar)"/>
+<text class="s" x="725" y="130">"cotista", diz a</text><text class="s" x="725" y="146">própria Prime You</text><text class="s" x="725" y="162">(INQ 5026 seq 2)</text>
+<rect class="box cyan" x="590" y="204" width="250" height="60" rx="12"/><text class="h" x="602" y="228">PS-MAS (ex-Fraction 027)</text><text class="s" x="602" y="246">presidente: Marcus Vinicius da Mata</text>
+<path class="ln" d="M715 264 L715 294" marker-end="url(#ar)"/>
+<rect class="box bad" x="590" y="296" width="250" height="50" rx="12"/><text class="t" x="602" y="318">EC 155 B1 · s/n 6852</text><text class="s" x="602" y="336">no RAB, proprietária: SFG Aircraft, Inc. (exterior)</text>
+</g>
+<rect class="box" x="20" y="362" width="820" height="30" rx="8" stroke-dasharray="4 4"/><text class="s" x="32" y="381">Também nomeado em ata: Maurício Antônio Quadrado, 6.674.100 ações da Real Estate Duo 001 Guarujá (penhoradas em 28.04.2025, cap. 5); Aeromatta Participações, subscritora da PP-BIO em 2014, assinada por Quadrado.</text>
+</svg>
+<figcaption>Três colunas, três donos de andar de cima. A da esquerda liga a ilha de Angra ao jato mais caro do grupo: a Domus Realty, dona da casa, é acionista da PS-MGG, dona do G700. Fontes: boletins e atas em inteiro teor, JUCESP; RAB/ANAC; INQ 5026, seq 2, p. 117.</figcaption>
+</figure>
+
+<p>Leia a coluna da esquerda de baixo para cima. O G700, avião de 500 milhões de reais, pertence à PS-MGG. A PS-MGG teve seu capital subscrito pela PrimeAviation 2, hoje Domus Realty, a mesma dona da casa da Ilha do Jorge. E a Domus teve seu capital subscrito pela Entre Investimentos, representada por Antonio Carlos Freixo Junior, a "acionista presente" das duas atas de Angra. A camada imobiliária e a camada aeronáutica não são paralelas: uma é sócia da outra. E a Entre Investimentos, como se verá no capítulo 7, está na lista de cem nomes cujo sigilo bancário o STF mandou afastar.</p>
+
+<p>Na coluna do meio, a holding. Os autos registram, pela boca da própria Prime You, que "a Prime Aviation tem como sócios Marcus Matta e o fundo Patrimonial Blue". O Patrimonial Blue é um fundo de investimento em participações administrado pela Trustee DTVM, e as carteiras mensais que ele declara à CVM mostram ação ordinária da Prime Aviation Participações desde junho de 2019. Ou seja: o sócio do presidente é um fundo, e o fundo é administrado pela instituição que reaparece em todos os capítulos seguintes.</p>
+
+<p>Na coluna da direita, o único cotista de SPE que a Prime You nomeou espontaneamente: a Viking, de Vorcaro, na PS-MAS. Com um detalhe que o RAB acrescenta e a petição não: o helicóptero que a PS-MAS opera tem como proprietária registral uma pessoa jurídica estrangeira, a SFG Aircraft, Inc. A SPE brasileira aparece só como operadora. Titularidade econômica e titularidade registral, aqui, não coincidem. <span class="tag i">inferência</span> sobre o que isso significa; <span class="tag p">provado</span> quanto ao que cada registro diz.</p>
+
+<div class="fonte"><b>Fontes do capítulo.</b> JUCESP, inteiro teor: A.G.E. da PrimeAviation 2 de 14.08.2024 com boletim de subscrição da Entre Investimentos; A.G.E. da PS-MGG de 14.10.2025; A.G.E. da PT-PCT de 15.10.2025; boletins da PP-BIO de 10 e 12.12.2014; decisão de 28.04.2025 averbada na ficha da Real Estate Duo 001 (NIRE 35.300.483.871). Carteiras de fundos: informes CDA/FIP à CVM, dados abertos, 2019 a 08/2026. Autos: INQ 5026, seq 2, p. 116 e 117; seq 545, p. 1 a 3. RAB/ANAC, prefixos PS-MGG, PT-PCT, PS-MAS.</div>
+
+<h2 class="cap" id="circuito"><small>Capítulo 5</small>O circuito: o banco financia o grupo, o grupo capitaliza o banco</h2>
+
+<p>Este é o capítulo em que o dossiê deixa de ser sobre uma empresa de jatos e passa a ser sobre o caso Banco Master. Dois documentos, separados por cinco anos, formam as duas pontas de um mesmo circuito.</p>
+
+<figure class="fig" id="fig-circuito">
+<svg viewBox="0 0 860 516" role="img" aria-label="Circuito banco e grupo, 2019 a 2026">
+<g>
+<rect class="box cyan" x="20" y="20" width="255" height="86" rx="12"/><text class="mono" x="32" y="40">23.09.2019</text><text class="h" x="32" y="60">CCB do BANCO MÁXIMA</text><text class="t" x="32" y="78">crédito rotativo de R$ 2,85 mi à Fraction 011,</text><text class="s" x="32" y="96">que na mesma ata vira PT-XGS (Learjet 60)</text>
+<path class="ln" d="M275 63 L300 63" marker-end="url(#ar)"/>
+<rect class="box" x="302" y="20" width="255" height="86" rx="12"/><text class="mono" x="314" y="40">14.10.2019 · três semanas depois</text><text class="h" x="314" y="60">BC AUTORIZA VORCARO</text><text class="t" x="314" y="78">a assumir o controle do Banco Máxima,</text><text class="s" x="314" y="96">que virá a se chamar Banco Master (INQ 5026 seq 414)</text>
+<path class="ln" d="M557 63 L582 63" marker-end="url(#ar)"/>
+<rect class="box gold" x="584" y="20" width="255" height="86" rx="12"/><text class="mono" x="596" y="40">2014 → 2019</text><text class="h" x="596" y="60">O ANEL JÁ ESTAVA DENTRO</text><text class="t" x="596" y="78">Aeromatta (Quadrado) subscreve a PP-BIO em 2014;</text><text class="s" x="596" y="96">Patrimonial Blue FIP (Trustee) entra na holding em 2019</text>
+</g>
+<path class="ln pink" d="M711 106 L711 140 L147 140 L147 170" marker-end="url(#arp)"/>
+<g>
+<rect class="box pink" x="20" y="172" width="820" height="128" rx="12"/><text class="mono" x="32" y="192">05.04.2024</text><text class="h" x="32" y="212">6ª EMISSÃO DE DEBÊNTURES DA BANVOX HOLDING · R$ 400.000.000</text>
+<text class="t" x="32" y="232">agente fiduciário: TRUSTEE DTVM · devedora, por aditamento: DV Holding Financeira</text><text class="t" x="32" y="250">fiança solidária de Daniel Vorcaro, Maurício Quadrado e Augusto Ferreira Lima</text>
+<text class="t" x="32" y="272">cláusula 3.2.1: os recursos "foram destinados para a capitalização da instituição financeira Banco Master S.A.,</text><text class="t" x="32" y="290">da qual os Executados pessoas físicas são diretores"</text>
+</g>
+<path class="ln bad" d="M430 300 L430 332" marker-end="url(#ar)"/>
+<g>
+<rect class="box bad" x="20" y="334" width="255" height="86" rx="12"/><text class="mono" x="32" y="354">03 e 04.2025</text><text class="h" x="32" y="374">INADIMPLEMENTO</text><text class="t" x="32" y="392">vencimento antecipado; execução de</text><text class="t" x="32" y="410">R$ 470,5 mi na 22ª Vara Cível de SP</text>
+<path class="ln bad" d="M275 377 L300 377" marker-end="url(#ar)"/>
+<rect class="box bad" x="302" y="334" width="255" height="86" rx="12"/><text class="mono" x="314" y="354">28.04.2025</text><text class="h" x="314" y="374">PENHORA CHEGA ÀS SPEs</text><text class="t" x="314" y="392">6.674.100 ações de Quadrado na</text><text class="t" x="314" y="410">Real Estate Duo 001 Guarujá; 100 mi quotas da Viking</text>
+<path class="ln bad" d="M557 377 L582 377" marker-end="url(#ar)"/>
+<rect class="box bad" x="584" y="334" width="255" height="86" rx="12"/><text class="mono" x="596" y="354">20.03.2026</text><text class="h" x="596" y="374">A MASTER CTVM COBRA O GRUPO</text><text class="t" x="596" y="392">protesto contra alienação averbado</text><text class="t" x="596" y="410">em PS-MGG, Domus Realty e Botanique</text>
+</g>
+<rect class="box" x="20" y="444" width="820" height="64" rx="10" stroke-dasharray="4 4"/><text class="s" x="32" y="464">Leitura: quem dirige a Banvox (Figueiredo e Quadrado) dirige a Trustee Holding; a Trustee DTVM administra os fundos que carregam as SPEs; o dinheiro captado foi, por cláusula, capitalizar o banco.</text><text class="s" x="32" y="480">Quando a emissão quebrou, foi o patrimônio guardado nas SPEs da Prime You que respondeu.</text><text class="s" x="32" y="496">Depois, uma corretora do próprio Master apareceu como credora contra o mesmo patrimônio.</text>
+</svg>
+</figure>
+
+<p>A ponta de 2019 é modesta e por isso mesmo eloquente. Em 23 de setembro daquele ano, a assembleia da então Fraction 011 aprovou "a contratação de operação de crédito rotativo no limite de R$ 2.850.000,00 junto ao Banco Máxima S/A", e na mesma ata rebatizou a companhia como PT-XGS, nome do Learjet que ela passava a deter. Três semanas depois, em 14 de outubro, o Banco Central autorizou a transferência do controle do Máxima a Daniel Vorcaro. O Máxima virou Master. É a relação financeira mais antiga já documentada entre o grupo e o banco, e antecede em seis anos tudo o que a imprensa cobriu. Se o crédito foi sacado e com que garantia, o registro não diz. <span class="tag p">provado</span> quanto às datas; o resto, aberto.</p>
+
+<p>A ponta de 2024 é grande. Em 5 de abril, a Banvox Holding Financeira emitiu 400 debêntures de um milhão de reais cada, com a Trustee DTVM como agente fiduciário e fiança solidária de Daniel Vorcaro, Maurício Antônio Quadrado e Augusto Ferreira Lima. A cláusula 3.2.1 da escritura, tal como a decisão judicial a transcreve, diz que os recursos "foram destinados para a capitalização da instituição financeira Banco Master S.A., da qual os Executados pessoas físicas são diretores". As parcelas de março e abril de 2025 não foram pagas. Veio o vencimento antecipado, a execução de R$ 470,5 milhões, o arresto de dez imóveis e a penhora de participações societárias. Entre elas: 6.674.100 ações de Quadrado na Real Estate Duo 001 Guarujá, uma SPE da Prime You. Foi a primeira vez que um acionista de SPE do grupo apareceu nomeado num documento público.</p>
+
+<p>O desenho é este: a Banvox, dirigida por Figueiredo e Quadrado, os mesmos que dirigem a Trustee Holding, capta R$ 400 milhões para pôr capital no Master; a Trustee, que administra os fundos que carregam as SPEs, é a fiduciária da emissão; os fiadores são o controlador do banco e dois nomes que estão dentro das SPEs; e quando a operação quebra, o estoque de bens de luxo é o que responde. Um ano depois, em março de 2026, a Master S/A Corretora, empresa do próprio grupo do banco, obteve liminar de protesto contra alienação sobre a PS-MGG, a Domus Realty e o Botanique. O banco em liquidação, agora, litiga contra o patrimônio que ajudou a formar.</p>
+
+<blockquote><p>Emitir debêntures para capitalizar um banco é lícito. Inadimplir é um problema civil, não penal. O que a decisão de abril de 2025 prova não é crime: é que os dois grupos são um só circuito, e que ele foi documentado em juízo. A afirmação de que os três fiadores eram diretores do Master vem da petição inicial, recitada pelo juízo; não é conclusão judicial.</p></blockquote>
+
+<p>Há outros vetores menores, checáveis: o helicóptero da PT-MCP foi comprado em 2013 com um empréstimo do BTG Pactual "com recursos advindos do programa BNDES FINAME", de até R$ 5,65 milhões, dinheiro de programa público de bens de capital num ativo de propriedade compartilhada; a PS-FMV, com R$ 6,87 milhões de capital, autorizou em dezembro de 2024 um empréstimo de até R$ 90,2 milhões, com variação cambial, junto ao Bradesco Global Private Bank; a Sapphire 62 registra crédito bancário "para financiar a aquisição de uma embarcação modelo Azimut 62". Tudo em ata.</p>
+
+<h2 class="cap" id="fundos"><small>Capítulo 6</small>Os fundos: um circuito que se administra, se gere e se possui</h2>
+
+<p>As carteiras que os fundos brasileiros declaram mensalmente à CVM são públicas, e nelas o nome do emissor aparece como o fundo o escreveu naquele mês. Foi assim, aliás, que se descobriu que "Planner Holding Financeira II" e "Trustee Holding Financeira" são a mesma companhia. Onze fundos carregam ativos do perímetro. Dez são administrados pela Trustee DTVM; um, pela Master S/A CTVM. Os gestores se repetem: Blue Solutions e MAM Asset.</p>
+
+<table>
+<thead><tr><th>Fundo</th><th>Administrador</th><th>O que carrega do perímetro</th><th>Posição máxima</th></tr></thead>
+<tbody>
+<tr><td>Rockets FIP</td><td>Trustee DTVM</td><td>Fraction 032 (ação preferencial; a SPE presidida por Quadrado)</td><td>R$ 268,3 mi</td></tr>
+<tr><td>Borgonha FIM CP</td><td>Trustee DTVM</td><td>Rockets FIP; CCB da Prime Aviation Participações</td><td>R$ 219,3 mi</td></tr>
+<tr><td>Máxima FIM CP 2</td><td>Master S/A CTVM</td><td>nota comercial da Entre I. P.</td><td>R$ 71,3 mi</td></tr>
+<tr><td>Sharks FIP</td><td>Trustee DTVM</td><td>Fraction 032; Fraction 024 (o PP-NLR); Real Estate Duo 004 Angra</td><td>R$ 62,4 mi</td></tr>
+<tr><td>Albali · Kyoto · Topázio · Jaguar · Brindisi</td><td>Trustee DTVM</td><td>Rockets; Trustee Holding; Fraction 032; Road Tecnologia</td><td>até R$ 54,0 mi</td></tr>
+<tr><td>Patrimonial Blue FIP</td><td>Trustee DTVM</td><td>Prime Aviation Participações, ação ordinária, desde 06/2019</td><td>R$ 16,8 mi</td></tr>
+<tr><td>Nazaré FIP</td><td>Sefer DTVM</td><td>Entre Investimentos ("Arya", nome anterior)</td><td>R$ 30,0 mi</td></tr>
+</tbody></table>
+
+<p>Os cotistas desses fundos são, em boa parte, outros fundos do mesmo administrador. E os informes diários de cota, também públicos, mostram o que aconteceu com esse circuito depois do colapso do banco: em 25 de maio de 2026 a cota do Albali caiu 67,1% num dia, num fundo cuja oscilação típica era de um décimo por cento; em 1º de julho o Borgonha caiu 23,3%; em 21 de julho o Máxima FIM CP 2, administrado pela corretora do Master, caiu 34,8%. Em 30 de junho, 55% da carteira do Rockets estava num único emissor, a Fraction 032. Remarcação é o nome técnico. Em português: o valor declarado não resistiu. É o mais perto de uma medida de perda que se consegue sem balanço. <span class="tag p">provado</span> quanto aos números; <span class="tag i">inferência</span> quanto à causa.</p>
+
+<div class="fonte"><b>Fontes do capítulo.</b> Informes mensais de carteira (CDA) e informes diários de cota de fundos, dados abertos da CVM, 2019 a agosto de 2026, por CNPJ do emissor. A regra de que "os cotistas são outros fundos" vem da composição por cotista declarada nos mesmos informes.</div>
+
+<h2 class="cap" id="autos"><small>Capítulo 7</small>O que os autos do STF dizem, com página</h2>
+
+<p>O acervo público do STF tem 189 mil páginas e a Prime You aparece nelas de sete maneiras. Nenhuma é uma acusação formal contra a empresa. Todas são úteis.</p>
+
+<p><b>1. A empresa se apresenta.</b> Em 26 de novembro de 2025, a Prime Aviation Participações e Serviços, "conhecida no mercado por seu nome comercial Prime You", peticionou ao delegado da Polícia Federal para se colocar à disposição. Explicou seus dois modelos de negócio, propriedade compartilhada e gestão de ativos, disse ter "mais de 45" SPEs e admitiu a conexão que a trazia ali: a Viking, de Vorcaro, é cotista de uma SPE sua. Em março de 2026, voltou para dizer que não "empresta" seu nome a ninguém e que não fora questionada desde então. <span class="tag p">provado</span> (INQ 5026, seq 2, p. 116 e 117; seq 545, p. 1 a 3; seq 582).</p>
+
+<p><b>2. A PF acha um carro.</b> Um relatório de diligência de 18 de novembro de 2025 registra que um Range Rover apreendido estava em nome da PrimeAviation 4 Participações S.A., que "consta como proprietário da Prime You, no QSA da Receita Federal". A PrimeAviation 4 é a ex-Fraction 044 e virou DF &amp; Range em março de 2026. <span class="tag p">provado</span> (INQ 5026, seq 5, p. 717).</p>
+
+<p><b>3. O jato e o helicóptero que iam pagar advogado.</b> Um relatório da PF na PET 16662 descreve um "Termo de Acordo e Dação em Pagamento" de 19 de maio de 2025, pelo qual a Viking quitaria R$ 40 milhões de um contrato de R$ 50 milhões com um escritório de advocacia entregando "direitos e ações" de duas SPEs: a "F24", dona do Legacy 650 PP-NLR, e a "F53", que a PF identifica como a PT-PCT Administração de Bem Próprio. O escritório declarou publicamente que o contrato nunca foi assinado. A ficha da Junta acrescenta o que ninguém tinha notado: na data da oferta, a F53 tinha R$ 101 de capital; foi capitalizada em 15 de outubro de 2025 e o helicóptero só entrou nela em 25 de novembro. O que se oferecia em pagamento era a casca. <span class="tag p">provado</span> quanto aos documentos (PET 16662, seq 7, p. 161; seq 9, p. 1; ficha NIRE 35.300.644.085; RAB).</p>
+
+<p><b>4. Uma testemunha fala.</b> Num depoimento juntado à PET 15562, uma testemunha afirma que "a empresa PRIME YOU pertence de fato a DANIEL VORCARO, mas estaria em nome do 'laranja' MARCUS MATTA", e que Vorcaro "é o proprietário da casa nº 4 situada na Ilha do Jorge em Angra dos Reis". É a frase mais citada sobre a empresa e a menos provada: é o que uma pessoa disse à polícia, sem documento que a confirme nos autos. <span class="tag a">alegação</span> (PET 15562, seq 54, p. 114).</p>
+
+<p><b>5. Os cem nomes.</b> Na PET 15198 há um ofício bancário de janeiro de 2026 listando as 100 pessoas e entidades cujo sigilo bancário foi afastado, de outubro de 2020 a outubro de 2025. Nove tocam este dossiê. Uma leitura honesta precisa mostrar as duas colunas.</p>
+
+<div class="two">
+<div class="col in"><h4>Estão na lista</h4><ul>
+<li>Artur Martins de Figueiredo, diretor da Banvox e da Trustee Holding, secretário das atas de Angra</li>
+<li>Antonio Carlos Freixo Junior e a Entre Investimentos, acionista da Domus Realty</li>
+<li>Flávio Daniel Aguetoni, que assumiu a presidência da PS-FMV em 2026</li>
+<li>Daniel Bueno Vorcaro e a Viking Participações</li>
+<li>Maurício Antônio Quadrado, fiador e acionista da Real Estate Duo 001</li>
+<li>outro administrador da Trustee DTVM e a Entre Payments</li>
+</ul></div>
+<div class="col out"><h4>Não estão</h4><ul>
+<li>Marcus Vinicius da Mata, presidente do grupo</li>
+<li>a Prime You Participações e a Prime Aviation Táxi Aéreo</li>
+<li>nenhuma das 42 Fractions, nenhuma "PX-XXX", nenhuma Real Estate, nenhuma Cars Duo</li>
+</ul><p class="muted" style="margin:10px 0 0">O afastamento alcançou o anel financeiro e o anel Freixo do perímetro. Não alcançou o presidente nem a estrutura operacional. Isso é coerente com a versão da própria empresa, e desaconselha atalhos.</p></div>
+</div>
+<p class="muted" style="font-family:var(--font)">Fonte: PET 15198, seq 432 (ofício de 20.01.2026 em resposta ao Ofício eletrônico 27654/2026). Augusto Ferreira Lima, terceiro fiador das debêntures, aparece nos autos como coinvestigado, com depoimento marcado para 27.01.2026, o mesmo dia do de Vorcaro (INQ 5026, seq 104, p. 2; PET 15562, seq 8, p. 11 e 12).</p>
+
+<p><b>6. Duas CPIs querem saber quem voou.</b> A CPI do Crime Organizado aprovou, em 11 de março de 2026, o Requerimento 205, à ANAC, pedindo "beneficiários finais vinculados à aeronave de prefixo PP-NLR e à empresa Prime Aviation Participações", e o Requerimento 206, à própria Prime You, pedindo a identificação dos passageiros do Legacy 650 desde 1º de janeiro de 2025. A CPMI do INSS pediu aos sócios da Prime Aviation Táxi Aéreo, nomeados como Artur Martins de Figueiredo, Rodolfo Garcia da Costa e Marcus Vinicius da Mata, todos os voos, passageiros e cotistas do mesmo avião desde 2015, além dos contratos "que fundamentaram a utilização da aeronave pelos Srs. Daniel Bueno Vorcaro, Sandra Habib ou empresas do grupo Prime You/Fractions". Requerimentos anteriores já haviam pedido as listas do G700 (PS-MGG) e do Falcon 7X (PS-FST, este da Viking, fora da estrutura de SPE) para, nas palavras dos autos, "mapear a rede de influência do grupo". A Prime You pediu ao ministro Gilmar Mendes a anulação da quebra de sigilo determinada pela CPI. <span class="tag p">provado</span> (INQ 5026, seq 543, p. 16; seq 547, p. 5; PET 15556, seq 247, p. 9; PET 15198, seq 460, p. 5).</p>
+
+<p><b>7. Um deputado conta de outro deputado.</b> Uma petição do deputado Henrique Vieira, de março de 2026, noticia ao STF que o deputado Nikolas Ferreira teria usado, em pelo menos duas ocasiões em outubro de 2022, o Phenom 300 de prefixo PT-PVH, "pertencente à empresa Prime You, da qual Daniel Vorcaro era sócio", em deslocamentos de campanha, sem declaração ao TSE. A mesma petição afirma que a Prime You "detinha o jato, a mansão de Vorcaro em Brasília e outros bens" e "foi dissolvida em setembro de 2025, dois meses antes da liquidação do Banco Master". Aqui um cuidado: "dissolvida" é palavra da petição. O registro mostra outra coisa, mais precisa: a Prime You não foi dissolvida; em setembro de 2025 o que mudou foi o nome de três holdings e, segundo a imprensa, a saída de Vorcaro do quadro de sócios. <span class="tag a">alegação</span> quanto aos voos e ao sócio; <span class="tag p">provado</span> quanto ao que a Junta registra (PET 15556, seq 190, p. 2, 4 e 5; ficha NIRE 35.300.560.108).</p>
+
+<p>E há o pano de fundo que os autos guardam por meio de recortes de imprensa juntados pela PF: o Botanique Hotel &amp; Spa, em Campos do Jordão, cuja S.A. tem Marcus Vinicius da Mata na diretoria, "estaria sendo oferecido por cerca de R$ 150 milhões"; e "a mais vistosa das aeronaves usadas antes da prisão pelo dono do Banco Master, o Gulfstream G700, está à venda com desconto de mais de R$ 100 milhões" (PET 15504, seq 46, p. 253; PET 15556, seq 1, p. 153). O G700 é a PS-MGG. A matrícula brasileira foi cancelada em 20 de junho de 2025. Para onde ele foi, o registro brasileiro não diz; a imprensa diz (capítulo 9), e o liquidante do banco foi atrás.</p>
+
+<h2 class="cap" id="janela"><small>Capítulo 8</small>A janela: dez meses em que tudo trocou de lugar</h2>
+
+<p>Ponha as datas em coluna e a cronologia conta sozinha. Não se afirma intenção; afirma-se sequência. <span class="tag p">provado</span> quanto às datas.</p>
+
+<ul class="tl">
+<li><b>29.08.2025</b>Artur Martins de Figueiredo renuncia, na mesma data, às diretorias da PS-MGG e da PS-FMV.</li>
+<li><b>set/2025</b>Segundo a própria empresa, à imprensa, Vorcaro e Quadrado vendem suas participações à companhia.</li>
+<li class="hot"><b>22.09.2025</b>PrimeAviation 1, 2 e 3 trocam de nome na mesma assembleia: Avionyx, Domus Realty, Sea Ocean. A marca some do registro.</li>
+<li><b>29.09.2025</b>O Stern FIP, gerido pela REAG Jus, entra como sócio da Viking, uma semana depois.</li>
+<li><b>14 e 15.10.2025</b>PS-MGG capitaliza R$ 542,4 milhões por AFAC; Fraction 053 vira PT-PCT e capitaliza R$ 30,99 milhões.</li>
+<li class="hot"><b>17 e 18.11.2025</b>Operação Compliance Zero: prisão de Vorcaro. A PF acha o carro da PrimeAviation 4. A Prime You se habilita nos autos oito dias depois.</li>
+<li><b>25.11.2025</b>O helicóptero EC 155 entra na PT-PCT.</li>
+<li><b>17.12.2025</b>Acionistas da PS-MGG autorizam, "de forma irrevogável e irretratável", a alienação do G700.</li>
+<li class="hot"><b>20.03.2026</b>Liminar da Master S/A CTVM: protesto contra alienação averbado na PS-MGG, na Domus e no Botanique.</li>
+<li><b>23.03.2026</b>Três dias depois, a PrimeAviation 4 vira DF &amp; Range; Mata deixa a presidência dela (reeleito em maio).</li>
+<li><b>27.03.2026</b>O Gulfstream G550 sai da PS-FMV para terceiros. No mesmo dia, publica-se com dois anos de atraso a ata que criara o nome "PrimeAviation 4".</li>
+<li><b>04.06.2026</b>O Legacy 650 PP-NLR, o avião das CPIs, é transferido no RAB para a Fraction 024, um ano depois do termo de dação.</li>
+<li><b>17.06 e 31.07.2026</b>Mata é destituído da PS-FMV; Flávio Aguetoni, administrador da Trustee, da Banvox e da MAM, assume a presidência.</li>
+</ul>
+
+<div class="fonte"><b>Fontes.</b> Fichas JUCESP NIRE 35.300.607.643, 35.300.607.449, 35.300.560.124, 35.300.438.329, 35.300.607.457, 35.300.607.431, 35.300.644.085; RAB/ANAC (PS-FMV, PP-NLR, PT-PCT); dados abertos da Receita (quadro societário da Viking); INQ 5026, seq 2 e seq 5. A saída de Vorcaro e Quadrado do quadro de sócios é declaração da empresa à imprensa, não documento lido.</div>
+
+<h2 class="cap" id="lado"><small>Capítulo 9</small>Ao lado: os casos em que a Prime You aparece sem ser o assunto</h2>
+
+<p>A empresa raramente é a manchete. Ela é a linha de baixo da manchete: o nome no registro do avião, o nome na matrícula da casa. Esta seção recolhe os episódios noticiados em que isso aconteceu, separando o que está nos autos do STF do que está só na imprensa.</p>
+
+<div id="lado-imprensa">
+<p>Uma advertência antes: tudo neste capítulo que vem da imprensa está marcado como <span class="tag a">alegação</span>, mesmo quando o jornal atribui o dado a relatório da Polícia Federal. O que este dossiê consegue fazer é cruzar cada notícia com o registro: dizer que sociedade é aquela, quando nasceu, como se chamava antes e quem a dirige.</p>
+
+<h3>A casa de Angra e o senador</h3>
+<p>Em setembro de 2026, o site ICL Notícias publicou que o senador Flávio Bolsonaro comemorou, em fevereiro daquele ano, o aniversário da filha caçula numa mansão de frente para o mar em Angra dos Reis, com sete suítes, heliponto e píer, "gerida pela Prime You". Segundo a reportagem, o imóvel está formalizado na <b>Real Estate Duo 004 Angra dos Reis Administração de Bens Próprios S.A.</b>, dividido em quatro cotas, e um dos cotistas, desde 2022, seria uma empresa do advogado Willer Tomaz, amigo do senador; outra cota estaria com um fundo ligado a Maurício Quadrado. O advogado respondeu que o uso da casa se deu "exclusivamente em razão da relação de amizade", sem pagamento, e negou vínculo de Vorcaro com o imóvel. A assessoria do senador, Quadrado e o presidente da Prime You não responderam. <span class="tag a">alegação</span></p>
+<p>O que o registro acrescenta: a Real Estate Duo 004 Angra existe, é a ex-<b>Fraction 014</b>, foi rebatizada com o nome da cidade em 22 de janeiro de 2021 e aparece na carteira do Sharks FIP, fundo administrado pela Trustee DTVM, ao lado da Fraction 032 (a SPE presidida por Quadrado) e da Fraction 024 (o PP-NLR). É a máquina do capítulo 1, aplicada a uma casa. A matrícula lida neste dossiê, a projeção 5-B da Ilha do Jorge, é de outra unidade e de outra sociedade do grupo, a Domus Realty; a reportagem situa a mansão no condomínio da mesma ilha. Se são vizinhas, o cartório de Angra dirá. <span class="tag p">provado</span> quanto à sociedade; o resto, imprensa.</p>
+
+<h3>O avião e o helicóptero do ministro</h3>
+<p>Em abril de 2026, a Folha de S.Paulo e o Metrópoles publicaram, com base em registros da ANAC e do DECEA, que o ministro Dias Toffoli entrou no terminal executivo de Brasília em 4 de julho de 2025, dez minutos antes de o <b>PR-SAD</b>, "operado pela Prime Aviation", decolar para Marília, sua cidade; e que o mesmo avião fizera Rio, Brasília e Marília em 21 de março de 2025, quando um tribunal destacara seguranças "para autoridade do STF" naquela cidade. Em setembro de 2026, matérias sobre um relatório da PF reproduziram mensagens de março de 2024 em que o ex-ministro Fábio Faria diz a Vorcaro que Toffoli marcara um almoço na fazenda e pergunta se pode usar um helicóptero "da Prime"; a resposta atribuída a Vorcaro é "Já pede na Prime, irmão" e "Eu tenho na Prime um heli só meu". O ministro não comentou os voos; sobre o relatório, o gabinete disse que ele "nunca manteve ou teve recursos no exterior". Fábio Faria disse nunca ter tratado de processos com ministros. A Prime respondeu que, "por questões de confidencialidade dos contratos", não divulga usuários. <span class="tag a">alegação</span></p>
+<p>O que o registro acrescenta: o PR-SAD é um Phenom 300 cuja sociedade nasceu em 2012 como <b>PrimeAviation 3, primeira geração</b>, e foi rebatizada com o prefixo em 9 de janeiro de 2014; o operador é a Prime Aviation Táxi Aéreo. Nenhuma reportagem identificou o prefixo do helicóptero de 2024; o grupo tem quatro EC 155 B1 e um AS 350, e um deles, o da PS-MAS, é justamente o que a Prime You liga à Viking nos autos. Não se sabe se o voo do almoço aconteceu. Nos autos do STF, o que há sobre Toffoli e a Prime You é indireto: a CPI do Crime Organizado convocou dois parentes do ministro e o relator afastou a obrigação de comparecerem, em decisão de 26 de fevereiro de 2026 (INQ 5026, seq 376). <span class="tag p">provado</span> quanto ao registro e aos autos.</p>
+
+<h3>O contrato de R$ 50 milhões e "estamos gostando muito do jatinho"</h3>
+<p>O termo de dação do capítulo 7 ganhou contexto na imprensa em setembro de 2026: segundo reportagens baseadas em relatório da PF, o contrato de R$ 50 milhões entre o escritório Barci de Moraes e a Viking é de 12 de maio de 2025, o advogado Leonardo Palhares teria estruturado a proposta de quitar R$ 40 milhões com cotas do PP-NLR e do PT-PCT, e em 16 de julho de 2025 alguém da Prime You teria perguntado à sócia do escritório se estavam "gostando da utilização das cotas", com resposta afirmativa. O ministro Alexandre de Moraes chamou a matéria de "fantasiosa" e as ilações de "absolutamente falsas"; o escritório disse ter contratado serviços de táxi aéreo de vários operadores, "entre eles a Prime You", e repetiu que "nada foi assinado". <span class="tag a">alegação</span> O registro, lembre-se, mostra que em julho de 2025 a PT-PCT tinha R$ 101 de capital e nenhum helicóptero. <span class="tag p">provado</span></p>
+
+<h3>Quem mais voou</h3>
+<p>O Metrópoles contou 161 decolagens de jatos da Prime You saindo de Brasília entre 2023 e setembro de 2025, uma a cada seis dias. Entre os episódios noticiados: o deputado Nikolas Ferreira e um pastor na caravana de campanha de outubro de 2022, no PT-PVH ("Nem sabia quem era o cara", disse o deputado); um voo coletivo Brasília–São Paulo em 28 de agosto de 2025 com Vorcaro e cinco políticos; um voo a Maceió em 14 de novembro de 2025, três dias antes da prisão, com o casal Nunes Marques a bordo, presença confirmada pelo gabinete. E um caso que corrige o excesso: o Estadão noticiou que o ministro Gilmar Mendes voara num avião operado pela Prime You em fevereiro de 2025; a empresa confirmou a viagem, explicou que a cota era de um empresário sem relação com Vorcaro, e o jornal corrigiu a atribuição. Serve de lembrete: quarenta e tantas SPEs, cada uma com até quatro cotistas, são muitos donos; nem todo avião da Prime é "o jato de Vorcaro". <span class="tag a">alegação</span></p>
+
+<h3>Os sócios que saíram e o avião que sumiu</h3>
+<p>À imprensa, a Prime You disse que Vorcaro e Quadrado foram sócios até o início de setembro de 2025 e "venderam suas participações para a própria companhia"; o site ICL data a entrada de Vorcaro em setembro de 2021, e outra matéria afirma que Nelson Tanure foi sócio até 2023. Sobre o G700: comprado em junho de 2025 por R$ 538 milhões, primeiro do modelo no Brasil, matrícula PS-MGG, registro americano N739G; posto à venda em fevereiro de 2026 por cerca de US$ 80 milhões, com o último sinal em Basel; depois vendido a uma empresa de táxi aéreo de San Marino, com bloqueio de R$ 280 milhões obtido pelo liquidante do Master, e um acordo num tribunal de falências da Flórida para que a fabricante entregue os documentos do financiamento. Como o avião estava em nome da SPE e não de Vorcaro, não foi bloqueado no primeiro momento. <span class="tag a">alegação</span> O registro confirma a moldura: a SPE nasceu com R$ 101, foi capitalizada em R$ 542,4 milhões por AFAC um mês antes da prisão, autorizou a venda um mês depois dela, e a matrícula brasileira já estava cancelada desde junho de 2025. <span class="tag p">provado</span></p>
+
+<div class="fonte"><b>Fontes do capítulo (imprensa, todas com data).</b> ICL Notícias, 09.09.2026 (mansão de Angra; respostas); TVT, 08.09.2026; Folha de S.Paulo e Metrópoles, 02.04.2026 (PR-SAD, Marília); Metrópoles, 09.04.2026 (161 decolagens); BNews e WSCOM, 11.09.2026 (mensagens de março de 2024 sobre o helicóptero, atribuídas a relatório da PF); O Povo, Metrópoles e ICL, 01 e 02.09.2026, Gazeta do Povo, 02.09.2026 (contrato de R$ 50 milhões e respostas); Metrópoles, 03.03.2026 (Nikolas); Gazeta do Povo, 09.04.2026 (Gilmar Mendes e a correção); Metrópoles, 14.11.2025 e 02.04.2026 (voos coletivos); O Globo, 28.01.2026, e Metrópoles, 03 e 12.09.2026 (sócios; G700, N739G, San Marino, bloqueio); Exper News, 19.02.2026. Autos: INQ 5026, seq 376 (parentes de Toffoli e a CPI).</div>
+</div>
+
+<h2 class="cap" id="contrapeso"><small>Capítulo 10</small>O contrapeso, que tem de constar de qualquer leitura</h2>
+
+<ol>
+<li><b>O afastamento de sigilo não alcançou o presidente nem nenhuma SPE.</b> Alcançou Figueiredo, Freixo, a Entre Investimentos, Aguetoni, Vorcaro, Quadrado e a Viking. Não alcançou Marcus Vinicius da Mata, nem a Prime You, nem a Prime Aviation Táxi Aéreo, nem uma única Fraction.</li>
+<li><b>A Prime You se apresentou espontaneamente à Polícia Federal</b>, declarou-se à disposição, disse ser administradora de SPEs de terceiros e afirma não ter sido questionada desde então.</li>
+<li><b>A frase do "laranja" é depoimento de testemunha</b>, não conclusão de autoridade. Nenhuma decisão nos autos a adota.</li>
+<li><b>Emissão privada de debêntures para capitalizar banco é operação lícita.</b> O que há nos autos do TJSP é inadimplemento e execução, não fraude declarada. A afirmação de que os fiadores eram diretores do Master é da petição inicial.</li>
+<li><b>Propriedade compartilhada é modelo de negócio legítimo</b>, e SPE por ativo é o padrão da aviação executiva e da náutica no mundo inteiro. Renomear uma companhia é ato lícito e cotidiano.</li>
+<li><b>O escritório de advocacia da dação afirma que o contrato nunca foi assinado.</b></li>
+<li><b>Os dois particulares que aparecem na matrícula de Angra antes de 2022 não têm relação com o caso</b> e por isso não são nomeados.</li>
+</ol>
+
+<p>O que decidiria a questão, e ainda não existe em documento público: quem adiantou os AFAC que viraram centenas de milhões de capital (balanços das SPEs; escritura completa da 6ª emissão); quem são os cotistas das 86 sociedades (livros de registro de ações); se a CCB do Máxima de 2019 foi sacada; quem voou no PP-NLR, no PS-MGG e no PS-FST (ANAC e as CPIs); para onde foi o G700 de número de série 87039 (registros aeronáuticos estrangeiros); e se os três fiadores eram, de fato, diretores do banco (Banco Central).</p>
+
+<h2 class="cap" id="fontes"><small>Anexo</small>Fontes, método e limites</h2>
+
+<p><b>Registro de comércio.</b> 32 fichas cadastrais completas da JUCESP (gratuitas para usuário cadastrado, uma por NIRE) e 9 documentos em inteiro teor (atas e boletins, tarifados). A ficha traz o nome de constituição e cada "alteração do nome empresarial", com a data da assembleia. O inteiro teor traz quem subscreveu capital.</p>
+<p><b>Registro de imóveis.</b> Certidão de inteiro teor da matrícula 10.707-A, 1º Ofício de Angra dos Reis, 27.01.2026, assinada digitalmente.</p>
+<p><b>Registro aeronáutico.</b> Consulta pública ao RAB/ANAC por prefixo, 17.09.2026: proprietário, operador, situação, data da última transferência.</p>
+<p><b>Receita Federal e CVM.</b> Dados abertos do CNPJ (quadro societário atual, que só mostra a administração de uma S.A. fechada, nunca os acionistas) e informes de carteira e de cota de fundos (2019 a 08/2026). A Receita guarda só o nome atual de cada empresa; foi cruzando o CNPJ com fontes que datam o nome (carteiras de fundos, autos, registro de imóveis) que as renomeações apareceram.</p>
+<p><b>Acervo do STF.</b> As 189 mil páginas da Pet 15.556 e conexos, tornadas públicas em 11.09.2026, lidas por busca lexical; cada citação traz processo, número sequencial e página, no mesmo padrão do resto deste site.</p>
+<p><b>O que não se fez.</b> Não se leu balanço de SPE (não é público). Não se consultou registro aeronáutico estrangeiro. Não se ouviu a empresa nem as pessoas citadas; o contraditório que consta é o que elas mesmas puseram nos autos. Nenhum dado pessoal (CPF, RG, endereço com número, telefone) foi transcrito, mesmo quando consta dos documentos.</p>
+<p class="muted" style="font-family:var(--font)">Este dossiê segue a mesma política de <a href="index.html#avisos">avisos e direitos</a> do site: opinião assinada como opinião, fato com fonte, nenhuma imputação. Erros de leitura podem ser reportados pelo repositório.</p>
+
+</div>
+</div>
+</section>
+</main>
+<footer class="foot">autos-abertos · dossiê Prime You · dados derivados de registros públicos e de atos do STF · <a href="index.html#metodo">método</a> · <a href="index.html#avisos">avisos e direitos</a></footer>
+<script>
+(function(){const root=document.documentElement;try{const t=localStorage.getItem("bmdb.theme");if(t)root.dataset.theme=t;}catch(e){}
+const b=document.getElementById("themeBtn");const isDark=()=>root.dataset.theme!=="light";const paint=()=>b.textContent=isDark()?"☀":"☾";paint();
+b.onclick=()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("bmdb.theme",root.dataset.theme)}catch(e){}paint();};})();
+</script>
+</body>
+</html>

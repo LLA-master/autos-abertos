@@ -43,6 +43,7 @@ HTML = [
  ('<a href="#processos" data-nav="processos">Processos</a>', '<a href="#processos" data-nav="processos">Proceedings</a>'),
  ('<a href="#tempo" data-nav="tempo">Tempo</a>', '<a href="#tempo" data-nav="tempo">Timeline</a>'),
  ('<a href="#cronicas" data-nav="cronicas">Crônicas</a>', '<a href="#cronicas" data-nav="cronicas">Chronicles</a>'),
+ ('<a href="primeyou.html" class="ext" title="Dossiê ilustrado: Prime You, o andar de cima">Dossiê</a>', '<a href="primeyou.html" class="ext" title="Illustrated dossier (in Portuguese): Prime You, the floor above">Dossier</a>'),
  ('<a href="#metodo" data-nav="metodo">Método</a>\n    <a href="#avisos" data-nav="avisos">Avisos</a>', '<a href="#metodo" data-nav="metodo">Method</a>\n    <a href="#avisos" data-nav="avisos">Disclaimers</a>'),
  ('<a class="lang" href="en.html" hreflang="en" title="English version">EN</a>\n  <span class="ver" title="Versão 0.6: decisões na íntegra, excertos, rastro documental e busca; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.6 · dados em revisão</span>',
   '<a class="lang" href="index.html" hreflang="pt-BR" title="Versão em português">PT</a>\n  <span class="ver" title="Version 0.6: rulings in full, excerpts, document trail and search; automatic extraction and curation under review; names, roles and relations may change">v0.6 · data under review</span>'),
