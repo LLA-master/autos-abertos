@@ -21,18 +21,38 @@
 <header class="top">
   <a class="brand" href="#inicio" data-nav="inicio"><span class="dot"></span><span class="txt">autos-abertos</span></a>
   <nav aria-label="Seções">
-    <a href="#tour" data-nav="tour">Tour</a>
-    <a href="#grafo" data-nav="grafo">Grafo</a>
-    <a href="#mapa" data-nav="mapa">Mapa</a>
-    <a href="#personagens" data-nav="personagens">Personagens</a>
-    <a href="#rede" data-nav="rede">Análise</a>
-    <a href="#processos" data-nav="processos">Processos</a>
-    <a href="#tempo" data-nav="tempo">Tempo</a>
-    <a href="#cronicas" data-nav="cronicas">Crônicas</a>
-    <a href="primeyou.html" class="ext" title="Dossiê ilustrado: Prime You, o andar de cima">Dossiê</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">O caso</button>
+      <div class="dd-m" role="menu" aria-label="O caso">
+        <a href="#processos" data-nav="processos" role="menuitem">Processos</a>
+        <a href="#personagens" data-nav="personagens" role="menuitem">Personagens</a>
+        <a href="#rede" data-nav="rede" role="menuitem">Análise de rede</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Explorar</button>
+      <div class="dd-m" role="menu" aria-label="Explorar">
+        <a href="#grafo" data-nav="grafo" role="menuitem">Grafo</a>
+        <a href="#mapa" data-nav="mapa" role="menuitem">Mapa mental</a>
+        <a href="#tempo" data-nav="tempo" role="menuitem">Linha do tempo</a>
+        <a href="#tour" data-nav="tour" role="menuitem">Tour guiado</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Leituras</button>
+      <div class="dd-m" role="menu" aria-label="Leituras">
+        <a href="#cronicas" data-nav="cronicas" role="menuitem">Crônicas</a>
+        <a href="primeyou.html" class="ext" role="menuitem">Dossiê Prime You</a>
+      </div>
+    </div>
     <a href="#busca" data-nav="busca">Buscar</a>
-    <a href="#metodo" data-nav="metodo">Método</a>
-    <a href="#avisos" data-nav="avisos">Avisos</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Sobre</button>
+      <div class="dd-m" role="menu" aria-label="Sobre">
+        <a href="#metodo" data-nav="metodo" role="menuitem">Método</a>
+        <a href="#avisos" data-nav="avisos" role="menuitem">Avisos e direitos</a>
+      </div>
+    </div>
   </nav>
   <a class="lang" href="en.html" hreflang="en" title="English version">EN</a>
   <span class="ver" title="Versão 0.6: decisões na íntegra, excertos, rastro documental e busca; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.6 · dados em revisão</span>
@@ -340,5 +360,6 @@
 
 <footer class="foot">autos-abertos · dados derivados de atos públicos do STF · <a href="#metodo" data-nav="metodo">método</a> · <a href="#avisos" data-nav="avisos">avisos e direitos</a></footer>
 <script src="app.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

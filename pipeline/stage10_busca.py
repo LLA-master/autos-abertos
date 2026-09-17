@@ -63,7 +63,7 @@ def dossie(arq, en):
     html = arq.read_text(encoding="utf-8")
     corpo = html[html.find('<div class="dz'):html.find("</main>")]
     # o aviso "arraste o desenho para o lado" é instrução de interface, não conteúdo: fora do índice
-    corpo = re.sub(r'<span class="hint">[^<]*</span>', "", corpo)
+    corpo = re.sub(r'<(span|p) class="hint">[^<]*</\1>', "", corpo)
     partes = re.split(r'<h2 class="cap" id="([^"]+)"><small>([^<]*)</small>([\s\S]*?)</h2>', corpo)
     lead = re.search(r'<p class="lead">([\s\S]*?)</p>', html)
     titulo = re.sub(r"\s*—.*$", "", re.search(r"<title>([\s\S]*?)</title>", html).group(1)).strip()

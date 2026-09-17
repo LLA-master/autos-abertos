@@ -18,7 +18,7 @@
 .fig{margin:1.6em 0;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 8px;overflow-x:auto}
 .fig svg{display:block;width:100%;height:auto;font-family:var(--font)}
 .fig figcaption{font-family:var(--font);font-size:13px;color:var(--muted);margin:8px 4px 4px}
-.fig .hint{display:none}
+.hint{display:none}
 .fig figcaption.so-hint{display:none}
 .fig .t{fill:var(--ink);font-size:13px}.fig .s{fill:var(--muted);font-size:11px}.fig .h{fill:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:.02em}
 .fig .box{fill:var(--bg3);stroke:var(--line);stroke-width:1}.fig .box.pink{stroke:var(--pink)}.fig .box.cyan{stroke:var(--cyan)}.fig .box.gold{stroke:var(--gold)}.fig .box.violet{stroke:var(--violet)}.fig .box.bad{stroke:var(--bad)}
@@ -44,7 +44,7 @@
 .tag.p{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 50%,transparent)}.tag.i{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,transparent)}.tag.a{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 50%,transparent)}
 /* enquanto a coluna couber menos de 800 px, o desenho rola em vez de encolher:
    a 375 px ele ficava em 37% e os rótulos menores caíam para 4 px */
-@media (max-width:840px){.fig svg{min-width:800px}.fig .hint{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin:0 0 6px}.fig figcaption.so-hint{display:block;margin-top:2px}}
+@media (max-width:840px){.fig svg{min-width:800px}.dz .tw table{min-width:720px}.hint{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin:0 0 6px}.fig figcaption.so-hint{display:block;margin-top:2px}}
 @media (max-width:640px){.two{grid-template-columns:1fr}.dz .cr-body{font-size:17.5px}.dz h2.cap{font-size:24px}}
 </style>
 </head>
@@ -53,13 +53,38 @@
 <header class="top">
   <a class="brand" href="index.html"><span class="dot"></span><span class="txt">autos-abertos</span></a>
   <nav aria-label="Seções">
-    <a href="index.html#grafo">Grafo</a>
-    <a href="index.html#personagens">Personagens</a>
-    <a href="index.html#processos">Processos</a>
-    <a href="index.html#cronicas">Crônicas</a>
-    <a href="primeyou.html" class="active">Dossiê Prime You</a>
-    <a href="index.html#metodo">Método</a>
-    <a href="index.html#avisos">Avisos</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">O caso</button>
+      <div class="dd-m" role="menu" aria-label="O caso">
+        <a href="index.html#processos" role="menuitem">Processos</a>
+        <a href="index.html#personagens" role="menuitem">Personagens</a>
+        <a href="index.html#rede" role="menuitem">Análise de rede</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Explorar</button>
+      <div class="dd-m" role="menu" aria-label="Explorar">
+        <a href="index.html#grafo" role="menuitem">Grafo</a>
+        <a href="index.html#mapa" role="menuitem">Mapa mental</a>
+        <a href="index.html#tempo" role="menuitem">Linha do tempo</a>
+        <a href="index.html#tour" role="menuitem">Tour guiado</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b active" type="button" aria-haspopup="true" aria-expanded="false">Leituras</button>
+      <div class="dd-m" role="menu" aria-label="Leituras">
+        <a href="index.html#cronicas" role="menuitem">Crônicas</a>
+        <a href="primeyou.html" class="active" role="menuitem">Dossiê Prime You</a>
+      </div>
+    </div>
+    <a href="index.html#busca">Buscar</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Sobre</button>
+      <div class="dd-m" role="menu" aria-label="Sobre">
+        <a href="index.html#metodo" role="menuitem">Método</a>
+        <a href="index.html#avisos" role="menuitem">Avisos e direitos</a>
+      </div>
+    </div>
   </nav>
   <a class="lang" href="primeyou.en.html" hreflang="en" title="English version">EN</a>
   <span class="ver" title="Dossiê ilustrado, versão 1: fontes primárias (JUCESP, registro de imóveis, RAB/ANAC, acervo do STF) e imprensa identificada">dossiê v1 · 17.09.2026</span>
@@ -119,7 +144,7 @@
 <text class="h" x="24" y="90">FRACTION 042</text>
 <text class="t" x="24" y="112">Adm. de Bem Próprio S.A.</text>
 <text class="s" x="24" y="132">capital: R$ 101,00</text>
-<text class="s" x="24" y="148">S.A. fechada, sem acionista público</text>
+<text class="s" x="24" y="148">fechada, sem acionista público</text>
 </g>
 <path class="ln" d="M200 100 L228 100" marker-end="url(#ar)"/>
 <g>
@@ -128,7 +153,7 @@
 <text class="h" x="244" y="90">AFAC</text>
 <text class="t" x="244" y="112">adiantamento p/ futuro</text>
 <text class="t" x="244" y="128">aumento de capital</text>
-<text class="s" x="244" y="148">fica no passivo; quem adiantou não consta</text>
+<text class="s" x="244" y="148">no passivo; o autor não consta</text>
 </g>
 <path class="ln pink" d="M420 100 L448 100" marker-end="url(#arp)"/>
 <g>
@@ -137,7 +162,7 @@
 <text class="h" x="464" y="90">uma só A.G.E.</text>
 <text class="t" x="464" y="112">capitaliza o AFAC e</text>
 <text class="t" x="464" y="128">troca o nome pelo do bem</text>
-<text class="s" x="464" y="148">R$ 101 → R$ 543,9 mi no mesmo ato</text>
+<text class="s" x="464" y="148">R$ 101 → R$ 543,9 mi num só ato</text>
 </g>
 <path class="ln" d="M640 100 L668 100" marker-end="url(#ar)"/>
 <g>
@@ -218,23 +243,24 @@
 <g class="ln" stroke="var(--line)">
 <line x1="430" y1="280" x2="150" y2="110"/><line x1="430" y1="280" x2="710" y2="110"/><line x1="430" y1="280" x2="150" y2="450"/><line x1="430" y1="280" x2="710" y2="450"/><line x1="430" y1="280" x2="430" y2="70"/><line x1="430" y1="280" x2="430" y2="500"/>
 </g>
-<g><circle cx="430" cy="280" r="58" fill="var(--bg3)" stroke="var(--pink)" stroke-width="2"/><text class="h" x="430" y="274" text-anchor="middle">PRIME YOU</text><text class="s" x="430" y="292" text-anchor="middle">ex-Prime Aviation Part.</text><text class="s" x="430" y="306" text-anchor="middle">desde 2008 · Alphaville</text></g>
+<g><circle cx="430" cy="280" r="58" fill="var(--bg3)" stroke="var(--pink)" stroke-width="2"/><text class="h" x="430" y="274" text-anchor="middle">PRIME YOU</text><text class="s" x="430" y="292" text-anchor="middle">ex-Prime Aviation</text><text class="s" x="430" y="306" text-anchor="middle">2008 · Alphaville</text></g>
 <g><rect class="box cyan" x="20" y="40" width="260" height="140" rx="12"/><text class="mono" x="32" y="60">AERONAVES · 12 SPEs</text>
 <text class="t" x="32" y="82">PP-NLR Legacy 650 (ex-F024)</text><text class="t" x="32" y="98">PS-MGG Gulfstream G700 (ex-F042)</text><text class="t" x="32" y="114">PS-FMV Gulfstream G550 (ex-F043)</text><text class="t" x="32" y="130">PT-PCT · PS-MAS · PP-NYM (EC 155)</text><text class="t" x="32" y="146">PT-XGS · PT-PVH · PR-SAD · PT-MCP</text><text class="s" x="32" y="166">PT-LAN · PP-BIO (saiu 2026) · PP-PRI (saiu 2017)</text></g>
 <g><rect class="box gold" x="580" y="40" width="260" height="140" rx="12"/><text class="mono" x="592" y="60">EMBARCAÇÕES · 3 SPEs</text>
 <text class="t" x="592" y="82">SOLAR (ex-F031) · R$ 170,1 mi</text><text class="t" x="592" y="98">SAPPHIRE 62 (ex-F030) · Azimut 62</text><text class="t" x="592" y="114">MONDE BLEU (ex-F039)</text><text class="s" x="592" y="140">Domus Realty autorizou compra de</text><text class="s" x="592" y="156">"nova embarcação" à Azimut do Brasil (2022)</text></g>
 <g><rect class="box violet" x="20" y="390" width="260" height="150" rx="12"/><text class="mono" x="32" y="410">IMÓVEIS · 6 SPEs + Domus</text>
-<text class="t" x="32" y="432">Real Estate Duo 001 Guarujá (ex-F010)</text><text class="t" x="32" y="448">Duo 002 Angra · Duo 004 Angra</text><text class="t" x="32" y="464">Solar Island 005 Angra (ex-F035)</text><text class="t" x="32" y="480">Green 003 Campos do Jordão · Duo 007 Salvador</text><text class="t" x="32" y="500">Domus Realty: Ilha do Jorge 5-B, Cunhambebe</text><text class="s" x="32" y="522">Botanique Hotel (Campos do Jordão), diretoria comum</text></g>
+<text class="t" x="32" y="432">Real Estate Duo 001 Guarujá (ex-F010)</text><text class="t" x="32" y="448">Duo 002 Angra · Duo 004 Angra</text><text class="t" x="32" y="464">Solar Island 005 Angra (ex-F035)</text><text class="s" x="32" y="480">Green 003 C. do Jordão · Duo 007 Salvador</text><text class="s" x="32" y="500">Domus Realty: Ilha do Jorge 5-B, Cunhambebe</text><text class="s" x="32" y="522">Botanique Hotel, diretoria comum</text></g>
 <g><rect class="box" x="580" y="390" width="260" height="150" rx="12" stroke="var(--orange)"/><text class="mono" x="592" y="410">CARROS · 3 SPEs</text>
 <text class="t" x="592" y="432">Cars Duo 001 (ex-F004, 2020)</text><text class="t" x="592" y="448">Cars Duo 002 (ex-F037, 2023)</text><text class="t" x="592" y="464">Cars Duo 003 (ex-F058, 2025)</text><text class="s" x="592" y="490">A PF achou um Range Rover apreendido</text><text class="s" x="592" y="506">em nome da PrimeAviation 4 (INQ 5026)</text></g>
-<g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">HOLDINGS "PRIMEAVIATION N"</text><text class="s" x="312" y="52">numeração usada duas vezes, 2012 e 2024 (ver abaixo)</text></g>
-<g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">OPERADORA</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo (2015): opera 9 das 12 aeronaves</text></g>
+<g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">HOLDINGS "PRIMEAVIATION N"</text><text class="s" x="312" y="52">numeração usada duas vezes: 2012 e 2024</text></g>
+<g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">OPERADORA</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo: 9 das 12 aeronaves</text></g>
 </svg>
 <figcaption><span class="hint">← arraste o desenho para o lado →</span>Cada caixa lista sociedades cujo nome atual e nome de origem constam de ficha da JUCESP; o bem por trás do prefixo vem do RAB/ANAC. Os quatro números "Fraction" nunca localizados (002, 003, 005, 012) ficam fora do desenho.</figcaption>
 </figure>
 
 <p>A tabela abaixo é a árvore posta em linha, com a data de cada batismo. Repare em três coisas. Primeira: a prática é antiga, a primeira troca é de 1º de julho de 2018. Segunda: em 22 de setembro de 2025 três companhias trocaram de nome na mesma assembleia, e o que sumiu do registro naquele dia foi uma marca, "PrimeAviation". Terceira: a numeração "PrimeAviation 1, 2, 3" foi usada duas vezes, em 2012 e de novo em 2024, sobre companhias diferentes. Quem rastreia por nome funde empresas distintas; só o NIRE separa.</p>
 
+<p class="hint">← arraste a tabela para o lado →</p>
 <div class="tw">
 <table>
 <thead><tr><th>Nasceu como</th><th>Virou</th><th>Data da A.G.E.</th><th>O bem (RAB / ficha)</th></tr></thead>
@@ -268,20 +294,20 @@
 <figure class="fig" id="fig-cadeia">
 <svg viewBox="0 0 860 420" role="img" aria-label="Cadeia acionária: Entre Investimentos, PrimeAviation 2, PS-MGG; Prime You, PT-PCT; Viking, PS-MAS">
 <g>
-<rect class="box gold" x="20" y="20" width="250" height="60" rx="12"/><text class="h" x="32" y="44">ENTRE INVESTIMENTOS</text><text class="s" x="32" y="62">rep. Antonio Carlos Freixo Junior · boletim 14.08.2024</text>
+<rect class="box gold" x="20" y="20" width="250" height="60" rx="12"/><text class="h" x="32" y="44">ENTRE INVESTIMENTOS</text><text class="s" x="32" y="62">rep. A. C. Freixo Junior · boletim 14.08.2024</text>
 <path class="ln gold" d="M145 80 L145 110" marker-end="url(#ar)"/>
 <rect class="box pink" x="20" y="112" width="250" height="60" rx="12"/><text class="h" x="32" y="136">PRIMEAVIATION 2 → DOMUS REALTY</text><text class="s" x="32" y="154">Ilha do Jorge · Cunhambebe · capital R$ 144,7 mi</text>
 <path class="ln pink" d="M145 172 L145 202" marker-end="url(#arp)"/>
-<rect class="box cyan" x="20" y="204" width="250" height="60" rx="12"/><text class="h" x="32" y="228">PS-MGG (ex-Fraction 042)</text><text class="s" x="32" y="246">subscreve R$ 542,4 mi por AFAC · A.G.E. 14.10.2025</text>
+<rect class="box cyan" x="20" y="204" width="250" height="60" rx="12"/><text class="h" x="32" y="228">PS-MGG (ex-Fraction 042)</text><text class="s" x="32" y="246">subscreve R$ 542,4 mi (AFAC) · 14.10.2025</text>
 <path class="ln" d="M145 264 L145 294" marker-end="url(#ar)"/>
 <rect class="box" x="20" y="296" width="250" height="50" rx="12"/><text class="t" x="32" y="318">Gulfstream G700 · s/n 87039</text><text class="s" x="32" y="336">matrícula BR cancelada 20.06.2025</text>
 </g>
 <g>
-<rect class="box gold" x="305" y="20" width="250" height="60" rx="12"/><text class="h" x="317" y="44">PATRIMONIAL BLUE FIP</text><text class="s" x="317" y="62">adm. Trustee DTVM · ação ordinária desde 06/2019</text>
+<rect class="box gold" x="305" y="20" width="250" height="60" rx="12"/><text class="h" x="317" y="44">PATRIMONIAL BLUE FIP</text><text class="s" x="317" y="62">adm. Trustee DTVM · ordinária desde 06/2019</text>
 <path class="ln gold" d="M430 80 L430 110" marker-end="url(#ar)"/>
-<rect class="box pink" x="305" y="112" width="250" height="60" rx="12"/><text class="h" x="317" y="136">PRIME AVIATION PART. → PRIME YOU</text><text class="s" x="317" y="154">"sócios: Marcus Matta e o fundo Patrimonial Blue" (autos)</text>
+<rect class="box pink" x="305" y="112" width="250" height="60" rx="12"/><text class="h" x="317" y="136">PRIME AVIATION PART. → PRIME YOU</text><text class="s" x="317" y="154">"sócios: Marcus Matta e o Patrimonial Blue"</text>
 <path class="ln pink" d="M430 172 L430 202" marker-end="url(#arp)"/>
-<rect class="box cyan" x="305" y="204" width="250" height="60" rx="12"/><text class="h" x="317" y="228">PT-PCT (ex-Fraction 053, "F53")</text><text class="s" x="317" y="246">subscreve R$ 30,99 mi por AFAC · A.G.E. 15.10.2025</text>
+<rect class="box cyan" x="305" y="204" width="250" height="60" rx="12"/><text class="h" x="317" y="228">PT-PCT (ex-Fraction 053, "F53")</text><text class="s" x="317" y="246">subscreve R$ 30,99 mi (AFAC) · 15.10.2025</text>
 <path class="ln" d="M430 264 L430 294" marker-end="url(#ar)"/>
 <rect class="box" x="305" y="296" width="250" height="50" rx="12"/><text class="t" x="317" y="318">Airbus EC 155 B1 · s/n 6971</text><text class="s" x="317" y="336">entrou na SPE em 25.11.2025</text>
 </g>
@@ -291,7 +317,7 @@
 <text class="s" x="725" y="130">"cotista", diz a</text><text class="s" x="725" y="146">própria Prime You</text><text class="s" x="725" y="162">(INQ 5026 seq 2)</text>
 <rect class="box cyan" x="590" y="204" width="250" height="60" rx="12"/><text class="h" x="602" y="228">PS-MAS (ex-Fraction 027)</text><text class="s" x="602" y="246">presidente: Marcus Vinicius da Mata</text>
 <path class="ln" d="M715 264 L715 294" marker-end="url(#ar)"/>
-<rect class="box bad" x="590" y="296" width="250" height="50" rx="12"/><text class="t" x="602" y="318">EC 155 B1 · s/n 6852</text><text class="s" x="602" y="336">no RAB, proprietária: SFG Aircraft, Inc. (exterior)</text>
+<rect class="box bad" x="590" y="296" width="250" height="50" rx="12"/><text class="t" x="602" y="318">EC 155 B1 · s/n 6852</text><text class="s" x="602" y="336">no RAB: SFG Aircraft, Inc. (exterior)</text>
 </g>
 <rect class="box" x="20" y="362" width="820" height="48" rx="8" stroke-dasharray="4 4"/><text class="s" x="32" y="380">Também nomeado em ata: Maurício Antônio Quadrado, 6.674.100 ações da Real Estate Duo 001 Guarujá (penhoradas em 28.04.2025, cap. 5);</text><text class="s" x="32" y="396">Aeromatta Participações, subscritora da PP-BIO em 2014, assinada por Quadrado.</text>
 </svg>
@@ -313,11 +339,11 @@
 <figure class="fig" id="fig-circuito">
 <svg viewBox="0 0 860 532" role="img" aria-label="Circuito banco e grupo, 2019 a 2026">
 <g>
-<rect class="box cyan" x="20" y="20" width="255" height="86" rx="12"/><text class="mono" x="32" y="40">23.09.2019</text><text class="h" x="32" y="60">CCB do BANCO MÁXIMA</text><text class="t" x="32" y="78">crédito rotativo de R$ 2,85 mi à Fraction 011,</text><text class="s" x="32" y="96">que na mesma ata vira PT-XGS (Learjet 60)</text>
+<rect class="box cyan" x="20" y="20" width="255" height="86" rx="12"/><text class="mono" x="32" y="40">23.09.2019</text><text class="h" x="32" y="60">CCB do BANCO MÁXIMA</text><text class="s" x="32" y="78">crédito rotativo de R$ 2,85 mi à Fraction 011,</text><text class="s" x="32" y="96">que na mesma ata vira PT-XGS (Learjet 60)</text>
 <path class="ln" d="M275 63 L300 63" marker-end="url(#ar)"/>
-<rect class="box" x="302" y="20" width="255" height="86" rx="12"/><text class="mono" x="314" y="40">14.10.2019 · três semanas depois</text><text class="h" x="314" y="60">BC AUTORIZA VORCARO</text><text class="t" x="314" y="78">a assumir o controle do Banco Máxima,</text><text class="s" x="314" y="96">que virá a se chamar Banco Master (INQ 5026 seq 414)</text>
+<rect class="box" x="302" y="20" width="255" height="86" rx="12"/><text class="mono" x="314" y="40">14.10.2019 · três semanas depois</text><text class="h" x="314" y="60">BC AUTORIZA VORCARO</text><text class="t" x="314" y="78">a assumir o controle do Banco Máxima,</text><text class="s" x="314" y="96">vira Banco Master (INQ 5026 seq 414)</text>
 <path class="ln" d="M557 63 L582 63" marker-end="url(#ar)"/>
-<rect class="box gold" x="584" y="20" width="255" height="86" rx="12"/><text class="mono" x="596" y="40">2014 → 2019</text><text class="h" x="596" y="60">O ANEL JÁ ESTAVA DENTRO</text><text class="s" x="596" y="78">Aeromatta (Quadrado) subscreve a PP-BIO, 2014;</text><text class="s" x="596" y="96">Patrimonial Blue FIP (Trustee) entra em 2019</text>
+<rect class="box gold" x="584" y="20" width="255" height="86" rx="12"/><text class="mono" x="596" y="40">2014 → 2019</text><text class="h" x="596" y="60">O ANEL JÁ ESTAVA DENTRO</text><text class="s" x="596" y="78">Aeromatta (Quadrado) subscreve a PP-BIO;</text><text class="s" x="596" y="96">Patrimonial Blue FIP (Trustee) entra em 2019</text>
 </g>
 <path class="ln pink" d="M711 106 L711 140 L147 140 L147 170" marker-end="url(#arp)"/>
 <g>
@@ -352,6 +378,7 @@
 
 <p>As carteiras que os fundos brasileiros declaram mensalmente à CVM são públicas, e nelas o nome do emissor aparece como o fundo o escreveu naquele mês. Foi assim, aliás, que se descobriu que "Planner Holding Financeira II" e "Trustee Holding Financeira" são a mesma companhia. Onze fundos carregam ativos do perímetro. Dez são administrados pela Trustee DTVM; um, pela Master S/A CTVM. Os gestores se repetem: Blue Solutions e MAM Asset.</p>
 
+<p class="hint">← arraste a tabela para o lado →</p>
 <div class="tw">
 <table>
 <thead><tr><th>Fundo</th><th>Administrador</th><th>O que carrega do perímetro</th><th>Posição máxima</th></tr></thead>
@@ -485,6 +512,7 @@
 </section>
 </main>
 <footer class="foot">autos-abertos · dossiê Prime You · dados derivados de registros públicos e de atos do STF · <a href="index.html#metodo">método</a> · <a href="index.html#avisos">avisos e direitos</a></footer>
+<script src="nav.js"></script>
 <script>
 (function(){const root=document.documentElement;try{const t=localStorage.getItem("bmdb.theme");if(t)root.dataset.theme=t;}catch(e){}
 const b=document.getElementById("themeBtn");const isDark=()=>root.dataset.theme!=="light";const paint=()=>b.textContent=isDark()?"☀":"☾";paint();

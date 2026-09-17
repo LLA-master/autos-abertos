@@ -18,7 +18,7 @@
 .fig{margin:1.6em 0;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 8px;overflow-x:auto}
 .fig svg{display:block;width:100%;height:auto;font-family:var(--font)}
 .fig figcaption{font-family:var(--font);font-size:13px;color:var(--muted);margin:8px 4px 4px}
-.fig .hint{display:none}
+.hint{display:none}
 .fig figcaption.so-hint{display:none}
 .fig .t{fill:var(--ink);font-size:13px}.fig .s{fill:var(--muted);font-size:11px}.fig .h{fill:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:.02em}
 .fig .box{fill:var(--bg3);stroke:var(--line);stroke-width:1}.fig .box.pink{stroke:var(--pink)}.fig .box.cyan{stroke:var(--cyan)}.fig .box.gold{stroke:var(--gold)}.fig .box.violet{stroke:var(--violet)}.fig .box.bad{stroke:var(--bad)}
@@ -44,7 +44,7 @@
 .tag.p{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 50%,transparent)}.tag.i{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,transparent)}.tag.a{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 50%,transparent)}
 /* enquanto a coluna couber menos de 800 px, o desenho rola em vez de encolher:
    a 375 px ele ficava em 37% e os rótulos menores caíam para 4 px */
-@media (max-width:840px){.fig svg{min-width:800px}.fig .hint{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin:0 0 6px}.fig figcaption.so-hint{display:block;margin-top:2px}}
+@media (max-width:840px){.fig svg{min-width:800px}.dz .tw table{min-width:720px}.hint{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin:0 0 6px}.fig figcaption.so-hint{display:block;margin-top:2px}}
 @media (max-width:640px){.two{grid-template-columns:1fr}.dz .cr-body{font-size:17.5px}.dz h2.cap{font-size:24px}}
 </style>
 </head>
@@ -53,13 +53,40 @@
 <header class="top">
   <a class="brand" href="en.html"><span class="dot"></span><span class="txt">autos-abertos</span></a>
   <nav aria-label="Sections">
-    <a href="en.html#grafo">Graph</a>
-    <a href="en.html#personagens">Profiles</a>
-    <a href="en.html#processos">Proceedings</a>
-    <a href="en.html#cronicas">Chronicles</a>
-    <a href="primeyou.en.html" class="active">Prime You dossier</a>
-    <a href="en.html#metodo">Method</a>
-    <a href="en.html#avisos">Disclaimers</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">The case</button>
+      <div class="dd-m" role="menu" aria-label="The case">
+        <a href="en.html#processos" role="menuitem">Proceedings</a>
+        <a href="en.html#personagens" role="menuitem">Profiles</a>
+        <a href="en.html#whoswho" role="menuitem">Who&#39;s who</a>
+        <a href="en.html#rede" role="menuitem">Network analysis</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Explore</button>
+      <div class="dd-m" role="menu" aria-label="Explore">
+        <a href="en.html#grafo" role="menuitem">Graph</a>
+        <a href="en.html#mapa" role="menuitem">Mind map</a>
+        <a href="en.html#tempo" role="menuitem">Timeline</a>
+        <a href="en.html#tour" role="menuitem">Guided tour</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b active" type="button" aria-haspopup="true" aria-expanded="false">Reading</button>
+      <div class="dd-m" role="menu" aria-label="Reading">
+        <a href="en.html#cronicas" role="menuitem">Chronicles</a>
+        <a href="primeyou.en.html" class="active" role="menuitem">Prime You dossier</a>
+        <a href="en.html#primer" role="menuitem">Brazil primer</a>
+      </div>
+    </div>
+    <a href="en.html#busca">Search</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+      <div class="dd-m" role="menu" aria-label="About">
+        <a href="en.html#metodo" role="menuitem">Method</a>
+        <a href="en.html#avisos" role="menuitem">Disclaimers and rights</a>
+      </div>
+    </div>
   </nav>
   <a class="lang" href="primeyou.html" hreflang="pt-BR" title="Versão em português">PT</a>
   <span class="ver" title="Illustrated dossier, version 1: primary sources (São Paulo commercial registry, land registry, Brazilian aircraft registry, Supreme Court record) and named press reports">dossier v1 · 17.09.2026</span>
@@ -128,7 +155,7 @@
 <text class="h" x="244" y="90">AFAC</text>
 <text class="t" x="244" y="112">advance for a future</text>
 <text class="t" x="244" y="128">capital increase</text>
-<text class="s" x="244" y="148">a liability; who advanced it is not stated</text>
+<text class="s" x="244" y="148">a liability; the payer is not stated</text>
 </g>
 <path class="ln pink" d="M420 100 L448 100" marker-end="url(#arp)"/>
 <g>
@@ -137,7 +164,7 @@
 <text class="h" x="464" y="90">one meeting</text>
 <text class="t" x="464" y="112">turns the AFAC into capital</text>
 <text class="t" x="464" y="128">and takes the asset's name</text>
-<text class="s" x="464" y="148">R$ 101 → R$ 543.9m in the same act</text>
+<text class="s" x="464" y="148">R$ 101 → R$ 543.9m in one act</text>
 </g>
 <path class="ln" d="M640 100 L668 100" marker-end="url(#ar)"/>
 <g>
@@ -145,7 +172,7 @@
 <text class="mono" x="684" y="64">STEP 4 · FRACTION</text>
 <text class="h" x="684" y="90">PS-MGG</text>
 <text class="t" x="684" y="112">Gulfstream G700</text>
-<text class="s" x="684" y="132">the registry records only the SPE;</text>
+<text class="s" x="684" y="132">registry records only the SPE;</text>
 <text class="s" x="684" y="148">the fractions live in the shares</text>
 </g>
 <path class="ln" d="M760 160 L760 200" marker-end="url(#ar)"/>
@@ -218,23 +245,24 @@
 <g class="ln" stroke="var(--line)">
 <line x1="430" y1="280" x2="150" y2="110"/><line x1="430" y1="280" x2="710" y2="110"/><line x1="430" y1="280" x2="150" y2="450"/><line x1="430" y1="280" x2="710" y2="450"/><line x1="430" y1="280" x2="430" y2="70"/><line x1="430" y1="280" x2="430" y2="500"/>
 </g>
-<g><circle cx="430" cy="280" r="58" fill="var(--bg3)" stroke="var(--pink)" stroke-width="2"/><text class="h" x="430" y="274" text-anchor="middle">PRIME YOU</text><text class="s" x="430" y="292" text-anchor="middle">ex-Prime Aviation Part.</text><text class="s" x="430" y="306" text-anchor="middle">since 2008 · Alphaville</text></g>
+<g><circle cx="430" cy="280" r="58" fill="var(--bg3)" stroke="var(--pink)" stroke-width="2"/><text class="h" x="430" y="274" text-anchor="middle">PRIME YOU</text><text class="s" x="430" y="292" text-anchor="middle">ex-Prime Aviation</text><text class="s" x="430" y="306" text-anchor="middle">2008 · Alphaville</text></g>
 <g><rect class="box cyan" x="20" y="40" width="260" height="140" rx="12"/><text class="mono" x="32" y="60">AIRCRAFT · 12 SPEs</text>
 <text class="t" x="32" y="82">PP-NLR Legacy 650 (ex-F024)</text><text class="t" x="32" y="98">PS-MGG Gulfstream G700 (ex-F042)</text><text class="t" x="32" y="114">PS-FMV Gulfstream G550 (ex-F043)</text><text class="t" x="32" y="130">PT-PCT · PS-MAS · PP-NYM (EC 155)</text><text class="t" x="32" y="146">PT-XGS · PT-PVH · PR-SAD · PT-MCP</text><text class="s" x="32" y="166">PT-LAN · PP-BIO (left 2026) · PP-PRI (left 2017)</text></g>
 <g><rect class="box gold" x="580" y="40" width="260" height="140" rx="12"/><text class="mono" x="592" y="60">VESSELS · 3 SPEs</text>
 <text class="t" x="592" y="82">SOLAR (ex-F031) · R$ 170.1m</text><text class="t" x="592" y="98">SAPPHIRE 62 (ex-F030) · Azimut 62</text><text class="t" x="592" y="114">MONDE BLEU (ex-F039)</text><text class="s" x="592" y="140">Domus Realty approved the purchase of a</text><text class="s" x="592" y="156">"new vessel" from Azimut do Brasil (2022)</text></g>
 <g><rect class="box violet" x="20" y="390" width="260" height="150" rx="12"/><text class="mono" x="32" y="410">PROPERTY · 6 SPEs + Domus</text>
-<text class="t" x="32" y="432">Real Estate Duo 001 Guarujá (ex-F010)</text><text class="t" x="32" y="448">Duo 002 Angra · Duo 004 Angra</text><text class="t" x="32" y="464">Solar Island 005 Angra (ex-F035)</text><text class="t" x="32" y="480">Green 003 Campos do Jordão · Duo 007 Salvador</text><text class="t" x="32" y="500">Domus Realty: Ilha do Jorge 5-B, Cunhambebe</text><text class="s" x="32" y="522">Botanique Hotel (Campos do Jordão), shared directors</text></g>
+<text class="t" x="32" y="432">Real Estate Duo 001 Guarujá (ex-F010)</text><text class="t" x="32" y="448">Duo 002 Angra · Duo 004 Angra</text><text class="t" x="32" y="464">Solar Island 005 Angra (ex-F035)</text><text class="s" x="32" y="480">Green 003 C. do Jordão · Duo 007 Salvador</text><text class="s" x="32" y="500">Domus Realty: Ilha do Jorge 5-B, Cunhambebe</text><text class="s" x="32" y="522">Botanique Hotel, shared directors</text></g>
 <g><rect class="box" x="580" y="390" width="260" height="150" rx="12" stroke="var(--orange)"/><text class="mono" x="592" y="410">CARS · 3 SPEs</text>
 <text class="t" x="592" y="432">Cars Duo 001 (ex-F004, 2020)</text><text class="t" x="592" y="448">Cars Duo 002 (ex-F037, 2023)</text><text class="t" x="592" y="464">Cars Duo 003 (ex-F058, 2025)</text><text class="s" x="592" y="490">Police seized a Range Rover held by</text><text class="s" x="592" y="506">PrimeAviation 4 (INQ 5026)</text></g>
-<g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">"PRIMEAVIATION N" HOLDINGS</text><text class="s" x="312" y="52">the numbering was used twice, 2012 and 2024 (see below)</text></g>
-<g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">AIR OPERATOR</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo (2015): operates 9 of the 12 aircraft</text></g>
+<g><rect class="box pink" x="300" y="14" width="260" height="56" rx="12"/><text class="mono" x="312" y="34">"PRIMEAVIATION N" HOLDINGS</text><text class="s" x="312" y="52">the numbering was used twice: 2012 and 2024</text></g>
+<g><rect class="box" x="300" y="494" width="260" height="56" rx="12" stroke="var(--muted)"/><text class="mono" x="312" y="514">AIR OPERATOR</text><text class="s" x="312" y="532">Prime Aviation Táxi Aéreo: 9 of the 12 aircraft</text></g>
 </svg>
 <figcaption><span class="hint">← drag the diagram sideways →</span>Each box lists companies whose current and original names both appear in a JUCESP file; the asset behind each registration mark comes from the Brazilian Aircraft Registry. The four "Fraction" numbers never located (002, 003, 005, 012) are left out of the drawing.</figcaption>
 </figure>
 
 <p>The table below is the tree set out in a line, with the date of each christening. Note three things. First: the practice is old, the earliest change is dated 1 July 2018. Second: on 22 September 2025 three companies changed their names at the same meeting, and what disappeared from the registry that day was a brand, "PrimeAviation". Third: the numbering "PrimeAviation 1, 2, 3" was used twice, in 2012 and again in 2024, for different companies. Anyone tracking by name merges companies that are not the same; only the registry number tells them apart.</p>
 
+<p class="hint">← drag the table sideways →</p>
 <div class="tw">
 <table>
 <thead><tr><th>Born as</th><th>Became</th><th>Date of the meeting</th><th>The asset (aircraft registry / company file)</th></tr></thead>
@@ -268,25 +296,25 @@
 <figure class="fig" id="fig-cadeia">
 <svg viewBox="0 0 860 420" role="img" aria-label="Ownership chain: Entre Investimentos, PrimeAviation 2, PS-MGG; Prime You, PT-PCT; Viking, PS-MAS">
 <g>
-<rect class="box gold" x="20" y="20" width="250" height="60" rx="12"/><text class="h" x="32" y="44">ENTRE INVESTIMENTOS</text><text class="s" x="32" y="62">rep. Antonio Carlos Freixo Junior · form of 14.08.2024</text>
+<rect class="box gold" x="20" y="20" width="250" height="60" rx="12"/><text class="h" x="32" y="44">ENTRE INVESTIMENTOS</text><text class="s" x="32" y="62">rep. A. C. Freixo Junior · form of 14.08.2024</text>
 <path class="ln gold" d="M145 80 L145 110" marker-end="url(#ar)"/>
 <rect class="box pink" x="20" y="112" width="250" height="60" rx="12"/><text class="h" x="32" y="136">PRIMEAVIATION 2 → DOMUS REALTY</text><text class="s" x="32" y="154">Ilha do Jorge · Cunhambebe · capital R$ 144.7m</text>
 <path class="ln pink" d="M145 172 L145 202" marker-end="url(#arp)"/>
-<rect class="box cyan" x="20" y="204" width="250" height="60" rx="12"/><text class="h" x="32" y="228">PS-MGG (ex-Fraction 042)</text><text class="s" x="32" y="246">subscribes R$ 542.4m via AFAC · meeting 14.10.2025</text>
+<rect class="box cyan" x="20" y="204" width="250" height="60" rx="12"/><text class="h" x="32" y="228">PS-MGG (ex-Fraction 042)</text><text class="s" x="32" y="246">subscribes R$ 542.4m (AFAC) · 14.10.2025</text>
 <path class="ln" d="M145 264 L145 294" marker-end="url(#ar)"/>
 <rect class="box" x="20" y="296" width="250" height="50" rx="12"/><text class="t" x="32" y="318">Gulfstream G700 · s/n 87039</text><text class="s" x="32" y="336">BR registration cancelled 20.06.2025</text>
 </g>
 <g>
-<rect class="box gold" x="305" y="20" width="250" height="60" rx="12"/><text class="h" x="317" y="44">PATRIMONIAL BLUE FIP</text><text class="s" x="317" y="62">adm. Trustee DTVM · common shares since 06/2019</text>
+<rect class="box gold" x="305" y="20" width="250" height="60" rx="12"/><text class="h" x="317" y="44">PATRIMONIAL BLUE FIP</text><text class="s" x="317" y="62">adm. Trustee DTVM · common shares, 06/2019</text>
 <path class="ln gold" d="M430 80 L430 110" marker-end="url(#ar)"/>
-<rect class="box pink" x="305" y="112" width="250" height="60" rx="12"/><text class="h" x="317" y="136">PRIME AVIATION PART. → PRIME YOU</text><text class="s" x="317" y="154">"partners: Marcus Matta and the Patrimonial Blue fund"</text>
+<rect class="box pink" x="305" y="112" width="250" height="60" rx="12"/><text class="h" x="317" y="136">PRIME AVIATION PART. → PRIME YOU</text><text class="s" x="317" y="154">"partners: Marcus Matta and Patrimonial Blue"</text>
 <path class="ln pink" d="M430 172 L430 202" marker-end="url(#arp)"/>
-<rect class="box cyan" x="305" y="204" width="250" height="60" rx="12"/><text class="h" x="317" y="228">PT-PCT (ex-Fraction 053, "F53")</text><text class="s" x="317" y="246">subscribes R$ 30.99m via AFAC · meeting 15.10.2025</text>
+<rect class="box cyan" x="305" y="204" width="250" height="60" rx="12"/><text class="h" x="317" y="228">PT-PCT (ex-Fraction 053, "F53")</text><text class="s" x="317" y="246">subscribes R$ 30.99m (AFAC) · 15.10.2025</text>
 <path class="ln" d="M430 264 L430 294" marker-end="url(#ar)"/>
 <rect class="box" x="305" y="296" width="250" height="50" rx="12"/><text class="t" x="317" y="318">Airbus EC 155 B1 · s/n 6971</text><text class="s" x="317" y="336">entered the SPE on 25.11.2025</text>
 </g>
 <g>
-<rect class="box gold" x="590" y="20" width="250" height="60" rx="12"/><text class="h" x="602" y="44">VIKING PARTICIPAÇÕES</text><text class="s" x="602" y="62">Daniel Vorcaro's holding company · Belo Horizonte</text>
+<rect class="box gold" x="590" y="20" width="250" height="60" rx="12"/><text class="h" x="602" y="44">VIKING PARTICIPAÇÕES</text><text class="s" x="602" y="62">Daniel Vorcaro's holding · Belo Horizonte</text>
 <path class="ln gold" d="M715 80 L715 202" marker-end="url(#ar)"/>
 <text class="s" x="725" y="130">"quotaholder", says</text><text class="s" x="725" y="146">Prime You itself</text><text class="s" x="725" y="162">(INQ 5026 item 2)</text>
 <rect class="box cyan" x="590" y="204" width="250" height="60" rx="12"/><text class="h" x="602" y="228">PS-MAS (ex-Fraction 027)</text><text class="s" x="602" y="246">chair: Marcus Vinicius da Mata</text>
@@ -313,9 +341,9 @@
 <figure class="fig" id="fig-circuito">
 <svg viewBox="0 0 860 532" role="img" aria-label="The circuit between bank and group, 2019 to 2026">
 <g>
-<rect class="box cyan" x="20" y="20" width="255" height="86" rx="12"/><text class="mono" x="32" y="40">23.09.2019</text><text class="h" x="32" y="60">BANCO MÁXIMA CREDIT NOTE</text><text class="t" x="32" y="78">revolving credit of R$ 2.85m to Fraction 011,</text><text class="s" x="32" y="96">in the same minutes becomes PT-XGS (Learjet 60)</text>
+<rect class="box cyan" x="20" y="20" width="255" height="86" rx="12"/><text class="mono" x="32" y="40">23.09.2019</text><text class="h" x="32" y="60">BANCO MÁXIMA CREDIT NOTE</text><text class="s" x="32" y="78">revolving credit of R$ 2.85m to Fraction 011,</text><text class="s" x="32" y="96">same minutes: becomes PT-XGS (Learjet 60)</text>
 <path class="ln" d="M275 63 L300 63" marker-end="url(#ar)"/>
-<rect class="box" x="302" y="20" width="255" height="86" rx="12"/><text class="mono" x="314" y="40">14.10.2019 · three weeks later</text><text class="h" x="314" y="60">CENTRAL BANK CLEARS VORCARO</text><text class="t" x="314" y="78">to take control of Banco Máxima,</text><text class="s" x="314" y="96">later renamed Banco Master (INQ 5026 item 414)</text>
+<rect class="box" x="302" y="20" width="255" height="86" rx="12"/><text class="mono" x="314" y="40">14.10.2019 · three weeks later</text><text class="h" x="314" y="60">CENTRAL BANK CLEARS VORCARO</text><text class="t" x="314" y="78">to take control of Banco Máxima,</text><text class="s" x="314" y="96">renamed Banco Master (INQ 5026 item 414)</text>
 <path class="ln" d="M557 63 L582 63" marker-end="url(#ar)"/>
 <rect class="box gold" x="584" y="20" width="255" height="86" rx="12"/><text class="mono" x="596" y="40">2014 → 2019</text><text class="h" x="596" y="60">THE RING WAS ALREADY INSIDE</text><text class="s" x="596" y="78">Aeromatta (Quadrado) subscribes PP-BIO, 2014;</text><text class="s" x="596" y="96">Patrimonial Blue FIP (Trustee) enters in 2019</text>
 </g>
@@ -327,7 +355,7 @@
 </g>
 <path class="ln bad" d="M430 300 L430 332" marker-end="url(#ar)"/>
 <g>
-<rect class="box bad" x="20" y="334" width="255" height="86" rx="12"/><text class="mono" x="32" y="354">03 and 04.2025</text><text class="h" x="32" y="374">DEFAULT</text><text class="t" x="32" y="392">acceleration; enforcement action for</text><text class="t" x="32" y="410">R$ 470.5m in the 22nd Civil Court of São Paulo</text>
+<rect class="box bad" x="20" y="334" width="255" height="86" rx="12"/><text class="mono" x="32" y="354">03 and 04.2025</text><text class="h" x="32" y="374">DEFAULT</text><text class="t" x="32" y="392">acceleration; enforcement action for</text><text class="s" x="32" y="410">R$ 470.5m in the 22nd Civil Court of São Paulo</text>
 <path class="ln bad" d="M275 377 L300 377" marker-end="url(#ar)"/>
 <rect class="box bad" x="302" y="334" width="255" height="86" rx="12"/><text class="mono" x="314" y="354">28.04.2025</text><text class="h" x="314" y="374">ATTACHMENT REACHES THE SPEs</text><text class="t" x="314" y="392">Quadrado's 6,674,100 shares in</text><text class="s" x="314" y="410">Real Estate Duo 001; 100m Viking quotas</text>
 <path class="ln bad" d="M557 377 L582 377" marker-end="url(#ar)"/>
@@ -352,6 +380,7 @@
 
 <p>The portfolios that Brazilian funds report monthly to the securities regulator are public, and in them the issuer's name appears exactly as the fund wrote it that month. That, incidentally, is how we discovered that "Planner Holding Financeira II" and "Trustee Holding Financeira" are the same company. Eleven funds carry assets from this perimeter. Ten are administered by Trustee DTVM; one by Master S/A CTVM. The managers repeat: Blue Solutions and MAM Asset.</p>
 
+<p class="hint">← drag the table sideways →</p>
 <div class="tw">
 <table>
 <thead><tr><th>Fund</th><th>Administrator</th><th>What it holds from the perimeter</th><th>Peak position</th></tr></thead>
@@ -485,6 +514,7 @@
 </section>
 </main>
 <footer class="foot">autos-abertos · Prime You dossier · data derived from public registries and from acts of Brazil's Supreme Court · <a href="en.html#metodo">method</a> · <a href="en.html#avisos">disclaimers and rights</a></footer>
+<script src="nav.js"></script>
 <script>
 (function(){const root=document.documentElement;try{const t=localStorage.getItem("bmdb.theme");if(t)root.dataset.theme=t;}catch(e){}
 const b=document.getElementById("themeBtn");const isDark=()=>root.dataset.theme!=="light";const paint=()=>b.textContent=isDark()?"☀":"☾";paint();

@@ -23,20 +23,40 @@
 <header class="top">
   <a class="brand" href="#inicio" data-nav="inicio"><span class="dot"></span><span class="txt">autos-abertos</span></a>
   <nav aria-label="Sections">
-    <a href="#tour" data-nav="tour">Tour</a>
-    <a href="#grafo" data-nav="grafo">Graph</a>
-    <a href="#mapa" data-nav="mapa">Mind map</a>
-    <a href="#whoswho" data-nav="whoswho">Who's who</a>
-    <a href="#primer" data-nav="primer">Primer</a>
-    <a href="#personagens" data-nav="personagens">Profiles</a>
-    <a href="#rede" data-nav="rede">Analysis</a>
-    <a href="#processos" data-nav="processos">Proceedings</a>
-    <a href="#tempo" data-nav="tempo">Timeline</a>
-    <a href="#cronicas" data-nav="cronicas">Chronicles</a>
-    <a href="primeyou.en.html" class="ext" title="Illustrated dossier: Prime You, the floor above">Dossier</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">The case</button>
+      <div class="dd-m" role="menu" aria-label="The case">
+        <a href="#processos" data-nav="processos" role="menuitem">Proceedings</a>
+        <a href="#personagens" data-nav="personagens" role="menuitem">Profiles</a>
+        <a href="#whoswho" data-nav="whoswho" role="menuitem">Who&#39;s who</a>
+        <a href="#rede" data-nav="rede" role="menuitem">Network analysis</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Explore</button>
+      <div class="dd-m" role="menu" aria-label="Explore">
+        <a href="#grafo" data-nav="grafo" role="menuitem">Graph</a>
+        <a href="#mapa" data-nav="mapa" role="menuitem">Mind map</a>
+        <a href="#tempo" data-nav="tempo" role="menuitem">Timeline</a>
+        <a href="#tour" data-nav="tour" role="menuitem">Guided tour</a>
+      </div>
+    </div>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Reading</button>
+      <div class="dd-m" role="menu" aria-label="Reading">
+        <a href="#cronicas" data-nav="cronicas" role="menuitem">Chronicles</a>
+        <a href="primeyou.en.html" class="ext" role="menuitem">Prime You dossier</a>
+        <a href="#primer" data-nav="primer" role="menuitem">Brazil primer</a>
+      </div>
+    </div>
     <a href="#busca" data-nav="busca">Search</a>
-    <a href="#metodo" data-nav="metodo">Method</a>
-    <a href="#avisos" data-nav="avisos">Disclaimers</a>
+    <div class="dd">
+      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+      <div class="dd-m" role="menu" aria-label="About">
+        <a href="#metodo" data-nav="metodo" role="menuitem">Method</a>
+        <a href="#avisos" data-nav="avisos" role="menuitem">Disclaimers and rights</a>
+      </div>
+    </div>
   </nav>
   <a class="lang" href="index.html" hreflang="pt-BR" title="Versão em português">PT</a>
   <span class="ver" title="Version 0.6: rulings in full, excerpts, document trail and search; automatic extraction and curation under review; names, roles and relations may change">v0.6 · data under review</span>
@@ -564,5 +584,6 @@
 
 <footer class="foot">autos-abertos · data derived from public acts of Brazil's Supreme Court · <a href="#metodo" data-nav="metodo">method</a> · <a href="#avisos" data-nav="avisos">disclaimers and rights</a> · <a href="index.html" hreflang="pt-BR">versão em português</a></footer>
 <script src="app.en.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

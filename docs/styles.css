@@ -23,7 +23,7 @@ a{color:var(--cyan)}h1,h2,h3{font-family:var(--display);letter-spacing:.01em;mar
 h1{font-size:clamp(44px,6.6vw,84px);line-height:.98;text-transform:uppercase;letter-spacing:.01em}h2{font-size:28px}h3{font-size:18px}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--bg2);padding:6px 10px;z-index:99}
 .top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;padding:12px 22px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.brand{font-family:var(--display);font-size:22px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:.02em}
+.brand{font-family:var(--display);font-size:22px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:.02em;white-space:nowrap;flex:none}
 .brand span.txt{background:linear-gradient(90deg,var(--pink),var(--orange) 50%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(255,46,151,.35))}
 .brand .dot{width:14px;height:14px;border-radius:50%;background:conic-gradient(from 200deg,var(--pink),var(--orange),var(--cyan),var(--pink));box-shadow:var(--glow)}
 .top nav{display:flex;gap:4px;margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -31,6 +31,19 @@ h1{font-size:clamp(44px,6.6vw,84px);line-height:.98;text-transform:uppercase;let
 .top nav a{color:var(--ink2);text-decoration:none;padding:7px 12px;border-radius:99px;font-weight:500;font-size:14px;white-space:nowrap}
 .top nav a.active,.top nav a:hover{background:var(--bg3);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
 .top nav a.active{box-shadow:inset 0 0 0 1px var(--pink)}
+/* menus do cabeçalho (nav.js): o painel é fixo e mora no body, por isso as regras
+   não dependem de .top nav — só o botão depende, e precisa vencer .top nav a */
+.top .dd{display:flex}
+.top .dd-b{font:inherit;font-weight:500;font-size:14px;color:var(--ink2);background:transparent;border:0;padding:7px 12px;border-radius:99px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.top .dd-b::after{content:"▾";font-size:10px;line-height:1;opacity:.65}
+.top .dd-b:hover,.top .dd-b[aria-expanded=true]{background:var(--bg3);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.top .dd-b.active{color:var(--ink);box-shadow:inset 0 0 0 1px var(--pink)}
+.dd-m{position:fixed;z-index:60;display:none;min-width:200px;max-width:calc(100vw - 16px);background:color-mix(in srgb,var(--bg2) 96%,transparent);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:var(--shadow)}
+.dd-m.open{display:block}
+.dd-m a{display:block;padding:8px 10px;border-radius:10px;font-family:var(--font);font-size:14px;color:var(--ink2);text-decoration:none;white-space:nowrap}
+.dd-m a:hover,.dd-m a:focus-visible{background:var(--bg3);color:var(--ink);outline:0}
+.dd-m a.active{color:var(--pink)}
+.dd-m a.ext::after{content:"↗";font-size:10px;margin-left:6px;opacity:.6}
 .theme{border:1px solid var(--line);background:var(--bg2);color:var(--ink);border-radius:99px;width:36px;height:36px;cursor:pointer}
 main{max-width:1200px;margin:0 auto;padding:22px}
 .view[hidden]{display:none}
@@ -117,7 +130,8 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--orang
 .prose{max-width:800px;background:color-mix(in srgb,var(--bg2) 85%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:8px 26px 20px}.prose li{margin:6px 0}
 .foot{text-align:center;color:var(--muted);font-size:13px;padding:30px 20px 40px}
 @media (max-width:900px){.trail{grid-template-columns:1fr}.rail{position:static}.panel{left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:55%}.graph-wrap,.mm-wrap{height:70vh}.sun{display:none}.palms{width:200px}}
-@media (max-width:640px){.top{gap:10px;padding:10px 12px}.brand{white-space:nowrap;font-size:16px}.top nav{overflow-x:auto;scrollbar-width:none;flex:1}.top nav a{white-space:nowrap}.pill{white-space:nowrap}.step-head{flex-wrap:wrap}h1{font-size:38px}main{padding:14px}}
+/* no celular o menu desce para uma segunda linha: cinco grupos não cabem ao lado da marca */
+@media (max-width:640px){.top{gap:10px;row-gap:8px;padding:10px 12px;flex-wrap:wrap}.brand{white-space:nowrap;font-size:16px}.top nav{order:3;flex:1 0 100%;margin-left:0;justify-content:space-between;overflow-x:auto;scrollbar-width:none}.top .dd-b,.top nav>a{padding:6px 7px;font-size:13px}.top .dd-b{gap:4px}.top nav a{white-space:nowrap}.pill{white-space:nowrap}.step-head{flex-wrap:wrap}h1{font-size:38px}main{padding:14px}}
 
 .zoom{display:inline-flex;gap:4px}.switch input{accent-color:var(--cyan)}
 .toolbar .ctl output{min-width:1.6em;text-align:right}
