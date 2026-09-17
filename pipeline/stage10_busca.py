@@ -3,8 +3,9 @@
 """Estágio 10 — BUSCA DO SITE. Índice invertido do que já é público, para o leitor procurar.
 
 O acervo tem 189 mil páginas, mas o site publica só o que passou pelos gates: os excertos das
-decisões, as crônicas, as fichas dos personagens, os resumos dos processos e o rastro documental.
-Este estágio indexa exatamente isso, e nada além — o texto integral dos autos continua fora.
+decisões, as crônicas, as fichas dos personagens, os resumos dos processos, o rastro documental e
+o dossiê ilustrado. Este estágio indexa exatamente isso, e nada além — o texto integral dos autos
+continua fora.
 
 O que sai daqui é um índice invertido: para cada palavra, em que documentos ela aparece e
 quantas vezes. O navegador recebe isso pronto e faz a busca por BM25 sem servidor, sem
@@ -47,6 +48,32 @@ def corta(s, n=230):
     s = re.sub(r"\s+", " ", s or "").strip()
     return s if len(s) <= n else s[:n].rsplit(" ", 1)[0] + "…"
 
+ENT = {"&amp;": "&", "&nbsp;": " ", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&#39;": "'", "&mdash;": "—"}
+
+def limpa(h):
+    """texto visível de um pedaço de HTML (o dossiê é página estática, não JSON)"""
+    h = re.sub(r"<(script|style)[\s\S]*?</\1>", " ", h or "")
+    h = re.sub(r"<[^>]+>", " ", h)
+    for k, v in ENT.items(): h = h.replace(k, v)
+    return re.sub(r"\s+", " ", h).strip()
+
+def dossie(arq, en):
+    """o dossiê ilustrado é uma página fora do app; entra na busca um documento por capítulo,
+    e o resultado leva à âncora do capítulo, não ao topo da página"""
+    html = arq.read_text(encoding="utf-8")
+    corpo = html[html.find('<div class="dz'):html.find("</main>")]
+    partes = re.split(r'<h2 class="cap" id="([^"]+)"><small>([^<]*)</small>([\s\S]*?)</h2>', corpo)
+    lead = re.search(r'<p class="lead">([\s\S]*?)</p>', html)
+    titulo = re.sub(r"\s*—.*$", "", re.search(r"<title>([\s\S]*?)</title>", html).group(1)).strip()
+    abertura = limpa(partes[0])
+    saida = [("dossie", arq.name, titulo, corta(limpa(lead.group(1)) if lead else abertura, 190),
+              " ".join([titulo, limpa(lead.group(1)) if lead else "", abertura]))]
+    for k in range(1, len(partes), 4):
+        ident, cap, tit, texto = partes[k], partes[k + 1], limpa(partes[k + 2]), limpa(partes[k + 3])
+        saida.append(("dossie", f"{arq.name}#{ident}", f"{cap} · {tit}", corta(texto, 190),
+                      " ".join([titulo, cap, tit, texto])))
+    return saida
+
 def coletar(en):
     """devolve [(tipo, hash, titulo, subtitulo, textoParaBusca)] do que já é público"""
     d = lambda f: json.load(open(OUT / f, encoding="utf-8"))
@@ -78,6 +105,10 @@ def coletar(en):
                           f"{doc['proc']} · seq {str(doc['seq']).zfill(5)} · p. {i}",
                           corta(re.sub(r"^.{0,40}?(DECIS[ÃA]O|DESPACHO)[:\s]*", "", texto), 190),
                           " ".join([doc["proc"], doc["tipo"], texto])))
+
+    dz = DOCS / ("primeyou.en.html" if en else "primeyou.html")
+    if dz.exists(): saida += dossie(dz, en)
+    else: print(f"aviso: {dz.name} não existe; o dossiê fica fora da busca")
 
     idx = json.load(open(DOCS / "posts" / "index.json", encoding="utf-8"))["posts"]
     pen = json.load(open(ROOT / "pipeline" / "en" / "posts_en.json", encoding="utf-8")) if en else {}

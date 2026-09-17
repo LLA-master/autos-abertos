@@ -7,8 +7,8 @@ e a tradução precisa de revisão."""
 
 JS = [
  # --- leitor das decisões (v0.6) ---
- ('const BS_LABEL={excerto:"trecho",pagina:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo"};',
-  'const BS_LABEL={excerto:"passage",pagina:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding"};'),
+ ('const BS_LABEL={excerto:"trecho",pagina:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo",dossie:"dossiê"};',
+  'const BS_LABEL={excerto:"passage",pagina:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding",dossie:"dossier chapter"};'),
  ('>ler a peça</button>', '>read the filing</button>'),
  ('>ler a peça inteira, na página ${x.p}</button>', '>read the whole filing, at page ${x.p}</button>'),
  ('<button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← anterior</button>',

@@ -55,7 +55,7 @@
       <a class="btn ghost" href="#metodo" data-nav="metodo">Como isto foi feito</a>
     </div>
   </div>
-  <div class="gridfloor" aria-hidden="true"></div>
+  <div class="gridwrap" aria-hidden="true"><div class="gridfloor"></div></div>
   <div class="tiles" id="tiles"></div>
   <div class="cards3">
     <article class="card"><h3>Tour</h3><p>Oito passos curtos, cada um com o grafo já configurado para mostrar uma coisa. Você aprende a ler o caso olhando, sem manual.</p></article>
@@ -226,9 +226,9 @@
 
 <section id="v-busca" class="view" hidden>
   <h2>Buscar no site</h2>
-  <p class="lead small">Procura ao mesmo tempo nos trechos das decisões, nas crônicas, nas fichas dos personagens e nos resumos dos processos. A busca roda no seu navegador: nada do que você digita sai daqui. O texto integral dos autos não está publicado e, por isso, não é procurável aqui; para isso o caminho é o pacote do STF.</p>
+  <p class="lead small">Procura ao mesmo tempo nos trechos das decisões, nas crônicas, nas fichas dos personagens, nos resumos dos processos e nos capítulos do dossiê. A busca roda no seu navegador: nada do que você digita sai daqui. O texto integral dos autos não está publicado e, por isso, não é procurável aqui; para isso o caminho é o pacote do STF.</p>
   <div class="search bs-box"><input id="bsQ" type="search" placeholder="palavra, nome, número, expressão…" autocomplete="off" aria-label="Buscar no site"></div>
-  <div class="chips" id="bsChips"><button class="chip on" data-bt="">tudo</button><button class="chip" data-bt="pagina">decisões</button><button class="chip" data-bt="excerto">trechos</button><button class="chip" data-bt="cronica">crônicas</button><button class="chip" data-bt="personagem">personagens</button><button class="chip" data-bt="processo">processos</button></div>
+  <div class="chips" id="bsChips"><button class="chip on" data-bt="">tudo</button><button class="chip" data-bt="pagina">decisões</button><button class="chip" data-bt="excerto">trechos</button><button class="chip" data-bt="cronica">crônicas</button><button class="chip" data-bt="dossie">dossiê</button><button class="chip" data-bt="personagem">personagens</button><button class="chip" data-bt="processo">processos</button></div>
   <p class="muted small" id="bsInfo"></p>
   <div id="bsOut" class="bs-out"></div>
 </section>

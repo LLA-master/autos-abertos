@@ -726,7 +726,7 @@ function bm25(termos,orig){
   notas.forEach((v,i)=>{ const c=(cobre.get(i)||new Set()).size; notas.set(i, v*Math.pow((c||0.4)/nq,2)); });
   return notas;
 }
-const BS_LABEL={excerto:"passage",pagina:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding"};
+const BS_LABEL={excerto:"passage",pagina:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding",dossie:"dossier chapter"};
 function rodaBusca(){
   const bruto=$("#bsQ").value.trim(); const O=$("#bsOut");
   if(!bruto){ O.innerHTML=""; $("#bsInfo").textContent=""; return; }
@@ -752,6 +752,8 @@ function rodaBusca(){
 /* cada resultado leva ao lugar certo: processo, crônica, personagem */
 function abreResultado(h){
   const [vista,qs]=h.split("?"); const p=new URLSearchParams(qs||"");
+  /* o dossiê é página própria, fora do app: sai do SPA e cai na âncora do capítulo */
+  if(/\.html(#|$)/.test(vista)){ location.href=vista; return; }
   if(vista==="processos"){ location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(p.get("p")); const x=p.get("x"); if(x){ const el=$("#exc-"+p.get("p").replace(/\s+/g,"")+"-"+x.replace("-","-")); if(el){ el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("pisca"); setTimeout(()=>el.classList.remove("pisca"),1600); } } },80); return; }
   if(vista==="personagens"){ openWiki(p.get("p")); return; }
   if(vista==="cronicas"){ location.hash="cronicas?p="+p.get("p"); return; }

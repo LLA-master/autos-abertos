@@ -9,15 +9,21 @@
   pipeline/en/whoswho.html + primer.html (Who's who, Brazil primer) inseridos em en.html
   pipeline/en/posts_en.json  (títulos e subtítulos das crônicas em inglês → window.POSTS_EN)
   docs/posts/en/<slug>.md    (corpo das crônicas em inglês; app.en.js busca aqui e cai no original se faltar)
+  docs/primeyou.en.html      (edição em inglês do dossiê; é FONTE, escrita à mão, como pipeline/en/whoswho.html)
+
+O dossiê é texto longo e não passa pela tabela de substituição: a edição em inglês é um
+arquivo próprio. Para que as duas não se separem em silêncio, o build guarda o sha256 do
+original em pipeline/en/primeyou_stamp.json e FALHA se o português mudar. Depois de revisar
+a tradução, rode --restamp.
 
 Tradução por substituição de trechos exatos: se um trecho da tabela não for
 encontrado no original (ou for encontrado mais de uma vez sem "all"), o build
 FALHA. É proposital: sinaliza que o original mudou e a tradução precisa de
 revisão. Nunca edite en.html / app.en.js / wiki_en.json à mão.
 
-Uso: python3 pipeline/build_en.py [--js-only] [--check]
+Uso: python3 pipeline/build_en.py [--js-only] [--check] [--restamp]
 """
-import json, re, sys, pathlib
+import json, re, sys, hashlib, datetime, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DOCS = ROOT/"docs"
 sys.path.insert(0, str(ROOT/"pipeline"/"en"))
@@ -76,6 +82,29 @@ def google_buttons(html):
     print(f"who's who: {n} cards com busca no Google")
     return out
 
+def dossie(restamp, check):
+    """O dossiê Prime You tem edição em inglês própria (docs/primeyou.en.html). Aqui só se
+    confere que ela não ficou para trás: se o português mudou, o build falha e pede revisão."""
+    pt, en = DOCS/"primeyou.html", DOCS/"primeyou.en.html"
+    stamp = ROOT/"pipeline"/"en"/"primeyou_stamp.json"
+    if not pt.exists(): return
+    h = hashlib.sha256(pt.read_bytes()).hexdigest()
+    if not en.exists():
+        print("aviso: docs/primeyou.en.html não existe (o menu em inglês apontaria para o vazio)"); return
+    if restamp and not check:
+        stamp.write_text(json.dumps({"primeyou.html": h, "conferido_em": datetime.date.today().isoformat()},
+                                    ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print(f"dossiê: selo regravado ({h[:12]}…)"); return
+    if not stamp.exists():
+        sys.exit("BUILD EN FALHOU: falta pipeline/en/primeyou_stamp.json. Confira docs/primeyou.en.html e rode --restamp.")
+    velho = json.load(open(stamp, encoding="utf-8"))["primeyou.html"]
+    if velho != h:
+        sys.exit("BUILD EN FALHOU: docs/primeyou.html mudou depois da última revisão da edição em inglês.\n"
+                 f"    selo: {velho[:12]}…  agora: {h[:12]}…\n"
+                 "    Atualize docs/primeyou.en.html e depois rode: python3 pipeline/build_en.py --restamp")
+    print("dossiê: edição em inglês conferida contra o original")
+
+
 def main():
     js_only = "--js-only" in sys.argv
     check = "--check" in sys.argv
@@ -121,6 +150,7 @@ def main():
         json.dump({k: {"t": v["t"], "o": v["o"], "r": v["r"], "m": [list(x) for x in v["m"]], "s": v["s"]} for k, v in RESUMOS_EN.items()},
                   open(DOCS/"data"/"resumos_en.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
         json.dump(wiki_en(w), open(DOCS/"data"/"wiki_en.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    dossie("--restamp" in sys.argv, check)
     print(f"en.html: {len(HTML)} substituições OK; wiki_en.json: {len(w['pages']) if not check else '-'} fichas")
     if left: print(f"aviso: {len(left)} caracteres ç/ã/õ restantes no texto visível de en.html (nomes próprios são esperados)")
 
