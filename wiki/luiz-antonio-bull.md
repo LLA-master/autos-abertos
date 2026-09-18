@@ -3,7 +3,7 @@
 
 _Diretor de compliance do Master, segundo a polícia · preso em 18.11.2025, solto pelo TRF1 em 28.11.2025_
 
-23 peças narrativas · 7 processos · 364 menções
+23 peças narrativas · 7 processos · 372 menções
 
 > Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
 
@@ -30,37 +30,43 @@ Luiz Antonio Bull aparece em 23 peças narrativas de 7 dos 15 processos, com mai
 - PET 15478: 3 peças
 - PET 15198: 2 peças
 - PET 15562: 1 peças
-- PET 15563: 1 peças
 - PET 15556: 1 peças
+- PET 15563: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 14 peças em comum, 6 processos
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 13 peças em comum, 5 processos
+- [Alberto Felix de Oliveira Neto](alberto-felix-de-oliveira-neto.md) — 13 peças em comum, 5 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 13 peças em comum, 6 processos
+- [Paulo Henrique Bezerra Rodrigues Costa](paulo-henrique-bezerra-rodrigues-costa.md) — 9 peças em comum, 2 processos
 - [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 8 peças em comum, 2 processos
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 8 peças em comum, 2 processos
+- [Allan da Silva Machado](allan-da-silva-machado.md) — 7 peças em comum, 2 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 6 peças em comum, 2 processos
 - [Juliana Nogueira Zadra](juliana-nogueira-zadra.md) — 6 peças em comum, 2 processos
-- [Angelo Antonio Ribeiro Silva](angelo-antonio-ribeiro-silva.md) — 6 peças em comum, 3 processos
-- [Marcio Alexandre Saito](marcio-alexandre-saito.md) — 4 peças em comum, 1 processos
-- [Benjamim Botelho](benjamim-botelho.md) — 4 peças em comum, 1 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 3 peças em comum, 1 processos
-- [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 3 peças em comum, 1 processos
-- [Oliveira Seixas Maia](oliveira-seixas-maia.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 8 peças em comum, 2 processos
 - [Índigo Investimentos Dtvm](indigo-investimentos-dtvm.md) — 6 peças em comum, 2 processos
-- [Tirreno Consultoria](tirreno-consultoria.md) — 4 peças em comum, 1 processos
+- [Cartos Sociedade de Crédito Direto](cartos-sociedade-de-credito-direto.md) — 5 peças em comum, 1 processos
 - [Banco Máxima](banco-maxima.md) — 4 peças em comum, 2 processos
-- [Banvox Holding Financeira](banvox-holding-financeira.md) — 3 peças em comum, 1 processos
+- [Tirreno Consultoria](tirreno-consultoria.md) — 4 peças em comum, 1 processos
+- [Banco Master de Investimentos](banco-master-de-investimentos.md) — 3 peças em comum, 1 processos
 - [Centara Investimentos](centara-investimentos.md) — 3 peças em comum, 1 processos
+- [Banvox Holding Financeira](banvox-holding-financeira.md) — 3 peças em comum, 1 processos
 - [Terra Firme Construcoes](terra-firme-construcoes.md) — 2 peças em comum, 1 processos
+- [Corretora de Cambio](corretora-de-cambio.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 6 peças em comum, 1 processos
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 5 peças em comum, 1 processos
 - [Vanderlei Martins Vieira Brandao](vanderlei-martins-vieira-brandao.md) — 4 peças em comum, 1 processos
+- [Victor Baio do Carmo](victor-baio-do-carmo.md) — 3 peças em comum, 1 processos
+- [Wagner de Mello Kanievski](wagner-de-mello-kanievski.md) — 2 peças em comum, 1 processos
 - [Janaina Pereira Lima Palazzo](janaina-pereira-lima-palazzo.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
+- [Augusto de Arruda Botelho](augusto-de-arruda-botelho.md) — 5 peças em comum, 1 processos
 - [Julia Akamine Hiray](julia-akamine-hiray.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -81,8 +87,8 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | INQ 5026 | 00010 | Peça sobre prisão preventiva | 81 |
 | INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 94 |
 | INQ 5026 | 00004 | Peça sobre busca e apreensão | 76 |
-| INQ 5026 | 00012 | Peça sobre prisão preventiva | 5 |
 | INQ 5026 | 00005 | Peça sobre busca e apreensão | 7 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 5 |
 | PET 15198 | 00012 | Outras peças | 640 |
 | INQ 5026 | 00002 | Peça do inquérito | 122 |
 | INQ 5026 | 00101 | Petição | 7 |

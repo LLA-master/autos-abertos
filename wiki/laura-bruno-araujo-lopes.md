@@ -14,20 +14,23 @@ Laura Bruno Araujo Lopes aparece em 13 peças narrativas de 2 dos 15 processos, 
 - INQ 5026: 12 peças
 - PET 15198: 1 peças
 
+## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Paulo Henrique Bezerra Rodrigues Costa](paulo-henrique-bezerra-rodrigues-costa.md) — 5 peças em comum, 1 processos
+
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 13 peças em comum, 2 processos
+- [Murilo Marcelino Machado de Oliveira](murilo-marcelino-machado-de-oliveira.md) — 13 peças em comum, 2 processos
+- [Cleber Lopes de Oliveira](cleber-lopes-de-oliveira.md) — 13 peças em comum, 2 processos
+- [Nina Ribeiro Nery de Oliveira](nina-ribeiro-nery-de-oliveira.md) — 11 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 10 peças em comum, 1 processos
 - [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 10 peças em comum, 1 processos
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 10 peças em comum, 1 processos
+- [Ticiano Figueiredo de Oliveira](ticiano-figueiredo-de-oliveira.md) — 10 peças em comum, 1 processos
+- [Bianca Andrade Nogueira de Oliveira](bianca-andrade-nogueira-de-oliveira.md) — 10 peças em comum, 1 processos
 - [Francisco Felippe Lebrao Agosti](francisco-felippe-lebrao-agosti.md) — 10 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 10 peças em comum, 1 processos
-- [Caio Mousinho Hita](caio-mousinho-hita.md) — 10 peças em comum, 1 processos
-- [Sergio Rodrigues Leonardo](sergio-rodrigues-leonardo.md) — 10 peças em comum, 1 processos
-- [Mauricio Baptista Lins](mauricio-baptista-lins.md) — 10 peças em comum, 1 processos
-- [Pedro Ivo Rodrigues Velloso Cordeiro](pedro-ivo-rodrigues-velloso-cordeiro.md) — 10 peças em comum, 1 processos
-- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 10 peças em comum, 1 processos
-- [Roberto Podval](roberto-podval.md) — 10 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 4

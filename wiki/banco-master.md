@@ -50,39 +50,42 @@ Banco Master aparece em 48 peças narrativas de 9 dos 15 processos, com maior pr
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 24 peças em comum, 7 processos
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 11 peças em comum, 1 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 11 peças em comum, 3 processos
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 10 peças em comum, 2 processos
 - [Antonio Augusto Conte](antonio-augusto-conte.md) — 9 peças em comum, 2 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 9 peças em comum, 2 processos
 - [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 9 peças em comum, 1 processos
-- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 8 peças em comum, 2 processos
-- [Benjamim Botelho](benjamim-botelho.md) — 8 peças em comum, 2 processos
-- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 3 processos
+- [Alberto Felix de Oliveira Neto](alberto-felix-de-oliveira-neto.md) — 9 peças em comum, 2 processos
+- [Paulo Henrique Bezerra Rodrigues Costa](paulo-henrique-bezerra-rodrigues-costa.md) — 8 peças em comum, 1 processos
 - [Luiz Antonio Bull](luiz-antonio-bull.md) — 8 peças em comum, 2 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 7 peças em comum, 2 processos
-- [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 7 peças em comum, 2 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Clínica Mais Médicos](clinica-mais-medicos.md) — 9 peças em comum, 2 processos
 - [Banco Máxima](banco-maxima.md) — 8 peças em comum, 2 processos
+- [Cartos Sociedade de Crédito Direto](cartos-sociedade-de-credito-direto.md) — 8 peças em comum, 2 processos
+- [Simetria Planos de Saúde](simetria-planos-de-saude.md) — 7 peças em comum, 2 processos
 - [Banco Brb](banco-brb.md) — 7 peças em comum, 2 processos
 - [Fundo Ares](fundo-ares.md) — 7 peças em comum, 2 processos
-- [Correia Lima Engenharia](correia-lima-engenharia.md) — 6 peças em comum, 2 processos
-- [Brazil Realty Fii](brazil-realty-fii.md) — 6 peças em comum, 2 processos
-- [Vhr Empreendimentos](vhr-empreendimentos.md) — 6 peças em comum, 2 processos
-- [Brazilian Multimarket](brazilian-multimarket.md) — 6 peças em comum, 2 processos
-- [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
-- [Grupo Máxima](grupo-maxima.md) — 6 peças em comum, 2 processos
+- [Máxima Asset Management](maxima-asset-management.md) — 6 peças em comum, 2 processos
+- [Bergamo Fim Crédito Privado](bergamo-fim-credito-privado.md) — 6 peças em comum, 2 processos
+- [Esh Theta Fundo de Investimento Multimercado](esh-theta-fundo-de-investimento-multimercado.md) — 6 peças em comum, 2 processos
+- [Fundo Multimercado Horus Crédito Privado](fundo-multimercado-horus-credito-privado.md) — 6 peças em comum, 2 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 6 peças em comum, 1 processos
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 6 peças em comum, 1 processos
-- [Dias Toffoli](dias-toffoli.md) — 4 peças em comum, 2 processos
 - [Vanderlei Martins Vieira Brandao](vanderlei-martins-vieira-brandao.md) — 4 peças em comum, 1 processos
+- [Dias Toffoli](dias-toffoli.md) — 4 peças em comum, 2 processos
+- [Matheus Lucas Pereira de Sousa](matheus-lucas-pereira-de-sousa.md) — 4 peças em comum, 1 processos
 - [Nunes Marques](nunes-marques.md) — 3 peças em comum, 1 processos
+- [Paulo Henrique Sqnw](paulo-henrique-sqnw.md) — 3 peças em comum, 1 processos
 - [Decio Gabriel Gimenez](decio-gabriel-gimenez.md) — 2 peças em comum, 1 processos
 - [Janaina Pereira Lima Palazzo](janaina-pereira-lima-palazzo.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
-- [Thaina Fernandes Guero](thaina-fernandes-guero.md) — 2 peças em comum, 1 processos
+- [Daniel Penido de Britto](daniel-penido-de-britto.md) — 2 peças em comum, 1 processos
 - [Julia Akamine Hiray](julia-akamine-hiray.md) — 2 peças em comum, 1 processos
+- [Thaina Fernandes Guero](thaina-fernandes-guero.md) — 2 peças em comum, 1 processos
 - [Julia Silva Minchillo](julia-silva-minchillo.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece

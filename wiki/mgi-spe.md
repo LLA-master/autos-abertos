@@ -26,10 +26,10 @@ Mgi Spe aparece em 9 peças narrativas de 2 dos 15 processos, com maior presenç
 - PET 15198: 4 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Antonio Carlos Freixo Junior](antonio-carlos-freixo-junior.md) — 6 peças em comum, 2 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 6 peças em comum, 2 processos
-- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 6 peças em comum, 2 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 6 peças em comum, 2 processos
+- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 6 peças em comum, 2 processos
+- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 6 peças em comum, 2 processos
+- [Antonio Carlos Freixo Junior](antonio-carlos-freixo-junior.md) — 6 peças em comum, 2 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos

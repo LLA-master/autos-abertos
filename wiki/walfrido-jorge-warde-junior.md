@@ -19,23 +19,23 @@ Walfrido Jorge Warde Junior aparece em 7 peças narrativas de 4 dos 15 processos
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 5 peças em comum, 4 processos
 - [Diego Escosteguy](diego-escosteguy.md) — 3 peças em comum, 3 processos
-- [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 3 peças em comum, 1 processos
 - [Renata Costa Bassetto](renata-costa-bassetto.md) — 3 peças em comum, 1 processos
 - [Denise Nunes Garcia](denise-nunes-garcia.md) — 3 peças em comum, 1 processos
+- [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 3 peças em comum, 1 processos
 - [Edgard Nejm Neto](edgard-nejm-neto.md) — 3 peças em comum, 1 processos
 - [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Daniel Romeiro](daniel-romeiro.md) — 3 peças em comum, 1 processos
-- [Marcelo Leonardo](marcelo-leonardo.md) — 3 peças em comum, 1 processos
-- [Thiago Wender Silva Ferreira](thiago-wender-silva-ferreira.md) — 3 peças em comum, 1 processos
-- [Alexandre Baptista Pitta Lima](alexandre-baptista-pitta-lima.md) — 3 peças em comum, 1 processos
-- [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 3 peças em comum, 1 processos
-- [Maria Elizabeth Queijo](maria-elizabeth-queijo.md) — 3 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 3 peças em comum, 1 processos
-- [Alexandre Daiuto Leao Noal](alexandre-daiuto-leao-noal.md) — 3 peças em comum, 1 processos
-- [Eduardo Biasoli Jorge Elias](eduardo-biasoli-jorge-elias.md) — 3 peças em comum, 1 processos
-- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 3 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 3 peças em comum, 1 processos
+- [Pedro Ivo Rodrigues Velloso Cordeiro](pedro-ivo-rodrigues-velloso-cordeiro.md) — 3 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 3 peças em comum, 1 processos
+- [Caio Mousinho Hita](caio-mousinho-hita.md) — 3 peças em comum, 1 processos
+- [Roberto Podval](roberto-podval.md) — 3 peças em comum, 1 processos
+- [Joyce Roysen](joyce-roysen.md) — 3 peças em comum, 1 processos
+- [Julia Akamine Hiray](julia-akamine-hiray.md) — 3 peças em comum, 1 processos
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 3 peças em comum, 1 processos
+- [Sylas Kok Ribeiro](sylas-kok-ribeiro.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Peça sobre prisão preventiva: 3

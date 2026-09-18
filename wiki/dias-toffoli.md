@@ -3,7 +3,7 @@
 
 _Ministro do STF · relator até 13.2.2026 · integra a Segunda Turma_
 
-88 peças narrativas · 5 processos · 173 menções
+92 peças narrativas · 5 processos · 177 menções
 
 > Atua nos autos no exercício de função pública: relator, ministros, Procuradoria-Geral da República, Polícia Federal, Banco Central, comissões do Congresso. Aparece muito porque assina ou recebe as peças, não porque seja parte.
 
@@ -27,36 +27,40 @@ Fontes: PET 15198 seq 14, seq 21, seq 85, seq 372; INQ 5026 seq 168, seq 263, se
 - RCL 88121: 11 ato(s); o primeiro, na peça 00023 p. 1
 
 ## Dados automáticos
-Dias Toffoli aparece em 88 peças narrativas de 5 dos 15 processos, com maior presença em PET 15198 (35), INQ 5026 (30), RCL 88121 (18), PET 15556 (1), INQ 5035 (1). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2025-12.
+Dias Toffoli aparece em 92 peças narrativas de 5 dos 15 processos, com maior presença em PET 15198 (36), INQ 5026 (31), RCL 88121 (20), PET 15556 (1), INQ 5035 (1). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2025-12.
 
 ## Presença por processo
-- PET 15198: 35 peças
-- INQ 5026: 30 peças
-- RCL 88121: 18 peças
+- PET 15198: 36 peças
+- INQ 5026: 31 peças
+- RCL 88121: 20 peças
 - PET 15556: 1 peças
 - INQ 5035: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 3 processos
+- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 8 peças em comum, 3 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 4 peças em comum, 2 processos
 - [Base Securitizadora](base-securitizadora.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
+- [Victor Arruda de Oliveira](victor-arruda-de-oliveira.md) — 4 peças em comum, 2 processos
+- [Paula Verônica von Czekus](paula-veronica-von-czekus.md) — 4 peças em comum, 2 processos
+- [Nathália Ribeiro Leite Silva](nathalia-ribeiro-leite-silva.md) — 4 peças em comum, 2 processos
+- [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 4 peças em comum, 2 processos
+- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
+- [Cristiano Cozer](cristiano-cozer.md) — 3 peças em comum, 1 processos
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 - [Nunes Marques](nunes-marques.md) — 3 peças em comum, 1 processos
-- [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 3 peças em comum, 1 processos
-- [Cristiano Cozer](cristiano-cozer.md) — 3 peças em comum, 1 processos
-- [Nathália Ribeiro Leite Silva](nathalia-ribeiro-leite-silva.md) — 3 peças em comum, 1 processos
-- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
-- [Paula Verônica von Czekus](paula-veronica-von-czekus.md) — 3 peças em comum, 1 processos
+- [Ricardo Andrade Saadi](ricardo-andrade-saadi.md) — 2 peças em comum, 1 processos
+- [Cpmi do Inss](cpmi-do-inss.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
-- [Sylas Kok Ribeiro](sylas-kok-ribeiro.md) — 8 peças em comum, 1 processos
-- [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 8 peças em comum, 1 processos
 - [Alexandre Daiuto Leao Noal](alexandre-daiuto-leao-noal.md) — 8 peças em comum, 1 processos
+- [Sylas Kok Ribeiro](sylas-kok-ribeiro.md) — 8 peças em comum, 1 processos
 - [Carolina Borba Ambrozino](carolina-borba-ambrozino.md) — 8 peças em comum, 1 processos
+- [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 8 peças em comum, 1 processos
+- [Daniel Penido de Britto](daniel-penido-de-britto.md) — 4 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Despacho: 10

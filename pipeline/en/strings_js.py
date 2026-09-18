@@ -11,7 +11,7 @@ JS = [
  ('aria-label="Processo"><option', 'aria-label="Proceeding"><option'),
  ('const BS_LABEL={excerto:"trecho",pagina:"decisão",cronica:"crônica",personagem:"personagem",processo:"processo",dossie:"dossiê"};', 'const BS_LABEL={excerto:"passage",pagina:"ruling",cronica:"chronicle",personagem:"person",processo:"proceeding",dossie:"dossier chapter"};'),
  ('>ler a peça</button>', '>read the filing</button>'),
- ('>ler a peça inteira, na página ${x.p}</button>', '>read the whole filing, at page ${x.p}</button>'),
+ ('>ler a peça inteira, na página ${x.p}</button>`:`<span class="muted small">peça não publicada na íntegra neste site (não é ato decisório); conferir no pacote do STF</span>`}</p>', '>read the whole filing, at page ${x.p}</button>`:`<span class="muted small">filing not published in full on this site (not a decision-making act); check the STF package</span>`}</p>'),
  ('<button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← anterior</button>', '<button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← previous</button>'),
  ('<span>página <b>${i}</b> de ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">próxima →</button>', '<span>page <b>${i}</b> of ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">next →</button>'),
  ('>← voltar ao processo</button>', '>← back to the proceeding</button>'),

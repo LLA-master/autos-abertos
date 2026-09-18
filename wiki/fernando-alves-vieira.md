@@ -29,25 +29,30 @@ Fernando Alves Vieira aparece em 22 peças narrativas de 4 dos 15 processos, com
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 3 processos
+- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 7 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 6 peças em comum, 2 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 4 peças em comum, 1 processos
+- [André Beraldo de Morais](andre-beraldo-de-morais.md) — 4 peças em comum, 1 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 4 peças em comum, 1 processos
-- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 3 peças em comum, 1 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
-- [Natalia Bueno Ribeiro Vorcaro](natalia-bueno-ribeiro-vorcaro.md) — 3 peças em comum, 1 processos
-- [Ricardo Balciunas](ricardo-balciunas.md) — 3 peças em comum, 1 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 3 peças em comum, 2 processos
-- [Flavio Daniel Aguetoni](flavio-daniel-aguetoni.md) — 3 peças em comum, 1 processos
+- [Ricardo Silva Vasconcellos](ricardo-silva-vasconcellos.md) — 3 peças em comum, 1 processos
+- [Silvio Barreto da Silva](silvio-barreto-da-silva.md) — 3 peças em comum, 1 processos
+- [Valdenice Pantaleão de Sousa](valdenice-pantaleao-de-sousa.md) — 3 peças em comum, 1 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 3 peças em comum, 1 processos
+- [Valdenice Pantaleão](valdenice-pantaleao.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos
 - [Clínica Mais Médicos](clinica-mais-medicos.md) — 4 peças em comum, 1 processos
+- [Simetria Planos de Saúde](simetria-planos-de-saude.md) — 3 peças em comum, 1 processos
+- [Confiance Life Corretora de Seguros](confiance-life-corretora-de-seguros.md) — 3 peças em comum, 1 processos
+- [Jeitto Instituição de Pagamento](jeitto-instituicao-de-pagamento.md) — 2 peças em comum, 1 processos
+- [Planos de Saude](planos-de-saude.md) — 2 peças em comum, 1 processos
 - [Del Rei Servicos Administrativos](del-rei-servicos-administrativos.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
+- [André Mendonça](andre-mendonca.md) — 4 peças em comum, 1 processos
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
-- [Wilker Goulart](wilker-goulart.md) — 2 peças em comum, 1 processos
 - [Decio Gabriel Gimenez](decio-gabriel-gimenez.md) — 2 peças em comum, 1 processos
+- [Wilker Goulart](wilker-goulart.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 13

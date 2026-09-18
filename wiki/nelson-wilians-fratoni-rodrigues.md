@@ -13,20 +13,23 @@ Nelson Wilians Fratoni Rodrigues aparece em 9 peças narrativas de 1 dos 15 proc
 ## Presença por processo
 - INQ 5026: 9 peças
 
+## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Allan da Silva Machado](allan-da-silva-machado.md) — 4 peças em comum, 1 processos
+
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Daniel Romeiro](daniel-romeiro.md) — 9 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 9 peças em comum, 1 processos
-- [Joyce Roysen](joyce-roysen.md) — 9 peças em comum, 1 processos
-- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 9 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 9 peças em comum, 1 processos
-- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 9 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 9 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 9 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 9 peças em comum, 1 processos
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 9 peças em comum, 1 processos
 - [Carolina Borba Ambrozino](carolina-borba-ambrozino.md) — 9 peças em comum, 1 processos
 - [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 9 peças em comum, 1 processos
 - [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 9 peças em comum, 1 processos
-- [Pedro Ivo Rodrigues Velloso Cordeiro](pedro-ivo-rodrigues-velloso-cordeiro.md) — 9 peças em comum, 1 processos
+- [Ticiano Figueiredo de Oliveira](ticiano-figueiredo-de-oliveira.md) — 9 peças em comum, 1 processos
+- [Bianca Andrade Nogueira de Oliveira](bianca-andrade-nogueira-de-oliveira.md) — 9 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Pedido de devolução de bens apreendidos: 3

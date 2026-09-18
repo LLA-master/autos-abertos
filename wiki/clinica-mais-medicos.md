@@ -28,26 +28,27 @@ Clínica Mais Médicos aparece em 12 peças narrativas de 3 dos 15 processos, co
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 2 processos
+- [Lindolfo Luiz Coutinho da Silva](lindolfo-luiz-coutinho-da-silva.md) — 6 peças em comum, 2 processos
 - [Ricardo Balciunas](ricardo-balciunas.md) — 6 peças em comum, 2 processos
-- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 4 peças em comum, 1 processos
+- [Valdenice Pantaleão de Sousa](valdenice-pantaleao-de-sousa.md) — 5 peças em comum, 2 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 4 peças em comum, 2 processos
 - [Fernando Alves Vieira](fernando-alves-vieira.md) — 4 peças em comum, 1 processos
-- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 3 peças em comum, 1 processos
-- [Valdenice Pantaleão](valdenice-pantaleao.md) — 3 peças em comum, 1 processos
+- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 4 peças em comum, 1 processos
+- [Bibi Paulo](bibi-paulo.md) — 4 peças em comum, 2 processos
+- [Marinely de Paula Bomfim](marinely-de-paula-bomfim.md) — 4 peças em comum, 2 processos
 - [Antonio Augusto Conte](antonio-augusto-conte.md) — 3 peças em comum, 1 processos
-- [Benjamim Botelho](benjamim-botelho.md) — 3 peças em comum, 1 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 2 peças em comum, 1 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 9 peças em comum, 2 processos
+- [Simetria Planos de Saúde](simetria-planos-de-saude.md) — 6 peças em comum, 2 processos
 - [Flytour Eventos](flytour-eventos.md) — 6 peças em comum, 2 processos
+- [Everest Participacoes](everest-participacoes.md) — 5 peças em comum, 2 processos
+- [Brazil Realty Fii](brazil-realty-fii.md) — 5 peças em comum, 2 processos
 - [Pithecia Participacoes](pithecia-participacoes.md) — 5 peças em comum, 2 processos
 - [Verde Consultoria](verde-consultoria.md) — 5 peças em comum, 2 processos
-- [Brazil Realty Fii](brazil-realty-fii.md) — 5 peças em comum, 2 processos
-- [Everest Participacoes](everest-participacoes.md) — 5 peças em comum, 2 processos
-- [Ruby Capital](ruby-capital.md) — 2 peças em comum, 1 processos
-- [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
-- [Base Securitizadora](base-securitizadora.md) — 2 peças em comum, 1 processos
+- [Máxima Fundo de Investimento Multimercado](maxima-fundo-de-investimento-multimercado.md) — 5 peças em comum, 2 processos
+- [Índigo Investimentos Dtvm](indigo-investimentos-dtvm.md) — 4 peças em comum, 2 processos
+- [Confiance Life Corretora de Seguros](confiance-life-corretora-de-seguros.md) — 4 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos

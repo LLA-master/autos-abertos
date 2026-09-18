@@ -26,15 +26,15 @@ Fontes: PET 15978 seq 185, seq 235; PET 16662 seq 45; RCL 88121 seq 91 p. 19.
 - RCL 88121: 3 ato(s); o primeiro, na peça 00091 p. 9
 
 ## Dados automáticos
-Gilmar Mendes aparece em 11 peças narrativas de 6 dos 15 processos, com maior presença em PET 15556 (5), INQ 5026 (2), PET 15562 (1), PET 15198 (1), PET 16662 (1). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2026-03.
+Gilmar Mendes aparece em 11 peças narrativas de 6 dos 15 processos, com maior presença em PET 15556 (5), INQ 5026 (2), PET 15198 (1), PET 15563 (1), PET 15562 (1). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2026-03.
 
 ## Presença por processo
 - PET 15556: 5 peças
 - INQ 5026: 2 peças
-- PET 15562: 1 peças
 - PET 15198: 1 peças
-- PET 16662: 1 peças
 - PET 15563: 1 peças
+- PET 15562: 1 peças
+- PET 16662: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 2 peças em comum, 1 processos

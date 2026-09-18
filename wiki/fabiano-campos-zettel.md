@@ -27,47 +27,54 @@ Fontes: PET 15556 seq 16 pp. 7–9, 17–22, 32–34, seq 405 pp. 26, 104; PET 1
 - PET 15693: 2 ato(s); o primeiro, na peça 00004 p. 3
 
 ## Dados automáticos
-Fabiano Campos Zettel aparece em 46 peças narrativas de 9 dos 15 processos, com maior presença em PET 15556 (15), PET 15198 (9), PET 15978 (6), PET 15562 (5), PET 15693 (3). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2026-03.
+Fabiano Campos Zettel aparece em 46 peças narrativas de 9 dos 15 processos, com maior presença em PET 15556 (15), PET 15198 (9), PET 15978 (6), PET 15562 (5), PET 15563 (3). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2026-03.
 
 ## Presença por processo
 - PET 15556: 15 peças
 - PET 15198: 9 peças
 - PET 15978: 6 peças
 - PET 15562: 5 peças
-- PET 15693: 3 peças
 - PET 15563: 3 peças
-- PET 15976: 2 peças
+- PET 15693: 3 peças
 - INQ 5026: 2 peças
+- PET 15976: 2 peças
 - PET 16662: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 23 peças em comum, 8 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 13 peças em comum, 6 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 12 peças em comum, 5 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 12 peças em comum, 5 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 11 peças em comum, 6 processos
+- [Ana Claudia Queiroz de Paiva](ana-claudia-queiroz-de-paiva.md) — 11 peças em comum, 4 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 10 peças em comum, 7 processos
-- [Marilson Roseno](marilson-roseno.md) — 10 peças em comum, 6 processos
+- [Paulo Sérgio Neves de Souza](paulo-sergio-neves-de-souza.md) — 8 peças em comum, 3 processos
 - [Belline Santana](belline-santana.md) — 8 peças em comum, 3 processos
+- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 7 peças em comum, 4 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 7 peças em comum, 4 processos
-- [Leonardo Augusto Furtado Palhares](leonardo-augusto-furtado-palhares.md) — 6 peças em comum, 3 processos
-- [João Carlos Falbo Mansur](joao-carlos-falbo-mansur.md) — 5 peças em comum, 4 processos
-- [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 4 peças em comum, 3 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
-- [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 3 peças em comum, 3 processos
+- [Varajo Consultoria](varajo-consultoria.md) — 5 peças em comum, 3 processos
+- [Reag Trust Distribuidora de Títulos](reag-trust-distribuidora-de-titulos.md) — 3 peças em comum, 3 processos
 - [Banco Master](banco-master.md) — 3 peças em comum, 2 processos
-- [Super Empreendimentos](super-empreendimentos.md) — 3 peças em comum, 3 processos
-- [Varajo Consultoria](varajo-consultoria.md) — 3 peças em comum, 3 processos
 - [Fundo Ares](fundo-ares.md) — 3 peças em comum, 1 processos
-- [Entre Investimentos](entre-investimentos.md) — 2 peças em comum, 1 processos
-- [Centara Investimentos](centara-investimentos.md) — 2 peças em comum, 1 processos
-- [Clínica Mais Médicos](clinica-mais-medicos.md) — 2 peças em comum, 1 processos
+- [Super Empreendimentos](super-empreendimentos.md) — 3 peças em comum, 3 processos
+- [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 3 peças em comum, 3 processos
+- [King Motors Locacao de Veiculos](king-motors-locacao-de-veiculos.md) — 2 peças em comum, 2 processos
 - [Brazilian Multimarket](brazilian-multimarket.md) — 2 peças em comum, 1 processos
+- [Clínica Mais Médicos](clinica-mais-medicos.md) — 2 peças em comum, 1 processos
+- [Entre Investimentos](entre-investimentos.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [André Mendonça](andre-mendonca.md) — 7 peças em comum, 4 processos
 - [Luís Roberto Neves](luis-roberto-neves.md) — 3 peças em comum, 3 processos
+- [Valéria Vieira Pereira da Silva](valeria-vieira-pereira-da-silva.md) — 2 peças em comum, 1 processos
 - [Gilmar Mendes](gilmar-mendes.md) — 2 peças em comum, 1 processos
+- [Anderson Wander da Silva Lima](anderson-wander-da-silva-lima.md) — 2 peças em comum, 1 processos
 - [Sebastião Reis Júnior](sebastiao-reis-junior.md) — 2 peças em comum, 1 processos
+- [Francisco José Pereira da Silva](francisco-jose-pereira-da-silva.md) — 2 peças em comum, 1 processos
+
+## Divide páginas com — Advogados (coocorrência, não relação)
+- [Daniel Penido de Britto](daniel-penido-de-britto.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 13

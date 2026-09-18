@@ -19,20 +19,22 @@ Fontes: PET 15198 seq 14 pp. 12–13.
 - PET 15198: 1 ato(s); o primeiro, na peça 00014 p. 12
 
 ## Dados automáticos
-Reag Growth aparece em 5 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (2), PET 15562 (1), PET 15556 (1), PET 15563 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
+Reag Growth aparece em 5 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (2), PET 15562 (1), PET 15563 (1), PET 15556 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
 
 ## Presença por processo
 - PET 15198: 2 peças
 - PET 15562: 1 peças
-- PET 15556: 1 peças
 - PET 15563: 1 peças
+- PET 15556: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Paulo Sérgio Neves de Souza](paulo-sergio-neves-de-souza.md) — 3 peças em comum, 3 processos
 - [João Carlos Falbo Mansur](joao-carlos-falbo-mansur.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Master Holding Financeira](master-holding-financeira.md) — 3 peças em comum, 3 processos
 - [Banco Master](banco-master.md) — 2 peças em comum, 1 processos
+- [Trustee Distribuidora de Títulos](trustee-distribuidora-de-titulos.md) — 2 peças em comum, 1 processos
 - [Super Empreendimentos](super-empreendimentos.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece

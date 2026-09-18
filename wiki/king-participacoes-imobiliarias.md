@@ -30,12 +30,17 @@ King Participacoes Imobiliarias aparece em 6 peças narrativas de 1 dos 15 proce
 - PET 15563: 6 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Ana Claudia Queiroz de Paiva](ana-claudia-queiroz-de-paiva.md) — 6 peças em comum, 1 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 6 peças em comum, 1 processos
+- [Paulo Sérgio Neves de Souza](paulo-sergio-neves-de-souza.md) — 5 peças em comum, 1 processos
 - [Leonardo Augusto Furtado Palhares](leonardo-augusto-furtado-palhares.md) — 4 peças em comum, 1 processos
 - [Belline Santana](belline-santana.md) — 3 peças em comum, 1 processos
 - [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Safra](banco-safra.md) — 5 peças em comum, 1 processos
+- [King Motors Locacao de Veiculos](king-motors-locacao-de-veiculos.md) — 4 peças em comum, 1 processos
+- [Varajo Consultoria](varajo-consultoria.md) — 4 peças em comum, 1 processos
 - [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 4 peças em comum, 1 processos
 - [Super Empreendimentos](super-empreendimentos.md) — 4 peças em comum, 1 processos
 - [Itaú Unibanco](itau-unibanco.md) — 2 peças em comum, 1 processos

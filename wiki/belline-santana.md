@@ -39,29 +39,36 @@ Belline Santana aparece em 44 peças narrativas de 7 dos 15 processos, com maior
 - INQ 5035: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Paulo Sérgio Neves de Souza](paulo-sergio-neves-de-souza.md) — 25 peças em comum, 4 processos
 - [Leonardo Augusto Furtado Palhares](leonardo-augusto-furtado-palhares.md) — 15 peças em comum, 3 processos
+- [Ana Claudia Queiroz de Paiva](ana-claudia-queiroz-de-paiva.md) — 13 peças em comum, 3 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 13 peças em comum, 3 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 11 peças em comum, 4 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 10 peças em comum, 3 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 8 peças em comum, 3 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 4 peças em comum, 3 processos
-- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
+- [Varajo Consultoria](varajo-consultoria.md) — 18 peças em comum, 3 processos
 - [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 13 peças em comum, 3 processos
 - [Super Empreendimentos](super-empreendimentos.md) — 12 peças em comum, 3 processos
-- [Varajo Consultoria](varajo-consultoria.md) — 5 peças em comum, 2 processos
-- [King Participacoes Imobiliarias](king-participacoes-imobiliarias.md) — 3 peças em comum, 1 processos
+- [King Motors Locacao de Veiculos](king-motors-locacao-de-veiculos.md) — 11 peças em comum, 2 processos
 - [Banco Safra](banco-safra.md) — 3 peças em comum, 1 processos
+- [King Participacoes Imobiliarias](king-participacoes-imobiliarias.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
-- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
+- [Cristiano Cozer](cristiano-cozer.md) — 8 peças em comum, 5 processos
 - [André Mendonça](andre-mendonca.md) — 4 peças em comum, 3 processos
-- [Cristiano Cozer](cristiano-cozer.md) — 3 peças em comum, 3 processos
+- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
+- [Albert Paulo Servio de Moura](albert-paulo-servio-de-moura.md) — 3 peças em comum, 2 processos
+- [Luis Guilherme Mendes de Oliveira](luis-guilherme-mendes-de-oliveira.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
-- [Bruno Salles Pereira Ribeiro](bruno-salles-pereira-ribeiro.md) — 2 peças em comum, 2 processos
+- [Leonardo Palazzi](leonardo-palazzi.md) — 2 peças em comum, 2 processos
+- [Fernanda Ribeiro Cardoso de Menezes](fernanda-ribeiro-cardoso-de-menezes.md) — 2 peças em comum, 2 processos
+- [Gabriela Souza de Carvalho](gabriela-souza-de-carvalho.md) — 2 peças em comum, 2 processos
 - [Marco Antonio Chies Martins](marco-antonio-chies-martins.md) — 2 peças em comum, 2 processos
 - [Cristiane Souza Costa](cristiane-souza-costa.md) — 2 peças em comum, 2 processos
-- [Leonardo Palazzi](leonardo-palazzi.md) — 2 peças em comum, 2 processos
+- [Bruno Salles Pereira Ribeiro](bruno-salles-pereira-ribeiro.md) — 2 peças em comum, 2 processos
 
 ## Tipos de peça em que aparece
 - Petição: 12

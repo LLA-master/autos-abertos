@@ -27,31 +27,33 @@ Tiago Oliva Schietti aparece em 11 peças narrativas de 2 dos 15 processos, com 
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Vicente Conte Neto](vicente-conte-neto.md) — 7 peças em comum, 2 processos
-- [Antonio Augusto Conte](antonio-augusto-conte.md) — 7 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 2 processos
-- [Bruno Burilli](bruno-burilli.md) — 6 peças em comum, 2 processos
+- [Antonio Augusto Conte](antonio-augusto-conte.md) — 7 peças em comum, 2 processos
 - [Thiago Schietti](thiago-schietti.md) — 6 peças em comum, 2 processos
 - [Lucas Schietti](lucas-schietti.md) — 6 peças em comum, 2 processos
-- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 3 peças em comum, 1 processos
+- [Bruno Burilli](bruno-burilli.md) — 6 peças em comum, 2 processos
 - [Wilson Augusto Alves](wilson-augusto-alves.md) — 3 peças em comum, 1 processos
+- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 3 peças em comum, 1 processos
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 3 peças em comum, 1 processos
-- [Thiago Assumpção Henriques](thiago-assumpcao-henriques.md) — 2 peças em comum, 1 processos
+- [Rodrigo Luiz Camargo Ribeiro](rodrigo-luiz-camargo-ribeiro.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 7 peças em comum, 2 processos
-- [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
-- [Pacific Realty](pacific-realty.md) — 6 peças em comum, 2 processos
-- [Fundo Máxima Fim Crédito Privado](fundo-maxima-fim-credito-privado.md) — 6 peças em comum, 2 processos
 - [Máxima Asset Management](maxima-asset-management.md) — 6 peças em comum, 2 processos
+- [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
 - [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
-- [Sefer Investimentos](sefer-investimentos.md) — 3 peças em comum, 1 processos
+- [Fundo Máxima Fim Crédito Privado](fundo-maxima-fim-credito-privado.md) — 6 peças em comum, 2 processos
+- [Pacific Realty](pacific-realty.md) — 6 peças em comum, 2 processos
+- [Sefer Investimentos](sefer-investimentos.md) — 4 peças em comum, 1 processos
+- [Corretora de Cambio](corretora-de-cambio.md) — 3 peças em comum, 1 processos
+- [Máxima Fundo de Investimento Multimercado](maxima-fundo-de-investimento-multimercado.md) — 3 peças em comum, 1 processos
 - [Vhr Empreendimentos](vhr-empreendimentos.md) — 3 peças em comum, 1 processos
-- [Clínica Mais Médicos](clinica-mais-medicos.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
+- [Daniel Penido de Britto](daniel-penido-de-britto.md) — 2 peças em comum, 1 processos
 - [Alberto Zacharias Toron](alberto-zacharias-toron.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece

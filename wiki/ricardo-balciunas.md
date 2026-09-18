@@ -26,22 +26,25 @@ Ricardo Balciunas aparece em 12 peças narrativas de 2 dos 15 processos, com mai
 - INQ 5026: 3 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Valdenice Pantaleão de Sousa](valdenice-pantaleao-de-sousa.md) — 6 peças em comum, 2 processos
+- [Lindolfo Luiz Coutinho da Silva](lindolfo-luiz-coutinho-da-silva.md) — 6 peças em comum, 2 processos
+- [Fernando Alves Vieira](fernando-alves-vieira.md) — 3 peças em comum, 1 processos
 - [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 3 peças em comum, 1 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 1 processos
-- [Fernando Alves Vieira](fernando-alves-vieira.md) — 3 peças em comum, 1 processos
-- [Thiago Assumpção Henriques](thiago-assumpcao-henriques.md) — 2 peças em comum, 1 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 2 peças em comum, 1 processos
+- [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 2 peças em comum, 1 processos
+- [Ricardo Silva Vasconcellos](ricardo-silva-vasconcellos.md) — 2 peças em comum, 1 processos
 - [Ascendino Madureira Garcia](ascendino-madureira-garcia.md) — 2 peças em comum, 1 processos
-- [Rodrigo Luiz Camargo Ribeiro](rodrigo-luiz-camargo-ribeiro.md) — 2 peças em comum, 1 processos
-- [Valdenice Pantaleão](valdenice-pantaleao.md) — 2 peças em comum, 1 processos
-- [Flavio Daniel Aguetoni](flavio-daniel-aguetoni.md) — 2 peças em comum, 1 processos
+- [Silvio Barreto da Silva](silvio-barreto-da-silva.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Clínica Mais Médicos](clinica-mais-medicos.md) — 6 peças em comum, 2 processos
+- [Simetria Planos de Saúde](simetria-planos-de-saude.md) — 3 peças em comum, 1 processos
 - [Banco Master](banco-master.md) — 2 peças em comum, 1 processos
+- [Planos de Saude](planos-de-saude.md) — 2 peças em comum, 1 processos
 - [Base Securitizadora](base-securitizadora.md) — 2 peças em comum, 1 processos
 - [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
+- [Confiance Life Corretora de Seguros](confiance-life-corretora-de-seguros.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos

@@ -31,19 +31,26 @@ Super Empreendimentos aparece em 24 peças narrativas de 5 dos 15 processos, com
 - INQ 5026: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Ana Claudia Queiroz de Paiva](ana-claudia-queiroz-de-paiva.md) — 14 peças em comum, 4 processos
+- [Paulo Sérgio Neves de Souza](paulo-sergio-neves-de-souza.md) — 13 peças em comum, 3 processos
 - [Belline Santana](belline-santana.md) — 12 peças em comum, 3 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 12 peças em comum, 3 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 11 peças em comum, 3 processos
 - [Leonardo Augusto Furtado Palhares](leonardo-augusto-furtado-palhares.md) — 10 peças em comum, 3 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 6 peças em comum, 4 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 3 peças em comum, 3 processos
-- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 3 peças em comum, 1 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 3 peças em comum, 3 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 18 peças em comum, 3 processos
+- [King Motors Locacao de Veiculos](king-motors-locacao-de-veiculos.md) — 15 peças em comum, 3 processos
+- [Varajo Consultoria](varajo-consultoria.md) — 13 peças em comum, 3 processos
 - [King Participacoes Imobiliarias](king-participacoes-imobiliarias.md) — 4 peças em comum, 1 processos
 - [Banco Master](banco-master.md) — 3 peças em comum, 2 processos
 - [Banco Safra](banco-safra.md) — 3 peças em comum, 1 processos
 - [Reag Growth](reag-growth.md) — 2 peças em comum, 1 processos
+
+## Divide páginas com — Autoridades (coocorrência, não relação)
+- [André Mendonça](andre-mendonca.md) — 2 peças em comum, 2 processos
 
 ## Tipos de peça em que aparece
 - Petição: 15

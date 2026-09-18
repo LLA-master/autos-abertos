@@ -22,17 +22,17 @@ Fontes: PET 15976 seq 34 p. 30; PET 15977 seq 32 p. 9; PET 15978 seq 32 p. 19; P
 - PET 15977: 1 ato(s); o primeiro, na peça 00032 p. 9
 
 ## Dados automáticos
-Nova Farma Drogaria aparece em 6 peças narrativas de 4 dos 15 processos, com maior presença em PET 15978 (3), PET 15976 (1), PET 16019 (1), PET 15977 (1). Classificação automática: Empresa.
+Nova Farma Drogaria aparece em 6 peças narrativas de 4 dos 15 processos, com maior presença em PET 15978 (3), PET 15976 (1), PET 15977 (1), PET 16019 (1). Classificação automática: Empresa.
 
 ## Presença por processo
 - PET 15978: 3 peças
 - PET 15976: 1 peças
-- PET 16019: 1 peças
 - PET 15977: 1 peças
+- PET 16019: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [David Henrique Alves](david-henrique-alves.md) — 6 peças em comum, 4 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 6 peças em comum, 4 processos
+- [David Henrique Alves](david-henrique-alves.md) — 6 peças em comum, 4 processos
 - [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 5 peças em comum, 3 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)

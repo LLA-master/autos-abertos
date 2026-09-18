@@ -8,12 +8,12 @@
 Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
 
 ## Dados automáticos
-Sérgio Quintão aparece em 11 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (7), PET 15556 (1), INQ 5035 (1), INQ 5026 (1), PET 15504 (1). Classificação automática: Advogado. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
+Sérgio Quintão aparece em 11 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (7), INQ 5035 (1), PET 15556 (1), INQ 5026 (1), PET 15504 (1). Classificação automática: Advogado. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
 
 ## Presença por processo
 - PET 15978: 7 peças
-- PET 15556: 1 peças
 - INQ 5035: 1 peças
+- PET 15556: 1 peças
 - INQ 5026: 1 peças
 - PET 15504: 1 peças
 
@@ -21,7 +21,11 @@ Sérgio Quintão aparece em 11 peças narrativas de 5 dos 15 processos, com maio
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 5 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
+- [Eugênio Pacelli de Oliveira](eugenio-pacelli-de-oliveira.md) — 5 peças em comum, 5 processos
+- [Frederico Gomes de Almeida Horta](frederico-gomes-de-almeida-horta.md) — 5 peças em comum, 5 processos
 - [Maria Letícia Nascimento Gontijo](maria-leticia-nascimento-gontijo.md) — 5 peças em comum, 5 processos
+- [Matheus Oliveira de Carvalho](matheus-oliveira-de-carvalho.md) — 5 peças em comum, 5 processos
+- [Pedro Ivo de Moura Oliveira](pedro-ivo-de-moura-oliveira.md) — 5 peças em comum, 5 processos
 - [Marciley Fernandes Fonseca](marciley-fernandes-fonseca.md) — 5 peças em comum, 5 processos
 
 ## Tipos de peça em que aparece

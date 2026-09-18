@@ -8,21 +8,25 @@
 Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
 
 ## Dados automáticos
-Maria Letícia Nascimento Gontijo aparece em 5 peças narrativas de 5 dos 15 processos, com maior presença em PET 15504 (1), PET 15978 (1), INQ 5035 (1), INQ 5026 (1), PET 15556 (1). Classificação automática: Advogado. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
+Maria Letícia Nascimento Gontijo aparece em 5 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (1), PET 15504 (1), INQ 5035 (1), PET 15556 (1), INQ 5026 (1). Classificação automática: Advogado. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
 
 ## Presença por processo
-- PET 15504: 1 peças
 - PET 15978: 1 peças
+- PET 15504: 1 peças
 - INQ 5035: 1 peças
-- INQ 5026: 1 peças
 - PET 15556: 1 peças
+- INQ 5026: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 5 peças em comum, 5 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
-- [Sérgio Quintão](sergio-quintao.md) — 5 peças em comum, 5 processos
+- [Eugênio Pacelli de Oliveira](eugenio-pacelli-de-oliveira.md) — 5 peças em comum, 5 processos
+- [Frederico Gomes de Almeida Horta](frederico-gomes-de-almeida-horta.md) — 5 peças em comum, 5 processos
+- [Matheus Oliveira de Carvalho](matheus-oliveira-de-carvalho.md) — 5 peças em comum, 5 processos
 - [Marciley Fernandes Fonseca](marciley-fernandes-fonseca.md) — 5 peças em comum, 5 processos
+- [Pedro Ivo de Moura Oliveira](pedro-ivo-de-moura-oliveira.md) — 5 peças em comum, 5 processos
+- [Sérgio Quintão](sergio-quintao.md) — 5 peças em comum, 5 processos
 
 ## Tipos de peça em que aparece
 - Petição: 5

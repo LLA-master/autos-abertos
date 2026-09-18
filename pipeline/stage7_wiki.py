@@ -98,6 +98,9 @@ def ficha_sem_no(k, cur):
             "atos":atos_de(cur["label"]),"aka":[],**{f:cur[f] for f in ("sub","sub_en","bio","bio_en","amb","amb_en","fontes")}}
 
 pages=[ficha(n,CUR.get(n["id"])) for n in cands]+[ficha_sem_no(k,v) for k,v in CUR.items() if v.get("sem_no")]
+# ficha automática (sem curadoria) só para quem algum ato do juízo publicado nomeia; advogados ficam pelo papel.
+# Nome recorrente só em petições e anexos continua na base (contagens), mas não ganha vitrine.
+pages=[p for p in pages if p["curado"] or p["cond"]=="defesa" or p["atos"]]
 # ordem: seções na ordem de GRUPOS; dentro, por processos e peças
 order={g:i for i,(g,_,_,_) in enumerate(GRUPOS)}
 pages.sort(key=lambda p:(order.get(p["grupo"],99),-p["procs"],-p["docs"],p["label"]))

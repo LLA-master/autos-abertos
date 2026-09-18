@@ -34,8 +34,8 @@ Drogaria Saúde Vida aparece em 6 peças narrativas de 4 dos 15 processos, com m
 - PET 15977: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [David Henrique Alves](david-henrique-alves.md) — 6 peças em comum, 4 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 6 peças em comum, 4 processos
+- [David Henrique Alves](david-henrique-alves.md) — 6 peças em comum, 4 processos
 - [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 5 peças em comum, 3 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)

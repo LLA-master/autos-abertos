@@ -41,21 +41,24 @@ Rodrigo Pimenta Franco Avelar Campos aparece em 27 peças narrativas de 5 dos 15
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 15 peças em comum, 5 processos
 - [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 15 peças em comum, 5 processos
 - [Sebastião Monteiro Júnior](sebastiao-monteiro-junior.md) — 14 peças em comum, 5 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 14 peças em comum, 5 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 13 peças em comum, 5 processos
 - [Erlene Nonato Lacerda](erlene-nonato-lacerda.md) — 10 peças em comum, 4 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 10 peças em comum, 4 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 9 peças em comum, 5 processos
 - [Katherine Venancio Teles](katherine-venancio-teles.md) — 9 peças em comum, 5 processos
-- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 9 peças em comum, 4 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 8 peças em comum, 5 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
-- [Nova Farma Drogaria](nova-farma-drogaria.md) — 6 peças em comum, 4 processos
 - [Drogaria Saúde Vida](drogaria-saude-vida.md) — 6 peças em comum, 4 processos
+- [Nova Farma Drogaria](nova-farma-drogaria.md) — 6 peças em comum, 4 processos
+- [Jeitto Instituição de Pagamento](jeitto-instituicao-de-pagamento.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
+- [Anderson Wander da Silva Lima](anderson-wander-da-silva-lima.md) — 14 peças em comum, 5 processos
+- [Valéria Vieira Pereira da Silva](valeria-vieira-pereira-da-silva.md) — 7 peças em comum, 4 processos
+- [Francisco José Pereira da Silva](francisco-jose-pereira-da-silva.md) — 7 peças em comum, 4 processos
 - [André Mendonça](andre-mendonca.md) — 4 peças em comum, 2 processos
 - [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 3 peças em comum, 2 processos
-- [Anderson Wander](anderson-wander.md) — 2 peças em comum, 2 processos
 
 ## Tipos de peça em que aparece
 - Petição: 16

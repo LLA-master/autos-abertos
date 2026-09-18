@@ -3,7 +3,7 @@
 
 _Alvo de busca e de sequestro em 14.1.2026_
 
-14 peças narrativas · 2 processos · 120 menções
+14 peças narrativas · 2 processos · 129 menções
 
 > Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
 
@@ -26,28 +26,28 @@ Vicente Conte Neto aparece em 14 peças narrativas de 2 dos 15 processos, com ma
 - INQ 5026: 5 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Antonio Augusto Conte](antonio-augusto-conte.md) — 7 peças em comum, 2 processos
 - [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 7 peças em comum, 2 processos
+- [Antonio Augusto Conte](antonio-augusto-conte.md) — 7 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 2 processos
-- [Bruno Burilli](bruno-burilli.md) — 6 peças em comum, 2 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 6 peças em comum, 2 processos
 - [Lucas Schietti](lucas-schietti.md) — 6 peças em comum, 2 processos
 - [Thiago Schietti](thiago-schietti.md) — 6 peças em comum, 2 processos
+- [Bruno Burilli](bruno-burilli.md) — 6 peças em comum, 2 processos
 - [Ricardo Silva Vasconcellos](ricardo-silva-vasconcellos.md) — 4 peças em comum, 1 processos
-- [Thiago Assumpção Henriques](thiago-assumpcao-henriques.md) — 3 peças em comum, 1 processos
-- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 3 peças em comum, 1 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 3 peças em comum, 1 processos
+- [Silvio Barreto da Silva](silvio-barreto-da-silva.md) — 4 peças em comum, 1 processos
+- [Luis Fernando de Almeida](luis-fernando-de-almeida.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 7 peças em comum, 2 processos
+- [Máxima Asset Management](maxima-asset-management.md) — 6 peças em comum, 2 processos
+- [Mérito Fii](merito-fii.md) — 6 peças em comum, 2 processos
+- [Codepe Corretora de Valores](codepe-corretora-de-valores.md) — 6 peças em comum, 2 processos
+- [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
 - [Pacific Realty](pacific-realty.md) — 6 peças em comum, 2 processos
 - [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
-- [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
 - [Fundo Máxima Fim Crédito Privado](fundo-maxima-fim-credito-privado.md) — 6 peças em comum, 2 processos
-- [Mérito Fii](merito-fii.md) — 6 peças em comum, 2 processos
-- [Máxima Asset Management](maxima-asset-management.md) — 6 peças em comum, 2 processos
 - [Properties Participacoes](properties-participacoes.md) — 4 peças em comum, 1 processos
 - [Foods Participacoes](foods-participacoes.md) — 4 peças em comum, 1 processos
-- [Vhr Empreendimentos](vhr-empreendimentos.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos

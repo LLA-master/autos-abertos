@@ -16,28 +16,27 @@ Francisco Felippe Lebrao Agosti aparece em 12 peças narrativas de 2 dos 15 proc
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 3 peças em comum, 2 processos
-- [Denise Nunes Garcia](denise-nunes-garcia.md) — 3 peças em comum, 1 processos
 - [Edgard Nejm Neto](edgard-nejm-neto.md) — 3 peças em comum, 1 processos
-- [Renata Costa Bassetto](renata-costa-bassetto.md) — 3 peças em comum, 1 processos
-- [Pedro Luís Camargo](pedro-luis-camargo.md) — 3 peças em comum, 2 processos
-- [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 3 peças em comum, 1 processos
+- [Denise Nunes Garcia](denise-nunes-garcia.md) — 3 peças em comum, 1 processos
 - [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 3 peças em comum, 1 processos
-- [Ticiano Figueiredo](ticiano-figueiredo.md) — 3 peças em comum, 2 processos
+- [João Paulo Ferraz](joao-paulo-ferraz.md) — 3 peças em comum, 2 processos
+- [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 3 peças em comum, 1 processos
+- [Renata Costa Bassetto](renata-costa-bassetto.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 12 peças em comum, 2 processos
+- [Ticiano Figueiredo de Oliveira](ticiano-figueiredo-de-oliveira.md) — 12 peças em comum, 2 processos
 - [Daniel Romeiro](daniel-romeiro.md) — 10 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 10 peças em comum, 1 processos
-- [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 10 peças em comum, 1 processos
-- [Joyce Roysen](joyce-roysen.md) — 10 peças em comum, 1 processos
-- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 10 peças em comum, 1 processos
-- [Laura Bruno Araujo Lopes](laura-bruno-araujo-lopes.md) — 10 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 10 peças em comum, 1 processos
-- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 10 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 10 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 10 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 10 peças em comum, 1 processos
 - [Carolina Borba Ambrozino](carolina-borba-ambrozino.md) — 10 peças em comum, 1 processos
 - [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 10 peças em comum, 1 processos
+- [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 10 peças em comum, 1 processos
+- [Bianca Andrade Nogueira de Oliveira](bianca-andrade-nogueira-de-oliveira.md) — 10 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Peça sobre prisão preventiva: 3

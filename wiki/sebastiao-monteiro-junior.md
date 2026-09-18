@@ -27,24 +27,24 @@ Fontes: PET 15978 seq 32 pp. 2, 31; PET 15976 seq 34 p. 44; PET 16019 seq 32 pp.
 - PET 16019: 1 ato(s); o primeiro, na peça 00032 p. 7
 
 ## Dados automáticos
-Sebastião Monteiro Júnior aparece em 35 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (21), PET 16019 (8), PET 15693 (2), PET 15976 (2), PET 15977 (2). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
+Sebastião Monteiro Júnior aparece em 35 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (21), PET 16019 (8), PET 15976 (2), PET 15693 (2), PET 15977 (2). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
 
 ## Presença por processo
 - PET 15978: 21 peças
 - PET 16019: 8 peças
-- PET 15693: 2 peças
 - PET 15976: 2 peças
+- PET 15693: 2 peças
 - PET 15977: 2 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 16 peças em comum, 5 processos
 - [David Henrique Alves](david-henrique-alves.md) — 16 peças em comum, 5 processos
-- [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 14 peças em comum, 5 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 14 peças em comum, 5 processos
+- [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 14 peças em comum, 5 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 13 peças em comum, 5 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 10 peças em comum, 5 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 12 peças em comum, 5 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 12 peças em comum, 5 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 10 peças em comum, 5 processos
-- [Marilson Roseno](marilson-roseno.md) — 9 peças em comum, 4 processos
 - [Erlene Nonato Lacerda](erlene-nonato-lacerda.md) — 9 peças em comum, 3 processos
 - [Katherine Venancio Teles](katherine-venancio-teles.md) — 8 peças em comum, 4 processos
 
@@ -52,10 +52,15 @@ Sebastião Monteiro Júnior aparece em 35 peças narrativas de 5 dos 15 processo
 - [Ribeiro Gestão Empresarial](ribeiro-gestao-empresarial.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
+- [Anderson Wander da Silva Lima](anderson-wander-da-silva-lima.md) — 19 peças em comum, 5 processos
 - [André Mendonça](andre-mendonca.md) — 11 peças em comum, 2 processos
+- [Valéria Vieira Pereira da Silva](valeria-vieira-pereira-da-silva.md) — 8 peças em comum, 4 processos
+- [Francisco José Pereira da Silva](francisco-jose-pereira-da-silva.md) — 7 peças em comum, 4 processos
 - [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 5 peças em comum, 2 processos
-- [Anderson Wander](anderson-wander.md) — 3 peças em comum, 3 processos
 - [Silvio Gemaque](silvio-gemaque.md) — 3 peças em comum, 1 processos
+
+## Divide páginas com — Advogados (coocorrência, não relação)
+- [Giulia de Felippo Moretti](giulia-de-felippo-moretti.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 17

@@ -3,7 +3,7 @@
 
 _Controlador do Banco Master · preso preventivamente desde 3.3.2026_
 
-141 peças narrativas · 15 processos · 2509 menções
+141 peças narrativas · 15 processos · 2517 menções
 
 > Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
 
@@ -50,58 +50,58 @@ Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, co
 - INQ 5035: 5 peças
 - PET 15504: 5 peças
 - PET 15563: 4 peças
-- PET 15976: 3 peças
 - PET 15478: 3 peças
+- PET 15976: 3 peças
 - PET 15693: 3 peças
 - PET 15977: 2 peças
 - PET 16019: 2 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 33 peças em comum, 10 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 32 peças em comum, 11 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 30 peças em comum, 9 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 23 peças em comum, 8 processos
-- [Marilson Roseno](marilson-roseno.md) — 16 peças em comum, 8 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 15 peças em comum, 8 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 21 peças em comum, 8 processos
+- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 19 peças em comum, 7 processos
+- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 17 peças em comum, 8 processos
+- [Ana Claudia Queiroz de Paiva](ana-claudia-queiroz-de-paiva.md) — 14 peças em comum, 6 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 14 peças em comum, 7 processos
 - [David Henrique Alves](david-henrique-alves.md) — 14 peças em comum, 5 processos
-- [Luiz Antonio Bull](luiz-antonio-bull.md) — 13 peças em comum, 6 processos
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 13 peças em comum, 5 processos
-- [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 13 peças em comum, 8 processos
-- [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 13 peças em comum, 5 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 24 peças em comum, 7 processos
 - [Milo Investimentos](milo-investimentos.md) — 9 peças em comum, 2 processos
-- [Clínica Mais Médicos](clinica-mais-medicos.md) — 7 peças em comum, 2 processos
+- [Varajo Consultoria](varajo-consultoria.md) — 8 peças em comum, 3 processos
 - [Banco Máxima](banco-maxima.md) — 7 peças em comum, 2 processos
-- [Entre Investimentos](entre-investimentos.md) — 7 peças em comum, 2 processos
+- [Clínica Mais Médicos](clinica-mais-medicos.md) — 7 peças em comum, 2 processos
 - [Pacific Realty](pacific-realty.md) — 7 peças em comum, 2 processos
 - [Spe Cesto Incorporadora](spe-cesto-incorporadora.md) — 7 peças em comum, 2 processos
-- [Super Empreendimentos](super-empreendimentos.md) — 6 peças em comum, 4 processos
-- [Properties Participacoes](properties-participacoes.md) — 6 peças em comum, 2 processos
-- [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
+- [Entre Investimentos](entre-investimentos.md) — 7 peças em comum, 2 processos
+- [Simetria Planos de Saúde](simetria-planos-de-saude.md) — 6 peças em comum, 2 processos
+- [Viking Participacoes](viking-participacoes.md) — 6 peças em comum, 3 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
-- [Dias Toffoli](dias-toffoli.md) — 7 peças em comum, 3 processos
-- [Anderson Wander](anderson-wander.md) — 6 peças em comum, 3 processos
-- [Maria Hortencia Lyra Machado](maria-hortencia-lyra-machado.md) — 6 peças em comum, 2 processos
-- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 6 peças em comum, 1 processos
+- [Anderson Wander da Silva Lima](anderson-wander-da-silva-lima.md) — 11 peças em comum, 5 processos
+- [Dias Toffoli](dias-toffoli.md) — 8 peças em comum, 3 processos
+- [Valéria Vieira Pereira da Silva](valeria-vieira-pereira-da-silva.md) — 7 peças em comum, 4 processos
+- [Francisco José Pereira da Silva](francisco-jose-pereira-da-silva.md) — 7 peças em comum, 4 processos
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 6 peças em comum, 1 processos
 - [Jose Resende Machado](jose-resende-machado.md) — 6 peças em comum, 2 processos
+- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 6 peças em comum, 1 processos
 - [Augusto Cesar Lyra Machado](augusto-cesar-lyra-machado.md) — 6 peças em comum, 2 processos
+- [Maria Hortencia Lyra Machado](maria-hortencia-lyra-machado.md) — 6 peças em comum, 2 processos
 - [André Mendonça](andre-mendonca.md) — 4 peças em comum, 3 processos
-- [Vanderlei Martins Vieira Brandao](vanderlei-martins-vieira-brandao.md) — 4 peças em comum, 1 processos
-- [Luiz Guilherme Atalla Camasmie](luiz-guilherme-atalla-camasmie.md) — 3 peças em comum, 3 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Sergio Rodrigues Leonardo](sergio-rodrigues-leonardo.md) — 18 peças em comum, 7 processos
 - [Roberto Podval](roberto-podval.md) — 12 peças em comum, 7 processos
 - [Marcelo Leonardo](marcelo-leonardo.md) — 9 peças em comum, 7 processos
+- [José Luis Mendes de Oliveira Lima](jose-luis-mendes-de-oliveira-lima.md) — 8 peças em comum, 7 processos
+- [Rodrigo Nascimento Dall](rodrigo-nascimento-dall.md) — 7 peças em comum, 7 processos
 - [Millena Oliveira Galdiano Faleiros](millena-oliveira-galdiano-faleiros.md) — 7 peças em comum, 7 processos
 - [Carolina Luján Rodrigues Leonardo](carolina-lujan-rodrigues-leonardo.md) — 7 peças em comum, 7 processos
-- [Rodrigo Nascimento Dall](rodrigo-nascimento-dall.md) — 7 peças em comum, 7 processos
 - [Walfrido Jorge Warde Junior](walfrido-jorge-warde-junior.md) — 5 peças em comum, 4 processos
-- [Laura Baggio Scheid Pedrosa](laura-baggio-scheid-pedrosa.md) — 4 peças em comum, 1 processos
-- [Thiago Wender Silva Ferreira](thiago-wender-silva-ferreira.md) — 4 peças em comum, 1 processos
+- [Daniel Romeiro](daniel-romeiro.md) — 4 peças em comum, 1 processos
 - [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 4 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -123,8 +123,8 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 16662 | 00007 | Outras peças | 2 |
 | INQ 5026 | 00010 | Peça sobre prisão preventiva | 9 |
 | INQ 5026 | 00005 | Peça sobre busca e apreensão | 5 |
-| PET 15556 | 00001 | Petição inicial | 2 |
 | INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 3 |
+| PET 15556 | 00001 | Petição inicial | 2 |
 | PET 15563 | 00001 | Petição inicial | 2 |
 | INQ 5026 | 00004 | Peça sobre busca e apreensão | 17 |
 | PET 15562 | 00001 | Petição inicial | 2 |

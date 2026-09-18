@@ -33,8 +33,8 @@ Brazil Realty Fii aparece em 9 peças narrativas de 3 dos 15 processos, com maio
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos
 - [Clínica Mais Médicos](clinica-mais-medicos.md) — 5 peças em comum, 2 processos
 - [Mgi Spe](mgi-spe.md) — 4 peças em comum, 2 processos
-- [Milo Investimentos](milo-investimentos.md) — 2 peças em comum, 1 processos
 - [Brazilian Multimarket](brazilian-multimarket.md) — 2 peças em comum, 1 processos
+- [Milo Investimentos](milo-investimentos.md) — 2 peças em comum, 1 processos
 - [San Benedetto Real Estate](san-benedetto-real-estate.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)

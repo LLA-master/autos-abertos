@@ -15,11 +15,12 @@ Julia Silva Minchillo aparece em 11 peças narrativas de 2 dos 15 processos, com
 - RCL 88121: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Denise Nunes Garcia](denise-nunes-garcia.md) — 2 peças em comum, 2 processos
-- [Edgard Nejm Neto](edgard-nejm-neto.md) — 2 peças em comum, 2 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 7 peças em comum, 2 processos
 - [Renata Costa Bassetto](renata-costa-bassetto.md) — 2 peças em comum, 2 processos
-- [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 2 peças em comum, 2 processos
+- [Edgard Nejm Neto](edgard-nejm-neto.md) — 2 peças em comum, 2 processos
 - [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 2 peças em comum, 2 processos
+- [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 2 peças em comum, 2 processos
+- [Denise Nunes Garcia](denise-nunes-garcia.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 2 peças em comum, 1 processos
@@ -28,16 +29,16 @@ Julia Silva Minchillo aparece em 11 peças narrativas de 2 dos 15 processos, com
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
-- [Joyce Roysen](joyce-roysen.md) — 10 peças em comum, 2 processos
-- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 10 peças em comum, 2 processos
 - [Luiza Pessanha Restiffe](luiza-pessanha-restiffe.md) — 10 peças em comum, 2 processos
+- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 10 peças em comum, 2 processos
+- [Joyce Roysen](joyce-roysen.md) — 10 peças em comum, 2 processos
 - [Daniel Romeiro](daniel-romeiro.md) — 8 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 8 peças em comum, 1 processos
-- [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 8 peças em comum, 1 processos
-- [Carolina Maia Francisco](carolina-maia-francisco.md) — 8 peças em comum, 1 processos
-- [Felipe Monteiro Feliciano](felipe-monteiro-feliciano.md) — 8 peças em comum, 1 processos
-- [Laura Bruno Araujo Lopes](laura-bruno-araujo-lopes.md) — 8 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 8 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 8 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 8 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 8 peças em comum, 1 processos
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 8 peças em comum, 1 processos
+- [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 8 peças em comum, 1 processos
+- [Ticiano Figueiredo de Oliveira](ticiano-figueiredo-de-oliveira.md) — 8 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 3

@@ -27,33 +27,36 @@ Fontes: PET 15976 seq 34 pp. 27, 30; PET 15977 seq 32 p. 9; PET 15978 seq 32 pp.
 - PET 16019: 1 ato(s); o primeiro, na peça 00032 p. 2
 
 ## Dados automáticos
-Victor Lima Sedlmaier aparece em 32 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (16), PET 16019 (11), PET 15693 (3), PET 15977 (1), PET 15976 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
+Victor Lima Sedlmaier aparece em 32 peças narrativas de 5 dos 15 processos, com maior presença em PET 15978 (16), PET 16019 (11), PET 15693 (3), PET 15976 (1), PET 15977 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2026-05.
 
 ## Presença por processo
 - PET 15978: 16 peças
 - PET 16019: 11 peças
 - PET 15693: 3 peças
-- PET 15977: 1 peças
 - PET 15976: 1 peças
+- PET 15977: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [David Henrique Alves](david-henrique-alves.md) — 20 peças em comum, 5 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 15 peças em comum, 5 processos
 - [Sebastião Monteiro Júnior](sebastiao-monteiro-junior.md) — 14 peças em comum, 5 processos
-- [Erlene Nonato Lacerda](erlene-nonato-lacerda.md) — 13 peças em comum, 4 processos
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 13 peças em comum, 5 processos
+- [Erlene Nonato Lacerda](erlene-nonato-lacerda.md) — 13 peças em comum, 4 processos
 - [Katherine Venancio Teles](katherine-venancio-teles.md) — 10 peças em comum, 5 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 8 peças em comum, 5 processos
-- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 8 peças em comum, 5 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 9 peças em comum, 5 processos
+- [Helder Alves de Lima](helder-alves-de-lima.md) — 8 peças em comum, 5 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 5 processos
-- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 6 peças em comum, 4 processos
+- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 8 peças em comum, 5 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
-- [Nova Farma Drogaria](nova-farma-drogaria.md) — 5 peças em comum, 3 processos
 - [Drogaria Saúde Vida](drogaria-saude-vida.md) — 5 peças em comum, 3 processos
+- [Nova Farma Drogaria](nova-farma-drogaria.md) — 5 peças em comum, 3 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
+- [Anderson Wander da Silva Lima](anderson-wander-da-silva-lima.md) — 15 peças em comum, 5 processos
 - [André Mendonça](andre-mendonca.md) — 12 peças em comum, 1 processos
+- [Valéria Vieira Pereira da Silva](valeria-vieira-pereira-da-silva.md) — 7 peças em comum, 4 processos
+- [Francisco José Pereira da Silva](francisco-jose-pereira-da-silva.md) — 7 peças em comum, 4 processos
 - [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 5 peças em comum, 2 processos
 - [Alvaro Camargos](alvaro-camargos.md) — 5 peças em comum, 1 processos
 - [Ronny Emerson Pereira](ronny-emerson-pereira.md) — 3 peças em comum, 1 processos

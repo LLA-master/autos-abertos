@@ -36,16 +36,19 @@ Leonardo Augusto Furtado Palhares aparece em 35 peças narrativas de 7 dos 15 pr
 - PET 15504: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Ana Claudia Queiroz de Paiva](ana-claudia-queiroz-de-paiva.md) — 16 peças em comum, 4 processos
 - [Belline Santana](belline-santana.md) — 15 peças em comum, 3 processos
+- [Paulo Sérgio Neves de Souza](paulo-sergio-neves-de-souza.md) — 14 peças em comum, 3 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 12 peças em comum, 3 processos
+- [Marilson Roseno da Silva](marilson-roseno-da-silva.md) — 8 peças em comum, 3 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 8 peças em comum, 4 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 6 peças em comum, 3 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 4 peças em comum, 3 processos
-- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
+- [Varajo Consultoria](varajo-consultoria.md) — 18 peças em comum, 3 processos
 - [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 11 peças em comum, 3 processos
 - [Super Empreendimentos](super-empreendimentos.md) — 10 peças em comum, 3 processos
-- [Varajo Consultoria](varajo-consultoria.md) — 9 peças em comum, 3 processos
+- [King Motors Locacao de Veiculos](king-motors-locacao-de-veiculos.md) — 7 peças em comum, 2 processos
 - [King Participacoes Imobiliarias](king-participacoes-imobiliarias.md) — 4 peças em comum, 1 processos
 - [Banco Safra](banco-safra.md) — 3 peças em comum, 1 processos
 

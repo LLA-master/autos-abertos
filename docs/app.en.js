@@ -77,7 +77,7 @@ function excCard(proc,x){ const dt=x.d?dataLonga(x.d):""; const ents=(x.ents||[]
   return `<figure class="exc" id="${excId(proc,x)}"><figcaption><b>${esc(x.t)}</b><span class="exc-src">${proc} · seq ${String(x.s).padStart(5,"0")} · p. ${x.p}${dt?" · "+dt:""}</span></figcaption>
     <blockquote>${esc(x.x)}</blockquote>
     ${x.c?`<p class="exc-ctx">${esc(x.c)}</p>`:""}
-    <p class="exc-ler"><button class="lnk" data-dec-abrir="${decSlug(proc,x.s)}" data-dec-pag="${x.p}">read the whole filing, at page ${x.p}</button></p>
+    <p class="exc-ler">${(DECIDX||[]).some(d=>d.f===decSlug(proc,x.s))?`<button class="lnk" data-dec-abrir="${decSlug(proc,x.s)}" data-dec-pag="${x.p}">read the whole filing, at page ${x.p}</button>`:`<span class="muted small">filing not published in full on this site (not a decision-making act); check the STF package</span>`}</p>
     ${ents?`<p class="exc-ents">${ents}</p>`:""}</figure>`; }
 function excDe(proc){ return (EXC&&EXC[proc])||[]; }
 function excDaEntidade(label){ const out=[]; if(!EXC) return out; for(const p in EXC) EXC[p].forEach(x=>{ if((x.ents||[]).includes(label)) out.push([p,x]); }); return out; }
@@ -199,6 +199,7 @@ function openProc(proc){
   const tops=p.top.slice(0,8).map(([l,rl,c])=>{const id=byLabel.get(l)?.id; return `<button data-open="${id||""}" style="--c:var(--${id?roleOf(byId.get(id)):rl})"><i></i>${esc(l)} <span class="muted">${c}</span></button>`;}).join("");
   const serie=R.s?`<p class="pp-serie">There is a chronicle series on this proceeding. <button class="btn small" data-cr="${esc(R.s)}">Read the series</button></p>`:"";
   const cita=(xg[proc]||[]).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([d,c])=>`<button class="lnk" data-goproc="${esc(d)}">${d}</button> <span class="muted">(${c})</span>`).join(", ")||"—";
+  document.title=`${proc} — autos-abertos`;
   P.innerHTML=`<button class="btn ghost small back" id="ppBack">← all proceedings</button>
     <p class="eyebrow">${proc} · ${esc(R.t)}</p><h2>${esc(R.o)}</h2>
     <div class="pp-num"><span>${periodo(proc)}</span><span><b>${fmt(p.pdfs)}</b> filings</span><span><b>${fmt(p.pages)}</b> pages</span><span><b>${n}</b> steps</span></div>

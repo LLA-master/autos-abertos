@@ -33,15 +33,15 @@ Viking Participacoes aparece em 10 peças narrativas de 4 dos 15 processos, com 
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
+- [Terra Firme da Bahia](terra-firme-da-bahia.md) — 5 peças em comum, 2 processos
 - [Terra Firme Construcoes](terra-firme-construcoes.md) — 5 peças em comum, 2 processos
+- [Pactual Consultoria](pactual-consultoria.md) — 4 peças em comum, 1 processos
+- [Cba Empresarial](cba-empresarial.md) — 4 peças em comum, 1 processos
 - [Master Servicos](master-servicos.md) — 4 peças em comum, 1 processos
 - [Lima Cobranca](lima-cobranca.md) — 4 peças em comum, 1 processos
-- [Vinc Consultoria](vinc-consultoria.md) — 4 peças em comum, 1 processos
-- [Pactual Consultoria](pactual-consultoria.md) — 4 peças em comum, 1 processos
 - [Hedgehog Trading Technology Informatica](hedgehog-trading-technology-informatica.md) — 4 peças em comum, 1 processos
-- [Cba Empresarial](cba-empresarial.md) — 4 peças em comum, 1 processos
-- [Master Holding Financeira](master-holding-financeira.md) — 2 peças em comum, 1 processos
-- [Vida Servicos Administrativos](vida-servicos-administrativos.md) — 2 peças em comum, 1 processos
+- [Banco Master de Investimento](banco-master-de-investimento.md) — 4 peças em comum, 1 processos
+- [Vinc Consultoria](vinc-consultoria.md) — 4 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos

@@ -188,7 +188,7 @@ EXCERTOS = [
       q="Ante o exposto, com fundamento nos artigos 282, 311 e 312", n=460, 
       t="O relator decreta a prisão preventiva de quatro investigados", 
       ctx="É o dispositivo da decisão de 3 de março de 2026, que deflagrou a terceira fase da Operação Compliance Zero.", 
-      ents=["André Mendonça", "Daniel Bueno Vorcaro", "Fabiano Campos Zettel", "Luiz Phillipi Machado de Moraes Mourão", "Marilson Roseno"]),
+      ents=["André Mendonça", "Daniel Bueno Vorcaro", "Fabiano Campos Zettel", "Luiz Phillipi Machado de Moraes Mourão", "Marilson Roseno da Silva"]),
  dict(proc="PET 15556", seq=16, pag=42, 
       q="DEFIRO, outrossim, com alicerce no art. 319, VI, do CPP", ate="KING MOTORS LOCAÇÃO DE VEÍCULOS E PARTICIPAÇÕES LTDA.", 
       t="O relator suspende por tempo indeterminado as atividades de cinco empresas", 

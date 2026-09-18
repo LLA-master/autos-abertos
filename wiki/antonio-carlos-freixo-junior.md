@@ -3,7 +3,7 @@
 
 _Alvo de busca em 14.1.2026_
 
-11 peças narrativas · 2 processos · 540 menções
+11 peças narrativas · 2 processos · 590 menções
 
 > Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
 
@@ -29,20 +29,21 @@ Antonio Carlos Freixo Junior aparece em 11 peças narrativas de 2 dos 15 process
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 7 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 6 peças em comum, 2 processos
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 6 peças em comum, 2 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
-- [Wilson Augusto Alves](wilson-augusto-alves.md) — 3 peças em comum, 1 processos
-- [Antonio Cesar Carvalho Sobrinho](antonio-cesar-carvalho-sobrinho.md) — 3 peças em comum, 1 processos
+- [Julia Grasiela de Oliveira Freixo](julia-grasiela-de-oliveira-freixo.md) — 4 peças em comum, 1 processos
 - [Ricardo Silva Vasconcellos](ricardo-silva-vasconcellos.md) — 3 peças em comum, 1 processos
+- [Silvio Barreto da Silva](silvio-barreto-da-silva.md) — 3 peças em comum, 1 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 3 peças em comum, 1 processos
+- [Antonio Cesar Carvalho Sobrinho](antonio-cesar-carvalho-sobrinho.md) — 3 peças em comum, 1 processos
+- [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
 - [Micaela Ferras Severo](micaela-ferras-severo.md) — 3 peças em comum, 1 processos
-- [Thiago Assumpção Henriques](thiago-assumpcao-henriques.md) — 2 peças em comum, 1 processos
-- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
-- [Entre Investimentos](entre-investimentos.md) — 6 peças em comum, 2 processos
 - [Mgi Spe](mgi-spe.md) — 6 peças em comum, 2 processos
 - [Milo Investimentos](milo-investimentos.md) — 6 peças em comum, 2 processos
+- [Entre Investimentos](entre-investimentos.md) — 6 peças em comum, 2 processos
 - [Banco Master](banco-master.md) — 3 peças em comum, 1 processos
+- [Máxima Fundo de Investimento Multimercado](maxima-fundo-de-investimento-multimercado.md) — 3 peças em comum, 1 processos
 - [Foco Dtvm](foco-dtvm.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
@@ -65,9 +66,9 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 25 |
 | INQ 5026 | 00010 | Peça sobre prisão preventiva | 744 |
-| PET 15198 | 00013 | Outras peças | 84 |
 | INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 574 |
 | INQ 5026 | 00004 | Peça sobre busca e apreensão | 830 |
+| PET 15198 | 00013 | Outras peças | 84 |
 | INQ 5026 | 00002 | Peça do inquérito | 238 |
 | PET 15198 | 00432 | Petição | 1 |
 | PET 15198 | 00021 | Decisão monocrática | 3 |

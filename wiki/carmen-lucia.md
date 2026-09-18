@@ -31,6 +31,7 @@ Cármen Lúcia aparece em 8 peças narrativas de 3 dos 15 processos, com maior p
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Cpi das Bets](cpi-das-bets.md) — 5 peças em comum, 2 processos
+- [Alexandre de Moraes](alexandre-de-moraes.md) — 4 peças em comum, 2 processos
 
 ## Tipos de peça em que aparece
 - Petição: 5

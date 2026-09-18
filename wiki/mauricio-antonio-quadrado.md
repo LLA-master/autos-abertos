@@ -19,44 +19,45 @@ Fontes: PET 15198 seq 14 pp. 14–18, seq 21 p. 2, seq 660 pp. 4–10, seq 690 p
 - PET 15198: 2 ato(s); o primeiro, na peça 00021 p. 2
 
 ## Dados automáticos
-Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (6), INQ 5026 (4), PET 15976 (2), PET 15562 (1), PET 15978 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
+Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (6), INQ 5026 (4), PET 15976 (2), PET 15556 (1), PET 15562 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 6 peças
 - INQ 5026: 4 peças
 - PET 15976: 2 peças
-- PET 15562: 1 peças
-- PET 15978: 1 peças
 - PET 15556: 1 peças
-- PET 15977: 1 peças
+- PET 15562: 1 peças
 - PET 15563: 1 peças
+- PET 15977: 1 peças
+- PET 15978: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 13 peças em comum, 8 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 13 peças em comum, 8 processos
+- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 13 peças em comum, 8 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 5 peças em comum, 2 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 5 peças em comum, 4 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 5 peças em comum, 5 processos
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 5 peças em comum, 2 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 4 peças em comum, 4 processos
-- [Benjamim Botelho](benjamim-botelho.md) — 4 peças em comum, 2 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
-- [Luiz Antonio Bull](luiz-antonio-bull.md) — 3 peças em comum, 1 processos
-- [Ricardo Balciunas](ricardo-balciunas.md) — 3 peças em comum, 1 processos
+- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 4 peças em comum, 4 processos
 - [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 3 peças em comum, 1 processos
+- [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 3 peças em comum, 1 processos
+- [Luiz Antonio Bull](luiz-antonio-bull.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos
 - [Banvox Holding Financeira](banvox-holding-financeira.md) — 4 peças em comum, 1 processos
-- [Banco Máxima](banco-maxima.md) — 3 peças em comum, 1 processos
+- [Reag Trust Distribuidora de Títulos](reag-trust-distribuidora-de-titulos.md) — 3 peças em comum, 3 processos
+- [Sefer Investimentos](sefer-investimentos.md) — 3 peças em comum, 1 processos
+- [Máxima Fundo de Investimento Multimercado](maxima-fundo-de-investimento-multimercado.md) — 3 peças em comum, 1 processos
 - [Vhr Empreendimentos](vhr-empreendimentos.md) — 3 peças em comum, 1 processos
-- [Fidc Alvarinho](fidc-alvarinho.md) — 2 peças em comum, 1 processos
-- [Everest Participacoes](everest-participacoes.md) — 2 peças em comum, 1 processos
-- [Fip Life Care](fip-life-care.md) — 2 peças em comum, 1 processos
-- [Máxima Asset Management](maxima-asset-management.md) — 2 peças em comum, 1 processos
-- [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
+- [Banco Máxima](banco-maxima.md) — 3 peças em comum, 1 processos
+- [Corretora de Cambio](corretora-de-cambio.md) — 3 peças em comum, 1 processos
+- [Banco Master de Investimentos](banco-master-de-investimentos.md) — 3 peças em comum, 1 processos
+- [Jeitto Instituição de Pagamento](jeitto-instituicao-de-pagamento.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
-- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 3 peças em comum, 1 processos
+- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Decisão monocrática: 4

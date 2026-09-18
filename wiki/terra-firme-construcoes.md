@@ -29,20 +29,24 @@ Terra Firme Construcoes aparece em 8 peças narrativas de 2 dos 15 processos, co
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 5 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 3 peças em comum, 2 processos
+- [Paulo Henrique Bezerra Rodrigues Costa](paulo-henrique-bezerra-rodrigues-costa.md) — 2 peças em comum, 1 processos
 - [Luiz Antonio Bull](luiz-antonio-bull.md) — 2 peças em comum, 1 processos
+- [Alberto Felix de Oliveira Neto](alberto-felix-de-oliveira-neto.md) — 2 peças em comum, 1 processos
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 2 peças em comum, 1 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 2 peças em comum, 1 processos
 - [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
+- [Terra Firme da Bahia](terra-firme-da-bahia.md) — 6 peças em comum, 2 processos
 - [Viking Participacoes](viking-participacoes.md) — 5 peças em comum, 2 processos
 - [Banco Master](banco-master.md) — 4 peças em comum, 2 processos
-- [Banco Máxima](banco-maxima.md) — 4 peças em comum, 1 processos
-- [Vinc Consultoria](vinc-consultoria.md) — 4 peças em comum, 1 processos
-- [Pactual Consultoria](pactual-consultoria.md) — 4 peças em comum, 1 processos
-- [Hedgehog Trading Technology Informatica](hedgehog-trading-technology-informatica.md) — 4 peças em comum, 1 processos
-- [Cba Empresarial](cba-empresarial.md) — 4 peças em comum, 1 processos
 - [Lima Cobranca](lima-cobranca.md) — 4 peças em comum, 1 processos
+- [Cbl Administradora de Bens](cbl-administradora-de-bens.md) — 4 peças em comum, 1 processos
+- [Banco Master de Investimento](banco-master-de-investimento.md) — 4 peças em comum, 1 processos
+- [Vinc Consultoria](vinc-consultoria.md) — 4 peças em comum, 1 processos
 - [Master Servicos](master-servicos.md) — 4 peças em comum, 1 processos
-- [Vida Servicos Administrativos](vida-servicos-administrativos.md) — 3 peças em comum, 1 processos
+- [Banco Máxima](banco-maxima.md) — 4 peças em comum, 1 processos
+- [Pactual Consultoria](pactual-consultoria.md) — 4 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos

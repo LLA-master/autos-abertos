@@ -19,24 +19,24 @@ Fontes: INQ 5026 seq 10 pp. 2857, 3489; PET 15198 seq 500 p. 14.
 Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
 
 ## Dados automáticos
-Milo Investimentos aparece em 11 peças narrativas de 3 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (5), PET 15556 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
+Milo Investimentos aparece em 11 peças narrativas de 3 dos 15 processos, com maior presença em PET 15198 (5), INQ 5026 (5), PET 15556 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
-- INQ 5026: 5 peças
 - PET 15198: 5 peças
+- INQ 5026: 5 peças
 - PET 15556: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 9 peças em comum, 2 processos
+- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 9 peças em comum, 2 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 9 peças em comum, 3 processos
+- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 9 peças em comum, 2 processos
+- [Benjamim Botelho](benjamim-botelho.md) — 7 peças em comum, 2 processos
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 7 peças em comum, 2 processos
-- [Natalia Bueno Ribeiro Vorcaro](natalia-bueno-ribeiro-vorcaro.md) — 6 peças em comum, 2 processos
 - [Antonio Carlos Freixo Junior](antonio-carlos-freixo-junior.md) — 6 peças em comum, 2 processos
-- [Benjamim Botelho](benjamim-botelho.md) — 6 peças em comum, 2 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 3 peças em comum, 1 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 4 peças em comum, 2 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 1 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 2 peças em comum, 1 processos
 - [Ascendino Madureira Garcia](ascendino-madureira-garcia.md) — 2 peças em comum, 1 processos
+- [Vicente Conte Neto](vicente-conte-neto.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos
@@ -45,14 +45,14 @@ Milo Investimentos aparece em 11 peças narrativas de 3 dos 15 processos, com ma
 - [Mgi Spe](mgi-spe.md) — 6 peças em comum, 2 processos
 - [San Benedetto Real Estate](san-benedetto-real-estate.md) — 6 peças em comum, 2 processos
 - [Grupo Master](grupo-master.md) — 4 peças em comum, 1 processos
-- [Vhr Empreendimentos](vhr-empreendimentos.md) — 3 peças em comum, 1 processos
 - [Pacific Realty](pacific-realty.md) — 3 peças em comum, 1 processos
-- [Fip Life Care](fip-life-care.md) — 2 peças em comum, 1 processos
-- [Máxima Asset Management](maxima-asset-management.md) — 2 peças em comum, 1 processos
+- [Vhr Empreendimentos](vhr-empreendimentos.md) — 3 peças em comum, 1 processos
+- [Máxima Fundo de Investimento Multimercado](maxima-fundo-de-investimento-multimercado.md) — 3 peças em comum, 1 processos
+- [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
-- [Maria Hortencia Lyra Machado](maria-hortencia-lyra-machado.md) — 6 peças em comum, 2 processos
 - [Augusto Cesar Lyra Machado](augusto-cesar-lyra-machado.md) — 6 peças em comum, 2 processos
+- [Maria Hortencia Lyra Machado](maria-hortencia-lyra-machado.md) — 6 peças em comum, 2 processos
 - [Jose Resende Machado](jose-resende-machado.md) — 6 peças em comum, 2 processos
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 5 peças em comum, 1 processos
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos

@@ -18,13 +18,13 @@ Fontes: PET 15562 seq 1 pp. 129–149 (representação da PF).
 Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
 
 ## Dados automáticos
-Titan Cayman aparece em 4 peças narrativas de 4 dos 15 processos, com maior presença em PET 15556 (1), PET 15562 (1), INQ 5026 (1), PET 15563 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
+Titan Cayman aparece em 4 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (1), PET 15562 (1), PET 15563 (1), PET 15556 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
 
 ## Presença por processo
-- PET 15556: 1 peças
-- PET 15562: 1 peças
 - INQ 5026: 1 peças
+- PET 15562: 1 peças
 - PET 15563: 1 peças
+- PET 15556: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 3 peças em comum, 3 processos

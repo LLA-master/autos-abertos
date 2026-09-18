@@ -26,16 +26,21 @@ Tirreno Consultoria aparece em 7 peças narrativas de 1 dos 15 processos, com ma
 - INQ 5026: 7 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Paulo Henrique Bezerra Rodrigues Costa](paulo-henrique-bezerra-rodrigues-costa.md) — 6 peças em comum, 1 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 5 peças em comum, 1 processos
-- [Luiz Antonio Bull](luiz-antonio-bull.md) — 4 peças em comum, 1 processos
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 4 peças em comum, 1 processos
+- [Luiz Antonio Bull](luiz-antonio-bull.md) — 4 peças em comum, 1 processos
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 4 peças em comum, 1 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 4 peças em comum, 1 processos
+- [Alberto Felix de Oliveira Neto](alberto-felix-de-oliveira-neto.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 5 peças em comum, 1 processos
+- [Cartos Sociedade de Crédito Direto](cartos-sociedade-de-credito-direto.md) — 5 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
-- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 3 peças em comum, 1 processos
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
+- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 3

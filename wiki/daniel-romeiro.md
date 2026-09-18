@@ -19,8 +19,8 @@ Daniel Romeiro aparece em 12 peças narrativas de 2 dos 15 processos, com maior 
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 4 peças em comum, 1 processos
 - [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 3 peças em comum, 1 processos
 - [Denise Nunes Garcia](denise-nunes-garcia.md) — 3 peças em comum, 1 processos
-- [Edgard Nejm Neto](edgard-nejm-neto.md) — 3 peças em comum, 1 processos
 - [Renata Costa Bassetto](renata-costa-bassetto.md) — 3 peças em comum, 1 processos
+- [Edgard Nejm Neto](edgard-nejm-neto.md) — 3 peças em comum, 1 processos
 - [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 3 peças em comum, 1 processos
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 2 peças em comum, 1 processos
 
@@ -28,16 +28,16 @@ Daniel Romeiro aparece em 12 peças narrativas de 2 dos 15 processos, com maior 
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
-- [Joyce Roysen](joyce-roysen.md) — 11 peças em comum, 1 processos
-- [Eduardo Medaljon Zynger](eduardo-medaljon-zynger.md) — 11 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 11 peças em comum, 1 processos
-- [Pedro Ivo Rodrigues Velloso Cordeiro](pedro-ivo-rodrigues-velloso-cordeiro.md) — 11 peças em comum, 1 processos
-- [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 11 peças em comum, 1 processos
-- [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 11 peças em comum, 1 processos
-- [Sylas Kok Ribeiro](sylas-kok-ribeiro.md) — 11 peças em comum, 1 processos
-- [Ananda Lima Cabral](ananda-lima-cabral.md) — 11 peças em comum, 1 processos
-- [Maria Elizabeth Queijo](maria-elizabeth-queijo.md) — 11 peças em comum, 1 processos
+- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 11 peças em comum, 1 processos
+- [Augusto de Arruda Botelho](augusto-de-arruda-botelho.md) — 11 peças em comum, 1 processos
 - [Roberto Podval](roberto-podval.md) — 11 peças em comum, 1 processos
+- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 11 peças em comum, 1 processos
+- [Alexandre Daiuto Leao Noal](alexandre-daiuto-leao-noal.md) — 11 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 11 peças em comum, 1 processos
+- [Bianca Andrade Nogueira de Oliveira](bianca-andrade-nogueira-de-oliveira.md) — 11 peças em comum, 1 processos
+- [Maria Elizabeth Queijo](maria-elizabeth-queijo.md) — 11 peças em comum, 1 processos
+- [Ananda Lima Cabral](ananda-lima-cabral.md) — 11 peças em comum, 1 processos
+- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 11 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Peça sobre prisão preventiva: 3

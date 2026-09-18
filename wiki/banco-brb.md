@@ -23,20 +23,20 @@ Fontes: INQ 5026 seq 10 pp. 3748–3772; PET 15478 seq 17 pp. 2–5; RCL 88121 s
 - PET 15198: 1 ato(s); o primeiro, na peça 00014 p. 11
 
 ## Dados automáticos
-Banco Brb aparece em 13 peças narrativas de 8 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (2), PET 15978 (1), PET 15977 (1), PET 15563 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
+Banco Brb aparece em 13 peças narrativas de 8 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (2), PET 15977 (1), PET 15563 (1), PET 15978 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
 
 ## Presença por processo
 - INQ 5026: 5 peças
 - PET 15198: 2 peças
-- PET 15978: 1 peças
 - PET 15977: 1 peças
 - PET 15563: 1 peças
-- PET 15562: 1 peças
+- PET 15978: 1 peças
 - PET 15976: 1 peças
 - PET 15556: 1 peças
+- PET 15562: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 3 peças em comum, 3 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 3 peças em comum, 3 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 3 peças em comum, 3 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)

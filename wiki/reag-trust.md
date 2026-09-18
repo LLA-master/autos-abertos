@@ -28,13 +28,14 @@ Reag Trust aparece em 7 peças narrativas de 3 dos 15 processos, com maior prese
 - RCL 88121: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
-- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 2 peças em comum, 1 processos
 - [Juliana Mello Esteves Pereira](juliana-mello-esteves-pereira.md) — 2 peças em comum, 1 processos
+- [Ricardo Batista de Siqueira Xavier](ricardo-batista-de-siqueira-xavier.md) — 2 peças em comum, 1 processos
+- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 2 peças em comum, 1 processos
-- [Lever Securitizadora](lever-securitizadora.md) — 2 peças em comum, 1 processos
 - [Humaita Securitizadora](humaita-securitizadora.md) — 2 peças em comum, 1 processos
+- [Lever Securitizadora](lever-securitizadora.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 3

@@ -16,23 +16,22 @@ Laura Aith Balthazar aparece em 10 peças narrativas de 2 dos 15 processos, com 
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 3 peças em comum, 2 processos
-- [Pedro Luís Camargo](pedro-luis-camargo.md) — 3 peças em comum, 2 processos
-- [Ticiano Figueiredo](ticiano-figueiredo.md) — 3 peças em comum, 2 processos
+- [João Paulo Ferraz](joao-paulo-ferraz.md) — 3 peças em comum, 2 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 10 peças em comum, 2 processos
+- [Ticiano Figueiredo de Oliveira](ticiano-figueiredo-de-oliveira.md) — 10 peças em comum, 2 processos
 - [Francisco Felippe Lebrao Agosti](francisco-felippe-lebrao-agosti.md) — 10 peças em comum, 2 processos
+- [Mariana Beda Francisco](mariana-beda-francisco.md) — 10 peças em comum, 2 processos
+- [Felipe Andrade de Caldas Lins](felipe-andrade-de-caldas-lins.md) — 10 peças em comum, 2 processos
+- [Pedro Luis de Almeida Camargo](pedro-luis-de-almeida-camargo.md) — 10 peças em comum, 2 processos
 - [Daniel Romeiro](daniel-romeiro.md) — 8 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 8 peças em comum, 1 processos
-- [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 8 peças em comum, 1 processos
-- [Carolina Maia Francisco](carolina-maia-francisco.md) — 8 peças em comum, 1 processos
-- [Joyce Roysen](joyce-roysen.md) — 8 peças em comum, 1 processos
-- [Felipe Monteiro Feliciano](felipe-monteiro-feliciano.md) — 8 peças em comum, 1 processos
-- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 8 peças em comum, 1 processos
-- [Laura Bruno Araujo Lopes](laura-bruno-araujo-lopes.md) — 8 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 8 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 8 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 8 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 8 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 3

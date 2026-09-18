@@ -25,25 +25,27 @@ Ascendino Madureira Garcia aparece em 8 peças narrativas de 1 dos 15 processos,
 - PET 15198: 8 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [Benjamim Botelho](benjamim-botelho.md) — 5 peças em comum, 1 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 4 peças em comum, 1 processos
+- [Artur Martins de Figueiredo](artur-martins-de-figueiredo.md) — 4 peças em comum, 1 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 1 processos
-- [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 2 peças em comum, 1 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 2 peças em comum, 1 processos
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 3 peças em comum, 1 processos
+- [André Beraldo de Morais](andre-beraldo-de-morais.md) — 3 peças em comum, 1 processos
+- [Antonio Carlos Freixo Junior](antonio-carlos-freixo-junior.md) — 2 peças em comum, 1 processos
 - [Micaela Ferras Severo](micaela-ferras-severo.md) — 2 peças em comum, 1 processos
-- [Antonio Cesar Carvalho Sobrinho](antonio-cesar-carvalho-sobrinho.md) — 2 peças em comum, 1 processos
-- [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 2 peças em comum, 1 processos
-- [Artur Figueiredo](artur-figueiredo.md) — 2 peças em comum, 1 processos
-- [Antonio Augusto Conte](antonio-augusto-conte.md) — 2 peças em comum, 1 processos
-- [Benjamim Botelho](benjamim-botelho.md) — 2 peças em comum, 1 processos
+- [Valdenice Pantaleão de Sousa](valdenice-pantaleao-de-sousa.md) — 2 peças em comum, 1 processos
+- [Ricardo Balciunas](ricardo-balciunas.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 4 peças em comum, 1 processos
 - [Centara Investimentos](centara-investimentos.md) — 3 peças em comum, 1 processos
+- [Sefer Investimentos](sefer-investimentos.md) — 3 peças em comum, 1 processos
+- [Máxima Fundo de Investimento Multimercado](maxima-fundo-de-investimento-multimercado.md) — 2 peças em comum, 1 processos
+- [Brazilian Multimarket](brazilian-multimarket.md) — 2 peças em comum, 1 processos
 - [Milo Investimentos](milo-investimentos.md) — 2 peças em comum, 1 processos
-- [Pacific Realty](pacific-realty.md) — 2 peças em comum, 1 processos
 - [Entre Investimentos](entre-investimentos.md) — 2 peças em comum, 1 processos
 - [Fidc Maranta](fidc-maranta.md) — 2 peças em comum, 1 processos
-- [Brazilian Multimarket](brazilian-multimarket.md) — 2 peças em comum, 1 processos
+- [Pacific Realty](pacific-realty.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 4

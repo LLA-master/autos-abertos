@@ -27,23 +27,25 @@ Henrique Souza Silva Peretto aparece em 24 peças narrativas de 3 dos 15 process
 - RCL 88121: 2 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
+- [André Felipe de Oliveira Seixas Maia](andre-felipe-de-oliveira-seixas-maia.md) — 11 peças em comum, 2 processos
+- [Alberto Felix de Oliveira Neto](alberto-felix-de-oliveira-neto.md) — 10 peças em comum, 2 processos
+- [Angelo Antonio Ribeiro da Silva](angelo-antonio-ribeiro-da-silva.md) — 10 peças em comum, 2 processos
+- [Paulo Henrique Bezerra Rodrigues Costa](paulo-henrique-bezerra-rodrigues-costa.md) — 9 peças em comum, 2 processos
+- [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 9 peças em comum, 2 processos
 - [Luiz Antonio Bull](luiz-antonio-bull.md) — 8 peças em comum, 2 processos
-- [Augusto Ferreira Lima](augusto-ferreira-lima.md) — 8 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 6 peças em comum, 2 processos
-- [Oliveira Seixas Maia](oliveira-seixas-maia.md) — 3 peças em comum, 1 processos
-- [Alberto Felix](alberto-felix.md) — 3 peças em comum, 1 processos
-- [Angelo Antonio Ribeiro Silva](angelo-antonio-ribeiro-silva.md) — 2 peças em comum, 1 processos
+- [Allan da Silva Machado](allan-da-silva-machado.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 9 peças em comum, 1 processos
-- [Cartos Scd](cartos-scd.md) — 5 peças em comum, 1 processos
+- [Cartos Scd](cartos-scd.md) — 7 peças em comum, 1 processos
+- [Cartos Sociedade de Crédito Direto](cartos-sociedade-de-credito-direto.md) — 6 peças em comum, 1 processos
 - [Itaú Unibanco](itau-unibanco.md) — 4 peças em comum, 1 processos
 - [Banco Bradesco](banco-bradesco.md) — 4 peças em comum, 1 processos
-- [Btg Pactual Psf](btg-pactual-psf.md) — 4 peças em comum, 1 processos
-- [Banco Paulista](banco-paulista.md) — 4 peças em comum, 1 processos
-- [Banco Btg Pactual](banco-btg-pactual.md) — 4 peças em comum, 1 processos
-- [Dirua Participacoes](dirua-participacoes.md) — 4 peças em comum, 1 processos
-- [Novo Banco Continental](novo-banco-continental.md) — 4 peças em comum, 1 processos
+- [Navagio Empreendimentos Imobiliarios Incorporação](navagio-empreendimentos-imobiliarios-incorporacao.md) — 4 peças em comum, 1 processos
+- [Nuoro Pay Instituição de Pagamento](nuoro-pay-instituicao-de-pagamento.md) — 4 peças em comum, 1 processos
+- [Cartos Fintech Meios de Pagamentos](cartos-fintech-meios-de-pagamentos.md) — 4 peças em comum, 1 processos
+- [Adalar Fintech](adalar-fintech.md) — 4 peças em comum, 1 processos
 - [Cumari Consultoria](cumari-consultoria.md) — 4 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
@@ -53,6 +55,7 @@ Henrique Souza Silva Peretto aparece em 24 peças narrativas de 3 dos 15 process
 - [Vanderlei Martins Vieira Brandao](vanderlei-martins-vieira-brandao.md) — 4 peças em comum, 1 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
+- [Carmen da Costa Barros](carmen-da-costa-barros.md) — 4 peças em comum, 1 processos
 - [Thaina Fernandes Guero](thaina-fernandes-guero.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece

@@ -3,7 +3,7 @@
 
 _Ministro do STF · relator dos quinze processos desde 13.2.2026_
 
-252 peças narrativas · 15 processos · 301 menções
+260 peças narrativas · 15 processos · 310 menções
 
 > Atua nos autos no exercício de função pública: relator, ministros, Procuradoria-Geral da República, Polícia Federal, Banco Central, comissões do Congresso. Aparece muito porque assina ou recebe as peças, não porque seja parte.
 
@@ -35,20 +35,20 @@ Fontes: PET 15556 seq 16, seq 294; PET 15198 seq 403, seq 703, seq 1012; PET 166
 - RCL 88121: 2 ato(s); o primeiro, na peça 00339 p. 1
 
 ## Dados automáticos
-André Mendonça aparece em 252 peças narrativas de 15 dos 15 processos, com maior presença em PET 15556 (66), PET 15978 (44), INQ 5026 (41), PET 15198 (27), PET 15562 (22). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2026-03.
+André Mendonça aparece em 260 peças narrativas de 15 dos 15 processos, com maior presença em PET 15556 (67), PET 15978 (44), INQ 5026 (42), PET 15198 (31), PET 15562 (22). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2026-03.
 
 ## Presença por processo
-- PET 15556: 66 peças
+- PET 15556: 67 peças
 - PET 15978: 44 peças
-- INQ 5026: 41 peças
-- PET 15198: 27 peças
+- INQ 5026: 42 peças
+- PET 15198: 31 peças
 - PET 15562: 22 peças
-- PET 15563: 11 peças
-- PET 15504: 9 peças
+- PET 15563: 12 peças
 - PET 15976: 9 peças
+- PET 15504: 9 peças
 - PET 16662: 8 peças
 - PET 16019: 6 peças
-- PET 15693: 5 peças
+- PET 15693: 6 peças
 - INQ 5035: 4 peças
 - PET 15478: 4 peças
 - RCL 88121: 2 peças
@@ -57,34 +57,37 @@ André Mendonça aparece em 252 peças narrativas de 15 dos 15 processos, com ma
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Victor Lima Sedlmaier](victor-lima-sedlmaier.md) — 12 peças em comum, 1 processos
 - [Sebastião Monteiro Júnior](sebastiao-monteiro-junior.md) — 11 peças em comum, 2 processos
+- [Luiz Phillipi Machado de Moraes Mourão](luiz-phillipi-machado-de-moraes-mourao.md) — 11 peças em comum, 5 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 4 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 7 peças em comum, 4 processos
 - [David Henrique Alves](david-henrique-alves.md) — 5 peças em comum, 2 processos
-- [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 5 peças em comum, 3 processos
-- [Belline Santana](belline-santana.md) — 4 peças em comum, 3 processos
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 4 peças em comum, 2 processos
-- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 4 peças em comum, 3 processos
+- [Belline Santana](belline-santana.md) — 4 peças em comum, 3 processos
+- [Fernando Alves Vieira](fernando-alves-vieira.md) — 4 peças em comum, 1 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 4 peças em comum, 2 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
-- [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 2 peças em comum, 1 processos
+- [Moriah Asset Empreendimentos](moriah-asset-empreendimentos.md) — 3 peças em comum, 2 processos
+- [Super Empreendimentos](super-empreendimentos.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
+- [Victor Arruda de Oliveira](victor-arruda-de-oliveira.md) — 8 peças em comum, 5 processos
+- [Anderson Wander da Silva Lima](anderson-wander-da-silva-lima.md) — 7 peças em comum, 2 processos
 - [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 6 peças em comum, 3 processos
 - [Gilmar Mendes](gilmar-mendes.md) — 5 peças em comum, 4 processos
-- [Anderson Wander](anderson-wander.md) — 3 peças em comum, 2 processos
+- [Valéria Vieira Pereira da Silva](valeria-vieira-pereira-da-silva.md) — 3 peças em comum, 1 processos
+- [Francisco José Pereira da Silva](francisco-jose-pereira-da-silva.md) — 3 peças em comum, 1 processos
+- [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 2 peças em comum, 2 processos
 - [Nathália Ribeiro Leite Silva](nathalia-ribeiro-leite-silva.md) — 2 peças em comum, 2 processos
 - [Paula Verônica von Czekus](paula-veronica-von-czekus.md) — 2 peças em comum, 2 processos
-- [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Odel Mikael Jean Antun](odel-mikael-jean-antun.md) — 2 peças em comum, 2 processos
 
 ## Tipos de peça em que aparece
-- Petição: 18
+- Petição: 19
 - Outras peças: 3
 - Decisão monocrática: 3
-- Despacho: 1
 
 ## Onde conferir
 Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
@@ -104,7 +107,7 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15978 | 00146 | Petição | 2 |
 | INQ 5026 | 00479 | Petição | 8 |
 | PET 15556 | 00259 | Petição | 1 |
+| PET 15563 | 00037 | Petição | 10 |
 | PET 15978 | 00052 | Outras peças | 1 |
-| PET 15978 | 00055 | Outras peças | 1 |
 
 _“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

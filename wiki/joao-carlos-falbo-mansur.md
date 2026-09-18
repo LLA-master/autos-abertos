@@ -19,27 +19,30 @@ Fontes: PET 15198 seq 14 pp. 1, 12–14, seq 21 p. 1, seq 512 p. 4.
 - PET 15198: 3 ato(s); o primeiro, na peça 00014 p. 1
 
 ## Dados automáticos
-João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (8), INQ 5026 (3), PET 15563 (1), PET 15562 (1), RCL 88121 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
+João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (8), INQ 5026 (3), PET 15563 (1), RCL 88121 (1), PET 15556 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 8 peças
 - INQ 5026: 3 peças
 - PET 15563: 1 peças
-- PET 15562: 1 peças
 - RCL 88121: 1 peças
 - PET 15556: 1 peças
+- PET 15562: 1 peças
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 11 peças em comum, 6 processos
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 6 peças em comum, 4 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 5 peças em comum, 4 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 4 peças em comum, 4 processos
+- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 3 peças em comum, 2 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 3 processos
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 3 peças em comum, 3 processos
-- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 3 peças em comum, 2 processos
+- [Artur Martins de Figueiredo](artur-martins-de-figueiredo.md) — 2 peças em comum, 2 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 3 processos
+- [Reag Trust Distribuidora de Títulos](reag-trust-distribuidora-de-titulos.md) — 4 peças em comum, 4 processos
+- [Trustee Distribuidora de Títulos](trustee-distribuidora-de-titulos.md) — 3 peças em comum, 2 processos
 - [Reag Investimentos](reag-investimentos.md) — 3 peças em comum, 1 processos
 - [Reag Growth](reag-growth.md) — 2 peças em comum, 1 processos
 - [Reag Securities](reag-securities.md) — 2 peças em comum, 1 processos

@@ -26,23 +26,28 @@ César Reginato Ligeiro aparece em 11 peças narrativas de 1 dos 15 processos, c
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Antonio Augusto Conte](antonio-augusto-conte.md) — 4 peças em comum, 1 processos
-- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 1 processos
-- [Fernando Alves Vieira](fernando-alves-vieira.md) — 3 peças em comum, 1 processos
 - [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 3 peças em comum, 1 processos
-- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 3 peças em comum, 1 processos
-- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 3 peças em comum, 1 processos
-- [Wilson Augusto Alves](wilson-augusto-alves.md) — 3 peças em comum, 1 processos
-- [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
-- [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 3 peças em comum, 1 processos
 - [Ricardo Silva Vasconcellos](ricardo-silva-vasconcellos.md) — 3 peças em comum, 1 processos
+- [Silvio Barreto da Silva](silvio-barreto-da-silva.md) — 3 peças em comum, 1 processos
+- [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 3 peças em comum, 1 processos
+- [Fernando Alves Vieira](fernando-alves-vieira.md) — 3 peças em comum, 1 processos
+- [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 3 peças em comum, 1 processos
+- [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
+- [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 1 processos
+- [Wilson Augusto Alves](wilson-augusto-alves.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
-- [Clínica Mais Médicos](clinica-mais-medicos.md) — 3 peças em comum, 1 processos
 - [Banco Master](banco-master.md) — 3 peças em comum, 1 processos
-- [Humaita Securitizadora](humaita-securitizadora.md) — 2 peças em comum, 1 processos
+- [Base Securitizadora](base-securitizadora.md) — 3 peças em comum, 1 processos
+- [Clínica Mais Médicos](clinica-mais-medicos.md) — 3 peças em comum, 1 processos
+- [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
+- [Confiance Life Corretora de Seguros](confiance-life-corretora-de-seguros.md) — 2 peças em comum, 1 processos
 - [Entre Investimentos](entre-investimentos.md) — 2 peças em comum, 1 processos
 - [Confianza Securitizadora](confianza-securitizadora.md) — 2 peças em comum, 1 processos
-- [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
+- [Humaita Securitizadora](humaita-securitizadora.md) — 2 peças em comum, 1 processos
+
+## Divide páginas com — Advogados (coocorrência, não relação)
+- [Daniel Penido de Britto](daniel-penido-de-britto.md) — 2 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 8

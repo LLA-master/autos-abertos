@@ -15,8 +15,11 @@ Thaina Fernandes Guero aparece em 8 peças narrativas de 1 dos 15 processos, com
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 3 peças em comum, 1 processos
+- [Composição da Mesa](composicao-da-mesa.md) — 3 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
+- [Cartos Sociedade de Crédito Direto](cartos-sociedade-de-credito-direto.md) — 5 peças em comum, 1 processos
+- [Cartos Scd](cartos-scd.md) — 3 peças em comum, 1 processos
 - [Banco Master](banco-master.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Autoridades (coocorrência, não relação)
@@ -25,15 +28,15 @@ Thaina Fernandes Guero aparece em 8 peças narrativas de 1 dos 15 processos, com
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Daniel Romeiro](daniel-romeiro.md) — 8 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 8 peças em comum, 1 processos
-- [Joao Henrique Braga Moreira](joao-henrique-braga-moreira.md) — 8 peças em comum, 1 processos
-- [Carolina Maia Francisco](carolina-maia-francisco.md) — 8 peças em comum, 1 processos
-- [Joyce Roysen](joyce-roysen.md) — 8 peças em comum, 1 processos
-- [Felipe Monteiro Feliciano](felipe-monteiro-feliciano.md) — 8 peças em comum, 1 processos
-- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 8 peças em comum, 1 processos
-- [Laura Bruno Araujo Lopes](laura-bruno-araujo-lopes.md) — 8 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 8 peças em comum, 1 processos
-- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 8 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 8 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 8 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 8 peças em comum, 1 processos
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 8 peças em comum, 1 processos
+- [Carolina Borba Ambrozino](carolina-borba-ambrozino.md) — 8 peças em comum, 1 processos
+- [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 8 peças em comum, 1 processos
+- [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 8 peças em comum, 1 processos
+- [Ticiano Figueiredo de Oliveira](ticiano-figueiredo-de-oliveira.md) — 8 peças em comum, 1 processos
+- [Julia Silva Minchillo](julia-silva-minchillo.md) — 8 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Pedido de devolução de bens apreendidos: 3

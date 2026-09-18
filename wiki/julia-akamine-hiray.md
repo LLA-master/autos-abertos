@@ -15,11 +15,11 @@ Julia Akamine Hiray aparece em 10 peças narrativas de 1 dos 15 processos, com m
 
 ## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 4 peças em comum, 1 processos
-- [Denise Nunes Garcia](denise-nunes-garcia.md) — 3 peças em comum, 1 processos
 - [Edgard Nejm Neto](edgard-nejm-neto.md) — 3 peças em comum, 1 processos
+- [Denise Nunes Garcia](denise-nunes-garcia.md) — 3 peças em comum, 1 processos
 - [Renata Costa Bassetto](renata-costa-bassetto.md) — 3 peças em comum, 1 processos
-- [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 3 peças em comum, 1 processos
 - [Ana Paula Barcelos Dias](ana-paula-barcelos-dias.md) — 3 peças em comum, 1 processos
+- [Veridiana Vianna Chaim](veridiana-vianna-chaim.md) — 3 peças em comum, 1 processos
 - [Luiz Antonio Bull](luiz-antonio-bull.md) — 2 peças em comum, 1 processos
 
 ## Divide páginas com — Empresas (coocorrência, não relação)
@@ -30,15 +30,15 @@ Julia Akamine Hiray aparece em 10 peças narrativas de 1 dos 15 processos, com m
 
 ## Divide páginas com — Advogados (coocorrência, não relação)
 - [Daniel Romeiro](daniel-romeiro.md) — 10 peças em comum, 1 processos
-- [Ricardo Nacarini](ricardo-nacarini.md) — 10 peças em comum, 1 processos
-- [Joyce Roysen](joyce-roysen.md) — 10 peças em comum, 1 processos
-- [Claudia Maria Soncini Bernasconi](claudia-maria-soncini-bernasconi.md) — 10 peças em comum, 1 processos
-- [Ricardo Antonio Borges Filho](ricardo-antonio-borges-filho.md) — 10 peças em comum, 1 processos
-- [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 10 peças em comum, 1 processos
+- [Luiz Felipe Mallmann de Magalhaes](luiz-felipe-mallmann-de-magalhaes.md) — 10 peças em comum, 1 processos
+- [Camila Andrade da Costa](camila-andrade-da-costa.md) — 10 peças em comum, 1 processos
+- [Liana Novaes Montenegro Marambaia](liana-novaes-montenegro-marambaia.md) — 10 peças em comum, 1 processos
+- [Joao Paulo Romano Farhat Ferraz](joao-paulo-romano-farhat-ferraz.md) — 10 peças em comum, 1 processos
 - [Carolina Borba Ambrozino](carolina-borba-ambrozino.md) — 10 peças em comum, 1 processos
 - [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 10 peças em comum, 1 processos
 - [Bruno Lescher Facciolla](bruno-lescher-facciolla.md) — 10 peças em comum, 1 processos
-- [Pedro Ivo Rodrigues Velloso Cordeiro](pedro-ivo-rodrigues-velloso-cordeiro.md) — 10 peças em comum, 1 processos
+- [Bianca Andrade Nogueira de Oliveira](bianca-andrade-nogueira-de-oliveira.md) — 10 peças em comum, 1 processos
+- [Ananda Lima Cabral](ananda-lima-cabral.md) — 10 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Peça sobre prisão preventiva: 3

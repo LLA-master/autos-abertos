@@ -1,4 +1,4 @@
-# Autoridades retiradas da aba Personagens em 17.09.2026 por serem servidores ancilares ao andamento processual (ofícios, expedientes), não decisores.
+# Autoridades e agentes retirados da aba Personagens (17 e 18.09.2026): servidores ancilares ao andamento processual (ofícios, expedientes) e delegados que assinam representações, que o site não nomeia; não decisores.
 # Voltam se a curadoria apontar cargo decisório com fonte.
 FERNANDA LOPES VASCONCELOS
 GABRIEL PIMENTA ALVES
@@ -7,3 +7,5 @@ NATHÁLIA RIBEIRO LEITE SILVA
 PAULA VERÔNICA VON CZEKUS
 VERÔNICA SNOECK SALLES
 VICTOR BARBABELLA NEGRAES
+
+VICTOR ARRUDA DE OLIVEIRA
