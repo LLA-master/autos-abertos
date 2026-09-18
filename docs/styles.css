@@ -366,3 +366,18 @@ html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
 .dl-tab .mono{font-family:var(--mono,ui-monospace,monospace);font-size:12px;color:var(--muted)}
 .dl-tab .lnk{font:inherit;color:var(--cyan);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
 @media (max-width:640px){.dl-tab th:nth-child(4),.dl-tab td:nth-child(4){display:none}}
+
+/* personagens v0.7: seções por condição nos autos, etiqueta de condição, biografia e âmbito */
+:root{--cinv:#FF9A5C;--caut:#B08CFF;--ccit:#8A92A8;--cofi:#35D8F0;--cdef:#FFD37A;--cnd:#6C7390}
+:root[data-theme="light"]{--cinv:#E2611E;--caut:#6A46C8;--ccit:#6C7390;--cofi:#0A8FA8;--cdef:#B8860B;--cnd:#8A92A8}
+.wk-secs{margin:14px 0}.wk-sec{margin:26px 0 8px}.wk-sec h3{margin:0 0 2px;font-size:20px}.wk-sec .def{color:var(--muted);font-size:13px;margin:0 0 10px;max-width:900px}
+.wk-grid{margin:0 0 6px}.wk-grid.compact{grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}.wk-grid.compact .wk-card p{-webkit-line-clamp:2}.wk-grid.compact .wk-card h3{font-size:15px}
+.ctag{display:inline-block;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid var(--cc,var(--line));color:var(--cc,var(--muted));margin-left:6px;vertical-align:middle;background:color-mix(in srgb,var(--cc,transparent) 10%,transparent)}
+.wk-card .sub{font-size:12.5px;color:var(--ink2);margin:4px 0 0}.wk-card .atos{font-size:11.5px;color:var(--muted);margin-top:8px}
+.wk-sub{font-size:16px;color:var(--ink2);margin:8px 0 0}
+.wk-cond{border-left:3px solid var(--cc);padding:8px 12px;margin:14px 0;background:var(--bg3);border-radius:8px;font-size:13.5px;color:var(--ink2)}.wk-cond b{color:var(--ink)}
+.wk-bio p{font-size:15.5px;line-height:1.6;color:var(--ink)}.wk-amb{list-style:none;padding:0;margin:6px 0}.wk-amb li{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px;align-items:start}
+.wk-atos{list-style:none;padding:0;margin:6px 0}.wk-atos li{font-size:13.5px;padding:3px 0}.lnk.mono{font-family:var(--mono);font-size:12px}
+details.auto{margin:18px 0;border:1px solid var(--line);border-radius:12px;padding:6px 14px}details.auto summary{cursor:pointer;color:var(--muted);font-size:13px;padding:6px 0}details.auto[open] summary{margin-bottom:6px}
+.src{font-size:12px;color:var(--muted)}
+@media (max-width:640px){.wk-amb li{grid-template-columns:1fr;gap:2px}.wk-grid.compact{grid-template-columns:1fr 1fr}.wk-sec h3{font-size:18px}}

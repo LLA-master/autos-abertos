@@ -1,13 +1,32 @@
 # Benjamim Botelho
-**Pessoa** · 8 peças narrativas · 2 processos · 290 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Benjamim Botelho aparece em 8 peças narrativas de 2 dos 15 processos, com maior presença em PET 15198 (7), INQ 5026 (5). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
+_Controlador da Foco DTVM, hoje Sefer, segundo a decisão · alvo de busca e sequestro · residente no exterior_
+
+8 peças narrativas · 2 processos · 290 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+Benjamim Botelho de Almeida. A decisão de 6 de janeiro de 2026 o descreve como proprietário e controlador da Foco DTVM, atual Sefer Investimentos, e manda que as medidas recaiam sobre seu patrimônio e sobre todas as participações que envolvem a Sefer. Na lista de buscas de 14 de janeiro de 2026, seu mandado consta como “prejudicado por não residir em território nacional”. Consta como acusado na ação penal da 3ª Vara Criminal Federal de São Paulo cuja cópia está nos autos.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de sequestro; busca prejudicada por residir no exterior (seq 14 p. 15, seq 21 p. 2)
+- **INQ 5026**: acusado em ação penal de São Paulo copiada aos autos (seq 468)
+
+Fontes: PET 15198 seq 14 p. 15, seq 21 p. 2, seq 468 p. 2.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 1 ato(s); o primeiro, na peça 00021 p. 2
+
+## Dados automáticos
+Benjamim Botelho aparece em 8 peças narrativas de 2 dos 15 processos, com maior presença em PET 15198 (7), INQ 5026 (5). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 7 peças
 - INQ 5026: 5 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 8 peças em comum, 2 processos
 - [Natalia Bueno Ribeiro Vorcaro](natalia-bueno-ribeiro-vorcaro.md) — 7 peças em comum, 2 processos
 - [Juliana Nogueira Zadra](juliana-nogueira-zadra.md) — 6 peças em comum, 2 processos
@@ -19,7 +38,7 @@ Benjamim Botelho aparece em 8 peças narrativas de 2 dos 15 processos, com maior
 - [Oliveira Seixas Maia](oliveira-seixas-maia.md) — 3 peças em comum, 1 processos
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 8 peças em comum, 2 processos
 - [Leads Cia Securitizadora](leads-cia-securitizadora.md) — 6 peças em comum, 2 processos
 - [Brazilian Multimarket](brazilian-multimarket.md) — 6 peças em comum, 2 processos
@@ -31,7 +50,7 @@ Benjamim Botelho aparece em 8 peças narrativas de 2 dos 15 processos, com maior
 - [Spe Cesto Incorporadora](spe-cesto-incorporadora.md) — 5 peças em comum, 2 processos
 - [Centara Investimentos](centara-investimentos.md) — 5 peças em comum, 2 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Maria Hortencia Lyra Machado](maria-hortencia-lyra-machado.md) — 6 peças em comum, 2 processos
 - [Augusto Cesar Lyra Machado](augusto-cesar-lyra-machado.md) — 6 peças em comum, 2 processos
 - [Jose Resende Machado](jose-resende-machado.md) — 6 peças em comum, 2 processos
@@ -47,7 +66,7 @@ Benjamim Botelho aparece em 8 peças narrativas de 2 dos 15 processos, com maior
 - Peça sobre bloqueio de bens (sequestro judicial): 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -64,4 +83,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15198 | 00434 | Petição | 2 |
 | PET 15198 | 00468 | Petição | 2 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

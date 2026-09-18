@@ -1,19 +1,37 @@
 # Maurício Antonio Quadrado
-**Pessoa** · 17 peças narrativas · 8 processos · 56 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (6), INQ 5026 (4), PET 15976 (2), PET 15978 (1), PET 15562 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Nelson Sequeiros Rodriguez Tanure e, entre empresas, com Banco Master.
+_Apontado pela polícia como sócio do banco · alvo de busca em 14.1.2026 · devolução de bens negada_
+
+17 peças narrativas · 8 processos · 56 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+Citado pela polícia como um dos sócios do banco e associado a uma distribuidora cujos sócios emitiram as notas compradas por um fundo; com dois deles, explicou que a emissora existia só para liquidar passivos trabalhistas de um banco português que o Master havia comprado, explicação que a polícia disse corroborar suas suspeitas. A decisão de 6 de janeiro de 2026 faz recair sobre ele parte do sequestro. Teve o pedido de restituição negado em 19 de maio de 2026, com a fórmula do relator de que bens apreendidos só voltam quando “inequivocamente” alheios aos fatos; o agravo foi à Procuradoria em junho.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de busca e sequestro; restituição negada em 19.5.2026 (seq 14, 21, 660, 690)
+
+Fontes: PET 15198 seq 14 pp. 14–18, seq 21 p. 2, seq 660 pp. 4–10, seq 690 p. 4.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 2 ato(s); o primeiro, na peça 00021 p. 2
+
+## Dados automáticos
+Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (6), INQ 5026 (4), PET 15976 (2), PET 15562 (1), PET 15978 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 6 peças
 - INQ 5026: 4 peças
 - PET 15976: 2 peças
-- PET 15978: 1 peças
 - PET 15562: 1 peças
+- PET 15978: 1 peças
+- PET 15556: 1 peças
 - PET 15977: 1 peças
 - PET 15563: 1 peças
-- PET 15556: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 13 peças em comum, 8 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 13 peças em comum, 8 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 5 peças em comum, 4 processos
@@ -25,7 +43,7 @@ Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos
 - [Ricardo Balciunas](ricardo-balciunas.md) — 3 peças em comum, 1 processos
 - [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos
 - [Banvox Holding Financeira](banvox-holding-financeira.md) — 4 peças em comum, 1 processos
 - [Banco Máxima](banco-maxima.md) — 3 peças em comum, 1 processos
@@ -36,7 +54,7 @@ Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos
 - [Máxima Asset Management](maxima-asset-management.md) — 2 peças em comum, 1 processos
 - [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 3 peças em comum, 1 processos
 
@@ -51,7 +69,7 @@ Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos
 - Peça do inquérito: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -71,4 +89,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15976 | 00030 | Petição | 21 |
 | PET 15976 | 00034 | Decisão monocrática | 5 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

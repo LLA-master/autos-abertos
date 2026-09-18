@@ -13,8 +13,9 @@ seguem o selo no cabeçalho do site.
 | v0.4 | 14.09.2026 | Excertos dos atos do juízo (80), recortados do texto da peça por âncora literal: o build falha se a âncora não existir ou se repetir. "Nas palavras da decisão" no processo e "Citado nas decisões" na ficha. |
 | v0.5 | 14.09.2026 | Busca no site (BM25 local, sem servidor) sobre excertos, crônicas, fichas e resumos. Busca de acervo para quem produz, que não sai da máquina. |
 | v0.6 | 14.09.2026 | Decisões na íntegra: 206 atos do juízo, 1.169 páginas, com identificadores mascarados e terceiros protegidos por papel. Leitor paginado, busca cresce para 1.396 documentos. Edição integral em inglês das 40 crônicas. |
+| v0.7 | 18.09.2026 | Personagens com condição nos autos (investigado ou alvo de medida, autoridade, advogado, instituição oficiada, citado), biografia e âmbito por processo, PT e EN, curados a partir dos atos do juízo; contagem de atos do juízo por nome; bancos oficiados em seção própria; vítimas e testemunhas fora da base; oito advogados reclassificados. Grafo, mapa mental e análise de rede fora do ar desde 17.09.2026. |
 
-Estado em 15.09.2026: 15 processos, 716 entidades e 4.980 ligações no grafo, 128 fichas,
+Estado em 18.09.2026: 15 processos, 716 entidades (353 visíveis), 125 fichas (71 curadas),
 40 crônicas em oito séries, 80 excertos, 206 decisões na íntegra, edição em inglês completa.
 
 ## Próximo (setembro de 2026)

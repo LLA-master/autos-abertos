@@ -1,7 +1,25 @@
 # Nelson Sequeiros Rodriguez Tanure
-**Pessoa** · 22 peças narrativas · 8 processos · 173 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (7), INQ 5026 (4), PET 15976 (2), PET 15977 (1), PET 15978 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Maurício Antonio Quadrado e, entre empresas, com Banco Master.
+_Apontado pela polícia como beneficiário final da Lormont e “sócio oculto” do Master · alvo de busca pessoal em 14.1.2026_
+
+22 peças narrativas · 8 processos · 173 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+A representação transcrita pelo ministro Toffoli o aponta como beneficiário final da Lormont Participações, cujas notas compunham 97% de um fundo de recebíveis, e o chama de sócio oculto do banco, pedindo o bloqueio de bens no mesmo valor de Vorcaro. “Sócio oculto” é expressão da polícia, e nos autos dessa petição não há resposta dele. Estava na lista de 39 alvos de busca; em 14 de janeiro de 2026 a polícia relatou seu voo matinal para Curitiba e obteve busca pessoal no aeroporto do Rio. Os autos não dizem o que, se algo, foi apreendido.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de busca domiciliar e pessoal, sequestro e quebra de sigilo (seq 14, 21, 85)
+
+Fontes: PET 15198 seq 14 pp. 14–18, seq 21 p. 2, seq 85 pp. 3–7.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 2 ato(s); o primeiro, na peça 00021 p. 2
+
+## Dados automáticos
+Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 processos, com maior presença em PET 15198 (7), INQ 5026 (4), PET 15976 (2), PET 15977 (1), PET 15978 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 7 peças
@@ -10,7 +28,7 @@ Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 pr
 - PET 15977: 1 peças
 - PET 15978: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 13 peças em comum, 8 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 11 peças em comum, 8 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 7 peças em comum, 4 processos
@@ -22,7 +40,7 @@ Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 pr
 - [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
 - [Ascendino Madureira Garcia](ascendino-madureira-garcia.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 8 peças em comum, 2 processos
 - [Fidc Maranta](fidc-maranta.md) — 4 peças em comum, 1 processos
 - [Banco Letsbank](banco-letsbank.md) — 3 peças em comum, 1 processos
@@ -34,7 +52,7 @@ Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 pr
 - [Imobiliario Spe](imobiliario-spe.md) — 2 peças em comum, 1 processos
 - [Macam Asset Management](macam-asset-management.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -46,7 +64,7 @@ Nelson Sequeiros Rodriguez Tanure aparece em 22 peças narrativas de 8 dos 15 pr
 - Peça sobre busca e apreensão: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -66,4 +84,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15977 | 00030 | Petição | 21 |
 | PET 15978 | 00030 | Petição | 21 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

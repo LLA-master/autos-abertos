@@ -1,14 +1,32 @@
 # Clínica Mais Médicos
-**Empresa** · 12 peças narrativas · 3 processos · 573 menções
+**Empresa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Clínica Mais Médicos aparece em 12 peças narrativas de 3 dos 15 processos, com maior presença em INQ 5026 (6), PET 15198 (5), RCL 88121 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
+_Emitiu R$ 361 milhões em notas sem garantia com capital zero, segundo a decisão · alvo de busca e sequestro_
+
+12 peças narrativas · 3 processos · 573 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+O exemplo emblemático da petição de São Paulo: segundo a decisão de 6 de janeiro de 2026, a clínica emitiu R$ 361.147.355,00 em notas comerciais sem garantias, com capital social integralizado zero e receita bruta de R$ 54.079,64 em 2023, superada pela dívida em mais de 6.500 vezes; seu presidente, que a Procuradoria chama de laranja e este site não nomeia, recebeu auxílio emergencial em 2020 e 2021. A decisão inclui a empresa, seus sócios e diretores no sequestro de R$ 1,48 bilhão e na lista de buscas.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de sequestro e de busca (seq 14 pp. 7, 16, seq 21 p. 4)
+
+Fontes: PET 15198 seq 14 pp. 7–9, 14–18, seq 21 p. 4.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 2 ato(s); o primeiro, na peça 00014 p. 7
+
+## Dados automáticos
+Clínica Mais Médicos aparece em 12 peças narrativas de 3 dos 15 processos, com maior presença em INQ 5026 (6), PET 15198 (5), RCL 88121 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - INQ 5026: 6 peças
 - PET 15198: 5 peças
 - RCL 88121: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 2 processos
 - [Ricardo Balciunas](ricardo-balciunas.md) — 6 peças em comum, 2 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 4 peças em comum, 1 processos
@@ -20,7 +38,7 @@ Clínica Mais Médicos aparece em 12 peças narrativas de 3 dos 15 processos, co
 - [Vicente Conte Neto](vicente-conte-neto.md) — 2 peças em comum, 1 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 9 peças em comum, 2 processos
 - [Flytour Eventos](flytour-eventos.md) — 6 peças em comum, 2 processos
 - [Pithecia Participacoes](pithecia-participacoes.md) — 5 peças em comum, 2 processos
@@ -31,7 +49,7 @@ Clínica Mais Médicos aparece em 12 peças narrativas de 3 dos 15 processos, co
 - [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
 - [Base Securitizadora](base-securitizadora.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -44,7 +62,7 @@ Clínica Mais Médicos aparece em 12 peças narrativas de 3 dos 15 processos, co
 - Pedido de devolução de bens apreendidos: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -61,4 +79,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15198 | 00021 | Decisão monocrática | 4 |
 | RCL 88121 | 00074 | Petição | 7 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

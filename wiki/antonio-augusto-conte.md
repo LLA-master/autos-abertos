@@ -1,7 +1,25 @@
 # Antonio Augusto Conte
-**Pessoa** · 15 peças narrativas · 4 processos · 69 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (4), PET 15976 (1), PET 15978 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Henrique Moura Vorcaro e, entre empresas, com Banco Master.
+_Alvo de busca e de sequestro em 14.1.2026_
+
+15 peças narrativas · 4 processos · 69 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+A decisão de 6 de janeiro de 2026 faz recair sobre ele, com outros, o sequestro relativo aos certificados de recebíveis imobiliários de R$ 1,012 bilhão; está na lista de buscas de 14 de janeiro de 2026, com endereço “a ser confirmado pela autoridade policial”.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de sequestro e busca (seq 14 p. 16, seq 21 p. 4)
+
+Fontes: PET 15198 seq 14 p. 16, seq 21 p. 4.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 1 ato(s); o primeiro, na peça 00021 p. 4
+
+## Dados automáticos
+Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (4), PET 15976 (1), PET 15978 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 9 peças
@@ -9,7 +27,7 @@ Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com
 - PET 15976: 1 peças
 - PET 15978: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 8 peças em comum, 4 processos
 - [Vicente Conte Neto](vicente-conte-neto.md) — 7 peças em comum, 2 processos
 - [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 7 peças em comum, 2 processos
@@ -21,7 +39,7 @@ Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com
 - [Ascendino Madureira Garcia](ascendino-madureira-garcia.md) — 2 peças em comum, 1 processos
 - [Artur Figueiredo](artur-figueiredo.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 9 peças em comum, 2 processos
 - [Banco Máxima](banco-maxima.md) — 6 peças em comum, 2 processos
 - [Máxima Asset Management](maxima-asset-management.md) — 6 peças em comum, 2 processos
@@ -33,7 +51,7 @@ Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com
 - [Multipar Empreendimentos](multipar-empreendimentos.md) — 6 peças em comum, 2 processos
 - [Mérito Fii](merito-fii.md) — 6 peças em comum, 2 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
 - [Sérgio Rosenthal](sergio-rosenthal.md) — 3 peças em comum, 1 processos
 
@@ -46,7 +64,7 @@ Antonio Augusto Conte aparece em 15 peças narrativas de 4 dos 15 processos, com
 - Peça sobre prisão preventiva: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -66,4 +84,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15976 | 00108 | Petição | 75 |
 | PET 15978 | 00224 | Petição | 75 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

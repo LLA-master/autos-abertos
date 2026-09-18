@@ -1,13 +1,31 @@
 # Vicente Conte Neto
-**Pessoa** · 14 peças narrativas · 2 processos · 120 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Vicente Conte Neto aparece em 14 peças narrativas de 2 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (5). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Antonio Augusto Conte e, entre empresas, com Banco Master.
+_Alvo de busca e de sequestro em 14.1.2026_
+
+14 peças narrativas · 2 processos · 120 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+A decisão de 6 de janeiro de 2026 faz recair sobre ele, com outros, o sequestro relativo aos certificados de recebíveis imobiliários emitidos por uma securitizadora, de R$ 1,012 bilhão; está na lista de buscas de 14 de janeiro de 2026. Em julho de 2026 formulou pedido que o relator mandou à Procuradoria.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de sequestro e busca; pedido enviado à PGR em julho de 2026 (seq 14 p. 16, seq 21 p. 3, seq 1015)
+
+Fontes: PET 15198 seq 14 p. 16, seq 21 p. 3, seq 1015 p. 4.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 3 ato(s); o primeiro, na peça 00014 p. 16
+
+## Dados automáticos
+Vicente Conte Neto aparece em 14 peças narrativas de 2 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (5). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 9 peças
 - INQ 5026: 5 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Antonio Augusto Conte](antonio-augusto-conte.md) — 7 peças em comum, 2 processos
 - [Tiago Oliva Schietti](tiago-oliva-schietti.md) — 7 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 2 processos
@@ -19,7 +37,7 @@ Vicente Conte Neto aparece em 14 peças narrativas de 2 dos 15 processos, com ma
 - [César Reginato Ligeiro](cesar-reginato-ligeiro.md) — 3 peças em comum, 1 processos
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 7 peças em comum, 2 processos
 - [Pacific Realty](pacific-realty.md) — 6 peças em comum, 2 processos
 - [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
@@ -31,7 +49,7 @@ Vicente Conte Neto aparece em 14 peças narrativas de 2 dos 15 processos, com ma
 - [Foods Participacoes](foods-participacoes.md) — 4 peças em comum, 1 processos
 - [Vhr Empreendimentos](vhr-empreendimentos.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -44,7 +62,7 @@ Vicente Conte Neto aparece em 14 peças narrativas de 2 dos 15 processos, com ma
 - Despacho: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -63,4 +81,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15198 | 00434 | Petição | 1 |
 | PET 15198 | 01015 | Despacho | 4 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

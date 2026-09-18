@@ -4,8 +4,11 @@ Lê corpus/*.parquet e escreve docs/data/*.json no repo autos-abertos, mais gate
 Regras: empresa/autoridade/advogado visíveis; pessoa visível só se nomeada em decisão/despacho/petição inicial
 ou recorrente (>=2 processos e >=3 peças); demais pessoas viram pseudônimo estável. Nenhum CPF, OAB, endereço,
 nome de arquivo, subtipo ou texto integral sai. Falha se qualquer padrão de CPF aparecer na saída."""
-import duckdb, json, re, os, hashlib, time, csv
+import duckdb, json, re, os, hashlib, time, csv, sys
 import networkx as nx
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from protegidos import PROTEGIDOS   # vítimas, testemunhas e familiares: nunca visíveis, em nenhuma saída
+PROT={k.upper() for k in PROTEGIDOS}
 W=os.environ.get("BMDB_WORK","./work"); OUT=os.environ.get("BMDB_OUT","./docs/data"); os.makedirs(OUT,exist_ok=True)
 SALT2P=f"{W}/_logs/salt_pseudo"
 if not os.path.exists(SALT2P): open(SALT2P,"w").write(hashlib.sha256(os.urandom(32)).hexdigest())
@@ -28,10 +31,17 @@ if os.path.exists(vp):
     for r in csv.DictReader(open(vp,encoding="utf-8")):
         if r.get("entity"): ov[r["entity"].strip()]=r["visible"].strip().lower() in ("1","true","sim","yes")
 rows=c.sql("SELECT n.entity, n.papel, n.docs, n.procs, n.mentions, (j.entity IS NOT NULL) injud FROM nodes n LEFT JOIN injud j USING(entity)").fetchall()
+ROLE_OV={}
+rp=f"{W}/roles_override.csv"
+if os.path.exists(rp):
+    for r in csv.DictReader(open(rp,encoding="utf-8")):
+        if r.get("entity") and r.get("papel","").strip() in ("pessoa","empresa","autoridade","advogado"): ROLE_OV[r["entity"].strip()]=r["papel"].strip()
+rows=[(e,ROLE_OV.get(e,papel),docs,procs,ment,injud) for e,papel,docs,procs,ment,injud in rows]
 def pseudo(e): return "Pessoa "+hashlib.sha256((SALT2+e).encode()).hexdigest()[:6].upper()
 vis={}; label={}; reason={}
 for e,papel,docs,procs,ment,injud in rows:
     if e in ov: v=ov[e]; why="override"
+    elif e in PROT: v=False; why="protegido (vítima, testemunha ou familiar: pipeline/protegidos.py)"
     elif papel in ("empresa","autoridade","advogado"): v=True; why=papel
     elif injud: v=True; why="nomeada em decisão/despacho/petição inicial"
     elif procs>=2 and docs>=3: v=True; why="recorrente (>=2 processos, >=3 peças)"
@@ -141,11 +151,12 @@ dump("nodes.json",[{k:n[k] for k in NODE_KEEP if k in n} for n in nodes]); dump(
 dump("crossrefs.json",[{"s":a,"d":b,"n":int(n)} for a,b,n in xr]); dump("timeline.json",tl_out); dump("cnpjs.json",cnpjs); dump("meta.json",meta)
 # GATE: varredura de padrões proibidos na saída
 bad=[]
-for f in [f for f in os.listdir(OUT) if not f.startswith("._")]:
+MINE=["nodes.json","entities.json","processos.json","crossrefs.json","timeline.json","cnpjs.json","meta.json"]   # só o que este estágio escreve; wiki (7), rastro (8), excertos (9), busca (10) e decisões (11) têm gate próprio
+for f in MINE:
     s=open(f"{OUT}/{f}",encoding="utf-8").read()
     for pat,nm_ in [(r"\d{3}\.\d{3}\.\d{3}-\d{2}","CPF"),(r"\bOAB\b","OAB"),(r"\bSHIS\b|\bSQS\b|\bSQN\b|\bRua\b|\bAvenida\b","endereço"),(r"\.pdf\b","nome de arquivo"),(r"\bCEP\b","CEP")]:
         if re.search(pat,s): bad.append((f,nm_))
-rep=[f"# Gate de sanitização — {meta['gerado_em']}\n",f"nós exportados: {len(nodes)} (visíveis {meta['grafo']['visiveis']}, pseudonimizados {meta['grafo']['pseudonimizados']}); arestas: {len(edges)}; comunidades: {len(comms)}\n","\n## Motivos de visibilidade\n"]
+rep=[f"# Gate de sanitização — {meta['gerado_em']}\n",f"nós exportados: {len(nodes)} (visíveis {sum(1 for n in nodes if n['vis'])}, pseudonimizados {sum(1 for n in nodes if not n['vis'])}); arestas: {len(edges)}; comunidades: {len(comms)}\n","\n## Motivos de visibilidade\n"]
 from collections import Counter
 for k,v in Counter(reason[e] for e in G.nodes()).most_common(): rep.append(f"- {k}: {v}\n")
 rep.append("\n## Padrões proibidos na saída\n"+("NENHUM\n" if not bad else "".join(f"- {f}: {n}\n" for f,n in bad)))
@@ -156,4 +167,4 @@ with open(f"{W}/gate_review_pseudonimizados.csv","w",encoding="utf-8",newline=""
         if not vis[e]: wr.writerow([e,label[e],G.nodes[e]["papel"],G.nodes[e]["docs"],G.nodes[e]["procs"],reason[e]])
 print("".join(rep))
 if bad: raise SystemExit("GATE FALHOU: padrões proibidos na saída — nada deve ser publicado")
-print("tamanhos:",{f:os.path.getsize(f"{OUT}/{f}")//1024 for f in os.listdir(OUT) if not f.startswith("._")},"KB")
+print("tamanhos:",{f:os.path.getsize(f"{OUT}/{f}")//1024 for f in os.listdir(OUT) if not f.startswith("._") and os.path.isfile(f"{OUT}/{f}")},"KB")

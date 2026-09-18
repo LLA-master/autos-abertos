@@ -1,23 +1,49 @@
 # Dias Toffoli
-**Autoridade** · 88 peças narrativas · 5 processos · 173 menções
+**Autoridade** · **Juízo, acusação, polícia e reguladores** · seção: Juízo, acusação, polícia e reguladores
 
-Dias Toffoli aparece em 88 peças narrativas de 5 dos 15 processos, com maior presença em PET 15198 (35), INQ 5026 (30), RCL 88121 (18), INQ 5035 (1), PET 15556 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-12. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
+_Ministro do STF · relator até 13.2.2026 · integra a Segunda Turma_
+
+88 peças narrativas · 5 processos · 173 menções
+
+> Atua nos autos no exercício de função pública: relator, ministros, Procuradoria-Geral da República, Polícia Federal, Banco Central, comissões do Congresso. Aparece muito porque assina ou recebe as peças, não porque seja parte.
+
+## Quem é nos autos
+Relator da reclamação que trouxe o inquérito de Brasília ao Supremo em dezembro de 2025 e da petição de São Paulo até fevereiro de 2026. Deferiu as quebras de sigilo e os sequestros em 6 de janeiro de 2026, as buscas contra 39 alvos em 8 de janeiro e, na noite de 13 de janeiro, avisado do voo para Dubai de um investigado, decretou prisão temporária até o amanhecer e repreendeu a Polícia Federal, em maiúsculas, por “inércia exclusiva” e “descumprimento expresso e deliberado” de sua ordem do dia anterior. Seu último ato no inquérito de Brasília mandou o conteúdo integral dos aparelhos apreendidos para o Tribunal. Um despacho de quatro páginas da Presidência, três delas em branco, redistribuiu o caso. Duas pessoas com o sobrenome Toffoli receberam salvo-conduto de seu sucessor para a CPMI; os autos não explicam por que foram convocadas, e este site não especula.
+
+## Em que condição aparece, por processo
+- **RCL 88121**: relator; liminar de 9.12.2025 e decisão de 22.12.2025 (seq 91, 237)
+- **INQ 5026**: relator até fevereiro de 2026 (seq 15, 122, 263)
+- **PET 15198**: relator; decisões de 6, 8 e 13 de janeiro de 2026 (seq 14, 21, 85)
+- **PET 15978**: integra a Segunda Turma que referendou as prisões de maio (seq 185)
+
+Fontes: PET 15198 seq 14, seq 21, seq 85, seq 372; INQ 5026 seq 168, seq 263, seq 366; RCL 88121 seq 91, seq 237; PET 15978 seq 185.
+
+## Atos do juízo publicados que citam o nome
+- INQ 5026: 22 ato(s); o primeiro, na peça 00015 p. 1
+- INQ 5035: 1 ato(s); o primeiro, na peça 00001 p. 1
+- PET 15198: 20 ato(s); o primeiro, na peça 00004 p. 1
+- PET 15556: 3 ato(s); o primeiro, na peça 00016 p. 29
+- PET 16662: 2 ato(s); o primeiro, na peça 00004 p. 3
+- RCL 88121: 11 ato(s); o primeiro, na peça 00023 p. 1
+
+## Dados automáticos
+Dias Toffoli aparece em 88 peças narrativas de 5 dos 15 processos, com maior presença em PET 15198 (35), INQ 5026 (30), RCL 88121 (18), PET 15556 (1), INQ 5035 (1). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2025-12.
 
 ## Presença por processo
 - PET 15198: 35 peças
 - INQ 5026: 30 peças
 - RCL 88121: 18 peças
-- INQ 5035: 1 peças
 - PET 15556: 1 peças
+- INQ 5035: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 3 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 4 peças em comum, 2 processos
 - [Base Securitizadora](base-securitizadora.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Jefferson Miguel Carvalho Guedes](jefferson-miguel-carvalho-guedes.md) — 3 peças em comum, 1 processos
 - [Nunes Marques](nunes-marques.md) — 3 peças em comum, 1 processos
 - [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 3 peças em comum, 1 processos
@@ -26,7 +52,7 @@ Dias Toffoli aparece em 88 peças narrativas de 5 dos 15 processos, com maior pr
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 - [Paula Verônica von Czekus](paula-veronica-von-czekus.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Advogados
+## Divide páginas com — Advogados (coocorrência, não relação)
 - [Sylas Kok Ribeiro](sylas-kok-ribeiro.md) — 8 peças em comum, 1 processos
 - [Pedro Henrique Menezes Queiroz](pedro-henrique-menezes-queiroz.md) — 8 peças em comum, 1 processos
 - [Alexandre Daiuto Leao Noal](alexandre-daiuto-leao-noal.md) — 8 peças em comum, 1 processos
@@ -42,7 +68,7 @@ Dias Toffoli aparece em 88 peças narrativas de 5 dos 15 processos, com maior pr
 - Peça sobre bloqueio de bens (sequestro judicial): 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -62,4 +88,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | RCL 88121 | 00150 | Petição | 1 |
 | RCL 88121 | 00307 | Petição | 1 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

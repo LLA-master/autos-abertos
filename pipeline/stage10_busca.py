@@ -94,8 +94,12 @@ def coletar(en):
                           " ".join([proc, x["t"], x.get("c", ""), x["x"]])))
     wiki = d("wiki_en.json" if en else "wiki.json")
     for p in wiki["pages"]:
-        saida.append(("personagem", f"personagens?p={p['id']}", p["label"], p.get("resumo", ""),
-                      " ".join([p["label"], p.get("resumo", "")] + [x["label"] for r in p.get("byrole", {}).values() for x in r])))
+        # a biografia e o âmbito curados entram na busca; a lista de "divide páginas com" não, porque
+        # achar um banco oficiado procurando o nome de um investigado seria repetir a associação espúria
+        cond = wiki.get("meta", {}).get("cond", {}).get(p.get("cond", ""), {}).get("t", "")
+        sub = p.get("sub") or p.get("resumo", "")
+        corpo = [p["label"], cond, p.get("sub", ""), p.get("resumo", "")] + list(p.get("bio", [])) + [f"{a} {b}" for a, b in p.get("amb", [])] + list(p.get("aka", []))
+        saida.append(("personagem", f"personagens?p={p['id']}", p["label"], corta((cond + " · " if cond else "") + sub, 190), " ".join(corpo)))
     # páginas das decisões publicadas na íntegra
     dec = json.load(open(OUT / "decisoes.json", encoding="utf-8")) if (OUT / "decisoes.json").exists() else []
     for m in dec:

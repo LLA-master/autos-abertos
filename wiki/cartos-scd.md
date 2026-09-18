@@ -1,18 +1,36 @@
 # Cartos Scd
-**Empresa** · 11 peças narrativas · 3 processos · 846 menções
+**Empresa** · **Citado, sem medida contra si** · seção: Citados, sem medida contra si
 
-Cartos Scd aparece em 11 peças narrativas de 3 dos 15 processos, com maior presença em INQ 5026 (8), PET 15198 (2), PET 15478 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2024-08. Divide páginas com maior frequência com Henrique Souza Silva Peretto e, entre empresas, com Banco Master.
+_Sociedade de crédito direto apontada pelas decisões como controladora da Tirreno_
+
+11 peças narrativas · 3 processos · 846 menções
+
+> Nome mencionado em peça sem que haja pedido ou decisão dirigidos a ele: contraparte de uma operação, convocado por comissão do Congresso, empresa citada num relatório. Constar aqui é constar de uma menção, e só isso.
+
+## Quem é nos autos
+A decisão de junho de 2026 na Pet 15.478 descreve a Tirreno como empresa de fachada “controlada pela Sociedade de Crédito Direto Cartos”, e a polícia diz que a Cartos originou os empréstimos da amostra e que o Master se “associou ilicitamente” a ela para produzir e revender carteiras inexistentes. Seu sócio Henrique Peretto foi preso temporariamente em novembro de 2025 e teve o sigilo afastado. Nos atos do juízo publicados não há medida dirigida à própria empresa.
+
+## Em que condição aparece, por processo
+- **INQ 5026**: citada na descrição da operação (seq 10)
+- **PET 15478**: citada como controladora da Tirreno (seq 17 p. 2)
+
+Fontes: INQ 5026 seq 10 pp. 3750–3765; PET 15478 seq 17 p. 2.
+
+Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
+
+## Dados automáticos
+Cartos Scd aparece em 11 peças narrativas de 3 dos 15 processos, com maior presença em INQ 5026 (8), PET 15198 (2), PET 15478 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2024-08.
 
 ## Presença por processo
 - INQ 5026: 8 peças
 - PET 15198: 2 peças
 - PET 15478: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 5 peças em comum, 1 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 2 processos
 - [Itaú Unibanco](itau-unibanco.md) — 4 peças em comum, 1 processos
 - [Banco Rendimento](banco-rendimento.md) — 4 peças em comum, 1 processos
@@ -23,7 +41,7 @@ Cartos Scd aparece em 11 peças narrativas de 3 dos 15 processos, com maior pres
 - [Banco Santander](banco-santander.md) — 4 peças em comum, 1 processos
 - [Btg Pactual Psf](btg-pactual-psf.md) — 4 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 5 peças em comum, 1 processos
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 5 peças em comum, 1 processos
 
@@ -38,7 +56,7 @@ Cartos Scd aparece em 11 peças narrativas de 3 dos 15 processos, com maior pres
 - Petição inicial: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -54,4 +72,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | INQ 5026 | 00006 | Pedido de devolução de bens apreendidos | 22 |
 | PET 15478 | 00001 | Petição inicial | 61 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

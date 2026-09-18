@@ -1,7 +1,38 @@
 # Henrique Moura Vorcaro
-**Pessoa** · 73 peças narrativas · 13 processos · 651 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: O banco e a família
 
-Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, com maior presença em PET 15978 (23), PET 15198 (17), PET 15556 (11), INQ 5026 (6), PET 15976 (6). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Felipe Cancado Vorcaro e, entre empresas, com Milo Investimentos.
+_Pai de Daniel Vorcaro · conta de R$ 2,245 bilhões bloqueada · preso preventivamente desde maio de 2026_
+
+73 peças narrativas · 13 processos · 651 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+Na segunda fase da operação, em 14 de janeiro de 2026, a polícia bloqueou R$ 2.245.235.850,24 numa conta dele numa distribuidora do grupo REAG; a representação trata o valor como dinheiro escondido dos credores. A defesa respondeu que a quantia está presa num fundo lastreado em créditos de carbono e não tem relação com o Master; o relator manteve o bloqueio sem decidir o mérito. Na casa dele em Belo Horizonte foram apreendidos carros de luxo, relógios e iPads; os pedidos de devolução foram negados.
+
+Na Pet 15.978, a decisão de 13 de maio de 2026 decretou sua prisão preventiva pelo que a polícia descreve como participação central na manutenção e no acionamento da “Turma”, inclusive depois das fases ostensivas; a Segunda Turma referendou, vencido em parte o ministro Gilmar Mendes, que substituiria a prisão por domiciliar.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de busca e bloqueio em 14.1.2026; devolução de veículos negada (seq 21, 1012)
+- **PET 15556**: bloqueio mantido após pedido de esclarecimentos (seq 440)
+- **PET 15978**: investigado; prisão preventiva decretada em 13.5.2026 e referendada (seq 32, 235)
+- **PET 15977**: alvo de interceptação telefônica e telemática (seq 32)
+- **PET 15976**: alvo de busca e apreensão (seq 34)
+- **PET 15693**: quebra de sigilo telemático (seq 34)
+
+Fontes: PET 15198 seq 21, seq 1012 pp. 5–13; PET 15556 seq 440; PET 15978 seq 32 pp. 2–12, seq 235; PET 15977 seq 32 p. 6; PET 15976 seq 34 p. 14.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 5 ato(s); o primeiro, na peça 00014 p. 7
+- PET 15556: 2 ato(s); o primeiro, na peça 00296 p. 2
+- PET 15693: 1 ato(s); o primeiro, na peça 00034 p. 5
+- PET 15976: 1 ato(s); o primeiro, na peça 00034 p. 3
+- PET 15977: 1 ato(s); o primeiro, na peça 00032 p. 6
+- PET 15978: 5 ato(s); o primeiro, na peça 00032 p. 2
+- PET 16019: 1 ato(s); o primeiro, na peça 00032 p. 6
+
+## Dados automáticos
+Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, com maior presença em PET 15978 (23), PET 15198 (17), PET 15556 (11), INQ 5026 (6), PET 15976 (6). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15978: 23 peças
@@ -9,16 +40,16 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - PET 15556: 11 peças
 - INQ 5026: 6 peças
 - PET 15976: 6 peças
-- PET 15693: 2 peças
 - PET 15977: 2 peças
-- PET 15504: 1 peças
-- PET 15563: 1 peças
-- PET 16019: 1 peças
+- PET 15693: 2 peças
 - PET 16662: 1 peças
 - INQ 5035: 1 peças
+- PET 16019: 1 peças
+- PET 15504: 1 peças
 - PET 15562: 1 peças
+- PET 15563: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 32 peças em comum, 8 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 32 peças em comum, 11 processos
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 18 peças em comum, 5 processos
@@ -30,7 +61,7 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - [David Henrique Alves](david-henrique-alves.md) — 10 peças em comum, 5 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 10 peças em comum, 4 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Milo Investimentos](milo-investimentos.md) — 9 peças em comum, 3 processos
 - [Banco Master](banco-master.md) — 8 peças em comum, 3 processos
 - [Ribeiro Gestão Empresarial](ribeiro-gestao-empresarial.md) — 7 peças em comum, 3 processos
@@ -42,7 +73,7 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - [Pacific Realty](pacific-realty.md) — 6 peças em comum, 2 processos
 - [Golden Tulip](golden-tulip.md) — 6 peças em comum, 2 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [André Mendonça](andre-mendonca.md) — 8 peças em comum, 4 processos
 - [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 6 peças em comum, 2 processos
 - [Anderson Wander](anderson-wander.md) — 5 peças em comum, 3 processos
@@ -54,7 +85,7 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 - [Verônica Snoeck Salles](veronica-snoeck-salles.md) — 3 peças em comum, 2 processos
 
-## Aparece junto de — Advogados
+## Divide páginas com — Advogados (coocorrência, não relação)
 - [Sérgio Quintão](sergio-quintao.md) — 8 peças em comum, 5 processos
 - [Marciley Fernandes Fonseca](marciley-fernandes-fonseca.md) — 6 peças em comum, 5 processos
 - [Maria Letícia Nascimento Gontijo](maria-leticia-nascimento-gontijo.md) — 5 peças em comum, 5 processos
@@ -71,7 +102,7 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - Peça do inquérito: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -91,4 +122,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15978 | 00226 | Outras peças | 2 |
 | PET 15978 | 00136 | Petição | 7 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

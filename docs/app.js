@@ -263,31 +263,63 @@ function drawSmall(ms){ $("#tlEntChips").innerHTML=TLE.ids.map(id=>`<button clas
   const W=1400,H=54; S.innerHTML=TLE.ids.map(id=>{ const n=byId.get(id); const tl=(ENT[id]||{}).tl||{}; const v=ms.map(k=>tl[k]||0); const mx=Math.max(1,...v); const pk=ms[v.indexOf(mx)]; const pts=v.map((x,i)=>`${(i/(ms.length-1))*W},${H-2-(x/mx)*(H-6)}`); return `<div class="sm"><div class="nm" style="--c:var(--${roleOf(n)})"><i></i><span>${esc(n.label)}</span></div><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="M0,${H} L${pts.join(" L")} L${W},${H} Z" fill="${colorOf(n)}" fill-opacity=".22"/><polyline fill="none" stroke="${colorOf(n)}" stroke-width="1.5" points="${pts.join(" ")}"/></svg><div class="pk">pico ${pk}<br>${fmt(mx)} datas</div></div>`; }).join(""); }
 tlProc.onchange=drawTL; $("#tlLog").onchange=drawTL; $("#tlStack").onchange=drawTL; drawTL();
 
-/* ---------- personagens (wiki) ---------- */
-const WK={roles:new Set(["pessoa","empresa","autoridade"]),q:"",open:null};
+/* ---------- personagens (fichas automáticas + curadoria de condição, biografia e âmbito) ---------- */
+const WKT={back:"← todos os personagens",who:"Quem é nos autos",amb:"Em que condição aparece, por processo",fontes:"Fontes",atos:"Atos do juízo publicados que citam o nome",atosNone:"Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.",atosN:n=>`${n} ato${n>1?"s":""} do juízo`,atosLer:"ler o primeiro, na página",auto:"Dados automáticos: contagens sobre o texto das peças, sem leitura",kv:["peças","processos","menções"],pres:"Presença por processo",junto:"Divide páginas com (coocorrência na mesma página, não relação)",tipos:"Tipos de peça em que o nome aparece",onde:"Onde conferir",ondeNota:"Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna “tipo da peça” descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.",cols:["processo","seq","tipo da peça","pág."],semNo:"A extração automática não reconheceu este nome nas peças; esta ficha é só de curadoria, sem contagens.",aka:"Também grafado nos autos como",dec:"Citado nas decisões",decNota:"Trechos literais de atos do juízo em que este nome aparece. Ser citado numa decisão não conclui nada.",foot:"Ficha a partir dos dados públicos sanitizados, com curadoria de condição, biografia e âmbito. Coocorrência na mesma página não prova relação; investigado não é acusado; ninguém foi denunciado nos autos públicos. Erros: abra uma issue.",md:"Ficha em Markdown",nada:"Nada com esse filtro.",n:(d,p)=>`${d} peças · ${p} processos`,ndCard:"condição não apurada",roles:{pessoa:"Pessoas",empresa:"Empresas",autoridade:"Autoridades",advogado:"Advogados"},chipsAria:"Filtrar por condição nos autos",google:""};
+const WK={conds:new Set(["investigado","autoridade","citado","oficiada","nd"]),q:"",open:null};
+const WKC=["investigado","autoridade","citado","oficiada","defesa","nd"];   /* ordem dos filtros */
+const CONDV={investigado:"--cinv",autoridade:"--caut",citado:"--ccit",oficiada:"--cofi",defesa:"--cdef",nd:"--cnd"};
 const wkBy=new Map(WIKI.pages.map(p=>[p.id,p]));
-$$("#wkChips .chip").forEach(c=>c.onclick=()=>{const r=c.dataset.role; WK.roles.has(r)?WK.roles.delete(r):WK.roles.add(r); c.classList.toggle("on",WK.roles.has(r)); renderWiki();});
-$("#wkSearch").oninput=e=>{WK.q=e.target.value.trim().toLowerCase();renderWiki();};
+const wkNorm=s=>(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+function wkChips(){ const C=$("#wkChips"); C.setAttribute("aria-label",WKT.chipsAria);
+  C.innerHTML=WKC.map(c=>`<button class="chip${WK.conds.has(c)?" on":""}" data-cond="${c}" style="--c:var(${CONDV[c]})"><i></i>${WIKI.meta.cond[c].t}</button>`).join("");
+  $$("[data-cond]",C).forEach(b=>b.onclick=()=>{const c=b.dataset.cond; WK.conds.has(c)?WK.conds.delete(c):WK.conds.add(c); renderWiki();}); }
+wkChips();
+$("#wkSearch").oninput=e=>{WK.q=wkNorm(e.target.value.trim());renderWiki();};
 function openWiki(id){ WK.open=id; location.hash="personagens"; setTimeout(renderWiki,30); }
+const ctag=p=>`<span class="ctag" style="--cc:var(${CONDV[p.cond]})">${WIKI.meta.cond[p.cond].s}</span>`;
+const goProc=pr=>`<button class="lnk mono" data-goproc3="${esc(pr)}">${esc(pr)}</button>`;
+function wkCard(p,compact){ const txt=p.curado?(p.bio&&p.bio[0])||"":p.resumo; const na=Object.values(p.atos||{}).reduce((s,v)=>s+v[0],0);
+  return `<div class="wk-card${compact?" compact":""}" data-wk="${esc(p.id)}" style="--c:var(--${p.papel})"><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span>${ctag(p)}<h3>${esc(p.label)}</h3>
+    <div class="sub">${p.sub?esc(p.sub):(p.sem_no?"":WKT.n(p.docs,p.procs))}</div>${txt?`<p>${esc(txt)}</p>`:""}
+    <div class="atos">${na?WKT.atosN(na):WKT.atosNone.split(":")[0]}${p.curado?"":" · "+WKT.ndCard}</div></div>`; }
+function wkBind(root){ $$("[data-wk]",root).forEach(c=>c.onclick=()=>openWiki(c.dataset.wk));
+  $$("[data-goproc3]",root).forEach(b=>b.onclick=e=>{ e.stopPropagation(); const pr=b.dataset.goproc3; location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(pr); },80); });
+  $$("[data-dec-abrir]",root).forEach(b=>b.onclick=()=>abreDecisao(b.dataset.decAbrir,b.dataset.decPag||1));
+  $$("[data-open]",root).forEach(b=>b.onclick=()=>openNode(b.dataset.open)); }
 async function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage"); await loadPR();
-  if(WK.open&&wkBy.has(WK.open)){ const p=wkBy.get(WK.open); grid.hidden=true; pg.hidden=false;
-    const roleBlock=(r,t)=>p.byrole[r]?`<h4>${t}</h4><div class="neigh">${p.byrole[r].map(x=>`<button data-wk="${x.id}" style="--c:var(--${byId.get(x.id)?roleOf(byId.get(x.id)):r})"><i></i>${x.label}<span class="muted">${x.w}</span></button>`).join("")}</div>`:"";
-    pg.innerHTML=`<button class="btn ghost small" id="wkBack">← todos os personagens</button><h2 style="margin-top:12px">${p.label}</h2><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span>
-      <div class="kv" style="max-width:420px"><div><b>${fmt(p.docs)}</b><span>peças</span></div><div><b>${p.procs}</b><span>processos</span></div><div><b>${fmt(p.mentions)}</b><span>menções</span></div></div>
-      <p>${p.resumo}</p>
-      <div class="acts"><a class="btn ghost small" href="https://github.com/LLA-master/autos-abertos/blob/main/wiki/${p.slug}.md" target="_blank" rel="noopener">Ficha em Markdown</a></div>
-      <div class="wk-cols"><div><h4>Presença por processo</h4><div class="bars">${p.pe.slice(0,8).map(([pr,c])=>`<div class="bar"><span>${pr}</span><i style="width:${(c/Math.max(1,p.pe[0][1]))*100}%"></i><span>${c}</span></div>`).join("")}</div>${spark(p.tl||{})}
-      ${roleBlock("pessoa","Aparece junto de · pessoas")}${roleBlock("empresa","Empresas")}${roleBlock("autoridade","Autoridades")}${roleBlock("advogado","Advogados")}</div>
-      <div><h4>Tipos de peça em que o nome aparece</h4><ul>${p.tipos.map(([t,c])=>`<li>${tipo(t)} <span class="muted">(${c})</span></li>`).join("")}</ul>
-      <h4>Onde conferir</h4><p class="muted small">Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.</p><table><tr><th>processo</th><th>seq</th><th>tipo da peça</th><th>pág.</th></tr>${p.cit.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(c)}</td><td>${d}</td></tr>`).join("")}</table></div></div>
-      ${(()=>{const xs=excDaEntidade(p.label); return xs.length?`<h4 style="margin-top:20px">Citado nas decisões</h4><p class="muted small">Trechos literais de atos do juízo em que este nome aparece. Ser citado numa decisão não conclui nada.</p><div class="excs">${xs.map(([pr,x])=>excCard(pr,x)).join("")}</div>`:"";})()}
-      <p class="muted" style="margin-top:12px">Ficha automática a partir dos dados públicos sanitizados. Coocorrência na mesma página não prova relação. Erros de identificação: abra uma issue.</p>`;
-    $("#wkBack").onclick=()=>{WK.open=null;renderWiki();}; $$("[data-wk]",pg).forEach(b=>b.onclick=()=>openWiki(b.dataset.wk));
-    window.scrollTo({top:0}); return; }
-  pg.hidden=true; grid.hidden=false;
-  const xs=WIKI.pages.filter(p=>WK.roles.has(p.papel)&&(!WK.q||p.label.toLowerCase().includes(WK.q)));
-  grid.innerHTML=xs.map(p=>`<div class="wk-card" data-wk="${p.id}" style="--c:var(--${p.papel})"><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span><h3>${p.label}</h3><div class="m">${p.docs} peças · ${p.procs} processos${p.peak?` · pico ${p.peak}`:""}</div><p>${p.resumo}</p></div>`).join("")||`<p class="muted">Nada com esse filtro.</p>`;
-  $$("[data-wk]",grid).forEach(c=>c.onclick=()=>openWiki(c.dataset.wk));
+  const top=$("#wkTop");
+  if(WK.open&&wkBy.has(WK.open)){ const p=wkBy.get(WK.open); const c=WIKI.meta.cond[p.cond]; grid.hidden=true; pg.hidden=false; if(top) top.hidden=true;
+    const roleBlock=(r,t)=>p.byrole[r]?`<h4>${t}</h4><div class="neigh">${p.byrole[r].map(x=>`<button data-wk="${esc(x.id)}" style="--c:var(--${byId.get(x.id)?roleOf(byId.get(x.id)):r})"><i></i>${esc(x.label)}<span class="muted">${x.w}</span></button>`).join("")}</div>`:"";
+    const atos=Object.entries(p.atos||{}).sort((a,b)=>b[1][0]-a[1][0]);
+    const atosHTML=atos.length?`<ul class="wk-atos">${atos.map(([pr,[n,f,pag]])=>`<li>${goProc(pr)} · ${WKT.atosN(n)} · <button class="lnk" data-dec-abrir="${esc(f)}" data-dec-pag="${pag}">${WKT.atosLer} ${pag}</button></li>`).join("")}</ul>`:`<p class="muted small">${WKT.atosNone}</p>`;
+    const curado=p.curado?`<div class="wk-bio"><h4>${WKT.who}</h4>${(p.bio||[]).map(x=>`<p>${esc(x)}</p>`).join("")}</div>
+      ${(p.amb||[]).length?`<h4>${WKT.amb}</h4><ul class="wk-amb">${p.amb.map(([pr,t])=>`<li>${goProc(pr)}<span>${esc(t)}</span></li>`).join("")}</ul>`:""}
+      ${p.fontes?`<p class="src">${WKT.fontes}: ${esc(p.fontes)}</p>`:""}`:"";
+    const auto=p.sem_no?`<p class="muted small">${WKT.semNo}</p>`:`<details class="auto"${p.curado?"":" open"}><summary>${WKT.auto}</summary>
+      <div class="kv" style="max-width:420px"><div><b>${fmt(p.docs)}</b><span>${WKT.kv[0]}</span></div><div><b>${p.procs}</b><span>${WKT.kv[1]}</span></div><div><b>${fmt(p.mentions)}</b><span>${WKT.kv[2]}</span></div></div>
+      ${p.curado?"":`<p>${esc(p.resumo)}</p>`}
+      <div class="wk-cols"><div><h4>${WKT.pres}</h4><div class="bars">${p.pe.slice(0,8).map(([pr,n])=>`<div class="bar"><span>${pr}</span><i style="width:${(n/Math.max(1,p.pe[0][1]))*100}%"></i><span>${n}</span></div>`).join("")}</div>${spark(p.tl||{})}
+      ${p.cond==="oficiada"?"":`<h4 class="muted" style="margin-bottom:2px">${WKT.junto}</h4>${roleBlock("pessoa",WKT.roles.pessoa)}${roleBlock("empresa",WKT.roles.empresa)}${roleBlock("autoridade",WKT.roles.autoridade)}${roleBlock("advogado",WKT.roles.advogado)}`}</div>
+      <div><h4>${WKT.tipos}</h4><ul>${p.tipos.map(([t,n])=>`<li>${tipo(t)} <span class="muted">(${n})</span></li>`).join("")}</ul>
+      <h4>${WKT.onde}</h4><p class="muted small">${WKT.ondeNota}</p><table><tr>${WKT.cols.map(x=>`<th>${x}</th>`).join("")}</tr>${p.cit.map(([a,b,cc,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(cc)}</td><td>${d}</td></tr>`).join("")}</table></div></div></details>`;
+    pg.innerHTML=`<button class="btn ghost small" id="wkBack">${WKT.back}</button><h2 style="margin-top:12px">${esc(p.label)}</h2><span class="badge" style="--c:var(--${p.papel})">${ROLE_LABEL[p.papel]}</span>${ctag(p)}
+      ${p.sub?`<p class="wk-sub">${esc(p.sub)}</p>`:""}${p.aka&&p.aka.length?`<p class="muted small">${WKT.aka}: ${p.aka.map(esc).join(", ")}.</p>`:""}
+      <div class="wk-cond" style="--cc:var(${CONDV[p.cond]})"><b>${c.t}.</b> ${c.d}</div>
+      ${curado}
+      <h4>${WKT.atos}</h4>${atosHTML}
+      ${auto}
+      ${(()=>{const xs=excDaEntidade(p.label); return xs.length?`<h4 style="margin-top:20px">${WKT.dec}</h4><p class="muted small">${WKT.decNota}</p><div class="excs">${xs.map(([pr,x])=>excCard(pr,x)).join("")}</div>`:"";})()}
+      <div class="acts"><a class="btn ghost small" href="https://github.com/LLA-master/autos-abertos/blob/main/wiki/${p.slug}.md" target="_blank" rel="noopener">${WKT.md}</a>${WKT.google?`<a class="btn ghost small" href="https://www.google.com/search?q=${encodeURIComponent('"'+p.label+'" "Banco Master"')}" target="_blank" rel="noopener" title="Web search for this name; results are not part of the record">${WKT.google}</a>`:""}</div>
+      <p class="muted" style="margin-top:12px">${WKT.foot}</p>`;
+    $("#wkBack").onclick=()=>{WK.open=null;renderWiki();}; wkBind(pg);
+    document.title=`${p.label} — autos-abertos`; window.scrollTo({top:0}); return; }
+  pg.hidden=true; grid.hidden=false; if(top) top.hidden=false; document.title="autos-abertos — personagens";
+  const ok=p=>WK.conds.has(p.cond)&&(!WK.q||wkNorm(p.label).includes(WK.q)||(p.aka||[]).some(a=>wkNorm(a).includes(WK.q)));
+  let lastCond="";
+  const secs=WIKI.meta.grupos.map(g=>{ const xs=WIKI.pages.filter(p=>p.grupo===g.g&&ok(p)); if(!xs.length) return "";
+    const compact=["oficiadas","defesa","outros","citados"].includes(g.g); const def=g.cond!==lastCond?`<p class="def">${WIKI.meta.cond[g.cond].d}</p>`:""; lastCond=g.cond;
+    return `<section class="wk-sec"><h3>${g.t} <span class="muted small">(${xs.length})</span></h3>${def}<div class="wk-grid${compact?" compact":""}">${xs.map(p=>wkCard(p,compact)).join("")}</div></section>`; }).join("");
+  grid.innerHTML=secs||`<p class="muted">${WKT.nada}</p>`; wkBind(grid);
 }
 function dl(name,content,type){ const a=document.createElement("a"); a.href=type?URL.createObjectURL(new Blob([content],{type})):content; a.download=name; document.body.appendChild(a); a.click(); a.remove(); }
 const lnk=(n,extra="")=>`<button class="lnk" data-open="${esc(n.id)}" style="--c:var(--${roleOf(n)})"><i></i>${esc(n.label)}</button>${extra}`;

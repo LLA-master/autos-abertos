@@ -1,32 +1,34 @@
 # Itaú Unibanco
-**Empresa** · 12 peças narrativas · 4 processos · 222 menções
+**Empresa** · **Instituição oficiada** · seção: Instituições oficiadas
 
-Itaú Unibanco aparece em 12 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (4), PET 15563 (2), PET 15478 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-08. Divide páginas com maior frequência com Henrique Souza Silva Peretto e, entre empresas, com Banco Safra.
+_Banco oficiado · cumpre ordens de bloqueio e de quebra de sigilo · não é investigado_
+
+12 peças narrativas · 4 processos · 222 menções
+
+> Banco ou órgão que aparece nos autos porque recebeu ordem do juízo (bloquear valores, transmitir extratos, prestar informações) ou porque consta de tabelas de contas dos investigados. Ter um investigado como cliente não é ser investigado: não há pedido nem decisão contra nenhuma destas instituições.
+
+## Quem é nos autos
+Aparece nos autos porque investigados tinham conta no banco. É o nome que consta nos detalhamentos de bloqueio do sistema Sisbajud, nos comprovantes de transmissão de extratos ao sistema Simba da Polícia Federal e nas tabelas de relacionamento bancário anexadas às representações; as petições assinadas por ele são respostas da sua gerência de ofícios ao juízo. O único ato do juízo que o cita é uma decisão sobre veículos financiados pelo banco. Não há pedido nem decisão contra o Itaú nos autos.
+
+## Em que condição aparece, por processo
+- **INQ 5026**: banco que recebeu ordens de bloqueio e consta em tabelas de contas (seq 3, 4, 10)
+- **PET 15198**: transmitiu extratos à PF por ordem judicial (seq 434); citado numa decisão sobre veículos financiados (seq 1029)
+- **PET 15478**: respondeu à ordem de afastamento de sigilo (seq 26)
+- **PET 15563**: respondeu a ofício do juízo (seq 122, 148)
+
+Fontes: INQ 5026 seq 3 p. 59; PET 15198 seq 434 pp. 2–3, seq 1029 p. 4; PET 15478 seq 26 p. 1.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 1 ato(s); o primeiro, na peça 01029 p. 4
+
+## Dados automáticos
+Itaú Unibanco aparece em 12 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (5), PET 15198 (4), PET 15563 (2), PET 15478 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-08.
 
 ## Presença por processo
 - INQ 5026: 5 peças
 - PET 15198: 4 peças
 - PET 15563: 2 peças
 - PET 15478: 1 peças
-
-## Aparece junto de — Pessoas
-- [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 4 peças em comum, 1 processos
-
-## Aparece junto de — Empresas
-- [Banco Safra](banco-safra.md) — 7 peças em comum, 3 processos
-- [Banco Bradesco](banco-bradesco.md) — 5 peças em comum, 2 processos
-- [Banco Master](banco-master.md) — 5 peças em comum, 1 processos
-- [Cartos Scd](cartos-scd.md) — 4 peças em comum, 1 processos
-- [Banco Rendimento](banco-rendimento.md) — 4 peças em comum, 1 processos
-- [Novo Banco Continental](novo-banco-continental.md) — 4 peças em comum, 1 processos
-- [Btg Pactual Psf](btg-pactual-psf.md) — 4 peças em comum, 1 processos
-- [Banco Santander](banco-santander.md) — 4 peças em comum, 1 processos
-- [Sants Scd](sants-scd.md) — 4 peças em comum, 1 processos
-- [Sefer Investimentos](sefer-investimentos.md) — 4 peças em comum, 1 processos
-
-## Aparece junto de — Autoridades
-- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 5 peças em comum, 1 processos
-- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 4
@@ -39,7 +41,7 @@ Itaú Unibanco aparece em 12 peças narrativas de 4 dos 15 processos, com maior 
 - Decisão monocrática: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -56,4 +58,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15563 | 00122 | Petição | 4 |
 | PET 15563 | 00148 | Petição | 3 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

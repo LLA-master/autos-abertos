@@ -44,7 +44,7 @@
     </div>
   </nav>
   <a class="lang" href="en.html" hreflang="en" title="English version">EN</a>
-  <span class="ver" title="Versão 0.6: decisões na íntegra, excertos, rastro documental e busca; extração e curadoria automáticas em revisão; nomes, papéis e relações podem mudar">v0.6 · dados em revisão</span>
+  <span class="ver" title="Versão 0.7: personagens com condição nos autos, biografia e âmbito por processo; decisões na íntegra, excertos, rastro documental e busca; extração automática em revisão">v0.7 · dados em revisão</span>
   <button class="theme" id="themeBtn" aria-label="Alternar noite e dia" title="Noite / dia">☀</button>
 </header>
 
@@ -67,23 +67,23 @@
   <div class="tiles" id="tiles"></div>
   <div class="cards3">
     <article class="card"><h3>Processos</h3><p>Cada um dos quinze procedimentos contado do começo ao fim: o que pediu quem, o que o relator decidiu, em que ordem, com o rastro documental peça a peça.</p></article>
-    <article class="card"><h3>Personagens</h3><p>Fichas de quem tem presença relevante nos autos: em que processos e peças aparece, com quem divide páginas, onde conferir. Aparecer não é conclusão sobre nada.</p></article>
+    <article class="card"><h3>Personagens</h3><p>Quem aparece nos autos e em que condição: investigado, autoridade, advogado, banco que só recebeu uma ordem, ou apenas citado. Biografia pelo que as peças dizem, âmbito por processo, atos do juízo em que o nome aparece, onde conferir.</p></article>
     <article class="card"><h3>Decisões na íntegra</h3><p>O texto completo de cada ato decisório: decisões, despachos e acórdãos, por processo e data, com os dados pessoais mascarados. Decisão cautelar é juízo provisório; nenhuma é sentença.</p></article>
     <article class="card"><h3>Linha do tempo</h3><p>As datas que os autos citam, mês a mês, por processo. Um pico é um período sobre o qual as peças falam muito, não necessariamente quando algo aconteceu.</p></article>
     <article class="card"><h3>Crônicas</h3><p>Textos curtos para quem prefere ler a filtrar: o acervo contado com humor e sem juízo de valor, cada fato apontando para a página de origem. Separados da base, assinados como opinião. Todas com edição integral em inglês.</p></article>
     <article class="card"><h3>Fonte sempre à vista</h3><p>Cada ficha lista as peças em que o nome aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
   </div>
-  <p class="note"><b>Versão 0.2.</b> Extração, papéis e relações são automáticos e estão em revisão; os dados podem mudar. Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
+  <p class="note"><b>Versão 0.7.</b> Extração de nomes e contagens são automáticas e estão em revisão; condição nos autos, biografias e âmbito são curados a partir das decisões. Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais, vítimas e testemunhas. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
 </section>
 
 
 
 
 <section id="v-personagens" class="view" hidden>
-  <div class="wk-head"><div><h2>Personagens</h2><p class="lead small">Fichas automáticas de quem tem presença relevante nos autos: ao menos 8 peças narrativas ou 4 processos. Coocorrência na mesma página não prova relação; cada ficha diz onde conferir.</p></div>
-  <div class="search"><input id="wkSearch" type="search" placeholder="Filtrar personagens…" aria-label="Filtrar"></div></div>
-  <div class="chips" id="wkChips"><button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button><button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button><button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button><button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button></div>
-  <div id="wkGrid" class="wk-grid"></div>
+  <div id="wkTop"><div class="wk-head"><div><h2>Personagens</h2><p class="lead small">Quem aparece nos autos e em que condição: investigado ou alvo de medida, autoridade, apenas citado, instituição que só recebeu uma ordem do juízo, advogado. Cada ficha diz quem é a pessoa ou empresa segundo as peças, o que cada decisão diz sobre ela, em quantos atos do juízo o nome aparece e onde conferir. Ninguém aqui foi denunciado nos autos públicos; aparecer numa lista não é conclusão sobre nada.</p></div>
+  <div class="search"><input id="wkSearch" type="search" placeholder="Procurar um nome…" aria-label="Procurar personagem"></div></div>
+  <div class="chips" id="wkChips"></div></div>
+  <div id="wkGrid" class="wk-secs"></div>
   <article id="wkPage" class="wk-page" hidden></article>
 </section>
 
@@ -167,6 +167,8 @@
     <p>As páginas de processo trazem trechos literais dos atos do juízo. Nenhum é digitado: a curadoria aponta processo, peça, página e um trecho-âncora, e o pipeline recorta o texto do próprio documento, falhando se a âncora não estiver lá. Só citamos peça assinada por autoridade, ou seja, decisão, despacho, acórdão e manifestação da Procuradoria-Geral da República. Representação da Polícia Federal, petição de defesa e anexo de investigação ficam de fora: é neles que está transcrição de conversa privada e dado de terceiro.</p>
     <h3>Decisões na íntegra</h3>
     <p>Desde setembro de 2026 o site publica o texto completo de 200 atos decisórios: decisões monocráticas, despachos e acórdãos, 1.153 páginas ao todo, listados na seção Decisões e abertos a partir das páginas de processo. Certidões de julgamento e manifestações da Procuradoria-Geral da República, publicadas na primeira versão, saíram em 17 de setembro de 2026: não são atos do juízo. O que muda em relação ao original são as etiquetas entre colchetes: CPF, RG, endereço, CEP, telefone, e-mail, conta bancária e inscrição de advogado com número saem por regra automática; nomes de vítimas, testemunhas e familiares saem por curadoria, substituídos pelo papel que a pessoa tem no texto. O build falha se qualquer um desses padrões sobrar. Representação policial, petição de defesa e anexo de investigação continuam fora.</p>
+    <h3>Personagens: condição nos autos</h3>
+    <p>Desde 18 de setembro de 2026 cada ficha diz em que condição o nome aparece: investigado ou alvo de medida, autoridade, advogado, instituição oficiada, ou apenas citado. Essa classificação não é automática: é curadoria escrita a partir dos atos do juízo, com processo, peça e página, guardada em <code>pipeline/personagens.py</code> junto com a biografia e o âmbito por processo, em português e em inglês. O que a curadoria não cobre aparece como “condição não apurada”. A ficha também conta, para cada processo, em quantos atos do juízo publicados o nome aparece, com link para a primeira página: é o dado que separa quem está nas decisões de quem só está em petições e anexos. Bancos e outras instituições que só receberam ordens do juízo ficam numa seção própria, sem a lista de “com quem divide páginas”, porque ter um investigado como cliente não é ser investigado. Vítimas, testemunhas e familiares protegidos nas decisões na íntegra são pseudonimizados também na base e nunca ganham ficha.</p>
     <h3>Busca</h3>
     <p>A busca do site cobre só o que está publicado: os trechos das decisões, as crônicas, as fichas e os resumos. O navegador recebe um índice invertido, que guarda quais palavras aparecem em cada documento, e faz o ranqueamento localmente, sem servidor e sem registrar o que você digitou. O texto integral dos autos não está aqui e não é procurável por este site. Quem quiser procurar no acervo inteiro precisa baixar o pacote do STF.</p>
     <h3>Crônicas</h3>
@@ -185,7 +187,7 @@
     <ul>
       <li>Um projeto pessoal e independente de cidadania. <strong>Não é afiliado</strong> ao Supremo Tribunal Federal, à Polícia Federal, ao Ministério Público, ao Banco Central, a qualquer parte, investigado, advogado ou veículo de imprensa envolvido nos processos.</li>
       <li>Um índice navegável de <strong>documentos públicos</strong>: os autos que o STF tornou públicos em 11 de setembro de 2026 (Petição 15.556 e quatorze procedimentos conexos). A fonte primária é a <a href="https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/" target="_blank" rel="noopener">nota à imprensa do STF</a> e o pacote que ela linka. O site não hospeda os documentos.</li>
-      <li>Um trabalho <strong>em revisão</strong> (versão 0.2). Extração de nomes, papéis e relações é automática e pode conter erros. Tudo pode mudar entre versões; o histórico de mudanças é público no repositório.</li>
+      <li>Um trabalho <strong>em revisão</strong> (versão 0.7). Extração de nomes e contagens é automática e pode conter erros; condição nos autos e biografias são curadas a partir das decisões. Tudo pode mudar entre versões; o histórico de mudanças é público no repositório.</li>
     </ul>
     <h3>2. O que este site não é</h3>
     <ul>
@@ -199,6 +201,7 @@
     <ul>
       <li>Entram com nome: empresas e entidades; autoridades no exercício da função; advogados atuando nos autos; pessoas nomeadas em decisão, despacho ou petição inicial; pessoas recorrentes em dois ou mais processos e três ou mais peças. A regra completa está na <a href="https://github.com/LLA-master/autos-abertos/blob/main/POLITICA_DE_SANITIZACAO.md" target="_blank" rel="noopener">política de sanitização</a>.</li>
       <li>As demais pessoas físicas aparecem como código estável ("Pessoa A1B2C3"), gerado com um sal que não está no repositório.</li>
+      <li>Vítimas, testemunhas e familiares de investigados <strong>nunca são nomeados</strong>, nem nas fichas, nem nos resumos, nem nas decisões na íntegra: a lista de curadoria substitui o nome pelo papel na frase e a base os pseudonimiza.</li>
       <li><strong>Nunca são publicados</strong>: CPF, RG, número de inscrição profissional, endereço, telefone, e-mail, conta bancária, chave Pix, nomes de arquivo, trechos de texto integral, qualquer conteúdo das peças classificadas como documentos de identificação, valores monetários extraídos automaticamente de extratos.</li>
       <li>O único ponto de saída de dados para o site é um script de exportação que <strong>falha</strong> se detectar padrões proibidos. O relatório dessa verificação fica fora do repositório.</li>
       <li>Homônimos podem ter sido fundidos; variantes de grafia podem ter sido separadas; o OCR (1,8% das páginas) troca letras. Se você identificar um erro, veja o item 6.</li>
@@ -241,7 +244,7 @@
       <li>O repositório tem verificação automática de segredos e proteção contra reescrita de histórico. Vulnerabilidades ou vazamentos: reporte pela <a href="https://github.com/LLA-master/autos-abertos/security" target="_blank" rel="noopener">aba de segurança do repositório</a> ou por issue, sem publicar o dado exposto.</li>
       <li>Versão dos dados e data de geração: rodapé da seção Método.</li>
     </ul>
-    <p class="muted">Última revisão destes avisos: 13 de setembro de 2026.</p>
+    <p class="muted">Última revisão destes avisos: 18 de setembro de 2026.</p>
   </div>
 </section>
 

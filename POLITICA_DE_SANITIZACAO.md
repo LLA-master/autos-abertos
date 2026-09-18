@@ -9,6 +9,8 @@ O STF retirou o sigilo destes autos e os publicou. Isso torna os documentos púb
 - **Advogados** atuando nos autos, identificados pelo recibo de petição eletrônica ou pela inscrição profissional junto ao nome. O número de inscrição não é publicado.
 - **Pessoas nomeadas em decisão monocrática, despacho ou petição inicial**: quando um ato judicial público cita alguém pelo nome, o nome é informação pública.
 - **Pessoas recorrentes**: citadas em ao menos dois processos e três peças narrativas distintas. Recorrência entre processos é sinal de papel relevante nos fatos, não de menção incidental.
+- **Exceção que vale sobre todas as regras acima**: vítimas, testemunhas, familiares e terceiros listados em `pipeline/protegidos.py` nunca são nomeados, em nenhuma saída, ainda que uma decisão os nomeie e ainda que sejam recorrentes. Na base viram pseudônimo; nas decisões na íntegra o nome é trocado pelo papel na frase; não ganham ficha.
+- **Condição nos autos**: a ficha de cada personagem diz se o nome é investigado ou alvo de medida, autoridade, advogado, instituição oficiada ou apenas citado, por curadoria a partir dos atos do juízo (`pipeline/personagens.py`). Bancos e órgãos que só receberam ordens do juízo são rotulados como tal e não têm lista de coocorrência, para que ter um investigado como cliente não pareça envolvimento.
 
 ## O que entra pseudonimizado
 

@@ -1,31 +1,32 @@
 # Banco Santander
-**Empresa** · 14 peças narrativas · 4 processos · 13804 menções
+**Empresa** · **Instituição oficiada** · seção: Instituições oficiadas
 
-Banco Santander aparece em 14 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (6), PET 15198 (5), PET 16019 (2), PET 15563 (1). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2022-09. Divide páginas com maior frequência com Henrique Souza Silva Peretto e, entre empresas, com Banco Bradesco.
+_Banco oficiado · cumpre ordens de bloqueio e de quebra de sigilo · não é investigado_
+
+14 peças narrativas · 4 processos · 13804 menções
+
+> Banco ou órgão que aparece nos autos porque recebeu ordem do juízo (bloquear valores, transmitir extratos, prestar informações) ou porque consta de tabelas de contas dos investigados. Ter um investigado como cliente não é ser investigado: não há pedido nem decisão contra nenhuma destas instituições.
+
+## Quem é nos autos
+Aparece nos autos porque investigados tinham conta no banco. Consta nos detalhamentos de bloqueio do Sisbajud e nas tabelas de relacionamento bancário anexadas às representações, e as petições em seu nome são respostas a ofícios do juízo pedindo dados para cumprir ordens. Nas decisões de maio de 2026 é citado uma vez, como o banco em que uma investigada mantinha a conta cujos depósitos ela relatava a outro investigado. Não há pedido nem decisão contra o Santander nos autos.
+
+## Em que condição aparece, por processo
+- **INQ 5026**: banco que recebeu ordens de bloqueio e consta em tabelas de contas (seq 3, 4, 10)
+- **PET 15198**: respondeu a ofício do juízo (seq 620)
+- **PET 15976**: citado como banco em que uma investigada mantinha conta (seq 34 p. 19)
+
+Fontes: INQ 5026 seq 3 p. 59; PET 15198 seq 620 p. 1; PET 15976 seq 34 p. 19.
+
+Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
+
+## Dados automáticos
+Banco Santander aparece em 14 peças narrativas de 4 dos 15 processos, com maior presença em INQ 5026 (6), PET 15198 (5), PET 16019 (2), PET 15563 (1). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2022-09.
 
 ## Presença por processo
 - INQ 5026: 6 peças
 - PET 15198: 5 peças
 - PET 16019: 2 peças
 - PET 15563: 1 peças
-
-## Aparece junto de — Pessoas
-- [Henrique Souza Silva Peretto](henrique-souza-silva-peretto.md) — 4 peças em comum, 1 processos
-
-## Aparece junto de — Empresas
-- [Banco Bradesco](banco-bradesco.md) — 5 peças em comum, 2 processos
-- [Itaú Unibanco](itau-unibanco.md) — 4 peças em comum, 1 processos
-- [Cartos Scd](cartos-scd.md) — 4 peças em comum, 1 processos
-- [Sefer Investimentos](sefer-investimentos.md) — 4 peças em comum, 1 processos
-- [Banco Pine](banco-pine.md) — 4 peças em comum, 1 processos
-- [Btg Pactual Psf](btg-pactual-psf.md) — 4 peças em comum, 1 processos
-- [Banco Safra](banco-safra.md) — 4 peças em comum, 1 processos
-- [Banco Original](banco-original.md) — 4 peças em comum, 1 processos
-- [Btg Pactual Asset](btg-pactual-asset.md) — 4 peças em comum, 1 processos
-- [Novo Banco Continental](novo-banco-continental.md) — 4 peças em comum, 1 processos
-
-## Aparece junto de — Autoridades
-- [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
 - Petição: 6
@@ -37,7 +38,7 @@ Banco Santander aparece em 14 peças narrativas de 4 dos 15 processos, com maior
 - Peça sobre prisão preventiva: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -56,4 +57,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15198 | 00620 | Petição | 1 |
 | PET 16019 | 00060 | Petição | 1 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

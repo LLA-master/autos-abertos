@@ -1,17 +1,35 @@
 # João Carlos Falbo Mansur
-**Pessoa** · 15 peças narrativas · 6 processos · 35 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (8), INQ 5026 (3), PET 15562 (1), PET 15563 (1), PET 15556 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Daniel Bueno Vorcaro e, entre empresas, com Banco Master.
+_Apontado pelo Banco Central como controlador do grupo REAG · alvo de busca em 14.1.2026_
+
+15 peças narrativas · 6 processos · 35 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+O Banco Central rastreou uma cadeia em que o Master desembolsou R$ 1,45 bilhão em 2024 e recebeu R$ 1,38 bilhão de volta por CDBs comprados por dois fundos da REAG; os beneficiários declarados dos fundos são três parentes dele, que este site não nomeia, e o Banco Central relatou “dúvidas acerca do real controlador”. Foi incluído como alvo de busca a partir de comunicação do Banco Central ao Ministério Público. Em março de 2026 pediu ao Supremo a faculdade de comparecer à CPI do Crime Organizado.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de busca e apreensão a partir de comunicação do Banco Central (seq 14, 21, 512)
+
+Fontes: PET 15198 seq 14 pp. 1, 12–14, seq 21 p. 1, seq 512 p. 4.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 3 ato(s); o primeiro, na peça 00014 p. 1
+
+## Dados automáticos
+João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos, com maior presença em PET 15198 (8), INQ 5026 (3), PET 15563 (1), PET 15562 (1), RCL 88121 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 8 peças
 - INQ 5026: 3 peças
-- PET 15562: 1 peças
 - PET 15563: 1 peças
-- PET 15556: 1 peças
+- PET 15562: 1 peças
 - RCL 88121: 1 peças
+- PET 15556: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 11 peças em comum, 6 processos
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 6 peças em comum, 4 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 5 peças em comum, 4 processos
@@ -20,13 +38,13 @@ João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos,
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 3 peças em comum, 3 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 3 peças em comum, 2 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 6 peças em comum, 3 processos
 - [Reag Investimentos](reag-investimentos.md) — 3 peças em comum, 1 processos
 - [Reag Growth](reag-growth.md) — 2 peças em comum, 1 processos
 - [Reag Securities](reag-securities.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -39,7 +57,7 @@ João Carlos Falbo Mansur aparece em 15 peças narrativas de 6 dos 15 processos,
 - Peça sobre busca e apreensão: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -59,4 +77,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15562 | 00001 | Petição inicial | 4 |
 | PET 15563 | 00001 | Petição inicial | 4 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

@@ -1,14 +1,32 @@
 # Thiago Assumpção Henriques
-**Pessoa** · 15 peças narrativas · 3 processos · 30 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Thiago Assumpção Henriques aparece em 15 peças narrativas de 3 dos 15 processos, com maior presença em PET 15198 (10), PET 15978 (4), PET 15976 (1). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Henrique Moura Vorcaro e, entre empresas, com Dom Network.
+_Investigado · alvo de busca em 14.1.2026 · devolução de veículos negada_
+
+15 peças narrativas · 3 processos · 30 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+Teve a residência revistada em 14 de janeiro de 2026 e pediu, com Henrique Moura Vorcaro, a devolução de veículos apreendidos, dois deles Porsches registrados em seu nome com alienação fiduciária. A decisão de 2026 na Pet 15.198, que o chama de investigado, acolheu o parecer da Procuradoria e negou a liberação total dos bens, mantendo as medidas assecuratórias.
+
+## Em que condição aparece, por processo
+- **PET 15198**: investigado; alvo de busca; devolução de veículos negada (seq 21, 650, 1012)
+
+Fontes: PET 15198 seq 21, seq 650 p. 4, seq 1012 pp. 4–13.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 3 ato(s); o primeiro, na peça 00021 p. 3
+
+## Dados automáticos
+Thiago Assumpção Henriques aparece em 15 peças narrativas de 3 dos 15 processos, com maior presença em PET 15198 (10), PET 15978 (4), PET 15976 (1). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - PET 15198: 10 peças
 - PET 15978: 4 peças
 - PET 15976: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 11 peças em comum, 3 processos
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 3 peças em comum, 2 processos
 - [Manoel Mendes Rodrigues](manoel-mendes-rodrigues.md) — 3 peças em comum, 2 processos
@@ -20,13 +38,13 @@ Thiago Assumpção Henriques aparece em 15 peças narrativas de 3 dos 15 process
 - [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Dom Network](dom-network.md) — 3 peças em comum, 2 processos
 - [Sierra Investimentos](sierra-investimentos.md) — 3 peças em comum, 2 processos
 - [Grupo Multipar](grupo-multipar.md) — 2 peças em comum, 1 processos
 - [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Eugênio Pacelli](eugenio-pacelli.md) — 4 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -36,7 +54,7 @@ Thiago Assumpção Henriques aparece em 15 peças narrativas de 3 dos 15 process
 - Petição inicial: 2
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -56,4 +74,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15978 | 00085 | Petição | 4 |
 | PET 15978 | 00262 | Petição | 4 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

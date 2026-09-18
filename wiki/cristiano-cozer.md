@@ -1,21 +1,39 @@
 # Cristiano Cozer
-**Autoridade** · 16 peças narrativas · 6 processos · 18 menções
+**Autoridade** · **Juízo, acusação, polícia e reguladores** · seção: Juízo, acusação, polícia e reguladores
 
-Cristiano Cozer aparece em 16 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5026 (8), RCL 88121 (3), PET 15198 (2), PET 15556 (1), PET 15562 (1). É classificado como Autoridade pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-12. Divide páginas com maior frequência com Belline Santana.
+_Procurador-Geral do Banco Central · assina as manifestações da autarquia_
+
+16 peças narrativas · 6 processos · 18 menções
+
+> Atua nos autos no exercício de função pública: relator, ministros, Procuradoria-Geral da República, Polícia Federal, Banco Central, comissões do Congresso. Aparece muito porque assina ou recebe as peças, não porque seja parte.
+
+## Quem é nos autos
+Cristiano de Oliveira Lopes Cozer, Procurador-Geral do Banco Central. Aparece nos autos como signatário das petições e informações que o Banco Central envia ao Supremo: respostas a ofícios, encaminhamento de procedimentos administrativos, esclarecimentos sobre a supervisão dos bancos envolvidos. É o nome pelo qual a autarquia fala nos processos.
+
+## Em que condição aparece, por processo
+- **RCL 88121**: assina informações do Banco Central ao relator (seq 174, 239)
+- **INQ 5026**: assina petição do Banco Central (seq 55)
+
+Fontes: RCL 88121 seq 174 p. 1, seq 239 p. 1; INQ 5026 seq 55 p. 7.
+
+Nenhum ato do juízo publicado neste site cita o nome: as menções estão em petições, representações e anexos.
+
+## Dados automáticos
+Cristiano Cozer aparece em 16 peças narrativas de 6 dos 15 processos, com maior presença em INQ 5026 (8), RCL 88121 (3), PET 15198 (2), PET 15563 (1), PET 15556 (1). Classificação automática: Autoridade. As datas citadas nas páginas em que aparece concentram-se em 2025-12.
 
 ## Presença por processo
 - INQ 5026: 8 peças
 - RCL 88121: 3 peças
 - PET 15198: 2 peças
+- PET 15563: 1 peças
 - PET 15556: 1 peças
 - PET 15562: 1 peças
-- PET 15563: 1 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Belline Santana](belline-santana.md) — 3 peças em comum, 3 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 3 peças em comum, 3 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 4 peças em comum, 1 processos
 - [Dias Toffoli](dias-toffoli.md) — 3 peças em comum, 1 processos
 - [Lucas Alves Freire](lucas-alves-freire.md) — 3 peças em comum, 3 processos
@@ -30,7 +48,7 @@ Cristiano Cozer aparece em 16 peças narrativas de 6 dos 15 processos, com maior
 - Outras peças: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -50,4 +68,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15563 | 00001 | Petição inicial | 50 |
 | RCL 88121 | 00174 | Petição | 1 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

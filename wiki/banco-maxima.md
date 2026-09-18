@@ -1,13 +1,32 @@
 # Banco Máxima
-**Empresa** · 9 peças narrativas · 2 processos · 553 menções
+**Empresa** · **Investigado ou alvo de medida** · seção: O banco e a família
 
-Banco Máxima aparece em 9 peças narrativas de 2 dos 15 processos, com maior presença em INQ 5026 (6), PET 15198 (5). É classificado como Empresa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-10. Divide páginas com maior frequência com Angelo Antonio Ribeiro Silva e, entre empresas, com Banco Master.
+_Denominação anterior do Banco Master_
+
+9 peças narrativas · 2 processos · 553 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+É o mesmo banco, com o nome que usava antes. Aparece nas peças que analisam as demonstrações financeiras de 2019 a 2024 e, sob esse nome, como acusado na ação penal de São Paulo cuja cópia consta dos autos, ao lado de Milo Investimentos, MGI SPE e Viking Participações.
+
+## Em que condição aparece, por processo
+- **PET 15198**: demonstrações financeiras analisadas pela PF (seq 14 p. 6)
+- **INQ 5026**: acusado na ação penal de São Paulo copiada aos autos (seq 10 p. 3489)
+
+Fontes: PET 15198 seq 14 p. 6; INQ 5026 seq 10 p. 3489.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 1 ato(s); o primeiro, na peça 00014 p. 6
+
+## Dados automáticos
+Banco Máxima aparece em 9 peças narrativas de 2 dos 15 processos, com maior presença em INQ 5026 (6), PET 15198 (5). Classificação automática: Empresa. As datas citadas nas páginas em que aparece concentram-se em 2025-10.
 
 ## Presença por processo
 - INQ 5026: 6 peças
 - PET 15198: 5 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Angelo Antonio Ribeiro Silva](angelo-antonio-ribeiro-silva.md) — 7 peças em comum, 2 processos
 - [Daniel Bueno Vorcaro](daniel-bueno-vorcaro.md) — 7 peças em comum, 2 processos
 - [Vicente Conte Neto](vicente-conte-neto.md) — 6 peças em comum, 2 processos
@@ -19,7 +38,7 @@ Banco Máxima aparece em 9 peças narrativas de 2 dos 15 processos, com maior pr
 - [Natalia Bueno Vorcaro Zettel](natalia-bueno-vorcaro-zettel.md) — 4 peças em comum, 2 processos
 - [Luiz Antonio Bull](luiz-antonio-bull.md) — 4 peças em comum, 2 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 8 peças em comum, 2 processos
 - [Dea Care](dea-care.md) — 7 peças em comum, 2 processos
 - [Milo Investimentos](milo-investimentos.md) — 6 peças em comum, 2 processos
@@ -31,7 +50,7 @@ Banco Máxima aparece em 9 peças narrativas de 2 dos 15 processos, com maior pr
 - [Pacific Realty](pacific-realty.md) — 6 peças em comum, 2 processos
 - [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Allan Pereira Pacheco](allan-pereira-pacheco.md) — 5 peças em comum, 1 processos
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 5 peças em comum, 1 processos
 - [Decio Gabriel Gimenez](decio-gabriel-gimenez.md) — 2 peças em comum, 1 processos
@@ -46,7 +65,7 @@ Banco Máxima aparece em 9 peças narrativas de 2 dos 15 processos, com maior pr
 - Decisão monocrática: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -62,4 +81,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15198 | 00432 | Petição | 7 |
 | PET 15198 | 00434 | Petição | 2 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

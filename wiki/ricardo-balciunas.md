@@ -1,13 +1,31 @@
 # Ricardo Balciunas
-**Pessoa** · 12 peças narrativas · 2 processos · 44 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: Os fundos de São Paulo
 
-Ricardo Balciunas aparece em 12 peças narrativas de 2 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (3). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2020-12. Divide páginas com maior frequência com Vicente Conte Neto e, entre empresas, com Clínica Mais Médicos.
+_Sócio, ex-sócio ou diretor da clínica, segundo a decisão · alvo de busca e de sequestro_
+
+12 peças narrativas · 2 processos · 44 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+A decisão de 6 de janeiro de 2026 estende à Clínica Mais Médicos e a seus “sócios, ex-sócios e diretores”, entre eles ele, o sequestro de R$ 1,48 bilhão; está na lista de buscas de 14 de janeiro de 2026.
+
+## Em que condição aparece, por processo
+- **PET 15198**: alvo de sequestro e busca (seq 14 p. 16, seq 21 p. 2)
+
+Fontes: PET 15198 seq 14 p. 16, seq 21 p. 2.
+
+## Atos do juízo publicados que citam o nome
+- PET 15198: 2 ato(s); o primeiro, na peça 00014 p. 16
+
+## Dados automáticos
+Ricardo Balciunas aparece em 12 peças narrativas de 2 dos 15 processos, com maior presença em PET 15198 (9), INQ 5026 (3). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2020-12.
 
 ## Presença por processo
 - PET 15198: 9 peças
 - INQ 5026: 3 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Vicente Conte Neto](vicente-conte-neto.md) — 3 peças em comum, 1 processos
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 3 peças em comum, 1 processos
 - [Nelson Sequeiros Rodriguez Tanure](nelson-sequeiros-rodriguez-tanure.md) — 3 peças em comum, 1 processos
@@ -19,16 +37,16 @@ Ricardo Balciunas aparece em 12 peças narrativas de 2 dos 15 processos, com mai
 - [Valdenice Pantaleão](valdenice-pantaleao.md) — 2 peças em comum, 1 processos
 - [Flavio Daniel Aguetoni](flavio-daniel-aguetoni.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Clínica Mais Médicos](clinica-mais-medicos.md) — 6 peças em comum, 2 processos
 - [Banco Master](banco-master.md) — 2 peças em comum, 1 processos
 - [Base Securitizadora](base-securitizadora.md) — 2 peças em comum, 1 processos
 - [Sefer Investimentos](sefer-investimentos.md) — 2 peças em comum, 1 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
-## Aparece junto de — Advogados
+## Divide páginas com — Advogados (coocorrência, não relação)
 - [Luan Veloso Coutinho](luan-veloso-coutinho.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
@@ -40,7 +58,7 @@ Ricardo Balciunas aparece em 12 peças narrativas de 2 dos 15 processos, com mai
 - Peça sobre busca e apreensão: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -57,4 +75,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | PET 15198 | 00425 | Petição | 1 |
 | PET 15198 | 00586 | Petição | 1 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._

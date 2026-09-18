@@ -1,26 +1,62 @@
 # Daniel Bueno Vorcaro
-**Pessoa** · 141 peças narrativas · 15 processos · 2509 menções
+**Pessoa** · **Investigado ou alvo de medida** · seção: O banco e a família
 
-Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, com maior presença em INQ 5026 (36), PET 15556 (22), PET 15198 (17), PET 15978 (13), RCL 88121 (13). É classificado como Pessoa pelo pipeline. As datas citadas nas páginas em que aparece concentram-se em 2025-11. Divide páginas com maior frequência com Felipe Cancado Vorcaro e, entre empresas, com Banco Master.
+_Controlador do Banco Master · preso preventivamente desde 3.3.2026_
+
+141 peças narrativas · 15 processos · 2509 menções
+
+> Nomeado em decisão como investigado, representado ou alvo de medida cautelar: prisão, busca, bloqueio, quebra de sigilo, suspensão. Investigação não é acusação: ninguém foi denunciado nos autos públicos, e decisão cautelar é juízo provisório, anterior ao contraditório.
+
+## Quem é nos autos
+O banqueiro no centro do caso e o nome mais presente do acervo. Os autos o descrevem como controlador do banco. Um juiz federal de Brasília decretou sua primeira prisão preventiva em 17 de novembro de 2025, no inquérito sobre a venda de carteiras ao BRB; foi preso na manhã seguinte quando, segundo a defesa, embarcaria para Dubai para assinar a venda do banco. O TRF1 o soltou em 28 de novembro com medidas cautelares, entre elas tornozeleira.
+
+Em 3 de março de 2026 o ministro André Mendonça decretou nova prisão preventiva, desta vez pelas alegações da polícia sobre a célula de vigilância chamada “A Turma” e sobre pagamentos a supervisores do Banco Central; a decisão transcreve mensagens a ele atribuídas e fala em “fortes indícios” de que mandou simular um assalto contra um jornalista. A Segunda Turma confirmou por unanimidade. Foi transferido para a Penitenciária Federal de Brasília em 5 de março, ficou em silêncio na CPMI e, em julho de 2026, a CVM foi autorizada a ouvi-lo na prisão. Não há denúncia nos autos públicos.
+
+## Em que condição aparece, por processo
+- **INQ 5026**: investigado; primeira prisão preventiva em 17.11.2025, revogada pelo TRF1 em 28.11.2025 (seq 10 e 12)
+- **PET 15198**: alvo de busca, sequestro e quebra de sigilo na fase de São Paulo (seq 14 e 21)
+- **PET 15556**: investigado; prisão preventiva decretada em 3.3.2026 e referendada pela Segunda Turma (seq 16, 294, 405)
+- **PET 15562**: representado na terceira fase; buscas em duas residências em 4.3.2026 (seq 1 e 18)
+- **PET 15693**: quebra de sigilo telemático em contas de nuvem (seq 34)
+- **PET 16662**: dono do celular cujas mensagens deram origem ao processo (seq 26)
+
+Fontes: INQ 5026 seq 10 pp. 3763–3765, seq 12 pp. 513–535; PET 15556 seq 16 pp. 5–14, 23–26, 40–42, seq 84, seq 294, seq 405, seq 478; PET 15562 seq 1 pp. 3–9, 129–149; PET 15693 seq 34 p. 1; PET 16662 seq 26 p. 1.
+
+## Atos do juízo publicados que citam o nome
+- INQ 5026: 3 ato(s); o primeiro, na peça 00018 p. 1
+- PET 15198: 3 ato(s); o primeiro, na peça 00014 p. 1
+- PET 15478: 1 ato(s); o primeiro, na peça 00017 p. 5
+- PET 15504: 1 ato(s); o primeiro, na peça 00018 p. 1
+- PET 15556: 7 ato(s); o primeiro, na peça 00016 p. 2
+- PET 15562: 1 ato(s); o primeiro, na peça 00018 p. 2
+- PET 15563: 1 ato(s); o primeiro, na peça 00017 p. 1
+- PET 15693: 1 ato(s); o primeiro, na peça 00034 p. 1
+- PET 15976: 1 ato(s); o primeiro, na peça 00034 p. 1
+- PET 15978: 1 ato(s); o primeiro, na peça 00032 p. 2
+- PET 16019: 1 ato(s); o primeiro, na peça 00032 p. 1
+- PET 16662: 4 ato(s); o primeiro, na peça 00004 p. 2
+
+## Dados automáticos
+Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, com maior presença em INQ 5026 (36), PET 15556 (22), PET 15198 (17), RCL 88121 (13), PET 15978 (13). Classificação automática: Pessoa. As datas citadas nas páginas em que aparece concentram-se em 2025-11.
 
 ## Presença por processo
 - INQ 5026: 36 peças
 - PET 15556: 22 peças
 - PET 15198: 17 peças
-- PET 15978: 13 peças
 - RCL 88121: 13 peças
+- PET 15978: 13 peças
 - PET 15562: 7 peças
 - PET 16662: 6 peças
 - INQ 5035: 5 peças
 - PET 15504: 5 peças
 - PET 15563: 4 peças
-- PET 15693: 3 peças
-- PET 15478: 3 peças
 - PET 15976: 3 peças
-- PET 16019: 2 peças
+- PET 15478: 3 peças
+- PET 15693: 3 peças
 - PET 15977: 2 peças
+- PET 16019: 2 peças
 
-## Aparece junto de — Pessoas
+## Divide páginas com — Pessoas (coocorrência, não relação)
 - [Felipe Cancado Vorcaro](felipe-cancado-vorcaro.md) — 33 peças em comum, 10 processos
 - [Henrique Moura Vorcaro](henrique-moura-vorcaro.md) — 32 peças em comum, 11 processos
 - [Fabiano Campos Zettel](fabiano-campos-zettel.md) — 23 peças em comum, 8 processos
@@ -32,7 +68,7 @@ Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, co
 - [Maurício Antonio Quadrado](mauricio-antonio-quadrado.md) — 13 peças em comum, 8 processos
 - [Rodrigo Pimenta Franco Avelar Campos](rodrigo-pimenta-franco-avelar-campos.md) — 13 peças em comum, 5 processos
 
-## Aparece junto de — Empresas
+## Divide páginas com — Empresas (coocorrência, não relação)
 - [Banco Master](banco-master.md) — 24 peças em comum, 7 processos
 - [Milo Investimentos](milo-investimentos.md) — 9 peças em comum, 2 processos
 - [Clínica Mais Médicos](clinica-mais-medicos.md) — 7 peças em comum, 2 processos
@@ -44,7 +80,7 @@ Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, co
 - [Properties Participacoes](properties-participacoes.md) — 6 peças em comum, 2 processos
 - [Fip Life Care](fip-life-care.md) — 6 peças em comum, 2 processos
 
-## Aparece junto de — Autoridades
+## Divide páginas com — Autoridades (coocorrência, não relação)
 - [Dias Toffoli](dias-toffoli.md) — 7 peças em comum, 3 processos
 - [Anderson Wander](anderson-wander.md) — 6 peças em comum, 3 processos
 - [Maria Hortencia Lyra Machado](maria-hortencia-lyra-machado.md) — 6 peças em comum, 2 processos
@@ -56,7 +92,7 @@ Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, co
 - [Vanderlei Martins Vieira Brandao](vanderlei-martins-vieira-brandao.md) — 4 peças em comum, 1 processos
 - [Luiz Guilherme Atalla Camasmie](luiz-guilherme-atalla-camasmie.md) — 3 peças em comum, 3 processos
 
-## Aparece junto de — Advogados
+## Divide páginas com — Advogados (coocorrência, não relação)
 - [Sergio Rodrigues Leonardo](sergio-rodrigues-leonardo.md) — 18 peças em comum, 7 processos
 - [Roberto Podval](roberto-podval.md) — 12 peças em comum, 7 processos
 - [Marcelo Leonardo](marcelo-leonardo.md) — 9 peças em comum, 7 processos
@@ -79,7 +115,7 @@ Daniel Bueno Vorcaro aparece em 141 peças narrativas de 15 dos 15 processos, co
 - Peça do inquérito: 1
 
 ## Onde conferir
-Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela. Só a leitura da página diz em que condição o nome aparece.
 
 | processo | seq | tipo da peça | página |
 |---|---|---|---|
@@ -99,4 +135,4 @@ Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna
 | INQ 5026 | 00002 | Peça do inquérito | 5 |
 | PET 15976 | 00034 | Decisão monocrática | 1 |
 
-_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._
+_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Erros de identificação ou de condição podem ser reportados por issue._
