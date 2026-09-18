@@ -15,7 +15,7 @@ The cell had, according to the record, a coordinator: Luiz Phillipi Machado de M
 
 The method described is that of someone who knows the systems from the inside. According to the police authority, Mourão ran "queries and data extractions in restricted systems of public bodies", using "official credentials belonging to third parties", and allegedly obtained improper access "to the systems of the Federal Police itself, of the federal prosecution service, and even of international bodies such as the FBI and Interpol". He would also look after the group's digital reputation: the ruling speaks of requests to remove content and profiles "that simulated official requests from public bodies", sent to service channels reserved for the authorities.
 
-The Federal Police, transcribed in the ruling, sums up his role with an image: Mourão "is the bridge between DANIEL VORCARO's wishes to influence public opinion and the influencers hired by the criminal organisation". The bridge, in the record, had a price.
+The Federal Police, transcribed in the ruling, sums up his role with an image: Mourão "is the bridge between DANIEL VORCARO's wishes to influence public opinion and the influencers hired by the criminal organisation". The bridge, according to the police and the ruling, allegedly had a price.
 
 ## The monthly
 

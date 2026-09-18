@@ -15,7 +15,7 @@ O núcleo tinha, segundo os autos, um coordenador: Luiz Phillipi Machado de Mora
 
 O método descrito é de quem conhece os sistemas por dentro. Segundo a autoridade policial, Mourão fazia "consultas e extrações de dados em sistemas restritos de órgãos públicos", usando "credenciais funcionais pertencentes a terceiros", e teria obtido acesso indevido "aos sistemas da própria Polícia Federal, do Ministério Público Federal, e até mesmo de organismos internacionais, tais como FBI e Interpol". Também cuidaria da reputação digital do grupo: a decisão fala em pedidos de remoção de conteúdo e perfis "que simulavam solicitações oficiais de órgãos públicos", enviados a canais de atendimento reservados a autoridades.
 
-A Polícia Federal, transcrita na decisão, resume o papel dele com uma imagem: Mourão "faz a ponte entre os desejos de DANIEL VORCARO em influenciar a opinião pública e influenciadores contratados pela organização criminosa". A ponte, nos autos, tinha preço.
+A Polícia Federal, transcrita na decisão, resume o papel dele com uma imagem: Mourão "faz a ponte entre os desejos de DANIEL VORCARO em influenciar a opinião pública e influenciadores contratados pela organização criminosa". A ponte, segundo a polícia e a decisão, teria preço.
 
 ## O mensal
 

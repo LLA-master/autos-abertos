@@ -7,7 +7,7 @@ capitulo: 3
 tags: [Pet 15.556, Banco Central, corrupção]
 ---
 
-O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conversavam por WhatsApp com o dono do banco que supervisionavam, revisavam os ofícios que o banco mandava ao próprio departamento e recebiam por isso. Este capítulo é sobre essa parte da decisão, a que o ministro chama de "núcleo de corrupção institucional". É a parte menos violenta e, para quem entende de país, a mais grave.
+O Banco Central tem um departamento cujo nome ninguém fora do mercado conhece e cujo trabalho todo mundo pressupõe: o Desup, Departamento de Supervisão Bancária. É quem olha os bancos por dentro. Segundo a decisão de 3 de março, o chefe desse departamento e o chefe-adjunto conversariam por WhatsApp com o dono do banco que supervisionavam, revisariam os ofícios que o banco mandava ao próprio departamento e receberiam por isso, tudo em fase de investigação, sem denúncia e sem julgamento. Este capítulo é sobre essa parte da decisão, a que o ministro chama de "núcleo de corrupção institucional". É a parte menos violenta e, para quem entende de país, a mais grave.
 
 Vale a mesma advertência dos capítulos anteriores: o que segue é o que a Polícia Federal apresentou e o relator considerou indício suficiente para medidas cautelares. Ninguém aqui foi julgado. O Banco Central, informa a PF, já havia afastado os dois servidores das funções de confiança antes da decisão.
 

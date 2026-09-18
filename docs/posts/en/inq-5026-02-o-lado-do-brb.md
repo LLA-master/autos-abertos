@@ -7,7 +7,7 @@ capitulo: 2
 tags: [INQ 5.026, BRB, supervisão]
 ---
 
-Every fraud needs two ends, and the public narrative of the Banco Master case has a habit of looking at only one. Inquiry 5.026, however, was opened, in the judge's own words, "to investigate supposed crimes against the National Financial System committed in the context of the acquisition of Banco Master by Banco de Brasília". BRB is not scenery: it is a party. This chapter is about what the November 2025 ruling says of the buyer, and about the question it leaves open: why a state-owned bank, with the Central Bank already asking, kept on paying.
+Every fraud allegation has two ends, and the public narrative of the Banco Master case has a habit of looking at only one. Inquiry 5.026, however, was opened, in the judge's own words, "to investigate supposed crimes against the National Financial System committed in the context of the acquisition of Banco Master by Banco de Brasília". BRB is not scenery: it is a party. This chapter is about what the November 2025 ruling says of the buyer, and about the question it leaves open: why a state-owned bank, with the Central Bank already asking, kept on paying.
 
 As always, what follows is what appears in requests and precautionary rulings, with the defence yet to be heard on the merits. The BRB executives named were not detained; they were removed from office, and the removal lasted as long as chapter 3 tells.
 

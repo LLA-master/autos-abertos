@@ -7,7 +7,7 @@ capitulo: 3
 tags: [Pet 15.556, Banco Central, corrupção]
 ---
 
-The Central Bank has a department whose name nobody outside the market knows and whose work everybody takes for granted: Desup, the bank-supervision department. It is the one that looks at banks from the inside. According to the ruling of 3 March, the head of that department and the deputy head chatted on WhatsApp with the owner of the bank they supervised, reviewed the letters the bank sent to the department itself, and were paid for it. This chapter is about that part of the ruling, the one the justice calls the "institutional corruption cell". It is the least violent part and, for anyone who understands the country, the gravest.
+The Central Bank has a department whose name nobody outside the market knows and whose work everybody takes for granted: Desup, the bank-supervision department. It is the one that looks at banks from the inside. According to the ruling of 3 March, the head of that department and the deputy head would have chatted on WhatsApp with the owner of the bank they supervised, reviewed the letters the bank sent to the department itself, and been paid for it — all of it still under investigation, with no indictment and no trial. This chapter is about that part of the ruling, the one the justice calls the "institutional corruption cell". It is the least violent part and, for anyone who understands the country, the gravest.
 
 The same warning as in the earlier chapters applies: what follows is what the Federal Police presented and what the reporting justice found sufficient indication for precautionary measures. Nobody here has been tried. The Central Bank, the PF reports, had already removed the two officials from their positions of trust before the ruling.
 

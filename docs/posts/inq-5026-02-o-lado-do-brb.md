@@ -7,7 +7,7 @@ capitulo: 2
 tags: [INQ 5.026, BRB, supervisão]
 ---
 
-Toda fraude precisa de duas pontas, e a narrativa pública do caso Banco Master tem a mania de olhar só para uma. O Inquérito 5.026, no entanto, foi instaurado, nas palavras do próprio juiz, "para apurar supostos crimes contra o Sistema Financeiro Nacional praticados no contexto da aquisição do Banco Master pelo Banco de Brasília". O BRB não é cenário: é parte. Este capítulo é sobre o que a decisão de novembro de 2025 diz do comprador, e sobre a pergunta que ela deixa em aberto: por que um banco público, com o Banco Central já perguntando, continuou a pagar.
+Toda acusação de fraude tem duas pontas, e a narrativa pública do caso Banco Master tem a mania de olhar só para uma. O Inquérito 5.026, no entanto, foi instaurado, nas palavras do próprio juiz, "para apurar supostos crimes contra o Sistema Financeiro Nacional praticados no contexto da aquisição do Banco Master pelo Banco de Brasília". O BRB não é cenário: é parte. Este capítulo é sobre o que a decisão de novembro de 2025 diz do comprador, e sobre a pergunta que ela deixa em aberto: por que um banco público, com o Banco Central já perguntando, continuou a pagar.
 
 Como sempre, o que segue é o que consta de pedidos e decisões cautelares, com a defesa ainda por ser ouvida no mérito. Os dirigentes do BRB citados não foram presos; foram afastados, e o afastamento durou o que o capítulo 3 conta.
 
