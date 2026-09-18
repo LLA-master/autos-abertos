@@ -28,21 +28,23 @@ Angelo Antonio Ribeiro Silva aparece em 12 peças narrativas de 4 dos 15 process
 ## Tipos de peça em que aparece
 - Outras peças: 3
 - Petição: 3
-- Busca e apreensão: 2
-- Prisão preventiva: 1
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre busca e apreensão: 2
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 - Petição inicial: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 104 |
-| INQ 5026 | 00003 | Sequestro | 237 |
-| INQ 5026 | 00004 | Busca e apreensão | 99 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 104 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 237 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 99 |
 | PET 15198 | 00012 | Outras peças | 20 |
-| INQ 5026 | 00002 | Inquérito | 211 |
-| INQ 5026 | 00005 | Busca e apreensão | 268 |
+| INQ 5026 | 00002 | Peça do inquérito | 211 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 268 |
 | PET 15198 | 00013 | Outras peças | 77 |
 | PET 16662 | 00007 | Outras peças | 149 |
 | INQ 5026 | 00792 | Petição | 102 |

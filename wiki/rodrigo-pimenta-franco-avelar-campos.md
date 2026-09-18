@@ -39,7 +39,9 @@ Rodrigo Pimenta Franco Avelar Campos aparece em 27 peças narrativas de 5 dos 15
 - Petição inicial: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 16019 | 00032 | Decisão monocrática | 2 |
 | PET 15978 | 00110 | Petição | 15 |

@@ -1,5 +1,5 @@
 ---
-title: "The fund machine"
+title: "The funds and the notes"
 subtitle: "A clinic with R$ 54 thousand in revenue that issued R$ 361 million in notes. A bank that was the sole quotaholder of the funds buying the paper. What the police and the prosecutors say they found, in their own words."
 date: "2026-09-13"
 serie: "Pet 15.198, a segunda fase"

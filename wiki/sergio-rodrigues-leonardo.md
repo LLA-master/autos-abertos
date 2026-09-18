@@ -41,29 +41,31 @@ Sergio Rodrigues Leonardo aparece em 27 peças narrativas de 7 dos 15 processos,
 
 ## Tipos de peça em que aparece
 - Petição: 13
-- Prisão preventiva: 3
-- Restituição de coisas apreendidas: 3
-- Busca e apreensão: 2
-- Mandado: 2
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 3
+- Pedido de devolução de bens apreendidos: 3
+- Peça sobre busca e apreensão: 2
+- Mandado judicial: 2
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00003 | Sequestro | 2 |
-| INQ 5026 | 00005 | Busca e apreensão | 2 |
-| INQ 5026 | 00012 | Prisão preventiva | 3 |
-| INQ 5026 | 00002 | Inquérito | 3 |
-| INQ 5026 | 00010 | Prisão preventiva | 3 |
-| INQ 5026 | 00011 | Prisão preventiva | 3 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 2 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 2 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 3 |
+| INQ 5026 | 00002 | Peça do inquérito | 3 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 3 |
+| INQ 5026 | 00011 | Peça sobre prisão preventiva | 3 |
 | INQ 5026 | 00001 | Petição | 3 |
-| INQ 5026 | 00006 | Restituição de coisas apreendidas | 8 |
-| INQ 5026 | 00008 | Restituição de coisas apreendidas | 8 |
-| INQ 5026 | 00009 | Restituição de coisas apreendidas | 8 |
-| INQ 5026 | 00004 | Busca e apreensão | 2 |
-| INQ 5026 | 00334 | Mandado | 1 |
-| INQ 5026 | 00436 | Mandado | 1 |
+| INQ 5026 | 00006 | Pedido de devolução de bens apreendidos | 8 |
+| INQ 5026 | 00008 | Pedido de devolução de bens apreendidos | 8 |
+| INQ 5026 | 00009 | Pedido de devolução de bens apreendidos | 8 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 2 |
+| INQ 5026 | 00334 | Mandado judicial | 1 |
+| INQ 5026 | 00436 | Mandado judicial | 1 |
 | INQ 5026 | 00751 | Petição | 2 |
 | INQ 5026 | 00835 | Petição | 3 |
 

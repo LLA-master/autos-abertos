@@ -1,5 +1,5 @@
 ---
-title: "O supervisor que revisava o ofício"
+title: "O supervisor e o ofício"
 subtitle: "Dois chefes do departamento do Banco Central que fiscalizava o Master, um grupo de mensagens, uma consultoria para 'inserção de jovens no mercado financeiro' e a frase 'hoje tem que pagar a primeira do Belline'."
 date: "2026-09-13"
 serie: "Pet 15.556, a decisão"

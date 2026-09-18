@@ -76,19 +76,12 @@ Fichas geradas automaticamente a partir dos dados públicos sanitizados (2026-09
 
 ## Autoridades
 - [André Mendonça](andre-mendonca.md) — 252 peças, 15 processos
-- [Nathália Ribeiro Leite Silva](nathalia-ribeiro-leite-silva.md) — 10 peças, 7 processos
 - [Cristiano Cozer](cristiano-cozer.md) — 16 peças, 6 processos
 - [Gilmar Mendes](gilmar-mendes.md) — 11 peças, 6 processos
-- [Fernanda Lopes Vasconcelos](fernanda-lopes-vasconcelos.md) — 9 peças, 6 processos
-- [Paula Verônica von Czekus](paula-veronica-von-czekus.md) — 9 peças, 6 processos
 - [Dias Toffoli](dias-toffoli.md) — 88 peças, 5 processos
-- [Victor Barbabella Negraes](victor-barbabella-negraes.md) — 17 peças, 5 processos
-- [Janaina Pereira Lima Palazzo](janaina-pereira-lima-palazzo.md) — 26 peças, 4 processos
 - [Andrei Augusto Passos Rodrigues](andrei-augusto-passos-rodrigues.md) — 9 peças, 4 processos
-- [Verônica Snoeck Salles](veronica-snoeck-salles.md) — 9 peças, 3 processos
 - [Cármen Lúcia](carmen-lucia.md) — 8 peças, 3 processos
 - [Cpmi do Inss](cpmi-do-inss.md) — 15 peças, 2 processos
-- [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 10 peças, 1 processos
 
 ## Advogados
 - [Roberto Podval](roberto-podval.md) — 24 peças, 8 processos

@@ -34,19 +34,21 @@ Walfrido Jorge Warde Junior aparece em 7 peças narrativas de 4 dos 15 processos
 - [Marcelo Marambaia Campos](marcelo-marambaia-campos.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
-- Prisão preventiva: 3
+- Peça sobre prisão preventiva: 3
 - Petição inicial: 3
 - Petição: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00012 | Prisão preventiva | 2 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 2 |
 | PET 15556 | 00001 | Petição inicial | 132 |
 | PET 15562 | 00001 | Petição inicial | 132 |
 | PET 15563 | 00001 | Petição inicial | 132 |
-| INQ 5026 | 00010 | Prisão preventiva | 2 |
-| INQ 5026 | 00011 | Prisão preventiva | 2 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2 |
+| INQ 5026 | 00011 | Peça sobre prisão preventiva | 2 |
 | INQ 5026 | 00792 | Petição | 175 |
 
 _“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._

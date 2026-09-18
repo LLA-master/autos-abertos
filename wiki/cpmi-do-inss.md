@@ -18,7 +18,9 @@ Cpmi do Inss aparece em 15 peças narrativas de 2 dos 15 processos, com maior pr
 - Decisão monocrática: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | INQ 5026 | 00382 | Petição | 1 |
 | RCL 88121 | 00113 | Decisão monocrática | 1 |

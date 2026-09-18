@@ -1,6 +1,6 @@
 ---
 title: "BRB's side"
-subtitle: "A state-owned bank that bought loan portfolios worth 30% of its own assets, breached its Basel ratio, accepted repayment in instalments against the contract and, according to the police, really just wanted to lend. What the record says about the buyer."
+subtitle: "A state-owned bank that, according to the record, bought loan portfolios worth 30% of its own assets, breached its Basel ratio, accepted repayment in instalments against the contract and, according to the police, really just wanted to lend. What the record says about the buyer."
 date: "2026-09-13"
 serie: "INQ 5.026, a origem"
 capitulo: 2

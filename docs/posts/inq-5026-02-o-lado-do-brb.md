@@ -1,6 +1,6 @@
 ---
 title: "O lado do BRB"
-subtitle: "Um banco público que comprou carteiras equivalentes a 30% dos próprios ativos, furou o índice de Basileia, aceitou devolução em parcelas contra o contrato e, segundo a polícia, queria mesmo era emprestar. O que os autos dizem sobre o comprador."
+subtitle: "Um banco público que, segundo os autos, comprou carteiras equivalentes a 30% dos próprios ativos, furou o índice de Basileia, aceitou devolução em parcelas contra o contrato e, segundo a polícia, queria mesmo era emprestar. O que os autos dizem sobre o comprador."
 date: "2026-09-13"
 serie: "INQ 5.026, a origem"
 capitulo: 2

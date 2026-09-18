@@ -26,21 +26,23 @@ Banco Brb aparece em 13 peças narrativas de 8 dos 15 processos, com maior prese
 ## Tipos de peça em que aparece
 - Petição: 4
 - Petição inicial: 3
-- Busca e apreensão: 2
-- Prisão preventiva: 1
+- Peça sobre busca e apreensão: 2
+- Peça sobre prisão preventiva: 1
 - Outras peças: 1
 - Decisão monocrática: 1
-- Sequestro: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00005 | Busca e apreensão | 758 |
-| INQ 5026 | 00010 | Prisão preventiva | 2372 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 758 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2372 |
 | PET 15198 | 00012 | Outras peças | 4645 |
 | PET 15198 | 00014 | Decisão monocrática | 11 |
-| INQ 5026 | 00003 | Sequestro | 320 |
-| INQ 5026 | 00004 | Busca e apreensão | 2457 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 320 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 2457 |
 | INQ 5026 | 00794 | Petição | 63 |
 | PET 15556 | 00001 | Petição inicial | 68 |
 | PET 15562 | 00001 | Petição inicial | 68 |

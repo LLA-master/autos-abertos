@@ -50,7 +50,9 @@ André Mendonça aparece em 252 peças narrativas de 15 dos 15 processos, com ma
 - Despacho: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15978 | 00223 | Petição | 8 |
 | PET 15978 | 00110 | Petição | 9 |

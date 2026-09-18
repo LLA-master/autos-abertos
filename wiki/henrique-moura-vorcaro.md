@@ -65,27 +65,29 @@ Henrique Moura Vorcaro aparece em 73 peças narrativas de 13 dos 15 processos, c
 - Petição: 13
 - Decisão monocrática: 5
 - Outras peças: 3
-- Prisão preventiva: 1
-- Busca e apreensão: 1
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre busca e apreensão: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 11 |
-| INQ 5026 | 00010 | Prisão preventiva | 744 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 744 |
 | PET 15976 | 00108 | Petição | 1 |
 | PET 15978 | 00224 | Petição | 1 |
-| INQ 5026 | 00004 | Busca e apreensão | 708 |
-| INQ 5026 | 00003 | Sequestro | 360 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 708 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 360 |
 | PET 15198 | 00013 | Outras peças | 71 |
 | PET 15978 | 00110 | Petição | 15 |
 | PET 15978 | 00223 | Petição | 12 |
 | PET 15978 | 00032 | Decisão monocrática | 2 |
 | PET 15978 | 00070 | Petição | 12 |
 | PET 15976 | 00034 | Decisão monocrática | 3 |
-| INQ 5026 | 00002 | Inquérito | 238 |
+| INQ 5026 | 00002 | Peça do inquérito | 238 |
 | PET 15978 | 00226 | Outras peças | 2 |
 | PET 15978 | 00136 | Petição | 7 |
 

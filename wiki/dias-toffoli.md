@@ -35,23 +35,25 @@ Dias Toffoli aparece em 88 peças narrativas de 5 dos 15 processos, com maior pr
 ## Tipos de peça em que aparece
 - Despacho: 10
 - Petição: 8
-- Restituição de coisas apreendidas: 3
-- Inquérito: 1
-- Busca e apreensão: 1
-- Prisão preventiva: 1
-- Sequestro: 1
+- Pedido de devolução de bens apreendidos: 3
+- Peça do inquérito: 1
+- Peça sobre busca e apreensão: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00002 | Inquérito | 33 |
-| INQ 5026 | 00005 | Busca e apreensão | 1666 |
-| INQ 5026 | 00012 | Prisão preventiva | 657 |
-| INQ 5026 | 00003 | Sequestro | 21 |
+| INQ 5026 | 00002 | Peça do inquérito | 33 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 1666 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 657 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 21 |
 | INQ 5026 | 00001 | Petição | 5 |
-| INQ 5026 | 00006 | Restituição de coisas apreendidas | 10 |
-| INQ 5026 | 00008 | Restituição de coisas apreendidas | 10 |
-| INQ 5026 | 00009 | Restituição de coisas apreendidas | 10 |
+| INQ 5026 | 00006 | Pedido de devolução de bens apreendidos | 10 |
+| INQ 5026 | 00008 | Pedido de devolução de bens apreendidos | 10 |
+| INQ 5026 | 00009 | Pedido de devolução de bens apreendidos | 10 |
 | PET 15198 | 00519 | Petição | 7 |
 | PET 15198 | 01010 | Petição | 8 |
 | RCL 88121 | 00178 | Petição | 4 |

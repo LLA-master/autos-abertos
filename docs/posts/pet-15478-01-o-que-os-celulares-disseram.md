@@ -1,5 +1,5 @@
 ---
-title: "O que os celulares disseram"
+title: "O que a polícia leu nos celulares"
 subtitle: "Em fevereiro de 2026, a Polícia Federal levou ao Supremo os primeiros trechos das extrações dos telefones apreendidos em novembro. Um diretor com frio na espinha, um dono de banco pedindo para corrigir um extrato, um tesoureiro que acha difícil averbar, e o caderno de uma diretora do BRB. A representação que abriu a Petição 15.478."
 date: "2026-09-13"
 serie: "Pet 15.478, a quebra"

@@ -5,7 +5,7 @@ const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim
 const fmt=n=>Number(n).toLocaleString("pt-BR");
 const ROLE_LABEL={pessoa:"pessoa",empresa:"empresa",autoridade:"autoridade",advogado:"advogado",pseudo:"pseudonimizado"};
 const ROLE_PL={pessoa:"Pessoas",empresa:"Empresas",autoridade:"Autoridades",advogado:"Advogados",pseudo:"Pseudonimizados"};
-const TIPO={"Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Despacho":"Despacho","Busca e apreensao":"Busca e apreensão","Prisao preventiva":"Prisão preventiva","Inquerito":"Inquérito","Sequestro":"Sequestro","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Mandado":"Mandado","Restituicao de coisas apreendidas":"Restituição de coisas apreendidas","Certidao de julgamento":"Certidão de julgamento","Documentos comprobatorios":"Documentos comprobatórios","Documento comprobatorio":"Documento comprobatório","Recibo de peticao eletronica":"Recibo de petição eletrônica","Comunicacao assinada":"Comunicação assinada","Procuracao":"Procuração","Intimacao":"Intimação","Certidao":"Certidão","Mandado de intimacao":"Mandado de intimação","Documentos de identificacao":"Documentos de identificação","Malote Digital":"Malote digital","Termo de disponibilizacao de autos":"Termo de disponibilização","Aviso de recebimento":"Aviso de recebimento"};
+const TIPO={"Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Despacho":"Despacho","Busca e apreensao":"Peça sobre busca e apreensão","Prisao preventiva":"Peça sobre prisão preventiva","Inquerito":"Peça do inquérito","Sequestro":"Peça sobre bloqueio de bens (sequestro judicial)","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Mandado":"Mandado judicial","Restituicao de coisas apreendidas":"Pedido de devolução de bens apreendidos","Certidao de julgamento":"Certidão de julgamento","Documentos comprobatorios":"Documentos comprobatórios","Documento comprobatorio":"Documento comprobatório","Recibo de peticao eletronica":"Recibo de petição eletrônica","Comunicacao assinada":"Comunicação assinada","Procuracao":"Procuração","Intimacao":"Intimação","Certidao":"Certidão","Mandado de intimacao":"Mandado de intimação","Documentos de identificacao":"Documentos de identificação","Malote Digital":"Malote digital","Termo de disponibilizacao de autos":"Termo de disponibilização","Aviso de recebimento":"Aviso de recebimento"};
 const tipo=t=>TIPO[t]||t;
 const STF="https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/";
 const COMM=["#FF2E97","#19E3FF","#FFD166","#B983FF","#FF8C42","#3DF2A0","#FF5C7A","#7FDBFF","#F7A8B8","#C3F73A","#FFB4E6","#8AFFC1","#FF9D5C","#9DB4FF","#E2B4FF","#5CE1FF"];
@@ -29,14 +29,15 @@ function openNode(id){ if(typeof wkBy!=="undefined"&&wkBy.has(id)) openWiki(id);
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","personagens","processos","tempo","cronicas","busca","decisao","metodo","avisos"];
+const views=["inicio","personagens","processos","tempo","cronicas","busca","decisoes","decisao","metodo","avisos"];
 let pendingQS=null;
 function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQS=v.slice(i+1); v=v.slice(0,i); if(v!=="cronicas") history.replaceState(null,"","#"+v); } if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
   $$("[data-nav]").forEach(a=>a.classList.toggle("active",a.dataset.nav===v));
   if(v==="personagens"){ if(pendingQS){ const q=new URLSearchParams(pendingQS); if(q.get("p")) WK.open=q.get("p"); pendingQS=null; } renderWiki(); }
   if(v==="busca") iniciaBusca();
-  if(v==="decisao"&&!pendingQS&&DEC.atual) renderDecisao();
+  if(v==="decisao"){ if(pendingQS){ const q=new URLSearchParams(pendingQS); pendingQS=null; if(q.get("d")) abreDecisao(q.get("d"),q.get("p")||1); } else if(DEC.atual) renderDecisao(); }
+  if(v==="decisoes") renderDecisoes();
   if(v==="cronicas"){ renderCronicas(pendingQS); pendingQS=null; }
   window.scrollTo({top:0});
 }
@@ -277,8 +278,8 @@ async function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage"); await loa
       <div class="acts"><a class="btn ghost small" href="https://github.com/LLA-master/autos-abertos/blob/main/wiki/${p.slug}.md" target="_blank" rel="noopener">Ficha em Markdown</a></div>
       <div class="wk-cols"><div><h4>Presença por processo</h4><div class="bars">${p.pe.slice(0,8).map(([pr,c])=>`<div class="bar"><span>${pr}</span><i style="width:${(c/Math.max(1,p.pe[0][1]))*100}%"></i><span>${c}</span></div>`).join("")}</div>${spark(p.tl||{})}
       ${roleBlock("pessoa","Aparece junto de · pessoas")}${roleBlock("empresa","Empresas")}${roleBlock("autoridade","Autoridades")}${roleBlock("advogado","Advogados")}</div>
-      <div><h4>Tipos de peça</h4><ul>${p.tipos.map(([t,c])=>`<li>${tipo(t)} <span class="muted">(${c})</span></li>`).join("")}</ul>
-      <h4>Onde conferir</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th></tr>${p.cit.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(c)}</td><td>${d}</td></tr>`).join("")}</table></div></div>
+      <div><h4>Tipos de peça em que o nome aparece</h4><ul>${p.tipos.map(([t,c])=>`<li>${tipo(t)} <span class="muted">(${c})</span></li>`).join("")}</ul>
+      <h4>Onde conferir</h4><p class="muted small">Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.</p><table><tr><th>processo</th><th>seq</th><th>tipo da peça</th><th>pág.</th></tr>${p.cit.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(c)}</td><td>${d}</td></tr>`).join("")}</table></div></div>
       ${(()=>{const xs=excDaEntidade(p.label); return xs.length?`<h4 style="margin-top:20px">Citado nas decisões</h4><p class="muted small">Trechos literais de atos do juízo em que este nome aparece. Ser citado numa decisão não conclui nada.</p><div class="excs">${xs.map(([pr,x])=>excCard(pr,x)).join("")}</div>`:"";})()}
       <p class="muted" style="margin-top:12px">Ficha automática a partir dos dados públicos sanitizados. Coocorrência na mesma página não prova relação. Erros de identificação: abra uma issue.</p>`;
     $("#wkBack").onclick=()=>{WK.open=null;renderWiki();}; $$("[data-wk]",pg).forEach(b=>b.onclick=()=>openWiki(b.dataset.wk));
@@ -304,6 +305,7 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
       const eyebrow=post.serie?`${esc(post.serie)} · Capítulo ${post.capitulo} de ${inS.length} · ${dateBR(post.date)} · ${post.minutes} min`:`Crônica ${String(post.numero||posts.length-i).padStart(2,"0")} · ${dateBR(post.date)} · ${post.minutes} min de leitura`;
       P.innerHTML=`<button class="btn ghost small back" id="crBack">← todas as crônicas</button><p class="eyebrow">${eyebrow}</p><h1>${esc(post.title)}</h1><p class="sub">${esc(post.subtitle||"")}</p>
         <div class="meta">${(post.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}<span class="muted">Opinião do autor do projeto. Números e citações apontam para os dados públicos e para o acervo do STF.</span></div>
+        <div class="cr-nota"><b>Nota de leitura.</b> Os fatos narrados aqui são os que constam de peças públicas dos autos: representações da Polícia Federal, manifestações do Ministério Público e decisões judiciais. Representação e denúncia são hipóteses de acusação, não conclusões; decisão cautelar é juízo provisório, tomado antes do contraditório. As peças publicadas são de fase de investigação: nenhuma é sentença. Nenhuma pessoa ou empresa citada é, por este texto, acusada de crime; todas têm presunção de inocência (Constituição, art. 5º, LVII). O que está entre aspas é citação da peça, atribuída à fonte; o resto é leitura do autor sobre esses documentos, sem apuração própria.</div>
         <div class="cr-body">${html}</div>
         <div class="cr-foot"><b>Isto é uma crônica.</b> Texto de opinião, separado da base de dados. O que é fato traz a fonte; o que é leitura é do autor. Coocorrência na mesma página não prova relação, e ninguém aqui é culpado de nada por aparecer numa ficha. Erros de fato: abra uma issue no repositório. Todos os avisos: <a href="#avisos" data-nav="avisos">Avisos e direitos</a>.
         ${(()=>{const pr=procDoSlug(post.slug); return pr?`<p class="cr-proc">Esta crônica é sobre o processo <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Abrir a página do processo</button></p>`:"";})()}
@@ -319,6 +321,23 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
   const series=[...new Set(posts.filter(x=>x.serie).map(x=>x.serie))].sort((a,b)=>Math.min(...posts.filter(x=>x.serie===a).map(x=>x.numero))-Math.min(...posts.filter(x=>x.serie===b).map(x=>x.numero))); const solo=posts.filter(x=>!x.serie);
   $("#crCards").innerHTML=series.map(sname=>{const xs=posts.filter(x=>x.serie===sname).sort((a,b)=>a.capitulo-b.capitulo); return `<div class="cr-serie"><h3 class="cr-serie-t">${esc(sname)}</h3><p class="muted">${xs.length} capítulos · ${xs.reduce((s,x)=>s+x.minutes,0)} min no total. Cada capítulo cobre uma parte da decisão, na ordem em que ela mesma se organiza.</p><div class="cr-cards">${xs.map(card).join("")}</div></div>`;}).join("")+(solo.length?`<div class="cr-serie"><h3 class="cr-serie-t">Avulsas</h3><div class="cr-cards">${solo.map(card).join("")}</div></div>`:"")||`<p class="muted">Ainda sem crônicas.</p>`; }
 
+
+/* ---------- lista das decisões na íntegra (só atos decisórios: decisões monocráticas, despachos e acórdãos) ---------- */
+const DL={proc:"",tipo:""};
+async function renderDecisoes(){
+  const idx=await loadDecIdx(); const W=$("#dlWrap");
+  const procs=[...new Set(idx.map(x=>x.proc))].sort(); const tipos=[...new Set(idx.map(x=>x.tipo))].sort((a,b)=>idx.filter(x=>x.tipo===b).length-idx.filter(x=>x.tipo===a).length);
+  const xs=idx.filter(x=>(!DL.proc||x.proc===DL.proc)&&(!DL.tipo||x.tipo===DL.tipo)).sort((a,b)=>(b.d||"").localeCompare(a.d||"")||a.proc.localeCompare(b.proc)||a.s-b.s);
+  const pags=xs.reduce((n,x)=>n+(x.p||0),0);
+  W.innerHTML=`<div class="dl-bar"><select id="dlProc" aria-label="Processo"><option value="">todos os processos</option>${procs.map(p=>`<option value="${p}"${DL.proc===p?" selected":""}>${p}</option>`).join("")}</select>
+    <div class="chips">${[["","todos os tipos"],...tipos.map(t=>[t,tipo(t)])].map(([v,l])=>`<button class="chip${DL.tipo===v?" on":""}" data-dlt="${v}">${esc(l)}</button>`).join("")}</div>
+    <span class="muted small">${xs.length} atos · ${pags.toLocaleString("pt-BR")} páginas</span></div>
+    <table class="dl-tab"><thead><tr><th>Data</th><th>Processo</th><th>Ato</th><th>Seq</th><th>Págs.</th></tr></thead><tbody>${xs.map(x=>`<tr><td>${x.d?dataLonga(x.d):"—"}</td><td>${esc(x.proc)}</td><td><button class="lnk" data-dec-abrir="${x.f}" data-dec-pag="1">${esc(tipo(x.tipo))}</button></td><td class="mono">${String(x.s).padStart(5,"0")}</td><td>${x.p}</td></tr>`).join("")}</tbody></table>`;
+  $("#dlProc").onchange=e=>{ DL.proc=e.target.value; renderDecisoes(); };
+  $$("[data-dlt]",W).forEach(b=>b.onclick=()=>{ DL.tipo=b.dataset.dlt; renderDecisoes(); });
+  $$("[data-dec-abrir]",W).forEach(b=>b.onclick=()=>abreDecisao(b.dataset.decAbrir,1));
+  document.title="autos-abertos — decisões na íntegra";
+}
 
 /* ---------- leitor das decisões: o texto integral do ato, com o dado pessoal mascarado ---------- */
 let DECIDX=null; const DEC={atual:null,pag:1};
@@ -338,13 +357,14 @@ function renderDecisao(){
   const nav=total>1?`<div class="dc-nav"><button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← anterior</button>
     <span>página <b>${i}</b> de ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">próxima →</button></div>`:"";
   const corpo=doc.pags[i-1].split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join("");
-  P.innerHTML=`<button class="btn ghost small back" id="dcBack">← voltar ao processo</button>
+  P.innerHTML=`<button class="btn ghost small back" id="dcBack">← voltar ao processo</button> <a class="btn ghost small back" href="#decisoes" data-nav="decisoes">todas as decisões</a>
     <p class="eyebrow">${esc(doc.proc)} · seq ${String(doc.seq).padStart(5,"0")} · ${tipo(doc.tipo)}${doc.d?" · "+dataLonga(doc.d):""}</p>
     <h2>${esc(tipo(doc.tipo))}${doc.sub&&doc.sub!==doc.tipo?`: ${esc(acentua(doc.sub))}`:""}</h2>
     <p class="muted small">Texto integral da peça, como está nos autos públicos do STF. Nomes de vítimas, testemunhas e familiares, CPF, endereço, telefone, e-mail e dados de conta foram substituídos por etiquetas entre colchetes. Nada mais foi alterado.</p>
     ${nav}<div class="dc-txt">${corpo}</div>${nav}`;
   $("#dcBack").onclick=()=>{ location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(doc.proc); },60); };
   $$("[data-dc]",P).forEach(b=>b.onclick=()=>{ DEC.pag=+b.dataset.dc; renderDecisao(); scrollTo({top:0,behavior:"instant"}); });
+  $$("[data-nav]",P).forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
   document.title=`${doc.proc} seq ${doc.seq} — autos-abertos`;
   scrollTo({top:0,behavior:"instant"});
 }

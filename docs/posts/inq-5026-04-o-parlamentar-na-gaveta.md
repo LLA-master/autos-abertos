@@ -1,5 +1,5 @@
 ---
-title: "O parlamentar na gaveta"
+title: "O documento na gaveta"
 subtitle: "Um documento apreendido na casa de um investigado, uma reclamação ao Supremo, um juiz de plantão que suspendeu tudo numa noite de dezembro, um procurador que chamou aquilo de tumulto, e o inquérito que subiu mesmo assim."
 date: "2026-09-13"
 serie: "INQ 5.026, a origem"

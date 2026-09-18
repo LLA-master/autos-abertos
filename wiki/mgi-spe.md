@@ -26,24 +26,26 @@ Mgi Spe aparece em 9 peças narrativas de 2 dos 15 processos, com maior presenç
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
-- Busca e apreensão: 2
+- Peça sobre busca e apreensão: 2
 - Outras peças: 2
 - Petição: 2
-- Prisão preventiva: 1
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 744 |
-| INQ 5026 | 00003 | Sequestro | 359 |
-| INQ 5026 | 00004 | Busca e apreensão | 830 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 744 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 359 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 830 |
 | PET 15198 | 00012 | Outras peças | 75 |
 | PET 15198 | 00013 | Outras peças | 12 |
-| INQ 5026 | 00002 | Inquérito | 238 |
+| INQ 5026 | 00002 | Peça do inquérito | 238 |
 | PET 15198 | 00500 | Petição | 4 |
-| INQ 5026 | 00005 | Busca e apreensão | 174 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 174 |
 | PET 15198 | 00606 | Petição | 3 |
 
 _“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._

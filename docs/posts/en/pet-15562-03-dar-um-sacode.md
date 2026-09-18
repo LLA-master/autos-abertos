@@ -1,6 +1,6 @@
 ---
-title: "Give him a shake"
-subtitle: "The boat captain who recorded his employer, the chef who threatened to talk, the housekeeper who 'has to be ground down', the journalist who 'clocks in at 7' and the DJ in Miami who picked on the wrong man's son. The conversations the police say show how the banker dealt with people who displeased him, and what the police admit they cannot say actually happened."
+title: "Five conversations"
+subtitle: "The boat captain, the chef, the housekeeper who 'has to be ground down', the journalist who 'clocks in at 7' and the DJ in Miami: five conversations the police transcribed and say show how the banker dealt with people who displeased him, and what the police themselves admit they cannot say actually happened."
 date: "2026-09-13"
 serie: "Pet 15.562, a terceira fase"
 capitulo: 3

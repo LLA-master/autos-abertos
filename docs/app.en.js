@@ -5,7 +5,7 @@ const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim
 const fmt=n=>Number(n).toLocaleString("en-US");
 const ROLE_LABEL={pessoa:"person",empresa:"company",autoridade:"official",advogado:"lawyer",pseudo:"pseudonymized"};
 const ROLE_PL={pessoa:"People",empresa:"Companies",autoridade:"Officials",advogado:"Lawyers",pseudo:"Pseudonymized"};
-const TIPO={"Decisao monocratica":"Single-justice ruling","Peticao":"Petition","Peticao inicial":"Initial petition","Despacho":"Procedural order","Busca e apreensao":"Search and seizure","Prisao preventiva":"Pre-trial detention","Inquerito":"Inquiry","Sequestro":"Asset freeze","Manifestacao":"Submission","Manifestacao da PGR":"Prosecutor General's submission","Outras pecas":"Other filings","Vista a PGR":"Referral to the Prosecutor General","Mandado":"Warrant","Restituicao de coisas apreendidas":"Return of seized property","Certidao de julgamento":"Certificate of judgment","Documentos comprobatorios":"Supporting documents","Documento comprobatorio":"Supporting document","Recibo de peticao eletronica":"E-filing receipt","Comunicacao assinada":"Signed communication","Procuracao":"Power of attorney","Intimacao":"Notice","Certidao":"Certificate","Mandado de intimacao":"Writ of notice","Documentos de identificacao":"Identity documents","Malote Digital":"Digital courier","Termo de disponibilizacao de autos":"Record-release note","Aviso de recebimento":"Return receipt"};
+const TIPO={"Decisao monocratica":"Single-justice ruling","Peticao":"Petition","Peticao inicial":"Initial petition","Despacho":"Procedural order","Busca e apreensao":"Filing on search and seizure","Prisao preventiva":"Filing on pre-trial detention","Inquerito":"Inquiry filing","Sequestro":"Filing on an asset freeze (judicial sequestro)","Manifestacao":"Submission","Manifestacao da PGR":"Prosecutor General's submission","Outras pecas":"Other filings","Vista a PGR":"Referral to the Prosecutor General","Mandado":"Court warrant","Restituicao de coisas apreendidas":"Request for return of seized property","Certidao de julgamento":"Certificate of judgment","Documentos comprobatorios":"Supporting documents","Documento comprobatorio":"Supporting document","Recibo de peticao eletronica":"E-filing receipt","Comunicacao assinada":"Signed communication","Procuracao":"Power of attorney","Intimacao":"Notice","Certidao":"Certificate","Mandado de intimacao":"Writ of notice","Documentos de identificacao":"Identity documents","Malote Digital":"Digital courier","Termo de disponibilizacao de autos":"Record-release note","Aviso de recebimento":"Return receipt"};
 const tipo=t=>TIPO[t]||t;
 const STF="https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/";
 const COMM=["#FF2E97","#19E3FF","#FFD166","#B983FF","#FF8C42","#3DF2A0","#FF5C7A","#7FDBFF","#F7A8B8","#C3F73A","#FFB4E6","#8AFFC1","#FF9D5C","#9DB4FF","#E2B4FF","#5CE1FF"];
@@ -29,14 +29,15 @@ function openNode(id){ if(typeof wkBy!=="undefined"&&wkBy.has(id)) openWiki(id);
 const colorOf=n=>css("--"+roleOf(n));
 
 /* ---------- roteador ---------- */
-const views=["inicio","personagens","whoswho","primer","processos","tempo","cronicas","busca","decisao","metodo","avisos"];
+const views=["inicio","personagens","whoswho","primer","processos","tempo","cronicas","busca","decisoes","decisao","metodo","avisos"];
 let pendingQS=null;
 function show(v){ v=v||""; if(v.includes("?")){ const i=v.indexOf("?"); pendingQS=v.slice(i+1); v=v.slice(0,i); if(v!=="cronicas") history.replaceState(null,"","#"+v); } if(!views.includes(v)) v="inicio";
   views.forEach(x=>{$("#v-"+x).hidden=(x!==v)});
   $$("[data-nav]").forEach(a=>a.classList.toggle("active",a.dataset.nav===v));
   if(v==="personagens"){ if(pendingQS){ const q=new URLSearchParams(pendingQS); if(q.get("p")) WK.open=q.get("p"); pendingQS=null; } renderWiki(); }
   if(v==="busca") iniciaBusca();
-  if(v==="decisao"&&!pendingQS&&DEC.atual) renderDecisao();
+  if(v==="decisao"){ if(pendingQS){ const q=new URLSearchParams(pendingQS); pendingQS=null; if(q.get("d")) abreDecisao(q.get("d"),q.get("p")||1); } else if(DEC.atual) renderDecisao(); }
+  if(v==="decisoes") renderDecisoes();
   if(v==="cronicas"){ renderCronicas(pendingQS); pendingQS=null; }
   window.scrollTo({top:0});
 }
@@ -277,8 +278,8 @@ async function renderWiki(){ const grid=$("#wkGrid"), pg=$("#wkPage"); await loa
       <div class="acts"><a class="btn ghost small" href="https://github.com/LLA-master/autos-abertos/blob/main/wiki/${p.slug}.md" target="_blank" rel="noopener">Profile in Markdown (Portuguese)</a><a class="btn ghost small" href="https://www.google.com/search?q=${encodeURIComponent('"'+p.label+'" "Banco Master"')}" target="_blank" rel="noopener" title="Web search for this name; results are not part of the record">Search on Google</a></div>
       <div class="wk-cols"><div><h4>Presença por processo</h4><div class="bars">${p.pe.slice(0,8).map(([pr,c])=>`<div class="bar"><span>${pr}</span><i style="width:${(c/Math.max(1,p.pe[0][1]))*100}%"></i><span>${c}</span></div>`).join("")}</div>${spark(p.tl||{})}
       ${roleBlock("pessoa","Appears alongside · people")}${roleBlock("empresa","Companies")}${roleBlock("autoridade","Officials")}${roleBlock("advogado","Lawyers")}</div>
-      <div><h4>Filing types</h4><ul>${p.tipos.map(([t,c])=>`<li>${tipo(t)} <span class="muted">(${c})</span></li>`).join("")}</ul>
-      <h4>Onde conferir</h4><table><tr><th>processo</th><th>seq</th><th>peça</th><th>pág.</th></tr>${p.cit.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(c)}</td><td>${d}</td></tr>`).join("")}</table></div></div>
+      <div><h4>Filing types where the name appears</h4><ul>${p.tipos.map(([t,c])=>`<li>${tipo(t)} <span class="muted">(${c})</span></li>`).join("")}</ul>
+      <h4>Where to check</h4><p class="muted small">Each row is a filing in the record where the name appears, with the page. The "filing type" column describes the document, not the person or company: a bank named in a filing on an asset freeze is, as a rule, the bank that received the order, not its target; a name in a filing on pre-trial detention may be a mere mention, such as a lawyer, a witness or an institution served with a request. Only reading the page tells in what capacity the name appears.</p><table><tr><th>proceeding</th><th>seq</th><th>filing type</th><th>page</th></tr>${p.cit.map(([a,b,c,d])=>`<tr><td>${a}</td><td>${String(b).padStart(5,"0")}</td><td>${tipo(c)}</td><td>${d}</td></tr>`).join("")}</table></div></div>
       ${(()=>{const xs=excDaEntidade(p.label); return xs.length?`<h4 style="margin-top:20px">Named in the rulings</h4><p class="muted small">Verbatim passages, in the original Portuguese, from court acts where this name appears. Being named in a ruling settles nothing.</p><div class="excs">${xs.map(([pr,x])=>excCard(pr,x)).join("")}</div>`:"";})()}
       <p class="muted" style="margin-top:12px">Automatic profile built from the sanitized public data. Co-occurrence on the same page does not prove a relationship. Identification errors: open an issue.</p>`;
     $("#wkBack").onclick=()=>{WK.open=null;renderWiki();}; $$("[data-wk]",pg).forEach(b=>b.onclick=()=>openWiki(b.dataset.wk));
@@ -305,6 +306,7 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
       const eyebrow=post.serie?`${esc(EN_SERIE(post.serie))} · Chapter ${post.capitulo} of ${inS.length} · ${dateBR(post.date)} · ${post.minutes} min`:`Chronicle ${String(post.numero||posts.length-i).padStart(2,"0")} · ${dateBR(post.date)} · ${post.minutes} min read · in Portuguese`;
       P.innerHTML=`<button class="btn ghost small back" id="crBack">← all chronicles</button><p class="eyebrow">${eyebrow}</p><h1>${esc(EN_T(post))}</h1><p class="sub">${esc(EN_S(post))}</p>
         <div class="meta">${(post.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}<span class="muted">The project author's opinion, translated from the Portuguese original. Numbers and citations point to the public data and to the STF archive.</span></div>
+        <div class="cr-nota"><b>Reading note.</b> The facts narrated here are those found in public filings of the court record: Federal Police reports, submissions by the prosecution service and judicial rulings. A police report and an indictment are accusatory hypotheses, not conclusions; an interim ruling is a provisional judgment, made before the defence is heard. The filings published are from the investigative stage: none is a verdict. No person or company mentioned is, by this text, accused of a crime; all are presumed innocent (Brazilian Constitution, art. 5, LVII). What is in quotation marks is a citation from the filing, attributed to its source; the rest is the author's reading of those documents, without independent investigation.</div>
         <div class="cr-body">${html}</div>
         <div class="cr-foot"><b>This is a chronicle.</b> An opinion piece, kept separate from the database. What is fact carries its source; what is interpretation is the author's. Co-occurrence on the same page does not prove a relationship, and nobody here is guilty of anything for appearing in a profile. Factual errors: open an issue in the repository. All notices: <a href="#avisos" data-nav="avisos">Disclaimers and rights</a>.
         ${(()=>{const pr=procDoSlug(post.slug); return pr?`<p class="cr-proc">This chronicle is about proceeding <b>${pr}</b>. <button class="btn small" data-goproc2="${pr}">Open the proceeding page</button></p>`:"";})()}
@@ -320,6 +322,23 @@ async function renderCronicas(qs){ const posts=await loadCR(); const p=new URLSe
   const series=[...new Set(posts.filter(x=>x.serie).map(x=>x.serie))].sort((a,b)=>Math.min(...posts.filter(x=>x.serie===a).map(x=>x.numero))-Math.min(...posts.filter(x=>x.serie===b).map(x=>x.numero))); const solo=posts.filter(x=>!x.serie);
   $("#crCards").innerHTML=series.map(sname=>{const xs=posts.filter(x=>x.serie===sname).sort((a,b)=>a.capitulo-b.capitulo); return `<div class="cr-serie"><h3 class="cr-serie-t">${esc(EN_SERIE(sname))}</h3><p class="muted">${xs.length} chapters · ${xs.reduce((s,x)=>s+x.minutes,0)} min in total. Each chapter covers one part of the record, in the order the record itself follows.</p><div class="cr-cards">${xs.map(card).join("")}</div></div>`;}).join("")+(solo.length?`<div class="cr-serie"><h3 class="cr-serie-t">Standalone</h3><div class="cr-cards">${solo.map(card).join("")}</div></div>`:"")||`<p class="muted">No chronicles yet.</p>`; }
 
+
+/* ---------- lista das decisões na íntegra (só atos decisórios: decisões monocráticas, despachos e acórdãos) ---------- */
+const DL={proc:"",tipo:""};
+async function renderDecisoes(){
+  const idx=await loadDecIdx(); const W=$("#dlWrap");
+  const procs=[...new Set(idx.map(x=>x.proc))].sort(); const tipos=[...new Set(idx.map(x=>x.tipo))].sort((a,b)=>idx.filter(x=>x.tipo===b).length-idx.filter(x=>x.tipo===a).length);
+  const xs=idx.filter(x=>(!DL.proc||x.proc===DL.proc)&&(!DL.tipo||x.tipo===DL.tipo)).sort((a,b)=>(b.d||"").localeCompare(a.d||"")||a.proc.localeCompare(b.proc)||a.s-b.s);
+  const pags=xs.reduce((n,x)=>n+(x.p||0),0);
+  W.innerHTML=`<div class="dl-bar"><select id="dlProc" aria-label="Proceeding"><option value="">all proceedings</option>${procs.map(p=>`<option value="${p}"${DL.proc===p?" selected":""}>${p}</option>`).join("")}</select>
+    <div class="chips">${[["","all types"],...tipos.map(t=>[t,tipo(t)])].map(([v,l])=>`<button class="chip${DL.tipo===v?" on":""}" data-dlt="${v}">${esc(l)}</button>`).join("")}</div>
+    <span class="muted small">${xs.length} acts · ${pags.toLocaleString("en-GB")} pages</span></div>
+    <table class="dl-tab"><thead><tr><th>Date</th><th>Proceeding</th><th>Act</th><th>Seq</th><th>Pages</th></tr></thead><tbody>${xs.map(x=>`<tr><td>${x.d?dataLonga(x.d):"—"}</td><td>${esc(x.proc)}</td><td><button class="lnk" data-dec-abrir="${x.f}" data-dec-pag="1">${esc(tipo(x.tipo))}</button></td><td class="mono">${String(x.s).padStart(5,"0")}</td><td>${x.p}</td></tr>`).join("")}</tbody></table>`;
+  $("#dlProc").onchange=e=>{ DL.proc=e.target.value; renderDecisoes(); };
+  $$("[data-dlt]",W).forEach(b=>b.onclick=()=>{ DL.tipo=b.dataset.dlt; renderDecisoes(); });
+  $$("[data-dec-abrir]",W).forEach(b=>b.onclick=()=>abreDecisao(b.dataset.decAbrir,1));
+  document.title="autos-abertos — rulings in full";
+}
 
 /* ---------- leitor das decisões: o texto integral do ato, com o dado pessoal mascarado ---------- */
 let DECIDX=null; const DEC={atual:null,pag:1};
@@ -339,13 +358,14 @@ function renderDecisao(){
   const nav=total>1?`<div class="dc-nav"><button class="btn ghost small" ${i<=1?"disabled":""} data-dc="${i-1}">← previous</button>
     <span>page <b>${i}</b> of ${total}</span><button class="btn ghost small" ${i>=total?"disabled":""} data-dc="${i+1}">next →</button></div>`:"";
   const corpo=doc.pags[i-1].split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join("");
-  P.innerHTML=`<button class="btn ghost small back" id="dcBack">← back to the proceeding</button>
+  P.innerHTML=`<button class="btn ghost small back" id="dcBack">← back to the proceeding</button> <a class="btn ghost small back" href="#decisoes" data-nav="decisoes">all rulings</a>
     <p class="eyebrow">${esc(doc.proc)} · seq ${String(doc.seq).padStart(5,"0")} · ${tipo(doc.tipo)}${doc.d?" · "+dataLonga(doc.d):""}</p>
     <h2>${esc(tipo(doc.tipo))}${doc.sub&&doc.sub!==doc.tipo?`: ${esc(acentua(doc.sub))}`:""}</h2>
     <p class="muted small">Full text of the filing, as it stands in the Supreme Court's public case file, in the original Portuguese. Names of victims, witnesses and family members, along with tax IDs, addresses, phone numbers, e-mails and account details, were replaced by labels in square brackets. Nothing else was changed.</p>
     ${nav}<div class="dc-txt">${corpo}</div>${nav}`;
   $("#dcBack").onclick=()=>{ location.hash="processos"; setTimeout(async()=>{ await loadPR(); openProc(doc.proc); },60); };
   $$("[data-dc]",P).forEach(b=>b.onclick=()=>{ DEC.pag=+b.dataset.dc; renderDecisao(); scrollTo({top:0,behavior:"instant"}); });
+  $$("[data-nav]",P).forEach(a=>a.addEventListener("click",e=>{e.preventDefault();location.hash=a.dataset.nav;}));
   document.title=`${doc.proc} seq ${doc.seq} — autos-abertos`;
   scrollTo({top:0,behavior:"instant"});
 }

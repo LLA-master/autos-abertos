@@ -36,20 +36,22 @@ Sefer Investimentos aparece em 9 peças narrativas de 3 dos 15 processos, com ma
 ## Tipos de peça em que aparece
 - Outras peças: 2
 - Petição: 2
-- Busca e apreensão: 1
-- Inquérito: 1
-- Sequestro: 1
-- Prisão preventiva: 1
+- Peça sobre busca e apreensão: 1
+- Peça do inquérito: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre prisão preventiva: 1
 - Decisão monocrática: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 105 |
-| INQ 5026 | 00004 | Busca e apreensão | 906 |
-| INQ 5026 | 00002 | Inquérito | 1472 |
-| INQ 5026 | 00003 | Sequestro | 1738 |
-| INQ 5026 | 00010 | Prisão preventiva | 820 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 906 |
+| INQ 5026 | 00002 | Peça do inquérito | 1472 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 1738 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 820 |
 | PET 15198 | 00432 | Petição | 3 |
 | PET 15198 | 00013 | Outras peças | 27 |
 | PET 15198 | 00021 | Decisão monocrática | 4 |

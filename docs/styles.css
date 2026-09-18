@@ -354,3 +354,15 @@ html[lang=en] .top nav a{padding:7px 9px;font-size:13px}
 .dc-txt{font-family:var(--serif,Newsreader,Georgia,serif);font-size:16.5px;line-height:1.72}
 .dc-txt p{margin:0 0 14px;white-space:pre-line;max-width:70ch}
 .exc-ler{margin:10px 0 0;font-size:12.5px}
+
+/* nota de leitura das crônicas e lista das decisões (17.09.2026) */
+.cr-nota{margin:0 0 22px;padding:14px 18px;border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:0 12px 12px 0;background:color-mix(in srgb,var(--cyan) 6%,transparent);font-size:14px;line-height:1.55;color:var(--ink2)}
+.cr-nota b{color:var(--ink)}
+.dl-bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 14px}
+.dl-bar select{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg2);color:var(--ink)}
+.dl-tab{width:100%;border-collapse:collapse;font-size:14px}
+.dl-tab th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+.dl-tab td{padding:7px 8px;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent);vertical-align:top}
+.dl-tab .mono{font-family:var(--mono,ui-monospace,monospace);font-size:12px;color:var(--muted)}
+.dl-tab .lnk{font:inherit;color:var(--cyan);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+@media (max-width:640px){.dl-tab th:nth-child(4),.dl-tab td:nth-child(4){display:none}}

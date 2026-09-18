@@ -55,26 +55,28 @@ Felipe Cancado Vorcaro aparece em 52 peças narrativas de 10 dos 15 processos, c
 - Decisão monocrática: 6
 - Petição inicial: 3
 - Outras peças: 2
-- Prisão preventiva: 1
-- Sequestro: 1
-- Busca e apreensão: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre busca e apreensão: 1
+- Peça do inquérito: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15556 | 00001 | Petição inicial | 4 |
 | PET 15562 | 00001 | Petição inicial | 4 |
 | PET 15563 | 00001 | Petição inicial | 4 |
-| INQ 5026 | 00010 | Prisão preventiva | 744 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 744 |
 | PET 15976 | 00034 | Decisão monocrática | 3 |
 | PET 15198 | 00012 | Outras peças | 34 |
 | PET 15978 | 00032 | Decisão monocrática | 2 |
 | PET 15978 | 00110 | Petição | 17 |
 | PET 15978 | 00223 | Petição | 14 |
 | PET 16019 | 00032 | Decisão monocrática | 3 |
-| INQ 5026 | 00003 | Sequestro | 360 |
-| INQ 5026 | 00004 | Busca e apreensão | 830 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 360 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 830 |
 | PET 15978 | 00262 | Petição | 2 |
 | PET 15198 | 00013 | Outras peças | 65 |
 | PET 15693 | 00034 | Decisão monocrática | 2 |

@@ -1,5 +1,5 @@
 ---
-title: "O inquérito vira balcão"
+title: "O inquérito recebe de tudo"
 subtitle: "Com o novo relator, a partir de fevereiro de 2026, o Inquérito 5.026 passa a receber de tudo: convites do Senado, salvo-condutos para a CPMI, um ex-presidente do Banco Central que não queria ir, deputados pedindo para incluir outros deputados, e o Banco Central avisando de um segundo conglomerado. O que o relator fez com cada coisa."
 date: "2026-09-13"
 serie: "INQ 5.026, a origem"

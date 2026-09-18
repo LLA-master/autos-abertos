@@ -1,5 +1,5 @@
 ---
-title: "The inquiry becomes a service counter"
+title: "The inquiry receives everything"
 subtitle: "Under the new reporting justice, from February 2026, Inquiry 5.026 starts receiving everything: invitations from the Senate, safe-conducts for the congressional inquiry committee, a former Central Bank governor who did not want to go, congressmen asking to include other congressmen, and the Central Bank flagging a second conglomerate. What the justice did with each."
 date: "2026-09-13"
 serie: "INQ 5.026, a origem"

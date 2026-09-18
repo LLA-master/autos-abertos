@@ -30,24 +30,26 @@ Itaú Unibanco aparece em 12 peças narrativas de 4 dos 15 processos, com maior 
 
 ## Tipos de peça em que aparece
 - Petição: 4
-- Busca e apreensão: 2
-- Prisão preventiva: 1
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre busca e apreensão: 2
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 - Outras peças: 1
 - Petição inicial: 1
 - Decisão monocrática: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 778 |
-| INQ 5026 | 00004 | Busca e apreensão | 864 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 778 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 864 |
 | PET 15198 | 00434 | Petição | 3 |
-| INQ 5026 | 00003 | Sequestro | 59 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 59 |
 | PET 15198 | 00432 | Petição | 8 |
-| INQ 5026 | 00002 | Inquérito | 1409 |
-| INQ 5026 | 00005 | Busca e apreensão | 78 |
+| INQ 5026 | 00002 | Peça do inquérito | 1409 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 78 |
 | PET 15198 | 00012 | Outras peças | 2623 |
 | PET 15478 | 00026 | Petição inicial | 2 |
 | PET 15198 | 01029 | Decisão monocrática | 4 |

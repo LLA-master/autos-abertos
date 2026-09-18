@@ -24,6 +24,7 @@
         <a href="#processos" data-nav="processos" role="menuitem">Processos</a>
         <a href="#personagens" data-nav="personagens" role="menuitem">Personagens</a>
         <a href="#tempo" data-nav="tempo" role="menuitem">Linha do tempo</a>
+        <a href="#decisoes" data-nav="decisoes" role="menuitem">Decisões</a>
       </div>
     </div>
     <div class="dd">
@@ -67,6 +68,7 @@
   <div class="cards3">
     <article class="card"><h3>Processos</h3><p>Cada um dos quinze procedimentos contado do começo ao fim: o que pediu quem, o que o relator decidiu, em que ordem, com o rastro documental peça a peça.</p></article>
     <article class="card"><h3>Personagens</h3><p>Fichas de quem tem presença relevante nos autos: em que processos e peças aparece, com quem divide páginas, onde conferir. Aparecer não é conclusão sobre nada.</p></article>
+    <article class="card"><h3>Decisões na íntegra</h3><p>O texto completo de cada ato decisório: decisões, despachos e acórdãos, por processo e data, com os dados pessoais mascarados. Decisão cautelar é juízo provisório; nenhuma é sentença.</p></article>
     <article class="card"><h3>Linha do tempo</h3><p>As datas que os autos citam, mês a mês, por processo. Um pico é um período sobre o qual as peças falam muito, não necessariamente quando algo aconteceu.</p></article>
     <article class="card"><h3>Crônicas</h3><p>Textos curtos para quem prefere ler a filtrar: o acervo contado com humor e sem juízo de valor, cada fato apontando para a página de origem. Separados da base, assinados como opinião. Todas com edição integral em inglês.</p></article>
     <article class="card"><h3>Fonte sempre à vista</h3><p>Cada ficha lista as peças em que o nome aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
@@ -121,6 +123,11 @@
   <article id="crPost" class="cr-post" hidden></article>
 </section>
 
+<section id="v-decisoes" class="view" hidden>
+  <div class="wk-head"><div><h2>Decisões na íntegra</h2><p class="lead small">O texto completo dos atos decisórios dos autos públicos: decisões monocráticas, despachos e acórdãos, por processo e data. Só o que foi assinado pelo juízo entra aqui; representações da polícia, pareceres, petições de defesa e anexos ficam fora. Dados pessoais de vítimas, testemunhas e familiares estão substituídos por etiquetas entre colchetes. Decisão cautelar é juízo provisório, anterior ao contraditório: não é sentença.</p></div></div>
+  <div id="dlWrap" class="wk-page"></div>
+</section>
+
 <section id="v-decisao" class="view" hidden>
   <article id="dcPage" class="wk-page"></article>
 </section>
@@ -159,7 +166,7 @@
     <h3>Excertos</h3>
     <p>As páginas de processo trazem trechos literais dos atos do juízo. Nenhum é digitado: a curadoria aponta processo, peça, página e um trecho-âncora, e o pipeline recorta o texto do próprio documento, falhando se a âncora não estiver lá. Só citamos peça assinada por autoridade, ou seja, decisão, despacho, acórdão e manifestação da Procuradoria-Geral da República. Representação da Polícia Federal, petição de defesa e anexo de investigação ficam de fora: é neles que está transcrição de conversa privada e dado de terceiro.</p>
     <h3>Decisões na íntegra</h3>
-    <p>Desde setembro de 2026 o site publica o texto completo de 206 peças assinadas por autoridade: decisões, despachos, acórdãos, certidões de julgamento e manifestações da Procuradoria-Geral da República, 1.169 páginas ao todo. O que muda em relação ao original são as etiquetas entre colchetes: CPF, RG, endereço, CEP, telefone, e-mail, conta bancária e inscrição de advogado com número saem por regra automática; nomes de vítimas, testemunhas e familiares saem por curadoria, substituídos pelo papel que a pessoa tem no texto. O build falha se qualquer um desses padrões sobrar. Representação policial, petição de defesa e anexo de investigação continuam fora.</p>
+    <p>Desde setembro de 2026 o site publica o texto completo de 200 atos decisórios: decisões monocráticas, despachos e acórdãos, 1.153 páginas ao todo, listados na seção Decisões e abertos a partir das páginas de processo. Certidões de julgamento e manifestações da Procuradoria-Geral da República, publicadas na primeira versão, saíram em 17 de setembro de 2026: não são atos do juízo. O que muda em relação ao original são as etiquetas entre colchetes: CPF, RG, endereço, CEP, telefone, e-mail, conta bancária e inscrição de advogado com número saem por regra automática; nomes de vítimas, testemunhas e familiares saem por curadoria, substituídos pelo papel que a pessoa tem no texto. O build falha se qualquer um desses padrões sobrar. Representação policial, petição de defesa e anexo de investigação continuam fora.</p>
     <h3>Busca</h3>
     <p>A busca do site cobre só o que está publicado: os trechos das decisões, as crônicas, as fichas e os resumos. O navegador recebe um índice invertido, que guarda quais palavras aparecem em cada documento, e faz o ranqueamento localmente, sem servidor e sem registrar o que você digitou. O texto integral dos autos não está aqui e não é procurável por este site. Quem quiser procurar no acervo inteiro precisa baixar o pacote do STF.</p>
     <h3>Crônicas</h3>

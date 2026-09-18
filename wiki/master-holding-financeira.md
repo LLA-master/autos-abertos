@@ -29,17 +29,19 @@ Master Holding Financeira aparece em 7 peças narrativas de 4 dos 15 processos, 
 
 ## Tipos de peça em que aparece
 - Petição inicial: 3
-- Busca e apreensão: 2
-- Prisão preventiva: 1
-- Sequestro: 1
+- Peça sobre busca e apreensão: 2
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 3662 |
-| INQ 5026 | 00003 | Sequestro | 238 |
-| INQ 5026 | 00004 | Busca e apreensão | 3128 |
-| INQ 5026 | 00005 | Busca e apreensão | 420 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 3662 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 238 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 3128 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 420 |
 | PET 15556 | 00001 | Petição inicial | 21 |
 | PET 15562 | 00001 | Petição inicial | 21 |
 | PET 15563 | 00001 | Petição inicial | 21 |

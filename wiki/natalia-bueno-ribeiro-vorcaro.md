@@ -35,20 +35,22 @@ Natalia Bueno Ribeiro Vorcaro aparece em 9 peças narrativas de 3 dos 15 process
 
 ## Tipos de peça em que aparece
 - Outras peças: 2
-- Busca e apreensão: 2
+- Peça sobre busca e apreensão: 2
 - Decisão monocrática: 2
-- Prisão preventiva: 1
-- Sequestro: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
 - Petição: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 75 |
-| INQ 5026 | 00010 | Prisão preventiva | 2159 |
-| INQ 5026 | 00003 | Sequestro | 371 |
-| INQ 5026 | 00004 | Busca e apreensão | 2271 |
-| INQ 5026 | 00005 | Busca e apreensão | 186 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2159 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 371 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 2271 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 186 |
 | PET 15198 | 00013 | Outras peças | 2438 |
 | PET 15693 | 00034 | Decisão monocrática | 8 |
 | PET 15198 | 00014 | Decisão monocrática | 15 |

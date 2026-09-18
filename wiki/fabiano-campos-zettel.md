@@ -50,7 +50,9 @@ Fabiano Campos Zettel aparece em 46 peças narrativas de 9 dos 15 processos, com
 - Outras peças: 3
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15556 | 00001 | Petição inicial | 2 |
 | PET 15563 | 00001 | Petição inicial | 2 |

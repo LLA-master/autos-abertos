@@ -1,5 +1,5 @@
 ---
-title: "What the phones said"
+title: "What the police read on the phones"
 subtitle: "In February 2026 the Federal Police took to the Supreme Court the first excerpts from the phones seized in November. A director with a chill down his spine, a bank owner asking to correct a statement, a treasurer who finds it hard to register a lien, and a BRB director's notebook. The representation that opened Petition 15.478."
 date: "2026-09-13"
 serie: "Pet 15.478, a quebra"
@@ -7,7 +7,7 @@ capitulo: 1
 tags: [Pet 15.478, sigilo bancário, extrações]
 ---
 
-Petition 15.478 is a request for a bank and tax disclosure order (*quebra de sigilo*): 36 filings and 633 pages, of which 82 are the Federal Police's request (*representação*) and the rest, almost all of it, annexes and replies from banks. It is an ancillary proceeding, which decides no one's guilt, but the request that opens it is the first public document to show what the police read on the phones seized on 18 November 2025. This series has three chapters: what the phones said, what the Supreme Court decided, and what the banks sent back.
+Petition 15.478 is a request for a bank and tax disclosure order (*quebra de sigilo*): 36 filings and 633 pages, of which 82 are the Federal Police's request (*representação*) and the rest, almost all of it, annexes and replies from banks. It is an ancillary proceeding, which decides no one's guilt, but the request that opens it is the first public document to show what the police read on the phones seized on 18 November 2025. This series has three chapters: what the police read on the phones, what the Supreme Court decided, and what the banks sent back.
 
 The usual warning: these are excerpts chosen and transcribed by the accusing side to persuade a judge that it needs to see more. The defence was not heard beforehand, because the request is sealed and the federal prosecution service argued for "deferred adversarial proceedings" (*contraditório diferido*). None of those named has been indicted in the public filings.
 

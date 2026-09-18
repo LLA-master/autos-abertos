@@ -34,26 +34,28 @@ Claudia Maria Soncini Bernasconi aparece em 14 peças narrativas de 2 dos 15 pro
 
 ## Tipos de peça em que aparece
 - Petição: 4
-- Prisão preventiva: 3
-- Restituição de coisas apreendidas: 3
-- Busca e apreensão: 2
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 3
+- Pedido de devolução de bens apreendidos: 3
+- Peça sobre busca e apreensão: 2
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00012 | Prisão preventiva | 2 |
-| INQ 5026 | 00003 | Sequestro | 2 |
-| INQ 5026 | 00005 | Busca e apreensão | 2 |
-| INQ 5026 | 00002 | Inquérito | 3 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 2 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 2 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 2 |
+| INQ 5026 | 00002 | Peça do inquérito | 3 |
 | INQ 5026 | 00001 | Petição | 3 |
-| INQ 5026 | 00006 | Restituição de coisas apreendidas | 8 |
-| INQ 5026 | 00008 | Restituição de coisas apreendidas | 8 |
-| INQ 5026 | 00009 | Restituição de coisas apreendidas | 8 |
-| INQ 5026 | 00010 | Prisão preventiva | 2 |
-| INQ 5026 | 00011 | Prisão preventiva | 2 |
-| INQ 5026 | 00004 | Busca e apreensão | 2 |
+| INQ 5026 | 00006 | Pedido de devolução de bens apreendidos | 8 |
+| INQ 5026 | 00008 | Pedido de devolução de bens apreendidos | 8 |
+| INQ 5026 | 00009 | Pedido de devolução de bens apreendidos | 8 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2 |
+| INQ 5026 | 00011 | Peça sobre prisão preventiva | 2 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 2 |
 | INQ 5026 | 00268 | Petição | 2 |
 | RCL 88121 | 00055 | Petição | 2 |
 | RCL 88121 | 00178 | Petição | 3 |

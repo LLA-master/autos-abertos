@@ -45,23 +45,25 @@ Maurício Antonio Quadrado aparece em 17 peças narrativas de 8 dos 15 processos
 - Petição: 4
 - Petição inicial: 3
 - Outras peças: 2
-- Prisão preventiva: 1
-- Busca e apreensão: 1
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre busca e apreensão: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 43 |
-| INQ 5026 | 00010 | Prisão preventiva | 2360 |
-| INQ 5026 | 00004 | Busca e apreensão | 802 |
-| INQ 5026 | 00003 | Sequestro | 308 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2360 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 802 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 308 |
 | PET 15198 | 00013 | Outras peças | 74 |
 | PET 15198 | 00014 | Decisão monocrática | 17 |
 | PET 15198 | 00432 | Petição | 3 |
 | PET 15198 | 00660 | Decisão monocrática | 4 |
-| INQ 5026 | 00002 | Inquérito | 649 |
+| INQ 5026 | 00002 | Peça do inquérito | 649 |
 | PET 15198 | 00021 | Decisão monocrática | 2 |
 | PET 15556 | 00001 | Petição inicial | 4 |
 | PET 15562 | 00001 | Petição inicial | 4 |

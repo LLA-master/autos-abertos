@@ -87,7 +87,7 @@ RESUMOS = {
 "PET 15562": dict(
  t="A terceira fase",
  o="A representação de 159 páginas que pediu as buscas de março de 2026.",
- r=["Assinada por quatro delegados em 1º de março de 2026, a representação sustenta que a investigação mudou de assunto. Até ali o caso era sobre carteiras de crédito e fundos; a partir daqui passa a ser também sobre policiais pagos, sistemas sigilosos consultados com login alheio, um ofício falso enviado a uma plataforma digital e ameaças a desafetos.",
+ r=["Assinada por quatro delegados em 1º de março de 2026, a representação sustenta que a investigação mudou de assunto. Até ali o caso era sobre carteiras de crédito e fundos; a partir daqui, na hipótese da polícia, passa a ser também sobre pagamentos a policiais, sistemas sigilosos consultados com login alheio, um ofício apontado como falso enviado a uma plataforma digital e ameaças a desafetos. São alegações de investigação, não fatos provados.",
     "A peça descreve quatro frentes: influência sobre servidores do Banco Central, obtenção irregular de informações sigilosas, coerção contra críticos e manipulação de conteúdo na imprensa e nas redes. E estima em R$ 52 bilhões o prejuízo ao fundo garantidor de crédito, número que a decisão do relator não repetiu.",
     "Dezenove mandados foram expedidos; quatorze foram cumpridos. Os meses seguintes foram de petições sobre o que ficou nas caixas lacradas."],
  m=[("2026-03-01","Representação da Polícia Federal, 159 páginas"),

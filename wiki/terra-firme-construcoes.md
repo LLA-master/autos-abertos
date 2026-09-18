@@ -30,23 +30,25 @@ Terra Firme Construcoes aparece em 8 peças narrativas de 2 dos 15 processos, co
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
-- Busca e apreensão: 2
+- Peça sobre busca e apreensão: 2
 - Petição: 2
-- Prisão preventiva: 1
+- Peça sobre prisão preventiva: 1
 - Petição inicial: 1
-- Sequestro: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
 - Decisão monocrática: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 83 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 83 |
 | PET 15478 | 00001 | Petição inicial | 21 |
-| INQ 5026 | 00003 | Sequestro | 240 |
-| INQ 5026 | 00004 | Busca e apreensão | 78 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 240 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 78 |
 | PET 15478 | 00017 | Decisão monocrática | 10 |
 | PET 15478 | 00029 | Petição | 3 |
-| INQ 5026 | 00005 | Busca e apreensão | 422 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 422 |
 | INQ 5026 | 00173 | Petição | 19 |
 
 _“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._

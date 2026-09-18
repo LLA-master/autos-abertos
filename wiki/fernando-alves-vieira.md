@@ -35,23 +35,25 @@ Fernando Alves Vieira aparece em 22 peças narrativas de 4 dos 15 processos, com
 - Petição: 13
 - Outras peças: 3
 - Decisão monocrática: 3
-- Prisão preventiva: 1
-- Sequestro: 1
-- Busca e apreensão: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre busca e apreensão: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 12 |
 | PET 15198 | 00013 | Outras peças | 2191 |
 | PET 15978 | 00320 | Petição | 1 |
 | PET 15198 | 00316 | Petição | 20 |
 | PET 15198 | 00432 | Petição | 2 |
-| INQ 5026 | 00010 | Prisão preventiva | 2423 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2423 |
 | PET 15198 | 00338 | Petição | 5 |
 | PET 15198 | 00661 | Decisão monocrática | 4 |
-| INQ 5026 | 00003 | Sequestro | 371 |
-| INQ 5026 | 00004 | Busca e apreensão | 2508 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 371 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 2508 |
 | PET 15198 | 00014 | Decisão monocrática | 8 |
 | PET 15198 | 00021 | Decisão monocrática | 2 |
 | PET 15198 | 00244 | Petição | 3 |

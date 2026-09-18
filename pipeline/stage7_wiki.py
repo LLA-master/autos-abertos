@@ -4,8 +4,9 @@ Gera docs/data/wiki.json (consumido pelo site) e wiki/*.md (navegável no GitHub
 import json, os, re, unicodedata, time
 OUT=os.environ.get("BMDB_OUT",os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"docs","data")); REPO=os.path.dirname(os.path.dirname(OUT)); WIKI=f"{REPO}/wiki"
 os.makedirs(WIKI,exist_ok=True)
-W=os.environ.get("BMDB_WORK","./work"); G=json.load(open(f"{W}/graph_full.json"));   # o grafo completo (com arestas, para "aparece junto de") fica na pista local; o site não o publica ENT=json.load(open(f"{OUT}/entities.json")); PROCS={p["processo"]:p for p in json.load(open(f"{OUT}/processos.json"))}; META=json.load(open(f"{OUT}/meta.json"))
-TIPO={"Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Busca e apreensao":"Busca e apreensão","Prisao preventiva":"Prisão preventiva","Inquerito":"Inquérito","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Restituicao de coisas apreendidas":"Restituição de coisas apreendidas","Certidao de julgamento":"Certidão de julgamento"}
+W=os.environ.get("BMDB_WORK","./work"); G=json.load(open(f"{W}/graph_full.json"))   # o grafo completo (com arestas, para "aparece junto de") fica na pista local; o site não o publica
+ENT=json.load(open(f"{OUT}/entities.json")); PROCS={p["processo"]:p for p in json.load(open(f"{OUT}/processos.json"))}; META=json.load(open(f"{OUT}/meta.json"))
+TIPO={"Sequestro":"Peça sobre bloqueio de bens (sequestro judicial)","Mandado":"Mandado judicial","Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Busca e apreensao":"Peça sobre busca e apreensão","Prisao preventiva":"Peça sobre prisão preventiva","Inquerito":"Peça do inquérito","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Restituicao de coisas apreendidas":"Pedido de devolução de bens apreendidos","Certidao de julgamento":"Certidão de julgamento"}
 byI={n["i"]:n for n in G["nodes"]}; byId={n["id"]:n for n in G["nodes"]}
 adj={}
 for e in G["edges"]:
@@ -55,7 +56,7 @@ for p in pages:
     for r,t in [("pessoa","Pessoas"),("empresa","Empresas"),("autoridade","Autoridades"),("advogado","Advogados")]:
         if p["byrole"].get(r): md.append(f"\n## Aparece junto de — {t}\n"); md+=[f"- [{x['label']}]({x['slug']}.md) — {x['w']} peças em comum, {x['p']} processos\n" for x in p["byrole"][r]]
     if p["tipos"]: md.append("\n## Tipos de peça em que aparece\n"); md+=[f"- {TIPO.get(t,t)}: {c}\n" for t,c in p["tipos"]]
-    md.append("\n## Onde conferir\n| processo | seq | peça | página |\n|---|---|---|---|\n"); md+=[f"| {a} | {str(b).zfill(5)} | {TIPO.get(c,c)} | {d} |\n" for a,b,c,d,_ in p["cit"]]
+    md.append("\n## Onde conferir\nCada linha é uma peça dos autos em que o nome aparece, com a página. A coluna \"tipo da peça\" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.\n\n| processo | seq | tipo da peça | página |\n|---|---|---|---|\n"); md+=[f"| {a} | {str(b).zfill(5)} | {TIPO.get(c,c)} | {d} |\n" for a,b,c,d,_ in p["cit"]]
     md.append("\n_“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._\n")
     open(f"{WIKI}/{p['slug']}.md","w",encoding="utf-8").write("".join(md))
 print(f"wiki: {len(pages)} fichas ->",WIKI)

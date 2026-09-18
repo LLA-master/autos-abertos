@@ -1,5 +1,5 @@
 ---
-title: "The congressman in the drawer"
+title: "The document in the drawer"
 subtitle: "A document seized at a suspect's home, a complaint to the Supreme Court, a duty judge who suspended everything on a December night, a prosecutor who called it turmoil, and the inquiry that moved up anyway."
 date: "2026-09-13"
 serie: "INQ 5.026, a origem"

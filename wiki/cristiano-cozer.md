@@ -23,20 +23,22 @@ Cristiano Cozer aparece em 16 peças narrativas de 6 dos 15 processos, com maior
 ## Tipos de peça em que aparece
 - Petição: 8
 - Petição inicial: 3
-- Busca e apreensão: 1
-- Inquérito: 1
-- Sequestro: 1
-- Prisão preventiva: 1
+- Peça sobre busca e apreensão: 1
+- Peça do inquérito: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre prisão preventiva: 1
 - Outras peças: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00004 | Busca e apreensão | 143 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 143 |
 | RCL 88121 | 00245 | Petição | 138 |
-| INQ 5026 | 00002 | Inquérito | 1318 |
-| INQ 5026 | 00003 | Sequestro | 1078 |
-| INQ 5026 | 00010 | Prisão preventiva | 160 |
+| INQ 5026 | 00002 | Peça do inquérito | 1318 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 1078 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 160 |
 | INQ 5026 | 00055 | Petição | 7 |
 | INQ 5026 | 00170 | Petição | 1 |
 | INQ 5026 | 00587 | Petição | 2 |

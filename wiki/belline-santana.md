@@ -41,21 +41,23 @@ Belline Santana aparece em 44 peças narrativas de 7 dos 15 processos, com maior
 - Petição: 12
 - Decisão monocrática: 5
 - Petição inicial: 3
-- Inquérito: 1
-- Busca e apreensão: 1
-- Sequestro: 1
-- Prisão preventiva: 1
+- Peça do inquérito: 1
+- Peça sobre busca e apreensão: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre prisão preventiva: 1
 - Outras peças: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15556 | 00016 | Decisão monocrática | 6 |
 | PET 15563 | 00001 | Petição inicial | 7 |
 | PET 15556 | 00001 | Petição inicial | 7 |
 | PET 15562 | 00001 | Petição inicial | 7 |
 | PET 15562 | 00105 | Petição | 1 |
-| INQ 5026 | 00002 | Inquérito | 743 |
+| INQ 5026 | 00002 | Peça do inquérito | 743 |
 | PET 15556 | 00149 | Petição | 1 |
 | PET 15562 | 00063 | Petição | 1 |
 | PET 15556 | 00251 | Petição | 2 |
@@ -63,7 +65,7 @@ Belline Santana aparece em 44 peças narrativas de 7 dos 15 processos, com maior
 | PET 15562 | 00018 | Decisão monocrática | 5 |
 | PET 15563 | 00017 | Decisão monocrática | 6 |
 | PET 15563 | 00064 | Petição | 1 |
-| INQ 5026 | 00004 | Busca e apreensão | 148 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 148 |
 | PET 15556 | 00053 | Petição | 1 |
 
 _“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._

@@ -1,6 +1,6 @@
 ---
 title: "A Turma"
-subtitle: "Um drone sobre a casa de Nova Lima, um áudio pedindo autorização na portaria B e a lista de visitantes que identificou o policial federal aposentado. Consultas no sistema do Ministério Público com o nome do usuário coberto de branco, uma tela do ePol, um print da Interpol que a Interpol não reconhece. E a conta: R$ 1 milhão por mês para o 'Sicário', R$ 400 mil para dividir entre seis."
+subtitle: "Um milhão por mês, dividido entre seis. O que a decisão diz sobre o que chama de 'núcleo de vigilância e intimidação', nas palavras das mensagens que a polícia transcreveu."
 date: "2026-09-13"
 serie: "Pet 15.562, a terceira fase"
 capitulo: 2
@@ -39,7 +39,7 @@ O método para derrubar perfis é o que mais impressiona a polícia: "uso irregu
 
 ## A conta
 
-O que custava tudo isso, a polícia deduz de planilhas e ordens de pagamento. Em 15 de fevereiro de 2024, às 19h01, Vorcaro "mandou que Fabiano Zettel incluísse" Mourão "na lista de pagamentos mensais para receber R$ 1.000.000,00". Em 13 de março, cobra o mês; Zettel diz que "faria a carta TED". Em 19 de julho, Zettel diz que "precisa fazer o repasse para King", e Vorcaro: "Qdo eu pedir não deixa falhar. Era importante". Em 16 de outubro, nova cobrança, e Zettel: "Todo mês eu mando". Em 11 de novembro de 2024, Zettel manda uma lista de quem o estava cobrando; nela, "Sicário", R$ 1 milhão, e um repórter, a quem, segundo a polícia, se pagavam R$ 2 milhões. Vorcaro manda pagar os dois.
+O que custava tudo isso, a polícia deduz de planilhas e ordens de pagamento. Em 15 de fevereiro de 2024, às 19h01, Vorcaro "mandou que Fabiano Zettel incluísse" Mourão "na lista de pagamentos mensais para receber R$ 1.000.000,00". Em 13 de março, cobra o mês; Zettel diz que "faria a carta TED". Em 19 de julho, Zettel diz que "precisa fazer o repasse para King", e Vorcaro: "Qdo eu pedir não deixa falhar. Era importante". Em 16 de outubro, nova cobrança, e Zettel: "Todo mês eu mando". Em 11 de novembro de 2024, Zettel manda uma lista de quem o estava cobrando; nela, "Sicário", R$ 1 milhão, e um repórter, a quem, segundo a polícia, se pagavam R$ 2 milhões. Na leitura que a polícia faz das mensagens, Vorcaro autoriza os dois pagamentos.
 
 Em 2025 a mão muda. Em 14 de julho, Ana Cláudia pergunta a Vorcaro se é "para incluir na lista R$ 1.000.000,00 como normalmente"; ele diz que sim; ela manda cinco comprovantes, um deles de um Pix de R$ 1 milhão para a King, empresa de Mourão. Em 10 de novembro de 2025, oito dias antes da liquidação, ela envia a planilha "Contas a pagar – Super novembro – 2025", e Vorcaro autoriza o milhão da King. Numa das planilhas compartilhadas por Zettel, "Sicário" está na linha de despesas mensais de R$ 6,55 milhões.
 

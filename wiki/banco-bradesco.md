@@ -29,22 +29,24 @@ Banco Bradesco aparece em 8 peças narrativas de 3 dos 15 processos, com maior p
 - [Gabriel Pimenta Alves](gabriel-pimenta-alves.md) — 3 peças em comum, 1 processos
 
 ## Tipos de peça em que aparece
-- Busca e apreensão: 2
-- Prisão preventiva: 1
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre busca e apreensão: 2
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 - Outras peças: 1
 - Petição inicial: 1
 - Petição: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 778 |
-| INQ 5026 | 00004 | Busca e apreensão | 864 |
-| INQ 5026 | 00003 | Sequestro | 60 |
-| INQ 5026 | 00002 | Inquérito | 1350 |
-| INQ 5026 | 00005 | Busca e apreensão | 19 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 778 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 864 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 60 |
+| INQ 5026 | 00002 | Peça do inquérito | 1350 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 19 |
 | PET 15198 | 00012 | Outras peças | 2569 |
 | PET 15478 | 00032 | Petição inicial | 4 |
 | PET 15198 | 00383 | Petição | 3 |

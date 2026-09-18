@@ -14,14 +14,16 @@ Titan Cayman aparece em 4 peças narrativas de 4 dos 15 processos, com maior pre
 
 ## Tipos de peça em que aparece
 - Petição inicial: 3
-- Busca e apreensão: 1
+- Peça sobre busca e apreensão: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15556 | 00001 | Petição inicial | 149 |
 | PET 15562 | 00001 | Petição inicial | 149 |
 | PET 15563 | 00001 | Petição inicial | 149 |
-| INQ 5026 | 00005 | Busca e apreensão | 1196 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 1196 |
 
 _“seq” é o número que inicia o nome do arquivo na pasta do processo dentro do pacote público do STF. Ficha automática; erros de identificação podem ser reportados por issue._

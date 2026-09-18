@@ -39,26 +39,28 @@ Henrique Souza Silva Peretto aparece em 24 peças narrativas de 3 dos 15 process
 
 ## Tipos de peça em que aparece
 - Petição: 15
-- Prisão preventiva: 3
-- Busca e apreensão: 2
-- Sequestro: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 3
+- Peça sobre busca e apreensão: 2
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
 - Petição inicial: 1
 - Decisão monocrática: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00004 | Busca e apreensão | 52 |
-| INQ 5026 | 00010 | Prisão preventiva | 11 |
-| INQ 5026 | 00003 | Sequestro | 3 |
-| INQ 5026 | 00002 | Inquérito | 4 |
-| INQ 5026 | 00005 | Busca e apreensão | 9 |
-| INQ 5026 | 00012 | Prisão preventiva | 7 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 52 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 11 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 3 |
+| INQ 5026 | 00002 | Peça do inquérito | 4 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 9 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 7 |
 | INQ 5026 | 00792 | Petição | 2 |
 | PET 15478 | 00001 | Petição inicial | 60 |
 | INQ 5026 | 00790 | Petição | 3 |
-| INQ 5026 | 00011 | Prisão preventiva | 5 |
+| INQ 5026 | 00011 | Peça sobre prisão preventiva | 5 |
 | INQ 5026 | 00101 | Petição | 15 |
 | INQ 5026 | 00569 | Petição | 2 |
 | PET 15478 | 00017 | Decisão monocrática | 8 |

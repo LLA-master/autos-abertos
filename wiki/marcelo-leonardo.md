@@ -37,14 +37,16 @@ Marcelo Leonardo aparece em 10 peças narrativas de 7 dos 15 processos, com maio
 
 ## Tipos de peça em que aparece
 - Petição: 7
-- Prisão preventiva: 3
+- Peça sobre prisão preventiva: 3
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00010 | Prisão preventiva | 2 |
-| INQ 5026 | 00012 | Prisão preventiva | 2 |
-| INQ 5026 | 00011 | Prisão preventiva | 2 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 2 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 2 |
+| INQ 5026 | 00011 | Peça sobre prisão preventiva | 2 |
 | INQ 5026 | 00751 | Petição | 2 |
 | INQ 5035 | 00046 | Petição | 2 |
 | PET 15198 | 00644 | Petição | 2 |

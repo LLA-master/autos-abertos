@@ -21,7 +21,9 @@ Sérgio Quintão aparece em 11 peças narrativas de 5 dos 15 processos, com maio
 - Petição: 11
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | INQ 5026 | 00779 | Petição | 3 |
 | INQ 5035 | 00054 | Petição | 3 |

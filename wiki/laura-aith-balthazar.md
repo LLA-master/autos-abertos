@@ -32,23 +32,25 @@ Laura Aith Balthazar aparece em 10 peças narrativas de 2 dos 15 processos, com 
 
 ## Tipos de peça em que aparece
 - Petição: 3
-- Restituição de coisas apreendidas: 3
-- Prisão preventiva: 1
-- Inquérito: 1
-- Sequestro: 1
-- Busca e apreensão: 1
+- Pedido de devolução de bens apreendidos: 3
+- Peça sobre prisão preventiva: 1
+- Peça do inquérito: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre busca e apreensão: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00012 | Prisão preventiva | 100 |
-| INQ 5026 | 00002 | Inquérito | 2 |
-| INQ 5026 | 00003 | Sequestro | 18 |
-| INQ 5026 | 00005 | Busca e apreensão | 1663 |
+| INQ 5026 | 00012 | Peça sobre prisão preventiva | 100 |
+| INQ 5026 | 00002 | Peça do inquérito | 2 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 18 |
+| INQ 5026 | 00005 | Peça sobre busca e apreensão | 1663 |
 | INQ 5026 | 00001 | Petição | 2 |
-| INQ 5026 | 00006 | Restituição de coisas apreendidas | 7 |
-| INQ 5026 | 00008 | Restituição de coisas apreendidas | 7 |
-| INQ 5026 | 00009 | Restituição de coisas apreendidas | 7 |
+| INQ 5026 | 00006 | Pedido de devolução de bens apreendidos | 7 |
+| INQ 5026 | 00008 | Pedido de devolução de bens apreendidos | 7 |
+| INQ 5026 | 00009 | Pedido de devolução de bens apreendidos | 7 |
 | INQ 5026 | 00982 | Petição | 1 |
 | RCL 88121 | 00422 | Petição | 1 |
 

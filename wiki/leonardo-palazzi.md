@@ -22,7 +22,9 @@ Leonardo Palazzi aparece em 6 peças narrativas de 6 dos 15 processos, com maior
 - Petição: 6
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | INQ 5026 | 00812 | Petição | 4 |
 | INQ 5035 | 00059 | Petição | 4 |

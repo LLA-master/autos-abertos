@@ -1,5 +1,5 @@
 ---
-title: "The supervisor who reviewed the letter"
+title: "The supervisor and the letter"
 subtitle: "Two heads of the Central Bank department that supervised Master, a group chat, a consultancy for 'bringing young people into the financial market' and the sentence 'today we have to pay Belline's first one'."
 date: "2026-09-13"
 serie: "Pet 15.556, a decisão"

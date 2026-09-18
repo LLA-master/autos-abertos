@@ -74,7 +74,7 @@ RESUMOS_EN = {
 "PET 15562": dict(
  t="The third phase",
  o="The 159-page filing that asked for the searches of March 2026.",
- r=["Signed by four police chiefs on 1 March 2026, the filing argues that the investigation had changed subject. Until then the case was about loan portfolios and funds; from here on it is also about police officers on the payroll, classified systems searched with someone else's login, a forged official letter sent to a digital platform and threats against enemies.",
+ r=["Signed by four police chiefs on 1 March 2026, the filing argues that the investigation had changed subject. Until then the case was about loan portfolios and funds; from here on, in the police hypothesis, it is also about payments to police officers, classified systems searched with someone else's login, an official letter alleged to be forged sent to a digital platform and threats against enemies. These are investigative allegations, not proven facts.",
     "The filing describes four fronts: influence over Central Bank officials, irregular access to classified information, coercion of critics and manipulation of content in the press and on social media. And it puts the loss to the deposit guarantee fund at R$ 52 billion, a figure the rapporteur's ruling did not repeat.",
     "Nineteen warrants were issued; fourteen were carried out. The months that followed were taken up with petitions about what was left in the sealed boxes."],
  m=[("2026-03-01","Federal Police filing, 159 pages"),

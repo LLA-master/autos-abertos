@@ -10,7 +10,9 @@ Luiz Fernando Carneiro Canuto aparece em 8 peças narrativas de 1 dos 15 process
 - Petição: 8
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | RCL 88121 | 00176 | Petição | 2 |
 | RCL 88121 | 00239 | Petição | 1 |

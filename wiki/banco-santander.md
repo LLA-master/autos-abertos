@@ -29,27 +29,29 @@ Banco Santander aparece em 14 peças narrativas de 4 dos 15 processos, com maior
 
 ## Tipos de peça em que aparece
 - Petição: 6
-- Restituição de coisas apreendidas: 2
+- Pedido de devolução de bens apreendidos: 2
 - Outras peças: 2
-- Busca e apreensão: 1
-- Sequestro: 1
-- Inquérito: 1
-- Prisão preventiva: 1
+- Peça sobre busca e apreensão: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça do inquérito: 1
+- Peça sobre prisão preventiva: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
-| INQ 5026 | 00004 | Busca e apreensão | 867 |
-| INQ 5026 | 00003 | Sequestro | 59 |
-| INQ 5026 | 00002 | Inquérito | 1472 |
-| INQ 5026 | 00010 | Prisão preventiva | 781 |
-| INQ 5026 | 00009 | Restituição de coisas apreendidas | 32 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 867 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 59 |
+| INQ 5026 | 00002 | Peça do inquérito | 1472 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 781 |
+| INQ 5026 | 00009 | Pedido de devolução de bens apreendidos | 32 |
 | PET 15198 | 00012 | Outras peças | 1948 |
 | PET 15198 | 00388 | Petição | 1 |
 | PET 15198 | 00430 | Petição | 1 |
 | PET 15563 | 00074 | Petição | 1 |
 | PET 16019 | 00092 | Petição | 1 |
-| INQ 5026 | 00006 | Restituição de coisas apreendidas | 40 |
+| INQ 5026 | 00006 | Pedido de devolução de bens apreendidos | 40 |
 | PET 15198 | 00013 | Outras peças | 1464 |
 | PET 15198 | 00620 | Petição | 1 |
 | PET 16019 | 00060 | Petição | 1 |

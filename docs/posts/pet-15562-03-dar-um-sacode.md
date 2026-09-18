@@ -1,6 +1,6 @@
 ---
-title: "Dar um sacode"
-subtitle: "O capitão do barco que gravou o patrão, o chef de cozinha que ameaçou contar, a empregada que 'tem que moer', o jornalista que 'bate cartão 7 hrs' e o DJ de Miami que mexeu com o filho errado. As conversas que a polícia diz mostrar como o banqueiro tratava quem o desagradava, e o que ela admite não saber se aconteceu."
+title: "Cinco conversas"
+subtitle: "O capitão do barco, o chef de cozinha, a empregada que 'tem que moer', o jornalista que 'bate cartão 7 hrs' e o DJ de Miami: cinco conversas que a polícia transcreveu e diz mostrar como o banqueiro tratava quem o desagradava, e o que ela mesma admite não saber se aconteceu."
 date: "2026-09-13"
 serie: "Pet 15.562, a terceira fase"
 capitulo: 3

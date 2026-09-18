@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 """Estágio 11 — DECISÕES NA ÍNTEGRA. Publica o texto completo dos atos do juízo, sem dado pessoal.
 
-Só entram peças assinadas por autoridade: decisão, despacho, acórdão, certidão de julgamento e
-manifestação da Procuradoria-Geral da República. Representação policial, petição de defesa,
-resposta de banco e anexo de investigação continuam fora, aqui como em todo o resto do projeto.
+Só entram atos decisórios: decisão monocrática, despacho e acórdão. Certidão de julgamento e
+manifestação da Procuradoria-Geral da República saíram em 17.09.2026 (não são atos do juízo).
+Representação policial, petição de defesa, resposta de banco e anexo de investigação continuam
+fora, aqui como em todo o resto do projeto.
 
 Duas camadas de proteção, e o build falha se qualquer uma não fechar:
 
@@ -32,7 +33,7 @@ sys.path.insert(0, str(ROOT / "pipeline"))
 from protegidos import PROTEGIDOS
 
 ATOS = ("Decisao monocratica", "Despacho", "Acordao", "Inteiro teor do acordao",
-        "Inteiro teor do acordao (completo)", "Certidao de julgamento", "Manifestacao da PGR")
+        "Inteiro teor do acordao (completo)")   # só atos decisórios (17.09.2026): certidões de julgamento e manifestações da PGR ficam fora da íntegra
 
 MASCARAS = [
     (r"\b\d{3}\.?\d{3}\.?\d{3}\s*-?\s*\d{2}\b(?!\s*/)", "[CPF]"),

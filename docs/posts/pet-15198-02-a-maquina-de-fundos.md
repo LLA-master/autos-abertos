@@ -1,5 +1,5 @@
 ---
-title: "A máquina de fundos"
+title: "Os fundos e as notas"
 subtitle: "Uma clínica com receita de R$ 54 mil que emitiu R$ 361 milhões em notas. Um banco que era cotista único dos fundos que compravam os papéis. O que a polícia e o Ministério Público dizem ter encontrado, nas palavras deles."
 date: "2026-09-13"
 serie: "Pet 15.198, a segunda fase"

@@ -34,21 +34,23 @@ Antonio Carlos Freixo Junior aparece em 11 peças narrativas de 2 dos 15 process
 ## Tipos de peça em que aparece
 - Petição: 4
 - Outras peças: 2
-- Prisão preventiva: 1
-- Sequestro: 1
-- Busca e apreensão: 1
-- Inquérito: 1
+- Peça sobre prisão preventiva: 1
+- Peça sobre bloqueio de bens (sequestro judicial): 1
+- Peça sobre busca e apreensão: 1
+- Peça do inquérito: 1
 - Decisão monocrática: 1
 
 ## Onde conferir
-| processo | seq | peça | página |
+Cada linha é uma peça dos autos em que o nome aparece, com a página. A coluna "tipo da peça" descreve o documento, não a pessoa ou empresa: um banco citado numa peça sobre bloqueio de bens é, em regra, o banco que recebeu a ordem, não o alvo dela; um nome numa peça sobre prisão preventiva pode ser uma simples menção, como de advogado, testemunha ou instituição oficiada. Só a leitura da página diz em que condição o nome aparece.
+
+| processo | seq | tipo da peça | página |
 |---|---|---|---|
 | PET 15198 | 00012 | Outras peças | 25 |
-| INQ 5026 | 00010 | Prisão preventiva | 744 |
+| INQ 5026 | 00010 | Peça sobre prisão preventiva | 744 |
 | PET 15198 | 00013 | Outras peças | 84 |
-| INQ 5026 | 00003 | Sequestro | 574 |
-| INQ 5026 | 00004 | Busca e apreensão | 830 |
-| INQ 5026 | 00002 | Inquérito | 238 |
+| INQ 5026 | 00003 | Peça sobre bloqueio de bens (sequestro judicial) | 574 |
+| INQ 5026 | 00004 | Peça sobre busca e apreensão | 830 |
+| INQ 5026 | 00002 | Peça do inquérito | 238 |
 | PET 15198 | 00432 | Petição | 1 |
 | PET 15198 | 00021 | Decisão monocrática | 3 |
 | PET 15198 | 00088 | Petição | 1 |
