@@ -273,7 +273,7 @@ const wkBy=new Map(WIKI.pages.map(p=>[p.id,p]));
 const wkNorm=s=>(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
 function wkChips(){ const C=$("#wkChips"); C.setAttribute("aria-label",WKT.chipsAria);
   C.innerHTML=WKC.map(c=>`<button class="chip${WK.conds.has(c)?" on":""}" data-cond="${c}" style="--c:var(${CONDV[c]})"><i></i>${WIKI.meta.cond[c].t}</button>`).join("");
-  $$("[data-cond]",C).forEach(b=>b.onclick=()=>{const c=b.dataset.cond; WK.conds.has(c)?WK.conds.delete(c):WK.conds.add(c); renderWiki();}); }
+  $$("[data-cond]",C).forEach(b=>b.onclick=()=>{const c=b.dataset.cond; WK.conds.has(c)?WK.conds.delete(c):WK.conds.add(c); b.classList.toggle("on",WK.conds.has(c)); renderWiki();}); }
 wkChips();
 $("#wkSearch").oninput=e=>{WK.q=wkNorm(e.target.value.trim());renderWiki();};
 function openWiki(id){ WK.open=id; location.hash="personagens"; setTimeout(renderWiki,30); }
