@@ -137,7 +137,7 @@ def main():
           f"{sum(x['c'] for x in indice)/1e6:.1f} M caracteres, {kb/1024:.1f} MB em {len(indice)} arquivos")
 
     if "--relatorio" in sys.argv:
-        G = json.load(open(OUT / "graph.json", encoding="utf-8"))
+        G = {"nodes": json.load(open(OUT / "nodes.json", encoding="utf-8"))}
         vis = {norm(n["label"]) for n in G["nodes"] if n.get("vis")}
         # variantes do mesmo nome (primeiro+último, sobrenome só) contam como já públicas
         al = con.execute(f"select value, canon from '{W}/graph_aliases.parquet'").fetchall()

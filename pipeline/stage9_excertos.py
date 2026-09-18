@@ -79,7 +79,7 @@ def main():
     rastro = json.load(open(os.path.join(OUT, "rastro.json"), encoding="utf-8"))
     ator = {(p, e["s"]): e.get("a") for p, v in rastro.items() for e in v}
     data = {(p, e["s"]): e.get("d") for p, v in rastro.items() for e in v}
-    labels = {n["label"] for n in json.load(open(os.path.join(OUT, "graph.json"), encoding="utf-8"))["nodes"] if n.get("vis")}
+    labels = {n["label"] for n in json.load(open(os.path.join(OUT, "nodes.json"), encoding="utf-8")) if n.get("vis")}
 
     erros, out = [], {}
     for e in (alvo if alvo is not None else EXCERTOS):

@@ -29,7 +29,7 @@ The documents cite dates, and the dates tell a story the cover does not. In the 
 
 ## What to do with this
 
-A site does not read for you. What it does is say where each thing is: every name in the graph comes with a table called "Where to check", with the proceeding, the filing number and the page. Download the STF package, open the folder, go to the page. If what is there contradicts what is here, the site is wrong, and the correction is public.
+A site does not read for you. What it does is say where each thing is: every profile comes with a table called "Where to check", with the proceeding, the filing number and the page. Download the STF package, open the folder, go to the page. If what is there contradicts what is here, the site is wrong, and the correction is public.
 
 One hundred and eighty-nine thousand pages. Nobody will read it all. But, for the first time, anyone can read the right page.
 

@@ -4,7 +4,7 @@ Gera docs/data/wiki.json (consumido pelo site) e wiki/*.md (navegável no GitHub
 import json, os, re, unicodedata, time
 OUT=os.environ.get("BMDB_OUT",os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"docs","data")); REPO=os.path.dirname(os.path.dirname(OUT)); WIKI=f"{REPO}/wiki"
 os.makedirs(WIKI,exist_ok=True)
-G=json.load(open(f"{OUT}/graph.json")); ENT=json.load(open(f"{OUT}/entities.json")); PROCS={p["processo"]:p for p in json.load(open(f"{OUT}/processos.json"))}; META=json.load(open(f"{OUT}/meta.json"))
+W=os.environ.get("BMDB_WORK","./work"); G=json.load(open(f"{W}/graph_full.json"));   # o grafo completo (com arestas, para "aparece junto de") fica na pista local; o site não o publica ENT=json.load(open(f"{OUT}/entities.json")); PROCS={p["processo"]:p for p in json.load(open(f"{OUT}/processos.json"))}; META=json.load(open(f"{OUT}/meta.json"))
 TIPO={"Decisao monocratica":"Decisão monocrática","Peticao":"Petição","Peticao inicial":"Petição inicial","Busca e apreensao":"Busca e apreensão","Prisao preventiva":"Prisão preventiva","Inquerito":"Inquérito","Manifestacao":"Manifestação","Manifestacao da PGR":"Manifestação da PGR","Outras pecas":"Outras peças","Vista a PGR":"Vista à PGR","Restituicao de coisas apreendidas":"Restituição de coisas apreendidas","Certidao de julgamento":"Certidão de julgamento"}
 byI={n["i"]:n for n in G["nodes"]}; byId={n["id"]:n for n in G["nodes"]}
 adj={}
@@ -13,7 +13,8 @@ for e in G["edges"]:
 def slug(s): s=unicodedata.normalize("NFD",s); s="".join(c for c in s if unicodedata.category(c)!="Mn"); return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")
 ROLE={"pessoa":"Pessoa","empresa":"Empresa","autoridade":"Autoridade","advogado":"Advogado"}
 # critério de entrada na wiki: visível e com presença relevante
-cands=[n for n in G["nodes"] if n["vis"] and (n["docs"]>=8 or n["procs"]>=4)]
+ANCILARES=set(l.strip() for l in open(f"{OUT}/curadoria_autoridades_ancilares.txt",encoding="utf-8") if l.strip() and not l.startswith("#")) if os.path.exists(f"{OUT}/curadoria_autoridades_ancilares.txt") else set()   # servidores ancilares ao andamento processual: fora da aba
+cands=[n for n in G["nodes"] if n["vis"] and (n["docs"]>=8 or n["procs"]>=4) and n["id"] not in ANCILARES]
 cands.sort(key=lambda n:(-n["procs"],-n["docs"]))
 pages=[]
 for n in cands:

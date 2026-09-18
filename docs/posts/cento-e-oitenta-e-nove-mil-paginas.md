@@ -29,7 +29,7 @@ Os documentos citam datas, e as datas contam uma história que a capa não conta
 
 ## O que fazer com isso
 
-Um site não lê por você. O que ele faz é dizer onde está cada coisa: cada nome do grafo traz uma tabela chamada "Onde conferir", com processo, número da peça e página. Baixe o pacote do STF, abra a pasta, vá à página. Se o que estiver lá desmentir o que está aqui, o site está errado, e a correção é pública.
+Um site não lê por você. O que ele faz é dizer onde está cada coisa: cada ficha de personagem traz uma tabela chamada "Onde conferir", com processo, número da peça e página. Baixe o pacote do STF, abra a pasta, vá à página. Se o que estiver lá desmentir o que está aqui, o site está errado, e a correção é pública.
 
 Cento e oitenta e nove mil páginas. Ninguém vai ler tudo. Mas, pela primeira vez, qualquer um pode ler a página certa.
 

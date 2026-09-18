@@ -9,9 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Righteous&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/graphology-library@0.8.0/dist/graphology-library.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sigma@3.0.1/dist/sigma.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <link rel="alternate" type="application/rss+xml" title="Crônicas do autos-abertos" href="feed.xml">
 <link rel="alternate" hreflang="pt-BR" href="index.html"><link rel="alternate" hreflang="en" href="en.html">
@@ -26,16 +23,7 @@
       <div class="dd-m" role="menu" aria-label="O caso">
         <a href="#processos" data-nav="processos" role="menuitem">Processos</a>
         <a href="#personagens" data-nav="personagens" role="menuitem">Personagens</a>
-        <a href="#rede" data-nav="rede" role="menuitem">Análise de rede</a>
-      </div>
-    </div>
-    <div class="dd">
-      <button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false">Explorar</button>
-      <div class="dd-m" role="menu" aria-label="Explorar">
-        <a href="#grafo" data-nav="grafo" role="menuitem">Grafo</a>
-        <a href="#mapa" data-nav="mapa" role="menuitem">Mapa mental</a>
         <a href="#tempo" data-nav="tempo" role="menuitem">Linha do tempo</a>
-        <a href="#tour" data-nav="tour" role="menuitem">Tour guiado</a>
       </div>
     </div>
     <div class="dd">
@@ -66,123 +54,28 @@
     <svg class="palms" viewBox="0 0 300 160" aria-hidden="true"><g fill="var(--bg)" stroke="var(--pink)" stroke-width="1.5"><path d="M230 160 L236 60 Q238 40 250 30 Q240 45 244 60 L238 160Z"/><path d="M244 62 Q270 30 300 40 Q272 42 250 66Z"/><path d="M244 62 Q280 60 296 90 Q270 70 246 70Z"/><path d="M240 60 Q210 32 176 44 Q206 44 236 66Z"/><path d="M240 60 Q200 60 184 96 Q210 72 240 70Z"/><path d="M242 56 Q250 20 232 4 Q248 26 240 58Z"/><path d="M140 160 L144 90 Q146 76 154 70 Q147 82 149 92 L146 160Z"/><path d="M150 92 Q170 66 196 74 Q172 74 154 96Z"/><path d="M150 92 Q176 92 186 116 Q168 100 152 100Z"/><path d="M148 90 Q126 70 100 78 Q124 78 146 96Z"/><path d="M148 90 Q118 92 106 120 Q126 100 148 100Z"/></g></svg>
     <p class="eyebrow">Acervo público do STF · Pet 15.556 e conexos · Operação Compliance Zero</p>
     <h1>O caso Banco Master, <em>navegável</em>.</h1>
-    <p class="lead">Em 11 de setembro de 2026 o Supremo tornou públicos 189 mil páginas de autos. Este site transforma esse volume em um mapa de quem aparece com quem, em que peça e em que momento, com cada relação apontando para a fonte.</p>
+    <p class="lead">Em 11 de setembro de 2026 o Supremo tornou públicos 189 mil páginas de autos. Este site organiza esse volume por processo, por personagem e por data, com cada informação apontando para a peça e a página de origem.</p>
     <div class="cta">
-      <a class="btn primary" href="#tour" data-nav="tour">Fazer o tour guiado</a>
-      <a class="btn" href="#grafo" data-nav="grafo">Abrir o grafo</a>
-      <a class="btn" href="#mapa" data-nav="mapa">Mapa mental</a>
-      <a class="btn" href="#rede" data-nav="rede">Análise de rede</a>
+      <a class="btn primary" href="#processos" data-nav="processos">Ver os processos</a>
+      <a class="btn" href="#personagens" data-nav="personagens">Personagens</a>
+      <a class="btn" href="#cronicas" data-nav="cronicas">Crônicas</a>
       <a class="btn ghost" href="#metodo" data-nav="metodo">Como isto foi feito</a>
     </div>
   </div>
   <div class="gridwrap" aria-hidden="true"><div class="gridfloor"></div></div>
   <div class="tiles" id="tiles"></div>
   <div class="cards3">
-    <article class="card"><h3>Tour</h3><p>Oito passos curtos, cada um com o grafo já configurado para mostrar uma coisa. Você aprende a ler o caso olhando, sem manual.</p></article>
-    <article class="card"><h3>Grafo e mapa mental</h3><p>O grafo mostra a rede inteira. O mapa mental parte de um nome e abre seus vínculos por categoria, ramo a ramo, como um caderno de apuração.</p></article>
-    <article class="card"><h3>Análise de rede</h3><p>Quem faz ponte entre núcleos, quem aparece quando, quais pares são fortes e específicos, quem é citado em decisões. Tudo calculado sobre o recorte que você escolher.</p></article>
+    <article class="card"><h3>Processos</h3><p>Cada um dos quinze procedimentos contado do começo ao fim: o que pediu quem, o que o relator decidiu, em que ordem, com o rastro documental peça a peça.</p></article>
+    <article class="card"><h3>Personagens</h3><p>Fichas de quem tem presença relevante nos autos: em que processos e peças aparece, com quem divide páginas, onde conferir. Aparecer não é conclusão sobre nada.</p></article>
+    <article class="card"><h3>Linha do tempo</h3><p>As datas que os autos citam, mês a mês, por processo. Um pico é um período sobre o qual as peças falam muito, não necessariamente quando algo aconteceu.</p></article>
     <article class="card"><h3>Crônicas</h3><p>Textos curtos para quem prefere ler a filtrar: o acervo contado com humor e sem juízo de valor, cada fato apontando para a página de origem. Separados da base, assinados como opinião. Todas com edição integral em inglês.</p></article>
-    <article class="card"><h3>Fonte sempre à vista</h3><p>Cada nó lista as peças em que aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
+    <article class="card"><h3>Fonte sempre à vista</h3><p>Cada ficha lista as peças em que o nome aparece: processo, número sequencial e página. Nada aqui substitui os autos; tudo aponta para eles.</p></article>
   </div>
   <p class="note"><b>Versão 0.2.</b> Extração, papéis e relações são automáticos e estão em revisão; os dados podem mudar. Sanitizado: sem CPF, endereços, texto integral ou nomes de pessoas incidentais. <a href="#metodo" data-nav="metodo">Política completa</a>.</p>
 </section>
 
-<section id="v-tour" class="view" hidden>
-  <div class="trail">
-    <aside class="rail">
-      <h2>Tour: ler o caso</h2>
-      <p class="muted">8 passos · ~6 min</p>
-      <ol id="railSteps"></ol>
-      <button class="btn ghost small" id="resetTrail">Recomeçar</button>
-    </aside>
-    <div class="stage">
-      <div class="step-head"><span class="pill" id="stepNum"></span><h2 id="stepTitle"></h2></div>
-      <div id="stepBody" class="step-body"></div>
-      <div id="stepWidget" class="step-widget"></div>
-      <div id="stepTip" class="step-tip"></div>
-      <div class="step-nav"><button class="btn" id="prevStep">← Anterior</button><button class="btn primary" id="nextStep">Próximo →</button></div>
-    </div>
-  </div>
-</section>
 
-<section id="v-grafo" class="view" hidden>
-  <div class="toolbar tb">
-    <div class="tb-row">
-      <div class="search"><input id="search" type="search" placeholder="Buscar pessoa, empresa, autoridade…" autocomplete="off" aria-label="Buscar"><ul id="sugg" class="sugg" hidden></ul></div>
-      <button class="btn small" id="tbMore" aria-expanded="false" aria-controls="tbDrawer">Ajustes ▾</button>
-      <div class="zoom"><button class="btn small" id="zoomIn" title="Aproximar">+</button><button class="btn small" id="zoomOut" title="Afastar">−</button><button class="btn ghost small" id="resetView">Ajustar</button></div>
-    </div>
-    <div class="tb-row scroll">
-      <div class="chips" id="roleChips">
-        <button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button>
-        <button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button>
-        <button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button>
-        <button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button>
-        <button class="chip" data-role="pseudo" style="--c:var(--pseudo)"><i></i>Pseudonimizados</button>
-      </div>
-      <span class="sep" aria-hidden="true"></span>
-      <div class="chips presets" id="presets" aria-label="Vistas prontas">
-        <span class="muted lbl">Vistas</span>
-        <button class="chip" data-preset="geral">Visão geral</button>
-        <button class="chip" data-preset="nucleos">Núcleos</button>
-        <button class="chip" data-preset="pontes">Pontes</button>
-        <button class="chip" data-preset="empresas">Só empresas</button>
-        <button class="chip" data-preset="decisoes">Citados em decisões</button>
-        <button class="chip" data-preset="y2025">2025</button>
-      </div>
-    </div>
-    <div class="tb-drawer" id="tbDrawer" hidden>
-      <div class="tb-drawer-head"><b>Ajustes do grafo</b><button class="btn ghost small" id="tbClose">Fechar</button></div>
-      <div class="grp"><h5>Recorte</h5>
-        <label class="ctl">Processo <select id="procSel"><option value="">todos</option></select></label>
-        <label class="ctl">Mín. peças <input id="minDocs" type="range" min="2" max="40" value="4"><output id="minDocsOut">4</output></label>
-        <label class="ctl">Top <select id="topN"><option value="0">todos</option><option value="60">60</option><option value="120" selected>120</option><option value="250">250</option></select></label>
-        <label class="ctl" title="Mostra só a vizinhança do nó selecionado"><input type="checkbox" id="focusMode"> foco <select id="focusDepth"><option value="1">1 salto</option><option value="2">2 saltos</option></select></label>
-        <label class="ctl"><input type="checkbox" id="collapseLeaves"> colapsar folhas</label>
-        <button class="btn small" id="commBtn" title="Lista os núcleos (comunidades) do recorte; clique num núcleo para isolá-lo">Listar núcleos</button>
-      </div>
-      <div class="grp"><h5>Ligações</h5>
-        <label class="ctl" title="Bruto: peças em comum. Específico: peças em comum divididas pelo esperado se os dois nomes fossem independentes (lift)">Peso <select id="wMode"><option value="bruto">bruto</option><option value="especifico">específico</option></select></label>
-        <label class="ctl">Peso mín. <input id="minW" type="range" min="1" max="15" value="2"><output id="minWOut">2</output></label>
-        <label class="ctl" id="minLWrap" hidden>Especif. mín. <input id="minL" type="range" min="1" max="60" value="5"><output id="minLOut">5</output></label>
-        <label class="ctl" title="Mostra só ligações cujas páginas citam datas no intervalo escolhido"><input type="checkbox" id="tlFilter"> período <select id="q0"></select> <span class="muted">a</span> <select id="q1"></select></label>
-      </div>
-      <div class="grp"><h5>Aparência</h5>
-        <label class="ctl" title="Define o tamanho dos nós. Pontes e influência são recalculadas sobre o recorte visível">Tamanho <select id="sizeBy"><option value="docs">peças</option><option value="deg">ligações</option><option value="bt">pontes</option><option value="pr">influência</option><option value="jud">citações em decisões</option></select></label>
-        <label class="ctl">Arestas <select id="edgeColor"><option value="discretas">discretas</option><option value="nucleo">por núcleo</option><option value="procs">por nº de processos</option></select></label>
-        <label class="ctl"><input type="checkbox" id="commColor"> cores por núcleo</label>
-        <label class="ctl"><input type="checkbox" id="labelsAll"> todos os rótulos</label>
-        <label class="ctl switch" title="Física ao vivo: os nós se acomodam e você pode arrastá-los"><input type="checkbox" id="liveLayout"> nós vivos</label>
-        <label class="ctl">Espaço <input id="spacing" type="range" min="4" max="120" value="60"><output id="spacingOut">60</output></label>
-        <label class="ctl switch"><input type="checkbox" id="mmToggle"> modo mapa mental</label>
-      </div>
-      <div class="grp"><h5>Ferramentas</h5>
-        <button class="btn small" id="pathBtn">Caminho A → B</button>
-        <button class="btn small" id="commonBtn" title="Quem aparece junto de A e também de B">Em comum A ∩ B</button>
-        <button class="btn ghost small" id="restoreHidden" hidden>Restaurar ocultos (<span id="hiddenCount">0</span>)</button>
-        <span class="ctl export"><span class="muted">Exportar</span><button class="btn ghost small" id="dlNodes" title="CSV dos nós visíveis">nós CSV</button><button class="btn ghost small" id="dlEdges" title="CSV das ligações visíveis">ligações CSV</button><button class="btn ghost small" id="dlPng" title="Imagem do grafo como está">PNG</button><button class="btn ghost small" id="copyLink" title="Copia um link que reabre esta vista com os mesmos filtros e o mesmo nó selecionado">copiar link</button></span>
-      </div>
-    </div>
-  </div>
-  <div class="graph-wrap">
-    <div id="sigma" class="sigma" role="img" aria-label="Grafo de relações"></div>
-    <div id="pathHint" class="path-hint" hidden></div>
-    <div id="focusHint" class="path-hint" hidden></div>
-    <aside id="commLegend" class="comm-legend" hidden></aside>
-    <aside id="panel" class="panel" hidden></aside>
-    <div class="legend"><span id="legSize">Tamanho = nº de peças</span><span id="legEdge">Espessura = peças em comum</span><span>Clique = ficha · 2 cliques = foco · Esc = limpar</span></div>
-  </div>
-</section>
 
-<section id="v-mapa" class="view" hidden>
-  <div class="toolbar legacy">
-    <div class="search"><input id="mmSearch" type="search" placeholder="Centrar o mapa em…" autocomplete="off" aria-label="Centrar o mapa em"><ul id="mmSugg" class="sugg" hidden></ul></div><button class="btn small tb-toggle" type="button">Filtros ▾</button>
-    <label class="ctl">Modo <select id="mmMode"><option value="entidade">por entidade</option><option value="processo">por processo</option><option value="caso">visão do caso</option></select></label>
-    <label class="ctl">Ramos por categoria <input id="mmN" type="range" min="4" max="14" value="8"><output id="mmNOut">8</output></label>
-    <div class="crumbs" id="mmCrumbs"></div>
-  </div>
-  <div class="mm-wrap"><svg id="mm" role="img" aria-label="Mapa mental"></svg><div class="mm-help">Clique num ramo para recentrar · arraste para mover · roda do mouse para zoom · clique no centro para abrir a ficha no grafo</div></div>
-</section>
 
 <section id="v-personagens" class="view" hidden>
   <div class="wk-head"><div><h2>Personagens</h2><p class="lead small">Fichas automáticas de quem tem presença relevante nos autos: ao menos 8 peças narrativas ou 4 processos. Coocorrência na mesma página não prova relação; cada ficha diz onde conferir.</p></div>
@@ -192,18 +85,6 @@
   <article id="wkPage" class="wk-page" hidden></article>
 </section>
 
-<section id="v-rede" class="view" hidden>
-  <div class="wk-head"><div><h2>Análise de rede</h2><p class="lead small">Métricas calculadas sobre o recorte escolhido aqui: quem faz ponte entre núcleos, quem tem influência estrutural, quem aparece quando, quais pares são ao mesmo tempo fortes e específicos. Nada disto é prova; é um mapa de onde começar a ler.</p></div></div>
-  <div class="toolbar rd-toolbar">
-    <div class="chips" id="rdChips"><button class="chip on" data-role="pessoa" style="--c:var(--pessoa)"><i></i>Pessoas</button><button class="chip on" data-role="empresa" style="--c:var(--empresa)"><i></i>Empresas</button><button class="chip on" data-role="autoridade" style="--c:var(--autoridade)"><i></i>Autoridades</button><button class="chip" data-role="advogado" style="--c:var(--advogado)"><i></i>Advogados</button></div>
-    <label class="ctl"><input type="checkbox" id="rdNamed" checked> só nomeados</label>
-    <label class="ctl">Peso mín. <input id="rdMinW" type="range" min="2" max="10" value="2"><output id="rdMinWOut">2</output></label>
-    <label class="ctl">Processo <select id="rdProc"><option value="">todos</option></select></label>
-    <label class="ctl">Desde <select id="rdYear"><option>2019</option><option>2021</option><option value="2023" selected>2023</option><option>2025</option></select></label>
-  </div>
-  <div class="tiles" id="rdTiles"></div>
-  <div class="rd-grid" id="rdBlocks"></div>
-</section>
 
 <section id="v-processos" class="view" hidden>
   <div id="procList">
@@ -263,8 +144,7 @@
       <li><strong>Manifesto e texto.</strong> Hash SHA-256 e metadados de cada arquivo; extração de texto por página. Páginas sem camada de texto (1,8%) passaram por OCR em português.</li>
       <li><strong>Extração estruturada.</strong> Expressões regulares para números de processo, CNPJ, datas, referências a outros processos e nomes em caixa alta, que é como peças jurídicas grafam partes.</li>
       <li><strong>Papéis.</strong> Empresa (sufixo ou termo societário), autoridade (cargo no contexto, ou assinatura em todas as páginas de uma peça longa), advogado (remetente do recibo de petição eletrônica, ou inscrição profissional junto ao nome), pessoa (o resto). Uma camada de curadoria manual corrige papéis, une variantes de grafia e descarta fragmentos que não são nomes.</li>
-      <li><strong>Relações.</strong> Duas entidades se ligam quando aparecem na mesma página de uma peça narrativa. Anexos como extratos, tabelas, procurações e documentos de identificação ficam fora, porque produzem relações espúrias em massa. O peso é o número de peças distintas em comum.</li>
-      <li><strong>Métricas de rede (v0.2).</strong> <em>Pontes</em> é a centralidade de intermediação (betweenness): quantos caminhos mais curtos entre outros pares passam pelo nó, com distância igual ao inverso do peso. <em>Influência</em> é o PageRank ponderado. <em>Agrupamento</em> é o coeficiente de clustering (quanto os vizinhos do nó se ligam entre si). <em>Fora do núcleo</em> é a parcela do peso das ligações que sai da comunidade do nó (comunidades por Louvain). <em>Especificidade</em> de uma ligação é o lift: peças em comum observadas divididas pelas esperadas se os dois nomes aparecessem de forma independente; o site combina lift e volume para ordenar pares. No grafo e na análise, pontes e influência são recalculadas sobre o recorte visível, porque advogados e autoridades que assinam muitas peças distorcem o cálculo global.</li>
+      <li><strong>Coocorrência.</strong> Dois nomes são listados juntos quando aparecem na mesma página de uma peça narrativa. Anexos como extratos, tabelas, procurações e documentos de identificação ficam fora, porque produzem relações espúrias em massa. O peso é o número de peças distintas em comum.</li>
       <li><strong>Sanitização.</strong> Ver a <a href="https://github.com/LLA-master/autos-abertos/blob/main/POLITICA_DE_SANITIZACAO.md" target="_blank" rel="noopener">política</a>. Resumo: entidades públicas e pessoas nomeadas em atos judiciais entram com nome; pessoas incidentais viram pseudônimo; dados pessoais não entram.</li>
     </ol>
     <h3>Limites, sem rodeios</h3>
@@ -283,7 +163,7 @@
     <h3>Busca</h3>
     <p>A busca do site cobre só o que está publicado: os trechos das decisões, as crônicas, as fichas e os resumos. O navegador recebe um índice invertido, que guarda quais palavras aparecem em cada documento, e faz o ranqueamento localmente, sem servidor e sem registrar o que você digitou. O texto integral dos autos não está aqui e não é procurável por este site. Quem quiser procurar no acervo inteiro precisa baixar o pacote do STF.</p>
     <h3>Crônicas</h3>
-    <p>A seção Crônicas é editorial: textos de opinião do autor do projeto, escritos em cima dos mesmos dados públicos e sanitizados. Ficam em <code>docs/posts/</code>, em Markdown, com data e fontes; a edição em inglês de cada uma fica em <code>docs/posts/en/</code>. A base (grafo, fichas, análise) não depende deles e não muda por causa deles. Quando uma crônica cita um número, o número vem de <code>docs/data/</code>; quando cita uma peça, indica processo, seq e página.</p>
+    <p>A seção Crônicas é editorial: textos de opinião do autor do projeto, escritos em cima dos mesmos dados públicos e sanitizados. Ficam em <code>docs/posts/</code>, em Markdown, com data e fontes; a edição em inglês de cada uma fica em <code>docs/posts/en/</code>. A base (fichas, processos, decisões) não depende deles e não muda por causa deles. Quando uma crônica cita um número, o número vem de <code>docs/data/</code>; quando cita uma peça, indica processo, seq e página.</p>
     <h3>Licenças e código</h3>
     <p>Código MIT, dados derivados CC BY 4.0. Repositório: <a href="https://github.com/LLA-master/autos-abertos" target="_blank" rel="noopener">github.com/LLA-master/autos-abertos</a>. Projeto pessoal, sem afiliação com o STF ou com partes dos processos.</p>
     <p class="muted" id="buildInfo"></p>
@@ -302,11 +182,11 @@
     </ul>
     <h3>2. O que este site não é</h3>
     <ul>
-      <li><strong>Não é prova</strong> de nada. Aparecer no grafo, numa ficha ou numa crônica não significa envolvimento em crime. Coocorrência na mesma página de uma peça processual é um sinal de leitura, não uma relação comprovada.</li>
+      <li><strong>Não é prova</strong> de nada. Aparecer numa ficha, numa lista ou numa crônica não significa envolvimento em crime. Coocorrência na mesma página de uma peça processual é um sinal de leitura, não uma relação comprovada.</li>
       <li><strong>Não é conclusão</strong> sobre culpa. Todas as pessoas mencionadas têm direito à presunção de inocência (Constituição, art. 5º, LVII). As decisões cautelares aqui descritas são tomadas em cognição sumária, antes de qualquer julgamento, e as defesas, em regra, ainda não foram ouvidas nas peças resumidas.</li>
       <li><strong>Não é notícia</strong> nem reportagem. Nenhuma informação foi apurada fora dos autos. O que os autos dizem é atribuído a quem disse (polícia, Ministério Público, juiz, defesa).</li>
       <li><strong>Não é aconselhamento</strong> jurídico, financeiro ou de investimento. Não use este site para decidir sobre contratos, investimentos, contratações ou reputações.</li>
-      <li><strong>Não é base completa.</strong> Só o texto das peças foi usado; os 49 vídeos do pacote ficaram fora. Peças anexas (extratos, tabelas, procurações, documentos de identificação) não alimentam o grafo.</li>
+      <li><strong>Não é base completa.</strong> Só o texto das peças foi usado; os 49 vídeos do pacote ficaram fora. Peças anexas (extratos, tabelas, procurações, documentos de identificação) não alimentam a base.</li>
     </ul>
     <h3>3. Nomes, dados pessoais e sanitização</h3>
     <ul>
@@ -324,9 +204,9 @@
       <li>As crônicas seguem a mesma política de nomes da base: não nomeiam quem a base pseudonimiza, nem pessoas que a própria decisão preserva (jornalistas, empregados, familiares incidentais).</li>
       <li>Erros de fato em crônicas são corrigidos no texto, com nota de correção visível e registro no histórico do repositório.</li>
     </ul>
-    <h3>5. Métricas e análise</h3>
+    <h3>5. Contagens e linha do tempo</h3>
     <ul>
-      <li>Pontes (intermediação), influência (PageRank), agrupamento, núcleos (Louvain) e especificidade (lift) são medidas <strong>matemáticas sobre coocorrência de nomes em páginas</strong>. Descrevem a estrutura do texto dos autos, não a realidade dos fatos. Um nome com muitas "pontes" é um nome que aparece em páginas de grupos diferentes; só isso.</li>
+      <li>As contagens das fichas (peças, processos, menções, quem divide páginas com quem) são medidas <strong>sobre o texto dos autos</strong>, não sobre a realidade fora deles.</li>
       <li>As datas da linha do tempo são datas citadas nas peças, não datas de acontecimentos.</li>
       <li>Definições e limites: seção <a href="#metodo" data-nav="metodo">Método</a> e <a href="https://github.com/LLA-master/autos-abertos/blob/main/METODOLOGIA.md" target="_blank" rel="noopener">METODOLOGIA.md</a>.</li>
     </ul>
@@ -339,7 +219,7 @@
     <h3>7. Privacidade de quem usa o site</h3>
     <ul>
       <li>O site é estático, hospedado no GitHub Pages. <strong>Não há contas, formulários, cookies próprios, analytics ou rastreamento.</strong> Nenhum dado seu é enviado ao autor do projeto.</li>
-      <li>O navegador guarda localmente, e só nele, preferências de uso: tema claro/escuro, passo do tour, posição calculada do grafo. Limpar os dados do site apaga tudo.</li>
+      <li>O navegador guarda localmente, e só nele, preferências de uso: tema claro/escuro. Limpar os dados do site apaga tudo.</li>
       <li>Ao carregar a página, o navegador busca fontes no Google Fonts e bibliotecas de código no jsDelivr, além dos arquivos do GitHub Pages. Esses serviços recebem, como qualquer servidor, o endereço IP de quem acessa, e têm políticas próprias.</li>
     </ul>
     <h3>8. Licenças e reprodução</h3>

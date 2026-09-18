@@ -6,7 +6,7 @@ Base de dados aberta e navegável sobre o acervo que o Supremo Tribunal Federal 
 
 ## O que há aqui
 
-- `docs/` — o site estático: tour guiado, grafo de relações (com métricas de rede, vistas prontas, filtro por período, exportação e link permanente), mapa mental, fichas por entidade, análise de rede, processos, linha do tempo e crônicas.
+- `docs/` — o site estático: fichas por personagem, processos com rastro documental e decisões na íntegra, linha do tempo, crônicas, busca, método e avisos (o grafo de relações e a análise de rede foram retirados do ar em 17.09.2026; o pipeline continua a calculá-los localmente, sem publicar).
 - `docs/posts/` — as crônicas, em Markdown com cabeçalho (título, subtítulo, data, tags); `docs/posts/en/` — a edição integral em inglês de cada uma. `pipeline/build_posts.py` gera `docs/posts/index.json` e `docs/feed.xml`. São textos de opinião do autor, separados da base.
 - `docs/data/` — os dados derivados e sanitizados que o site consome (JSON). É a **única** coisa que sai do acervo.
 - `pipeline/` — os scripts que produzem esses dados a partir do acervo bruto (que não está neste repositório e não deve estar).
@@ -24,7 +24,7 @@ Nenhum PDF, nenhum texto integral, nenhum CPF, número de inscrição profission
 
 ## Como conferir uma informação
 
-Cada relação no grafo aponta para peças específicas (processo, número sequencial e página). Os autos completos estão no pacote público do STF linkado na nota à imprensa. O site não hospeda os documentos.
+Cada informação das fichas aponta para peças específicas (processo, número sequencial e página). Os autos completos estão no pacote público do STF linkado na nota à imprensa. O site não hospeda os documentos.
 
 ## Anonimato do projeto
 

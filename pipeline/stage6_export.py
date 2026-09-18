@@ -112,10 +112,9 @@ cnpjs=[{"cnpj":a,"procs":b,"docs":cc,"nome":d.title()} for a,b,cc,d,_ in cn]
 tot=c.sql("SELECT count(*) pdfs, sum(pages) pg, sum(chars) ch FROM docs WHERE ext='pdf'").fetchone()
 meta={"gerado_em":time.strftime("%Y-%m-%d %H:%M UTC",time.gmtime()),"fonte":{"nota":"https://noticias.stf.jus.br/postsnoticias/nota-a-imprensa-47/","pacote":"Pet16704.7z (Azure Blob do STF)","bytes":23826852064,"last_modified":"2026-09-11T21:33:57Z"},
       "corpus":{"pdfs":int(tot[0]),"paginas":int(tot[1]),"caracteres":int(tot[2]),"processos":PROCS},
-      "grafo":{"nos":len(nodes),"arestas":len(edges),"visiveis":sum(1 for n in nodes if n["vis"]),"pseudonimizados":sum(1 for n in nodes if not n["vis"]),"comunidades":len(comms),"docs_narrativos":D_NARR},
       "sanitizacao":"empresas, autoridades e advogados nomeados; pessoas nomeadas apenas se citadas em decisão/despacho/petição inicial ou recorrentes em >=2 processos e >=3 peças; demais pseudonimizadas (código estável). Sem CPF, inscrição profissional, endereços, nomes de arquivo ou texto integral."}
 def dump(name,obj): json.dump(obj,open(f"{OUT}/{name}","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
-dump("graph.json",{"nodes":nodes,"edges":edges});
+json.dump({"nodes":nodes,"edges":edges},open(f"{W}/graph_full.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))   # grafo completo fica na pista local; o site não o publica
 # natureza das ligações: peças (processo, seq, tipo, página) em que os dois nomes dividem página, por aresta exportada
 c.execute("CREATE TABLE ex_edges (a VARCHAR, b VARCHAR, s INT, d INT)")
 c.executemany("INSERT INTO ex_edges VALUES (?,?,?,?)",[(s_,d_,nid[s_],nid[d_]) for s_,d_,_ in G.edges(data=True)])
@@ -124,19 +123,21 @@ for s_,d_,tipo_,n_ in c.sql("""SELECT e.s, e.d, x.tipo, count(DISTINCT x.doc_id)
     det.setdefault(f"{s_}|{d_}",{"tipos":{},"cit":[]})["tipos"][tipo_]=int(n_)
 for s_,d_,p_,seq_,tipo_,pg_,n_ in c.sql("""SELECT s,d,processo,seq,tipo,page,n FROM (SELECT e.s, e.d, x.processo, x.seq, x.tipo, min(x.page) page, count(*) n, row_number() OVER (PARTITION BY e.s,e.d ORDER BY count(*) DESC, x.processo, x.seq) rn FROM ex_edges e JOIN cm x ON x.entity=e.a JOIN cm y ON y.entity=e.b AND y.doc_id=x.doc_id AND y.page=x.page GROUP BY e.s,e.d,x.processo,x.seq,x.tipo) WHERE rn<=8""").fetchall():
     det.setdefault(f"{s_}|{d_}",{"tipos":{},"cit":[]})["cit"].append([p_,int(seq_),tipo_,int(pg_),int(n_)])
-dump("edges_detail.json",det)
+json.dump(det,open(f"{W}/edges_detail.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))   # local
 # período das ligações: datas citadas nas páginas em que os dois nomes aparecem, por trimestre (para o filtro temporal do grafo)
 c.execute("CREATE TABLE cmp AS SELECT DISTINCT entity, doc_id, page FROM cm")
 etq={}
 for s_,d_,q_,n_ in c.sql("""SELECT e.s, e.d, substr(m.value,1,4)||'T'||cast((cast(substr(m.value,6,2) AS INT)+2)//3 AS VARCHAR) q, count(*) n
   FROM ex_edges e JOIN cmp x ON x.entity=e.a JOIN cmp y ON y.entity=e.b AND y.doc_id=x.doc_id AND y.page=x.page
   JOIN mentions m ON m.doc_id=x.doc_id AND m.page=x.page AND m.kind='date' AND m.value BETWEEN '2015-01' AND '2026-12' GROUP BY 1,2,3""").fetchall(): etq.setdefault(f"{s_}|{d_}",{})[q_]=int(n_)
-dump("edges_tl.json",etq)
+json.dump(etq,open(f"{W}/edges_tl.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))   # local
 # primeiro e último mês com datas citadas junto ao nome (>=2 ocorrências; senão qualquer)
 for n_,e in zip(nodes,G.nodes()):
     ms=sorted(k for k,v in etl.get(e,{}).items() if v>=2) or sorted(etl.get(e,{}))
     n_["m0"]=ms[0] if ms else None; n_["m1"]=ms[-1] if ms else None
-dump("graph.json",{"nodes":nodes,"edges":edges}); dump("entities.json",entities); dump("processos.json",procs_out)
+json.dump({"nodes":nodes,"edges":edges},open(f"{W}/graph_full.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
+NODE_KEEP=("i","id","label","papel","docs","procs","mentions","vis","pe","jud")   # o site só precisa dos nomes e da presença nas peças; sem arestas, posições ou métricas de rede
+dump("nodes.json",[{k:n[k] for k in NODE_KEEP if k in n} for n in nodes]); dump("entities.json",entities); dump("processos.json",procs_out)
 dump("crossrefs.json",[{"s":a,"d":b,"n":int(n)} for a,b,n in xr]); dump("timeline.json",tl_out); dump("cnpjs.json",cnpjs); dump("meta.json",meta)
 # GATE: varredura de padrões proibidos na saída
 bad=[]
