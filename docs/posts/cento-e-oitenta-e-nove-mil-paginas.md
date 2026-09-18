@@ -21,7 +21,7 @@ E as decisões? As decisões monocráticas do relator, o ministro André Mendon�
 
 ## O que há de gente
 
-O texto foi passado no pente. Contaram-se 14.875 CPFs distintos e 8.127 CNPJs distintos nas 189 mil páginas. Quase quinze mil pessoas físicas com número. A maioria não é investigada, não é parte, não é nada: é titular de conta num extrato, é testemunha, é o vizinho da procuração. Foi por isso que o site adotou uma regra simples e antipática: nome de gente só entra se apareceu em decisão, despacho ou petição inicial, ou se reaparece em processos diferentes. Os demais viram um código, "Pessoa A1B2C3", e o código permite ver que alguém liga dois pontos sem dizer quem. Dos 716 nomes que restaram no grafo, 357 são nomeados e 359 são código. Quase meio a meio. O acervo é público; a vida de quem passou por ele por acaso, não.
+O texto foi passado no pente. Contaram-se 14.875 CPFs distintos e 8.127 CNPJs distintos nas 189 mil páginas. Quase quinze mil pessoas físicas com número. A maioria não é investigada, não é parte, não é nada: é titular de conta num extrato, é testemunha, é o vizinho da procuração. Foi por isso que o site adotou uma regra simples e antipática: nome de gente só entra se apareceu em decisão, despacho ou petição inicial, ou se reaparece em processos diferentes. Os demais viram um código, "Pessoa A1B2C3", e o código permite ver que alguém liga dois pontos sem dizer quem. Dos 716 nomes que restaram na base, 357 são nomeados e 359 são código. Quase meio a meio. O acervo é público; a vida de quem passou por ele por acaso, não.
 
 ## De que época se fala
 
